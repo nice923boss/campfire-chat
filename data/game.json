@@ -11,7 +11,7 @@
       "title": { "en": "Arrival", "zh": "抵達楓灣" },
       "cefr": "A1",
       "summary": { "en": "Your first day in Maple Bay.", "zh": "在楓灣的第一天，從入境到認識室友。" },
-      "cover": "busy international airport arrival hall at morning, large glass windows with runway view, rolling suitcases, soft sunrise light",
+      "cover": "quiet international airport arrival hall at morning, empty rows of seats, large glass windows with runway view, soft sunrise light",
       "levels": [
         { "id": "L001", "title": { "en": "Passport, Please", "zh": "入境審查" } },
         { "id": "L002", "title": { "en": "Where's My Bag?", "zh": "行李轉盤" } },

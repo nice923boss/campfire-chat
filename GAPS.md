@@ -4,7 +4,7 @@
 
 | # | 項目 | 分類 | 原因 | 影響 | 補完時點 | 責任人 |
 |---|---|---|---|---|---|---|
-| 1 | 386 張圖已用 ComfyUI 產生 | [實作] | 2026-10-04 以 ComfyUI 0.20.1 + Z-Image Turbo（CFG 1.0、10 步）產生；全部看過縮圖，可疑處放大檢查；L001、L050、L100 在瀏覽器實際玩過，圖片 0 個載入錯誤 | 剩餘小瑕疵見第 3、11、12、13、14 列 | 已完成 | 黃政文 |
+| 1 | 386 張圖已用 ComfyUI 產生 | [實作] | 2026-10-04 以 ComfyUI 0.20.1 + Z-Image Turbo（CFG 1.0、10 步）產生；全部看過縮圖，可疑處放大檢查；2026-10-04 在上線版（GitHub Pages）用一次性腳本玩完 100 關（每關 1 次壞結局再走好結局），背景、立繪、導師圖全部載入且尺寸正確，0 個錯誤 | 剩餘小瑕疵見第 3、11、12、13、14 列 | 已完成 | 黃政文 |
 | 2 | `tools/comfyui_generate.py` 已在真實 ComfyUI 跑完 386 張 | [實作] | 執行期間 ComfyUI 中斷 2 次（取樣時 `Fatal Python error: Aborted`；8000 埠監聽因 `WinError 64` 停止），重啟後腳本只補缺的檔案 | 腳本遇到連線中斷會整批停止，不會自動重試或重連，需人工重啟 ComfyUI 後重跑 | 有需要時再加重試 | 黃政文 |
 | 3 | 立繪去背有小瑕疵 | [實作]，已接受 | rembg `u2net` 之後再用腳本內的 `recover_solid`（補回被誤去的同色衣物）與 `iso_residue`（清掉手臂與身體之間殘留的背景色）處理 | 部分角色頭髮邊緣有淡藍或淡綠色細邊（如 mia、c01_officer）；c03_librarian 綠背心與綠底之間留一小條淡綠；少數立繪肩線或畫布邊緣有約 6 px 的半透明帶；c02_pharmacist 鏡片有細小斑點 | 要再改善可加去色溢（despill）步驟 | 黃政文 |
 | 4 | 100 關英文內容未經人工審閱 | [實作]，待人工抽檢 | 內容由 AI 撰寫，只通過自動檢查（結構、簡體字、破折號、人名、角色重複）與連貫性稽核 | 可能有不自然的英文用法、難度落差、文化描述不精準 | 上架前至少抽檢每章 1 關 | 黃政文 |
@@ -15,6 +15,6 @@
 | 9 | 朗讀品質依瀏覽器與作業系統而定 | 平台限制 | 使用瀏覽器內建 Web Speech API，沒有自備語音 | 不同裝置的口音、速度不同；部分線上語音不回報字詞邊界，此時不會逐字標示 | 不排程 | 無 |
 | 10 | 進度只存在本機瀏覽器 | 設計取捨 | 純靜態網站，沒有帳號與後端 | 清除瀏覽器資料或換裝置會遺失進度 | 不排程 | 無 |
 | 11 | 同一角色各表情有小差異 | [實作]，已接受 | 每張圖獨立生成，同角色共用 seed 但構圖與細節仍會變 | c04_ticket_clerk 的 confused 畫風與其他表情不同（seed 0、1 都一樣，推測是提示詞造成）；ember_upset 表情偏淡；ms_wong_upset 髮型較長；配件略有出入（leo 背包帶顏色、c05_museum 胸針、c05_hostel 領巾、c02_barber_happy 沒有鬍子等） | 需要時用 `--match 角色id_ --force --seed-offset N` 重畫 | 黃政文 |
-| 12 | 負面提示詞實際上沒有作用 | 已知限制 | 腳本以 CFG 1.0 取樣（Z-Image Turbo 建議值），ComfyUI 在 CFG 1.0 時不計算負面提示詞 | 實際出現：ch01 章節封面有旅客人影（`data/game.json` 第 14 行封面描述含 busy、rolling suitcases，seed offset 0 到 5 共 6 組都有人）；c06_police 四張袖章都有假字；L049 招牌有「24H」與類似便利商店的配色；L001 看板、L007 零食包裝、L098 牆面有小型假字或斑點 | 建議改 ch01 封面描述（拿掉 busy、rolling suitcases，加 empty rows of seats）、police 外觀加 plain sleeves without patches，同意後重畫 | 黃政文 |
+| 12 | 負面提示詞實際上沒有作用 | 已知限制 | 腳本以 CFG 1.0 取樣（Z-Image Turbo 建議值），ComfyUI 在 CFG 1.0 時不計算負面提示詞 | 實際出現：c06_police 四張袖章都有假字（外觀已加 plain sleeves without patches 並重畫，seed offset 0 到 3 仍有；另在暫存區試兩種寫法：blank sleeves 剩一個袖章、no emblems or insignia 兩袖都有，都沒解決）；L049 招牌有「24H」與類似便利商店的配色；L001 看板、L007 零食包裝、L098 牆面有小型假字或斑點。ch01 章節封面改成空蕩的入境大廳描述後已無人影 | police 袖章要去掉需手動修圖（如 OpenCV 修補），待決定 | 黃政文 |
 | 13 | 12 張立繪有手動修圖，重畫會遺失 | 已知限制 | 自動去背仍漏掉的手臂間背景，用一次性腳本手動清除；c02_cashier_confused 胸前的「M」標誌用 OpenCV 修補掉 | 修過的檔案：c02_cashier_confused、c03_librarian_neutral/happy/confused、c05_night_neutral/happy/upset/confused、c08_daniel_neutral/happy、c09_cafe_finance_upset/confused。用 `--force` 重畫這些角色會回到未修狀態 | 重畫這些角色時重新檢查 | 黃政文 |
-| 14 | 部分圖片用了非預設 seed，專案裡沒有記錄 | 已知限制 | `--seed-offset` 只是執行參數，不寫入資料檔 | 以 `--seed-offset 1` 產生的：chapter/ch01、bg/L007、bg/L036、c02_cashier 全組、c09_hotel_director 全組。之後不帶參數 `--force` 重畫會得到不同的圖 | 重畫時參照本列 | 黃政文 |
+| 14 | 部分圖片用了非預設 seed，專案裡沒有記錄 | 已知限制 | `--seed-offset` 只是執行參數，不寫入資料檔 | 以 `--seed-offset 1` 產生的：bg/L007、bg/L036、c02_cashier 全組、c09_hotel_director 全組。之後不帶參數 `--force` 重畫會得到不同的圖 | 重畫時參照本列 | 黃政文 |

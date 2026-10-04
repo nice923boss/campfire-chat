@@ -32,7 +32,7 @@
     "nameZh": "桑托斯警員",
     "role": { "en": "Police officer", "zh": "警員" },
     "gender": "female",
-    "appearance": "woman in her early 30s, black hair in a low tight bun, dark navy police uniform with a silver badge, small radio clipped to the shoulder, calm steady vibe"
+    "appearance": "woman in her early 30s, black hair in a low tight bun, dark navy police uniform with plain sleeves without patches, a silver badge, small radio clipped to the shoulder, calm steady vibe"
   },
   "c06_clerk": {
     "name": "Tyler",

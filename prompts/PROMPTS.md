@@ -45,7 +45,7 @@ blurry, ugly, bad quality, lowres, realistic, 3D, photo, deformed, extra limbs, 
 `assets/chapter/ch01.webp`，seed 230459504
 
 ```text
-anime style key visual background art, busy international airport arrival hall at morning, large glass windows with runway view, rolling suitcases, soft sunrise light, 2D illustration, detailed background, beautiful lighting, high quality, no people, no characters, blank signs, plain unmarked surfaces
+anime style key visual background art, quiet international airport arrival hall at morning, empty rows of seats, large glass windows with runway view, soft sunrise light, 2D illustration, detailed background, beautiful lighting, high quality, no people, no characters, blank signs, plain unmarked surfaces
 ```
 
 ### ch02 生活起步
@@ -2229,25 +2229,25 @@ blurry, ugly, bad quality, lowres, realistic, 3D, photo, deformed, extra limbs, 
 - `assets/char/c06_police_neutral.webp`
 
   ```text
-  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with a silver badge, small radio clipped to the shoulder, calm steady vibe, calm neutral expression, relaxed, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
+  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with plain sleeves without patches, a silver badge, small radio clipped to the shoulder, calm steady vibe, calm neutral expression, relaxed, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
   ```
 
 - `assets/char/c06_police_happy.webp`
 
   ```text
-  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with a silver badge, small radio clipped to the shoulder, calm steady vibe, bright warm smile, happy cheerful expression, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
+  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with plain sleeves without patches, a silver badge, small radio clipped to the shoulder, calm steady vibe, bright warm smile, happy cheerful expression, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
   ```
 
 - `assets/char/c06_police_upset.webp`
 
   ```text
-  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with a silver badge, small radio clipped to the shoulder, calm steady vibe, annoyed frown, furrowed eyebrows, pouting lips, clearly displeased expression, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
+  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with plain sleeves without patches, a silver badge, small radio clipped to the shoulder, calm steady vibe, annoyed frown, furrowed eyebrows, pouting lips, clearly displeased expression, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
   ```
 
 - `assets/char/c06_police_confused.webp`
 
   ```text
-  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with a silver badge, small radio clipped to the shoulder, calm steady vibe, confused puzzled expression, one eyebrow raised, head slightly tilted, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
+  anime style visual novel character sprite, woman in her early 30s, black hair in a low tight bun, dark navy police uniform with plain sleeves without patches, a silver badge, small radio clipped to the shoulder, calm steady vibe, confused puzzled expression, one eyebrow raised, head slightly tilted, Asian face, East Asian features, upper body portrait, facing viewer, centered, isolated on a plain flat light blue background, nothing behind the subject, 2D anime style, high quality illustration, clean lineart, soft cel shading
   ```
 
 ### Tyler 泰勒（c06_clerk，seed 637936922）
