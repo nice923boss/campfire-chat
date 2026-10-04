@@ -2,7 +2,7 @@
 
 import { h } from '../ui/dom.js';
 import { icon } from '../ui/icons.js';
-import { ambientButton } from '../ui/chrome.js';
+import { ambientButton, confirmReset } from '../ui/chrome.js';
 import { nextLevel, totals } from '../store.js';
 import * as motion from '../fx/motion.js';
 import * as sfx from '../audio/sfx.js';
@@ -41,7 +41,11 @@ export function mount(root, _params, ctx) {
       h('p', { class: 'title__progress' },
         h('span', {}, `已通關 ${t.cleared} / ${t.total}`),
         h('span', { html: icon('star', { size: 14 }) }), h('span', {}, `${t.stars} / ${t.maxStars}`),
-        h('span', {}, `・已發現結局 ${t.endings}`))));
+        h('span', {}, `・已發現結局 ${t.endings}`)),
+      // lets the next player start fresh on a shared browser
+      (started || t.endings > 0) && h('button', {
+        class: 'btn btn--ghost btn--sm', type: 'button', onclick: () => confirmReset(ctx),
+      }, h('span', { html: icon('retry', { size: 16 }) }), '清除進度，換人玩')));
 
   motion.titleIn(logo);
   motion.stagger(root.querySelectorAll('.title__menu > *'), { delay: 0.5 });

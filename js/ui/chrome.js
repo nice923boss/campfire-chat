@@ -1,6 +1,6 @@
 // Shared screen chrome: top bar with navigation and the ambience toggle.
 
-import { h } from './dom.js';
+import { h, toast, confirmDialog } from './dom.js';
 import { icon } from './icons.js';
 import * as ambient from '../audio/ambient.js';
 import * as sfx from '../audio/sfx.js';
@@ -43,6 +43,21 @@ export function topbar(ctx, { title, active, back = '' }) {
         'aria-current': n.route === active ? 'page' : false,
       }, h('span', { html: icon(n.icon, { size: 18 }) }), h('span', { class: 'topnav__label' }, n.label)))),
     ambientButton(ctx.store));
+}
+
+// Confirm, then wipe the progress (settings stay) and return to the title screen.
+// Used by the settings screen and the title screen.
+export async function confirmReset(ctx) {
+  const ok = await confirmDialog({
+    title: '確定要重設進度？',
+    body: '所有關卡星星、已發現的結局與失誤統計都會清除，而且無法復原。',
+    ok: '清除進度', danger: true,
+  });
+  if (!ok) return;
+  ctx.store.reset();
+  sfx.play('bad');
+  toast('進度已清除，從第 1 關重新出發。');
+  ctx.go('');
 }
 
 export function starRow(count, max = 3, cls = 'stars') {

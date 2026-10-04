@@ -1,8 +1,8 @@
 // Settings: subtitles, voice, sound, text speed, tours, progress reset and
 // the credits for the open-source libraries the game loads.
 
-import { h, toast, confirmDialog } from '../ui/dom.js';
-import { topbar } from '../ui/chrome.js';
+import { h, toast } from '../ui/dom.js';
+import { topbar, confirmReset } from '../ui/chrome.js';
 import { DEFAULT_SETTINGS, totals } from '../store.js';
 import * as tts from '../audio/tts.js';
 import * as sfx from '../audio/sfx.js';
@@ -105,18 +105,7 @@ export async function mount(root, _params, ctx) {
         }, '重看導覽')),
         row('重設學習進度', `目前已通關 ${t.cleared} 關、${t.stars} 顆星。設定會保留。`, h('button', {
           class: 'btn btn--danger btn--sm', type: 'button',
-          onclick: async () => {
-            const ok = await confirmDialog({
-              title: '確定要重設進度？',
-              body: '所有關卡星星、已發現的結局與失誤統計都會清除，而且無法復原。',
-              ok: '清除進度', danger: true,
-            });
-            if (!ok) return;
-            store.reset();
-            sfx.play('bad');
-            toast('進度已清除，從第 1 關重新出發。');
-            ctx.go('');
-          },
+          onclick: () => confirmReset(ctx),
         }, '清除進度'))),
       h('article', { class: 'panel panel--about' },
         h('h2', { class: 'panel__title' }, '關於'),
