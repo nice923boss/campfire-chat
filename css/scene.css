@@ -65,7 +65,7 @@
 /* ---- dock: choices + dialogue box ---- */
 .dock {
   position: absolute; left: 50%; bottom: 0; z-index: 10; transform: translateX(-50%);
-  width: min(920px, calc(100% - 24px)); padding-bottom: calc(26px + var(--safe-b));
+  width: min(1120px, calc(100% - 24px)); padding-bottom: calc(26px + var(--safe-b));
   display: grid; gap: 10px;
 }
 .stage.has-overlay .dock { visibility: hidden; }
@@ -142,7 +142,7 @@
 .card__kicker { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .06em; color: var(--ember-2); }
 .card__title { font-size: clamp(26px, 5vw, 34px); line-height: 1.15; }
 .card__title small { display: block; margin-top: 6px; font: 700 16px var(--font-ui); color: var(--ink-2); }
-.card__hint { color: var(--ink-3); font-size: 14px; }
+.card__hint { color: var(--ink-3); font-size: 14px; text-wrap: balance; }
 .card__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .card__actions .btn--primary { flex: 1 1 auto; }
 .card--scene { background: linear-gradient(180deg, #2b1d1c, var(--panel-solid) 60%); }
@@ -176,7 +176,7 @@
 .ending__kinds { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; font-size: 14px; color: var(--ink-3); }
 
 /* ---- notes review ---- */
-.notes-panel { width: min(1000px, 100%); display: grid; gap: 20px; }
+.notes-panel { width: min(1200px, 100%); display: grid; gap: 20px; }
 .notes-panel__head { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px 16px; }
 .notes-panel__mentor {
   width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: 50% 6%;

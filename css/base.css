@@ -49,6 +49,7 @@ body {
   font: 16px/1.6 var(--font-ui);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  text-wrap: pretty; /* avoid a lone word or character on the last line */
 }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; margin: 0; }
 p { margin: 0; }
@@ -92,7 +93,7 @@ body[data-screen="play"] #embers { z-index: 30; }
 }
 
 /* ---- screens ---- */
-.screen { max-width: 1120px; margin: 0 auto; padding: 0 16px 56px; }
+.screen { max-width: 1440px; margin: 0 auto; padding: 0 16px 56px; }
 
 /* ---- buttons ---- */
 .btn {
