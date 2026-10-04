@@ -1,0 +1,181 @@
+{
+  "id": "L014",
+  "location": { "en": "Bayside Pharmacy, near the language school", "zh": "語言學校附近的灣畔藥局" },
+  "goal": { "en": "Get something for your headache and learn how to take it.", "zh": "買到頭痛藥，並問清楚怎麼服用。" },
+  "background": "small neighborhood pharmacy with white shelves of plain unmarked boxes, a clean consultation counter, a small potted plant, glass front door, bright clean lighting, afternoon",
+  "cast": ["c02_pharmacist"],
+  "intro": [
+    { "who": "narrator", "en": "You stayed up late watching videos, and now your head is pounding.", "zh": "你熬夜看影片，現在頭痛得要命。" },
+    { "who": "narrator", "en": "Mia pats you on the back and sends you to the pharmacy on the corner.", "zh": "米亞同情地拍拍你的背，叫你去轉角的藥局。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_pharmacist", "expr": "neutral", "en": "Hello. What seems to be the problem today?", "zh": "你好，今天哪裡不舒服？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I have a headache.",
+          "zh": "你好，我頭痛。",
+          "ok": true,
+          "tip": "I have a + 症狀，是描述身體不舒服的基本句型。"
+        },
+        {
+          "en": "Hi. My head is very pain.",
+          "zh": "你好，我的頭很痛。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_pharmacist", "expr": "confused", "en": "Your head is...? Did you hit your head? Did you fall?", "zh": "你的頭……？你撞到頭了嗎？是跌倒了嗎？" }
+            ],
+            "title": { "en": "Overreaction", "zh": "小題大作" },
+            "story": { "en": "She thinks you hurt your head and sends you to the walk-in clinic. You spend the whole afternoon in a waiting room for a simple headache.", "zh": "藥師以為你撞傷了頭，請你去診所檢查。你為了一個小頭痛，在候診室坐了一整個下午。" },
+            "why": "pain 是名詞，不能說 My head is very pain.。頭痛直接說 I have a headache.，也可以說 My head hurts.。"
+          }
+        },
+        {
+          "en": "No problem! I'm fine, thanks.",
+          "zh": "沒問題！我很好，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_pharmacist", "expr": "confused", "en": "You're fine? Then... how can I help you?", "zh": "你很好？那……我能幫你什麼？" }
+            ],
+            "title": { "en": "Vitamin Surprise", "zh": "維他命驚喜包" },
+            "story": { "en": "Flustered, you point at the nearest shelf. You walk out with a big bottle of vitamins and the same headache.", "zh": "你一慌，隨手指了最近的貨架。結果你帶著一大罐維他命和原本的頭痛走出藥局。" },
+            "why": "What seems to be the problem? 是在問「哪裡不舒服？」，不是問你有沒有問題。直接說症狀：I have a headache.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_pharmacist", "expr": "neutral", "en": "I see. These tablets work well for headaches. Any questions?", "zh": "了解。這種藥錠治頭痛很有效。有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. How often should I take them?",
+          "zh": "有，我應該多久吃一次？",
+          "ok": true,
+          "tip": "How often 問頻率；「吃藥」英文要用 take，不是 eat。"
+        },
+        {
+          "en": "Yes. How many times should I eat them?",
+          "zh": "有，我要吃幾次？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_pharmacist", "expr": "confused", "en": "Eat them? Oh, no, you don't chew these. You swallow them with water.", "zh": "吃？喔，不，這不是用嚼的，要配水吞下去。" }
+            ],
+            "title": { "en": "Pills Are Not Candy", "zh": "藥不是糖果" },
+            "story": { "en": "You get a five-minute lesson on swallowing pills. You leave knowing exactly how to take one, but not how often.", "zh": "你上了五分鐘的吞藥教學。走出藥局時，你很清楚怎麼吞，卻不知道該多久吃一次。" },
+            "why": "中文說「吃藥」，英文要說 take medicine，說 eat 聽起來像在嚼糖果。問頻率用 How often should I take them?。"
+          }
+        },
+        {
+          "en": "Yes. How much times I take a day?",
+          "zh": "有，我一天吃多少次？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_pharmacist", "expr": "confused", "en": "How much? Oh, they're eight dollars.", "zh": "多少？喔，八塊錢。" }
+            ],
+            "title": { "en": "Price Check", "zh": "只問到價錢" },
+            "story": { "en": "You pay, nod and leave. At home, you realize you have no idea how many to take.", "zh": "你付了錢、點了頭就走了。回到家才發現，你根本不知道一天要吃幾顆。" },
+            "why": "times 是可數名詞，要用 many，問句也少了助動詞。問服藥頻率最自然的說法是 How often should I take them?；How much 開頭常被當成在問價錢。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_pharmacist", "expr": "neutral", "en": "One tablet every six hours, with food. Anything else you'd like to know?", "zh": "每六小時一顆，飯後吃。還有什麼想知道的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Are there any side effects?",
+          "zh": "有什麼副作用嗎？",
+          "ok": true,
+          "tip": "side effects 是「副作用」，買藥時問一句，用起來更安心。"
+        },
+        {
+          "en": "Does it has any side effects?",
+          "zh": "它有任何副作用嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_pharmacist", "expr": "confused", "en": "Does it... has? Sorry, I didn't catch that.", "zh": "它……有？抱歉，我沒聽清楚。" }
+            ],
+            "title": { "en": "Homework Pillow", "zh": "作業當枕頭" },
+            "story": { "en": "Too shy to repeat it, you say \"Never mind.\" That night, the tablets make you so sleepy that you fall asleep on your homework.", "zh": "你不好意思再說一次，只好說「沒事」。當天晚上，藥效讓你昏昏欲睡，直接趴在作業上睡著了。" },
+            "why": "does 後面的動詞要用原形：Does it have any side effects?。更常見的問法是 Are there any side effects?。"
+          }
+        },
+        {
+          "en": "Is this safe? You sure? Really?",
+          "zh": "這安全嗎？你確定？真的嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_pharmacist", "expr": "upset", "en": "Yes, I'm sure. I am a pharmacist.", "zh": "是的，我確定。我是藥師。" }
+            ],
+            "title": { "en": "Trust Issues", "zh": "信任危機" },
+            "story": { "en": "She answers politely but coldly. The helpful tips she was about to give you about rest and water? You don't get any.", "zh": "她回答得很客氣，但語氣冷淡。本來要給你的休息、喝水小建議，一個都沒說。" },
+            "why": "連續追問 You sure? Really? 聽起來像在質疑對方的專業。想了解風險，客氣地問 Are there any side effects? 就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_pharmacist", "expr": "happy", "en": "They might make you a little sleepy. So, no more late-night videos!", "zh": "可能會讓你有點想睡。所以，不准再熬夜看影片了！" },
+      { "who": "narrator", "en": "You laugh, a little guiltily. One tablet and one long nap later, your headache is gone.", "zh": "你心虛地笑了笑。吃了一顆藥、睡了一場長長的午覺，頭痛就不見了。" }
+    ],
+    "title": { "en": "Headache Gone", "zh": "頭痛退散" },
+    "story": { "en": "You got the right medicine and know exactly how to take it. Mia makes you promise to go to bed earlier.", "zh": "你買對了藥，也清楚知道怎麼吃。米亞還要你保證以後早點睡。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I have a headache.",
+      "zh": "我頭痛。",
+      "explain": "描述症狀用 I have a + 症狀。身體部位加 -ache 就是「……痛」，例如 stomachache（胃痛）、toothache（牙痛）。",
+      "example": { "en": "I have a stomachache and a slight fever.", "zh": "我胃痛，還有一點發燒。" }
+    },
+    {
+      "type": "phrase",
+      "en": "How often should I take it?",
+      "zh": "我應該多久吃一次？",
+      "explain": "How often 問頻率，常見的回答有 every six hours（每六小時）、twice a day（一天兩次）。",
+      "example": { "en": "How often should I take it? Twice a day, after meals.", "zh": "我應該多久吃一次？一天兩次，飯後吃。" }
+    },
+    {
+      "type": "vocab",
+      "en": "side effects",
+      "zh": "副作用",
+      "explain": "買藥時值得問的問題。常見副作用有 drowsiness（嗜睡）、upset stomach（腸胃不適）。",
+      "example": { "en": "Are there any side effects? It may make you drowsy.", "zh": "有副作用嗎？可能會讓你想睡。" }
+    },
+    {
+      "type": "trap",
+      "en": "take medicine",
+      "zh": "吃藥（不是 eat medicine）",
+      "explain": "英文的「吃藥」用 take，eat 只用在食物。take a pill、take medicine 都是正確說法。",
+      "example": { "en": "Don't forget to take your medicine after dinner.", "zh": "晚餐後別忘了吃藥。" }
+    },
+    {
+      "type": "culture",
+      "en": "Ask the pharmacist",
+      "zh": "藥師可以諮詢",
+      "explain": "在很多英語國家，小病小痛會先到藥局問藥師，不一定要看醫生。藥師很樂意回答問題，有疑問儘管問。",
+      "example": { "en": "Can you recommend something for a sore throat?", "zh": "可以推薦治喉嚨痛的藥嗎？" }
+    }
+  ]
+}

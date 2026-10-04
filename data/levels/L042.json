@@ -1,0 +1,224 @@
+{
+  "id": "L042",
+  "location": { "en": "Port Aurora, Harbor Light Hostel reception", "zh": "極光港，港燈青年旅館櫃檯" },
+  "goal": { "en": "Check in to the hostel, find a place for your bags and get the Wi-Fi password.", "zh": "辦好青年旅館入住，找到放行李的地方，並問到 Wi-Fi 密碼。" },
+  "background": "cozy hostel reception area, wooden front desk with a small bell, wall of cubby shelves, colorful beanbags, string lights, potted plants, large window facing a harbor, afternoon light",
+  "cast": ["c05_hostel", "mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Two hours later, you step off the train in Port Aurora. The Harbor Light Hostel is a short walk from the station.", "zh": "兩個小時後，你們在極光港下車。港燈青年旅館離車站只有幾步路。" },
+    { "who": "leo", "expr": "happy", "en": "Look, beanbags! I already love this place.", "zh": "你看，有懶骨頭！我已經愛上這裡了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "happy", "en": "Hi, welcome to Harbor Light! Do you have a booking with us?", "zh": "嗨，歡迎來到港燈！你們有預約嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, I booked three beds in the six-bed dorm.",
+          "zh": "有，我訂了六人房的三個床位。",
+          "ok": true,
+          "tip": "用過去式 I booked 說明已經訂好，再用 in 帶出房型。"
+        },
+        {
+          "en": "I book three beds already, in the dorm.",
+          "zh": "我已經訂三個床位了，在多人房。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "You book them... now? Sorry, the dorms are full tonight.", "zh": "你現在……要訂？抱歉，今晚多人房都滿了。" }
+            ],
+            "title": { "en": "Sofa Surfing", "zh": "沙發衝浪" },
+            "story": { "en": "Nadia thinks you want a new booking and kindly offers you three sofas in the lobby. It takes half an hour to find your real reservation.", "zh": "娜迪亞以為你要現場訂房，好心提供大廳的三張沙發。花了半小時，才找到你們原本的訂房紀錄。" },
+            "why": "已經發生的事要用過去式，「我訂了」是 I booked，不是 I book。可以說 I booked three beds in the six-bed dorm.。"
+          }
+        },
+        {
+          "en": "Of course I do. Why would I come without one?",
+          "zh": "當然有啊。沒訂誰會來？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_hostel", "expr": "upset", "en": "Just checking. People walk in without one all the time.", "zh": "只是確認一下。常常有人沒預約就直接來。" }
+            ],
+            "title": { "en": "Snore Neighbors", "zh": "打呼鄰居" },
+            "story": { "en": "Nadia's welcome cools by a few degrees. Somehow your beds end up right next to the loudest snorer in Port Aurora.", "zh": "娜迪亞的熱情瞬間降溫好幾度。不知怎麼的，你們的床位剛好在全極光港打呼最大聲的人旁邊。" },
+            "why": "Of course 加上反問，聽起來像嫌對方問題很蠢。櫃檯確認預約是例行公事，簡單回答 Yes, I booked three beds. 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "confused", "en": "My bag is huge. Where do we put all this stuff?", "zh": "我的包包超大。這些東西要放哪？" },
+        { "who": "c05_hostel", "expr": "neutral", "en": "Here are your key cards. Anything else I can help with?", "zh": "這是你們的房卡。還有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Is there a locker for our bags?",
+          "zh": "有。有沒有可以放行李的置物櫃？",
+          "ok": true,
+          "tip": "Is there a...? 用來問某個地方有沒有某樣東西，簡單又禮貌。"
+        },
+        {
+          "en": "Have locker or no? Our bags are very big.",
+          "zh": "有沒有置物櫃？我們的包包很大。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Do I have a locker? Well, yes, in the staff room. Why?", "zh": "我有沒有置物櫃？呃，有啊，在員工休息室。怎麼了？" }
+            ],
+            "title": { "en": "Her Locker, Not Yours", "zh": "那是她的置物櫃" },
+            "story": { "en": "Nadia tells you all about her own locker. Ten minutes later, you still have no idea where to put your bags.", "zh": "娜迪亞跟你分享了她自己的置物櫃。十分鐘後，你還是不知道行李要放哪。" },
+            "why": "「有沒有……」直譯成 Have... or no? 不是英文問法，對方可能以為你在問「她」有沒有。問某處有沒有東西要說 Is there a locker?"
+          }
+        },
+        {
+          "en": "We'll just put our bags on the empty beds, okay?",
+          "zh": "我們就把行李放在空床上，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_hostel", "expr": "upset", "en": "Those beds belong to other guests. Please don't do that.", "zh": "那些床位是其他房客的，請不要這樣做。" }
+            ],
+            "title": { "en": "Bed Invaders", "zh": "床位侵略者" },
+            "story": { "en": "Three tired backpackers arrive that evening and find your suitcases on their beds. The dorm is very, very quiet that night.", "zh": "傍晚三位疲憊的背包客回來，發現你們的行李箱躺在他們床上。那晚的房間安靜得可怕。" },
+            "why": "青年旅館的空床通常已經有人訂了，不能拿來放東西。先問 Is there a locker? 或 Where can we leave our bags? 才是基本禮貌。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "neutral", "en": "There's a locker under each bed. Big suitcases can go in our luggage room.", "zh": "每張床下面都有置物櫃。大行李箱可以放我們的行李室。" },
+        { "who": "mia", "expr": "happy", "en": "Kai, ask about the Wi-Fi! I need to post our train photos.", "zh": "凱，問一下 Wi-Fi！我要上傳火車上拍的照片。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! And what's the Wi-Fi password?",
+          "zh": "謝謝！那 Wi-Fi 密碼是什麼？",
+          "ok": true,
+          "tip": "問密碼用 What's the Wi-Fi password?，What 開頭就對了。"
+        },
+        {
+          "en": "How much is the Wi-Fi password?",
+          "zh": "Wi-Fi 密碼是多少？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "How much? Oh, the Wi-Fi is free! You don't have to pay.", "zh": "多少錢？喔，Wi-Fi 是免費的！不用付錢喔。" }
+            ],
+            "title": { "en": "Free but Locked", "zh": "免費但連不上" },
+            "story": { "en": "Nadia happily explains that the Wi-Fi costs nothing. She never tells you the password, and Mia's photos wait until tomorrow.", "zh": "娜迪亞開心地解釋 Wi-Fi 不用錢，卻始終沒說密碼。米亞的照片只好等到明天再上傳。" },
+            "why": "中文說「密碼是多少」，但英文的 How much 只用來問價錢或數量。問密碼要說 What's the Wi-Fi password?"
+          }
+        },
+        {
+          "en": "Thanks. And the Wi-Fi password, what it is?",
+          "zh": "謝謝。那 Wi-Fi 密碼，它是什麼？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "What it is? You mean... what Wi-Fi is? Well, it's wireless internet...", "zh": "它是什麼？你是說……Wi-Fi 是什麼？嗯，它是一種無線網路……" }
+            ],
+            "title": { "en": "History of the Internet", "zh": "網路發展史" },
+            "story": { "en": "Nadia gives you a friendly ten-minute talk about how Wi-Fi works. Mia falls asleep on a beanbag.", "zh": "娜迪亞親切地講解了十分鐘 Wi-Fi 的原理。米亞在懶骨頭上睡著了。" },
+            "why": "英文疑問句的詞序是「疑問詞 + be 動詞 + 主詞」，what it is 是陳述句的詞序。要說 What's the Wi-Fi password?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "neutral", "en": "It's on the back of your key card. Oh, and quiet hours start at eleven.", "zh": "密碼在房卡背面。對了，晚上十一點開始是安靜時段。" }
+      ],
+      "choices": [
+        {
+          "en": "No problem. We'll keep it down after eleven.",
+          "zh": "沒問題。十一點以後我們會小聲一點。",
+          "ok": true,
+          "tip": "keep it down 是「降低音量」，回應規定時先說 No problem 很自然。"
+        },
+        {
+          "en": "Oh, eleven? Don't worry, we'll be back by ten.",
+          "zh": "喔，十一點？別擔心，我們十點前會回來。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Oh, you can come back anytime! It's not a curfew.", "zh": "喔，你們什麼時候回來都可以！那不是門禁。" }
+            ],
+            "title": { "en": "Cinderella Hours", "zh": "灰姑娘時刻" },
+            "story": { "en": "You never hear her answer, because you're already explaining the plan to Leo. The three of you rush home at 9:55 and miss the harbor fireworks.", "zh": "你沒聽到她的回答，因為你已經在跟里歐講計畫。你們三個九點五十五分就衝回旅館，錯過了港口煙火。" },
+            "why": "quiet hours 是「安靜時段」，意思是要小聲，不是門禁（curfew）。聽到規定時可以回 No problem. We'll keep it down.。"
+          }
+        },
+        {
+          "en": "I hereby promise to follow all of your rules.",
+          "zh": "我在此承諾會遵守你們所有的規定。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Uh... okay? It's just a hostel, not a courtroom.", "zh": "呃……好喔？這裡只是青年旅館，不是法院。" }
+            ],
+            "title": { "en": "The Lawyer", "zh": "大律師" },
+            "story": { "en": "Nadia gives you a puzzled look. Leo calls you \"The Lawyer\" for the rest of the trip.", "zh": "娜迪亞一臉疑惑。接下來整趟旅行，里歐都叫你「大律師」。" },
+            "why": "hereby promise 是合約或法律文件的用語，在輕鬆的旅館櫃檯說太正式又太誇張。簡單回 No problem. We'll keep it down. 就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_hostel", "expr": "happy", "en": "You're all set. Free pancakes from seven to nine, too!", "zh": "都辦好了。早上七點到九點還有免費鬆餅喔！" },
+      { "who": "leo", "expr": "happy", "en": "Beanbags, Wi-Fi and free pancakes. Best hostel ever.", "zh": "懶骨頭、Wi-Fi 加免費鬆餅。史上最棒的旅館。" }
+    ],
+    "title": { "en": "Home Away from Home", "zh": "旅途中的家" },
+    "story": { "en": "Your bags are locked away, Mia's photos are online, and the harbor glows outside the window. The trip is off to a great start.", "zh": "行李鎖好了，米亞的照片也上傳了，窗外的港口閃著光。旅程有個很棒的開始。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I booked a bed in the six-bed dorm.",
+      "zh": "我訂了六人房的一個床位。",
+      "explain": "已經訂好的事用過去式 I booked。dorm 是青年旅館的多人房，private room 是獨立房間。",
+      "example": { "en": "I booked a private room for two nights.", "zh": "我訂了兩晚的獨立房。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Is there a locker?",
+      "zh": "有置物櫃嗎？",
+      "explain": "Is there a...? 問某個地方有沒有某樣東西。不要說 Have locker or not?，對方可能以為你在問「他」有沒有。",
+      "example": { "en": "Is there a locker in the room?", "zh": "房間裡有置物櫃嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "What's the Wi-Fi password?",
+      "zh": "Wi-Fi 密碼是什麼？",
+      "explain": "中文說「密碼是多少」，英文不能說 How much is the password?。How much 只問價錢或數量，問密碼一律用 What。",
+      "example": { "en": "Sorry, what's the Wi-Fi password again?", "zh": "不好意思，Wi-Fi 密碼是什麼來著？" }
+    },
+    {
+      "type": "vocab",
+      "en": "quiet hours / keep it down",
+      "zh": "安靜時段／小聲一點",
+      "explain": "quiet hours 是要降低音量的時段，不是門禁。門禁叫 curfew。keep it down 是「小聲一點」。",
+      "example": { "en": "Could you keep it down a little? People are sleeping.", "zh": "可以小聲一點嗎？有人在睡覺。" }
+    },
+    {
+      "type": "culture",
+      "en": "Hostel etiquette",
+      "zh": "青年旅館禮儀",
+      "explain": "多人房是共享空間：不佔用別人的床、深夜不大聲講話、早起收拾時動作放輕。不確定時先問一句。",
+      "example": { "en": "Sorry, is this bed taken?", "zh": "不好意思，請問這個床位有人嗎？" }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "L065",
+  "location": { "en": "Brightway office, meeting room", "zh": "Brightway 辦公室，會議室" },
+  "goal": { "en": "Talk about your strengths and weaknesses with real examples.", "zh": "用真實的例子談你的優點和缺點。" },
+  "background": "bright meeting room with a long wooden table, an open notepad and a glass of water, warm pendant lamps overhead, glass wall, late afternoon sunlight",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "The interview continues. Ms. Wong turns to a fresh page in her notepad.", "zh": "面試繼續進行。王經理把筆記本翻到新的一頁。" },
+    { "who": "narrator", "en": "You know what's coming: the two questions every job seeker fears.", "zh": "你知道接下來是什麼：每個求職者都害怕的兩個問題。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "What would you say is your greatest strength?", "zh": "你覺得你最大的優點是什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Hmm, I don't really have any strengths. I'm a very ordinary person.",
+          "zh": "嗯，我其實沒什麼優點，我是個很普通的人。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "None at all? Then help me out here: why should I hire you?", "zh": "完全沒有？那你幫幫我：我為什麼要錄取你？" }
+            ],
+            "title": { "en": "Modesty Mode", "zh": "謙虛模式" },
+            "story": { "en": "In Taiwan, this sounds humble. Here, Ms. Wong simply believes you and writes 'no strengths' on her notepad.", "zh": "在台灣這聽起來很謙虛。在這裡，王經理直接相信了你，在筆記本上寫下「無優點」。" },
+            "why": "面試時說自己沒優點，對方會照字面接受。大方說出一個優點並舉例：One of my strengths is that I stay calm with difficult customers.。"
+          }
+        },
+        {
+          "en": "My biggest advantage is that I'm a very serious person.",
+          "zh": "我最大的優點是我是個很認真的人。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Serious? As in... you never laugh? Our team jokes around quite a lot.", "zh": "嚴肅？意思是……你從來不笑？我們團隊很愛開玩笑耶。" }
+            ],
+            "title": { "en": "No Laughing Matter", "zh": "不苟言笑" },
+            "story": { "en": "Ms. Wong tells a small joke to test you. You keep a straight face, just to stay 'serious.' It does not go well.", "zh": "王經理講了個小笑話測試你。為了保持「認真」，你硬是忍住不笑。結果很不妙。" },
+            "why": "「認真」直譯成 serious，英文聽起來是「嚴肅、不愛笑」。要說 I'm hardworking. 或 I take my work seriously.；談優點用 strength，不用 advantage。"
+          }
+        },
+        {
+          "en": "One of my strengths is that I stay calm with difficult customers.",
+          "zh": "我的優點之一是面對難搞的客人時能保持冷靜。",
+          "ok": true,
+          "tip": "One of my strengths is that + 完整句子，說出一個和工作相關的優點。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Calm with difficult customers. Can you give me an example?", "zh": "面對難搞的客人能保持冷靜。可以舉個例子嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Customers are often stupid, but I never show it.",
+          "zh": "當然。客人常常很笨，但我從不表現出來。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Our clients are not stupid, Kai. They're the reason we're all here.", "zh": "凱，我們的客戶不笨。我們會在這裡，都是因為他們。" }
+            ],
+            "title": { "en": "Customer Is King", "zh": "客戶至上" },
+            "story": { "en": "Ms. Wong imagines you meeting her biggest hotel client. She does not like what she imagines.", "zh": "王經理想像你去見她最大的飯店客戶。她不喜歡自己想像到的畫面。" },
+            "why": "說客人「很笨」，就算後面說「但我不表現出來」，也會讓人懷疑你的服務態度。舉例時只說事實和你的行動：A customer was upset, so I listened and fixed it.。"
+          }
+        },
+        {
+          "en": "Once, a customer yelled about a late order. I listened and fixed it.",
+          "zh": "有一次，一位客人因為餐點太慢大吼。我先聽他說，然後把問題解決了。",
+          "ok": true,
+          "tip": "舉例時用過去式說出狀況和你的行動，比形容詞更有說服力。"
+        },
+        {
+          "en": "Yes. One time, a customer is very angry, and I am say sorry to him many times.",
+          "zh": "有。有一次，一位客人很生氣，我一直跟他說對不起。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Is angry? Wait, is this happening now, or in the past?", "zh": "Is angry？等等，這是現在發生的，還是過去的事？" }
+            ],
+            "title": { "en": "Time Machine", "zh": "時光機故障" },
+            "story": { "en": "Ms. Wong looks around the room, half expecting an angry customer to walk in. Your great example gets lost in the tenses.", "zh": "王經理環顧會議室，好像以為會有個生氣的客人走進來。你的好例子就這樣迷失在時態裡。" },
+            "why": "說過去的經驗要用過去式：a customer was angry、I said sorry。am 後面也不能接原形動詞。整句可以說 A customer was upset, so I apologized and fixed it.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Nice. And what about a weakness?", "zh": "很好。那缺點呢？" }
+      ],
+      "choices": [
+        {
+          "en": "My biggest weakness is that I work too hard and care too much.",
+          "zh": "我最大的缺點是工作太認真、太在乎了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Ha, I hear that one every day. Could you give me a real one?", "zh": "哈，這個我每天都聽到。可以說一個真正的缺點嗎？" }
+            ],
+            "title": { "en": "Heard It Before", "zh": "老掉牙的答案" },
+            "story": { "en": "Ms. Wong adds a tally mark to a list titled 'work too hard.' You are number fourteen this month.", "zh": "王經理在一張叫「工作太認真」的清單上又畫了一筆。你是這個月第十四位。" },
+            "why": "「工作太認真」是面試官聽到不想再聽的假缺點，顯得不真誠。說一個真實但不致命的缺點，加上你正在怎麼改進：I'm working on public speaking, so I joined a speech club.。"
+          }
+        },
+        {
+          "en": "My weakness? Probably spicy food. I can't eat it at all.",
+          "zh": "我的弱點？大概是辣的食物吧，我完全不能吃辣。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Ha! Good to know for team lunches. But I meant a weakness at work.", "zh": "哈！團隊午餐時會記得。不過我指的是工作上的缺點。" }
+            ],
+            "title": { "en": "Mild, Please", "zh": "請給我小辣" },
+            "story": { "en": "Ms. Wong writes 'no spicy food' in her notes. It's the most useful thing she learns about you all afternoon.", "zh": "王經理在筆記寫下「不吃辣」。這是她整個下午對你最有用的了解。" },
+            "why": "面試問 weakness 是指工作上的缺點，不是個人喜好。說一個真實缺點，再用 I'm working on... 說明你怎麼改進。"
+          }
+        },
+        {
+          "en": "I'm working on public speaking, so I joined a speech club.",
+          "zh": "我正在加強公開演講的能力，所以參加了演講社。",
+          "ok": true,
+          "tip": "談缺點用 I'm working on...，說出真實缺點和正在採取的行動。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "A speech club? How is that going?", "zh": "演講社？進行得怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "Pretty well. Last week, I gave a five-minute talk without notes.",
+          "zh": "還不錯。上週我不看小抄講了五分鐘。",
+          "ok": true,
+          "tip": "用具體的進步（五分鐘、不看小抄）證明你真的在改進。"
+        },
+        {
+          "en": "It's going so-so. My face is very thin, so it's still hard for me.",
+          "zh": "普普通通。我臉皮很薄，所以還是很難。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Your face is... thin? You look perfectly healthy to me.", "zh": "你的臉……很瘦？你看起來很健康啊。" }
+            ],
+            "title": { "en": "Thin-Faced", "zh": "瘦臉之謎" },
+            "story": { "en": "Ms. Wong asks if you're eating enough and offers you a cookie. It's a very nice cookie, but you've lost your chance to shine.", "zh": "王經理問你有沒有好好吃飯，還請你吃了一塊餅乾。餅乾很好吃，但你錯過了表現的機會。" },
+            "why": "「臉皮薄」直譯成 my face is thin，英文只會聽成臉很瘦。說 I'm a bit shy.，再補上進步的例子：Last week, I gave a five-minute talk.。"
+          }
+        },
+        {
+          "en": "It's going good. Every week I am improve more and more.",
+          "zh": "進行得不錯。我每週都越來越進步。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "You am improve...? Okay. So it's helping, I think?", "zh": "你是 improve……？好喔，所以應該有幫助吧？" }
+            ],
+            "title": { "en": "Work in Progress", "zh": "仍在施工中" },
+            "story": { "en": "Ms. Wong writes 'speaking: still in progress.' Your grammar just proved your weakness for you.", "zh": "王經理寫下「口說：仍在進步中」。你的文法剛好幫你證明了自己的缺點。" },
+            "why": "am 後面不能接原形動詞，進行式要用 I'm improving.；「進行得很好」說 It's going well.，不用 good。再舉具體例子更好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Good. Last one: why should we hire you over the other candidates?", "zh": "好。最後一題：我們為什麼要錄取你，而不是其他應徵者？" }
+      ],
+      "choices": [
+        {
+          "en": "Because I'm better than all of them. Trust me, I'm the best.",
+          "zh": "因為我比他們都強。相信我，我是最棒的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "You haven't even met them, Kai.", "zh": "凱，你根本沒見過他們。" }
+            ],
+            "title": { "en": "The Best Ever", "zh": "宇宙最強" },
+            "story": { "en": "Confidence is good. But Ms. Wong is now quietly hoping the next candidate is a little more humble.", "zh": "有自信是好事。但王經理現在默默希望下一位應徵者謙虛一點。" },
+            "why": "自信不等於貶低別人。說出你具體能帶來什麼：I'm good with customers, I speak two languages, and I learn fast.。"
+          }
+        },
+        {
+          "en": "Because your office is close to my place. I can walk here!",
+          "zh": "因為你們公司離我家很近，我可以走路來！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "That's convenient for you... but what's in it for us?", "zh": "這對你很方便……但對我們有什麼好處？" }
+            ],
+            "title": { "en": "Short Commute", "zh": "通勤很近" },
+            "story": { "en": "Ms. Wong now knows you'll never be late. Sadly, that's all she knows.", "zh": "王經理現在知道你應該不會遲到。可惜的是，她也只知道這件事。" },
+            "why": "Why should we hire you? 是問你能為公司帶來什麼，不是工作對你多方便。列出兩三個和職缺相關的能力就好。"
+          }
+        },
+        {
+          "en": "I'm good with customers, I speak two languages, and I learn fast.",
+          "zh": "我擅長和客人應對，會說兩種語言，而且學得很快。",
+          "ok": true,
+          "tip": "回答 Why should we hire you? 時，用三個重點快速總結你的價值。"
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Real examples, not just nice words. That's exactly what I wanted to hear.", "zh": "有真實的例子，不只是好聽的話。這正是我想聽到的。" },
+      { "who": "narrator", "en": "For the first time today, Ms. Wong really smiles.", "zh": "今天第一次，王經理真心地笑了。" }
+    ],
+    "title": { "en": "Proof, Not Promises", "zh": "用例子說話" },
+    "story": { "en": "You showed what you're good at and what you're working on. Ms. Wong now sees a real person, not a list of adjectives.", "zh": "你說出了自己擅長什麼、正在改進什麼。王經理現在看到的是一個真實的人，而不是一串形容詞。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "One of my strengths is that...",
+      "zh": "我的優點之一是……",
+      "explain": "大方說出一個和工作有關的優點，後面接完整句子，再立刻補一個真實例子。",
+      "example": { "en": "One of my strengths is that I learn new software quickly.", "zh": "我的優點之一是學新軟體很快。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm working on...",
+      "zh": "我正在加強……",
+      "explain": "談缺點的好句型：說出真實但不致命的缺點，再說明你正在做什麼來改進。",
+      "example": { "en": "I'm working on my time management, so I use a planner now.", "zh": "我正在加強時間管理，所以現在都用行事曆。" }
+    },
+    {
+      "type": "grammar",
+      "en": "A customer was upset, so I listened and fixed it.",
+      "zh": "有位客人不高興，所以我先聽他說再解決問題。",
+      "explain": "舉過去的例子時全部用過去式。不要混用現在式，也不要說 I am say。",
+      "example": { "en": "Last month, I trained two new staff members.", "zh": "上個月，我訓練了兩位新同事。" }
+    },
+    {
+      "type": "trap",
+      "en": "serious / my face is thin",
+      "zh": "認真／臉皮薄",
+      "explain": "「認真」不說 serious（那是嚴肅），說 hardworking；「臉皮薄」不說 my face is thin，說 I'm a bit shy.。",
+      "example": { "en": "I'm hardworking, but I'm a bit shy at first.", "zh": "我很認真，不過一開始會有點害羞。" }
+    },
+    {
+      "type": "culture",
+      "en": "No fake modesty, no fake weaknesses",
+      "zh": "不假謙虛，不說假缺點",
+      "explain": "在英語面試裡，說「我沒什麼優點」會被當真，「我太認真」則被當成敷衍。誠實說出優缺點，並用例子佐證。",
+      "example": { "en": "I'm not a natural speaker, but I've improved a lot this year.", "zh": "我天生不擅長說話，但今年進步了很多。" }
+    }
+  ]
+}

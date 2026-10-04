@@ -1,0 +1,263 @@
+{
+  "id": "L084",
+  "location": { "en": "Brightway Lighting, conference room", "zh": "Brightway 照明公司，會議室" },
+  "goal": { "en": "Negotiate the discount and contract terms without giving too much away.", "zh": "談定折扣與合約條件，又不讓步過頭。" },
+  "background": "bright corporate conference room with a glass wall, oval white table, six gray office chairs, a water pitcher and glasses, modern pendant lights, city view through tall windows",
+  "cast": ["ms_wong", "c09_cafe_finance"],
+  "intro": [
+    { "who": "narrator", "en": "Daybreak wants to roll out your system in all eight cafes. Ms. Novak has come to Brightway to discuss terms.", "zh": "破曉咖啡想在八家分店全面導入你們的系統。諾瓦克女士來到 Brightway 談合約條件。" },
+    { "who": "ms_wong", "expr": "neutral", "en": "You lead today, Kai. Remember: never give something without getting something back.", "zh": "今天你主談，凱。記住：每次讓步都要換到一點東西。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "We're ready to order for all eight cafes. But we need fifteen percent off the list price.", "zh": "我們準備為八家分店下單。但我們需要定價打八五折。" }
+      ],
+      "choices": [
+        {
+          "en": "If you could sign a three-year contract, we could look at something closer to ten percent.",
+          "zh": "如果您能簽三年合約，我們可以考慮接近九折的優惠。",
+          "ok": true,
+          "tip": "If you could..., we could... 用條件句交換條件，讓步的同時也換到東西。"
+        },
+        {
+          "en": "Fifteen percent? No problem at all! Actually, I could probably give you twenty if you want.",
+          "zh": "八五折？完全沒問題！其實您要的話，我大概可以給到八折。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Kai, could I have a quick word with you outside?", "zh": "凱，可以出來一下跟我說句話嗎？" }
+            ],
+            "title": { "en": "Discount Fountain", "zh": "折扣大放送" },
+            "story": { "en": "Ms. Novak smiles for the first time today. Ms. Wong does not.", "zh": "諾瓦克女士今天第一次露出笑容。王經理沒有。" },
+            "why": "對方一開價就答應，甚至主動加碼，等於把公司的利潤送出去，也超出你的授權。讓步要換條件：If you could sign a three-year contract, we could...。"
+          }
+        },
+        {
+          "en": "Fifteen percent is too much. Can you be more sincere? We are also very sincere to you.",
+          "zh": "八五折太多了。您能不能有誠意一點？我們對您也很有誠意。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "upset", "en": "More sincere? Are you suggesting I'm being dishonest?", "zh": "更有誠意？你是在暗示我不誠實嗎？" }
+            ],
+            "title": { "en": "Sincerely Offended", "zh": "誠意變冒犯" },
+            "story": { "en": "Ms. Novak spends five minutes explaining her integrity. The discount question does not move an inch.", "zh": "諾瓦克女士花了五分鐘說明自己的職業操守。折扣問題完全沒有進展。" },
+            "why": "中文議價時說「有誠意一點」很常見，但英文 Be more sincere. 等於說對方不誠實，非常冒犯。改用條件交換：If you could..., we could...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "Ten percent isn't enough. Our board is expecting a better offer than that.", "zh": "九折不夠。我們的董事會期待更好的條件。" }
+      ],
+      "choices": [
+        {
+          "en": "I see. What if we included free maintenance for the first two years? That adds real value.",
+          "zh": "了解。如果我們加上前兩年免費維修呢？這是實實在在的價值。",
+          "ok": true,
+          "tip": "What if we included...? 用附加價值代替降價，守住價格又給對方台階。"
+        },
+        {
+          "en": "If you will sign five years, we will can give you more discount, maybe twelve or thirteen percent.",
+          "zh": "如果你們簽五年，我們可以給更多折扣，大概八八折或八七折。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Twelve or thirteen? Which one? I'll take thirteen, then.", "zh": "十二還是十三？到底哪個？那我就選十三。" }
+            ],
+            "title": { "en": "Thirteen It Is", "zh": "她選了十三" },
+            "story": { "en": "Your vague offer becomes a firm thirteen percent in Ms. Novak's notes. Ms. Wong closes her eyes for a long moment.", "zh": "你模糊的提議在諾瓦克女士的筆記裡變成了確定的八七折。王經理閉上眼睛好一會兒。" },
+            "why": "if 子句不用 will，要說 If you sign...；will 和 can 不能連用，要說 we can 或 we could。談判時給範圍等於讓對方挑高的，提出附加價值更好：What if we included free maintenance?"
+          }
+        },
+        {
+          "en": "Then your board is being unrealistic. Ten percent is our final price. Take it or leave it.",
+          "zh": "那是你們董事會不切實際。九折就是我們的最終價格，要不要隨便你們。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "upset", "en": "In that case, I'll leave it. Thank you for your time.", "zh": "既然如此，那我選擇不要。謝謝你的時間。" }
+            ],
+            "title": { "en": "Leave It", "zh": "她選了不要" },
+            "story": { "en": "Ms. Novak picks up her folder and heads for the door. Ms. Wong spends the afternoon on the phone trying to win her back.", "zh": "諾瓦克女士拿起資料夾走向門口。王經理花了一整個下午打電話想把她挽回。" },
+            "why": "批評對方董事會又丟出 Take it or leave it.，語氣太強硬，談判很容易破局。改用附加價值：What if we included free maintenance for the first two years?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "Free maintenance helps. But we're still apart on price. I was hoping for twelve percent.", "zh": "免費維修有幫助。但價格上我們還有差距。我原本希望是八八折。" }
+      ],
+      "choices": [
+        {
+          "en": "Let's meet halfway: eleven percent with free maintenance, if payment is within thirty days.",
+          "zh": "我們各退一步：八九折加免費維修，條件是三十天內付款。",
+          "ok": true,
+          "tip": "meet halfway 是「各退一步」的道地說法，最後再加一個小條件保護自己。"
+        },
+        {
+          "en": "Let's both take one step back. You go back one step, and I go back one step too, okay?",
+          "zh": "我們各退一步吧。您退一步，我也退一步，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Step back? From the table? I'm not sure what we're doing.", "zh": "往後退？離開桌子嗎？我不太懂我們要做什麼。" }
+            ],
+            "title": { "en": "Two Steps Back", "zh": "真的往後退" },
+            "story": { "en": "For one confusing moment, both of you push your chairs back. Ms. Wong quietly translates your idea into numbers.", "zh": "有那麼一個混亂的瞬間，你們兩個都把椅子往後推。王經理默默把你的意思翻成數字。" },
+            "why": "「各退一步」直譯成 take one step back 不是英文的議價說法。要說 Let's meet halfway. 或 Let's split the difference.，再說出具體數字。"
+          }
+        },
+        {
+          "en": "Twelve? Oh, that's my lucky number! I was born on December twelfth, actually. What a coincidence!",
+          "zh": "十二？那是我的幸運數字！其實我是十二月十二日出生的，好巧喔！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Lovely. So... does that mean twelve percent is agreed?", "zh": "真好。所以……這代表同意八八折了嗎？" }
+            ],
+            "title": { "en": "Lucky Number", "zh": "幸運數字" },
+            "story": { "en": "Ms. Novak happily takes your birthday as a yes. Twelve percent goes into the contract.", "zh": "諾瓦克女士開心地把你的生日當成同意。八八折就這樣寫進了合約。" },
+            "why": "談判關鍵時刻扯到生日，不但離題，還可能被當成默許。回到數字上：Let's meet halfway: eleven percent with free maintenance.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "Eleven could work. One more thing: we'd want the right to cancel anytime, with no penalty.", "zh": "八九折或許可以。還有一件事：我們希望能隨時解約，而且不用付違約金。" }
+      ],
+      "choices": [
+        {
+          "en": "I'm afraid that would be a deal-breaker for us. Could we offer a ninety-day exit option instead?",
+          "zh": "這點恐怕會讓我們無法接受。我們改提供九十天的解約選項，可以嗎？",
+          "ok": true,
+          "tip": "I'm afraid that would be a deal-breaker. 委婉但明確地劃出底線，再提出替代方案。"
+        },
+        {
+          "en": "Sure, cancel anytime, no problem at all. I'll just explain it to my boss later.",
+          "zh": "當然，隨時解約都沒問題。我之後再跟老闆解釋就好。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Actually, Kai, your boss is sitting right here.", "zh": "其實，凱，你的老闆就坐在這裡。" }
+            ],
+            "title": { "en": "The Boss Is Listening", "zh": "老闆就在旁邊" },
+            "story": { "en": "Ms. Wong takes over the rest of the negotiation. You take very detailed notes.", "zh": "王經理接手了剩下的談判。你做了非常詳細的筆記。" },
+            "why": "超出授權範圍隨口答應，還說「之後再跟老闆解釋」，既是過度承諾，也讓公司難做。遇到底線要明說：I'm afraid that would be a deal-breaker for us.。"
+          }
+        },
+        {
+          "en": "That's fine. We trust each other now, so we don't really need to write everything in the contract.",
+          "zh": "沒關係。我們現在互相信任，所以不需要每件事都寫進合約。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Not in the contract? In my experience, if it's not written down, it doesn't exist.", "zh": "不寫進合約？依我的經驗，沒寫下來的就等於不存在。" }
+            ],
+            "title": { "en": "Gentlemen's Agreement", "zh": "口頭約定" },
+            "story": { "en": "Ms. Novak adds a page to the contract instead of removing one. Her version says she can cancel anytime.", "zh": "諾瓦克女士不但沒刪條款，還多加了一頁。她的版本寫著可以隨時解約。" },
+            "why": "在西方商務文化中，合約就是一切，「我們互相信任，不必寫」反而讓人不安。底線要明確寫清楚：I'm afraid that would be a deal-breaker. Could we offer a ninety-day exit option?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "A ninety-day exit... I can live with that. So, do we have a deal?", "zh": "九十天的解約期……我可以接受。那麼，我們成交了嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "I believe we do. I'll put everything in writing and send it to you this afternoon.",
+          "zh": "我想是的。我會把所有內容寫成書面，今天下午寄給您。",
+          "ok": true,
+          "tip": "談成之後立刻說 I'll put everything in writing.，把口頭共識變成白紙黑字。"
+        },
+        {
+          "en": "Yes, deal! I will send you the contract after I go back company, then you sign it.",
+          "zh": "對，成交！我回公司後再把合約寄給您，然後您簽名。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "After you go back... company? We're in your company right now.", "zh": "等你回……公司之後？我們現在就在你們公司啊。" }
+            ],
+            "title": { "en": "Going Back Where?", "zh": "要回哪裡？" },
+            "story": { "en": "Ms. Novak laughs, but she also reminds you to read the contract twice before sending it.", "zh": "諾瓦克女士笑了出來，但也提醒你寄出前要把合約看兩遍。" },
+            "why": "「回公司」要說 go back to the office，不能說 go back company；而且你們就在 Brightway。簡單說 I'll put everything in writing and send it to you this afternoon.。"
+          }
+        },
+        {
+          "en": "Finally! That took forever. I honestly thought you would never stop asking for discounts, haha.",
+          "zh": "終於！談了好久。我真的以為您永遠不會停止要折扣，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "upset", "en": "Asking for discounts is my job, Kai. Perhaps I should keep asking.", "zh": "要折扣是我的工作，凱。也許我應該繼續要。" }
+            ],
+            "title": { "en": "Victory Lap Too Early", "zh": "慶祝太早" },
+            "story": { "en": "Ms. Novak reopens the discussion on delivery fees. The deal you almost had takes another hour.", "zh": "諾瓦克女士重新提起運費的問題。本來快到手的合約又多談了一小時。" },
+            "why": "成交時抱怨對方難搞，會讓剛建立的關係受傷，對方也可能重新開價。保持專業：I believe we do. I'll put everything in writing.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_cafe_finance", "expr": "happy", "en": "You drive a fair bargain, Kai. I'll look out for that contract.", "zh": "你談得很公道，凱。我會留意那份合約。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Eleven percent, a three-year term, and payment in thirty days. Well done.", "zh": "八九折、三年合約、三十天內付款。做得好。" }
+    ],
+    "title": { "en": "Deal Closed", "zh": "成功成交" },
+    "story": { "en": "You shake hands on eight cafes. Back at your desk, Ms. Wong leaves a sticky note on your monitor: \"Good trade-offs.\"", "zh": "你們握手談定八家分店的案子。回到座位時，王經理在你的螢幕上貼了一張便利貼：「交換得漂亮。」" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "If you could..., we could...",
+      "zh": "如果您能……，我們就可以……",
+      "explain": "談判時用假設語氣交換條件，語氣委婉又能保護自己。注意 if 子句不用 will，也不說 will can。",
+      "example": { "en": "If you could pay in advance, we could include free installation.", "zh": "如果您能預付，我們就可以免費安裝。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let's meet halfway.",
+      "zh": "我們各退一步吧。",
+      "explain": "雙方差距不大時的折衷說法，也可以說 Let's split the difference.。直譯的 take one step back 不是議價用語。",
+      "example": { "en": "You want twelve, we offered ten. Let's meet halfway at eleven.", "zh": "您要十二，我們給十。各退一步，就十一吧。" }
+    },
+    {
+      "type": "vocab",
+      "en": "deal-breaker",
+      "zh": "無法接受的條件",
+      "explain": "指會讓交易破局的條件。前面加 I'm afraid 或 would be，語氣會更委婉：That would be a deal-breaker for us.。",
+      "example": { "en": "Late delivery would be a deal-breaker for our hotel.", "zh": "延遲交貨對我們飯店來說是無法接受的。" }
+    },
+    {
+      "type": "trap",
+      "en": "Can you be more sincere?",
+      "zh": "能不能有誠意一點？",
+      "explain": "中文議價常說「有誠意一點」，但英文這樣說等於指控對方不誠實。想請對方讓步，改說 Is there any flexibility on that?。",
+      "example": { "en": "Is there any flexibility on the delivery date?", "zh": "交期方面有沒有彈性？" }
+    },
+    {
+      "type": "culture",
+      "en": "Put it in writing.",
+      "zh": "白紙黑字寫清楚。",
+      "explain": "西方商務重視書面合約，口頭承諾或「我們互相信任」不夠。談定後主動說 I'll put everything in writing.，對方會覺得你很專業。",
+      "example": { "en": "Great. I'll put everything in writing and send it today.", "zh": "太好了。我會把一切寫成書面，今天寄出。" }
+    }
+  ]
+}

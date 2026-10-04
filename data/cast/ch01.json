@@ -1,0 +1,72 @@
+{
+  "c01_officer": {
+    "name": "Officer Park",
+    "nameZh": "朴警官",
+    "role": { "en": "Immigration officer", "zh": "移民官" },
+    "gender": "male",
+    "appearance": "man in his 40s, neatly combed short black hair, navy blue immigration officer uniform with shoulder patches and a badge, serious but fair look"
+  },
+  "c01_airport_staff": {
+    "name": "Grace",
+    "nameZh": "葛蕾絲",
+    "role": { "en": "Airport baggage staff", "zh": "機場行李服務人員" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, black hair in a neat low bun, bright orange high-visibility vest over a navy uniform shirt, walkie-talkie clipped to one shoulder, efficient helpful vibe"
+  },
+  "c01_traveler": {
+    "name": "Dan",
+    "nameZh": "丹",
+    "role": { "en": "Fellow traveler", "zh": "同班機旅客" },
+    "gender": "male",
+    "appearance": "man in his mid 30s, short tidy black hair, light gray business suit with a loosened tie, black travel neck pillow around his neck, tired but polite traveler vibe"
+  },
+  "c01_taxi_driver": {
+    "name": "Frank",
+    "nameZh": "法蘭克",
+    "role": { "en": "Taxi driver", "zh": "計程車司機" },
+    "gender": "male",
+    "appearance": "man in his mid 50s, short salt-and-pepper hair, gray flat cap, short-sleeved blue plaid shirt, wooden bead bracelet, chatty easygoing driver vibe"
+  },
+  "c01_receptionist": {
+    "name": "Hannah",
+    "nameZh": "漢娜",
+    "role": { "en": "Hotel receptionist", "zh": "飯店櫃檯人員" },
+    "gender": "female",
+    "appearance": "woman in her mid 20s, long straight black hair in a high ponytail, dark green hotel uniform blazer over a white blouse, small gold leaf-shaped pin on the lapel, neat polite vibe"
+  },
+  "c01_barista": {
+    "name": "Jay",
+    "nameZh": "阿傑",
+    "role": { "en": "Barista", "zh": "咖啡師" },
+    "gender": "male",
+    "appearance": "man in his mid 20s, short black hair with a slight curl on top, brown canvas barista apron over a white t-shirt, small silver earring, pencil tucked behind one ear, relaxed friendly vibe"
+  },
+  "c01_local": {
+    "name": "Mrs. Lee",
+    "nameZh": "李太太",
+    "role": { "en": "Local resident", "zh": "當地居民" },
+    "gender": "female",
+    "appearance": "woman in her late 60s, short curly gray hair, round tortoiseshell glasses, lavender cardigan over a floral blouse, holding a red dog leash, kind grandmotherly vibe"
+  },
+  "c01_clerk": {
+    "name": "Tom",
+    "nameZh": "湯姆",
+    "role": { "en": "Corner store clerk", "zh": "便利商店店員" },
+    "gender": "male",
+    "appearance": "young man around 20, short spiky black hair, black beanie, dark green store polo shirt under an open gray zip hoodie, laid-back vibe"
+  },
+  "c01_phone_clerk": {
+    "name": "Lily",
+    "nameZh": "莉莉",
+    "role": { "en": "Phone shop staff", "zh": "電信行店員" },
+    "gender": "female",
+    "appearance": "woman in her late 20s, chin-length black bob with straight bangs, crisp white shirt with a teal scarf, holding a phone in a sparkly case, upbeat tech-savvy vibe"
+  },
+  "c01_passenger": {
+    "name": "Max",
+    "nameZh": "麥克斯",
+    "role": { "en": "Bus passenger", "zh": "公車乘客" },
+    "gender": "male",
+    "appearance": "tall young man around 19, messy dark brown hair, oversized black hoodie, large white over-ear headphones around his neck, straps of a giant hiking backpack on both shoulders, sleepy easygoing vibe"
+  }
+}

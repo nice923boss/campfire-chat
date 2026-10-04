@@ -1,0 +1,184 @@
+{
+  "id": "L011",
+  "location": { "en": "FreshMart supermarket, Maple Bay", "zh": "楓灣 FreshMart 超市" },
+  "goal": { "en": "Find the rice and the soy sauce, and check for a sale.", "zh": "找到米和醬油，順便問問有沒有特價。" },
+  "background": "large bright supermarket aisle with long shelves of plain colorful cans and boxes, an empty shopping cart, polished floor, fluorescent ceiling lights, weekend morning",
+  "cast": ["mia", "c02_grocer"],
+  "intro": [
+    { "who": "narrator", "en": "Saturday morning. Mia drags you to FreshMart for your first big grocery run.", "zh": "星期六早上，米亞拉著你去 FreshMart，展開你的第一次大採購。" },
+    { "who": "mia", "expr": "happy", "en": "I'll get the snacks. You find the rice and soy sauce. Meet you at the checkout!", "zh": "我去拿零食，你負責找米和醬油。結帳區見！" },
+    { "who": "narrator", "en": "The store is huge. A staff member is stacking cans nearby.", "zh": "超市大得驚人。旁邊有位店員正在堆罐頭。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_grocer", "expr": "neutral", "en": "Hi there! Need a hand with anything?", "zh": "嗨！需要幫忙嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Where can I find the rice?",
+          "zh": "需要，請問米在哪裡？",
+          "ok": true,
+          "tip": "Where can I find + 商品？是在店裡問東西放哪裡最好用的句型。"
+        },
+        {
+          "en": "Yes. Where I can find the rice?",
+          "zh": "需要，哪裡我可以找到米？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_grocer", "expr": "confused", "en": "Oh, you know where it is? Great, you're all set then!", "zh": "喔，你知道在哪裡？太好了，那你沒問題了！" }
+            ],
+            "title": { "en": "Half a Question", "zh": "只問了一半" },
+            "story": { "en": "He gives you a thumbs-up and walks away. You spend twenty minutes in the pet food aisle before you finally find the rice.", "zh": "他對你比個讚就走了。你在寵物食品區轉了二十分鐘，才終於找到米。" },
+            "why": "問句要把助動詞 can 放到主詞 I 前面：Where can I find...?。Where I can find... 是陳述句的語序，聽起來像話只說了一半。"
+          }
+        },
+        {
+          "en": "No, thanks. I have two hands.",
+          "zh": "不用，謝謝，我有兩隻手。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_grocer", "expr": "confused", "en": "Ha... okay then. Good luck!", "zh": "哈……好吧。祝你好運！" }
+            ],
+            "title": { "en": "Two Hands, No Help", "zh": "兩隻手，沒人幫" },
+            "story": { "en": "He chuckles and goes back to his cans. Your two hands carry an empty basket around the store three times before you find the rice.", "zh": "他笑了笑，回去繼續堆罐頭。你的兩隻手提著空籃子繞了超市三圈，才找到米。" },
+            "why": "Need a hand? 是「需要幫忙嗎？」的慣用說法，不是在問你有幾隻手。需要幫忙就說 Yes. Where can I find...?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_grocer", "expr": "happy", "en": "Rice is in aisle seven, next to the noodles. Follow me!", "zh": "米在第七走道，就在麵的旁邊。跟我來！" },
+        { "who": "narrator", "en": "There are two bags of rice. One has a bright yellow price tag.", "zh": "架上有兩種米，其中一種的價格牌是亮黃色的。" },
+        { "who": "c02_grocer", "expr": "neutral", "en": "Here you go. Anything else?", "zh": "就是這裡。還需要什麼嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! Is this one on sale?",
+          "zh": "謝謝！這個有特價嗎？",
+          "ok": true,
+          "tip": "Is this on sale? 是問特價最直接的說法，on sale 就是「正在特價」。"
+        },
+        {
+          "en": "Thanks! This one has discount?",
+          "zh": "謝謝！這個有打折？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_grocer", "expr": "confused", "en": "Has discount? Oh, do you mean our member card?", "zh": "有折扣？喔，你是說我們的會員卡嗎？" }
+            ],
+            "title": { "en": "Accidental Member", "zh": "意外入會" },
+            "story": { "en": "Ten minutes later, you own a shiny FreshMart member card. You still have no idea what the rice costs.", "zh": "十分鐘後，你多了一張亮晶晶的 FreshMart 會員卡，卻還是不知道米多少錢。" },
+            "why": "「這個有打折嗎？」不能直譯成 This one has discount?。問特價要說 Is this on sale?，也可以問 Is there a discount on this?。"
+          }
+        },
+        {
+          "en": "Thanks! Can you make it cheaper?",
+          "zh": "謝謝！可以算我便宜一點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_grocer", "expr": "confused", "en": "Cheaper? Sorry, I can't change the prices here.", "zh": "便宜一點？抱歉，這裡的價格我不能改。" }
+            ],
+            "title": { "en": "No Haggling Zone", "zh": "禁止殺價區" },
+            "story": { "en": "He looks very uncomfortable and suddenly remembers some cans that need stacking. You never find out the rice was on sale.", "zh": "店員一臉為難，突然想起還有罐頭要堆。你始終不知道那袋米其實正在特價。" },
+            "why": "超市、連鎖店都是不二價，跟店員殺價會讓對方很尷尬。想知道有沒有優惠，問 Is this on sale? 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_grocer", "expr": "happy", "en": "Yes, it's ten percent off this week. Anything else?", "zh": "有，這週打九折。還需要什麼嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Which aisle is the soy sauce in?",
+          "zh": "醬油在第幾走道？",
+          "ok": true,
+          "tip": "Which aisle is... in? 把介系詞 in 放在句尾，是英文問位置的自然語序。"
+        },
+        {
+          "en": "Which aisle have the soy sauce?",
+          "zh": "哪個走道有醬油？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_grocer", "expr": "confused", "en": "Which aisle... have? Sorry, can you say that again?", "zh": "哪個走道……有？抱歉，可以再說一次嗎？" }
+            ],
+            "title": { "en": "Mystery Bottle", "zh": "神秘的黑色瓶子" },
+            "story": { "en": "Too shy to repeat it, you grab the first dark bottle you see. At home, Mia tastes it. It's vinegar.", "zh": "你不好意思再問一次，隨手抓了第一瓶深色的瓶子。回家後米亞嚐了一口：是醋。" },
+            "why": "aisle 是單數，動詞要用 has。更自然的問法是 Which aisle is the soy sauce in? 或 Where can I find the soy sauce?。"
+          }
+        },
+        {
+          "en": "Just tell me where the soy sauce is.",
+          "zh": "直接告訴我醬油在哪就好。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_grocer", "expr": "upset", "en": "Okay... aisle three. Have a nice day.", "zh": "好喔……第三走道。祝你有美好的一天。" }
+            ],
+            "title": { "en": "Cold Shoulder", "zh": "冷處理" },
+            "story": { "en": "He answers in four words and walks off. A minute later, he gives the next customer a big smile and a free coupon.", "zh": "他用幾個字打發你就走了。一分鐘後，他笑容滿面地招呼下一位客人，還送了一張折價券。" },
+            "why": "Just tell me... 聽起來很不耐煩，像在命令對方。客氣地問 Which aisle is the soy sauce in?，或用 Could you tell me...? 開頭。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_grocer", "expr": "happy", "en": "Aisle three, top shelf. Have a good one!", "zh": "第三走道，最上層。祝你有美好的一天！" },
+      { "who": "mia", "expr": "happy", "en": "Kai! Rice on sale and soy sauce? You're already a shopping pro!", "zh": "凱！特價的米加醬油？你已經是採買高手了！" }
+    ],
+    "title": { "en": "Shopping Pro", "zh": "採買高手" },
+    "story": { "en": "You meet Mia at the checkout with everything on the list. Her basket, of course, is full of cookies.", "zh": "你帶著清單上的東西在結帳區和米亞會合。她的籃子裡，果然裝滿了餅乾。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Where can I find...?",
+      "zh": "請問……在哪裡？",
+      "explain": "在超市、商店問東西放哪裡最好用的句型。問句語序是 Where can I...，不是 Where I can...。",
+      "example": { "en": "Excuse me, where can I find the milk?", "zh": "不好意思，請問牛奶在哪裡？" }
+    },
+    {
+      "type": "vocab",
+      "en": "aisle",
+      "zh": "（超市的）走道",
+      "explain": "超市貨架之間的通道叫 aisle，發音和 I'll 一樣，s 不發音。問位置可以說 Which aisle is it in?。",
+      "example": { "en": "The snacks are in aisle five.", "zh": "零食在第五走道。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Is this on sale?",
+      "zh": "這個有特價嗎？",
+      "explain": "on sale 是「正在特價」。英文說 ten percent off（減一成），中文說「打九折」，數字剛好相反，別算錯。",
+      "example": { "en": "Is this on sale? Yes, it's twenty percent off.", "zh": "這個有特價嗎？有，打八折。" }
+    },
+    {
+      "type": "trap",
+      "en": "Need a hand?",
+      "zh": "需要幫忙嗎？",
+      "explain": "a hand 在這裡是「幫忙」，不是真的手。需要就說 Yes, please.，不需要就說 I'm good, thanks.。",
+      "example": { "en": "Need a hand with those bags? Yes, please!", "zh": "要幫你拿那些袋子嗎？好，麻煩你！" }
+    },
+    {
+      "type": "culture",
+      "en": "Fixed prices",
+      "zh": "不二價",
+      "explain": "超市與連鎖店的價格是固定的，不能跟店員殺價。想省錢就留意特價，或問 Are there any deals today?。",
+      "example": { "en": "Are there any deals on fruit today?", "zh": "今天水果有什麼優惠嗎？" }
+    }
+  ]
+}

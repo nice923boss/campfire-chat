@@ -1,0 +1,222 @@
+{
+  "id": "L024",
+  "location": { "en": "Maple Bay Language Institute, Room 204 after class", "zh": "楓灣語言學院，下課後的 204 教室" },
+  "goal": { "en": "Ask Ms. Reed about a word you didn't understand.", "zh": "向瑞德老師請教課堂上聽不懂的單字。" },
+  "background": "empty classroom after class with chairs pushed in, a wiped clean whiteboard, a teacher's desk with a coffee mug and a stack of papers, late afternoon light through the windows",
+  "cast": ["c03_teacher"],
+  "intro": [
+    { "who": "narrator", "en": "Today's lesson was fast. Your notebook is full of words you couldn't catch.", "zh": "今天的課節奏很快，你的筆記本寫滿了沒聽清楚的字。" },
+    { "who": "narrator", "en": "Everyone has left. Ms. Reed is packing up her things.", "zh": "大家都走了，瑞德老師正在收拾東西。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "happy", "en": "Oh, hi Kai! Did you need something?", "zh": "喔，嗨，凱！有什麼事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Do you have a minute? I have a question.",
+          "zh": "您有空嗎？我有個問題想問。",
+          "ok": true,
+          "tip": "Do you have a minute? 先確認對方有沒有空，是請教別人前的禮貌開場。"
+        },
+        {
+          "en": "Teacher, I have question to ask you.",
+          "zh": "老師，我有問題要問你。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "\"Teacher\"? That's my job, not my name! It's Ms. Reed.", "zh": "「老師」？那是我的職業，不是名字！叫我瑞德老師。" }
+            ],
+            "title": { "en": "Name Tag", "zh": "職稱不是名字" },
+            "story": { "en": "Ms. Reed spends ten minutes teaching you how to address people. Your real question has to wait until tomorrow.", "zh": "瑞德老師花了十分鐘教你怎麼稱呼別人。你真正想問的問題，只好等明天了。" },
+            "why": "中文習慣直接叫「老師」，但英文的 Teacher 只是職業，拿來稱呼人很奇怪。要叫 Ms. Reed 或 Mr. + 姓氏。question 前面也別忘了加 a。"
+          }
+        },
+        {
+          "en": "Wait! Don't go. You need to explain again.",
+          "zh": "等一下！別走，你要再解釋一次。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_teacher", "expr": "upset", "en": "I \"need\" to? Well, I also need to catch my bus.", "zh": "我「必須」？嗯，我也必須去趕公車。" }
+            ],
+            "title": { "en": "Missed the Bus", "zh": "公車比較急" },
+            "story": { "en": "Ms. Reed leaves to catch her bus. You stand alone in the empty classroom with your notebook.", "zh": "瑞德老師趕公車去了。你拿著筆記本，一個人站在空蕩蕩的教室裡。" },
+            "why": "You need to... 是命令的語氣，對老師說很失禮。請教之前先問 Do you have a minute?，再說 Could you explain it again?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "neutral", "en": "Of course. What's up?", "zh": "當然，怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry, what does \"procrastinate\" mean?",
+          "zh": "抱歉，「procrastinate」是什麼意思？",
+          "ok": true,
+          "tip": "What does ... mean? 是問單字意思的標準句。注意用 does，動詞 mean 用原形。"
+        },
+        {
+          "en": "What is \"procrastinate\" meaning?",
+          "zh": "「procrastinate」是什麼意思？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "Its meaning? You mean, is it meaningful? That's a deep question.", "zh": "它的意義？你是說這個字有沒有意義嗎？這問題很深奧耶。" }
+            ],
+            "title": { "en": "Philosophy Class", "zh": "哲學課" },
+            "story": { "en": "Ms. Reed starts a long talk about words and the meaning of life. Thirty minutes later, you still don't know what the word means.", "zh": "瑞德老師開始長談文字與人生的意義。三十分鐘後，你還是不知道那個字是什麼意思。" },
+            "why": "What is it meaning? 文法錯誤，mean 是動詞，要用 does 來問：What does procrastinate mean?。"
+          }
+        },
+        {
+          "en": "How to explain \"procrastinate\"?",
+          "zh": "「procrastinate」怎麼解釋？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "You want to explain it to me? OK, go ahead!", "zh": "你要解釋給我聽？好啊，請說！" }
+            ],
+            "title": { "en": "Role Reversal", "zh": "師生互換" },
+            "story": { "en": "Ms. Reed sits down and waits for your explanation. The silence is very, very long.", "zh": "瑞德老師坐下來，等著聽你解釋。那段沉默非常、非常漫長。" },
+            "why": "「這個字怎麼解釋」直譯成 How to explain...?，英文聽起來像在問「要怎麼解釋」的方法。問字義直接說 What does ... mean?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "happy", "en": "It means to wait until the last minute to do something. Like homework!", "zh": "意思是把事情拖到最後一刻才做。像寫作業！" }
+      ],
+      "choices": [
+        {
+          "en": "Ha! Got it. How do you spell it?",
+          "zh": "哈！懂了。那要怎麼拼？",
+          "ok": true,
+          "tip": "How do you spell it? 是問拼字的標準說法。這裡的 you 泛指一般人，不是指老師本人。"
+        },
+        {
+          "en": "OK. This word how to write?",
+          "zh": "好。這個字怎麼寫？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "How to write it? With a pen, I guess?", "zh": "怎麼寫？用筆寫吧，我猜？" }
+            ],
+            "title": { "en": "Pen Tutorial", "zh": "握筆教學" },
+            "story": { "en": "Ms. Reed shows you how to hold a pen. You thank her, still not knowing how to spell the word.", "zh": "瑞德老師示範怎麼握筆。你向她道謝，但還是不知道那個字怎麼拼。" },
+            "why": "「這個字怎麼寫」直譯不自然，英文會聽成「用什麼方式寫」。問拼字要說 How do you spell it? 或 Could you spell it for me?。"
+          }
+        },
+        {
+          "en": "Homework? Is there homework today?",
+          "zh": "作業？今天有作業嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "Uh, no. That was just an example.", "zh": "呃，沒有啦。那只是舉例。" }
+            ],
+            "title": { "en": "Homework Panic", "zh": "作業恐慌" },
+            "story": { "en": "You panic about homework that doesn't exist and forget to ask about the spelling. Your notes now say \"pro-cras-something.\"", "zh": "你為了根本不存在的作業緊張半天，忘了問拼法。筆記上只寫著「pro-cras-什麼的」。" },
+            "why": "老師說 Like homework! 只是舉例。抓錯重點會讓對話偏離。這時該確認自己懂了，再追問拼法：Got it. How do you spell it?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "neutral", "en": "P-R-O-C-R-A-S-T-I-N-A-T-E. Anything else?", "zh": "P-R-O-C-R-A-S-T-I-N-A-T-E。還有其他問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry, could you say that again?",
+          "zh": "抱歉，可以再說一次嗎？",
+          "ok": true,
+          "tip": "Could you say that again? 請對方重複。Could 比 Can 更客氣，前面加 Sorry 更有禮貌。"
+        },
+        {
+          "en": "What? That was too fast. Say it again.",
+          "zh": "什麼？太快了，再說一次。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_teacher", "expr": "upset", "en": "\"Say it again\"? Please try asking a little more politely.", "zh": "「再說一次」？請試著問得更有禮貌一點。" }
+            ],
+            "title": { "en": "Magic Word Missing", "zh": "少了魔法字" },
+            "story": { "en": "Ms. Reed waits for a \"please\" that never comes. She packs her bag, and you leave with half a word in your notebook.", "zh": "瑞德老師等著一聲「please」，卻始終沒等到。她收好包包，你帶著只記了一半的單字離開。" },
+            "why": "Say it again. 是命令句，對老師說很沒禮貌。請人重複要說 Sorry, could you say that again?，加上 please 更好。"
+          }
+        },
+        {
+          "en": "Yes, I understand. No more questions.",
+          "zh": "懂了懂了，沒有其他問題了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "Great! Then can you spell it back to me?", "zh": "太好了！那你可以拼給我聽嗎？" }
+            ],
+            "title": { "en": "Busted", "zh": "當場破功" },
+            "story": { "en": "You get stuck after P-R-O. Pretending to understand takes more time than just asking.", "zh": "你拼到 P-R-O 就卡住了。原來假裝聽懂，比直接開口問還花時間。" },
+            "why": "怕麻煩老師而假裝聽懂，是很多台灣學生的習慣。但在英語課堂上，老師很歡迎提問。沒聽清楚就說 Sorry, could you say that again?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c03_teacher", "expr": "happy", "en": "Sure. P-R-O... C-R-A-S... T-I-N-A-T-E. Got it?", "zh": "沒問題。P-R-O……C-R-A-S……T-I-N-A-T-E。記下來了嗎？" },
+      { "who": "narrator", "en": "You write it down, letter by letter.", "zh": "你一個字母一個字母地寫下來。" }
+    ],
+    "title": { "en": "Question Master", "zh": "提問高手" },
+    "story": { "en": "Your notebook now has the word, the meaning and the spelling. You also promise yourself never to procrastinate on homework.", "zh": "筆記本上記下了單字、意思和拼法。你也暗自發誓，寫作業再也不拖延了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Could you say that again?",
+      "zh": "可以再說一次嗎？",
+      "explain": "沒聽清楚時請對方重複的禮貌說法。也可以說 Sorry, I didn't catch that.。",
+      "example": { "en": "Sorry, I didn't catch that. Could you say that again?", "zh": "抱歉，我沒聽清楚。可以再說一次嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "What does ... mean?",
+      "zh": "……是什麼意思？",
+      "explain": "問字義的標準句型，用助動詞 does，mean 用原形。不要說 What is it meaning? 或 How to explain...?。",
+      "example": { "en": "What does \"deadline\" mean?", "zh": "deadline 是什麼意思？" }
+    },
+    {
+      "type": "phrase",
+      "en": "How do you spell it?",
+      "zh": "這要怎麼拼？",
+      "explain": "問拼字的標準說法，這裡的 you 泛指一般人。也可以說 Could you spell that for me?。",
+      "example": { "en": "Nice to meet you, Siobhan. How do you spell your name?", "zh": "很高興認識你，Siobhan。你的名字怎麼拼？" }
+    },
+    {
+      "type": "culture",
+      "en": "Call teachers by name, not \"Teacher.\"",
+      "zh": "用名字稱呼老師",
+      "explain": "英文的 teacher 只是職業名稱，不當稱呼用。要叫 Ms. Reed、Mr. Brown，有些老師也接受直接叫名字。",
+      "example": { "en": "Excuse me, Ms. Reed. Do you have a minute?", "zh": "不好意思，瑞德老師，您有空嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Don't pretend to understand.",
+      "zh": "別假裝聽懂",
+      "explain": "怕麻煩別人而說 Yes, I understand.，之後反而更麻煩。英語文化把提問視為認真的表現，聽不懂就直接問。",
+      "example": { "en": "Sorry, I'm not sure I understand. Could you give me an example?", "zh": "抱歉，我不太確定懂了。可以舉個例子嗎？" }
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "id": "L049",
+  "location": { "en": "A 24-hour convenience store in Cedar Cove, late at night", "zh": "杉木灣的 24 小時便利商店，深夜" },
+  "goal": { "en": "Explain that you missed the last bus and find another way back to Port Aurora.", "zh": "說明你們錯過末班車，找到回極光港的其他方法。" },
+  "background": "small 24-hour convenience store at night, bright fluorescent lights, snack shelves, drink coolers, coffee machine, counter by the window, dark empty street and bus shelter outside",
+  "cast": ["c05_night", "leo", "mia"],
+  "intro": [
+    { "who": "narrator", "en": "On your last night, you take a bus to a beach concert in Cedar Cove, a small town up the coast. The music ends late.", "zh": "最後一晚，你們搭公車到海岸北邊的小鎮杉木灣聽海灘演唱會。音樂結束得很晚。" },
+    { "who": "mia", "expr": "upset", "en": "The timetable says the last bus left at ten forty. It's ten fifty-five.", "zh": "時刻表寫末班車十點四十分就開走了。現在十點五十五分。" },
+    { "who": "leo", "expr": "neutral", "en": "That store is still open. Let's go ask.", "zh": "那間店還開著，我們去問問看。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_night", "expr": "neutral", "en": "Evening. You three look a little lost. Everything okay?", "zh": "晚安。你們三個看起來有點迷路，還好嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Not really. We just missed the last bus to Port Aurora.",
+          "zh": "不太好。我們剛剛錯過回極光港的末班車。",
+          "ok": true,
+          "tip": "沒趕上車用 miss：We just missed the last bus.，just 表示「剛剛」。"
+        },
+        {
+          "en": "Not really. We didn't catch up the last bus to Port Aurora.",
+          "zh": "不太好。我們沒趕上回極光港的末班車。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_night", "expr": "confused", "en": "Catch up with it? It left fifteen minutes ago. You'd need a really fast bike.", "zh": "追上它？它十五分鐘前就開走了。你們需要一台超快的腳踏車。" }
+            ],
+            "title": { "en": "The Chase", "zh": "追車記" },
+            "story": { "en": "Leo actually asks where he can rent a fast bike. Ray decides you are joking and goes back to stocking shelves.", "zh": "里歐竟然真的問哪裡可以租快一點的腳踏車。雷覺得你們在開玩笑，回頭繼續補貨。" },
+            "why": "「趕上車」是 catch the bus，catch up 是「追上」。沒趕上就說 We missed the last bus.。"
+          }
+        },
+        {
+          "en": "Not really. The last bus already go, we missing it.",
+          "zh": "不太好。末班車已經走了，我們錯過了。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_night", "expr": "confused", "en": "Someone's missing? Is one of your friends lost? Should I call the police?", "zh": "有人不見了？你們有朋友走失嗎？要我報警嗎？" }
+            ],
+            "title": { "en": "Missing Person", "zh": "失蹤人口" },
+            "story": { "en": "Ray picks up the phone to call the police. It takes ten minutes to explain that everyone is here, and only the bus is gone.", "zh": "雷拿起電話準備報警。你們花了十分鐘才解釋清楚，人都在，不見的是公車。" },
+            "why": "過去的事要用過去式：The last bus already left. We missed it.。we missing it 少了動詞時態，聽起來像「我們有人失蹤」。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_night", "expr": "neutral", "en": "Ouch. Yeah, the buses stop early here on weeknights.", "zh": "慘了。對啊，這裡平日晚上公車很早就收班。" }
+      ],
+      "choices": [
+        {
+          "en": "Oh no. Is there another way to get to Port Aurora?",
+          "zh": "糟糕。有其他方法可以回極光港嗎？",
+          "ok": true,
+          "tip": "Is there another way to get to...? 是問替代交通方式最好用的句型。"
+        },
+        {
+          "en": "Oh no. Do you have any other road to go to Port Aurora?",
+          "zh": "糟糕。你有其他路可以回極光港嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_night", "expr": "confused", "en": "Another road? Sure, the coast road. But it's about a three-hour walk.", "zh": "其他的路？有啊，沿海公路。不過走路大概要三個小時。" }
+            ],
+            "title": { "en": "The Long Way Home", "zh": "漫漫回家路" },
+            "story": { "en": "Ray kindly draws you a map of the coast road. You start walking and see the sunrise halfway there.", "zh": "雷好心地畫了沿海公路的地圖給你們。你們開始走，走到一半就看到日出了。" },
+            "why": "中文「有別的路嗎」的「路」是指方法，直譯成 road 會變成真的道路。要說 Is there another way to get to Port Aurora?"
+          }
+        },
+        {
+          "en": "Oh no. What time does the last bus leave tomorrow?",
+          "zh": "糟糕。明天的末班車幾點開？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_night", "expr": "confused", "en": "Same time, ten forty. But that's tomorrow night. What about tonight?", "zh": "一樣是十點四十分。不過那是明天晚上的事，那今晚呢？" }
+            ],
+            "title": { "en": "Planning Ahead", "zh": "超前部署" },
+            "story": { "en": "You now know tomorrow's schedule perfectly. Tonight's problem is still sitting right in front of you.", "zh": "你現在把明天的時刻表記得一清二楚。今晚的問題，卻還好好地擺在眼前。" },
+            "why": "現在要解決的是今晚怎麼回去，問明天的末班車是答非所問。要問 Is there another way to get to Port Aurora tonight?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_night", "expr": "neutral", "en": "Your best bet is a taxi. It's about forty dollars to Port Aurora.", "zh": "最好的辦法是搭計程車。到極光港大概四十元。" },
+        { "who": "mia", "expr": "happy", "en": "Split three ways, that's not bad.", "zh": "三個人分，還不錯。" },
+        { "who": "c05_night", "expr": "neutral", "en": "Want me to call one for you?", "zh": "要我幫你們叫一台嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, please. Could you call a taxi for us?",
+          "zh": "好，麻煩你。可以幫我們叫計程車嗎？",
+          "ok": true,
+          "tip": "叫計程車是 call a taxi（或 call a cab），請別人幫忙就說 Could you call a taxi for us?"
+        },
+        {
+          "en": "Yes, please. Can you help us call a car?",
+          "zh": "好，麻煩你。可以幫我們叫車嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_night", "expr": "confused", "en": "Call a car? Like, my cousin's car? He's asleep, but I can try.", "zh": "叫一台車？像是我表哥的車嗎？他睡了，不過我可以試試。" }
+            ],
+            "title": { "en": "The Cousin Express", "zh": "表哥快車" },
+            "story": { "en": "Ray's sleepy cousin arrives in pajamas. He drives you home in silence and makes you buy him breakfast.", "zh": "雷的表哥穿著睡衣、睡眼惺忪地來了。他一路不發一語載你們回去，還要你們請他吃早餐。" },
+            "why": "中文「叫車」直譯成 call a car，對方不知道你要哪種車。要說 call a taxi 或 call a cab。"
+          }
+        },
+        {
+          "en": "Yes. And tell them to hurry. We're really tired.",
+          "zh": "好。叫他們快一點，我們很累了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_night", "expr": "upset", "en": "I'm doing you a favor here. Maybe call it yourself, then.", "zh": "我是在幫你們耶。那你們自己打吧。" }
+            ],
+            "title": { "en": "Favor Canceled", "zh": "好意取消" },
+            "story": { "en": "Ray hands you a taxi company's card and goes back to the shelves. The phone line is busy for the next thirty minutes.", "zh": "雷遞給你一張計程車行的名片，回去整理貨架。接下來三十分鐘，電話一直占線。" },
+            "why": "對方主動幫忙，你還用命令語氣要他催司機，聽起來很不領情。先接受好意：Yes, please. Could you call a taxi for us?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_night", "expr": "upset", "en": "Bad news. The taxi company says the wait is about two hours. Busy night.", "zh": "壞消息。計程車行說要等大概兩個小時，今晚很忙。" },
+        { "who": "leo", "expr": "neutral", "en": "Two hours? The morning bus might be faster, honestly.", "zh": "兩個小時？說真的，等早上的公車可能還比較快。" }
+      ],
+      "choices": [
+        {
+          "en": "Good point. What time is the first bus tomorrow?",
+          "zh": "有道理。明天的首班車是幾點？",
+          "ok": true,
+          "tip": "首班車是 the first bus，末班車是 the last bus。問時間用 What time is...?"
+        },
+        {
+          "en": "Good point. The first bus tomorrow is what time come?",
+          "zh": "有道理。明天首班車是幾點來？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_night", "expr": "confused", "en": "Is what time...? Sorry, are you asking me, or telling me?", "zh": "是幾點……？抱歉，你是在問我，還是在告訴我？" }
+            ],
+            "title": { "en": "Question Mark Missing", "zh": "問號走失了" },
+            "story": { "en": "Ray thinks you already know the schedule. You wait for a bus that you invented.", "zh": "雷以為你已經知道時刻表了。你們等著一班自己發明出來的公車。" },
+            "why": "英文問句要把疑問詞放句首：What time is the first bus? 或 What time does the first bus come?"
+          }
+        },
+        {
+          "en": "Good point. Can we just sit here until morning?",
+          "zh": "有道理。我們可以在這裡坐到早上嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_night", "expr": "upset", "en": "Here? Sorry, there's no seating. My manager would not be happy.", "zh": "在這裡？抱歉，店裡沒有座位，我們店長會不高興的。" }
+            ],
+            "title": { "en": "Standing Room Only", "zh": "只能站著" },
+            "story": { "en": "You spend the night standing outside next to the ice machine. It is a very long night.", "zh": "你們整晚站在店外的製冰機旁邊。那是非常漫長的一夜。" },
+            "why": "台灣超商常有座位，待久一點沒關係；但很多國家的便利商店沒有座位，也不歡迎客人久留。先問首班車時間，再問附近哪裡可以等。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_night", "expr": "happy", "en": "First bus is at five forty. And the diner across the street is open all night.", "zh": "首班車是五點四十分。對面的小餐館整晚都有開。" },
+      { "who": "mia", "expr": "happy", "en": "Pancakes at midnight? This trip just got better.", "zh": "半夜吃鬆餅？這趟旅行越來越棒了。" },
+      { "who": "leo", "expr": "happy", "en": "Thanks, Ray. You saved our night.", "zh": "謝啦，雷。你拯救了我們的夜晚。" }
+    ],
+    "title": { "en": "Midnight Pancakes", "zh": "午夜鬆餅" },
+    "story": { "en": "You spend the night in a warm diner, laughing over pancakes. At five forty, the first bus takes three sleepy friends home.", "zh": "你們在溫暖的小餐館裡吃鬆餅、聊天大笑，度過一整晚。五點四十分，首班車載著三個睡眼惺忪的朋友回家。" }
+  },
+  "notes": [
+    {
+      "type": "trap",
+      "en": "miss the bus / catch the bus",
+      "zh": "錯過公車／趕上公車",
+      "explain": "趕上車是 catch the bus，沒趕上是 miss the bus。catch up (with) 是「追上」別人或進度，不要用在搭車上。",
+      "example": { "en": "If we run, we can still catch the bus!", "zh": "如果用跑的，我們還趕得上公車！" }
+    },
+    {
+      "type": "phrase",
+      "en": "Is there another way to get to...?",
+      "zh": "有其他方法可以到……嗎？",
+      "explain": "way 可以指「方法」，也可以指「路」，所以這句很好用。中文的「別的路」不要直譯成 other road。",
+      "example": { "en": "Is there another way to get to the airport?", "zh": "有其他方法可以到機場嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "call a taxi / call a cab",
+      "zh": "叫計程車",
+      "explain": "「叫車」要說出是哪種車：call a taxi 或 call a cab。也可以說 book a ride（用 App 叫車）。",
+      "example": { "en": "Could you call a cab for us, please?", "zh": "可以麻煩你幫我們叫計程車嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "What time is the first bus?",
+      "zh": "首班車是幾點？",
+      "explain": "疑問詞 What time 要放句首，不要照中文字序放在句尾。首班車 the first bus，末班車 the last bus。",
+      "example": { "en": "What time does the last train leave?", "zh": "末班火車幾點開？" }
+    },
+    {
+      "type": "culture",
+      "en": "Convenience stores abroad",
+      "zh": "國外的便利商店",
+      "explain": "台灣超商有座位、能久坐；很多國家的便利商店沒有座位，店員也不希望客人久留。要等車可以問附近有沒有 24 小時營業的餐廳。",
+      "example": { "en": "Is there anywhere open all night around here?", "zh": "這附近有整晚營業的地方嗎？" }
+    }
+  ]
+}

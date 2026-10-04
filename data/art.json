@@ -1,0 +1,45 @@
+{
+  "negative": "blurry, ugly, bad quality, lowres, realistic, 3D, photo, deformed, extra limbs, extra fingers, bad anatomy, bad hands, (text:1.5), (letters:1.5), (writing:1.5), (words:1.5), watermark, signature, caption, typography, font, label, subtitle, title, number, digit, kanji, chinese characters, japanese text, korean text, CJK, hieroglyphs, inscription, printed text, handwritten text, logo text, characters on surface",
+  "background": {
+    "width": 1280,
+    "height": 720,
+    "prefix": "anime style visual novel background art,",
+    "suffix": "2D illustration, detailed background, soft cinematic lighting, high quality, no people, no characters, empty scene, blank signs, plain unmarked surfaces",
+    "negative": "people, person, crowd, character, face"
+  },
+  "character": {
+    "width": 640,
+    "height": 960,
+    "prefix": "anime style visual novel character sprite,",
+    "suffix": "Asian face, East Asian features, upper body portrait, facing viewer, centered, {isolation}, 2D anime style, high quality illustration, clean lineart, soft cel shading",
+    "isolation": {
+      "blue": "isolated on a plain flat light blue background, nothing behind the subject",
+      "green": "isolated on a plain flat light green background, nothing behind the subject"
+    },
+    "negative": "complex background, scenery, multiple people, cropped head",
+    "expressions": {
+      "neutral": "calm neutral expression, relaxed",
+      "happy": "bright warm smile, happy cheerful expression",
+      "upset": "annoyed frown, furrowed eyebrows, pouting lips, clearly displeased expression",
+      "confused": "confused puzzled expression, one eyebrow raised, head slightly tilted"
+    }
+  },
+  "chapterCover": {
+    "width": 1280,
+    "height": 720,
+    "prefix": "anime style key visual background art,",
+    "suffix": "2D illustration, detailed background, beautiful lighting, high quality, no people, no characters, blank signs, plain unmarked surfaces"
+  },
+  "ui": {
+    "title": {
+      "width": 1280,
+      "height": 720,
+      "prompt": "anime style key visual background art, cozy campfire at night in a lakeside park, glowing embers and floating sparks, wooden log benches around the fire, starry sky, distant city lights across the lake, warm orange and deep blue palette, 2D illustration, detailed background, no people, no characters"
+    },
+    "campfire": {
+      "width": 1280,
+      "height": 720,
+      "prompt": "anime style visual novel background art, close view of a crackling campfire at night, warm orange glow on wooden log benches, an open notebook and a mug of cocoa on a log, fireflies, pine trees, soft bokeh, 2D illustration, detailed background, no people, no characters"
+    }
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "id": "L038",
+  "location": { "en": "Kai's room, on the phone with Leo's host family", "zh": "凱的房間，打電話到里歐的寄宿家庭" },
+  "goal": { "en": "Call Leo's home and leave a message about his wallet.", "zh": "打電話到里歐家，留言告訴他錢包的事。" },
+  "background": "small apartment bedroom in the evening, a desk by the window with a glowing desk lamp, a cup of tea, a brown leather wallet on the desk, city lights outside",
+  "cast": ["c04_mrs_moore"],
+  "intro": [
+    { "who": "narrator", "en": "The day after Mia's party, you find Leo's wallet under a sofa cushion. His phone is off.", "zh": "米亞生日派對的隔天，你在沙發坐墊下找到里歐的錢包，但他的手機沒開。" },
+    { "who": "narrator", "en": "You find his host family's home number and make the call.", "zh": "你找到他寄宿家庭的電話號碼，撥了出去。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c04_mrs_moore", "expr": "neutral", "en": "Hello, Moore residence.", "zh": "您好，這裡是摩爾家。" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, this is Kai speaking. Is Leo there?",
+          "zh": "您好，我是凱。請問里歐在嗎？",
+          "ok": true,
+          "tip": "電話裡自我介紹用 This is...，找人用 Is ... there?。"
+        },
+        {
+          "en": "Hello, I am Kai. I want to find Leo.",
+          "zh": "您好，我是凱，我要找里歐。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "confused", "en": "Find him? Oh dear, is Leo lost?", "zh": "找他？天啊，里歐走丟了嗎？" }
+            ],
+            "title": { "en": "Missing Person", "zh": "協尋啟事" },
+            "story": { "en": "Mrs. Moore almost calls the police before you can explain. Leo was at the gym the whole time.", "zh": "你還來不及解釋，摩爾太太就差點報警了。其實里歐一直都在健身房。" },
+            "why": "「我要找某人」直翻成 I want to find... 聽起來像那個人失蹤了。電話裡說 Is Leo there? 或 May I speak to Leo?。"
+          }
+        },
+        {
+          "en": "Hello? Who's this? I need Leo.",
+          "zh": "喂？你哪位？叫里歐聽電話。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "upset", "en": "Excuse me? You called this house. Who are YOU?", "zh": "什麼？是你打來我家的耶，你又是誰？" }
+            ],
+            "title": { "en": "Wrong Way Round", "zh": "反客為主" },
+            "story": { "en": "Mrs. Moore hangs up. Later, she tells Leo that a very rude person called.", "zh": "摩爾太太掛了電話，之後跟里歐說有個很沒禮貌的人打來。" },
+            "why": "打電話的人應該先報上自己的名字，反問對方是誰很不禮貌。先說 Hi, this is Kai.，再說要找誰。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_mrs_moore", "expr": "happy", "en": "Oh, hi Kai! Leo talks about you all the time. I'm sorry, he's at the gym right now.", "zh": "喔，嗨，凱！里歐常常提到你。不好意思，他現在在健身房。" }
+      ],
+      "choices": [
+        {
+          "en": "Oh, I see. Can I leave a message?",
+          "zh": "喔，這樣啊。我可以留言嗎？",
+          "ok": true,
+          "tip": "要找的人不在時，用 Can I leave a message? 請對方轉達。"
+        },
+        {
+          "en": "Oh. When he come back? He can call me?",
+          "zh": "喔，他什麼時候回來？他可以打給我嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "confused", "en": "When he... come back? Do you mean when will he be back?", "zh": "他什麼……回來？你是說他什麼時候會回來嗎？" }
+            ],
+            "title": { "en": "Time Machine", "zh": "時光機" },
+            "story": { "en": "Mrs. Moore thinks Leo already came back and checks every room in the house. He's still at the gym.", "zh": "摩爾太太以為里歐已經回來了，把家裡每個房間都找了一遍。他還在健身房。" },
+            "why": "問句要有助動詞：When will he be back? Can he call me?。少了 will 和 can 的位置調換，對方很難聽懂你在問什麼。"
+          }
+        },
+        {
+          "en": "Oh no! Again? Leo is always out.",
+          "zh": "不會吧！又不在？里歐老是不在家。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "upset", "en": "Well, he's allowed to go to the gym, dear.", "zh": "嗯，他去健身房也很正常啊。" }
+            ],
+            "title": { "en": "Complaint Line", "zh": "客訴專線" },
+            "story": { "en": "Mrs. Moore tells Leo that you complained about him. Leo is very confused.", "zh": "摩爾太太跟里歐說你在抱怨他，里歐一頭霧水。" },
+            "why": "對朋友的家人抱怨朋友「老是不在」，聽起來像在批評他。說 Oh, I see. 再請對方幫忙轉達就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_mrs_moore", "expr": "neutral", "en": "Of course. Let me grab a pen... Okay, go ahead.", "zh": "當然好。我拿一下筆……好，請說。" }
+      ],
+      "choices": [
+        {
+          "en": "Could you tell him I have his wallet?",
+          "zh": "可以請您告訴他，他的錢包在我這裡嗎？",
+          "ok": true,
+          "tip": "Could you tell him...? 是請對方轉達留言的禮貌說法。"
+        },
+        {
+          "en": "Please tell him his money bag is in my home.",
+          "zh": "請告訴他，他的錢包在我家。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "confused", "en": "His money bag? A whole bag of money?", "zh": "他的錢袋？一整袋的錢？" }
+            ],
+            "title": { "en": "Jackpot", "zh": "中大獎" },
+            "story": { "en": "Leo hears \"a bag of money\" and thinks he won a prize. He's a little sad when you hand him his old wallet.", "zh": "里歐聽到「一袋錢」，以為自己中獎了。你把他的舊錢包交給他時，他有點失落。" },
+            "why": "「錢包」英文是 wallet，女用長夾或手提包可以說 purse。money bag 聽起來像一袋現金。"
+          }
+        },
+        {
+          "en": "Go where? I'm at home now.",
+          "zh": "去哪裡？我現在在家。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "confused", "en": "No, no. I mean, go ahead and tell me the message.", "zh": "不是啦，我是說，請你說要留什麼話。" }
+            ],
+            "title": { "en": "Going Nowhere", "zh": "哪也沒去" },
+            "story": { "en": "You and Mrs. Moore spend two minutes figuring out who is going where. Nobody is going anywhere.", "zh": "你和摩爾太太花了兩分鐘搞清楚誰要去哪裡。結果誰都沒有要去哪。" },
+            "why": "電話裡的 Go ahead. 意思是「請說」，不是叫你去哪裡。聽到就可以直接說你的留言。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_mrs_moore", "expr": "happy", "en": "His wallet! Oh, he'll be so relieved. Does he have your number?", "zh": "他的錢包！喔，他一定會鬆一口氣。他有你的電話嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, he does. Thank you so much!",
+          "zh": "有的，他有。真的很謝謝您！",
+          "ok": true,
+          "tip": "對方幫你轉達留言，結尾用 Thank you so much! 道謝。"
+        },
+        {
+          "en": "Yes. That's all. Bye-bye.",
+          "zh": "有。就這樣，掰掰。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "upset", "en": "Oh... okay. Bye, then.", "zh": "喔……好，那再見。" }
+            ],
+            "title": { "en": "Speed Hang-up", "zh": "光速掛斷" },
+            "story": { "en": "Mrs. Moore gives Leo the message, then adds, \"Your friend is very... efficient.\"", "zh": "摩爾太太轉達了留言，又補了一句：「你朋友講話……很有效率。」" },
+            "why": "對方幫你記留言，結尾只說 That's all. Bye-bye. 太突然。記得先道謝：Thank you so much!"
+          }
+        },
+        {
+          "en": "Yes. Sorry to bother you. Very sorry!",
+          "zh": "有。不好意思打擾了，真的很抱歉！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_mrs_moore", "expr": "confused", "en": "Sorry? But you're helping Leo! Did something else happen?", "zh": "抱歉？可是你是在幫里歐啊！還發生了什麼事嗎？" }
+            ],
+            "title": { "en": "Sorry Marathon", "zh": "道歉馬拉松" },
+            "story": { "en": "Mrs. Moore worries that you broke something at the party. She asks Leo about it three times.", "zh": "摩爾太太擔心你在派對上弄壞了什麼，問了里歐三次。" },
+            "why": "台灣習慣說「不好意思，打擾了」，但英文一直道歉會讓對方以為你做錯事。對方幫了忙，說 Thank you! 比 Sorry 更恰當。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c04_mrs_moore", "expr": "happy", "en": "You're very welcome, Kai. I'll tell him the minute he gets home.", "zh": "不客氣，凱。他一回家我就馬上告訴他。" },
+      { "who": "narrator", "en": "An hour later, your phone buzzes. It's Leo: \"YOU'RE A LIFESAVER!\"", "zh": "一個小時後，你的手機響了，是里歐傳來的：「你是我的救命恩人！」" }
+    ],
+    "title": { "en": "Message Received", "zh": "留言已送達" },
+    "story": { "en": "Leo picks up his wallet the next morning and buys you a coffee to say thanks.", "zh": "里歐隔天早上來拿錢包，還請你喝咖啡道謝。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "This is Kai (speaking).",
+      "zh": "我是凱。",
+      "explain": "電話裡自我介紹用 This is...，不說 I am...。對方看不到你，所以先報名字再說來意。",
+      "example": { "en": "Hi, this is Kai from the language school.", "zh": "您好，我是語言學校的凱。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Is Leo there?",
+      "zh": "里歐在嗎？",
+      "explain": "打電話找人最常用的說法，更正式可以說 May I speak to Leo?。不要說 I want to find Leo.，聽起來像人失蹤了。",
+      "example": { "en": "Hi, may I speak to Ms. Chen, please?", "zh": "您好，請問陳小姐在嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Can I leave a message?",
+      "zh": "我可以留言嗎？",
+      "explain": "要找的人不在時使用。接著用 Could you tell him/her...? 說出留言內容。",
+      "example": { "en": "Could you tell her I called?", "zh": "可以請您告訴她我打過電話嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Go ahead.",
+      "zh": "請說。",
+      "explain": "電話或對話中的 Go ahead. 是「請說、請繼續」，不是叫你去哪裡。聽到就直接開始講。",
+      "example": { "en": "Can I ask you something? / Sure, go ahead.", "zh": "我可以問你一件事嗎？／當然，請說。" }
+    },
+    {
+      "type": "culture",
+      "en": "Say thank you, not sorry.",
+      "zh": "說謝謝，不是說抱歉。",
+      "explain": "中文常說「不好意思打擾了」，但英文道歉太多會讓人以為出了問題。對方幫忙時，用 Thank you so much! 表達感激。",
+      "example": { "en": "Thanks for your help!", "zh": "謝謝你的幫忙！" }
+    }
+  ]
+}

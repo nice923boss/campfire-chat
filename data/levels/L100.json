@@ -1,0 +1,268 @@
+{
+  "id": "L100",
+  "location": { "en": "Lantern Park, the campfire circle by the lake", "zh": "燈籠公園，湖畔營火圈" },
+  "goal": { "en": "Share your year with the campfire circle on your last night in Maple Bay.", "zh": "在楓灣的最後一晚，和營火社的大家分享你這一年。" },
+  "background": "empty lakeside campfire circle at dusk, a warm bonfire in a stone ring, log benches in a circle, paper lanterns hanging in maple branches, golden sunset over a calm lake",
+  "cast": ["ember", "mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Your final evening in Maple Bay. Tomorrow morning, you fly home.", "zh": "你在楓灣的最後一個晚上。明天早上，你就要飛回家了。" },
+    { "who": "narrator", "en": "The campfire circle is full tonight. Hana sits in the front row with her notebook open.", "zh": "今晚營火圈坐滿了人。花奈坐在第一排，筆記本已經打開。" },
+    { "who": "leo", "expr": "happy", "en": "We saved you the best seat, Kai. Right next to the fire.", "zh": "我們幫你留了最好的位子，凱。就在火堆旁邊。" },
+    { "who": "ember", "expr": "happy", "en": "Tonight is a special one. Kai, this is your last campfire with us. Will you tell us about your year?", "zh": "今晚很特別。凱，這是你和我們的最後一次營火。願意跟大家聊聊你這一年嗎？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ember", "expr": "happy", "en": "Let's start at the beginning. What do you remember about your very first day in Maple Bay?", "zh": "我們從頭開始吧。你對來到楓灣的第一天，還記得什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "I was so nervous. I practiced \"Here you are\" fifty times on the plane.",
+          "zh": "我超緊張的。我在飛機上把「Here you are」練了五十遍。",
+          "ok": true,
+          "tip": "說過去的事要用過去式：I was、I practiced。具體的小細節最能打動聽眾。"
+        },
+        {
+          "en": "I am very nervous. I practice \"Here you are\" fifty times on the plane.",
+          "zh": "我很緊張。我在飛機上練「Here you are」五十遍。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ember", "expr": "confused", "en": "You ARE nervous? Right now? Relax, Kai. You're among friends.", "zh": "你現在很緊張？此時此刻？放輕鬆，凱，這裡都是朋友。" }
+            ],
+            "title": { "en": "Present Tense Panic", "zh": "現在式恐慌" },
+            "story": { "en": "Everyone tells you you're doing great. You were talking about last year, but now you really are nervous.", "zh": "大家紛紛安慰你表現得很好。你明明在講去年的事，現在卻真的緊張起來了。" },
+            "why": "中文動詞沒有時態，說過去的事最容易忘記改。要用過去式：I was so nervous. I practiced...。"
+          }
+        },
+        {
+          "en": "Speaking of planes, does anyone here know a cheap airline to Taipei?",
+          "zh": "說到飛機，這裡有人知道飛台北的便宜航空公司嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ember", "expr": "confused", "en": "Kai, your flight is already booked. For tomorrow morning. Remember?", "zh": "凱，你的機票已經訂好了。明天早上。記得嗎？" }
+            ],
+            "title": { "en": "Wrong Flight Plan", "zh": "航線偏離" },
+            "story": { "en": "Leo pulls up three airline websites anyway. The story of your first day has to wait behind ticket prices.", "zh": "里歐還是打開了三個航空公司網站。你第一天的故事只好排在機票價格後面。" },
+            "why": "安柏問的是第一天的回憶，要順著問題回答：I was so nervous. I practiced \"Here you are\" fifty times on the plane.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ember", "expr": "neutral", "en": "And now, a year later. How have you changed?", "zh": "那現在呢，一年過去了。你有什麼改變？" }
+      ],
+      "choices": [
+        {
+          "en": "I used to be scared of mistakes. Now I see them as part of learning.",
+          "zh": "我以前很怕犯錯。現在我把錯誤當成學習的一部分。",
+          "ok": true,
+          "tip": "I used to..., now I... 是描述成長最清楚的句型，一句話對比過去和現在。"
+        },
+        {
+          "en": "I used to scared of mistakes. Now I am used to make them every day.",
+          "zh": "我以前怕錯誤。現在我習慣每天犯錯。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"Used to scared\"? \"Used to make\"? Kai, you're making them right now!", "zh": "Used to scared？Used to make？凱，你現在就在犯錯啊！" }
+            ],
+            "title": { "en": "Used To Confusion", "zh": "Used to 大亂鬥" },
+            "story": { "en": "Leo writes \"used to\" and \"be used to\" in the dirt with a stick. It's a good lesson, but your big moment just became a quiz.", "zh": "里歐拿樹枝在地上寫出 used to 和 be used to。這堂課很實用，但你的重要時刻變成了小考。" },
+            "why": "used to 加原形動詞表示「以前會」：I used to be scared.（別漏掉 be）。be used to 加動名詞才是「習慣於」：I'm used to making mistakes.。"
+          }
+        },
+        {
+          "en": "A lot! Honestly, I think my English is better than Leo's now. Sorry, Leo.",
+          "zh": "改變很多！老實說，我覺得我現在英文比里歐好了。抱歉啦，里歐。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Wow. A whole year of friendship, and this is what I get.", "zh": "哇。一整年的友情，換來的就是這個。" }
+            ],
+            "title": { "en": "Friendly Fire", "zh": "友軍誤傷" },
+            "story": { "en": "Everyone laughs, and Leo pretends to be hurt for the rest of the night. You never actually said how you've changed.", "zh": "大家都笑了，里歐整晚假裝受傷。而你其實沒說出自己改變了什麼。" },
+            "why": "回顧成長時拿朋友比較，就算是開玩笑也容易顯得自大。說自己的改變就好：I used to be scared of mistakes. Now I see them as part of learning.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ember", "expr": "neutral", "en": "What was the hardest part of your year here?", "zh": "這一年在這裡，最難熬的是什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Being homesick at first. But these two became my family here.",
+          "zh": "一開始很想家。但這兩個人成了我在這裡的家人。",
+          "ok": true,
+          "tip": "誠實說出困難，再說是誰幫你走過來，這樣的回答最真誠動人。"
+        },
+        {
+          "en": "Ten thousand things are hard at the start, so everything was hard.",
+          "zh": "萬事起頭難，所以每件事都很難。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ember", "expr": "confused", "en": "Ten thousand things? That's... a lot of things, Kai.", "zh": "一萬件事？那……真的很多耶，凱。" }
+            ],
+            "title": { "en": "Ten Thousand Things", "zh": "一萬件事" },
+            "story": { "en": "Hana writes down \"ten thousand things\" and looks worried about her own year. Ember has to reassure her after the campfire.", "zh": "花奈寫下「一萬件事」，開始擔心起自己的這一年。營火結束後，安柏還得去安慰她。" },
+            "why": "「萬事起頭難」直譯會讓人以為真的有一萬件事。英文說 The first step is always the hardest.，或直接說最難的是什麼：Being homesick at first.。"
+          }
+        },
+        {
+          "en": "Honestly? The food. Everything here tastes so bland compared to home.",
+          "zh": "老實說？食物。這裡的東西跟家鄉比起來都好清淡。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Bland? I took you to every good restaurant in Maple Bay!", "zh": "清淡？我帶你吃遍了楓灣每一家好餐廳耶！" }
+            ],
+            "title": { "en": "Food Critic", "zh": "美食評論家" },
+            "story": { "en": "Leo spends ten minutes defending the local food. Mia agrees with you, which only makes it worse.", "zh": "里歐花了十分鐘捍衛在地美食。米亞還站在你這邊，場面更難收拾了。" },
+            "why": "告別時抱怨當地食物，會讓一路帶你吃的朋友很受傷。說出真正的心路歷程：Being homesick at first. But these two became my family here.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ember", "expr": "happy", "en": "Is there anyone you'd like to thank tonight?", "zh": "今晚有沒有想感謝的人？" },
+        { "who": "mia", "expr": "neutral", "en": "Don't look at me. I'll cry again.", "zh": "不要看我，我又會哭。" },
+        { "who": "leo", "expr": "neutral", "en": "Too late for me.", "zh": "我已經來不及了。" }
+      ],
+      "choices": [
+        {
+          "en": "All of you. Thank you for listening to all my mistakes every week.",
+          "zh": "你們每一個人。謝謝你們每週聽我犯各種錯。",
+          "ok": true,
+          "tip": "Thank you for + 動名詞，說清楚謝什麼，感謝才有份量。"
+        },
+        {
+          "en": "I want to thank to all of you, for listen to me every single week.",
+          "zh": "我想感謝你們所有人，每週都聽我說話。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"Thank to\"? \"For listen\"? Kai, I listened all year for this?", "zh": "Thank to？For listen？凱，我聽了一整年就換來這個？" }
+            ],
+            "title": { "en": "Grateful, Not Grammatical", "zh": "心意滿分，文法零分" },
+            "story": { "en": "Everyone gets the message, and Mia laughs through her tears. But Leo will quote \"for listen\" at your wedding someday.", "zh": "大家都懂你的心意，米亞笑中帶淚。但里歐將來一定會在你的婚禮上引用 for listen。" },
+            "why": "thank 後面直接接人，不加 to：Thank you all.。for 後面接動名詞：Thank you for listening.。"
+          }
+        },
+        {
+          "en": "No need to say it, right? We're family now, and family doesn't say thanks.",
+          "zh": "不用說出來吧？我們已經是家人了，自己人不用謝。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Really? Because I was kind of waiting for one.", "zh": "真的嗎？我其實有點在等你說耶。" }
+            ],
+            "title": { "en": "Family Doesn't Say Thanks?", "zh": "自己人不用謝？" },
+            "story": { "en": "You meant it as the highest compliment. Mia just looks quietly disappointed, and you give her a big hug to make up for it.", "zh": "你本來是想表達最高的親近，米亞卻默默有點失落。你只好給她一個大擁抱補償。" },
+            "why": "中文常說「自己人不用謝」，但英文文化裡越親近的人，越要把感謝說出口。直接說：Thank you for listening to all my mistakes every week.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ember", "expr": "neutral", "en": "Last question. If you could talk to the Kai of one year ago, what would you say?", "zh": "最後一個問題。如果你能跟一年前的自己說話，你會說什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Don't be afraid. Say yes, make mistakes, and come to every campfire.",
+          "zh": "別害怕。勇敢答應、勇敢犯錯，每一次營火都要來。",
+          "ok": true,
+          "tip": "給建議時用簡短的祈使句（Say yes、make mistakes），聽起來有力又溫暖。"
+        },
+        {
+          "en": "When the boat reaches the bridge, it goes straight. So, don't worry.",
+          "zh": "船到橋頭自然直，所以不用擔心。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "A boat... and a bridge? Kai, is this a riddle?", "zh": "一艘船……和一座橋？凱，這是謎語嗎？" }
+            ],
+            "title": { "en": "Stuck at the Bridge", "zh": "卡在橋頭" },
+            "story": { "en": "Ember explains it to the circle as \"probably a Taiwanese saying.\" Everyone nods politely. Nobody gets it.", "zh": "安柏跟大家解釋這「大概是台灣的俗語」。大家禮貌地點頭，但沒人聽懂。" },
+            "why": "「船到橋頭自然直」直譯英文聽不懂。英文相近的說法是 Things will work out.，或給具體建議：Don't be afraid. Say yes, make mistakes.。"
+          }
+        },
+        {
+          "en": "Don't afraid. Just say yes, make mistake, and come to every campfire.",
+          "zh": "別怕。就答應、犯錯，然後每次營火都來。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ember", "expr": "confused", "en": "\"Don't afraid\"? Kai, Hana is writing that down. Fix it, quick!", "zh": "Don't afraid？凱，花奈正在抄筆記耶。快改過來！" }
+            ],
+            "title": { "en": "Copied into a Notebook", "zh": "被抄進筆記本" },
+            "story": { "en": "Hana copies your advice word for word, mistakes included. You spend the break fixing her notebook.", "zh": "花奈一字不漏抄下你的建議，連錯誤也一起抄了。休息時間你都在幫她改筆記。" },
+            "why": "afraid 是形容詞，前面要加 be：Don't be afraid.。mistake 是可數名詞，泛指時用複數：make mistakes。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ember", "expr": "happy", "en": "To Kai, and to a year of brave mistakes!", "zh": "敬凱，也敬這一整年勇敢犯下的錯！" },
+      { "who": "mia", "expr": "happy", "en": "To Kai!", "zh": "敬凱！" },
+      { "who": "narrator", "en": "Everyone raises a marshmallow stick. In the front row, Hana underlines something in her notebook, twice.", "zh": "大家一起舉起烤棉花糖的竹籤。第一排的花奈，在筆記本上畫了兩道底線。" }
+    ],
+    "title": { "en": "The Last Campfire", "zh": "最後的營火" },
+    "story": { "en": "You arrived with one suitcase and a phrase you practiced fifty times. You leave with friends for life and a year of stories to tell, in English.", "zh": "你來的時候，只有一個行李箱和一句練了五十遍的英文。離開時，你帶走了一輩子的朋友，還有一整年可以用英文說的故事。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "used to + verb / be used to + V-ing",
+      "zh": "以前會／習慣於",
+      "explain": "used to 加原形動詞，表示「以前會，現在不會了」。be used to 加動名詞，表示「已經習慣」。兩個長得像，意思完全不同。",
+      "example": { "en": "I used to hate mornings. Now I'm used to getting up early.", "zh": "我以前很討厭早上。現在已經習慣早起了。" }
+    },
+    {
+      "type": "phrase",
+      "en": "If I could talk to..., I'd tell...",
+      "zh": "如果我能跟……說話，我會告訴對方……",
+      "explain": "假設語氣：if 子句用過去式 could，主句用 would。跟 If I were you, I'd... 是同一個句型家族。",
+      "example": { "en": "If I could talk to my younger self, I'd tell them to relax.", "zh": "如果能跟年輕時的自己說話，我會叫自己放輕鬆。" }
+    },
+    {
+      "type": "trap",
+      "en": "Don't be afraid. (not Don't afraid.)",
+      "zh": "別害怕。",
+      "explain": "afraid、shy、late 都是形容詞，祈使句要加 be：Don't be afraid.、Don't be shy.、Don't be late.。中文「別怕」沒有 be，最容易漏掉。",
+      "example": { "en": "Don't be shy. Everyone here was new once.", "zh": "別害羞，這裡每個人都曾經是新來的。" }
+    },
+    {
+      "type": "phrase",
+      "en": "The first step is always the hardest.",
+      "zh": "萬事起頭難。",
+      "explain": "中文成語直譯通常聽不懂，要找英文裡意思相近的說法。「船到橋頭自然直」可以說 Things will work out.。",
+      "example": { "en": "The first step is always the hardest. After that, it gets easier.", "zh": "萬事起頭難，之後就會越來越容易。" }
+    },
+    {
+      "type": "culture",
+      "en": "Thank the people closest to you.",
+      "zh": "越親近，越要說謝謝。",
+      "explain": "中文常說「自己人不用謝」，但在英文文化裡，對家人和好朋友說 Thank you 是表達愛的方式，不會顯得見外。說清楚謝什麼，效果更好。",
+      "example": { "en": "Thank you for always being there for me. I mean it.", "zh": "謝謝你一直都在我身邊。我是認真的。" }
+    }
+  ]
+}

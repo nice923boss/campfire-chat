@@ -1,0 +1,265 @@
+{
+  "id": "L079",
+  "location": { "en": "A bistro near the office", "zh": "公司附近的小餐館" },
+  "goal": { "en": "Make easy small talk with your manager and handle the check gracefully.", "zh": "和主管輕鬆閒聊，並得體地應對誰買單。" },
+  "background": "cozy bistro interior with exposed brick walls, Edison bulb pendant lights, a small wooden table set for two with two plates of pasta and water glasses, a window with afternoon sunlight",
+  "cast": ["ms_wong", "c08_server"],
+  "intro": [
+    { "who": "narrator", "en": "It's the end of your third week. Ms. Wong invites you to lunch at a bistro around the corner.", "zh": "這是你上班第三週的最後一天。王經理約你去轉角的小餐館吃午餐。" },
+    { "who": "narrator", "en": "No meeting, no laptop. Just lunch and conversation.", "zh": "沒有會議，沒有筆電，只有午餐和聊天。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "So, Kai, how are you finding Maple Bay so far?", "zh": "那麼，凱，到目前為止你覺得楓灣這城市怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "I really like it. The people are friendly, and I love walking by the bay.",
+          "zh": "我很喜歡。這裡的人很友善，我也很喜歡在海灣邊散步。",
+          "ok": true,
+          "tip": "How are you finding...? 是問「你覺得……怎麼樣」，回答感受，再補一個具體的例子。"
+        },
+        {
+          "en": "Finding? Oh, it was easy. It's right there on the map, next to the sea.",
+          "zh": "找到？喔，很容易啊。它就在地圖上，就在海邊。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Ha! No, I mean, do you like living here?", "zh": "哈！不是啦，我是說，你喜歡住在這裡嗎？" }
+            ],
+            "title": { "en": "Lost and Found", "zh": "失物招領" },
+            "story": { "en": "Ms. Wong laughs and asks again. You answer the real question, but your face stays red until dessert.", "zh": "王經理笑著再問一次。你回答了真正的問題，但臉一直紅到上甜點。" },
+            "why": "How are you finding...? 的 find 不是「找到」，而是「覺得、感受」。回答你的感想即可：I really like it.。"
+          }
+        },
+        {
+          "en": "Honestly, it's okay, but it rains too much. And the food is so expensive here.",
+          "zh": "老實說還好，但雨太多了。而且這裡的食物好貴。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Oh. Well, I grew up here, so... I guess I'm used to it.", "zh": "喔，嗯……我在這裡長大的，所以……大概是習慣了吧。" }
+            ],
+            "title": { "en": "Hometown Hurt", "zh": "踩到家鄉地雷" },
+            "story": { "en": "Ms. Wong grew up in Maple Bay and loves it. The rest of lunch feels like walking on wet pavement.", "zh": "王經理在楓灣長大，非常愛這裡。接下來的午餐，氣氛就像走在濕滑的人行道上。" },
+            "why": "閒聊時一開口就抱怨，會讓氣氛變差，對方也可能正好很愛這個地方。先說正面的感受：I really like it.，有缺點可以輕鬆帶過。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_server", "expr": "happy", "en": "Two mushroom pastas! Enjoy!", "zh": "兩份蘑菇義大利麵！請慢用！" },
+        { "who": "ms_wong", "expr": "happy", "en": "Thanks! So, what do you like to do on weekends?", "zh": "謝謝！那你週末都喜歡做什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "I've been hiking a lot lately. Have you been to Cedar Trail? The view is amazing.",
+          "zh": "我最近很常去爬山。您去過雪松步道嗎？那裡的景色超美。",
+          "ok": true,
+          "tip": "回答之後反問一個相關的問題，對話就能自然地接下去。"
+        },
+        {
+          "en": "On weekends I usually work on the Harbor Café plan. I want to do my best.",
+          "zh": "週末我通常都在做 Harbor Café 的企劃。我想盡全力做好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Every weekend? Kai, weekends are for resting. Please take a break.", "zh": "每個週末？凱，週末是拿來休息的。拜託你休息一下。" }
+            ],
+            "title": { "en": "Weekend Warrior", "zh": "週末也加班" },
+            "story": { "en": "You wanted to look hardworking. Instead, Ms. Wong now worries you're too stressed and lightens your workload.", "zh": "你本來想展現自己很拚。結果王經理開始擔心你壓力太大，還減輕了你的工作量。" },
+            "why": "在很多英語系職場，主管不會因為你週末加班而加分，反而會擔心你過勞。聊聊你的興趣，再反問：Have you been to...?。"
+          }
+        },
+        {
+          "en": "I like go to hiking. But sometimes I am sleep all day. I am very lazy.",
+          "zh": "我喜歡去爬山。但有時候我整天都在睡覺。我很懶。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Oh... okay. Sleep is good too, I guess.", "zh": "喔……好吧。睡覺也不錯啦，我想。" }
+            ],
+            "title": { "en": "Pasta Silence", "zh": "義大利麵的沉默" },
+            "story": { "en": "The conversation stops. You both focus very hard on your pasta for the next five minutes.", "zh": "對話就此打住。接下來五分鐘，你們都非常專心地吃著義大利麵。" },
+            "why": "like 後面接 to + 原形或 V-ing：I like hiking.，「去爬山」是 go hiking，不加 to；「整天睡覺」是 I sleep all day，不加 am。再反問一句，對話才接得下去。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Cedar Trail! I used to hike there all the time, before my kids were born.", "zh": "雪松步道！我以前常去那裡爬山，在小孩出生之前。" }
+      ],
+      "choices": [
+        {
+          "en": "Oh, how many kids do you have? They must keep you busy!",
+          "zh": "喔，您有幾個小孩呢？他們一定讓您忙翻了吧！",
+          "ok": true,
+          "tip": "接住對方主動提到的話題，自然地追問，表示你有在認真聽。"
+        },
+        {
+          "en": "Oh. I don't really like kids, to be honest. They're so noisy.",
+          "zh": "喔。老實說，我不太喜歡小孩。他們好吵。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Well... mine are pretty great, actually.", "zh": "嗯……我家的其實滿棒的。" }
+            ],
+            "title": { "en": "Kid Zone Crash", "zh": "誤闖育兒禁區" },
+            "story": { "en": "Ms. Wong puts her phone away. She was just about to show you photos of her kids.", "zh": "王經理把手機收了起來。她剛才正要給你看小孩的照片。" },
+            "why": "對方提到自己的家人時，說不喜歡小孩等於直接潑冷水。順著話題追問：How many kids do you have?。"
+          }
+        },
+        {
+          "en": "Oh, nice. By the way, did you read my email about the café plan?",
+          "zh": "喔，不錯。對了，您有看到我寄的那封咖啡廳企劃信嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Oh, um, not yet. I'll read it this afternoon.", "zh": "喔，嗯，還沒。我下午會看。" }
+            ],
+            "title": { "en": "Back to Work", "zh": "瞬間回到辦公室" },
+            "story": { "en": "Lunch turns into a meeting. Ms. Wong checks her email between bites, and the friendly chat never comes back.", "zh": "午餐變成了會議。王經理邊吃邊看信，輕鬆的閒聊再也沒回來。" },
+            "why": "對方正在分享私人生活，你卻突然談公事，會讓人覺得你沒在聽。先接住話題：How many kids do you have?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Two girls, eight and ten. They're always running around!", "zh": "兩個女兒，八歲和十歲。她們總是跑來跑去的！" }
+      ],
+      "choices": [
+        {
+          "en": "That sounds busy! How do you like to relax when you get some free time?",
+          "zh": "聽起來很忙！您有空的時候都怎麼放鬆呢？",
+          "ok": true,
+          "tip": "That sounds...! 回應對方的分享，再問一個輕鬆的開放式問題，讓對方多聊一點。"
+        },
+        {
+          "en": "Wow, two girls running around all day? You must be so tiring!",
+          "zh": "哇，兩個女兒整天跑來跑去？您一定很累吧！",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "I'm tiring? Am I that exhausting to be around?", "zh": "我很累人？跟我相處有那麼累嗎？" }
+            ],
+            "title": { "en": "Tiring or Tired?", "zh": "累人還是很累？" },
+            "story": { "en": "Ms. Wong laughs it off, but she glances at her watch twice before the check comes.", "zh": "王經理笑笑帶過，但在帳單送來前看了兩次手錶。" },
+            "why": "tiring 是「讓人累的」，tired 才是「感到累的」。要說 You must be so tired!，或更自然的 That sounds busy!。"
+          }
+        },
+        {
+          "en": "Two girls? So will you try for a boy next time? Boys are good too.",
+          "zh": "兩個女兒？那您下一胎要不要拚個兒子？男生也不錯啊。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "That's... a very personal question, Kai.", "zh": "這個……是很私人的問題，凱。" }
+            ],
+            "title": { "en": "Out of Line", "zh": "越界的問題" },
+            "story": { "en": "The table goes quiet. Ms. Wong suddenly remembers a two o'clock meeting that may or may not exist.", "zh": "餐桌突然安靜下來。王經理忽然想起一個兩點的會議，不知道是真的還是假的。" },
+            "why": "在很多英語系文化，生育計畫、生男生女都是很私人的話題，連親戚都不太問。聊對方的興趣就好：How do you like to relax?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_server", "expr": "neutral", "en": "Here's your check. No rush.", "zh": "這是您的帳單，不用急。" },
+        { "who": "ms_wong", "expr": "happy", "en": "I've got this one, Kai. My treat.", "zh": "這次我來，凱，我請客。" }
+      ],
+      "choices": [
+        {
+          "en": "That's very kind of you. Thank you, I really enjoyed our chat.",
+          "zh": "您真是太好了。謝謝您，我很喜歡今天的聊天。",
+          "ok": true,
+          "tip": "主管說要請客時，大方道謝就好：That's very kind of you.，再補一句感謝這次午餐。"
+        },
+        {
+          "en": "No, no, no! I'll pay! Please, let me pay. Give me the check!",
+          "zh": "不不不！我來付！拜託，讓我付。帳單給我！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c08_server", "expr": "confused", "en": "Um... should I just come back later?", "zh": "嗯……我是不是晚點再過來比較好？" }
+            ],
+            "title": { "en": "Check Tug-of-War", "zh": "帳單拔河賽" },
+            "story": { "en": "You and Ms. Wong pull the check back and forth. Toby waits. The table next to you starts watching.", "zh": "你和王經理把帳單搶來搶去。托比在旁邊等著，隔壁桌的客人都開始看了。" },
+            "why": "在台灣搶著付錢是禮貌，但在很多英語系文化，主管說要請客就是真心的，一直推辭反而尷尬。說 That's very kind of you. Thank you. 就好。"
+          }
+        },
+        {
+          "en": "Really? Then I won't be polite with you! Thank you, boss.",
+          "zh": "真的嗎？那我就不客氣了！謝謝老闆。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "You won't be polite? Should I be worried?", "zh": "你不會有禮貌？我該擔心嗎？" }
+            ],
+            "title": { "en": "No More Manners", "zh": "那我就不客氣了" },
+            "story": { "en": "Ms. Wong pays, still unsure if you just thanked her or warned her.", "zh": "王經理付了錢，還是不確定你剛剛是在道謝，還是在警告她。" },
+            "why": "「那我就不客氣了」直譯成 I won't be polite，聽起來像「我要對你不禮貌了」。說 That's very kind of you. Thank you! 就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "My pleasure. Next time, I want to hear more about Cedar Trail.", "zh": "不客氣。下次我想多聽聽雪松步道的事。" },
+      { "who": "c08_server", "expr": "happy", "en": "Thanks, you two! Have a great afternoon!", "zh": "謝謝兩位！祝你們下午愉快！" }
+    ],
+    "title": { "en": "More Than a Boss", "zh": "不只是主管" },
+    "story": { "en": "You talked about hiking, kids and the city, and nobody mentioned email. Walking back, Ms. Wong feels less like a boss and more like a friendly guide.", "zh": "你們聊了爬山、小孩和這座城市，沒有人提到工作信件。走回公司的路上，王經理不像是主管，更像一位親切的嚮導。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "How are you finding...?",
+      "zh": "你覺得……怎麼樣？",
+      "explain": "這裡的 find 是「覺得、感受」，常用來問新環境或新工作。回答時說感受和具體例子，例如 I'm really enjoying it.。",
+      "example": { "en": "How are you finding the new job?", "zh": "你覺得新工作怎麼樣？" }
+    },
+    {
+      "type": "grammar",
+      "en": "tired vs. tiring",
+      "zh": "很累 vs. 讓人累",
+      "explain": "-ed 描述人的感受，-ing 描述讓人有這種感受的事物。I'm tired 是「我很累」，I'm tiring 是「我很累人」。同樣的還有 bored／boring、interested／interesting。",
+      "example": { "en": "The trip was tiring, so I'm really tired today.", "zh": "這趟旅程很累人，所以我今天很累。" }
+    },
+    {
+      "type": "phrase",
+      "en": "That's very kind of you.",
+      "zh": "您真是太好了。",
+      "explain": "別人請客、送禮或幫忙時的得體回應，比單說 thank you 更有溫度，對主管、客戶都適用。",
+      "example": { "en": "You saved me a seat? That's very kind of you.", "zh": "你幫我留了位子？你真是太好了。" }
+    },
+    {
+      "type": "trap",
+      "en": "I won't be polite.",
+      "zh": "那我就不客氣了。（直譯陷阱）",
+      "explain": "中文「不客氣」是大方接受的意思，但 I won't be polite 在英文是「我不會有禮貌」，聽起來像要吵架。接受好意說 Thank you, that's very kind of you. 或 Don't mind if I do.。",
+      "example": { "en": "More cake? Don't mind if I do!", "zh": "再來一塊蛋糕？那我就不客氣了！" }
+    },
+    {
+      "type": "culture",
+      "en": "Safe topics, sensitive topics",
+      "zh": "安全話題與敏感話題",
+      "explain": "和主管閒聊時，興趣、旅行、城市、美食都是安全話題。收入、年齡、婚姻、生育計畫則很私人，在很多英語系文化連親戚都不太問。對方主動提起時，順著聊就好，不要追問細節。",
+      "example": { "en": "Have you tried any good restaurants around here?", "zh": "你在附近有吃過什麼好餐廳嗎？" }
+    }
+  ]
+}

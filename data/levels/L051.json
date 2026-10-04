@@ -1,0 +1,226 @@
+{
+  "id": "L051",
+  "location": { "en": "Studio apartment on Cedar Street", "zh": "雪松街的套房" },
+  "goal": { "en": "Ask Mr. Lin the right questions about the studio before you decide.", "zh": "決定之前，向林先生問清楚套房的重要條件。" },
+  "background": "small empty studio apartment with wooden floor, single bed frame, compact kitchenette, old white radiator heater under a large window, bare white walls, warm afternoon sunlight",
+  "cast": ["mr_lin"],
+  "intro": [
+    { "who": "narrator", "en": "After months of sharing a flat with Mia, you're ready for a place of your own. Today you're viewing a studio on Cedar Street.", "zh": "和米亞合租了幾個月後，你準備好擁有自己的小窩了。今天你要去看雪松街上的一間套房。" },
+    { "who": "mr_lin", "expr": "neutral", "en": "You must be Kai. I'm Mr. Lin, the owner. Come in and take a look around.", "zh": "你一定是凱吧。我是房東林先生。進來，隨便看看。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "This is it. Kitchen on the left, bathroom on the right. The rent is 1,200 dollars a month.", "zh": "就是這間。左邊是廚房，右邊是浴室。房租每個月 1,200 元。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "Any questions about the rent?", "zh": "房租方面有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Are utilities included, or do I pay for those separately?",
+          "zh": "有包含水電瓦斯嗎？還是要另外付？",
+          "ok": true,
+          "tip": "utilities 是水、電、瓦斯等費用的統稱，問 Are utilities included? 最精準。"
+        },
+        {
+          "en": "Is the water money and electricity money also inside the rent?",
+          "zh": "水錢跟電錢也在房租裡面嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Water money? Inside the rent? Oh, you mean the utilities?", "zh": "水錢？在房租裡面？喔，你是說水電費嗎？" }
+            ],
+            "title": { "en": "Money Down the Drain", "zh": "錢流進水管" },
+            "story": { "en": "Mr. Lin starts explaining the history of the building's water pipes. By the time he finishes, the sun has set and you still don't know the answer.", "zh": "林先生開始講解這棟樓水管的歷史。等他講完，天都黑了，你還是不知道答案。" },
+            "why": "「水錢、電錢」是中文直譯，英文不這樣說。水、電、瓦斯等費用統稱 utilities，問房東時說 Are utilities included? 就好。"
+          }
+        },
+        {
+          "en": "Excuse me, how much the utilities is cost every month?",
+          "zh": "請問，水電費每個月多少錢？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "The utilities is... what? Sorry, could you say that again?", "zh": "水電費是……什麼？抱歉，可以再說一次嗎？" }
+            ],
+            "title": { "en": "The Cost of Confusion", "zh": "混亂的代價" },
+            "story": { "en": "You try three more versions of the question. Mr. Lin politely nods at each one and answers a completely different question.", "zh": "你又換了三種問法。林先生每次都客氣地點頭，然後回答了完全不同的問題。" },
+            "why": "問價錢的句型是 How much do / does + 主詞 + cost?，is 和 cost 不能放在一起。可以說 How much do the utilities cost?，或直接問 Are utilities included?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Utilities are included. Internet isn't, so you'll need to set that up yourself.", "zh": "水電瓦斯有包含，網路沒有，要你自己申辦。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "Anything else you'd like to know?", "zh": "還有其他想知道的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Is it furnished? I don't have any furniture of my own yet.",
+          "zh": "這裡有附家具嗎？我自己還沒有任何家具。",
+          "ok": true,
+          "tip": "furnished 就是「附家具」，一個字就問清楚，比一件一件問更有效率。"
+        },
+        {
+          "en": "Is it with furnitures? Because I don't have any furnitures yet.",
+          "zh": "有附家具嗎？因為我還沒有家具。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Furnitures? You mean furniture? Well, there's a bed, I suppose.", "zh": "Furnitures？你是說家具嗎？嗯，有一張床吧。" }
+            ],
+            "title": { "en": "Too Many Furnitures", "zh": "家具們大集合" },
+            "story": { "en": "Mr. Lin corrects your grammar for the next fifteen minutes, just like your old English teacher. You forget to ask about the sofa.", "zh": "接下來十五分鐘，林先生像你以前的英文老師一樣幫你改文法。你忘了問沙發的事。" },
+            "why": "furniture 是不可數名詞，不能加 s，也不能說 a furniture。問有沒有附家具，最自然的說法是 Is it furnished?"
+          }
+        },
+        {
+          "en": "Be honest, has anyone ever died in this apartment before?",
+          "zh": "老實說，以前有人在這間房子過世嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "Excuse me? No! Why would you ask me something like that?", "zh": "什麼？沒有！你怎麼會問這種問題？" }
+            ],
+            "title": { "en": "Ghost Hunter", "zh": "抓鬼特派員" },
+            "story": { "en": "Mr. Lin's face turns red. He suddenly remembers another appointment, and the viewing ends very quickly.", "zh": "林先生臉都紅了。他突然想起還有別的約，看房就這樣匆匆結束。" },
+            "why": "在台灣問「是不是凶宅」很常見，但在楓灣第一次見面就這樣問，房東會覺得被冒犯。真的在意，可以之後委婉地問 Is there anything I should know about the apartment?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "It comes with a bed, a desk and a small sofa. The last tenant kept everything in great shape.", "zh": "附一張床、一張書桌和一張小沙發。上一位房客都保持得很好。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "What else is on your mind?", "zh": "你還在考慮什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "When is it available? I'd like to move in by the first.",
+          "zh": "什麼時候可以入住？我希望一號前搬進來。",
+          "ok": true,
+          "tip": "租屋時 available 指「可以開始租」，When is it available? 是問入住日期的標準說法。"
+        },
+        {
+          "en": "When can I check in? I hope I can come on the first.",
+          "zh": "我什麼時候可以入住？希望一號就能來。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Check in? This isn't a hotel, Kai. There's no front desk here.", "zh": "Check in？這裡不是飯店，凱。這裡沒有櫃檯。" }
+            ],
+            "title": { "en": "Hotel Lin", "zh": "林氏大飯店" },
+            "story": { "en": "For the rest of the viewing, Mr. Lin calls you \"our hotel guest.\" He even asks if you'd like breakfast included.", "zh": "整場看房，林先生都叫你「我們的飯店貴賓」，還問你要不要附早餐。" },
+            "why": "把「入住」翻成 check in 是飯店用語。租屋問入住日期要說 When is it available? 或 When can I move in?"
+          }
+        },
+        {
+          "en": "Fine, I'll take it. Just give me the keys right now, okay?",
+          "zh": "好啦，我租了。現在就把鑰匙給我，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "Right now? Slow down. We haven't even talked about the lease.", "zh": "現在？慢一點。我們連租約都還沒談。" }
+            ],
+            "title": { "en": "The Key Grab", "zh": "搶鑰匙的人" },
+            "story": { "en": "Mr. Lin quietly puts the keys back in his pocket. He says he'll \"think about it\" and calls the next person on his list.", "zh": "林先生默默把鑰匙收回口袋。他說會「考慮看看」，然後打給名單上的下一位。" },
+            "why": "Give me the keys right now 聽起來像命令，對第一次見面的房東太衝。想表達很有意願，可以說 I'm really interested. When is it available?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "It's available from the first of next month. Two other people are coming to see it this weekend.", "zh": "下個月一號起就可以入住。這週末還有兩個人要來看。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "So, are you interested?", "zh": "那麼，你有興趣嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, I'm interested. Could I let you know by tomorrow?",
+          "zh": "有，我有興趣。可以明天前給你答覆嗎？",
+          "ok": true,
+          "tip": "Could I let you know by...? 禮貌地爭取考慮時間，同時給對方明確的期限。"
+        },
+        {
+          "en": "Yes, I'm very interesting in it. Can I tell you tomorrow?",
+          "zh": "有，我很有興趣。明天告訴你可以嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "You're very interesting? Well... I'm sure you are.", "zh": "你很有趣？嗯……我相信你是。" }
+            ],
+            "title": { "en": "A Very Interesting Tenant", "zh": "非常有趣的房客" },
+            "story": { "en": "Mr. Lin tells the weekend visitor about \"the very interesting student.\" They both laugh, and the visitor signs first.", "zh": "林先生跟週末來看房的人聊起「那位很有趣的學生」。兩人笑成一團，結果對方先簽了約。" },
+            "why": "interesting 是「令人覺得有趣」，interested 才是「感到有興趣」。說自己有興趣要用 I'm interested in it.。"
+          }
+        },
+        {
+          "en": "It's small and kind of old. Maybe you can lower the rent?",
+          "zh": "這裡小小的又有點舊，房租可以算便宜一點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "Old? I painted every wall myself last month. The rent stays the same.", "zh": "舊？上個月每面牆都是我親手漆的。房租不變。" }
+            ],
+            "title": { "en": "Bargain Backfire", "zh": "殺價殺到自己" },
+            "story": { "en": "Mr. Lin rents the studio to the weekend visitor, who called it \"lovely.\" You spend another month scrolling rental apps.", "zh": "林先生把套房租給了週末來看房、一直說「好可愛」的人。你又滑了一個月的租屋 app。" },
+            "why": "台灣有「嫌貨才是買貨人」的說法，但在楓灣當面嫌房子小又舊，房東只會覺得被冒犯。想談價錢，先說喜歡，再問 Is the rent negotiable at all?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mr_lin", "expr": "happy", "en": "Of course. But don't wait too long, Kai. Good places go fast around here.", "zh": "當然可以。不過別等太久，凱。這附近的好房子很搶手。" },
+      { "who": "narrator", "en": "The next morning, you call Mr. Lin and say yes.", "zh": "隔天一早，你打電話給林先生，說你要租。" }
+    ],
+    "title": { "en": "Almost Home", "zh": "快要有家了" },
+    "story": { "en": "The studio is almost yours. Mr. Lin asks you to come by on Saturday to read and sign the lease.", "zh": "套房幾乎是你的了。林先生請你星期六過去，看過租約再簽名。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Are utilities included?",
+      "zh": "有包含水電瓦斯費嗎？",
+      "explain": "utilities 指水、電、瓦斯等費用（有時也包含網路）。看房時問清楚，才知道每個月實際要付多少。",
+      "example": { "en": "Are utilities included in the rent?", "zh": "房租有包含水電瓦斯費嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "furnished / unfurnished",
+      "zh": "附家具／不附家具",
+      "explain": "furnished 表示附家具。furniture 是不可數名詞，不能加 s，要說 a piece of furniture。",
+      "example": { "en": "Is the apartment furnished or unfurnished?", "zh": "這間公寓有附家具還是沒有？" }
+    },
+    {
+      "type": "phrase",
+      "en": "When is it available?",
+      "zh": "什麼時候可以入住？",
+      "explain": "available 在租屋情境指「可以開始租」。「入住」別說 check in，那是飯店用語，租屋要說 move in。",
+      "example": { "en": "The room is available from June 1st, so you can move in then.", "zh": "房間六月一日起可以租，你那時就能搬進來。" }
+    },
+    {
+      "type": "trap",
+      "en": "I'm interested. / I'm interesting.",
+      "zh": "我有興趣。／我很有趣。",
+      "explain": "-ed 形容人的感受，-ing 形容人事物的特質。I'm interesting. 是「我這個人很有趣」，不是「我有興趣」。",
+      "example": { "en": "I'm interested in the studio. The neighborhood is interesting, too.", "zh": "我對這間套房有興趣，這一區也很有意思。" }
+    },
+    {
+      "type": "culture",
+      "en": "Don't criticize to bargain.",
+      "zh": "別用嫌棄來殺價",
+      "explain": "台灣有「嫌貨才是買貨人」的說法，但在楓灣當面批評房東的房子，只會讓對方覺得被冒犯。想談價錢，先表達喜歡，再禮貌地問 Is the rent negotiable?",
+      "example": { "en": "I really like the place. Is the rent negotiable at all?", "zh": "我很喜歡這裡。房租有商量的空間嗎？" }
+    }
+  ]
+}

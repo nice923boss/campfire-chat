@@ -1,0 +1,264 @@
+{
+  "id": "L061",
+  "location": { "en": "Maple Bay Career Fair, Harbor Convention Center", "zh": "楓灣就業博覽會，港灣會議中心" },
+  "goal": { "en": "Pitch yourself to recruiters and leave your resume at a booth you like.", "zh": "向招募人員推銷自己，並在喜歡的攤位留下履歷。" },
+  "background": "large convention hall with rows of company booths, blank display boards, tables with stacks of brochures with blank covers, carpeted aisles, bright overhead lights, daytime",
+  "cast": ["c07_recruiter", "c07_hr"],
+  "intro": [
+    { "who": "narrator", "en": "The Maple Bay Career Fair is packed. You hold a folder of freshly printed resumes and take a deep breath.", "zh": "楓灣就業博覽會人潮洶湧。你抱著一疊剛印好的履歷，深吸一口氣。" },
+    { "who": "narrator", "en": "Your working holiday visa lets you work, and now it is time to find a real job.", "zh": "你的打工度假簽證可以合法工作，現在該找份正式的工作了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c07_recruiter", "expr": "neutral", "en": "Hi there! Welcome to the Harbor Grand Hotel booth. What kind of work are you looking for?", "zh": "嗨！歡迎來到港灣大飯店的攤位。你在找什麼樣的工作？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm interested in marketing or customer service roles.",
+          "zh": "我對行銷或客服類的職位有興趣。",
+          "ok": true,
+          "tip": "I'm interested in + 名詞或 V-ing，清楚說出想找的方向。"
+        },
+        {
+          "en": "I'm interesting in marketing or customer service jobs.",
+          "zh": "我對行銷或客服工作很有興趣。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_recruiter", "expr": "confused", "en": "You're interesting? Well, I'm sure you are! But what job do you want?", "zh": "你很有趣？嗯，我相信你很有趣！但你想找什麼工作？" }
+            ],
+            "title": { "en": "Very Interesting", "zh": "非常有趣的人" },
+            "story": { "en": "The recruiter laughs politely and turns to the next visitor. You walk away still wondering what was so funny.", "zh": "招募人員客氣地笑了笑，轉頭招呼下一位訪客。你走開時還在想到底哪裡好笑。" },
+            "why": "interesting 是「令人覺得有趣」，interested 才是「感到有興趣」。說自己對某事有興趣要用 I'm interested in...，說 I'm interesting 等於在誇自己很有趣。"
+          }
+        },
+        {
+          "en": "Any job is okay. I can eat bitter, no problem!",
+          "zh": "什麼工作都可以，我很能吃苦，沒問題！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_recruiter", "expr": "confused", "en": "Eat... bitter? Is that a kind of food?", "zh": "吃……苦的東西？那是一種食物嗎？" }
+            ],
+            "title": { "en": "Bitter Taste", "zh": "苦味自我推銷" },
+            "story": { "en": "The recruiter thinks you want a kitchen job tasting bitter melon soup. Not quite the career you had in mind.", "zh": "招募人員以為你想進飯店廚房，負責試喝苦瓜湯。這不太是你想要的職涯。" },
+            "why": "「吃苦」直譯成 eat bitter，英文母語者聽不懂。想表達肯努力，說 I'm a hard worker. 或 I don't mind hard work.；「什麼工作都可以」也聽起來沒有方向，最好說出具體的興趣。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_recruiter", "expr": "neutral", "en": "Hmm, right now we mostly need night-shift kitchen staff. But Brightway, two booths down, is hiring people with language skills.", "zh": "嗯，我們現在主要缺夜班廚房人員。不過往前兩個攤位的 Brightway 正在找有語言能力的人。" }
+      ],
+      "choices": [
+        {
+          "en": "Kitchen? No way. That job is too low for me.",
+          "zh": "廚房？才不要，那種工作太低階了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_recruiter", "expr": "upset", "en": "Our kitchen team works very hard, you know.", "zh": "我們的廚房團隊可是很辛苦的。" }
+            ],
+            "title": { "en": "Burned Bridge", "zh": "自斷後路" },
+            "story": { "en": "The recruiter's smile freezes. Lesson learned: every booth at a career fair is someone's whole team.", "zh": "招募人員的笑容瞬間凍結。學到一課：博覽會上每個攤位，背後都是一整個團隊。" },
+            "why": "看不起別人的職缺，會讓對方覺得被冒犯。不感興趣時客氣婉拒即可：That's not quite what I'm looking for, but thank you.。"
+          }
+        },
+        {
+          "en": "That sounds like a great fit. Thanks for the tip!",
+          "zh": "聽起來很適合我，謝謝你的建議！",
+          "ok": true,
+          "tip": "Thanks for the tip! 是感謝別人提供資訊的自然說法。"
+        },
+        {
+          "en": "I love nights! I usually go to bed really late, haha.",
+          "zh": "我超愛晚上！我平常都很晚才睡，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c07_recruiter", "expr": "confused", "en": "Oh... okay. So you're applying for the night shift, then?", "zh": "喔……好喔。所以你是要應徵夜班囉？" }
+            ],
+            "title": { "en": "Night Owl", "zh": "夜貓子誤會" },
+            "story": { "en": "Before you know it, your name is on the night-shift list. Brightway's booth fades into the crowd behind you.", "zh": "回過神來，你的名字已經在夜班名單上了。Brightway 的攤位消失在人潮裡。" },
+            "why": "對方是在介紹另一個機會，你卻扯到自己的作息，聽起來像在應徵夜班。聽到推薦時先道謝：Thanks for the tip! I'll go check it out.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "At the Brightway booth, a few warm lamps glow on the table. A woman with a tablet looks up.", "zh": "Brightway 的攤位上，幾盞暖色檯燈亮著。一位拿著平板的女士抬起頭。" },
+        { "who": "c07_hr", "expr": "neutral", "en": "Hi, I'm Rachel from Brightway. We make smart lighting for hotels, cafés and offices. Tell me a bit about yourself.", "zh": "嗨，我是 Brightway 的瑞秋。我們做智慧照明，客戶有飯店、咖啡店和辦公室。跟我說說你自己吧。" }
+      ],
+      "choices": [
+        {
+          "en": "My name is Kai. My English is not good, and I don't really have experience. Sorry.",
+          "zh": "我叫凱。我的英文不好，也沒什麼經驗，不好意思。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Oh... your English sounds fine to me. But then, why should we hire you?", "zh": "喔……我覺得你的英文聽起來沒問題啊。不過，那我們為什麼要錄取你？" }
+            ],
+            "title": { "en": "Too Humble to Hire", "zh": "謙虛過頭" },
+            "story": { "en": "Rachel nods kindly but writes nothing down. Modesty is polite in Taiwan, but at a career fair, it hides everything good about you.", "zh": "瑞秋親切地點點頭，卻什麼也沒寫下。謙虛在台灣是禮貌，但在博覽會上，它把你的優點全藏起來了。" },
+            "why": "在台灣先自謙是禮貌，但在求職場合，對方會照字面相信你「英文不好、沒經驗」。要聚焦在自己能做的事：I've done customer service, and I speak Chinese and English.。"
+          }
+        },
+        {
+          "en": "I'm Kai from Taiwan. I've done customer service, and I speak Chinese and English.",
+          "zh": "我是來自台灣的凱。我做過客服，會說中文和英文。",
+          "ok": true,
+          "tip": "30 秒自我推銷：名字＋相關經驗＋能為對方帶來的能力。"
+        },
+        {
+          "en": "I'm Kai. I'm 22, I'm single, I love bubble tea and my blood type is O.",
+          "zh": "我是凱，22 歲，單身，喜歡珍奶，血型 O 型。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Ha, good to know... but how does that help with the job?", "zh": "哈，知道了……不過這跟工作有什麼關係？" }
+            ],
+            "title": { "en": "Dating Profile", "zh": "交友軟體自介" },
+            "story": { "en": "Rachel learns your blood type, but nothing about your skills. She hands you a candy and politely wishes you luck.", "zh": "瑞秋知道了你的血型，卻對你的能力一無所知。她遞給你一顆糖，客氣地祝你好運。" },
+            "why": "求職自介要講和工作有關的經驗與能力。年齡、感情狀態、血型都跟職缺無關，在很多國家也不該在求職時主動提起。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "That's great. We're actually looking for a sales and marketing assistant. Do you have any questions about the position?", "zh": "很好。我們正好在找業務行銷助理。你對這個職位有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. What kind of skills are you looking for?",
+          "zh": "有的。你們在找具備什麼能力的人？",
+          "ok": true,
+          "tip": "What kind of skills are you looking for? 是在博覽會上了解職缺的好問題。"
+        },
+        {
+          "en": "Yes. How much is the salary, and how many days off?",
+          "zh": "有，薪水多少？休假有幾天？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Well... we usually discuss that much later in the process.", "zh": "嗯……那個通常會在很後面的流程才談。" }
+            ],
+            "title": { "en": "Money First", "zh": "開口先談錢" },
+            "story": { "en": "Rachel's smile gets a little stiff. Your first question about the job was about money, and she makes a small note on her tablet.", "zh": "瑞秋的笑容有點僵。你對這份工作的第一個問題是錢，她在平板上默默記了一筆。" },
+            "why": "第一次接觸就問薪水和休假，會讓人覺得你只在乎待遇。博覽會上先問工作內容：What kind of skills are you looking for?，薪資留到面試後段或對方提起再談。"
+          }
+        },
+        {
+          "en": "Yes. Can you explain me more about this job?",
+          "zh": "有，你可以跟我多解釋一下這份工作嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Explain... you? Oh, you mean explain the job to you. Sure.", "zh": "解釋……你？喔，你是說跟你解釋這份工作。好啊。" }
+            ],
+            "title": { "en": "Time's Up", "zh": "時間到" },
+            "story": { "en": "Rachel figures it out, but the confusion eats up your short time at the booth. A long line has already formed behind you.", "zh": "瑞秋最後聽懂了，但剛才的混亂用掉了你在攤位前寶貴的時間，後面已經排了一長串人。" },
+            "why": "explain 後面不能直接接人。要說 Could you explain the job to me? 或 Could you tell me more about the job?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "We'd love to hear from you. Is there anything else I can help you with?", "zh": "我們很期待你的消息。還有什麼我可以幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Please give me a chance! I will work very hard!",
+          "zh": "請給我一個機會！我會很努力！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Oh! Um, well, the first step is just sending your resume.", "zh": "喔！呃，第一步其實只是投履歷而已。" }
+            ],
+            "title": { "en": "Begging at the Booth", "zh": "攤位前的懇求" },
+            "story": { "en": "Rachel looks a little uncomfortable. You meant to sound eager, but you sounded like your life depended on it.", "zh": "瑞秋看起來有點不自在。你想表現積極，聽起來卻像攸關生死。" },
+            "why": "「請給我一個機會」直接講出來，在英文裡聽起來像在哀求，反而讓對方有壓力。用具體行動表達興趣：Could I leave my resume with you?。"
+          }
+        },
+        {
+          "en": "Can I throw my resume here? I printed many copies.",
+          "zh": "我可以在這裡投履歷嗎？我印了很多份。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Throw it? Please don't throw anything at me!", "zh": "丟過來？拜託不要丟東西給我！" }
+            ],
+            "title": { "en": "Resume Toss", "zh": "丟履歷大賽" },
+            "story": { "en": "Rachel ducks behind her tablet, laughing. You hand it over gently, but the booth staff call you 'the thrower' all afternoon.", "zh": "瑞秋笑著躲到平板後面。你改成輕輕遞過去，但整個下午攤位的人都叫你「丟履歷的人」。" },
+            "why": "中文的「投履歷」不能直譯成 throw，throw 是真的「丟」。英文說 send 或 submit my resume，當面遞交則說 Could I leave my resume with you?。"
+          }
+        },
+        {
+          "en": "Could I leave my resume with you?",
+          "zh": "我可以把履歷留給你嗎？",
+          "ok": true,
+          "tip": "Could I leave my resume with you? 是博覽會上遞履歷最得體的說法。"
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Rachel slips your resume into her folder and hands you a business card.", "zh": "瑞秋把你的履歷收進資料夾，遞給你一張名片。" },
+      { "who": "c07_hr", "expr": "happy", "en": "Of course! I'll pass it to our manager, Ms. Wong. Expect a call from us soon.", "zh": "當然！我會轉交給我們的王經理。請等我們的電話。" }
+    ],
+    "title": { "en": "Foot in the Door", "zh": "踏出第一步" },
+    "story": { "en": "You leave the fair with a business card in your pocket and a good feeling about Brightway.", "zh": "你離開博覽會時，口袋裡多了一張名片，心裡對 Brightway 有種好預感。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm interested in...",
+      "zh": "我對……有興趣。",
+      "explain": "說明求職方向的基本句型，後面接名詞或 V-ing。注意是 interested，不是 interesting。",
+      "example": { "en": "I'm interested in working with international clients.", "zh": "我對和國際客戶合作有興趣。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I've done customer service, and I speak two languages.",
+      "zh": "我做過客服，也會說兩種語言。",
+      "explain": "30 秒自我推銷：名字＋一項相關經驗＋一項能力。用現在完成式 I've done、I've worked 帶出經驗。",
+      "example": { "en": "I'm Kai. I've worked at a café, and I'm good with people.", "zh": "我是凱，在咖啡店工作過，很會跟人相處。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could I leave my resume with you?",
+      "zh": "我可以把履歷留給你嗎？",
+      "explain": "博覽會或店面當面遞履歷的標準問法。投遞履歷則說 send 或 submit my resume，不要用 throw。",
+      "example": { "en": "I'd like to submit my resume for the assistant position.", "zh": "我想投遞履歷應徵助理職位。" }
+    },
+    {
+      "type": "trap",
+      "en": "interesting vs. interested",
+      "zh": "令人覺得有趣 vs. 感到有興趣",
+      "explain": "-ing 形容詞描述「帶給別人的感覺」，-ed 形容詞描述「自己的感受」。I'm interesting 是在說自己很有趣。",
+      "example": { "en": "The job sounds interesting. I'm very interested.", "zh": "這份工作聽起來很有趣，我很有興趣。" }
+    },
+    {
+      "type": "culture",
+      "en": "Skip the salary talk at first.",
+      "zh": "初次接觸先別談錢。",
+      "explain": "博覽會是建立第一印象的地方，先問工作內容和需要的能力。也別自謙說英文不好，對方會照字面相信。",
+      "example": { "en": "What kind of skills are you looking for?", "zh": "你們在找具備什麼能力的人？" }
+    }
+  ]
+}

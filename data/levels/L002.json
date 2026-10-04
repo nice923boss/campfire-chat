@@ -1,0 +1,183 @@
+{
+  "id": "L002",
+  "location": { "en": "Maple Bay International Airport, baggage claim", "zh": "楓灣國際機場，行李提領區" },
+  "goal": { "en": "Find the right carousel and get your own suitcase back.", "zh": "找到正確的行李轉盤，拿回自己的行李箱。" },
+  "background": "wide airport baggage claim hall with several empty luggage carousels, metal conveyor belts, rows of empty luggage carts, blank overhead screens, tall windows, gray carpet, morning light",
+  "cast": ["c01_airport_staff", "c01_traveler"],
+  "intro": [
+    { "who": "narrator", "en": "You made it through immigration! Now you just need your suitcase. But there are five carousels, and you have no idea which one is yours.", "zh": "你通過入境審查了！現在只要拿到行李箱就好。可是這裡有五個轉盤，你完全不知道哪個才是你的。" },
+    { "who": "narrator", "en": "A staff member in an orange vest is busy talking into her walkie-talkie.", "zh": "一位穿橘色背心的工作人員正忙著用對講機講話。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_airport_staff", "expr": "neutral", "en": "Copy that. Carousel two is clear. Over.", "zh": "收到。二號轉盤已清空，完畢。" }
+      ],
+      "choices": [
+        {
+          "en": "Excuse me, where are the bags from Taipei?",
+          "zh": "不好意思，請問台北來的行李在哪裡？",
+          "ok": true,
+          "tip": "先用 Excuse me 引起注意，再用 where is / where are 問地點。"
+        },
+        {
+          "en": "Please ask, the luggage from Taipei is where?",
+          "zh": "請問，台北來的行李是在哪裡？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_airport_staff", "expr": "confused", "en": "Please ask...? Ask who? Sorry, what's your question?", "zh": "請……問？問誰？抱歉，你的問題是什麼？" }
+            ],
+            "title": { "en": "Ask Away", "zh": "問就問啊" },
+            "story": { "en": "Grace waits for your real question, but her radio crackles again and she hurries off. You wander from carousel to carousel for twenty minutes.", "zh": "葛蕾絲等著你把問題說清楚，但對講機又響了，她匆匆離開。你在轉盤之間繞了二十分鐘。" },
+            "why": "「請問」直譯成 Please ask，聽起來像「請你去問」。要引起注意就說 Excuse me，而且英文問句要把 where 放在最前面：Excuse me, where are the bags from Taipei?"
+          }
+        },
+        {
+          "en": "Hey you! Where is my bag? Tell me.",
+          "zh": "喂，你！我的包包在哪？告訴我。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_airport_staff", "expr": "upset", "en": "Wow. Okay. The information desk is over there.", "zh": "哇，好喔。服務台在那邊。" }
+            ],
+            "title": { "en": "Hey, You!", "zh": "喂，你！" },
+            "story": { "en": "She points at a desk at the far end of the hall and turns away. The line at the information desk is very, very long.", "zh": "她指了指大廳最遠處的服務台就轉身走了。服務台前的隊伍非常、非常長。" },
+            "why": "對陌生人喊 Hey you! 還用命令句 Tell me，聽起來像在使喚人。向工作人員求助時，先說 Excuse me，再禮貌地問 where is...?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_airport_staff", "expr": "happy", "en": "From Taipei? That's carousel four, right behind you.", "zh": "台北來的？在四號轉盤，就在你後面。" },
+        { "who": "narrator", "en": "At carousel four, a man in a gray suit grabs a black suitcase. It looks exactly like yours.", "zh": "在四號轉盤旁，一位穿灰色西裝的男子拎起一個黑色行李箱。那個箱子跟你的一模一樣。" },
+        { "who": "c01_traveler", "expr": "neutral", "en": "Finally! Okay, time to go home.", "zh": "終於來了！好，回家囉。" }
+      ],
+      "choices": [
+        {
+          "en": "Excuse me, I think that's mine.",
+          "zh": "不好意思，我想那是我的。",
+          "ok": true,
+          "tip": "I think 讓語氣變委婉；mine 是「我的東西」，後面不用再接名詞。"
+        },
+        {
+          "en": "Excuse me, I think that is my.",
+          "zh": "不好意思，我想那是我的。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_traveler", "expr": "confused", "en": "That is your... what? Sorry, I'm in a hurry.", "zh": "那是你的……什麼？抱歉，我在趕時間。" }
+            ],
+            "title": { "en": "My What?", "zh": "我的什麼？" },
+            "story": { "en": "He waits for the rest of your sentence, then shrugs and rolls the suitcase away. You chase him all the way to the taxi line.", "zh": "他等你把話說完，最後聳聳肩，拖著箱子走了。你一路追到計程車招呼站。" },
+            "why": "my 後面一定要接名詞，例如 my bag。單獨使用、後面沒有名詞時要用 mine：I think that's mine."
+          }
+        },
+        {
+          "en": "Stop! Thief! That's my bag, not yours!",
+          "zh": "站住！小偷！那是我的包，不是你的！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_traveler", "expr": "upset", "en": "Thief? Excuse me? I picked it up by mistake!", "zh": "小偷？你說什麼？我只是拿錯了！" }
+            ],
+            "title": { "en": "Carousel Drama", "zh": "轉盤風波" },
+            "story": { "en": "Everyone at the carousel turns to stare. Airport security walks over, and it takes ten long minutes to clear things up.", "zh": "轉盤旁的人全都轉頭看你。機場警衛走了過來，花了漫長的十分鐘才把事情講清楚。" },
+            "why": "對方很可能只是拿錯，直接喊 Thief! 太衝了。先用 Excuse me, I think that's mine. 委婉提醒，I think 能幫你留餘地。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_traveler", "expr": "confused", "en": "Yours? Are you sure? Mine is black, too.", "zh": "你的？你確定嗎？我的也是黑色的。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, this is mine. See the name tag?",
+          "zh": "對，這是我的。你看名牌？",
+          "ok": true,
+          "tip": "This is mine. 直接表明所有權，再請對方看證據 See the name tag?"
+        },
+        {
+          "en": "Sure! You look look the name tag.",
+          "zh": "當然！你看看名牌。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_traveler", "expr": "confused", "en": "Look look? Look at what, exactly?", "zh": "看看？到底要看什麼？" }
+            ],
+            "title": { "en": "Look Look", "zh": "看看看看" },
+            "story": { "en": "He looks at the ceiling, then at the floor, then at you. By the time he finds the tag, the taxi line outside is twice as long.", "zh": "他看看天花板，又看看地板，再看看你。等他終於找到名牌時，外面排計程車的隊伍已經長了一倍。" },
+            "why": "中文「看看」直譯成 look look 不是英文。請對方看某樣東西要說 Look at the tag.，或用問句 See the name tag?"
+          }
+        },
+        {
+          "en": "Yes! Black is my favorite color, too!",
+          "zh": "對！黑色也是我最喜歡的顏色！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_traveler", "expr": "confused", "en": "...Nice. So is this your bag or not?", "zh": "……真好。所以這到底是不是你的包？" }
+            ],
+            "title": { "en": "Color Club", "zh": "黑色同好會" },
+            "story": { "en": "He decides the bag must be his and leaves. Ten minutes later, he comes back red-faced with your suitcase. His was still on the belt.", "zh": "他認定那是自己的包就走了。十分鐘後，他滿臉通紅地把你的行李箱拖回來，原來他的還在轉盤上。" },
+            "why": "對方問的是「你確定嗎」，不是在聊喜歡的顏色。要確認所有權就說 Yes, this is mine.，再拿名牌當證據。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_traveler", "expr": "happy", "en": "Oh! Your name is on it. I'm so sorry about that!", "zh": "喔！上面有你的名字。真的很抱歉！" },
+      { "who": "narrator", "en": "A minute later, his twin suitcase rolls out onto the belt. You both laugh.", "zh": "一分鐘後，他那個一模一樣的行李箱滑上了轉盤。你們兩個都笑了。" }
+    ],
+    "title": { "en": "Twin Suitcases", "zh": "雙胞胎行李箱" },
+    "story": { "en": "You get your suitcase back, and Dan gets his. You tie a bright red ribbon on yours so this never happens again.", "zh": "你拿回了自己的行李箱，丹也找到了他的。你在箱子上綁了一條鮮紅色緞帶，以後再也不會拿錯。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Excuse me, where is...?",
+      "zh": "不好意思，請問……在哪裡？",
+      "explain": "向陌生人求助的萬用開頭。Excuse me 先引起注意，再接 where is（單數）或 where are（複數）。",
+      "example": { "en": "Excuse me, where is the restroom?", "zh": "不好意思，請問洗手間在哪裡？" }
+    },
+    {
+      "type": "trap",
+      "en": "Excuse me, not \"Please ask\"",
+      "zh": "「請問」要說 Excuse me，不是 Please ask",
+      "explain": "「請問」只是禮貌的開場，英文用 Excuse me。Please ask 的意思是「請你去問」，對方會一頭霧水。",
+      "example": { "en": "Excuse me, where is gate 5?", "zh": "請問五號登機門在哪裡？" }
+    },
+    {
+      "type": "grammar",
+      "en": "my bag / mine",
+      "zh": "我的包包／我的（東西）",
+      "explain": "my、your 後面一定要接名詞；後面沒有名詞時，改用 mine、yours。",
+      "example": { "en": "This is my bag. This bag is mine.", "zh": "這是我的包包。這個包包是我的。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I think that's mine.",
+      "zh": "我想那是我的。",
+      "explain": "對方可能只是拿錯，用 I think 開頭比直接說 That's mine! 委婉，也給對方台階下。",
+      "example": { "en": "Excuse me, I think that's my umbrella.", "zh": "不好意思，我想那是我的雨傘。" }
+    },
+    {
+      "type": "culture",
+      "en": "Assume it's a mistake.",
+      "zh": "先假設對方只是拿錯",
+      "explain": "行李轉盤上長得一樣的箱子很多。先禮貌確認、請對方看名牌，比大喊 Thief! 有效得多。綁上顯眼的吊牌或緞帶，能避免被拿錯。",
+      "example": { "en": "Sorry, could you check the name tag?", "zh": "不好意思，可以看一下名牌嗎？" }
+    }
+  ]
+}

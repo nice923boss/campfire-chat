@@ -1,0 +1,181 @@
+{
+  "id": "L009",
+  "location": { "en": "Shared apartment on Willow Lane, front door", "zh": "柳樹巷合租公寓，大門口" },
+  "goal": { "en": "Meet your new roommate and introduce yourself.", "zh": "認識新室友，並做個簡單的自我介紹。" },
+  "background": "front steps of a small shared apartment on a quiet residential street, green wooden door with a brass knocker, a plain doormat, potted herbs by the steps, a bicycle against the wall, afternoon sun",
+  "cast": ["mia"],
+  "intro": [
+    { "who": "narrator", "en": "Day four. Your apartment is finally ready. You drag your suitcase up the steps and knock on the green door.", "zh": "第四天，公寓終於準備好了。你把行李箱拖上台階，敲了敲那扇綠色的門。" },
+    { "who": "narrator", "en": "Footsteps run toward the door. It flies open.", "zh": "一陣腳步聲朝門口跑來，門「砰」地打開了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Hi! You must be Kai! I'm Mia, your new roommate!", "zh": "嗨！你一定是凱吧！我是米亞，你的新室友！" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, Mia! Nice to meet you.",
+          "zh": "嗨，米亞！很高興認識你。",
+          "ok": true,
+          "tip": "初次見面說 Nice to meet you.，加上對方的名字更親切。"
+        },
+        {
+          "en": "Hello, Mia. Please take care of me.",
+          "zh": "你好，米亞。請多多指教。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Take care of you? Oh no, are you sick?", "zh": "照顧你？天啊，你生病了嗎？" }
+            ],
+            "title": { "en": "First Aid", "zh": "急救箱登場" },
+            "story": { "en": "Mia runs to get the first-aid kit. You spend your first ten minutes together explaining that you are perfectly healthy.", "zh": "米亞衝去拿急救箱。你們相處的頭十分鐘，都在解釋你身體好得很。" },
+            "why": "「請多指教」直譯成 Please take care of me.，會讓人以為你需要照顧，甚至生病了。初次見面說 Nice to meet you. 就好。"
+          }
+        },
+        {
+          "en": "Hi. How old are you, Mia?",
+          "zh": "嗨。米亞，你幾歲？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Um... twenty-three? Is this, like, a test?", "zh": "呃……二十三？這是什麼測驗嗎？" }
+            ],
+            "title": { "en": "The Interview", "zh": "身家調查" },
+            "story": { "en": "Mia answers, but things feel a little awkward. She quietly wonders if you'll ask about her salary next.", "zh": "米亞回答了，但氣氛有點尷尬。她心裡偷偷想著，你下一題該不會要問她薪水吧。" },
+            "why": "華人初次見面常問年齡，但在英語國家這算私人話題，一見面就問會很突兀。先打招呼：Hi, Mia! Nice to meet you."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Nice to meet you, too! Come in, come in! So, where are you from?", "zh": "我也很高興認識你！快進來，快進來！所以，你是哪裡人？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm from Taiwan.",
+          "zh": "我來自台灣。",
+          "ok": true,
+          "tip": "Where are you from? 問國家或家鄉，用 I'm from + 地方 回答。"
+        },
+        {
+          "en": "I'm come from Taiwan.",
+          "zh": "我是來自台灣。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "You're coming from Taiwan? Like, right now? Today?", "zh": "你正從台灣過來？是說，現在？今天？" }
+            ],
+            "title": { "en": "Jet Lag Nap", "zh": "強制補眠" },
+            "story": { "en": "Mia thinks you just flew in this morning and sends you straight to bed. You wake up at midnight, wide awake.", "zh": "米亞以為你今天早上才下飛機，直接把你送去睡覺。結果你半夜醒來，再也睡不著。" },
+            "why": "I'm come 把 be 動詞和一般動詞混在一起了。說來自哪裡用 I'm from Taiwan. 或 I come from Taiwan.，二選一。"
+          }
+        },
+        {
+          "en": "From the Harbor Inn, on Harbor Street.",
+          "zh": "從港灣街的港灣旅店。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Ha! No, I mean which country?", "zh": "哈！不是啦，我是問你是哪個國家的人？" }
+            ],
+            "title": { "en": "Hotel Kid", "zh": "飯店之子" },
+            "story": { "en": "Mia laughs so hard she has to sit down. For the next week, she introduces you to everyone as \"Kai from the Harbor Inn.\"", "zh": "米亞笑到得坐下來。接下來一整個禮拜，她跟每個人介紹你都說：「這是港灣旅店來的凱。」" },
+            "why": "Where are you from? 問的是國家或家鄉，不是你剛從哪裡過來。回答 I'm from Taiwan. 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Taiwan! So cool! I've always wanted to go there. So, tell me about yourself!", "zh": "台灣！好酷！我一直很想去耶。來，說說你自己吧！" }
+      ],
+      "choices": [
+        {
+          "en": "I'm 22. I'm here to study English.",
+          "zh": "我二十二歲，來這裡讀英文。",
+          "ok": true,
+          "tip": "自我介紹用短句：年齡、來做什麼，簡單又清楚。"
+        },
+        {
+          "en": "I'm 22. My blood type is A.",
+          "zh": "我二十二歲，血型 A 型。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Your... blood type? Should I write that down?", "zh": "你的……血型？我需要記下來嗎？" }
+            ],
+            "title": { "en": "Medical History", "zh": "病歷報告" },
+            "story": { "en": "Mia nods slowly. She isn't sure if you're telling her about your personality or your medical history.", "zh": "米亞慢慢點頭。她搞不清楚你是在說自己的個性，還是在報告病歷。" },
+            "why": "台灣人自我介紹有時會提星座、血型，但英語國家的人很少聊血型，聽起來像在講病歷。說說年齡和來這裡做什麼就好：I'm here to study English."
+          }
+        },
+        {
+          "en": "Me? Nothing special. I'm very boring.",
+          "zh": "我？沒什麼特別的，我很無聊。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Boring? Come on, you just moved across the world!", "zh": "無聊？拜託，你才剛搬到地球另一端耶！" }
+            ],
+            "title": { "en": "Conversation Stopper", "zh": "句點王" },
+            "story": { "en": "Mia tries three more questions, but you keep saying \"nothing special.\" She finally gives up and offers you a cup of tea.", "zh": "米亞又問了三個問題，你都回答「沒什麼特別的」。她最後放棄，改問你要不要喝杯茶。" },
+            "why": "謙虛在台灣是美德，但對方說 Tell me about yourself 是真心想認識你，一直說自己很無聊會讓對話卡住。分享一兩件事：I'm 22. I'm here to study English."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mia", "expr": "happy", "en": "Awesome! Welcome home, roomie! Want some tea?", "zh": "太棒了！歡迎回家，室友！要不要喝點茶？" },
+      { "who": "narrator", "en": "Mia grabs your suitcase and rolls it inside before you can say yes.", "zh": "你還來不及說好，米亞就抓起你的行李箱推進屋裡了。" }
+    ],
+    "title": { "en": "New Roommate", "zh": "新室友" },
+    "story": { "en": "Mia shows you your room, the tiny kitchen and the sunny balcony. For the first time, Maple Bay feels like home.", "zh": "米亞帶你看了你的房間、小小的廚房，還有灑滿陽光的陽台。第一次，你覺得楓灣像家了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Nice to meet you.",
+      "zh": "很高興認識你。",
+      "explain": "初次見面的標準招呼。對方先說時，回 Nice to meet you, too.",
+      "example": { "en": "Hi, I'm Kai. Nice to meet you.", "zh": "嗨，我是凱，很高興認識你。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm from Taiwan.",
+      "zh": "我來自台灣。",
+      "explain": "Where are you from? 問的是國家或家鄉。I'm from 和 I come from 意思一樣，但不能混成 I'm come from。",
+      "example": { "en": "I'm from Taiwan. What about you?", "zh": "我來自台灣，你呢？" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm 22. I'm here to study English.",
+      "zh": "我二十二歲，來這裡讀英文。",
+      "explain": "自我介紹用簡單短句就好：I'm + 年齡、I'm here to + 動詞、I like + 興趣。",
+      "example": { "en": "I'm 22. I like music and hiking.", "zh": "我二十二歲，喜歡音樂和健行。" }
+    },
+    {
+      "type": "trap",
+      "en": "Not \"Please take care of me\"",
+      "zh": "「請多指教」不要直譯",
+      "explain": "Please take care of me. 聽起來像你需要人照顧。初次見面說 Nice to meet you. 就很得體。",
+      "example": { "en": "Nice to meet you. I'm happy to be here.", "zh": "很高興認識你，我很開心來到這裡。" }
+    },
+    {
+      "type": "culture",
+      "en": "Skip age and blood type.",
+      "zh": "初次見面不問年齡、不聊血型",
+      "explain": "年齡、薪水、感情狀況在英語國家算私人話題，血型更是幾乎沒人聊。可以聊家鄉、興趣、來這裡做什麼。",
+      "example": { "en": "What do you like to do on weekends?", "zh": "你週末喜歡做什麼？" }
+    }
+  ]
+}

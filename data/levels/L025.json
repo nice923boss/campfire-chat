@@ -1,0 +1,221 @@
+{
+  "id": "L025",
+  "location": { "en": "Maple Bay Language Institute, school library", "zh": "楓灣語言學院，學校圖書館" },
+  "goal": { "en": "Get a library card and borrow your first book.", "zh": "辦好借書證，借出第一本書。" },
+  "background": "quiet school library with tall wooden bookshelves, a front desk with a computer and a returned books cart, reading tables with green lamps, soft afternoon light",
+  "cast": ["c03_librarian"],
+  "intro": [
+    { "who": "narrator", "en": "Ms. Reed recommended an easy English novel. You found it on the shelf!", "zh": "瑞德老師推薦了一本簡單的英文小說，你在書架上找到了！" },
+    { "who": "c03_librarian", "expr": "happy", "en": "Good afternoon. How can I help you?", "zh": "午安，需要什麼幫忙嗎？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_librarian", "expr": "neutral", "en": "Ah, that's a nice book. What can I do for you?", "zh": "啊，那本書不錯。有什麼我能幫你的？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I'd like to borrow this book, please.",
+          "zh": "你好，我想借這本書，麻煩了。",
+          "ok": true,
+          "tip": "borrow 是「借入」，從別人那裡拿來用。I'd like to... 是禮貌提出需求的好用句型。"
+        },
+        {
+          "en": "Hi. I would like to lend this book.",
+          "zh": "你好，我想借這本書。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_librarian", "expr": "confused", "en": "Lend it to us? How generous! A donation, then?", "zh": "借給我們？真慷慨！所以是要捐書嗎？" }
+            ],
+            "title": { "en": "Generous Donor", "zh": "熱心捐書人" },
+            "story": { "en": "Mr. Bell thanks you warmly and puts the book on the donation shelf. You walk out with a thank-you card instead of a book.", "zh": "貝爾先生熱情道謝，把書放上捐贈書架。你沒借到書，只拿到一張感謝卡。" },
+            "why": "中文的「借」不分方向，英文要分清楚：borrow 是借入，lend 是借出。想把書帶回家要說 I'd like to borrow this book.。"
+          }
+        },
+        {
+          "en": "This one. I'll take it home, OK?",
+          "zh": "這本。我要帶回家喔，OK？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_librarian", "expr": "upset", "en": "Not so fast! This is a library, not a free shop.", "zh": "別急！這裡是圖書館，不是免費商店。" }
+            ],
+            "title": { "en": "Book Bandit", "zh": "搶書大盜" },
+            "story": { "en": "Mr. Bell holds the book tightly until you calm down. The students at the reading tables look up from their books.", "zh": "貝爾先生緊緊抱著書，直到你冷靜下來。閱讀桌的同學們都抬頭看你。" },
+            "why": "I'll take it home, OK? 聽起來像在宣布而不是請求，很沒禮貌。借書要說 I'd like to borrow this book.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_librarian", "expr": "neutral", "en": "Sure. Do you have a library card?", "zh": "好的。你有借書證嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Not yet. How do I get one?",
+          "zh": "還沒有。要怎麼辦一張？",
+          "ok": true,
+          "tip": "Not yet. 表示「還沒有，但打算要」。How do I get one? 的 one 代替前面說過的 library card。"
+        },
+        {
+          "en": "No. I don't have. How can I get?",
+          "zh": "沒有，我沒有。要怎麼拿到？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_librarian", "expr": "confused", "en": "You don't have... what? Get... what?", "zh": "你沒有……什麼？要拿到……什麼？" }
+            ],
+            "title": { "en": "Missing Object", "zh": "失蹤的受詞" },
+            "story": { "en": "Mr. Bell guesses \"a pen,\" then \"a bag,\" then \"a friend.\" The library card is his tenth guess.", "zh": "貝爾先生猜了「筆」、「包包」、「朋友」……猜到第十次才猜中借書證。" },
+            "why": "have 和 get 後面要接受詞，不能空著。用 one 代替前面提過的東西：I don't have one. How can I get one?。"
+          }
+        },
+        {
+          "en": "No, I only have cash. Is that OK?",
+          "zh": "沒有，我只有現金。這樣可以嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c03_librarian", "expr": "confused", "en": "Cash? Borrowing books is free. You don't need to pay.", "zh": "現金？借書是免費的，不用付錢。" }
+            ],
+            "title": { "en": "Wallet Ready", "zh": "錢包準備好了" },
+            "story": { "en": "You thought a card meant a credit card. Mr. Bell kindly explains, and you put your wallet away with red cheeks.", "zh": "你以為 card 是信用卡。貝爾先生親切地解釋，你紅著臉把錢包收起來。" },
+            "why": "library card 是借書證，不是信用卡。聽到不熟的詞，可以先說 Not yet. 再問 How do I get one?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_librarian", "expr": "happy", "en": "Just show me your student ID. ... There you go! Your card is ready.", "zh": "給我看你的學生證就好。……好了！你的借書證辦好了。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! When is it due?",
+          "zh": "謝謝！什麼時候要還？",
+          "ok": true,
+          "tip": "due 是「到期」，When is it due? 是問還書日期、繳交期限的標準說法。"
+        },
+        {
+          "en": "Thank you. When I should give back?",
+          "zh": "謝謝。我應該什麼時候還？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_librarian", "expr": "confused", "en": "Give back... the card? You just got it!", "zh": "還……借書證？你才剛拿到耶！" }
+            ],
+            "title": { "en": "Card Return", "zh": "急著還卡" },
+            "story": { "en": "Mr. Bell holds out his hand for the new card. You hold it tightly and slowly back away.", "zh": "貝爾先生伸手要收回剛辦好的借書證。你緊緊握著卡，慢慢往後退。" },
+            "why": "問句要倒裝：When should I...?，而且 give back 後面要說清楚還什麼。最簡單的說法是 When is it due?。"
+          }
+        },
+        {
+          "en": "Thanks. I'll return it whenever.",
+          "zh": "謝啦，我有空再還。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_librarian", "expr": "upset", "en": "Whenever? Libraries don't work like that, I'm afraid.", "zh": "有空再還？圖書館恐怕不是這樣運作的。" }
+            ],
+            "title": { "en": "Watch List", "zh": "列入觀察名單" },
+            "story": { "en": "Mr. Bell writes your name on a small yellow note and sticks it on his screen. You feel watched every time you walk by.", "zh": "貝爾先生把你的名字寫在黃色便利貼上，貼在螢幕旁。之後你每次經過都覺得被盯著。" },
+            "why": "whenever 聽起來很隨便，好像不打算準時還書。借東西時要主動問期限：When is it due?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_librarian", "expr": "neutral", "en": "It's due in two weeks, on the 20th.", "zh": "兩週後到期，20 號要還。" }
+      ],
+      "choices": [
+        {
+          "en": "Can I renew it if I need more time?",
+          "zh": "如果需要更多時間，可以續借嗎？",
+          "ok": true,
+          "tip": "renew 是「續借」，也可以用在續約、更新證件。Can I renew it? 是圖書館必學句。"
+        },
+        {
+          "en": "If not finish, can I borrow again more?",
+          "zh": "如果沒看完，可以再借多一點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_librarian", "expr": "confused", "en": "More books? Sure, you can borrow up to five!", "zh": "更多書？可以啊，最多能借五本！" }
+            ],
+            "title": { "en": "Book Tower", "zh": "書塔" },
+            "story": { "en": "You leave with five thick novels in your arms. You can't even finish the first one in two weeks.", "zh": "你抱著五本厚厚的小說離開。兩週內，你連第一本都看不完。" },
+            "why": "「再借」直譯成 borrow again more，聽起來像要多借幾本。延長借期要用 renew：Can I renew it if I need more time?。"
+          }
+        },
+        {
+          "en": "Two weeks? That's too short for me.",
+          "zh": "兩週？對我來說太短了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_librarian", "expr": "upset", "en": "Hmm. It's the same for every student here.", "zh": "嗯。這裡每個學生都一樣喔。" }
+            ],
+            "title": { "en": "Rule Breaker", "zh": "規則挑戰者" },
+            "story": { "en": "Mr. Bell gives you a long speech about library rules. By the end, you only have thirteen days left.", "zh": "貝爾先生跟你講了一大段圖書館規則。講完時，你只剩十三天了。" },
+            "why": "直接抱怨規則不合理，聽起來像在找麻煩。想要更多時間，就問有沒有辦法：Can I renew it if I need more time?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c03_librarian", "expr": "happy", "en": "Of course. You can renew it online or right here. Enjoy the book!", "zh": "當然可以。線上或在這裡都能續借。好好享受這本書！" }
+    ],
+    "title": { "en": "Card Carrier", "zh": "持證讀者" },
+    "story": { "en": "You walk out with your first library card and your first English novel. Mr. Bell even adds a bookmark.", "zh": "你帶著人生第一張借書證和第一本英文小說走出圖書館。貝爾先生還送了你一張書籤。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to borrow this book.",
+      "zh": "我想借這本書。",
+      "explain": "I'd like to... 是 I want to... 的禮貌版，在櫃台、餐廳、辦公室都好用。",
+      "example": { "en": "I'd like to borrow these two DVDs.", "zh": "我想借這兩片 DVD。" }
+    },
+    {
+      "type": "phrase",
+      "en": "When is it due?",
+      "zh": "什麼時候到期？",
+      "explain": "due 表示「到期、截止」。還書日叫 due date，交作業期限也可以用：When is the essay due?。",
+      "example": { "en": "When is the homework due?", "zh": "作業什麼時候要交？" }
+    },
+    {
+      "type": "vocab",
+      "en": "renew",
+      "zh": "續借、續約",
+      "explain": "renew 是延長期限，可以用在書、會員、簽證、合約。renew a book 就是續借。",
+      "example": { "en": "I need to renew my visa next month.", "zh": "我下個月要辦簽證展延。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I don't have one.",
+      "zh": "我沒有。",
+      "explain": "have、get、need 後面一定要有受詞。用 one 代替前面提過的可數名詞，不要說 I don't have.。",
+      "example": { "en": "A: Do you have a pen? B: Sorry, I don't have one.", "zh": "A：你有筆嗎？B：抱歉，我沒有。" }
+    },
+    {
+      "type": "trap",
+      "en": "borrow vs. lend",
+      "zh": "借入與借出",
+      "explain": "中文都說「借」，英文要分方向：borrow 是從別人那裡借來，lend 是借給別人。I lend this book 會被聽成你要把書借出去。",
+      "example": { "en": "Can I borrow your notes? / Can you lend me your notes?", "zh": "我可以借你的筆記嗎？／你可以借我筆記嗎？" }
+    }
+  ]
+}

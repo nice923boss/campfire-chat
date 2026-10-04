@@ -1,0 +1,264 @@
+{
+  "id": "L064",
+  "location": { "en": "Brightway office, meeting room", "zh": "Brightway 辦公室，會議室" },
+  "goal": { "en": "Stay calm before the interview and answer \"Tell me about yourself\" with a clear story.", "zh": "面試前保持冷靜，並用清楚的架構回答「介紹一下你自己」。" },
+  "background": "modern office meeting room with warm pendant lamps over a long wooden table, glass wall facing an open office, potted plants, water glasses on a tray, afternoon light",
+  "cast": ["c07_hr", "ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "Thursday, 1:50 p.m. The Brightway office glows with soft, warm light. Of course it does: they sell lights.", "zh": "星期四下午一點五十分。Brightway 的辦公室透著柔和的暖光。這也難怪，他們就是賣燈的。" },
+    { "who": "narrator", "en": "Rachel waves at you from across the room and walks you to a meeting room.", "zh": "瑞秋從另一頭向你揮手，帶你走進一間會議室。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "Kai, welcome! You're right on time. How are you feeling today?", "zh": "凱，歡迎！你很準時。今天感覺怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "A little nervous, but excited. Thanks for having me.",
+          "zh": "有點緊張，但很興奮。謝謝你們邀請我來。",
+          "ok": true,
+          "tip": "坦白說有點緊張沒關係，加上 but excited 和道謝，聽起來就很正面。"
+        },
+        {
+          "en": "Very nervous! My English is so bad, please forgive me.",
+          "zh": "超緊張！我的英文很爛，請多包涵。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Your English is fine! Please don't say that in the interview, okay?", "zh": "你的英文沒問題啊！面試的時候千萬別這樣說，好嗎？" }
+            ],
+            "title": { "en": "Sorry in Advance", "zh": "預先道歉" },
+            "story": { "en": "You say it to Ms. Wong anyway. She spends the first five minutes telling you that your English is fine, instead of asking about your skills.", "zh": "你還是跟王經理說了一樣的話。她花了前五分鐘安慰你英文沒問題，而不是問你的能力。" },
+            "why": "「請多包涵」是台灣的客套，但在英文面試中先貶低自己，只會讓對方注意你的弱點。說 A little nervous, but excited. 就好。"
+          }
+        },
+        {
+          "en": "I'm very tension now. My heart is jumping so fast.",
+          "zh": "我現在很緊張，心跳超快。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Tension? Your heart is jumping? Should I get you some water, or a doctor?", "zh": "Tension？你的心在跳？要不要我拿杯水給你，還是叫醫生？" }
+            ],
+            "title": { "en": "Medical Emergency", "zh": "緊急醫療狀況" },
+            "story": { "en": "Rachel brings you water, a chair by the window and the office first aid kit. You feel fine, just very embarrassed.", "zh": "瑞秋拿來一杯水、搬了張窗邊的椅子，還帶來辦公室的急救箱。你身體沒事，只是非常尷尬。" },
+            "why": "tension 是名詞「緊張的狀態」，形容自己緊張要說 I'm nervous.；「心跳很快」直譯也很怪，說 I've got butterflies in my stomach. 更自然。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "Ms. Wong will be right with you. Can I get you some water while you wait?", "zh": "王經理馬上就來。等的時候要不要喝杯水？" }
+      ],
+      "choices": [
+        {
+          "en": "No, no, no, don't trouble yourself! I'm fine.",
+          "zh": "不用不用不用，別麻煩了！我沒關係。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Oh... okay. No water, then.", "zh": "喔……好，那就不用水了。" }
+            ],
+            "title": { "en": "Desert Throat", "zh": "沙漠喉嚨" },
+            "story": { "en": "Rachel takes your 'no' at face value. Twenty minutes into the interview, your voice sounds like sandpaper.", "zh": "瑞秋把你的「不用」當真了。面試進行到二十分鐘，你的聲音乾得像砂紙。" },
+            "why": "台灣人習慣先客氣推辭，但在這裡，對方會照字面接受你的「不用」。想要就直接說 Yes, please.，不要就說 No, thank you.。"
+          }
+        },
+        {
+          "en": "Yes, please. That would be great. Thank you, Rachel.",
+          "zh": "好，麻煩你了，太好了。謝謝你，瑞秋。",
+          "ok": true,
+          "tip": "別人提供東西時，想要就直接說 Yes, please.，不必客套推辭。"
+        },
+        {
+          "en": "Do you have coffee instead? Water is a bit boring.",
+          "zh": "有咖啡嗎？水有點無聊。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "We have water or tea. This isn't a café, Kai.", "zh": "我們只有水或茶。凱，這裡不是咖啡店。" }
+            ],
+            "title": { "en": "Coffee Order", "zh": "點餐時間" },
+            "story": { "en": "Rachel brings you water anyway. When Ms. Wong arrives, Rachel whispers something to her, and they both glance at you.", "zh": "瑞秋還是拿了一杯水給你。王經理進來時，瑞秋在她耳邊說了些什麼，兩人一起看了你一眼。" },
+            "why": "面試時把對方的招待當成點餐，還嫌水無聊，會顯得很挑剔。接受就說 Yes, please.，不需要就說 No, thank you.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Ms. Wong walks in, shakes your hand and sits across from you with a notepad.", "zh": "王經理走進來，和你握了握手，拿著筆記本坐到你對面。" },
+        { "who": "ms_wong", "expr": "neutral", "en": "Thanks for coming in, Kai. So, tell me a little about yourself.", "zh": "凱，謝謝你過來。那麼，簡單介紹一下你自己吧。" }
+      ],
+      "choices": [
+        {
+          "en": "I was born in Taichung. My father is an engineer, and my mother teaches.",
+          "zh": "我在台中出生。我爸爸是工程師，媽媽是老師。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Your family sounds lovely. But I was hoping to hear about you and your work.", "zh": "你的家人聽起來很好。不過我比較想聽你自己和工作的事。" }
+            ],
+            "title": { "en": "Family Tree", "zh": "家族族譜" },
+            "story": { "en": "By the time you get to elementary school, Ms. Wong has checked her watch twice.", "zh": "等你講到小學的時候，王經理已經看了兩次手錶。" },
+            "why": "在台灣自我介紹常從出生地、家庭講起，但面試的 Tell me about yourself 要講和工作有關的經歷。用「過去、現在、未來」的順序：I graduated..., now I'm..., I hope to...。"
+          }
+        },
+        {
+          "en": "I graduated from college in Taiwan last year. Now I'm studying English here.",
+          "zh": "我去年在台灣大學畢業，現在在這裡學英文。",
+          "ok": true,
+          "tip": "用過去式說背景，再用現在進行式說現況，自我介紹就有清楚的時間線。"
+        },
+        {
+          "en": "I have graduated from college since last year, and now I study here.",
+          "zh": "我從去年大學畢業，現在在這裡讀書。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Since last year? So you've been graduating for a year? I'm a little lost.", "zh": "從去年開始？所以你畢業畢了一年？我有點聽不懂。" }
+            ],
+            "title": { "en": "Endless Graduation", "zh": "畢業了一整年" },
+            "story": { "en": "You spend the next two minutes untangling your own timeline. Ms. Wong draws a confused little arrow on her notepad.", "zh": "接下來兩分鐘，你都在解開自己的時間線。王經理在筆記本上畫了一個困惑的小箭頭。" },
+            "why": "畢業是過去某個時間點完成的事，要用過去式：I graduated last year.。since 搭配現在完成式表示持續的狀態，例如 I've lived here since March.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "And what about work experience?", "zh": "那工作經驗呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I worked at a café, but the boss was terrible, so I quit after a year.",
+          "zh": "我在咖啡店工作過，但老闆很糟，所以做了一年就辭了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I see. And what would you say about us, if you left someday?", "zh": "我懂了。那如果有一天你離職，你會怎麼說我們？" }
+            ],
+            "title": { "en": "Boss Bashing", "zh": "數落前老闆" },
+            "story": { "en": "Ms. Wong's pen stops moving. The room suddenly feels a few degrees colder, even with all those warm lights.", "zh": "王經理的筆停了下來。就算滿室暖光，房間也突然冷了好幾度。" },
+            "why": "面試時批評前老闆，會讓面試官擔心你以後也這樣說他們。只談你做了什麼、學到什麼：I worked at a design studio, doing product photos.。"
+          }
+        },
+        {
+          "en": "I worked part-time at a design studio, doing product photos and social media.",
+          "zh": "我在一間設計工作室打工，負責商品攝影和社群媒體。",
+          "ok": true,
+          "tip": "說經驗時講出「在哪裡」和「做什麼」，用 doing + 名詞補充工作內容。"
+        },
+        {
+          "en": "I did part-time jobs at a café and a studio, so I have rich society experience.",
+          "zh": "我在咖啡店和工作室打過工，所以有豐富的社會經驗。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Rich society experience? Do you mean you've been to a lot of fancy parties?", "zh": "豐富的上流社會經驗？你是說你參加過很多高級派對嗎？" }
+            ],
+            "title": { "en": "High Society", "zh": "名流人生" },
+            "story": { "en": "Ms. Wong now pictures you sipping champagne at a yacht party. It takes a while to bring her back to the café.", "zh": "王經理腦中浮現你在遊艇派對上啜飲香檳的畫面。你花了好一會兒，才把她拉回咖啡店。" },
+            "why": "「豐富的社會經驗」直譯成 rich society experience，聽起來像出入上流社會。說 work experience，並舉出具體內容：I did product photos and social media.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Good. And where do you see yourself going from here?", "zh": "很好。那你接下來希望往哪個方向發展？" }
+      ],
+      "choices": [
+        {
+          "en": "Honestly? I just need any job before my visa runs out.",
+          "zh": "老實說？我只是需要在簽證到期前找到任何工作。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Any job? So this one isn't really special to you.", "zh": "任何工作？所以這份工作對你來說沒什麼特別的。" }
+            ],
+            "title": { "en": "Any Job Will Do", "zh": "什麼工作都好" },
+            "story": { "en": "Ms. Wong closes her notepad a little early. Honesty is good, but this was a bit too much of it.", "zh": "王經理提早闔上了筆記本。誠實是好事，但這次誠實過頭了。" },
+            "why": "說「只要有工作就好」，等於告訴面試官你對這個職位沒熱情。談未來要連結到這份工作：I hope to grow in sales and work with clients like hotels and cafés.。"
+          }
+        },
+        {
+          "en": "In the future? Hopefully living near the beach with two cats, haha!",
+          "zh": "未來？希望住在海邊，養兩隻貓，哈哈！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "That sounds lovely... but I meant your career.", "zh": "聽起來很美好……不過我指的是你的職涯。" }
+            ],
+            "title": { "en": "Beach Life", "zh": "海邊人生" },
+            "story": { "en": "Ms. Wong smiles politely. She now knows your dream pets, but not your career goals.", "zh": "王經理客氣地笑了笑。她現在知道你夢想中的寵物了，卻不知道你的職涯目標。" },
+            "why": "面試問 Where do you see yourself...? 是在問職涯方向，不是生活夢想。用 I hope to + 動詞 連結到這份工作。"
+          }
+        },
+        {
+          "en": "I hope to grow in sales and work with clients like hotels and cafés.",
+          "zh": "我希望在業務方面成長，和飯店、咖啡店這類客戶合作。",
+          "ok": true,
+          "tip": "談未來用 I hope to + 動詞，並提到對方公司的客戶，顯示你做過功課。"
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Ms. Wong writes something on her notepad and underlines it twice.", "zh": "王經理在筆記本上寫了些什麼，還畫了兩條底線。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Clear and well organized. I like that. Let's keep going.", "zh": "清楚又有條理，我喜歡。我們繼續吧。" }
+    ],
+    "title": { "en": "Past, Present, Future", "zh": "過去、現在、未來" },
+    "story": { "en": "Your answer had a beginning, a middle and an end. The hardest question of the interview is behind you.", "zh": "你的回答有開頭、有過程、有結尾。面試中最難的一題，已經順利過關。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "I graduated... Now I'm... I hope to...",
+      "zh": "我畢業於……現在我在……我希望……",
+      "explain": "回答 Tell me about yourself 的萬用架構：過去式說背景，現在式說現況，I hope to 說未來。整段控制在一分鐘左右。",
+      "example": { "en": "I studied design. Now I'm working at a café. I hope to move into marketing.", "zh": "我讀設計，現在在咖啡店工作，希望之後轉往行銷。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I graduated last year. / I've lived here since March.",
+      "zh": "我去年畢業。／我從三月起就住在這裡。",
+      "explain": "某個時間點完成的事用過去式；從過去持續到現在的狀態，才用現在完成式加 since。",
+      "example": { "en": "I moved here in March, and I've lived here since then.", "zh": "我三月搬來，從那時起就住在這裡。" }
+    },
+    {
+      "type": "trap",
+      "en": "I'm nervous. / work experience",
+      "zh": "我很緊張。／工作經驗",
+      "explain": "「緊張」不說 I'm tension，tension 是名詞；「社會經驗」不說 society experience，要說 work experience。",
+      "example": { "en": "I'm a little nervous, but I have three years of work experience.", "zh": "我有點緊張，不過我有三年工作經驗。" }
+    },
+    {
+      "type": "culture",
+      "en": "Tell me about yourself = your work story",
+      "zh": "介紹你自己＝說你的工作故事",
+      "explain": "面試的自我介紹不是從出生地和家人開始，也不要批評前老闆。挑和這份工作有關的經歷來說。",
+      "example": { "en": "I've worked with customers for two years, and I enjoy it.", "zh": "我和客人打交道兩年了，我很喜歡這份工作。" }
+    },
+    {
+      "type": "culture",
+      "en": "Yes, please. / No, thank you.",
+      "zh": "好，麻煩你。／不用了，謝謝。",
+      "explain": "別人請你喝水、喝茶時，對方會照字面理解你的回答。想要就說 Yes, please.，不用客氣推辭三次。",
+      "example": { "en": "Would you like some tea? Yes, please. That would be lovely.", "zh": "要喝茶嗎？好，麻煩你，太好了。" }
+    }
+  ]
+}

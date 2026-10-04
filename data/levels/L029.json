@@ -1,0 +1,223 @@
+{
+  "id": "L029",
+  "location": { "en": "Maple Bay Language Institute, gym", "zh": "楓灣語言學院，體育館" },
+  "goal": { "en": "Find out about the Outdoor Club and join it.", "zh": "了解戶外社，並報名加入。" },
+  "background": "school gym set up for a club fair, rows of folding tables, a table with a small tent, coiled ropes and a pair of hiking boots, colorful balloons, bright daylight",
+  "cast": ["c03_clubhost", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "It's club fair day. The gym is full of tables and noisy students.", "zh": "今天是社團博覽會，體育館擺滿攤位，學生們熱鬧滾滾。" },
+    { "who": "leo", "expr": "happy", "en": "Kai, look! The Outdoor Club!", "zh": "凱，你看！戶外社！" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_clubhost", "expr": "happy", "en": "Hey there! Interested in the Outdoor Club?", "zh": "嘿！對戶外社有興趣嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Maybe! What do you do in this club?",
+          "zh": "也許！你們社團都做什麼？",
+          "ok": true,
+          "tip": "What do you do in this club? 是問社團活動內容的自然說法。"
+        },
+        {
+          "en": "Yes. Your club is doing what activity?",
+          "zh": "對。你們社團在做什麼活動？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "confused", "en": "Right now? Um, standing at this table, I guess.", "zh": "現在嗎？呃，我猜是站在這張桌子旁邊吧。" }
+            ],
+            "title": { "en": "Live Activity", "zh": "現場實況" },
+            "story": { "en": "Noah describes exactly what he's doing right now. You learn a lot about folding tables and nothing about the club.", "zh": "諾亞詳細描述他此刻正在做的事。你學到很多摺疊桌的知識，卻對社團一無所知。" },
+            "why": "中文語序直譯成 is doing what，聽起來像在問「現在正在做什麼」。問社團活動要說 What do you do in this club?。"
+          }
+        },
+        {
+          "en": "Yes! I'm very interesting in hiking.",
+          "zh": "對！我對健行很有興趣。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "confused", "en": "You're interesting? Cool... Tell me more about you, then?", "zh": "你很有趣？酷……那多說說你自己？" }
+            ],
+            "title": { "en": "Very Interesting Person", "zh": "超有趣的人" },
+            "story": { "en": "Noah waits for you to say something interesting. The pressure is too much, and you only talk about the weather.", "zh": "諾亞等著你說點有趣的事。壓力太大了，你只能聊天氣。" },
+            "why": "interesting 是「令人感到有趣的」，interested 才是「感興趣的」。要說 I'm interested in hiking.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_clubhost", "expr": "happy", "en": "We go hiking, camping and even kayaking!", "zh": "我們會去健行、露營，還有划獨木舟！" }
+      ],
+      "choices": [
+        {
+          "en": "Sounds fun! How often do you meet?",
+          "zh": "聽起來很好玩！你們多久聚一次？",
+          "ok": true,
+          "tip": "How often...? 用來問頻率，回答會是 once a week、every Saturday 這類說法。"
+        },
+        {
+          "en": "Sounds fun! How many time you meet?",
+          "zh": "聽起來很好玩！你們見面幾次？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "confused", "en": "How many times... in total? Since 2019? Let me count.", "zh": "總共幾次……嗎？從 2019 年開始？我數一下。" }
+            ],
+            "title": { "en": "Club History", "zh": "社團編年史" },
+            "story": { "en": "Noah counts every club meeting since the club started. He gets to 213 before Leo stops him.", "zh": "諾亞開始數社團成立以來的每一次聚會。數到 213 次時，里歐終於阻止了他。" },
+            "why": "How many times 是問總共幾次，問頻率要用 How often。疑問句也要有助動詞：How often do you meet?。"
+          }
+        },
+        {
+          "en": "Kayaking? Isn't it dangerous? My mom says no.",
+          "zh": "獨木舟？不危險嗎？我媽會說不行。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "confused", "en": "Your mom? Uh, we always wear life jackets...", "zh": "你媽媽？呃，我們都會穿救生衣啦……" }
+            ],
+            "title": { "en": "Mom Says No", "zh": "媽媽說不行" },
+            "story": { "en": "Noah gives you a safety brochure to show your mom. Leo signs up while you are still reading it.", "zh": "諾亞給你一份安全手冊，讓你拿給媽媽看。你還在讀的時候，里歐已經報名了。" },
+            "why": "在國外，大學生多半自己做決定，搬出父母當理由會顯得不夠獨立。有疑慮可以直接問：Is it safe for beginners?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_clubhost", "expr": "neutral", "en": "Every Saturday morning. The next trip is a lake hike!", "zh": "每個星期六早上。下次活動是湖邊健行！" }
+      ],
+      "choices": [
+        {
+          "en": "Great. How do I sign up?",
+          "zh": "太好了。要怎麼報名？",
+          "ok": true,
+          "tip": "sign up 是報名、註冊，sign up for + 活動。也可以說 How do I join?。"
+        },
+        {
+          "en": "Great. How can I enter the club?",
+          "zh": "太好了。我要怎麼進社團？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "confused", "en": "Enter? Well, the club room is on the second floor.", "zh": "進去？嗯，社辦在二樓。" }
+            ],
+            "title": { "en": "Room Tour", "zh": "社辦導覽" },
+            "story": { "en": "Noah draws you a map to the club room. You visit it, but there's nobody there on a Tuesday.", "zh": "諾亞畫了一張社辦地圖給你。你真的去了，但星期二社辦一個人也沒有。" },
+            "why": "「進社團」直譯成 enter the club，聽起來像要走進社團教室。加入社團要說 join the club 或 sign up：How do I sign up?。"
+          }
+        },
+        {
+          "en": "Every Saturday? Saturday is my sleep day.",
+          "zh": "每個星期六？星期六是我的睡覺日。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "upset", "en": "Oh. Then maybe try the Sleeping Club?", "zh": "喔。那你也許該去睡覺社？" }
+            ],
+            "title": { "en": "Sleeping Club", "zh": "睡覺社社員" },
+            "story": { "en": "Noah turns to the next student. You spend Saturday in bed, and Leo sends you lake photos all morning.", "zh": "諾亞轉向下一位學生。你星期六躺在床上，里歐整個早上都在傳湖景照片給你。" },
+            "why": "在別人熱情介紹時抱怨時間，聽起來很掃興。如果有興趣，直接問 How do I sign up?；時間不行，可以問 Do you have any trips on Sundays?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_clubhost", "expr": "happy", "en": "Just write your name and email here.", "zh": "在這裡寫下名字和 email 就好。" },
+        { "who": "leo", "expr": "happy", "en": "I'm in! Come on, Kai!", "zh": "我要參加！來嘛，凱！" }
+      ],
+      "choices": [
+        {
+          "en": "Count me in! So what should I bring?",
+          "zh": "算我一份！那我要帶什麼？",
+          "ok": true,
+          "tip": "Count me in! 是「算我一份」，熱情加入時的說法。What should I bring? 主動問準備事項。"
+        },
+        {
+          "en": "Yes! I join. What I should bring?",
+          "zh": "好！我加入。我應該帶什麼？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_clubhost", "expr": "confused", "en": "\"What I should bring\"... is that a question or a list?", "zh": "「我應該帶的東西」……這是問題還是清單？" }
+            ],
+            "title": { "en": "Empty List", "zh": "空白清單" },
+            "story": { "en": "Noah waits for you to finish your list. You both stare at each other until Leo starts laughing.", "zh": "諾亞等你把清單說完。你們互看了好久，直到里歐笑出來。" },
+            "why": "問句要倒裝：What should I bring?。說要加入可以用 I'm in! 或 Count me in!，不要說 I join.。"
+          }
+        },
+        {
+          "en": "Hmm, maybe. I'll think about it.",
+          "zh": "嗯，也許吧。我考慮看看。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Think about it? But you said you love hiking!", "zh": "考慮看看？可是你說過你超愛健行耶！" }
+            ],
+            "title": { "en": "Forever Maybe", "zh": "永遠的考慮中" },
+            "story": { "en": "You think about it for three weeks. By then, the lake trip is full.", "zh": "你考慮了三個星期。等你決定時，湖邊健行已經額滿了。" },
+            "why": "台灣人常用「我考慮看看」委婉拒絕或拖延，但想參加就要直接說。表達熱情加入：Count me in!。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c03_clubhost", "expr": "happy", "en": "Good shoes, water and a snack. See you Saturday!", "zh": "好走的鞋、水和點心。星期六見！" },
+      { "who": "leo", "expr": "happy", "en": "Our first hike together!", "zh": "我們第一次一起健行！" }
+    ],
+    "title": { "en": "New Member", "zh": "戶外社新成員" },
+    "story": { "en": "You write your name on the sign-up sheet right under Leo's. Saturday can't come fast enough.", "zh": "你在報名表上寫下名字，就在里歐的名字下面。好希望星期六快點到。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "What do you do in this club?",
+      "zh": "你們社團做什麼？",
+      "explain": "問社團、組織平常的活動。用現在簡單式 do，表示平常的習慣。",
+      "example": { "en": "What do you do in the Photo Club?", "zh": "攝影社都在做什麼？" }
+    },
+    {
+      "type": "grammar",
+      "en": "How often...?",
+      "zh": "多久一次？",
+      "explain": "How often 問頻率，How many times 問總次數。回答 How often 可以用 once a week、every Saturday、twice a month。",
+      "example": { "en": "How often do you go swimming? / Twice a week.", "zh": "你多久游一次泳？／一週兩次。" }
+    },
+    {
+      "type": "vocab",
+      "en": "sign up / join",
+      "zh": "報名／加入",
+      "explain": "sign up for 是報名活動、課程；join 是加入團體。不要說 enter the club，那是走進社團教室。",
+      "example": { "en": "I signed up for the cooking class.", "zh": "我報名了烹飪課。" }
+    },
+    {
+      "type": "trap",
+      "en": "interested vs. interesting",
+      "zh": "感興趣與有趣",
+      "explain": "-ed 描述人的感受，-ing 描述事物的特質。I'm interested 是我感興趣，I'm interesting 是我這個人很有趣。",
+      "example": { "en": "I'm interested in history. History is interesting.", "zh": "我對歷史有興趣。歷史很有趣。" }
+    },
+    {
+      "type": "culture",
+      "en": "Count me in!",
+      "zh": "算我一份！",
+      "explain": "英語文化欣賞直接表達熱情。想參加就說 Count me in! 或 I'm in!。說 I'll think about it. 通常會被理解成委婉拒絕。",
+      "example": { "en": "A movie night on Friday? Count me in!", "zh": "星期五電影之夜？算我一份！" }
+    }
+  ]
+}

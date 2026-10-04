@@ -1,0 +1,265 @@
+{
+  "id": "L081",
+  "location": { "en": "Harborview Hotel, executive office", "zh": "港景飯店，主管辦公室" },
+  "goal": { "en": "Make a good first impression on a new hotel client.", "zh": "在新的飯店客戶面前留下好的第一印象。" },
+  "background": "elegant hotel executive office with a wide window overlooking a harbor, polished wooden desk, two leather armchairs, potted orchid, warm pendant lights, soft morning sunlight",
+  "cast": ["ms_wong", "c09_hotel_director"],
+  "intro": [
+    { "who": "narrator", "en": "Your first real client visit. Ms. Wong has brought you to the Harborview Hotel, which wants to upgrade its lighting.", "zh": "你的第一次正式客戶拜訪。王經理帶你來到港景飯店，這家飯店正打算更新照明設備。" },
+    { "who": "ms_wong", "expr": "neutral", "en": "Relax, Kai. Be warm, be brief, and let the client lead at first.", "zh": "放輕鬆，凱。親切、簡潔，一開始先讓客戶主導。" },
+    { "who": "narrator", "en": "The office door opens, and the hotel's operations director walks in.", "zh": "辦公室的門打開，飯店的營運總監走了進來。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "happy", "en": "Good morning! Ms. Wong, lovely to see you again. And you must be Kai.", "zh": "早安！王經理，很高興又見面了。這位一定就是凱吧。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, I'm Kai. Thank you for taking the time to meet with us today.",
+          "zh": "是的，我是凱。謝謝您今天撥空和我們見面。",
+          "ok": true,
+          "tip": "Thank you for taking the time to meet. 是拜訪客戶的標準開場，先感謝對方撥出時間。"
+        },
+        {
+          "en": "Yes, I'm Kai. Sorry to disturb you, and thank you for your precious time.",
+          "zh": "是的，我是凱。打擾了，謝謝您寶貴的時間。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "Disturb me? Not at all, I invited you. Did I miss something?", "zh": "打擾我？完全不會，是我邀請你們來的。我漏掉什麼了嗎？" }
+            ],
+            "title": { "en": "Apology Accepted?", "zh": "道歉道錯地方" },
+            "story": { "en": "Ms. Grant spends the first minute assuring you that you are no bother at all. The meeting starts on a slightly awkward note.", "zh": "葛蘭特總監花了第一分鐘向你保證你完全沒有打擾到她。會議就在有點尷尬的氣氛中開始。" },
+            "why": "「打擾了」是中文客套話，直譯成 Sorry to disturb you. 會讓對方以為你打斷了什麼；precious time 也太誇張。被邀請來開會時，說 Thank you for taking the time to meet with us. 就很得體。"
+          }
+        },
+        {
+          "en": "Yep, that's me! Let's skip the small talk and jump straight to prices.",
+          "zh": "對，就是我！我們跳過閒聊，直接談價格吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "Straight to prices? I haven't even offered you a coffee yet.", "zh": "直接談價格？我連咖啡都還沒請你喝呢。" }
+            ],
+            "title": { "en": "Too Fast, Too Soon", "zh": "操之過急" },
+            "story": { "en": "Ms. Grant's smile cools by a few degrees. Ms. Wong spends the next ten minutes warming the room back up.", "zh": "葛蘭特總監的笑容降了好幾度。王經理花了十分鐘才把氣氛重新炒熱。" },
+            "why": "第一次見客戶就說「跳過閒聊、直接談價格」，聽起來急躁又不尊重對方。先道謝、寒暄幾句，讓客戶決定何時進入正題：Thank you for taking the time to meet with us.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Ms. Grant takes a business card from a silver holder and offers it to you.", "zh": "葛蘭特總監從銀色名片夾裡抽出一張名片遞給你。" },
+        { "who": "c09_hotel_director", "expr": "neutral", "en": "Here's my card. My direct line is on the back.", "zh": "這是我的名片，背面有我的直撥電話。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you. And here's mine. Please feel free to call me anytime.",
+          "zh": "謝謝。這是我的名片，有需要請隨時打給我。",
+          "ok": true,
+          "tip": "收下名片先道謝，再用 Here's mine. 回遞自己的，簡單又得體。"
+        },
+        {
+          "en": "Thank you very much. This is my card. Please give me more advice in the future.",
+          "zh": "非常感謝。這是我的名片，以後請多多指教。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "Advice? Oh... on what, exactly? I'm not sure I'm the right person.", "zh": "建議？呃……關於什麼？我不確定我是適合的人選。" }
+            ],
+            "title": { "en": "Advice Wanted", "zh": "請多「指教」" },
+            "story": { "en": "Ms. Grant kindly starts giving you career tips. Fifteen minutes later, nobody has mentioned lighting yet.", "zh": "葛蘭特總監好心地開始給你職涯建議。十五分鐘後，還沒有人提到照明。" },
+            "why": "「請多指教」是中文的客套話，直譯成 Please give me more advice. 會讓對方以為你真的在請教問題。交換名片時說 Here's mine. Please feel free to call me anytime. 就好。"
+          }
+        },
+        {
+          "en": "Thanks. This is mine card. If any question, you can contact with me.",
+          "zh": "謝謝。這是我的名片，有任何問題可以聯絡我。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "Contact... with you? Sorry, could you say that again?", "zh": "聯絡……跟你？抱歉，可以再說一次嗎？" }
+            ],
+            "title": { "en": "Lost in the Grammar", "zh": "文法卡關" },
+            "story": { "en": "You repeat yourself twice, and a simple card exchange stretches into an awkward minute. Ms. Wong gently moves things along.", "zh": "你又重說了兩次，簡單的交換名片變成了尷尬的一分鐘。王經理溫和地把話題接了過去。" },
+            "why": "所有格要用 my card，不是 mine card；contact 後面直接接受詞，說 contact me，不加 with。完整說法：If you have any questions, please feel free to contact me.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "neutral", "en": "Please, have a seat. Did you find us all right? Harbor Road can be a nightmare in the morning.", "zh": "請坐。路上還好找嗎？港口路早上塞起車來很可怕。" }
+      ],
+      "choices": [
+        {
+          "en": "No trouble at all. We took the waterfront route, and the view was lovely.",
+          "zh": "一點都不麻煩。我們走海濱那條路，風景很美。",
+          "ok": true,
+          "tip": "破冰閒聊時給簡短正面的回答，再補一句小細節，話題就能自然延續。"
+        },
+        {
+          "en": "It was easy. Wow, you look so young for a director. How old are you?",
+          "zh": "很好找。哇，您當總監看起來好年輕，請問您幾歲？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "Oh! Well... old enough to know not to answer that.", "zh": "噢！這個嘛……老到知道不該回答這個問題。" }
+            ],
+            "title": { "en": "A Question of Age", "zh": "年齡是祕密" },
+            "story": { "en": "Ms. Grant laughs it off, but the room goes quiet for a second too long. Ms. Wong quickly asks about the hotel's new restaurant.", "zh": "葛蘭特總監一笑帶過，但現場安靜了好一下。王經理趕緊把話題轉到飯店新開的餐廳。" },
+            "why": "在台灣稱讚「看起來好年輕」再問年齡很常見，但在西方商務場合，年齡、薪水、婚姻都屬於私人話題。閒聊就聊交通、天氣或城市：No trouble at all. The view was lovely.。"
+          }
+        },
+        {
+          "en": "Yes. Brightway was founded in 2015, and we now serve over two hundred clients.",
+          "zh": "有的。Brightway 成立於 2015 年，目前服務超過兩百家客戶。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "That's... impressive. I was only asking about the traffic, though.", "zh": "這……很厲害。不過我只是在問交通狀況。" }
+            ],
+            "title": { "en": "Pitch Mode: On", "zh": "推銷模式啟動" },
+            "story": { "en": "Your answer sounds like a memorized brochure. Ms. Grant checks her watch for the first time.", "zh": "你的回答聽起來像背好的公司簡介。葛蘭特總監第一次看了手錶。" },
+            "why": "對方問 Did you find us all right? 是破冰閒聊，不是要聽公司簡介。輕鬆回應交通狀況就好：No trouble at all. We took the waterfront route.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "happy", "en": "Now, before we start, can I get you anything? Coffee, tea, sparkling water?", "zh": "那麼，開始之前，要喝點什麼嗎？咖啡、茶，還是氣泡水？" }
+      ],
+      "choices": [
+        {
+          "en": "A coffee would be lovely, thank you. Black is fine.",
+          "zh": "來杯咖啡就太好了，謝謝。黑咖啡就可以。",
+          "ok": true,
+          "tip": "would be lovely 是接受招待的得體說法，順便說清楚喜好，對方比較好準備。"
+        },
+        {
+          "en": "Give me a black coffee, no sugar. And some water too, please.",
+          "zh": "給我一杯黑咖啡，不加糖。也給我一些水。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "...Of course. I'll let my assistant know.", "zh": "……當然。我請助理準備。" }
+            ],
+            "title": { "en": "Coffee Command", "zh": "點餐口吻" },
+            "story": { "en": "You get your coffee, along with the feeling that you just ordered from a client like a waiter. Ms. Wong raises an eyebrow.", "zh": "你拿到了咖啡，卻也感覺自己剛剛把客戶當成服務生在點餐。王經理挑了一下眉。" },
+            "why": "Give me... 是命令語氣，對招待你的客戶說會顯得不禮貌，加了 please 也救不太回來。接受招待時說 A coffee would be lovely, thank you. 或 Could I have a coffee, please?。"
+          }
+        },
+        {
+          "en": "No, no, please don't trouble yourself. Really, we're fine, no need at all.",
+          "zh": "不用不用，別麻煩了。真的，我們沒關係，完全不用。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "Oh. All right, if you're sure.", "zh": "喔，好吧，如果你確定的話。" }
+            ],
+            "title": { "en": "Polite and Parched", "zh": "客氣到口渴" },
+            "story": { "en": "Ms. Grant takes you at your word. You spend the next hour with a dry throat, watching her sip a fresh cappuccino.", "zh": "葛蘭特總監照字面理解了你的話。接下來一小時，你口乾舌燥地看著她啜飲現煮的卡布奇諾。" },
+            "why": "在台灣先推辭幾次是禮貌，但在西方，對方通常會照字面接受你的「不用了」。想喝就直接接受：A coffee would be lovely, thank you.；不想喝就說 I'm fine, thank you.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "neutral", "en": "So, I have about thirty minutes before my next meeting. Where would you like to begin?", "zh": "我下一個會議前大約有三十分鐘。你們想從哪裡開始？" }
+      ],
+      "choices": [
+        {
+          "en": "Perhaps you could tell us what you'd like the new lighting to do for your guests.",
+          "zh": "或許您可以先告訴我們，您希望新照明為房客帶來什麼。",
+          "ok": true,
+          "tip": "先請客戶說出需求，展現傾聽的態度，比急著推銷更有說服力。"
+        },
+        {
+          "en": "First we want to know what is your problem with the lighting now.",
+          "zh": "我們想先知道你們現在的照明有什麼問題。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "Our problem? I wasn't aware we had one.", "zh": "我們的問題？我倒不知道我們有問題。" }
+            ],
+            "title": { "en": "Problem Found", "zh": "沒問題變有問題" },
+            "story": { "en": "Ms. Grant spends the next ten minutes defending her lobby. Ms. Wong steers the meeting back on course.", "zh": "葛蘭特總監花了十分鐘替她的大廳辯護。王經理把會議拉回正軌。" },
+            "why": "間接問句要用直述語序：what your problem is，不是 what is your problem；而且直接說客戶「有問題」也容易冒犯人。改說 Could you tell us what you'd like the new lighting to do? 比較好。"
+          }
+        },
+        {
+          "en": "Thirty minutes is too short for us. Our presentation needs at least an hour.",
+          "zh": "三十分鐘對我們來說太短了，我們的簡報至少需要一小時。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "Then perhaps we should reschedule for when I have an hour.", "zh": "那或許我們該改到我有一小時的時候再談。" }
+            ],
+            "title": { "en": "Running Out the Clock", "zh": "時間不夠用" },
+            "story": { "en": "Ms. Grant's assistant finds you a new slot... in five weeks. Ms. Wong sighs all the way back to the office.", "zh": "葛蘭特總監的助理幫你們找到新的時段……在五週後。王經理一路嘆氣回到公司。" },
+            "why": "客戶給你多少時間，就在那段時間內做好，直接說「太短了」等於要求對方配合你。可以說 Thirty minutes is perfect. Perhaps you could start by telling us what you need.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_hotel_director", "expr": "happy", "en": "I appreciate a team that listens first. Let's set up a site walkthrough next week.", "zh": "我很欣賞先聆聽的團隊。我們下週安排一次實地勘查吧。" },
+      { "who": "ms_wong", "expr": "happy", "en": "We'd be delighted. Thank you again, Ms. Grant.", "zh": "我們很樂意。再次謝謝您，葛蘭特總監。" }
+    ],
+    "title": { "en": "Off to a Good Start", "zh": "好的開始" },
+    "story": { "en": "Ms. Grant walks you to the lobby herself. On the way out, Ms. Wong gives you a small nod: your first client visit went well.", "zh": "葛蘭特總監親自送你們到大廳。離開時，王經理對你輕輕點頭：你的第一次客戶拜訪很成功。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Thank you for taking the time to meet.",
+      "zh": "謝謝您撥空見面。",
+      "explain": "拜訪客戶的標準開場白，感謝對方撥出時間給你。比 Thank you for your precious time. 自然得多。",
+      "example": { "en": "Thank you for taking the time to meet with us today.", "zh": "謝謝您今天撥空和我們見面。" }
+    },
+    {
+      "type": "trap",
+      "en": "Sorry to disturb you. / Please give me more advice.",
+      "zh": "打擾了／請多指教",
+      "explain": "這兩句都是中文客套話的直譯。disturb 是「干擾」，advice 是真的「建議」，英文母語者會照字面理解。見面說 Thanks for having us.，交換名片說 Here's mine.。",
+      "example": { "en": "Thanks for having us. Here's my card.", "zh": "謝謝邀請我們來，這是我的名片。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Please feel free to call me anytime.",
+      "zh": "有需要請隨時打給我。",
+      "explain": "交換名片時的實用結尾句。feel free to + 原形動詞 表示「請別客氣，儘管……」，語氣友善又專業。",
+      "example": { "en": "Please feel free to email me if you have any questions.", "zh": "有任何問題，歡迎隨時寄信給我。" }
+    },
+    {
+      "type": "culture",
+      "en": "Small talk comes first.",
+      "zh": "先閒聊，再談正事。",
+      "explain": "西方商務會面通常先聊幾句交通、天氣或城市，再進入正題。年齡、薪水、婚姻屬於私人話題，第一次見面不要問。",
+      "example": { "en": "Any trouble finding us? Not at all, the directions were great.", "zh": "路上好找嗎？很好找，路線說明很清楚。" }
+    },
+    {
+      "type": "phrase",
+      "en": "A coffee would be lovely.",
+      "zh": "來杯咖啡就太好了。",
+      "explain": "接受招待時用 would be lovely 很得體。西方人通常會照字面理解你的「不用了」，想喝就一次接受，不必推辭好幾次。",
+      "example": { "en": "Tea would be lovely, thank you. No sugar, please.", "zh": "來杯茶就太好了，謝謝。請不要加糖。" }
+    }
+  ]
+}

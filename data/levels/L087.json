@@ -1,0 +1,265 @@
+{
+  "id": "L087",
+  "location": { "en": "Maple Bay Hospitality Mixer, hotel ballroom", "zh": "楓灣餐旅業交流會，飯店宴會廳" },
+  "goal": { "en": "Make a new business contact and leave the conversation gracefully.", "zh": "認識新的商業人脈，並優雅地結束對話。" },
+  "background": "hotel ballroom set up for an evening networking event, round high cocktail tables with white cloths, sparkling chandeliers, long buffet table with finger food, empty stage, warm golden lighting",
+  "cast": ["sam", "c09_designer"],
+  "intro": [
+    { "who": "narrator", "en": "The annual hospitality mixer. Hotel managers, cafe owners, and designers fill the ballroom.", "zh": "一年一度的餐旅業交流會。飯店經理、咖啡店老闆和設計師擠滿了宴會廳。" },
+    { "who": "sam", "expr": "happy", "en": "Rule number one, Kai: ask questions, don't just hand out cards. Go meet someone new!", "zh": "第一條規則，凱：多問問題，不要只是發名片。去認識新朋友吧！" },
+    { "who": "narrator", "en": "Near the buffet, a woman with a small sketchbook smiles at you.", "zh": "在自助餐檯旁，一位拿著小素描本的女士對你微笑。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_designer", "expr": "happy", "en": "Hi there! Great turnout tonight, isn't it? I'm Nora.", "zh": "嗨！今晚來的人真多，對吧？我是諾拉。" }
+      ],
+      "choices": [
+        {
+          "en": "It really is. I'm Kai, from Brightway Lighting. What line of work are you in?",
+          "zh": "真的。我是凱，在 Brightway 照明工作。您是做哪一行的？",
+          "ok": true,
+          "tip": "What line of work are you in? 是交流場合詢問對方職業的自然說法。"
+        },
+        {
+          "en": "Yes, very hot and noisy tonight! I'm Kai, from Brightway Lighting. Very nice to meet you.",
+          "zh": "對啊，今晚好熱鬧！我是凱，在 Brightway 照明工作。很高興認識您。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "Hot and noisy? Oh no, do you want to step outside for some air?", "zh": "又熱又吵？糟糕，你要不要出去透透氣？" }
+            ],
+            "title": { "en": "Hot and Bothered", "zh": "熱鬧變吵熱" },
+            "story": { "en": "Nora kindly walks you to the terrace for fresh air. You spend the next ten minutes insisting you feel fine.", "zh": "諾拉好心地陪你到露台透氣。接下來十分鐘，你一直在解釋自己真的沒事。" },
+            "why": "「熱鬧」拆開直譯成 hot and noisy，英文聽起來是在抱怨。想說氣氛熱絡，可以說 It's really lively tonight. 或 It's a great crowd.。"
+          }
+        },
+        {
+          "en": "Yes. I'm Kai from Brightway. Here's my card. Do you need any lighting? We have a discount now.",
+          "zh": "對。我是 Brightway 的凱，這是我的名片。您需要照明嗎？我們現在有折扣。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "Oh. Wow, straight to business. I was just saying hello.", "zh": "喔。哇，直接談生意。我只是來打個招呼。" }
+            ],
+            "title": { "en": "Speed Selling", "zh": "閃電推銷" },
+            "story": { "en": "Nora politely takes your card and drifts toward the dessert table. You notice she does not come back.", "zh": "諾拉客氣地收下名片，慢慢晃向甜點桌。你發現她沒再回來。" },
+            "why": "交流會是建立關係的場合，一開口就推銷會讓人想逃。先認識對方：What line of work are you in?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_designer", "expr": "happy", "en": "I'm an interior designer. Mostly restaurants and small hotels. Lighting, though! That must be fascinating.", "zh": "我是室內設計師，主要做餐廳和小型飯店。照明呢！那一定很有意思。" }
+      ],
+      "choices": [
+        {
+          "en": "It is! We work with a lot of hotels, too. What kind of projects are you working on these days?",
+          "zh": "是啊！我們也跟很多飯店合作。您最近在做什麼樣的案子？",
+          "ok": true,
+          "tip": "簡短回應後把問題丟回給對方，對話才會有來有往。"
+        },
+        {
+          "en": "Designer? You must earn a lot. How much do you usually charge for one project, if you don't mind?",
+          "zh": "設計師？您一定賺很多吧。如果不介意的話，您一個案子通常收多少錢？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "Ha... I actually do mind a little. That's between me and my clients.", "zh": "哈……其實我有點介意。那是我跟客戶之間的事。" }
+            ],
+            "title": { "en": "Money Talk", "zh": "談錢傷感情" },
+            "story": { "en": "Nora's smile becomes a little more professional. The conversation never quite warms up again.", "zh": "諾拉的笑容變得比較公式化。這段對話再也熱絡不起來了。" },
+            "why": "在台灣問收入有時是關心，但在西方商務社交中，收入和收費屬於私人話題，第一次見面不要問。改問工作內容：What kind of projects are you working on?"
+          }
+        },
+        {
+          "en": "Yes, it's very interesting. I'm work in the sales department since two years ago.",
+          "zh": "對，很有趣。我從兩年前開始在業務部工作。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "Sorry, since two years...? So you're in sales?", "zh": "抱歉，從兩年……？所以你是做業務的？" }
+            ],
+            "title": { "en": "Tense Moment", "zh": "時態卡住" },
+            "story": { "en": "Nora nods kindly, but the conversation stalls. Someone else soon joins and takes over the chat.", "zh": "諾拉親切地點頭，但對話卡住了。很快就有別人加入，把話題接走了。" },
+            "why": "I'm 不能直接接原形動詞 work；從過去持續到現在要用現在完成式：I've worked in sales for two years.。也記得把問題丟回去，讓對話延續。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_designer", "expr": "neutral", "en": "Right now, a seaside cafe. The owner wants it cozy, but the space is really dark.", "zh": "目前在做一家海邊咖啡店。老闆想要溫馨的感覺，但空間真的很暗。" }
+      ],
+      "choices": [
+        {
+          "en": "That sounds like a fun challenge. Warm, layered lighting could really help. I'd be happy to share some ideas.",
+          "zh": "聽起來是個有趣的挑戰。溫暖、有層次的照明會很有幫助。我很樂意分享一些想法。",
+          "ok": true,
+          "tip": "I'd be happy to share some ideas. 提供幫助但不強迫推銷，讓對方自己決定要不要接受。"
+        },
+        {
+          "en": "Seaside? Oh, I love the sea! Last summer I went snorkeling, and I saw a huge sea turtle. It was amazing.",
+          "zh": "海邊？我超愛海！去年夏天我去浮潛，看到一隻超大的海龜，太棒了。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "That's... lovely. So, the cafe. It's really dark.", "zh": "那真……不錯。所以，那家咖啡店，真的很暗。" }
+            ],
+            "title": { "en": "Under the Sea", "zh": "潛到海底" },
+            "story": { "en": "The turtle story is charming, but you miss the perfect opening to talk about lighting.", "zh": "海龜的故事很可愛，但你錯過了聊照明的最佳時機。" },
+            "why": "對方提到「空間很暗」，正是你能提供專業的時候，卻聊到浮潛去了。抓住機會：Warm, layered lighting could really help. I'd be happy to share some ideas.。"
+          }
+        },
+        {
+          "en": "Easy! Our lights can make any dark space perfect. I guarantee your client will love it.",
+          "zh": "簡單！我們的燈能讓任何陰暗的空間變完美。我保證您的客戶會愛死。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_designer", "expr": "upset", "en": "Any space? You haven't even seen it. Lighting is a bit more personal than that.", "zh": "任何空間？你連看都沒看過。照明沒那麼簡單。" }
+            ],
+            "title": { "en": "Guaranteed Doubt", "zh": "保證反而讓人懷疑" },
+            "story": { "en": "Nora's designer instincts kick in, and she becomes politely skeptical. Your big promise sounds like a sales script.", "zh": "諾拉的設計師直覺啟動，開始禮貌地懷疑。你的大話聽起來像推銷台詞。" },
+            "why": "沒看過現場就保證「完美」，在專業人士面前只會失去可信度。用委婉的語氣提供協助：Warm, layered lighting could really help.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_designer", "expr": "happy", "en": "I'd love that, actually. Do you have a card? Let's keep in touch.", "zh": "我其實很想聽。你有名片嗎？我們保持聯絡吧。" }
+      ],
+      "choices": [
+        {
+          "en": "Of course, here you go. Let's keep in touch. I'll send you a few examples next week.",
+          "zh": "當然，請收下。我們保持聯絡，我下週寄幾個案例給您。",
+          "ok": true,
+          "tip": "Let's keep in touch. 加上具體的下一步，才不會只是客套話。"
+        },
+        {
+          "en": "Sure! But let's just add each other on LINE, it's much more convenient. What's your LINE ID?",
+          "zh": "好啊！不過我們直接加 LINE 吧，方便多了。您的 LINE ID 是什麼？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "LINE? I don't think I have that. Email works best for me.", "zh": "LINE？我好像沒有耶。用電子郵件聯絡我最方便。" }
+            ],
+            "title": { "en": "App Not Found", "zh": "找不到這個 App" },
+            "story": { "en": "Nora writes her email on a napkin. You spend the cab ride home hoping it doesn't get wet.", "zh": "諾拉把電子郵件寫在餐巾紙上。回家的計程車上，你一直祈禱它別被弄濕。" },
+            "why": "LINE 在台灣很普遍，但在很多國家並不常用，商務場合交換名片和電子郵件是基本禮節。直接接受對方的方式：Here you go. Let's keep in touch.。"
+          }
+        },
+        {
+          "en": "Sure. Let's keep contact. If you have any need in the future, you can find me anytime.",
+          "zh": "好啊。我們保持聯絡。以後有任何需要，隨時可以找我。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "Find you? Like... hide and seek? I'll just email you, I think.", "zh": "找你？像……捉迷藏那樣？我想我還是寄信給你好了。" }
+            ],
+            "title": { "en": "Hide and Seek", "zh": "捉迷藏" },
+            "story": { "en": "Nora laughs and takes your card. The phrase \"find me anytime\" becomes her running joke for the rest of the night.", "zh": "諾拉笑著收下名片。「隨時找我」成了她當晚一直拿來開的玩笑。" },
+            "why": "「保持聯絡」是 keep in touch，不是 keep contact；「有需要找我」直譯成 find me 也不自然，要說 Feel free to reach out anytime.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Across the room, Sam waves at you. Ms. Grant from the Harborview Hotel has just arrived.", "zh": "在宴會廳另一頭，山姆向你揮手。港景飯店的葛蘭特總監剛剛到場。" },
+        { "who": "c09_designer", "expr": "happy", "en": "Looks like someone's looking for you. Don't let me keep you!", "zh": "好像有人在找你。別讓我耽誤你了！" }
+      ],
+      "choices": [
+        {
+          "en": "I've really enjoyed chatting with you, Nora. I should say hi to a client, but I'll email you soon.",
+          "zh": "跟您聊天真的很愉快，諾拉。我得去跟一位客戶打個招呼，但我很快會寄信給您。",
+          "ok": true,
+          "tip": "優雅結束對話：先說聊得很愉快，再說明要離開的理由，最後約好下一步。"
+        },
+        {
+          "en": "Okay. I need to go talk to more important people now. Bye bye, and see you!",
+          "zh": "好。我現在要去跟更重要的人聊天了。掰掰，再見！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_designer", "expr": "upset", "en": "More important people. Right. Good luck with that.", "zh": "更重要的人。好喔。祝你好運。" }
+            ],
+            "title": { "en": "Not Important Enough", "zh": "不夠重要" },
+            "story": { "en": "Nora never answers your email. You later learn she designs for half the hotels in Maple Bay.", "zh": "諾拉一直沒回你的信。後來你才知道，楓灣一半的飯店都是她設計的。" },
+            "why": "直接說要去找「更重要的人」，等於告訴對方他不重要。優雅離開要先肯定對話：I've really enjoyed chatting with you. I'll email you soon.。"
+          }
+        },
+        {
+          "en": "Okay, then I go first. You slowly enjoy the party, eat more food. Bye!",
+          "zh": "好，那我先走了。您慢慢玩，多吃一點。掰！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_designer", "expr": "confused", "en": "Slowly enjoy... and eat more? Okay, I'll... try?", "zh": "慢慢享受……還要多吃？好喔，我會……盡量？" }
+            ],
+            "title": { "en": "Eat More, Slowly", "zh": "慢慢吃" },
+            "story": { "en": "Nora looks down at her tiny plate of canapes, slightly confused. Your exit is memorable, but not in the way you hoped.", "zh": "諾拉低頭看著她那盤小點心，有點困惑。你的退場令人難忘，但不是你想要的那種。" },
+            "why": "「我先走了」「你慢慢玩」「多吃一點」都是中文客套話的直譯，英文聽起來很奇怪。要說 It was great talking to you. Enjoy the rest of the evening!"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_designer", "expr": "happy", "en": "Likewise, Kai. I'll look out for your email. Enjoy the rest of the evening!", "zh": "我也是，凱。我會留意你的信。祝你今晚愉快！" },
+      { "who": "sam", "expr": "happy", "en": "Was that Nora, the designer? She works with half the hotels in town. Nice catch!", "zh": "那是設計師諾拉嗎？城裡一半的飯店都跟她合作。釣到大魚了！" }
+    ],
+    "title": { "en": "Networking Natural", "zh": "交流高手" },
+    "story": { "en": "You leave the mixer with three new business cards and one very promising contact. A week later, Nora invites you to see the seaside cafe.", "zh": "你帶著三張新名片和一個很有潛力的人脈離開交流會。一週後，諾拉邀你去看那家海邊咖啡店。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "What line of work are you in?",
+      "zh": "您是做哪一行的？",
+      "explain": "交流場合問對方職業的自然說法，比 What's your job? 更有禮貌。也可以說 What do you do?。",
+      "example": { "en": "So, what line of work are you in? I'm in hotel management.", "zh": "那您是做哪一行的？我在飯店管理業。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let's keep in touch.",
+      "zh": "我們保持聯絡。",
+      "explain": "交流會道別或交換名片時常用。注意是 keep in touch，不是 keep contact；加上具體下一步更真誠。",
+      "example": { "en": "Let's keep in touch. I'll send you that article tomorrow.", "zh": "我們保持聯絡，我明天把那篇文章寄給你。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I've really enjoyed chatting with you.",
+      "zh": "跟您聊天真的很愉快。",
+      "explain": "優雅結束對話的萬用開頭。接著說離開的理由，例如 I should say hi to a client.，最後約定下一步。",
+      "example": { "en": "I've really enjoyed chatting with you. I should grab my colleague, but let's talk again soon.", "zh": "跟您聊天很愉快。我得去找我同事，但我們很快再聊。" }
+    },
+    {
+      "type": "trap",
+      "en": "very hot and noisy / I go first.",
+      "zh": "好熱鬧／我先走了",
+      "explain": "「熱鬧」直譯成 hot and noisy 像在抱怨，要說 lively；「我先走了」英文說 I should get going. 或 I'll let you go.。",
+      "example": { "en": "What a lively crowd! Well, I should get going.", "zh": "氣氛好熱絡！那麼，我差不多該走了。" }
+    },
+    {
+      "type": "culture",
+      "en": "Keep it personal, not private.",
+      "zh": "聊個人，但別聊隱私。",
+      "explain": "西方交流場合可以聊工作、興趣、城市，但收入、收費、年齡等私人話題要避免。聯絡方式也以名片和電子郵件為主。",
+      "example": { "en": "How did you get into interior design?", "zh": "您當初是怎麼踏入室內設計這一行的？" }
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "id": "L099",
+  "location": { "en": "Maple Bay Pier, at night", "zh": "楓灣碼頭，夜晚" },
+  "goal": { "en": "Spend one last night out with Mia and Leo, and say what they mean to you.", "zh": "和米亞、里歐度過最後一晚，說出他們對你的意義。" },
+  "background": "long empty wooden pier at night stretching over calm water, warm lamp posts along the railing, a bench at the far end, starry sky, distant harbor lights",
+  "cast": ["mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Two days before your flight. Mia and Leo planned one last night out, with a strict \"no crying\" rule.", "zh": "離你的班機還有兩天。米亞和里歐安排了最後一次夜遊，還定了嚴格的「不准哭」規則。" },
+    { "who": "narrator", "en": "One pizza and three ice creams later, the three of you end up at the end of the pier.", "zh": "一個披薩、三支冰淇淋之後，你們三個走到了碼頭盡頭。" },
+    { "who": "mia", "expr": "happy", "en": "Okay, rule check. Has anyone cried yet?", "zh": "好，規則檢查。有人哭了嗎？" },
+    { "who": "leo", "expr": "happy", "en": "Not yet. The night is young.", "zh": "還沒。夜還長呢。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mia", "expr": "neutral", "en": "So... this is really it, huh? In two days, you're on a plane.", "zh": "所以……真的要結束了，對吧？再兩天你就要上飛機了。" }
+      ],
+      "choices": [
+        {
+          "en": "Yeah. I'm going to miss you two so much. Like, so much.",
+          "zh": "對啊。我會超想你們兩個的。真的，超級想。",
+          "ok": true,
+          "tip": "I'm going to miss you. 直接說出不捨，在好朋友之間最真誠。"
+        },
+        {
+          "en": "Yeah. When I think about it, my heart feels very empty, you know.",
+          "zh": "對啊。一想到這個，我心裡就空空的。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Your heart is empty? Kai, that sounds like a medical problem.", "zh": "你的心是空的？凱，這聽起來像是醫學問題耶。" }
+            ],
+            "title": { "en": "Cardiology Consult", "zh": "心臟科門診" },
+            "story": { "en": "Leo jokingly checks your pulse. The moment turns funny instead of sweet.", "zh": "里歐開玩笑地幫你量脈搏。原本溫馨的時刻變成了搞笑場面。" },
+            "why": "「心裡空空的」直譯 my heart feels empty 在英文聽起來很奇怪。直接說 I'm going to miss you so much. 最自然。"
+          }
+        },
+        {
+          "en": "Yeah, whatever. It's just a flight. Let's not make it a big deal.",
+          "zh": "對啦，隨便。不過就是搭個飛機，別搞得那麼嚴重。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Wow. Thanks, Kai. Very touching.", "zh": "哇，謝謝你喔，凱。真是感人。" }
+            ],
+            "title": { "en": "Too Cool for Goodbyes", "zh": "酷到不會道別" },
+            "story": { "en": "You were trying not to cry. Mia thinks you don't care. Leo spends the walk back explaining you to her.", "zh": "你只是想忍住不哭，米亞卻以為你不在乎。回程路上，里歐一直在幫你解釋。" },
+            "why": "用冷淡掩飾不捨，在朋友道別時容易被誤會成不在乎。勇敢說出來：I'm going to miss you two.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Remember Port Aurora? When our flight got delayed and we were stuck at the airport for hours?", "zh": "還記得極光港嗎？班機延誤，我們在機場困了好幾個小時那次？" },
+        { "who": "mia", "expr": "happy", "en": "Leo fell asleep on a bench and snored!", "zh": "里歐在長椅上睡著還打呼！" }
+      ],
+      "choices": [
+        {
+          "en": "How could I forget? Best worst trip ever. Leo, you snored like a bear.",
+          "zh": "怎麼可能忘記？史上最棒的爛旅行。里歐，你打呼跟熊一樣。",
+          "ok": true,
+          "tip": "How could I forget? 是「怎麼可能忘記」，用反問句表達回憶有多深刻。"
+        },
+        {
+          "en": "Of course I remember! That was the most funniest trip in my whole life.",
+          "zh": "當然記得！那是我這輩子最好笑的旅行。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"Most funniest\"? That's double funny. I'll allow it, I guess.", "zh": "Most funniest？那是雙倍好笑。好吧，我准了。" }
+            ],
+            "title": { "en": "Double Superlative", "zh": "雙重最高級" },
+            "story": { "en": "Leo turns \"most funniest\" into the official name of the trip. It will appear in every group chat from now on.", "zh": "里歐把 most funniest 定為那趟旅行的正式名稱。從此它會出現在每一則群組訊息裡。" },
+            "why": "funny 的最高級是 funniest，不能再加 most。可以說 the funniest trip 或 the best worst trip ever。"
+          }
+        },
+        {
+          "en": "Port Aurora... wait, did I ever pay you guys back for the hostel?",
+          "zh": "極光港……等等，我那時候的旅館錢有還你們嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "You did, Kai. Twice, actually. Can we just enjoy the memory?", "zh": "還了啦，凱。其實你還了兩次。我們可以好好回憶就好嗎？" }
+            ],
+            "title": { "en": "Accounting Department", "zh": "會計部報到" },
+            "story": { "en": "You spend ten minutes going through old payment apps. You find out you owe Mia five dollars. The nostalgia does not survive.", "zh": "你花了十分鐘翻舊的付款紀錄，發現還欠米亞五塊錢。懷舊的氣氛蕩然無存。" },
+            "why": "朋友在分享回憶時突然談錢，會打斷氣氛。順著回憶回應：How could I forget? Best worst trip ever.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "neutral", "en": "Promise me we won't become those friends who only like each other's posts.", "zh": "答應我，我們不要變成那種只會互按讚的朋友。" }
+      ],
+      "choices": [
+        {
+          "en": "Deal. Let's keep in touch for real. A video call every month?",
+          "zh": "一言為定。我們要真的保持聯絡，每個月視訊一次？",
+          "ok": true,
+          "tip": "Let's keep in touch. 加上具體約定（every month），承諾才不會落空。"
+        },
+        {
+          "en": "Of course! We should totally hang out sometime. Next time, for sure!",
+          "zh": "當然！我們一定要找時間聚聚，下次一定！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "\"Sometime\"? That's what people say when they mean never, Kai.", "zh": "「找時間」？大家說這句的時候，通常意思是永遠不會，凱。" }
+            ],
+            "title": { "en": "The Empty Promise", "zh": "空頭支票" },
+            "story": { "en": "Mia makes you set a calendar reminder right there on the pier. You can't escape a real plan now.", "zh": "米亞逼你當場在碼頭上設好行事曆提醒。這下你逃不掉真正的約定了。" },
+            "why": "英文的 We should hang out sometime. 跟中文「改天約」一樣，常是客套話。真心想保持聯絡，要給具體時間：A video call every month?"
+          }
+        },
+        {
+          "en": "Of course. We will keep contact always and never lose connection.",
+          "zh": "當然。我們會一直保持聯絡，永遠不斷線。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Keep contact? Lose connection? Are we friends or a phone network?", "zh": "Keep contact？Lose connection？我們是朋友還是電信網路？" }
+            ],
+            "title": { "en": "Signal Strength", "zh": "訊號強度" },
+            "story": { "en": "Leo starts calling the three of you \"the network.\" It's cute, but Mia still wants a real promise.", "zh": "里歐開始稱你們三個為「網路」。很可愛，但米亞還是想要一個真正的承諾。" },
+            "why": "「保持聯絡」英文是 keep in touch 或 stay in touch，不說 keep contact。「失去聯絡」是 lose touch。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "Monthly calls. And someday, you have to show us Taipei.", "zh": "每月通話。還有，總有一天你要帶我們逛台北。" },
+        { "who": "mia", "expr": "happy", "en": "Yes! Night markets, bubble tea, all of it!", "zh": "對！夜市、珍珠奶茶，全部都要！" }
+      ],
+      "choices": [
+        {
+          "en": "Promise you'll visit. My mom will overfeed you both, I swear.",
+          "zh": "答應我你們會來玩。我媽一定會把你們餵到撐，我保證。",
+          "ok": true,
+          "tip": "Promise you'll visit. 是熱情的邀約，再補一句具體畫面，讓邀請更真誠。"
+        },
+        {
+          "en": "Sure, if you can afford the flight. Honestly, it's really expensive.",
+          "zh": "好啊，如果你們買得起機票的話。老實說，真的很貴。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Wow. Okay. I'll start saving my coins, I guess.", "zh": "哇，好喔。那我開始存零錢好了。" }
+            ],
+            "title": { "en": "Budget Travel Advisor", "zh": "省錢旅遊顧問" },
+            "story": { "en": "You meant to be realistic. It sounded like you didn't want them to come. Mia stops planning the night market tour.", "zh": "你只是想務實一點，聽起來卻像不希望他們來。米亞停止規劃夜市行程了。" },
+            "why": "朋友說想去找你，先熱情回應，現實問題之後再談。說 Promise you'll visit.。"
+          }
+        },
+        {
+          "en": "Promise you will come visiting. My mom will cooks so much food for you.",
+          "zh": "答應我你們會來拜訪。我媽會煮超多菜給你們吃。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "\"Will cooks\"? Your mom's English had better be better than that.", "zh": "Will cooks？你媽的英文最好比這個好。" }
+            ],
+            "title": { "en": "Mom's Grammar Test", "zh": "媽媽的文法考驗" },
+            "story": { "en": "Mia and Leo start a list of things to correct when they meet your mom. You beg them not to.", "zh": "米亞和里歐開始列清單，準備見到你媽時要糾正的地方。你求他們不要。" },
+            "why": "will 後面接原形動詞：My mom will cook。「來拜訪」說 come visit 或 come and visit，不說 come visiting。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "A boat horn sounds across the water. Mia sniffs.", "zh": "遠方傳來一聲船笛。米亞吸了吸鼻子。" },
+        { "who": "mia", "expr": "neutral", "en": "Okay, I'm breaking the rule. I'm crying.", "zh": "好，我要犯規了。我在哭。" },
+        { "who": "leo", "expr": "neutral", "en": "Me too. Kai, say something before I completely lose it.", "zh": "我也是。凱，快說點什麼，不然我要崩潰了。" }
+      ],
+      "choices": [
+        {
+          "en": "You two made this whole year. Thank you for everything. Group hug?",
+          "zh": "這一年是你們兩個成就的。謝謝你們的一切。來個團抱？",
+          "ok": true,
+          "tip": "You made this year. 是很溫暖的感謝說法，意思是「因為你們，這一年才這麼美好」。"
+        },
+        {
+          "en": "Ha! You both broke the rule. Pay up, rule breakers. Ice cream's on you!",
+          "zh": "哈！你們兩個都犯規了。付錢吧，違規的人，冰淇淋你們請！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Seriously? THAT'S what you say right now?", "zh": "你認真的嗎？這種時候你要說的是這個？" }
+            ],
+            "title": { "en": "Joke at the Wrong Time", "zh": "不合時宜的玩笑" },
+            "story": { "en": "You get your ice cream, but the moment is gone. You think of the perfect thing to say on the plane, two days too late.", "zh": "你拿到了冰淇淋，但那個時刻已經過了。兩天後在飛機上，你才想到最該說的話。" },
+            "why": "朋友已經情緒到位時，用玩笑逃避會讓人覺得被推開。真誠表達感謝：Thank you for everything.。"
+          }
+        },
+        {
+          "en": "Thank you both for accompany me this whole year. I love you guys.",
+          "zh": "謝謝你們這一整年的陪伴。我愛你們。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"For accompany\"? Kai, I'm crying AND correcting you. Impressive.", "zh": "For accompany？凱，我一邊哭還一邊糾正你，很厲害吧。" }
+            ],
+            "title": { "en": "Crying Grammar Teacher", "zh": "邊哭邊改文法" },
+            "story": { "en": "Leo sobs out a grammar lesson. It's the most Leo thing that has ever happened, but your big moment gets a little lost.", "zh": "里歐哭著上了一堂文法課。這是史上最里歐的一刻，但你的重要告白有點被淹沒了。" },
+            "why": "for 後面接動名詞：Thank you for being there for me.。「陪伴」用 accompany 太正式，朋友之間說 being there for me 更自然。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mia", "expr": "happy", "en": "Group hug! Get in here!", "zh": "團抱！快過來！" },
+      { "who": "leo", "expr": "happy", "en": "...Okay, now I'm definitely crying.", "zh": "……好，現在我是真的在哭了。" },
+      { "who": "narrator", "en": "The three of you stay on the pier until the last bus, laughing and crying in equal measure.", "zh": "你們三個在碼頭待到最後一班公車，笑和眼淚一樣多。" }
+    ],
+    "title": { "en": "Same Time Next Year", "zh": "明年此時" },
+    "story": { "en": "No one kept the no-crying rule, and no one cared. You made a real promise, and you all intend to keep it.", "zh": "沒有人遵守不准哭的規則，也沒有人在意。你們許下了真正的約定，而且每個人都打算遵守。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm going to miss you.",
+      "zh": "我會想你的。",
+      "explain": "道別時最直接的不捨表達。miss 是「想念」，不能用 think。加上 so much 更強烈。",
+      "example": { "en": "I'm going to miss you so much. Text me when you land.", "zh": "我會超想你的。落地後傳訊息給我。" }
+    },
+    {
+      "type": "trap",
+      "en": "keep in touch (not keep contact)",
+      "zh": "保持聯絡",
+      "explain": "「保持聯絡」是 keep in touch 或 stay in touch；「失去聯絡」是 lose touch。keep contact 不是自然的英文。",
+      "example": { "en": "We lost touch after high school, but we found each other online.", "zh": "高中畢業後我們失聯了，後來在網路上又找到彼此。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Promise you'll visit.",
+      "zh": "答應我你會來玩。",
+      "explain": "Promise (that) you'll... 是熱情的口語邀約，比 You can come visit. 更有感情。",
+      "example": { "en": "Promise you'll call me on my birthday.", "zh": "答應我生日那天要打給我。" }
+    },
+    {
+      "type": "culture",
+      "en": "We should hang out sometime.",
+      "zh": "改天約。",
+      "explain": "跟中文「改天約」一樣，英文這句常是客套話。真心想見面，要給具體時間或計畫，例如 How about a call every month?",
+      "example": { "en": "Let's not just say \"sometime.\" How about next Saturday?", "zh": "別只說「改天」，下週六如何？" }
+    },
+    {
+      "type": "grammar",
+      "en": "the funniest (not the most funniest)",
+      "zh": "最好笑的",
+      "explain": "短形容詞的最高級直接加 -est（funniest、best），長形容詞才用 most（most beautiful）。兩者不能同時用。",
+      "example": { "en": "That was the funniest night of the year.", "zh": "那是今年最好笑的一晚。" }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "L073",
+  "location": { "en": "Brightway office, Ms. Wong's office", "zh": "Brightway 公司，王經理辦公室" },
+  "goal": { "en": "Understand Ms. Wong's assignment and confirm every detail before you start.", "zh": "聽懂王經理交代的任務，開工前把細節確認清楚。" },
+  "background": "manager's private office with a tidy wooden desk, a desk lamp with a curved arm, a laptop with a blank screen, a bookshelf with plain binders, a large window, afternoon light",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "Wednesday afternoon. Ms. Wong asks you to come to her office.", "zh": "星期三下午，王經理請你到她的辦公室一趟。" },
+    { "who": "ms_wong", "expr": "neutral", "en": "Come in, Kai. Have a seat. I have your first real task.", "zh": "進來吧，凱，請坐。我有你的第一個正式任務。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Our client, Harbor Café, is opening a second shop. I need a short comparison of our three pendant lights for them.", "zh": "我們的客戶 Harbor Café 要開第二家店。我需要你幫他們整理我們三款吊燈的簡短比較。" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Just to make sure I understand, you want price, size, and brightness side by side?",
+          "zh": "好的。我確認一下，您是要把價格、尺寸和亮度並排比較嗎？",
+          "ok": true,
+          "tip": "Just to make sure I understand... 先複述重點再確認，避免做白工。"
+        },
+        {
+          "en": "Okay, okay, no problem! I understand everything, so you don't need to explain more.",
+          "zh": "好好，沒問題！我全部都懂了，您不用再解釋了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Everything? I haven't told you the format yet.", "zh": "全部？我還沒跟你說格式耶。" }
+            ],
+            "title": { "en": "The 20-Page Surprise", "zh": "二十頁的驚喜" },
+            "story": { "en": "On Friday, you proudly hand in a twenty-page report. Ms. Wong wanted one page.", "zh": "星期五，你得意地交出一份二十頁的報告。王經理要的其實只有一頁。" },
+            "why": "台灣新人常為了不想顯得笨，先說「沒問題、都懂了」。但北美主管更希望你當場確認：Just to make sure I understand...。"
+          }
+        },
+        {
+          "en": "Sure. What means comparison? You want I make a table or a slides?",
+          "zh": "好。比較是什麼意思？您要我做表格還是簡報？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "A table or... a slides? Okay, let me explain this again, slowly.", "zh": "表格還是……一個簡報們？好，我再慢慢解釋一次。" }
+            ],
+            "title": { "en": "Lost in the Task", "zh": "任務迷路中" },
+            "story": { "en": "Ms. Wong explains three times. You finally get it, but she's ten minutes late for her next meeting.", "zh": "王經理解釋了三次，你終於懂了，但她下一個會議遲到了十分鐘。" },
+            "why": "問意思要說 What does comparison mean?，不是 What means...?；「您要我做」是 Do you want me to make...?；slides 是複數，不加 a。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Exactly. Keep it to one page. They want something they can read in two minutes.", "zh": "沒錯，控制在一頁。他們想要兩分鐘就能看完的東西。" }
+      ],
+      "choices": [
+        {
+          "en": "Got it, one page. By when do you need it?",
+          "zh": "了解，一頁。您最晚什麼時候需要？",
+          "ok": true,
+          "tip": "By when do you need it? 問的是截止時間，by 表示「在……之前」。"
+        },
+        {
+          "en": "Got it. And when do I need to hand in my homework?",
+          "zh": "了解。那我的作業什麼時候要交？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Homework? Ha, it's a client document, Kai. This isn't school.", "zh": "作業？哈，這是給客戶的文件啦，凱。這裡不是學校。" }
+            ],
+            "title": { "en": "Back to School", "zh": "回到學生時代" },
+            "story": { "en": "Ms. Wong finds it funny. Unfortunately, she now calls every task you get \"Kai's homework\" in front of the whole team.", "zh": "王經理覺得很好笑。可惜從此以後，她在大家面前都把你的任務叫做「凱的作業」。" },
+            "why": "中文說「交作業」很順口，但英文的 homework 只用在學校。工作上問期限說 By when do you need it? 或 When is it due?。"
+          }
+        },
+        {
+          "en": "Only one page? That's too easy. I can finish it in about ten minutes.",
+          "zh": "才一頁？太簡單了吧，我大概十分鐘就能做完。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Easy? Great. Then I'll expect it to be perfect.", "zh": "簡單？很好，那我就期待它很完美囉。" }
+            ],
+            "title": { "en": "Famous Last Words", "zh": "話說得太早" },
+            "story": { "en": "Your \"ten-minute\" page takes you all evening. Ms. Wong still finds two price mistakes.", "zh": "你的「十分鐘」一頁做了一整個晚上，王經理還是找到兩個價格錯誤。" },
+            "why": "主管交代任務時說「太簡單了」聽起來很輕率。先確認期限：Got it. By when do you need it?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "End of day Friday is fine. Oh, and use the new price list, not the old one.", "zh": "星期五下班前就可以。對了，要用新的價目表，不要用舊的。" }
+      ],
+      "choices": [
+        {
+          "en": "Could you clarify where the new price list is saved? I've only seen one so far.",
+          "zh": "可以說明一下新的價目表存在哪裡嗎？我到目前只看過一份。",
+          "ok": true,
+          "tip": "Could you clarify...? 請對方把某一點說清楚，比 I don't understand. 更具體、更專業。"
+        },
+        {
+          "en": "Where you save the new price list? I only see the old one before.",
+          "zh": "您把新價目表存在哪裡？我之前只看過舊的。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Where I save...? Oh, you mean where is it saved? Hmm, let me think.", "zh": "我存在……？喔，你是問它存在哪裡嗎？嗯，我想想。" }
+            ],
+            "title": { "en": "Wrong List", "zh": "拿錯價目表" },
+            "story": { "en": "Ms. Wong gets a phone call before she can answer. You can't find the new list, so you use the old one. Every price is wrong.", "zh": "王經理還沒回答就接到電話。你找不到新的價目表，只好用舊的，結果每個價格都錯了。" },
+            "why": "疑問句要有助動詞：Where did you save it? 或 Where is it saved?。說過去看過要用 I've only seen... 或 I only saw...。"
+          }
+        },
+        {
+          "en": "Sure. By the way, don't you think the old prices were a little too expensive?",
+          "zh": "好。對了，您不覺得舊的價格有點太貴嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "That's... not really the point right now, Kai.", "zh": "這個……現在不是重點吧，凱。" }
+            ],
+            "title": { "en": "Price Debate", "zh": "價格辯論會" },
+            "story": { "en": "After ten minutes of pricing debate, you still don't know where the new list is. You guess, and you guess wrong.", "zh": "辯論價格辯了十分鐘，你還是不知道新價目表在哪。你用猜的，而且猜錯了。" },
+            "why": "主管交代細節時，先把不清楚的地方問清楚：Could you clarify where it's saved?。個人意見等任務確認完再說。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "It's in the shared drive, under Sales. Any other questions?", "zh": "在共用雲端硬碟的 Sales 資料夾裡。還有其他問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Should I send it to you first, or straight to the client?",
+          "zh": "有。我要先寄給您，還是直接寄給客戶？",
+          "ok": true,
+          "tip": "Should I... or...? 把選項說清楚，讓主管一句話就能回答。"
+        },
+        {
+          "en": "Yes. Can I add you on LINE? Then I can send the file to you there.",
+          "zh": "有。我可以加您 LINE 嗎？這樣我就能用 LINE 傳檔案給您。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "LINE? I don't have it. We use email and the team chat here.", "zh": "LINE？我沒有耶。我們這裡用 email 和團隊聊天群組。" }
+            ],
+            "title": { "en": "Wrong App", "zh": "用錯 App" },
+            "story": { "en": "You spend twenty minutes explaining what LINE is. Ms. Wong politely declines to download it.", "zh": "你花了二十分鐘解釋 LINE 是什麼，王經理還是客氣地婉拒下載。" },
+            "why": "台灣職場常用 LINE 溝通，但北美公司多用 email 或 Slack、Teams 這類工具。先問清楚流程：Should I send it to you first?。"
+          }
+        },
+        {
+          "en": "Nope. I've got it, I've got it. You can stop worrying about it now.",
+          "zh": "沒了。我懂了、我懂了，您現在可以不用擔心了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I'm not worried, Kai. I'm giving instructions.", "zh": "我沒有在擔心，凱。我是在交代工作。" }
+            ],
+            "title": { "en": "Don't Worry, Boss", "zh": "老闆別擔心" },
+            "story": { "en": "You send the page straight to the client. It has a typo in the café's name, and Ms. Wong finds out from the client.", "zh": "你把那一頁直接寄給客戶，咖啡廳的名字打錯了，王經理還是從客戶那裡才知道。" },
+            "why": "對主管說「您可以不用擔心了」聽起來像嫌對方囉嗦。最後確認流程：Should I send it to you first, or straight to the client?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Send it to me first. I'll check it before it goes out.", "zh": "先寄給我，我看過再寄出去。" }
+      ],
+      "choices": [
+        {
+          "en": "Sounds good. So, one page, new prices, to you by Friday at five. Is that right?",
+          "zh": "好的。所以是一頁、新價格、星期五五點前寄給您，對嗎？",
+          "ok": true,
+          "tip": "最後把重點複述一次，再問 Is that right?，確保雙方理解一致。"
+        },
+        {
+          "en": "Received! I'll finish it on time, so you can put your heart down.",
+          "zh": "收到！我會準時完成，您可以放心。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Put my... heart down? I'm not sure what that means.", "zh": "把我的……心放下？我不太懂這是什麼意思。" }
+            ],
+            "title": { "en": "Heart Delivery", "zh": "把心放下" },
+            "story": { "en": "Ms. Wong is so busy decoding your sentence that neither of you repeats the deadline. You send it on Monday.", "zh": "王經理忙著解讀你的句子，你們都忘了再確認期限。結果你星期一才寄出。" },
+            "why": "「收到」「放心」不能直譯。英文說 Got it. 或 Sounds good.；要讓對方放心可以說 Don't worry, I'll have it ready.。"
+          }
+        },
+        {
+          "en": "Great! So, what are you doing this weekend? Anything fun?",
+          "zh": "太好了！那您這個週末要做什麼？有好玩的嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Uh... let's focus on Friday first, shall we?", "zh": "呃……我們先專心處理星期五的事，好嗎？" }
+            ],
+            "title": { "en": "Weekend Brain", "zh": "心已在週末" },
+            "story": { "en": "Your mind is already on the weekend. You forget to write down the deadline and send the page on Monday morning.", "zh": "你的心已經飛到週末，忘了記下期限，星期一早上才把檔案寄出。" },
+            "why": "任務交代完的最後一刻，最適合把重點複述一次：So, one page, by Friday. Is that right?。閒聊等工作確認完再說。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Perfect. That's exactly right. Thanks, Kai.", "zh": "完美，完全正確。謝謝你，凱。" },
+      { "who": "narrator", "en": "On Friday at 4:30, your one-page comparison lands in Ms. Wong's inbox.", "zh": "星期五下午四點半，你的一頁比較表寄到了王經理的信箱。" }
+    ],
+    "title": { "en": "Crystal Clear", "zh": "清清楚楚" },
+    "story": { "en": "You asked the right questions, so there was no guesswork. Ms. Wong forwards your page to the client without changing a word.", "zh": "你問對了問題，完全不用猜。王經理一字未改，直接把你的比較表轉寄給客戶。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Just to make sure I understand...",
+      "zh": "我確認一下我的理解……",
+      "explain": "接任務時先複述重點，對方可以馬上糾正誤會，是職場上很受歡迎的習慣。",
+      "example": { "en": "Just to make sure I understand, you need two versions?", "zh": "我確認一下，您需要兩個版本，對嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "By when do you need it?",
+      "zh": "您最晚什麼時候需要？",
+      "explain": "by 表示「在某時間之前」。問 By when 比只問 When 更清楚是在問截止時間。",
+      "example": { "en": "By when do you need the slides?", "zh": "簡報最晚什麼時候要？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could you clarify...?",
+      "zh": "可以說明一下……嗎？",
+      "explain": "請對方把某一點說清楚，比 I don't understand. 更具體也更專業。後面可接名詞或 what、where 子句。",
+      "example": { "en": "Could you clarify what you mean by \"short\"?", "zh": "可以說明一下您說的「簡短」是指多短嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Received!",
+      "zh": "收到！（直譯陷阱）",
+      "explain": "中文訊息常回「收到」，但英文口語說 Received! 很生硬，像機器回覆。改說 Got it.、Sounds good. 或 Will do.。",
+      "example": { "en": "Got it. I'll send it by Friday.", "zh": "了解，我星期五前寄出。" }
+    },
+    {
+      "type": "culture",
+      "en": "Asking questions is part of the job.",
+      "zh": "發問是工作的一部分。",
+      "explain": "台灣新人常怕問問題顯得笨，先說「沒問題」再自己猜。在北美職場，主管更希望你一開始就問清楚，而不是交出錯的東西。",
+      "example": { "en": "Sorry, one more question before I start.", "zh": "不好意思，開始之前再問一個問題。" }
+    }
+  ]
+}

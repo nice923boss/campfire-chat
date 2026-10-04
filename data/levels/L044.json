@@ -1,0 +1,225 @@
+{
+  "id": "L044",
+  "location": { "en": "Harbor Light Hostel, luggage room", "zh": "港燈青年旅館，行李室" },
+  "goal": { "en": "Report your missing suitcase, describe it clearly and leave your contact number.", "zh": "回報行李箱不見了，清楚描述外觀，並留下聯絡電話。" },
+  "background": "small hostel luggage storage room, metal shelves with numbered cubbies, one empty shelf space, a few backpacks and suitcases, wooden floor, warm ceiling lamp, evening",
+  "cast": ["c05_hostel", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Back at the hostel that evening, you go to the luggage room to get a jacket from your suitcase.", "zh": "傍晚回到旅館，你去行李室想從行李箱拿件外套。" },
+    { "who": "narrator", "en": "Your tag says shelf 27. Shelf 27 is empty.", "zh": "你的行李牌寫著 27 號架。27 號架是空的。" },
+    { "who": "leo", "expr": "confused", "en": "Wait... where's your suitcase?", "zh": "等等……你的行李箱呢？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "neutral", "en": "Hey, Kai! You look worried. Is everything okay?", "zh": "嘿，凱！你看起來很擔心。一切還好嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Not really. My suitcase is missing.",
+          "zh": "不太好。我的行李箱不見了。",
+          "ok": true,
+          "tip": "My + 物品 + is missing. 是說東西不見時最清楚的說法。"
+        },
+        {
+          "en": "Not okay. My suitcase is not see!",
+          "zh": "不好。我的行李箱不見了！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Your suitcase can't see? Um... suitcases don't have eyes.", "zh": "你的行李箱看不見？嗯……行李箱沒有眼睛吧。" }
+            ],
+            "title": { "en": "The Blind Suitcase", "zh": "失明的行李箱" },
+            "story": { "en": "Nadia thinks it's a joke and laughs along. It takes ten minutes before anyone starts looking.", "zh": "娜迪亞以為你在開玩笑，跟著笑了起來。過了十分鐘，才有人開始找。" },
+            "why": "「不見了」不能直譯成 not see。東西找不到要說 My suitcase is missing. 或 I can't find my suitcase.。"
+          }
+        },
+        {
+          "en": "No! Your hostel lost my suitcase. This is terrible!",
+          "zh": "不好！你們旅館把我的行李箱弄丟了。太糟了！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_hostel", "expr": "upset", "en": "Whoa, okay. Let's not jump to conclusions. I'll get my manager.", "zh": "哇，好喔。先別急著下結論。我去找經理。" }
+            ],
+            "title": { "en": "Paperwork First", "zh": "先填表再說" },
+            "story": { "en": "Twenty minutes of forms later, nobody has actually started looking for your suitcase.", "zh": "填了二十分鐘的表格，還是沒有人真的開始找你的行李箱。" },
+            "why": "還沒確認狀況就怪對方，會讓人立刻進入防衛模式。先冷靜說明：My suitcase is missing. Could you help me?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "neutral", "en": "Oh no. Okay, can you describe it for me?", "zh": "糟糕。好，可以跟我描述一下它的樣子嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "It's a black suitcase with a red ribbon on the handle.",
+          "zh": "是一個黑色行李箱，提把上綁了紅色緞帶。",
+          "ok": true,
+          "tip": "It's a + 顏色 + 物品 + with + 特徵，描述東西清楚又好找。"
+        },
+        {
+          "en": "It's very, very important to me. All my clothes are in it!",
+          "zh": "它對我非常非常重要。我所有的衣服都在裡面！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "I'm sure it is. But what does it look like?", "zh": "我相信很重要。但它長什麼樣子？" }
+            ],
+            "title": { "en": "Very Important Bag", "zh": "非常重要的包" },
+            "story": { "en": "Nadia searches for \"a very important bag.\" Unfortunately, every bag in the room is very important to someone.", "zh": "娜迪亞開始找「一個非常重要的包」。可惜這房間裡每個包對某人來說都很重要。" },
+            "why": "describe 是要你說外觀：顏色、大小、特徵。可以說 It's a black suitcase with a red ribbon on the handle.。"
+          }
+        },
+        {
+          "en": "It's black color suitcase, it have a red ribbon.",
+          "zh": "它是黑色的行李箱，它有一條紅色緞帶。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Black, and... red ribbons? Lots of them? Let me look.", "zh": "黑色，還有……很多紅緞帶？我找找看。" }
+            ],
+            "title": { "en": "The Gift Box", "zh": "禮物盒" },
+            "story": { "en": "Nadia comes back proudly holding a black gift box covered in red ribbons. It is definitely not your suitcase.", "zh": "娜迪亞得意地拿回來一個綁滿紅緞帶的黑色禮物盒。那絕對不是你的行李箱。" },
+            "why": "英文說顏色不用加 color，a black suitcase 就好；主詞 it 後面要用 has，不是 have。可以說 It's a black suitcase with a red ribbon.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "neutral", "en": "Got it. I'll check the cameras and ask the other guests. What's your contact number?", "zh": "了解。我會查監視器，也問問其他房客。你的聯絡電話是幾號？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure, it's 555-0193. I'm in room 4.",
+          "zh": "好的，是 555-0193。我住 4 號房。",
+          "ok": true,
+          "tip": "用 It's... 報電話號碼，順便說房號，對方更容易找到你。"
+        },
+        {
+          "en": "Can you add my LINE instead? It's easier.",
+          "zh": "可以改加我的 LINE 嗎？比較方便。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Your line? Sorry, what's that? Is it an app?", "zh": "你的 line？抱歉，那是什麼？是一個 app 嗎？" }
+            ],
+            "title": { "en": "App Store Detour", "zh": "下載 app 大冒險" },
+            "story": { "en": "Nadia spends ten minutes trying to download an app she has never heard of. Then she gives up and writes \"room 4?\" on a sticky note.", "zh": "娜迪亞花了十分鐘想下載一個她從沒聽過的 app，最後放棄，在便利貼寫下「4 號房？」。" },
+            "why": "LINE 在台灣很普遍，但在很多英語國家幾乎沒人用。對方問 contact number，就直接給電話號碼：It's 555-0193.。"
+          }
+        },
+        {
+          "en": "I'm in room 4, top bunk by the window.",
+          "zh": "我住 4 號房，靠窗的上鋪。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "Okay, but my shift ends soon. Do you have a phone number?", "zh": "好，但我快下班了。你有電話號碼嗎？" }
+            ],
+            "title": { "en": "Night Shift Mystery", "zh": "夜班之謎" },
+            "story": { "en": "Your suitcase turns up at midnight, but the night staff can't reach you. You sleep in your clothes.", "zh": "行李箱半夜找到了，但夜班人員聯絡不到你。你只好穿著衣服睡覺。" },
+            "why": "contact number 是「聯絡電話」，對方要的是號碼，不是房號。要回答 It's 555-0193.，再補充房號會更好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_hostel", "expr": "happy", "en": "Good news! Another guest took your suitcase by mistake. He's bringing it down now.", "zh": "好消息！另一位房客不小心拿錯了你的行李箱，他正要拿下來。" },
+        { "who": "c05_hostel", "expr": "neutral", "en": "He feels terrible about it.", "zh": "他覺得很過意不去。" }
+      ],
+      "choices": [
+        {
+          "en": "No worries. It happens. I'm just glad it's back.",
+          "zh": "沒關係，難免的。東西找回來就好。",
+          "ok": true,
+          "tip": "No worries. It happens. 是接受道歉時大方又自然的回應。"
+        },
+        {
+          "en": "It's okay, it's okay. No relationship!",
+          "zh": "沒事沒事。沒關係！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_hostel", "expr": "confused", "en": "No relationship? With... the other guest? Okay, I'll tell him.", "zh": "不要有關係？跟……那位房客嗎？好，我會轉告他。" }
+            ],
+            "title": { "en": "Not That Kind of Relationship", "zh": "不是那種關係" },
+            "story": { "en": "Nadia tells the guest you want no relationship with him. He apologizes again, looking very confused.", "zh": "娜迪亞轉告房客，說你不想跟他有任何關係。他一臉困惑地又道歉了一次。" },
+            "why": "「沒關係」不能直譯成 No relationship.，relationship 是人際或感情上的關係。接受道歉說 No worries. 或 That's okay. It happens.。"
+          }
+        },
+        {
+          "en": "He really should be more careful with other people's bags.",
+          "zh": "他真的應該對別人的包包小心一點。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_hostel", "expr": "upset", "en": "Well... he did say sorry. Twice.", "zh": "呃……他已經道過歉了，兩次。" }
+            ],
+            "title": { "en": "Awkward Lobby", "zh": "尷尬的大廳" },
+            "story": { "en": "The guest hears you from the stairs and hands over your suitcase without a word. The lobby stays awkward all evening.", "zh": "那位房客在樓梯上聽到了，一句話也沒說就把行李箱交給你。整晚大廳都很尷尬。" },
+            "why": "對方已經道歉，還繼續責備會顯得很不大方。英語圈常用 No worries. It happens. 輕鬆帶過。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "A tall guest hurries down the stairs with your suitcase, red ribbon and all.", "zh": "一位高個子房客提著你的行李箱匆匆下樓，紅緞帶還在上面。" },
+      { "who": "c05_hostel", "expr": "happy", "en": "Here you go, Kai. Sorry about the scare!", "zh": "給你，凱。讓你虛驚一場了！" },
+      { "who": "leo", "expr": "happy", "en": "See? The red ribbon saved the day.", "zh": "看吧？紅緞帶立大功。" }
+    ],
+    "title": { "en": "Reunited", "zh": "失而復得" },
+    "story": { "en": "Your suitcase is back, your jacket is warm, and you handled the whole thing calmly. Not bad for a day in a new city.", "zh": "行李箱回來了，外套穿上了，整件事你處理得很冷靜。在陌生城市的一天，表現不錯。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "My suitcase is missing.",
+      "zh": "我的行李箱不見了。",
+      "explain": "東西不見用 is missing，也可以說 I can't find my suitcase.。不要直譯「不見」成 not see。",
+      "example": { "en": "Excuse me, my backpack is missing from the locker.", "zh": "不好意思，我的背包從置物櫃裡不見了。" }
+    },
+    {
+      "type": "grammar",
+      "en": "It's a black suitcase with a red ribbon.",
+      "zh": "是一個綁著紅緞帶的黑色行李箱。",
+      "explain": "描述物品：a + 顏色 + 物品 + with + 特徵。顏色前面不用加 color，black color suitcase 是常見錯誤。",
+      "example": { "en": "It's a small blue backpack with a cat keychain.", "zh": "是一個掛著貓咪鑰匙圈的藍色小背包。" }
+    },
+    {
+      "type": "vocab",
+      "en": "contact number",
+      "zh": "聯絡電話",
+      "explain": "被問 What's your contact number? 就給電話號碼。數字可以一個一個念，例如 five-five-five, oh-one-nine-three。",
+      "example": { "en": "Can I leave my contact number? It's 555-0193.", "zh": "我可以留聯絡電話嗎？是 555-0193。" }
+    },
+    {
+      "type": "trap",
+      "en": "No worries. / That's okay.",
+      "zh": "沒關係。",
+      "explain": "「沒關係」千萬不要說 No relationship.。接受道歉可以說 No worries.、That's okay. 或 It happens.。",
+      "example": { "en": "Sorry I'm late! / No worries. It happens.", "zh": "抱歉我遲到了！／沒關係，難免的。" }
+    },
+    {
+      "type": "culture",
+      "en": "Phone number, not LINE",
+      "zh": "給電話號碼，不是給 LINE",
+      "explain": "LINE 在台灣、日本很普遍，但在很多英語國家幾乎沒人用。對方要聯絡方式時，先給電話號碼或 email 最保險。",
+      "example": { "en": "Here's my number. You can also text me.", "zh": "這是我的號碼，你也可以傳簡訊給我。" }
+    }
+  ]
+}

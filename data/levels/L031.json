@@ -1,0 +1,223 @@
+{
+  "id": "L031",
+  "location": { "en": "Maple Bay Language Institute, student lounge", "zh": "楓灣語言學院，學生交誼廳" },
+  "goal": { "en": "Invite Leo to go hiking this weekend and set a time to meet.", "zh": "邀里歐這個週末去健行，並約好碰面時間。" },
+  "background": "bright student lounge at a language school with colorful beanbags, a long wooden table, potted plants, tall windows showing green trees, late afternoon sunlight",
+  "cast": ["leo"],
+  "intro": [
+    { "who": "narrator", "en": "Friday afternoon. Class is over, and the forecast for Saturday is sunny and warm.", "zh": "星期五下午，課上完了，星期六的天氣預報是晴朗又溫暖。" },
+    { "who": "narrator", "en": "You have wanted to try a hiking trail near Maple Bay for weeks. Leo is packing up his bag.", "zh": "你想去楓灣附近的一條登山步道已經好幾個禮拜了。里歐正在收書包。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Hey, Kai! Finally, the weekend. Any plans?", "zh": "嘿，凱！終於週末了。有什麼計畫嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Not really. Are you free on Saturday?",
+          "zh": "還沒有耶。你星期六有空嗎？",
+          "ok": true,
+          "tip": "約人之前先用 Are you free on + 星期幾? 確認對方有沒有空。"
+        },
+        {
+          "en": "Not really. Saturday you have empty?",
+          "zh": "還沒有。星期六你有空嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "I have... empty? Empty what? My wallet?", "zh": "我有……空？空什麼？我的錢包嗎？" }
+            ],
+            "title": { "en": "Empty Promises", "zh": "空空如也" },
+            "story": { "en": "Leo laughs and thinks you are joking about money. By the time you explain, he has already agreed to a video game marathon with his host brother.", "zh": "里歐笑出來，以為你在開錢的玩笑。等你解釋清楚，他已經答應寄宿家庭的弟弟要打一整天電動了。" },
+            "why": "「有空」不能翻成 have empty。英文說人有空用 free：Are you free on Saturday? 也可以問 Do you have time on Saturday?。"
+          }
+        },
+        {
+          "en": "Not really. Are you free in Saturday?",
+          "zh": "還沒有。你星期六有空嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "In Saturday? Is Saturday a place now?", "zh": "在星期六裡面？星期六變成一個地方了嗎？" }
+            ],
+            "title": { "en": "Lost in Saturday", "zh": "迷失在星期六" },
+            "story": { "en": "Leo starts a long joke about living inside Saturday. The joke goes on until his bus comes, and you never get to ask him.", "zh": "里歐開始講一個「住在星期六裡」的長篇笑話，一路講到他的公車來，你始終沒機會開口約他。" },
+            "why": "星期幾前面的介系詞用 on：on Saturday、on Friday night。in 用在月份、年份或 in the morning。正確說法是 Are you free on Saturday?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "Saturday? Yeah, I'm free all day. Why?", "zh": "星期六？有啊，我整天都有空。怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "Do you want to go hiking with me?",
+          "zh": "你想跟我去健行嗎？",
+          "ok": true,
+          "tip": "Do you want to + 原形動詞? 是朋友之間最自然的邀約句。"
+        },
+        {
+          "en": "Do you want to climb mountain with me?",
+          "zh": "你想跟我去爬山嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Climb a mountain? With ropes and helmets? I'm scared of heights!", "zh": "攀登一座山？要繩子跟頭盔那種嗎？我有懼高症耶！" }
+            ],
+            "title": { "en": "Mission: Everest", "zh": "聖母峰任務" },
+            "story": { "en": "Leo pictures ropes, ice and cliffs, and politely says no. You spend Saturday on the trail alone, wondering what went wrong.", "zh": "里歐腦中浮現繩索、冰雪和懸崖，客氣地拒絕了你。星期六你一個人走在步道上，想不通哪裡出了錯。" },
+            "why": "中文的「爬山」直翻成 climb a mountain，聽起來像要攀岩登頂。一般走步道說 go hiking：Do you want to go hiking?。"
+          }
+        },
+        {
+          "en": "You're coming hiking with me. No excuses!",
+          "zh": "你要跟我去健行，不准找藉口！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Whoa, okay, boss. Do I even get a choice?", "zh": "哇，好喔，老闆。我有選擇的權利嗎？" }
+            ],
+            "title": { "en": "Hike or Else", "zh": "不去不行" },
+            "story": { "en": "Leo agrees, but he looks like he is going to the dentist. The whole hike feels like a school trip nobody wanted.", "zh": "里歐是答應了，但表情像要去看牙醫。整趟健行像一場沒人想參加的校外教學。" },
+            "why": "用命令句邀約，聽起來像在下指令，對方會覺得沒有拒絕的空間。用問句 Do you want to...? 或 Would you like to...? 讓對方自己決定。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Hiking? I'm in! Where do you want to go?", "zh": "健行？算我一份！你想去哪裡？" }
+      ],
+      "choices": [
+        {
+          "en": "How about Cedar Hill? The view is amazing.",
+          "zh": "去雪松山怎麼樣？那裡的風景超美。",
+          "ok": true,
+          "tip": "How about + 地點? 用來提議，後面補一句理由更有說服力。"
+        },
+        {
+          "en": "Yes, I want to go somewhere.",
+          "zh": "對，我想去某個地方。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Okay... but where is \"somewhere\"?", "zh": "好喔……可是「某個地方」是哪裡？" }
+            ],
+            "title": { "en": "Destination: Somewhere", "zh": "目的地：某處" },
+            "story": { "en": "Leo waits for a name, but none comes. You two scroll through maps for twenty minutes and never decide.", "zh": "里歐等你說出地名，結果什麼也沒等到。你們滑了二十分鐘地圖，還是沒決定要去哪。" },
+            "why": "Where 問的是地點，要直接說出地方，不能用 Yes 回答。可以說 How about Cedar Hill? 或 Let's go to Cedar Hill.。"
+          }
+        },
+        {
+          "en": "How about go to Cedar Hill? It's very beautiful.",
+          "zh": "去雪松山怎麼樣？那裡很漂亮。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "How about go? You mean \"going\"? Our teacher would circle that in red!", "zh": "How about go？你是說 going 吧？老師一定會用紅筆圈起來！" }
+            ],
+            "title": { "en": "Red Pen Moment", "zh": "紅筆時間" },
+            "story": { "en": "Leo spends the rest of the break playing grammar teacher. You get a free lesson, but still no plan.", "zh": "接下來整個下課時間，里歐都在扮演文法老師。你上了一堂免費的課，但行程還是沒排好。" },
+            "why": "How about 後面接名詞或動名詞（V-ing），不能接原形動詞。要說 How about going to Cedar Hill? 或更簡單的 How about Cedar Hill?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Cedar Hill! I've always wanted to go there.", "zh": "雪松山！我一直很想去那裡。" },
+        { "who": "leo", "expr": "neutral", "en": "So, nine o'clock at Maple Bay Station?", "zh": "那就九點在楓灣車站碰面？" }
+      ],
+      "choices": [
+        {
+          "en": "Sounds great! See you there.",
+          "zh": "聽起來很棒！到時見。",
+          "ok": true,
+          "tip": "Sounds great! 是答應提議最自然的回應，再用 See you there. 收尾。"
+        },
+        {
+          "en": "Fine, whatever. Don't be late.",
+          "zh": "好啦，隨便。不要遲到。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Whoa. You invited me, remember?", "zh": "哇。是你約我的耶，記得嗎？" }
+            ],
+            "title": { "en": "Whatever Works", "zh": "隨便啦" },
+            "story": { "en": "Leo still comes on Saturday, but he walks five steps ahead of you all the way up the hill.", "zh": "里歐星期六還是來了，但整條上山的路，他都走在你前面五步遠。" },
+            "why": "Fine, whatever. 聽起來很不耐煩，像是被逼著答應。自己邀約的事更要表現期待：Sounds great! See you there.。"
+          }
+        },
+        {
+          "en": "Nine is too late. Let's meet at five!",
+          "zh": "九點太晚了，我們五點見！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Five? In the morning? On a Saturday?", "zh": "五點？早上五點？星期六耶？" }
+            ],
+            "title": { "en": "Dawn Patrol", "zh": "清晨特攻隊" },
+            "story": { "en": "Leo agrees, then sleeps through four alarms. You watch the sunrise alone, holding two sandwiches.", "zh": "里歐答應了，結果睡過四個鬧鐘。你一個人看日出，手裡拿著兩份三明治。" },
+            "why": "台灣很多人習慣清晨就去爬山，但在楓灣，週末約五點出發不是常態，直接否定對方提的時間也有點強勢。時間可以接受就說 Sounds great!，想提早可以問 Could we meet a bit earlier?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Saturday morning. The sky over Cedar Hill is clear and blue.", "zh": "星期六早上，雪松山的天空湛藍無雲。" },
+      { "who": "leo", "expr": "happy", "en": "Kai, look at this view! Thanks for inviting me.", "zh": "凱，你看這風景！謝謝你約我。" }
+    ],
+    "title": { "en": "On Top of Cedar Hill", "zh": "雪松山頂" },
+    "story": { "en": "You and Leo eat sandwiches at the top and plan your next hike before you even walk down.", "zh": "你和里歐在山頂吃三明治，還沒下山就已經在計畫下一次健行了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Are you free on Saturday?",
+      "zh": "你星期六有空嗎？",
+      "explain": "邀約前先確認對方有沒有空。星期幾和日期前面用 on，例如 on Friday night、on May 5th。",
+      "example": { "en": "Are you free on Sunday afternoon?", "zh": "你星期天下午有空嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "Do you want to go hiking?",
+      "zh": "你想去健行嗎？",
+      "explain": "Do you want to + 原形動詞? 是朋友之間最常用的邀約句。想更客氣可以說 Would you like to...?。",
+      "example": { "en": "Do you want to grab lunch after class?", "zh": "下課後要不要一起吃午餐？" }
+    },
+    {
+      "type": "grammar",
+      "en": "How about Cedar Hill?",
+      "zh": "雪松山怎麼樣？",
+      "explain": "How about 用來提議，後面接名詞或 V-ing，不接原形動詞。",
+      "example": { "en": "How about going to the beach instead?", "zh": "改去海邊怎麼樣？" }
+    },
+    {
+      "type": "trap",
+      "en": "go hiking, not climb a mountain",
+      "zh": "去健行，不是攀登高山",
+      "explain": "中文的「爬山」直翻成 climb a mountain，聽起來像要攀岩登頂。走步道說 go hiking 或 go for a hike。",
+      "example": { "en": "We went hiking at Cedar Hill last weekend.", "zh": "我們上週末去雪松山健行。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Sounds great!",
+      "zh": "聽起來很棒！",
+      "explain": "答應邀約或提議最自然的回應，也可以說 Sounds good! 或 I'm in!。",
+      "example": { "en": "Pizza tonight? Sounds great!", "zh": "今晚吃披薩？聽起來很棒！" }
+    }
+  ]
+}

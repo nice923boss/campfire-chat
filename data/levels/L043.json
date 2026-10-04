@@ -1,0 +1,225 @@
+{
+  "id": "L043",
+  "location": { "en": "Port Aurora old town, free walking tour", "zh": "極光港舊城區，免費徒步導覽" },
+  "goal": { "en": "Ask the guide good questions, interrupt politely and end the tour the right way.", "zh": "向導遊提出好問題、禮貌地打斷發問，並用正確的方式結束導覽。" },
+  "background": "old harbor town street with a white stone lighthouse at the end, cobblestone path, colorful wooden houses, iron lamp posts, fishing boats in the water, bright morning",
+  "cast": ["c05_guide", "mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "The next morning, you join a free walking tour of Port Aurora's old town. The guide holds a yellow umbrella high in the air.", "zh": "隔天早上，你們參加極光港舊城區的免費徒步導覽。導遊把一把黃色雨傘高高舉起。" },
+    { "who": "c05_guide", "expr": "happy", "en": "Follow the yellow umbrella, everyone! First stop: the lighthouse.", "zh": "各位跟著黃色雨傘走！第一站：燈塔。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_guide", "expr": "neutral", "en": "This is the Aurora Lighthouse, the oldest building in the city.", "zh": "這是極光燈塔，全市最古老的建築。" },
+        { "who": "mia", "expr": "happy", "en": "Whoa. Kai, ask him how old it is!", "zh": "哇。凱，問他這座燈塔多老了！" }
+      ],
+      "choices": [
+        {
+          "en": "How old is the lighthouse, exactly?",
+          "zh": "這座燈塔確切是多老呢？",
+          "ok": true,
+          "tip": "How old is + 名詞？可以問建築或物品的年代，跟問人的年紀同一個句型。"
+        },
+        {
+          "en": "This lighthouse has how many years?",
+          "zh": "這座燈塔有幾年了？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_guide", "expr": "confused", "en": "How many years... of what? Of me working here? Eleven!", "zh": "幾年……什麼的幾年？我在這裡工作幾年嗎？十一年！" }
+            ],
+            "title": { "en": "Wrong Anniversary", "zh": "答錯週年" },
+            "story": { "en": "Felix proudly tells you about his eleven years as a guide. You learn a lot about Felix and nothing about the lighthouse.", "zh": "菲力克斯驕傲地分享他當導遊的十一年。你對菲力克斯了解很多，對燈塔一無所知。" },
+            "why": "「有幾年了」直譯成 has how many years，英文沒有這種說法，疑問詞也要放句首。問年代要說 How old is the lighthouse?"
+          }
+        },
+        {
+          "en": "Cool. And how old are you, Felix?",
+          "zh": "酷。那菲力克斯，你幾歲？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_guide", "expr": "confused", "en": "Me? Uh... older than I look. Let's stick to the lighthouse!", "zh": "我？呃……比看起來老一點。我們還是聊燈塔吧！" }
+            ],
+            "title": { "en": "Too Personal", "zh": "問太多了" },
+            "story": { "en": "The whole tour group turns to look at you. Felix walks a little faster for the rest of the morning.", "zh": "整團的人都轉頭看你。接下來一整個早上，菲力克斯都走得有點快。" },
+            "why": "在英語文化裡，直接問不熟的大人幾歲很失禮。想知道燈塔的年代，問 How old is the lighthouse? 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_guide", "expr": "neutral", "en": "It was built in 1852. Sailors say a ghost still keeps the light on at night.", "zh": "它建於 1852 年。水手們說，晚上還有個鬼魂在顧著燈火。" },
+        { "who": "leo", "expr": "happy", "en": "A ghost? Kai, I need to hear this!", "zh": "鬼魂？凱，我一定要聽這個！" }
+      ],
+      "choices": [
+        {
+          "en": "Could you tell us more about the ghost?",
+          "zh": "可以多跟我們說一些鬼魂的事嗎？",
+          "ok": true,
+          "tip": "Could you tell us more about...? 是請對方多說一點的禮貌句型。"
+        },
+        {
+          "en": "Can you telling us more the ghost story?",
+          "zh": "你可以多說一點鬼故事嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_guide", "expr": "confused", "en": "Telling you... the ghost? Sorry, I lost you there.", "zh": "告訴你……鬼魂？抱歉，我沒聽懂。" }
+            ],
+            "title": { "en": "The Ghost Got Away", "zh": "鬼故事溜走了" },
+            "story": { "en": "Felix decides it wasn't important and moves on to the next stop. Leo never gets his ghost story.", "zh": "菲力克斯覺得應該不重要，就往下一站走了。里歐最終沒聽到他的鬼故事。" },
+            "why": "can 後面要接原形動詞 tell，不能接 telling；tell us more 後面也要加 about。可以說 Could you tell us more about the ghost?"
+          }
+        },
+        {
+          "en": "Tell us more about the ghost. Go on, now.",
+          "zh": "多講一點鬼魂的事。快講啊。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_guide", "expr": "upset", "en": "Oh. Uh, sure... if you insist.", "zh": "喔。呃，好吧……既然你這麼堅持。" }
+            ],
+            "title": { "en": "The Boring Ghost", "zh": "最無聊的鬼" },
+            "story": { "en": "Felix tells the story in a flat voice, like he's reading a phone bill. It is the least scary ghost story ever.", "zh": "菲力克斯用平板的語氣講完，像在念電話帳單。這是史上最不恐怖的鬼故事。" },
+            "why": "祈使句加上 Go on, now 像在命令對方。請人多說一點，用 Could you tell us more about...? 聽起來有禮貌又有興趣。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "At the old market, Felix talks faster and faster. You miss something important.", "zh": "到了舊市場，菲力克斯越講越快。你漏聽了重要的一段。" },
+        { "who": "c05_guide", "expr": "neutral", "en": "...so after the fire, the whole market moved to the pier, and then in 1925...", "zh": "……所以大火之後，整個市場搬到碼頭，然後在 1925 年……" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry to interrupt, but what fire was that?",
+          "zh": "抱歉打斷一下，那是什麼大火？",
+          "ok": true,
+          "tip": "Sorry to interrupt, but... 是打斷別人發問時最禮貌的開場。"
+        },
+        {
+          "en": "Stop, stop! You talk too fast. Again!",
+          "zh": "停、停！你講太快了。再講一次！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_guide", "expr": "upset", "en": "Oh. Okay... from the very beginning, then?", "zh": "喔。好吧……那從頭開始講？" }
+            ],
+            "title": { "en": "Slow Motion Tour", "zh": "慢動作導覽" },
+            "story": { "en": "Felix starts over from the year 1700, very slowly. The tour runs an hour late, and the group is not happy.", "zh": "菲力克斯從西元 1700 年開始，非常緩慢地重講一遍。導覽延遲了一小時，整團的人都不太開心。" },
+            "why": "連喊 Stop 再用命令句，對導遊很不禮貌。想打斷發問，說 Sorry to interrupt, but what fire was that? 就好。"
+          }
+        },
+        {
+          "en": "Excuse me, you can say again the fire part?",
+          "zh": "不好意思，你可以再說一次大火那段嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_guide", "expr": "confused", "en": "Say again... which part? The market part? Sure!", "zh": "再說一次……哪一段？市場那段嗎？沒問題！" }
+            ],
+            "title": { "en": "Wrong Rerun", "zh": "重播錯集" },
+            "story": { "en": "Felix happily repeats everything about the market. You still have no idea what burned down.", "zh": "菲力克斯開心地把市場的部分重講一遍。你還是不知道到底燒掉了什麼。" },
+            "why": "疑問句要把 can 放句首，say again 後面也不能直接接名詞。可以說 Could you say that again? 或 Sorry to interrupt, but what fire was that?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_guide", "expr": "happy", "en": "And that's the end of the tour! It's pay-what-you-like, so tips are always welcome.", "zh": "導覽到這裡結束！採自由付費，所以很歡迎大家給小費。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks, Felix! This is from the three of us.",
+          "zh": "謝謝你，菲力克斯！這是我們三個的心意。",
+          "ok": true,
+          "tip": "免費導覽結束時給導遊小費是慣例，遞錢時說 This is from us. 很自然。"
+        },
+        {
+          "en": "Great, free tour! Thanks, see you, Felix!",
+          "zh": "太好了，免費導覽！謝啦，掰掰，菲力克斯！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_guide", "expr": "upset", "en": "Uh... bye. Tips are welcome, though.", "zh": "呃……掰。不過還是歡迎給小費喔。" }
+            ],
+            "title": { "en": "The Quiet Hat", "zh": "安靜的帽子" },
+            "story": { "en": "Everyone else drops a few dollars into Felix's hat. Your goodbye sounds much quieter than theirs.", "zh": "其他人都在菲力克斯的帽子裡放了幾塊錢。你的道別聽起來比大家小聲多了。" },
+            "why": "free walking tour 的導遊主要靠小費維生，聽完通常會給 5 到 20 元。說 Thanks! This is from us. 再把小費交給他。"
+          }
+        },
+        {
+          "en": "Tips? Sure! My tip is: try bubble tea in Taiwan.",
+          "zh": "建議？好啊！我的建議是：去台灣喝珍奶。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_guide", "expr": "confused", "en": "Ha, good tip... but I meant the money kind.", "zh": "哈，好建議……不過我說的是錢的那種。" }
+            ],
+            "title": { "en": "Bubble Tea Advice", "zh": "珍奶建議" },
+            "story": { "en": "The whole group laughs, and so do you. Then Mia quietly pays the tip for all three of you.", "zh": "整團都笑了，你也跟著笑。然後米亞默默幫你們三個付了小費。" },
+            "why": "tip 有「小費」和「小建議」兩個意思，導覽結束時說 tips are welcome 指的是小費。可以說 Thanks! This is from us.，再把錢交給導遊。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_guide", "expr": "happy", "en": "Thank you, you three! Hungry? The Salty Anchor by the pier has the best fish in town.", "zh": "謝謝你們三位！肚子餓了嗎？碼頭邊的鹹錨餐廳有全城最好吃的魚。" },
+      { "who": "leo", "expr": "happy", "en": "Best fish in town? Write that down, Kai!", "zh": "全城最好吃的魚？凱，快記下來！" }
+    ],
+    "title": { "en": "Tour Champion", "zh": "導覽模範生" },
+    "story": { "en": "You heard the ghost story, learned about the great fire and got a local tip, the useful kind. Port Aurora feels a little less like a stranger now.", "zh": "你聽到了鬼故事，搞懂了那場大火，還拿到在地人推薦（有用的那種 tip）。極光港感覺不再那麼陌生了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Could you tell us more about...?",
+      "zh": "可以多跟我們說一些……嗎？",
+      "explain": "請導遊或任何人多說一點時用的禮貌句型。Could you 後面接原形動詞，about 後面接主題。",
+      "example": { "en": "Could you tell us more about the old market?", "zh": "可以多跟我們說一些舊市場的事嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "How old is the lighthouse?",
+      "zh": "這座燈塔多老了？",
+      "explain": "How old is + 名詞 可以問建築或物品的年代。回答時說 It was built in 1852. 或 It's over 170 years old.。",
+      "example": { "en": "How old is this bridge? It was built in 1910.", "zh": "這座橋多老了？它建於 1910 年。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Sorry to interrupt, but...",
+      "zh": "抱歉打斷一下，……",
+      "explain": "打斷別人說話時的禮貌開場。英語文化很習慣聽眾發問，聽不懂就直接問，不用假裝聽懂。",
+      "example": { "en": "Sorry to interrupt, but could you say that again?", "zh": "抱歉打斷一下，可以再說一次嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Tipping on a free walking tour",
+      "zh": "免費導覽要給小費",
+      "explain": "free walking tour 或 pay-what-you-like 的導遊主要靠小費維生，結束時一人給 5 到 20 元是常見做法。另外，直接問不熟的大人幾歲也很失禮。",
+      "example": { "en": "Thanks for the great tour! This is for you.", "zh": "謝謝你精彩的導覽！這是給你的。" }
+    },
+    {
+      "type": "trap",
+      "en": "tip = money / advice",
+      "zh": "tip：小費／小建議",
+      "explain": "tip 有兩個意思：給服務人員的小費，以及實用的小建議。Tips are welcome 出現在導覽或餐廳結尾時，幾乎都是指小費。",
+      "example": { "en": "Here's a tip: book the restaurant early. And don't forget to leave a tip!", "zh": "給你個建議：餐廳要早點訂。還有別忘了給小費！" }
+    }
+  ]
+}

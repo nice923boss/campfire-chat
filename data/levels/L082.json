@@ -1,0 +1,265 @@
+{
+  "id": "L082",
+  "location": { "en": "Daybreak Coffee head office, meeting room", "zh": "破曉咖啡總部，會議室" },
+  "goal": { "en": "Pitch Brightway's smart lighting to a growing cafe chain.", "zh": "向成長中的咖啡連鎖店簡報 Brightway 的智慧照明。" },
+  "background": "modern cafe company meeting room with a long reclaimed wood table, exposed brick wall, hanging edison bulbs, large industrial windows, potted plants, blank wall screen, afternoon light",
+  "cast": ["sam", "c09_cafe_founder"],
+  "intro": [
+    { "who": "narrator", "en": "Daybreak Coffee has eight cafes in Maple Bay and plans to open more. Today, you are giving your first real pitch.", "zh": "破曉咖啡在楓灣有八家分店，還打算繼續展店。今天，你要做第一場正式的產品簡報。" },
+    { "who": "sam", "expr": "happy", "en": "I'll handle the demo, Kai. You do the talking. Benefits first, features second.", "zh": "示範交給我，凱，你負責講。先講好處，再講功能。" },
+    { "who": "c09_cafe_founder", "expr": "neutral", "en": "Welcome, both of you. I've got fifteen minutes, so let's see what you've brought.", "zh": "歡迎兩位。我有十五分鐘，來看看你們帶了什麼。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_cafe_founder", "expr": "neutral", "en": "The floor is yours. How would you like to start?", "zh": "交給你了。你想怎麼開始？" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks for having us. I'll cover three things today: the system, the savings, and the next steps.",
+          "zh": "謝謝邀請我們。今天我會講三件事：系統、省下的費用，以及下一步。",
+          "ok": true,
+          "tip": "簡報一開始先說要講哪幾點，聽眾心裡有地圖，比較容易跟上。"
+        },
+        {
+          "en": "Thank you. First, let me simply introduce our company's long history and all of our products to everyone.",
+          "zh": "謝謝。首先讓我簡單介紹一下我們公司悠久的歷史和所有產品。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "All of your products? In fifteen minutes? Let's hope it's very simple.", "zh": "所有產品？在十五分鐘內？希望真的很「簡單」。" }
+            ],
+            "title": { "en": "Once Upon a Time", "zh": "從盤古開天講起" },
+            "story": { "en": "You spend five minutes on the year Brightway was founded. Mr. Reyes starts doodling coffee cups on his notepad.", "zh": "你花了五分鐘講 Brightway 的創立年份。雷耶斯先生開始在筆記本上畫咖啡杯。" },
+            "why": "「簡單介紹一下」直譯成 simply introduce 不自然，英文會說 Let me give you a quick overview.。而且簡報開頭講公司歷史很容易讓客戶失去耐心，先說今天的重點：I'll cover three things today.。"
+          }
+        },
+        {
+          "en": "Thanks! Our lights are simply the best on the market, and I guarantee they'll double your sales this year.",
+          "zh": "謝謝！我們的燈是市面上最好的，我保證今年能讓你們的營收翻倍。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "upset", "en": "Double our sales? With light bulbs? That's quite a promise.", "zh": "營收翻倍？靠燈泡？這承諾可真大。" }
+            ],
+            "title": { "en": "Promise Overload", "zh": "話說太滿" },
+            "story": { "en": "Mr. Reyes writes \"double sales\" on his notepad and underlines it twice. Every slide after that is measured against your promise.", "zh": "雷耶斯先生在筆記本寫下「營收翻倍」，還畫了兩條底線。之後的每一頁簡報都被拿來跟這個承諾比較。" },
+            "why": "一開場就誇下「保證營收翻倍」的海口，客戶只會更懷疑，日後也很難兌現。用具體、可驗證的方式開場：I'll cover three things today: the system, the savings, and the next steps.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_founder", "expr": "neutral", "en": "Every lighting company tells me they're the best. What actually makes yours different?", "zh": "每家照明公司都說自己最好。你們到底有什麼不一樣？" }
+      ],
+      "choices": [
+        {
+          "en": "The key benefit is that our lights adjust to daylight on their own, so your cafes always feel right.",
+          "zh": "最大的好處是我們的燈會自動配合日光調整，讓您的咖啡店隨時都有剛好的氛圍。",
+          "ok": true,
+          "tip": "The key benefit is... 直接點出客戶得到的好處，比列一長串規格更有說服力。"
+        },
+        {
+          "en": "The key benefit is our lights can adjusting itself automatic, follow the sunlight outside the window change.",
+          "zh": "最大的好處是我們的燈會自動跟著窗外的陽光變化調整。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "Sorry, the lights follow... the window? Could you run that by me again?", "zh": "抱歉，燈跟著……窗戶？可以再講一次嗎？" }
+            ],
+            "title": { "en": "Lost in the Sentence", "zh": "句子迷路了" },
+            "story": { "en": "Sam jumps in with the demo before you can try again. Your big selling point gets a little lost in translation.", "zh": "你還沒重講，山姆就先跳出來做示範。你的最大賣點就這樣有點被淹沒了。" },
+            "why": "can 後面要接原形動詞 adjust，不是 adjusting；主詞是 lights，要用 themselves；副詞是 automatically。說成 Our lights adjust to daylight on their own. 就清楚了。"
+          }
+        },
+        {
+          "en": "Good question. Actually, our CEO used to be a senior engineer at a very famous tech company, you know.",
+          "zh": "好問題。其實我們執行長以前是一家很有名的科技公司的資深工程師喔。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "Good for your CEO. But what does that do for my cafes?", "zh": "恭喜你們執行長。但這對我的咖啡店有什麼用？" }
+            ],
+            "title": { "en": "Name Dropping", "zh": "搬出大人物" },
+            "story": { "en": "Mr. Reyes is not buying your CEO, only your lights. He glances at the clock on the wall.", "zh": "雷耶斯先生要買的是燈，不是你們的執行長。他瞄了一眼牆上的時鐘。" },
+            "why": "客戶問「有什麼不一樣」，是想知道對他的好處，不是公司背景。用 The key benefit is... 直接說出客戶能得到什麼。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_founder", "expr": "neutral", "en": "Sounds nice. But I'm a numbers person. What does that mean for us in real terms?", "zh": "聽起來不錯。但我是看數字的人。實際上這對我們代表什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "This means you can cut your lighting bill by about 40 percent. That's roughly 3,000 dollars a year per cafe.",
+          "zh": "這代表您的照明電費可以減少約四成，大約每家店每年省三千元。",
+          "ok": true,
+          "tip": "This means you can... 把功能轉換成客戶的實際收穫，再用具體數字支撐。"
+        },
+        {
+          "en": "It's very money-saving. Your electricity fee will become very, very less every month, I can promise you that.",
+          "zh": "非常省錢。你們每個月的電費會變得非常非常少，我可以保證。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "Very, very less? How much less, exactly? I need an actual number.", "zh": "非常非常少？到底少多少？我需要實際數字。" }
+            ],
+            "title": { "en": "Show Me the Numbers", "zh": "數字呢？" },
+            "story": { "en": "You promise savings but cannot say how much. Mr. Reyes writes \"vague\" in his notebook.", "zh": "你保證會省錢，卻說不出省多少。雷耶斯先生在筆記本寫下「模糊」兩個字。" },
+            "why": "「很省錢」直譯成 very money-saving、「電費變很少」說成 become very less 都不自然，而且沒有數字就沒有說服力。改說 This means you can cut your lighting bill by about 40 percent.。"
+          }
+        },
+        {
+          "en": "Way better than the others. Honestly, our competitors' lights are junk, and one of their clients nearly closed down.",
+          "zh": "比別家好太多了。老實說，我們競爭對手的燈很爛，他們有個客戶差點倒閉。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "upset", "en": "Hmm. I actually know some of those people. Let's stick to your product.", "zh": "嗯。其實我認識那邊一些人。我們專心談你們的產品就好。" }
+            ],
+            "title": { "en": "Trash Talk", "zh": "說人壞話" },
+            "story": { "en": "Mr. Reyes goes quiet and starts wondering what you will say about Daybreak to your next client.", "zh": "雷耶斯先生安靜下來，開始想像你會在下一個客戶面前怎麼說破曉咖啡。" },
+            "why": "在簡報中批評競爭對手會顯得不專業，客戶也會懷疑你的人品。專注在自己的價值與數據：This means you can cut your lighting bill by about 40 percent.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "neutral", "en": "Kai, maybe tell them about Lakeside Bakery?", "zh": "凱，要不要講講湖畔烘焙坊的案例？" },
+        { "who": "c09_cafe_founder", "expr": "neutral", "en": "Yes, please. Has a business like ours actually used this?", "zh": "好啊。有跟我們類似的店家真的用過嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Lakeside Bakery switched last spring, and customers now stay about twenty minutes longer on average.",
+          "zh": "有的。湖畔烘焙坊去年春天換了系統，現在客人平均多待了大約二十分鐘。",
+          "ok": true,
+          "tip": "引用類似客戶的實際成果，是最有說服力的證據。"
+        },
+        {
+          "en": "Yes, but honestly our product is still not very good. We will try our best, so please give us a chance.",
+          "zh": "有，但老實說我們的產品還不夠好。我們會盡力的，請給我們一個機會。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "Not very good? Then why exactly am I listening to this pitch?", "zh": "還不夠好？那我為什麼要聽這場簡報？" }
+            ],
+            "title": { "en": "Too Humble to Sell", "zh": "謙虛過頭" },
+            "story": { "en": "Mr. Reyes takes your modesty at face value. Sam stares at the ceiling and quietly packs up the demo.", "zh": "雷耶斯先生把你的謙虛當真了。山姆盯著天花板，默默開始收示範器材。" },
+            "why": "在台灣自謙是禮貌，但在西方商務簡報中，說自家產品「還不夠好」會被照字面理解。自信地用事實說話：Lakeside Bakery switched last spring, and customers now stay longer.。"
+          }
+        },
+        {
+          "en": "Yes, there has a bakery used it last year, and their customer was increased a lot after that.",
+          "zh": "有，去年有一家烘焙坊用過，之後他們的客人增加了很多。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "A bakery... was increased? Which bakery, and increased how?", "zh": "一家烘焙坊……被增加了？哪一家？增加了什麼？" }
+            ],
+            "title": { "en": "Case Study Confusion", "zh": "案例講不清" },
+            "story": { "en": "Your best success story comes out tangled. Sam steps in to explain it while you take a long sip of water.", "zh": "你最棒的成功案例講得一團亂。山姆接手解釋，你默默喝了一大口水。" },
+            "why": "「有一家……」英文要說 There is a bakery that...，不能用 there has；increase 當「增加」時直接用主動：their customers increased。最好說出具體名稱與數字：Lakeside Bakery switched last spring.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_founder", "expr": "happy", "en": "All right, I'm interested. So what's the next step?", "zh": "好，我有興趣了。那下一步是什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "We'd suggest a free two-week trial in one of your cafes. Would next Monday work for you?",
+          "zh": "我們建議在您其中一家店免費試用兩週。下週一方便嗎？",
+          "ok": true,
+          "tip": "簡報結尾提出具體、低門檻的下一步，並直接問時間，讓對方好答應。"
+        },
+        {
+          "en": "Just sign the contract today. The price goes up next month, so you'd better decide right now.",
+          "zh": "今天就簽約吧。下個月要漲價了，你最好現在就決定。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "upset", "en": "I don't make decisions under pressure. Let's leave it there for today.", "zh": "我不在壓力下做決定。今天就先到這裡吧。" }
+            ],
+            "title": { "en": "Hard Sell, Soft Landing", "zh": "催太緊" },
+            "story": { "en": "Mr. Reyes politely shows you out. Sam spends the ride back explaining the difference between closing a deal and cornering a client.", "zh": "雷耶斯先生客氣地送你們出門。回程路上，山姆一直在解釋「成交」跟「逼客戶」的差別。" },
+            "why": "用「下個月漲價」逼對方當場簽約，會讓客戶覺得被施壓。提出低風險的下一步更有效：We'd suggest a free two-week trial. Would next Monday work for you?"
+          }
+        },
+        {
+          "en": "You can think about it first and give us an answer later. We wait for your good news.",
+          "zh": "您可以先考慮看看，之後再給我們答覆。我們等您的好消息。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "Good news? I haven't decided anything yet. What am I deciding on, exactly?", "zh": "好消息？我還沒決定任何事。我到底要決定什麼？" }
+            ],
+            "title": { "en": "Waiting Game", "zh": "一直等下去" },
+            "story": { "en": "Mr. Reyes says he will be in touch. Three weeks later, you are still waiting for that good news.", "zh": "雷耶斯先生說會再聯絡。三週後，你還在等那個好消息。" },
+            "why": "「等您的好消息」直譯成 We wait for your good news. 聽起來像假設對方一定會答應，也沒有提出具體的下一步。簡報結尾要給明確行動：We'd suggest a free two-week trial.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_cafe_founder", "expr": "happy", "en": "A free trial with real numbers? Now that's something I can take to my partners. Monday it is.", "zh": "免費試用，還有實際數據？這我就能拿去說服合夥人了。就約週一。" },
+      { "who": "sam", "expr": "happy", "en": "Nicely done, Kai. Clear, short, and no wild promises.", "zh": "做得好，凱。清楚、簡短，也沒有亂開支票。" }
+    ],
+    "title": { "en": "Pitch Perfect", "zh": "簡報成功" },
+    "story": { "en": "Mr. Reyes shakes your hand and books the trial on the spot. On the way out, Sam lets you carry the demo kit as a reward.", "zh": "雷耶斯先生和你握手，當場敲定試用。離開時，山姆「獎勵」你幫忙搬示範器材。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "The key benefit is...",
+      "zh": "最大的好處是……",
+      "explain": "簡報時用來點出客戶能得到的核心好處。重點放在客戶的收穫，而不是產品規格。",
+      "example": { "en": "The key benefit is that your staff never have to adjust the lights.", "zh": "最大的好處是您的員工完全不用手動調燈。" }
+    },
+    {
+      "type": "phrase",
+      "en": "This means you can...",
+      "zh": "這代表您可以……",
+      "explain": "把功能或數據轉換成客戶實際能做到的事。搭配具體數字，例如 by about 40 percent，說服力最強。",
+      "example": { "en": "This means you can open a new cafe without raising your energy budget.", "zh": "這代表您開新店時不必增加能源預算。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll cover three things today.",
+      "zh": "今天我會講三件事。",
+      "explain": "簡報開場先預告結構，讓聽眾知道接下來會聽到什麼。也可以說 Here's a quick overview.。",
+      "example": { "en": "I'll cover three things today: the problem, our solution, and the cost.", "zh": "今天我會講三件事：問題、我們的解決方案和費用。" }
+    },
+    {
+      "type": "trap",
+      "en": "simply introduce / We wait for your good news.",
+      "zh": "簡單介紹一下／等您的好消息",
+      "explain": "這兩句都是中文的直譯。介紹時說 Let me give you a quick overview.；結尾不要只說等好消息，要提出具體下一步。",
+      "example": { "en": "Let me give you a quick overview. Then we can talk about a trial.", "zh": "我先快速說明一下，接著再來談試用。" }
+    },
+    {
+      "type": "culture",
+      "en": "Be confident, not humble or harsh.",
+      "zh": "自信，但不自貶也不貶人。",
+      "explain": "西方客戶會照字面理解「我們產品還不夠好」這類謙虛話；批評競爭對手也會讓你顯得不專業。用事實和數據建立信心最穩。",
+      "example": { "en": "We're proud of our results. Here's what one client achieved.", "zh": "我們對成果很有信心。這是一位客戶達成的成效。" }
+    }
+  ]
+}

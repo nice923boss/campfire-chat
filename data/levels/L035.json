@@ -1,0 +1,224 @@
+{
+  "id": "L035",
+  "location": { "en": "Kai and Mia's apartment, kitchen", "zh": "凱和米亞的公寓，廚房" },
+  "goal": { "en": "Give Mia sincere compliments, and accept one gracefully.", "zh": "真誠地稱讚米亞，也大方地接受她的稱讚。" },
+  "background": "small shared apartment kitchen in the evening, wooden table set with two plates of creamy pasta, a pot on the stove, warm pendant lights, herbs growing on the windowsill",
+  "cast": ["mia"],
+  "intro": [
+    { "who": "narrator", "en": "Friday evening. You come home and smell garlic. Mia is cooking dinner for both of you.", "zh": "星期五晚上。你一回家就聞到蒜香，米亞正在煮兩人份的晚餐。" },
+    { "who": "narrator", "en": "Something about Mia looks different today. She keeps touching her hair.", "zh": "今天的米亞看起來哪裡不太一樣，她一直摸自己的頭髮。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Hey, Kai! So... do you notice anything different?", "zh": "嘿，凱！那個……你有沒有發現哪裡不一樣？" }
+      ],
+      "choices": [
+        {
+          "en": "You got a haircut! I love your new hair.",
+          "zh": "你剪頭髮了！我好喜歡你的新髮型。",
+          "ok": true,
+          "tip": "注意到對方的改變，再用 I love your... 稱讚，對方會很開心。"
+        },
+        {
+          "en": "Wow, you cut your hair! I very like it.",
+          "zh": "哇，你剪頭髮了！我很喜歡。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "You... very like it? So do you like it or not?", "zh": "你……很喜歡它？所以你到底喜不喜歡？" }
+            ],
+            "title": { "en": "Very Confusing", "zh": "非常困惑" },
+            "story": { "en": "Mia asks three more times if you really like it. You say yes three more times.", "zh": "米亞又問了三次你是不是真的喜歡，你也回答了三次「是」。" },
+            "why": "「我很喜歡」不能直翻成 I very like it，very 不能直接修飾動詞。要說 I really like it. 或 I love it.。"
+          }
+        },
+        {
+          "en": "New haircut! Your face looks rounder.",
+          "zh": "新髮型！你的臉看起來比較圓。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Rounder? Wow. Thanks a lot, Kai.", "zh": "比較圓？哇，真是謝謝你喔，凱。" }
+            ],
+            "title": { "en": "Hood Up", "zh": "帽子戴好" },
+            "story": { "en": "Mia wears her hoodie with the hood up for the rest of the evening.", "zh": "整個晚上，米亞都把帽 T 的帽子戴得好好的。" },
+            "why": "台灣長輩常直接評論外表，像是「變胖了」「臉變圓了」，但在英語文化裡評論身材或臉型很失禮。稱讚就只說好的部分。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "neutral", "en": "Really? I was so nervous. It's a lot shorter than before.", "zh": "真的嗎？我超緊張的，比之前短很多。" }
+      ],
+      "choices": [
+        {
+          "en": "It looks great on you. I mean it!",
+          "zh": "很適合你，我是說真的！",
+          "ok": true,
+          "tip": "look great on + 人，是稱讚髮型、衣服「很適合某人」的固定說法。"
+        },
+        {
+          "en": "It looks great to you. Really!",
+          "zh": "你覺得很好看，真的！",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "To me? Wait, I'm asking what YOU think!", "zh": "我覺得？等等，我是在問你覺得怎樣耶！" }
+            ],
+            "title": { "en": "Mirror, Mirror", "zh": "魔鏡啊魔鏡" },
+            "story": { "en": "Mia goes to the mirror and asks it instead. The mirror doesn't answer either.", "zh": "米亞跑去問鏡子，鏡子也沒回答她。" },
+            "why": "look great on someone 是「某人穿戴起來很好看」；looks great to you 意思變成「在你看來很好看」，主詞整個搞反了。"
+          }
+        },
+        {
+          "en": "Yes. It's short. Very short.",
+          "zh": "對，很短，非常短。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Okay... so you hate it.", "zh": "好喔……所以你很討厭。" }
+            ],
+            "title": { "en": "Short Answer", "zh": "短短的回答" },
+            "story": { "en": "Mia spends the next hour looking up hair clips to hide it.", "zh": "米亞接下來一小時都在上網找能遮住短髮的髮夾。" },
+            "why": "對方說自己很緊張時，只重複事實 It's short. 聽起來像在批評。要給明確的正面回饋：It looks great on you!"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Aw, thanks! Okay, dinner's ready. I made pasta!", "zh": "哇，謝謝！好了，晚餐煮好了，我做了義大利麵！" },
+        { "who": "narrator", "en": "You take a bite. It's creamy, garlicky, and delicious.", "zh": "你吃了一口，濃郁、蒜香十足，非常好吃。" },
+        { "who": "mia", "expr": "neutral", "en": "So? How is it?", "zh": "怎麼樣？好吃嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "This is so good! You're a great cook.",
+          "zh": "這個超好吃！你很會煮菜。",
+          "ok": true,
+          "tip": "稱讚廚藝說 You're a great cook!，cook 當名詞就是「廚師、會做菜的人」。"
+        },
+        {
+          "en": "Very delicious! You are a good cooker.",
+          "zh": "非常好吃！你是很好的廚師。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "A cooker? Like a rice cooker?", "zh": "Cooker？像電鍋那樣嗎？" }
+            ],
+            "title": { "en": "Human Rice Cooker", "zh": "人形電鍋" },
+            "story": { "en": "Mia laughs so hard she drops her fork. Now she signs every text \"Mia the Rice Cooker.\"", "zh": "米亞笑到叉子都掉了。現在她傳訊息都署名「電鍋米亞」。" },
+            "why": "「廚師」不是 cooker，cooker 是鍋子、爐具，像 rice cooker 就是電鍋。會做菜的人叫 cook：You're a great cook!"
+          }
+        },
+        {
+          "en": "It's pasta with cream and garlic.",
+          "zh": "這是奶油蒜味義大利麵。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Yes, I know. I made it. But do you LIKE it?", "zh": "對，我知道，是我做的。但你喜歡嗎？" }
+            ],
+            "title": { "en": "Food Critic", "zh": "美食評論家" },
+            "story": { "en": "Mia waits for your review. You describe the noodles, the sauce, and the plate.", "zh": "米亞等你給評價，你卻描述了麵條、醬汁，還有盤子。" },
+            "why": "對方煮飯給你吃，問 How is it? 是想知道你的感想，不是要你介紹菜色。先說 This is so good!"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Thanks! And hey, your English is getting really good, Kai.", "zh": "謝啦！對了，凱，你的英文越來越好了耶。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you! That means a lot.",
+          "zh": "謝謝你！這句話對我意義重大。",
+          "ok": true,
+          "tip": "被稱讚時大方說 Thank you!，再加 That means a lot. 表示你很珍惜。"
+        },
+        {
+          "en": "No, no, my English is very bad.",
+          "zh": "沒有啦沒有啦，我的英文很爛。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Very bad? But we're talking in English right now!", "zh": "很爛？可是我們現在就在用英文聊天啊！" }
+            ],
+            "title": { "en": "Humble Overload", "zh": "謙虛過頭" },
+            "story": { "en": "Mia spends ten minutes trying to convince you. You both forget to finish the pasta.", "zh": "米亞花了十分鐘想說服你，你們都忘了把麵吃完。" },
+            "why": "台灣習慣用「沒有啦」謙虛回應稱讚，但在英語文化裡一直否認，對方會覺得自己說錯話。大方說 Thank you! 就好。"
+          }
+        },
+        {
+          "en": "Thank you! I am practice every day.",
+          "zh": "謝謝！我每天都在練習。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "You ARE practice? Hmm, maybe practice a little more!", "zh": "你「是」練習？嗯，也許要再多練一點喔！" }
+            ],
+            "title": { "en": "Practice Makes Perfect", "zh": "熟能生巧" },
+            "story": { "en": "Mia sticks a grammar note on the fridge for you. It says \"I practice.\" in big letters.", "zh": "米亞在冰箱上貼了一張文法便條給你，上面大大寫著「I practice.」。" },
+            "why": "說習慣用現在簡單式：I practice every day.。am 和原形動詞不能放在一起，要說正在進行可以用 I'm practicing.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mia", "expr": "happy", "en": "See? That's the perfect answer. Now, more pasta?", "zh": "看吧？這就是最完美的回答。好啦，再來一點麵？" },
+      { "who": "narrator", "en": "You hold out your plate with a big smile.", "zh": "你笑著把盤子遞了過去。" }
+    ],
+    "title": { "en": "Compliments to the Chef", "zh": "向主廚致敬" },
+    "story": { "en": "You and Mia trade compliments all evening. She makes you promise to cook Taiwanese food next week.", "zh": "你和米亞互相稱讚了一整晚，她還要你答應下週煮台灣菜給她吃。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I love your new hair!",
+      "zh": "我好喜歡你的新髮型！",
+      "explain": "注意到朋友的改變並說出來，是很自然的稱讚。I love your... 可以接衣服、鞋子、包包等。",
+      "example": { "en": "I love your new shoes!", "zh": "我好喜歡你的新鞋！" }
+    },
+    {
+      "type": "phrase",
+      "en": "It looks great on you.",
+      "zh": "很適合你。",
+      "explain": "look great on + 人，用來稱讚髮型、衣服穿戴在某人身上很好看。注意介系詞是 on，不是 to。",
+      "example": { "en": "That jacket looks great on you.", "zh": "那件外套很適合你。" }
+    },
+    {
+      "type": "vocab",
+      "en": "cook vs. cooker",
+      "zh": "廚師 vs. 鍋具",
+      "explain": "cook 當名詞是「會做菜的人」，cooker 是鍋子或爐具，例如 rice cooker（電鍋）、pressure cooker（壓力鍋）。",
+      "example": { "en": "My dad is a great cook.", "zh": "我爸很會做菜。" }
+    },
+    {
+      "type": "culture",
+      "en": "Just say thank you.",
+      "zh": "被稱讚就說謝謝。",
+      "explain": "中文習慣用「沒有啦」「還好啦」謙虛回應，但英語文化中大方接受稱讚才是禮貌，一直否認反而讓對方尷尬。",
+      "example": { "en": "Thank you! That means a lot.", "zh": "謝謝你！這句話對我意義重大。" }
+    },
+    {
+      "type": "trap",
+      "en": "I really like it.",
+      "zh": "我很喜歡（不是 I very like it）。",
+      "explain": "very 只能修飾形容詞或副詞，不能直接修飾動詞。「很喜歡」要說 I really like it.、I like it a lot. 或 I love it.。",
+      "example": { "en": "I really like this song.", "zh": "我很喜歡這首歌。" }
+    }
+  ]
+}

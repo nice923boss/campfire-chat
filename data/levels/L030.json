@@ -1,0 +1,223 @@
+{
+  "id": "L030",
+  "location": { "en": "Maple Bay Language Institute, library study room", "zh": "楓灣語言學院，圖書館自習室" },
+  "goal": { "en": "Study with friends for tomorrow's grammar exam.", "zh": "和朋友一起準備明天的文法考試。" },
+  "background": "library study room at night with a long table, open textbooks, highlighters and coffee cups, a desk lamp glowing warmly, dark windows, quiet cozy atmosphere",
+  "cast": ["leo", "c03_yuki"],
+  "intro": [
+    { "who": "narrator", "en": "Tomorrow is the big grammar exam. You, Leo and Yuki meet in the library.", "zh": "明天就是重要的文法考試。你、里歐和由紀約在圖書館。" },
+    { "who": "leo", "expr": "upset", "en": "I've read this page five times. Nothing is going in.", "zh": "這頁我讀了五遍，什麼都沒進腦袋。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_yuki", "expr": "neutral", "en": "How's your studying going, Kai?", "zh": "凱，你讀得怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "Not great. I'm stuck on the past tense.",
+          "zh": "不太好。我卡在過去式。",
+          "ok": true,
+          "tip": "be stuck on... 表示「卡在某個地方」，說明自己哪裡不會，別人才幫得上忙。"
+        },
+        {
+          "en": "So-so. The past tense is very trouble.",
+          "zh": "普普通通。過去式很麻煩。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Very trouble? Is the past tense... in trouble?", "zh": "很麻煩？過去式……惹上麻煩了嗎？" }
+            ],
+            "title": { "en": "Grammar Police", "zh": "文法警察" },
+            "story": { "en": "Yuki imagines the past tense being arrested. She can't stop laughing, and the librarian says \"Shh!\"", "zh": "由紀想像過去式被警察抓走，笑到停不下來，圖書館員對你們「噓！」了一聲。" },
+            "why": "trouble 是名詞，不能用 very 修飾。要說 The past tense is really hard. 或 I'm stuck on the past tense.。"
+          }
+        },
+        {
+          "en": "Easy. I didn't study, but I'm fine.",
+          "zh": "簡單。我都沒讀，但沒問題啦。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "You didn't study? Then why are we here at 9 p.m.?", "zh": "你沒讀？那我們晚上九點在這裡幹嘛？" }
+            ],
+            "title": { "en": "Secret Genius", "zh": "隱藏的學霸" },
+            "story": { "en": "Yuki stops sharing her notes with you. After all, you don't need them, right?", "zh": "由紀不再分你筆記了。畢竟你說你不需要嘛，對吧？" },
+            "why": "台灣學生常說「我都沒讀」來降低期待，但在國外，這聽起來像在炫耀或說謊。誠實說出卡在哪裡：I'm stuck on the past tense.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_yuki", "expr": "neutral", "en": "Leo takes really good notes. Maybe they can help?", "zh": "里歐的筆記做得很好，也許能幫上忙？" }
+      ],
+      "choices": [
+        {
+          "en": "Leo, could I borrow your notes?",
+          "zh": "里歐，可以借我看你的筆記嗎？",
+          "ok": true,
+          "tip": "Could I borrow...? 是禮貌借東西的說法。borrow 是借入，主詞是 I。"
+        },
+        {
+          "en": "Leo, give me your notes, OK?",
+          "zh": "里歐，筆記給我，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Give you? Wow. What's the magic word?", "zh": "給你？哇。神奇的那個字呢？" }
+            ],
+            "title": { "en": "Magic Word", "zh": "神奇咒語" },
+            "story": { "en": "Leo hugs his notebook and makes you say \"please\" three times. Yuki enjoys the show.", "zh": "里歐抱緊筆記本，要你說三次「please」。由紀在旁邊看得很開心。" },
+            "why": "give me... 是命令句，加 OK? 也不會變客氣。借東西要用 Could I borrow your notes? 或 Could you lend me your notes?。"
+          }
+        },
+        {
+          "en": "Leo, your notes can lend me see?",
+          "zh": "里歐，你的筆記可以借我看嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "My notes can... see? Do they have eyes now?", "zh": "我的筆記可以……看？它們長眼睛了嗎？" }
+            ],
+            "title": { "en": "Notes with Eyes", "zh": "長眼睛的筆記" },
+            "story": { "en": "Leo draws two eyes on the cover of his notebook. It's cute, but you still can't read it.", "zh": "里歐在筆記本封面畫上兩顆眼睛。很可愛，但你還是沒借到。" },
+            "why": "「筆記可以借我看嗎」逐字翻譯，主詞變成筆記，句子就亂了。要說 Could I borrow your notes?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Sure, here. But honestly, reading notes is so boring.", "zh": "好啊，拿去。不過說真的，讀筆記好無聊。" }
+      ],
+      "choices": [
+        {
+          "en": "Then let's quiz each other instead.",
+          "zh": "那我們改成互相考考看吧。",
+          "ok": true,
+          "tip": "quiz 可以當動詞「小考、考問」。each other 是「彼此」，quiz each other 就是互相出題。"
+        },
+        {
+          "en": "Then we test us each other.",
+          "zh": "那我們互相測驗。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Test us... each other... who tests who?", "zh": "測我們……彼此……到底誰考誰？" }
+            ],
+            "title": { "en": "Who Tests Who", "zh": "誰考誰" },
+            "story": { "en": "Your team spends fifteen minutes deciding who asks first. Nobody asks any questions.", "zh": "你們花了十五分鐘決定誰先出題。結果一題都沒考。" },
+            "why": "each other 本身就是受詞，前面不用再加 us。提議一起做事用 let's：Let's quiz each other.。"
+          }
+        },
+        {
+          "en": "Yes, your notes are really boring.",
+          "zh": "對啊，你的筆記真的很無聊。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Hey! I said reading notes is boring, not my notes!", "zh": "喂！我是說讀筆記很無聊，不是我的筆記無聊！" }
+            ],
+            "title": { "en": "Notes Taken Back", "zh": "筆記被收回" },
+            "story": { "en": "Leo takes his notebook back. You spend the night with your own notes, which are mostly drawings.", "zh": "里歐把筆記本收回去了。你只能整晚看自己的筆記，上面大多是塗鴉。" },
+            "why": "里歐說的是「讀筆記這件事」很無聊，不是他的筆記無聊。聽錯重點會傷到人。這時可以提出更好的讀書方法：Then let's quiz each other.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "An hour later, you answer every question right.", "zh": "一個小時後，你每一題都答對了。" },
+        { "who": "c03_yuki", "expr": "happy", "en": "Wow, Kai! You're really good at this now!", "zh": "哇，凱！你現在真的很厲害耶！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! You two helped a lot.",
+          "zh": "謝謝！你們兩個幫了很多忙。",
+          "ok": true,
+          "tip": "被稱讚時說 Thanks! 大方接受，再把功勞分給別人，是最自然的回應。"
+        },
+        {
+          "en": "No, no. I'm still very bad. I will fail.",
+          "zh": "沒有啦，我還是很爛，一定會考不好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "But... you got every answer right. Are you OK?", "zh": "可是……你每一題都答對了耶。你還好嗎？" }
+            ],
+            "title": { "en": "Modesty Overload", "zh": "謙虛過載" },
+            "story": { "en": "Leo and Yuki spend the rest of the night trying to boost your confidence. Nobody studies any more grammar.", "zh": "里歐和由紀整晚都在幫你建立自信。之後大家都沒再讀文法了。" },
+            "why": "台灣人被稱讚時習慣說「沒有啦」，但英文直接否定會讓對方尷尬。大方接受讚美：Thanks! You two helped a lot.。"
+          }
+        },
+        {
+          "en": "Yes! Thank you for help me.",
+          "zh": "對！謝謝你幫我。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"For help me\"? Hmm, maybe one more hour of grammar?", "zh": "「For help me」？嗯，要不要再多讀一小時文法？" }
+            ],
+            "title": { "en": "Overtime", "zh": "延長賽" },
+            "story": { "en": "Leo opens the grammar book again. You study until the library closes at midnight.", "zh": "里歐又把文法書打開。你們一路讀到圖書館午夜關門。" },
+            "why": "介系詞 for 後面接名詞或 V-ing：Thank you for helping me.。也可以說 Thanks! You two helped a lot.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "leo", "expr": "happy", "en": "Team Food never fails!", "zh": "美食小隊永不失敗！" },
+      { "who": "c03_yuki", "expr": "happy", "en": "Good luck tomorrow, everyone!", "zh": "大家明天加油！" }
+    ],
+    "title": { "en": "Ready for the Exam", "zh": "考前準備完成" },
+    "story": { "en": "You walk home under the stars, repeating the past tense in your head. For the first time, the exam doesn't feel scary.", "zh": "你在星空下走回家，腦中複習著過去式。第一次覺得考試沒那麼可怕。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Could I borrow your notes?",
+      "zh": "可以借我你的筆記嗎？",
+      "explain": "向同學借東西的禮貌說法。Could 比 Can 更客氣。也可以說 Could you lend me your notes?。",
+      "example": { "en": "Could I borrow your charger for a minute?", "zh": "可以借一下你的充電器嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let's quiz each other.",
+      "zh": "我們互相考考看吧。",
+      "explain": "quiz 可當動詞，quiz each other 是互相出題。each other 是受詞，前面不加 us。",
+      "example": { "en": "Let's quiz each other on these new words.", "zh": "我們來互考這些新單字吧。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm stuck on...",
+      "zh": "我卡在……",
+      "explain": "be stuck on 表示被某個問題卡住。具體說出哪裡卡住，別人才知道怎麼幫你。",
+      "example": { "en": "I'm stuck on question five. Can you help?", "zh": "我卡在第五題，可以幫我嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "\"very trouble\"",
+      "zh": "很麻煩",
+      "explain": "trouble 是名詞，不能用 very 修飾。可以說 It's a lot of trouble.、It's really hard. 或 It's a pain.。",
+      "example": { "en": "This homework is really hard.", "zh": "這份作業真的很難。" }
+    },
+    {
+      "type": "culture",
+      "en": "Accept compliments.",
+      "zh": "大方接受稱讚",
+      "explain": "台灣人習慣用「沒有啦」或「我都沒讀」表示謙虛，但英語文化中直接否定稱讚會讓人尷尬。說 Thanks! 再分享功勞最自然。",
+      "example": { "en": "Thanks! I had a great teacher.", "zh": "謝謝！我遇到很好的老師。" }
+    }
+  ]
+}

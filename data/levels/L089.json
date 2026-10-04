@@ -1,0 +1,265 @@
+{
+  "id": "L089",
+  "location": { "en": "Brightway Lighting, product showroom", "zh": "Brightway 照明公司，產品展示間" },
+  "goal": { "en": "Clear up a cultural misunderstanding with a visiting client.", "zh": "化解和來訪客戶之間的文化誤會。" },
+  "background": "modern lighting showroom with rows of glowing pendant lamps, sample fixtures on white display shelves, a small round meeting table with two chairs, polished concrete floor, late morning",
+  "cast": ["sam", "c09_buyer"],
+  "intro": [
+    { "who": "narrator", "en": "Mr. Becker, procurement manager for Alpenhaus Hotels, has flown in from his company's head office overseas to review Brightway's offer.", "zh": "阿爾彭豪斯飯店集團的採購經理貝克先生，從海外總部飛來審查 Brightway 的報價。" },
+    { "who": "sam", "expr": "neutral", "en": "Heads up, Kai. People say he's very direct. Don't take it personally.", "zh": "先提醒你，凱。聽說他講話非常直接，別往心裡去。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_buyer", "expr": "neutral", "en": "Good morning. Your proposal is good, but there are two errors on page four.", "zh": "早安。你們的提案不錯，但第四頁有兩個錯誤。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you for pointing that out. I'll correct them today. Which parts did you notice?",
+          "zh": "謝謝您指出來，我今天就會修正。您注意到的是哪些地方？",
+          "ok": true,
+          "tip": "對方直接指出錯誤時，道謝並詢問細節，是最專業的回應。"
+        },
+        {
+          "en": "Errors? Oh... I'm so sorry. You don't like our proposal at all, do you? We failed you.",
+          "zh": "錯誤？噢……真的很抱歉。您一點都不喜歡我們的提案，對吧？我們讓您失望了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Not like it? I just said it was good. I only mentioned two small errors.", "zh": "不喜歡？我剛剛才說很好。我只是提到兩個小錯誤。" }
+            ],
+            "title": { "en": "Feedback Isn't Rejection", "zh": "指正不等於否定" },
+            "story": { "en": "Mr. Becker spends five minutes reassuring you instead of reviewing the offer. He is not sure why you are so upset.", "zh": "貝克先生花了五分鐘安慰你，而不是審查報價。他搞不懂你為什麼這麼沮喪。" },
+            "why": "有些商務文化習慣直接指出問題，這只是就事論事，不代表否定你。把它當成有用的回饋：Thank you for pointing that out. I'll correct them today.。"
+          }
+        },
+        {
+          "en": "Really? Sorry, I will correct it. Can you tell me where is the mistakes, please?",
+          "zh": "真的嗎？抱歉，我會修正。可以告訴我錯誤在哪裡嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Hm. Page four, the unit prices. And please check the grammar too.", "zh": "嗯。第四頁的單價。也請順便檢查文法。" }
+            ],
+            "title": { "en": "Double Check", "zh": "再檢查一次" },
+            "story": { "en": "Mr. Becker adds \"check grammar\" to his list. You wonder how many other errors he found.", "zh": "貝克先生在清單上加了一條「檢查文法」。你開始擔心他還發現了多少錯誤。" },
+            "why": "間接問句要用直述語序 where the mistakes are；兩個錯誤是複數，要說 correct them。簡潔地說 Which parts did you notice? 也可以。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "As Mr. Becker talks about prices, you nod and say \"yes, yes\" to show you are listening, just as you would back home.", "zh": "貝克先生談到價格時，你一邊點頭一邊說「yes, yes」表示你在聽，就像在家鄉時那樣。" },
+        { "who": "c09_buyer", "expr": "happy", "en": "Good. So we agree on eighty dollars per fixture. I'll inform head office today.", "zh": "很好。那我們就同意每盞燈八十元。我今天會通知總部。" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry, I think there's a misunderstanding. I was listening, not agreeing to the price.",
+          "zh": "抱歉，我想這裡有誤會。我剛剛是在聽，不是同意這個價格。",
+          "ok": true,
+          "tip": "發現誤會時立刻說 I think there's a misunderstanding.，越早澄清越好。"
+        },
+        {
+          "en": "Wait, no! I never agreed to eighty dollars. Please don't put words in my mouth.",
+          "zh": "等等，不！我從沒同意八十元。請不要曲解我的話。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "You said yes three times. I wrote it down.", "zh": "你說了三次 yes。我都記下來了。" }
+            ],
+            "title": { "en": "He Said, Kai Said", "zh": "各說各話" },
+            "story": { "en": "The meeting turns into an argument about who said what. Sam quietly brings in more coffee and hopes for the best.", "zh": "會議變成了誰說了什麼的爭論。山姆默默端來更多咖啡，祈禱一切順利。" },
+            "why": "誤會是雙方造成的，指責對方「曲解你的話」只會讓氣氛更僵。先承認有誤會再說明：I think there's a misunderstanding. I was listening, not agreeing.。"
+          }
+        },
+        {
+          "en": "Hmm, eighty dollars... That might be a little difficult for us. We will think about it.",
+          "zh": "嗯，八十元……這對我們來說可能有點困難。我們會考慮看看。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Think about it? So... that's a yes? I'll mark it as agreed in principle, then.", "zh": "考慮看看？所以……這算是答應了？那我先記成原則上同意。" }
+            ],
+            "title": { "en": "Lost in Politeness", "zh": "客氣過頭" },
+            "story": { "en": "Your polite \"no\" is heard as a \"yes.\" Head office receives an email confirming a price Brightway cannot accept.", "zh": "你委婉的「不行」被聽成了「可以」。總部收到一封確認信，上面的價格是 Brightway 無法接受的。" },
+            "why": "在台灣「有點困難」「我們考慮看看」常是委婉拒絕，但在直接的商務文化中，這會被理解成「還有機會」。要不同意就說清楚：I think there's a misunderstanding. I wasn't agreeing to the price.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_buyer", "expr": "confused", "en": "But you said yes three times. What did you mean, then?", "zh": "可是你說了三次 yes。那你是什麼意思？" }
+      ],
+      "choices": [
+        {
+          "en": "In my culture, saying yes often just means \"I'm listening.\" I should have been clearer. I'm sorry.",
+          "zh": "在我的文化裡，說 yes 常常只是表示「我在聽」。我應該說得更清楚的，抱歉。",
+          "ok": true,
+          "tip": "In my culture... 說明文化差異，再用 I should have been clearer. 承擔自己的部分。"
+        },
+        {
+          "en": "In my country, we are used to say yes when we listen to people. It doesn't mean agree.",
+          "zh": "在我的國家，我們習慣在聽別人說話時說 yes。那不代表同意。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "You are used to... or you used to? Sorry, which is it?", "zh": "你們習慣……還是以前會？抱歉，到底是哪個？" }
+            ],
+            "title": { "en": "Used to What?", "zh": "習慣還是以前？" },
+            "story": { "en": "Your explanation of one misunderstanding creates a second one. Sam draws a little timeline on a napkin to help.", "zh": "你在解釋一個誤會時，又製造了第二個。山姆在餐巾紙上畫了條時間軸來幫忙。" },
+            "why": "「習慣做某事」是 be used to + V-ing，要說 we're used to saying yes；「不代表同意」要說 It doesn't mean I agree.。也可以用 In my culture, yes often means \"I'm listening.\"。"
+          }
+        },
+        {
+          "en": "It's just a habit. Everyone knows yes doesn't always mean yes, right? It's common sense.",
+          "zh": "那只是習慣。大家都知道 yes 不一定代表同意，對吧？這是常識。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "Not where I come from. Where I come from, yes means yes.", "zh": "在我的地方可不是。在我們那裡，yes 就是 yes。" }
+            ],
+            "title": { "en": "Not So Common Sense", "zh": "不是常識" },
+            "story": { "en": "Mr. Becker feels blamed for a misunderstanding that was not his fault. The temperature in the showroom drops.", "zh": "貝克先生覺得自己被怪罪了，而那並不是他的錯。展示間的氣氛瞬間降溫。" },
+            "why": "把自己的文化習慣說成「大家都知道的常識」，等於怪對方不懂。說明差異並承擔責任：In my culture, yes often means \"I'm listening.\" I should have been clearer.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Over coffee, you try some friendly small talk. You tell him he looks tired and has gained a little weight since his photo, the way relatives say it kindly back home.", "zh": "喝咖啡時，你試著友善地閒聊。你說他看起來很累，而且比照片上胖了一點，就像家鄉的長輩會親切地說的那樣。" },
+        { "who": "c09_buyer", "expr": "upset", "en": "I beg your pardon? That's... rather personal.", "zh": "你說什麼？這……未免太私人了。" }
+      ],
+      "choices": [
+        {
+          "en": "I'm so sorry. I didn't mean any offense. Back home, it's a way of showing that we care.",
+          "zh": "非常抱歉，我沒有冒犯的意思。在我們那裡，這是一種表達關心的方式。",
+          "ok": true,
+          "tip": "I didn't mean any offense. 是無意間冒犯別人時最實用的修補句。"
+        },
+        {
+          "en": "Don't worry, it's a compliment! Gaining weight means you have a good life and lots of luck.",
+          "zh": "別擔心，這是稱讚！發福代表您生活過得好，福氣很多。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "A compliment? I'll skip dessert today, thank you.", "zh": "稱讚？那我今天的甜點就免了，謝謝。" }
+            ],
+            "title": { "en": "Lucky Weight", "zh": "發福的福氣" },
+            "story": { "en": "Mr. Becker pushes away the cookie plate and checks his reflection in a showroom lamp. Sam winces.", "zh": "貝克先生把餅乾盤推開，還在展示燈上偷看自己的倒影。山姆忍不住皺眉。" },
+            "why": "「發福」有福氣的意思，但這個概念在許多文化中並不存在，評論別人的體重通常被視為冒犯。先道歉：I'm so sorry. I didn't mean any offense.。"
+          }
+        },
+        {
+          "en": "Relax, it's only a joke, Mr. Becker. You don't need to take it so seriously.",
+          "zh": "放輕鬆，貝克先生，只是開玩笑。您不需要那麼認真。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "I take my business partners seriously. I'd hoped they would do the same.", "zh": "我很認真看待我的商業夥伴。我原本以為對方也會這樣。" }
+            ],
+            "title": { "en": "Not Funny", "zh": "一點都不好笑" },
+            "story": { "en": "Mr. Becker finishes his coffee in silence. The rest of the visit is very, very professional.", "zh": "貝克先生默默喝完咖啡。接下來的拜訪過程變得非常、非常公事公辦。" },
+            "why": "冒犯了別人還叫對方「別那麼認真」，等於把責任推給對方。真誠道歉並說明本意：I didn't mean any offense. Back home, it's a way of showing that we care.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_buyer", "expr": "neutral", "en": "Apology accepted. Different cultures, different habits. Now, about the price. Be direct with me this time.", "zh": "我接受你的道歉。不同文化，不同習慣。那麼，談價格吧。這次請直接跟我說。" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Eighty is too low for us. Eighty-five is our best price, with free installation.",
+          "zh": "好的。八十元對我們來說太低。八十五元是我們的最好價格，含免費安裝。",
+          "ok": true,
+          "tip": "對方要求直接時，清楚說出底線，再附上加值條件，坦率又不失禮。"
+        },
+        {
+          "en": "This time I say clearly: eighty dollars is impossible. Eighty-five is our most low price.",
+          "zh": "這次我說清楚：八十元不可能。八十五元是我們最低的價格。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Our \"most low\"... you mean lowest? Fine. Clear enough.", "zh": "你們的「最低」……你是說 lowest 吧？好，夠清楚了。" }
+            ],
+            "title": { "en": "Direct but Rough", "zh": "直接但粗糙" },
+            "story": { "en": "The message gets through, but the grammar slip costs you a little authority. Mr. Becker negotiates the delivery fee down instead.", "zh": "意思傳達到了，但文法失誤讓你少了點氣勢。貝克先生轉而把運費談低了。" },
+            "why": "low 的最高級是 lowest，不是 most low；I say clearly 要改成 I'll be clear 或 Let me be clear。直接也要正確：Eighty-five is our best price.。"
+          }
+        },
+        {
+          "en": "Okay, I'll say it straight this time: eighty is no door. Eighty-five, okay or not okay?",
+          "zh": "好，這次我直說：八十元沒門。八十五元，好還是不好？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "No door? Is that a technical term? I'm not sure what we're discussing now.", "zh": "沒有門？那是技術用語嗎？我不確定我們現在在討論什麼。" }
+            ],
+            "title": { "en": "No Door", "zh": "沒門" },
+            "story": { "en": "Mr. Becker asks if the price includes doors. Sam has to explain the idiom, which is never a good sign.", "zh": "貝克先生問價格是不是包含門。山姆只好解釋這句俗語，而這從來不是好兆頭。" },
+            "why": "「沒門」直譯成 no door，英文聽不懂；okay or not okay 也太生硬。直接但專業的說法：Eighty is too low for us. Eighty-five is our best price.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_buyer", "expr": "happy", "en": "Eighty-five with installation. Clear and fair. I can work with that, and with you.", "zh": "八十五元含安裝。清楚又公道。這個價格我可以接受，也願意跟你合作。" },
+      { "who": "sam", "expr": "happy", "en": "From \"yes, yes\" to a signed price sheet. Not bad for one morning, Kai.", "zh": "從「yes, yes」到簽好的報價單。一個早上能這樣，很不錯，凱。" }
+    ],
+    "title": { "en": "Bridging Cultures", "zh": "跨越文化" },
+    "story": { "en": "Mr. Becker leaves with a fair deal. You leave with a new habit: when you mean \"I'm listening,\" you say \"I see.\"", "zh": "貝克先生帶著公道的合約離開。而你養成了一個新習慣：想表示「我在聽」時，就說 I see。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I didn't mean any offense.",
+      "zh": "我沒有冒犯的意思。",
+      "explain": "無意間冒犯別人時的修補句，前面先加 I'm so sorry.，後面再簡短說明本意。也可以說 No offense intended.。",
+      "example": { "en": "I'm sorry, I didn't mean any offense. I was just curious.", "zh": "抱歉，我沒有冒犯的意思，只是好奇。" }
+    },
+    {
+      "type": "phrase",
+      "en": "In my culture...",
+      "zh": "在我的文化裡……",
+      "explain": "說明文化差異時用的開頭。說完別忘了承擔自己的部分，例如 I should have been clearer.，避免聽起來像在找藉口。",
+      "example": { "en": "In my culture, we often refuse food once before accepting.", "zh": "在我的文化裡，我們常會先推辭一次再接受食物。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I think there's a misunderstanding.",
+      "zh": "我想這裡有誤會。",
+      "explain": "發現誤會時立刻澄清，越早越好。用 I think 開頭比較委婉，不會像在指責對方。",
+      "example": { "en": "I think there's a misunderstanding. I meant next Friday, not this one.", "zh": "我想這裡有誤會。我指的是下週五，不是這週。" }
+    },
+    {
+      "type": "trap",
+      "en": "That might be a little difficult.",
+      "zh": "這可能有點困難。",
+      "explain": "在台灣這常是委婉拒絕，但在直接的商務文化裡，對方可能理解成「有困難但可以」。真的不行時要說清楚：I'm afraid we can't do that.。",
+      "example": { "en": "I'm afraid we can't go below eighty-five.", "zh": "恐怕我們沒辦法低於八十五。" }
+    },
+    {
+      "type": "culture",
+      "en": "Yes means yes.",
+      "zh": "Yes 就是同意。",
+      "explain": "在許多西方商務場合，yes 代表同意，邊聽邊說 yes 容易被當成答應。想表示你在聽，可以說 I see. 或 Okay, go on.。",
+      "example": { "en": "I see. Go on, I'm listening.", "zh": "了解，請繼續，我在聽。" }
+    }
+  ]
+}

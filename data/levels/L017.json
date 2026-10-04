@@ -1,0 +1,183 @@
+{
+  "id": "L017",
+  "location": { "en": "Northwind Outfitters, downtown", "zh": "市中心的北風服飾店" },
+  "goal": { "en": "Try on a warm jacket and find the right size.", "zh": "試穿保暖外套，找到合身的尺寸。" },
+  "background": "bright clothing store with racks of winter jackets and sweaters, wooden display tables of folded scarves, a tall standing mirror, fitting room curtains at the back, afternoon light",
+  "cast": ["c02_assistant"],
+  "intro": [
+    { "who": "narrator", "en": "The nights in Maple Bay are getting colder. Your thin Taiwan jacket is not enough.", "zh": "楓灣的晚上越來越冷，你從台灣帶來的薄外套已經撐不住了。" },
+    { "who": "narrator", "en": "You find a dark green jacket you love. A shop assistant walks over with a bright greeting.", "zh": "你看中一件深綠色外套。一位店員笑著走過來打招呼。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_assistant", "expr": "happy", "en": "Hi there! How's your day going?", "zh": "嗨！今天過得怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "Good, thanks! Can I try this on?",
+          "zh": "不錯，謝謝！我可以試穿這件嗎？",
+          "ok": true,
+          "tip": "先簡短回應寒暄，再說需求。try this on 是「試穿這件」。"
+        },
+        {
+          "en": "Bad. I'm cold, tired and broke.",
+          "zh": "很糟，我又冷又累又沒錢。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_assistant", "expr": "confused", "en": "Oh... I'm so sorry. Um, are you okay?", "zh": "喔……真遺憾。呃，你還好嗎？" }
+            ],
+            "title": { "en": "Too Much Info", "zh": "說太多了" },
+            "story": { "en": "She doesn't know what to say, so she brings you a cup of hot tea and the clearance rack. The jacket you liked stays on the hanger.", "zh": "她不知道該說什麼，只好端來一杯熱茶，帶你去看出清區。你喜歡的那件外套，還掛在原處。" },
+            "why": "How's your day going? 是店員的例行寒暄，只要簡短正面地回答，像 Good, thanks!，再說需求就好。一開口就訴苦會讓對方很尷尬。"
+          }
+        },
+        {
+          "en": "Good, thanks! Can I try to wear it?",
+          "zh": "不錯，謝謝！我可以試著穿它嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_assistant", "expr": "confused", "en": "Try to wear it? Um, I guess you can try. Is it hard?", "zh": "試著穿穿看？呃，應該可以試試啦。很難穿嗎？" }
+            ],
+            "title": { "en": "Jacket Challenge", "zh": "穿外套挑戰" },
+            "story": { "en": "She watches you put on the jacket like it's a difficult sport. When you finish, she claps. You're not sure why.", "zh": "她看著你穿外套，好像在看一場高難度競賽。你穿好時她還鼓了掌，你也不知道為什麼。" },
+            "why": "「試穿」不能直譯成 try to wear，try to... 是「努力去做……」，聽起來像穿外套很困難。試穿衣服要說 try on：Can I try this on?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_assistant", "expr": "happy", "en": "Of course! The fitting rooms are in the back.", "zh": "當然！試衣間在後面。" },
+        { "who": "c02_assistant", "expr": "neutral", "en": "Oh, wait. That one's a small. It might be a little tight.", "zh": "啊，等一下。那件是 S 號，可能會有點緊。" }
+      ],
+      "choices": [
+        {
+          "en": "Do you have it in a medium?",
+          "zh": "這件有 M 號嗎？",
+          "ok": true,
+          "tip": "Do you have it in + 尺寸／顏色？是問有沒有其他尺寸或顏色的萬用句。"
+        },
+        {
+          "en": "Do you have a more big one?",
+          "zh": "有更大一點的嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_assistant", "expr": "confused", "en": "More big? Oh, much bigger? Let me check the back.", "zh": "更大？喔，大很多的？我去後面找找看。" }
+            ],
+            "title": { "en": "Sleeping Bag Jacket", "zh": "睡袋外套" },
+            "story": { "en": "She comes back with an XXL. It reaches your knees. You look like a very stylish sleeping bag.", "zh": "她拿來一件 XXL，長到你的膝蓋。你看起來像一個很時髦的睡袋。" },
+            "why": "big 是短的形容詞，比較級直接加 -er：bigger，不說 more big。問尺寸最清楚的說法是 Do you have it in a medium?。"
+          }
+        },
+        {
+          "en": "Go and get me a medium one.",
+          "zh": "去幫我拿一件 M 號的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_assistant", "expr": "upset", "en": "Um... sure. I'll go check.", "zh": "呃……好喔。我去看看。" }
+            ],
+            "title": { "en": "Lost in the Stockroom", "zh": "倉庫迷蹤" },
+            "story": { "en": "She disappears into the stockroom. Ten minutes pass. Twenty. You start to wonder if she's ever coming back.", "zh": "她走進倉庫就不見了。十分鐘過去，二十分鐘過去，你開始懷疑她還會不會回來。" },
+            "why": "Go and get me... 是命令句，聽起來把店員當跑腿。問尺寸用問句就好：Do you have it in a medium?，對方自然會幫你拿。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "You try on the medium and step out of the fitting room.", "zh": "你換上 M 號，走出試衣間。" },
+        { "who": "c02_assistant", "expr": "neutral", "en": "So, how does it fit?", "zh": "怎麼樣，合身嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "A bit tight in the shoulders.",
+          "zh": "肩膀有點緊。",
+          "ok": true,
+          "tip": "說明哪裡不合身：a bit tight / loose in the + 部位。"
+        },
+        {
+          "en": "Yes, I really like the color.",
+          "zh": "嗯，我很喜歡這個顏色。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_assistant", "expr": "confused", "en": "The color? Great! So... the fit is good too?", "zh": "顏色？太好了！所以……尺寸也合適囉？" }
+            ],
+            "title": { "en": "Arms Down", "zh": "舉不起手" },
+            "story": { "en": "You nod and buy it. It looks great, but you can't raise your arms. Waving at the bus is no longer an option.", "zh": "你點點頭就買了。外套很好看，但你的手舉不起來，從此沒辦法揮手攔公車了。" },
+            "why": "How does it fit? 問的是「合不合身」，不是喜不喜歡。哪裡太緊或太鬆要說出來：It's a bit tight in the shoulders.。"
+          }
+        },
+        {
+          "en": "It's tight. I'm too fat, haha.",
+          "zh": "好緊，我太胖了，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_assistant", "expr": "upset", "en": "Oh no, don't say that! It's just the jacket.", "zh": "喔不，別這樣說！是外套的問題啦。" }
+            ],
+            "title": { "en": "Awkward Silence", "zh": "尷尬的沉默" },
+            "story": { "en": "She doesn't laugh. She looks so uncomfortable that you both just stare at the mirror for a long, quiet moment.", "zh": "她沒有笑，一臉不自在。你們兩個只好盯著鏡子，安靜了好一陣子。" },
+            "why": "在台灣自嘲「我太胖了」常被當成玩笑，但在英語文化裡，談身材容易讓對方不知如何回應。只要客觀說明哪裡不合身：It's a bit tight in the shoulders.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_assistant", "expr": "happy", "en": "Let's try a large, then. One second!", "zh": "那試試 L 號吧。等我一下！" },
+      { "who": "narrator", "en": "The large fits perfectly. Warm, soft and room to move.", "zh": "L 號剛剛好。保暖、柔軟，活動也很自在。" }
+    ],
+    "title": { "en": "Perfect Fit", "zh": "剛剛好" },
+    "story": { "en": "You walk out in your new green jacket. For the first time, the Maple Bay wind feels like a friend.", "zh": "你穿著新的綠色外套走出店門。第一次覺得，楓灣的風也變得友善了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Can I try this on?",
+      "zh": "我可以試穿這件嗎？",
+      "explain": "try on 是「試穿」。用代名詞 this / it 時要放在 try 和 on 中間，說 try it on，不說 try on it。",
+      "example": { "en": "Can I try these shoes on?", "zh": "我可以試穿這雙鞋嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Do you have it in a medium?",
+      "zh": "這件有 M 號嗎？",
+      "explain": "in 後面可以接尺寸或顏色。口語通常把尺寸說成 small / medium / large，比只說字母更清楚。",
+      "example": { "en": "Do you have this in black?", "zh": "這件有黑色的嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "It's a bit tight.",
+      "zh": "有點緊。",
+      "explain": "tight 是「緊」，loose 是「鬆」。加上 in the shoulders / at the waist 可以說清楚是哪裡不合身。",
+      "example": { "en": "It's a bit loose at the waist.", "zh": "腰的地方有點鬆。" }
+    },
+    {
+      "type": "trap",
+      "en": "try to wear",
+      "zh": "試著穿（不是試穿）",
+      "explain": "try to + 動詞是「努力去做」，try to wear 聽起來像穿衣服很困難。試穿一律用 try on。",
+      "example": { "en": "I'd like to try on this jacket.", "zh": "我想試穿這件外套。" }
+    },
+    {
+      "type": "culture",
+      "en": "How's your day going?",
+      "zh": "店員的寒暄",
+      "explain": "英語國家的店員常用這句打招呼，只是禮貌，不是真的想聽你的心事。簡短回答 Good, thanks! 再說需求就好。",
+      "example": { "en": "How's your day going? Pretty good, thanks!", "zh": "今天過得怎麼樣？還不錯，謝謝！" }
+    }
+  ]
+}

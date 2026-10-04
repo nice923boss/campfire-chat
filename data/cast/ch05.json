@@ -1,0 +1,65 @@
+{
+  "c05_clerk": {
+    "name": "Mr. Dawson",
+    "nameZh": "道森先生",
+    "role": { "en": "Ticket clerk", "zh": "車站售票員" },
+    "gender": "male",
+    "appearance": "man in his early 60s, neatly trimmed white beard, round wire-rimmed glasses, dark green railway uniform vest over a white shirt, small brass train-shaped pin, calm patient old-school vibe"
+  },
+  "c05_hostel": {
+    "name": "Nadia",
+    "nameZh": "娜迪亞",
+    "role": { "en": "Hostel receptionist", "zh": "青年旅館櫃檯人員" },
+    "gender": "female",
+    "appearance": "young woman in her mid 20s, curly dark brown hair in a high ponytail, light freckles, loose striped sailor t-shirt with rolled sleeves, several woven friendship bracelets, relaxed welcoming traveler vibe"
+  },
+  "c05_guide": {
+    "name": "Felix",
+    "nameZh": "菲力克斯",
+    "role": { "en": "Walking tour guide", "zh": "徒步導覽導遊" },
+    "gender": "male",
+    "appearance": "man in his early 30s, short curly black hair, trimmed beard, bright yellow rain jacket over a gray hoodie, holding a closed yellow umbrella, lively storyteller vibe"
+  },
+  "c05_host": {
+    "name": "Ivy",
+    "nameZh": "艾薇",
+    "role": { "en": "Restaurant host", "zh": "餐廳帶位人員" },
+    "gender": "female",
+    "appearance": "woman in her late 20s, sleek black hair in a low bun, small headset microphone, navy apron over a crisp white shirt, anchor-shaped silver earrings, calm efficient vibe"
+  },
+  "c05_museum": {
+    "name": "Ruth",
+    "nameZh": "露絲",
+    "role": { "en": "Museum volunteer", "zh": "博物館志工" },
+    "gender": "female",
+    "appearance": "woman in her late 60s, short silver bob hair, pearl-gray cardigan with a ship-shaped brooch, reading glasses on a beaded chain, warm grandmotherly but firm vibe"
+  },
+  "c05_tourist": {
+    "name": "Walter",
+    "nameZh": "華特",
+    "role": { "en": "Traveling photographer", "zh": "旅行中的攝影愛好者" },
+    "gender": "male",
+    "appearance": "man in his mid 60s, short gray hair under a khaki bucket hat, white mustache, olive hiking vest over a plaid shirt, large professional camera hanging from his neck, cheerful adventurous vibe"
+  },
+  "c05_vendor": {
+    "name": "Benny",
+    "nameZh": "班尼",
+    "role": { "en": "Market vendor", "zh": "市集攤販" },
+    "gender": "male",
+    "appearance": "man in his mid 40s, shoulder-length wavy black hair tied back, short beard, chunky cream knitted fisherman sweater, sea-glass pendant necklace, friendly craftsman vibe"
+  },
+  "c05_night": {
+    "name": "Ray",
+    "nameZh": "雷",
+    "role": { "en": "Night-shift store clerk", "zh": "商店大夜班店員" },
+    "gender": "male",
+    "appearance": "young man in his late 20s, messy dyed brown hair, red store uniform polo shirt with a blank name tag, small silver earring, sleepy but kind vibe"
+  },
+  "c05_agent": {
+    "name": "Ms. Carter",
+    "nameZh": "卡特小姐",
+    "role": { "en": "Airline agent", "zh": "航空公司地勤人員" },
+    "gender": "female",
+    "appearance": "woman in her mid 30s, neat black hair in a French twist, navy airline uniform with a red and white silk neck scarf, small wing-shaped pin, polished professional vibe"
+  }
+}

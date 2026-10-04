@@ -1,0 +1,263 @@
+{
+  "id": "L085",
+  "location": { "en": "Brightway Lighting, sales office", "zh": "Brightway 照明公司，業務辦公室" },
+  "goal": { "en": "Calm an angry client on the phone and solve the problem.", "zh": "在電話中安撫生氣的客戶，並解決問題。" },
+  "background": "open-plan sales office with rows of white desks, desk phones, blank computer monitors, rolling chairs, potted plants, tall windows with overcast midday light",
+  "cast": ["sam", "c09_office_manager"],
+  "intro": [
+    { "who": "narrator", "en": "A quiet Tuesday at the office. Then your desk phone starts ringing.", "zh": "辦公室一個平靜的星期二。接著，你桌上的電話響了起來。" },
+    { "who": "sam", "expr": "confused", "en": "Kai, it's Northgate Business Center on line two. He sounds... not happy.", "zh": "凱，二線是北門商務中心。他聽起來……不太開心。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_office_manager", "expr": "upset", "en": "This is Brooks at Northgate. Half the lights on our third floor keep flickering, and I have clients arriving at two!", "zh": "我是北門的布魯克斯。我們三樓一半的燈一直閃，而我兩點就有客戶要來！" }
+      ],
+      "choices": [
+        {
+          "en": "I'm so sorry, Mr. Brooks. I completely understand your frustration. Let's sort this out right now.",
+          "zh": "非常抱歉，布魯克斯先生。我完全理解您的不滿。我們現在就來處理。",
+          "ok": true,
+          "tip": "I completely understand your frustration. 先承認對方的情緒，對方才聽得進後面的解決方案。"
+        },
+        {
+          "en": "Please calm down first. Flickering is quite normal sometimes. Maybe your staff switched them on and off too much?",
+          "zh": "請先冷靜。燈閃有時候很正常。會不會是你們員工開關太多次了？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "Calm down? Normal? Put someone else on the phone, please.", "zh": "冷靜？正常？請換別人來聽電話。" }
+            ],
+            "title": { "en": "Fuel on the Fire", "zh": "火上加油" },
+            "story": { "en": "Mr. Brooks asks for your manager. Ms. Wong spends twenty minutes apologizing for your two sentences.", "zh": "布魯克斯先生要求找你的主管。王經理花了二十分鐘，替你那兩句話道歉。" },
+            "why": "對生氣的客戶說 Calm down. 只會讓人更火大，再暗示是對方的錯更是雪上加霜。先同理：I completely understand your frustration.。"
+          }
+        },
+        {
+          "en": "I'm very sorry for this happened. I can understand you are very angry about it.",
+          "zh": "對於發生這件事我很抱歉。我可以理解您非常生氣。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "Angry? I'm not angry. I'm in a hurry! What are you going to do?", "zh": "生氣？我不是生氣，我是在趕時間！你們打算怎麼處理？" }
+            ],
+            "title": { "en": "Labeled and Annoyed", "zh": "被貼標籤" },
+            "story": { "en": "Telling an upset client that they are \"very angry\" rarely helps. Mr. Brooks gets louder, just to prove he is not.", "zh": "對不高興的客戶說「您非常生氣」通常沒有幫助。布魯克斯先生為了證明自己沒生氣，聲音反而更大了。" },
+            "why": "sorry for 後面接名詞或動名詞，要說 I'm sorry this happened. 或 I'm sorry for the trouble.；直接說對方 very angry 也容易激怒人。用 frustration 比較得體。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_office_manager", "expr": "upset", "en": "Understanding doesn't fix my lights. What are you actually going to do?", "zh": "理解又不能修好我的燈。你們到底打算怎麼做？" }
+      ],
+      "choices": [
+        {
+          "en": "Let me fix this. I'm sending a technician right now, and they can be there within the hour.",
+          "zh": "交給我處理。我現在就派技術人員過去，一小時內會到。",
+          "ok": true,
+          "tip": "Let me fix this. 表示你願意負責，接著立刻給具體行動和時間。"
+        },
+        {
+          "en": "Don't worry, I will handle it. You can put your heart down and wait for my call.",
+          "zh": "別擔心，我會處理。您可以放心，等我的電話。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "confused", "en": "Put my heart down? Where? I need a technician, not poetry.", "zh": "把我的心放下？放哪裡？我需要的是技術人員，不是詩。" }
+            ],
+            "title": { "en": "Heart Placement", "zh": "心要放哪裡" },
+            "story": { "en": "Mr. Brooks is not comforted, only confused. He hangs up and calls Ms. Wong directly.", "zh": "布魯克斯先生沒有被安撫到，只是更困惑。他掛掉電話，直接打給王經理。" },
+            "why": "「放心」直譯成 put your heart down，英文母語者聽不懂。安撫客戶要給具體行動：Let me fix this. I'm sending a technician right now.。"
+          }
+        },
+        {
+          "en": "Before that, did you know our new outdoor lights are on special this month? They're very popular.",
+          "zh": "在那之前，您知道我們新的戶外燈這個月有特價嗎？賣得很好喔。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "You're selling me more lights? The ones I have don't even work!", "zh": "你還要賣我更多燈？我現在的燈都還不能用！" }
+            ],
+            "title": { "en": "Wrong Time to Sell", "zh": "推銷挑錯時機" },
+            "story": { "en": "Mr. Brooks tells everyone at Northgate about the salesperson who tried to upsell during a breakdown.", "zh": "布魯克斯先生跟北門的每個人分享了這位在故障時還想推銷的業務。" },
+            "why": "客訴時推銷新產品，會讓客戶覺得你只在乎業績。先解決問題：Let me fix this. I'm sending a technician right now.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_office_manager", "expr": "neutral", "en": "Within the hour. Fine. But my meeting starts at two. What do I do until then?", "zh": "一小時內，好。但我的會議兩點開始。在那之前我該怎麼辦？" }
+      ],
+      "choices": [
+        {
+          "en": "In the meantime, could you switch that zone to manual mode? It should stop the flickering for now.",
+          "zh": "在那之前，您可以把那一區切換成手動模式嗎？應該能暫時停止閃爍。",
+          "ok": true,
+          "tip": "In the meantime... 提供暫時的應急辦法，讓客戶不用乾等。"
+        },
+        {
+          "en": "Until then, you can try to turning off and on the main switch. Maybe it will become fine.",
+          "zh": "在那之前，您可以試著把總開關關掉再打開，也許就會好了。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "The main switch? That would turn off the whole building!", "zh": "總開關？那會把整棟樓的電都關掉！" }
+            ],
+            "title": { "en": "Lights Out", "zh": "整棟熄燈" },
+            "story": { "en": "Mr. Brooks wisely does not try your idea. He does, however, write it down for his complaint email.", "zh": "布魯克斯先生明智地沒有照做。不過，他把這個建議記下來，準備寫進客訴信。" },
+            "why": "try to 後面接原形動詞，要說 try to turn off；become fine 也不自然，可以說 it might work。更重要的是，建議要具體又安全：Could you switch that zone to manual mode?"
+          }
+        },
+        {
+          "en": "Well, maybe just hold the meeting with the lights off? Candlelight can be quite romantic, haha.",
+          "zh": "嗯，也許就關燈開會？燭光其實滿浪漫的，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "Romantic? These are important clients, not a dinner date.", "zh": "浪漫？他們是重要客戶，不是約會對象。" }
+            ],
+            "title": { "en": "Joke in the Dark", "zh": "黑暗中的玩笑" },
+            "story": { "en": "Your joke falls very flat. Mr. Brooks adds \"not taking this seriously\" to his list of complaints.", "zh": "你的玩笑完全沒人笑。布魯克斯先生在抱怨清單上多加一條：「沒把這件事當真」。" },
+            "why": "客戶正在焦急時開玩笑，會顯得你不重視問題。提供實際的應急辦法：In the meantime, could you switch that zone to manual mode?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_office_manager", "expr": "neutral", "en": "Manual mode... okay, that stopped it. But honestly, this shouldn't happen with a brand-new system.", "zh": "手動模式……好，停了。但老實說，全新的系統不應該發生這種事。" }
+      ],
+      "choices": [
+        {
+          "en": "You're absolutely right, and I apologize. We'll find the root cause so it doesn't happen again.",
+          "zh": "您說得完全正確，我向您道歉。我們會找出根本原因，避免再次發生。",
+          "ok": true,
+          "tip": "You're absolutely right. 坦然承認，再承諾找出根本原因，比辯解更能挽回信任。"
+        },
+        {
+          "en": "Actually, it's probably not our fault. Your building's wiring is very old, so the problem is on your side.",
+          "zh": "其實這可能不是我們的錯。你們大樓的線路很舊，所以問題在你們那邊。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "Our side? Your team inspected that wiring before installation!", "zh": "我們那邊？你們團隊安裝前就檢查過線路了！" }
+            ],
+            "title": { "en": "Blame Game", "zh": "推卸責任" },
+            "story": { "en": "The call turns into an argument about wiring. Nobody wins, and the contract renewal quietly moves to a competitor.", "zh": "這通電話變成了線路的爭論。沒有人贏，續約案也悄悄轉給了競爭對手。" },
+            "why": "原因還沒查清楚就把責任推給客戶，只會激化衝突。先承認並承諾調查：You're absolutely right, and I apologize. We'll find the root cause.。"
+          }
+        },
+        {
+          "en": "I'm so sorry, so sorry. It's all my fault. I'm really useless. Please forgive me.",
+          "zh": "真的很抱歉，很抱歉。全都是我的錯，我真沒用。請原諒我。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "confused", "en": "Whoa, hey. I'm not asking for that. I just want working lights.", "zh": "哇，等等。我沒要你這樣。我只是要燈能正常運作。" }
+            ],
+            "title": { "en": "Over-Apology", "zh": "道歉過度" },
+            "story": { "en": "Mr. Brooks ends up comforting you instead. It is a strange end to a complaint call.", "zh": "結果反而是布魯克斯先生在安慰你。這通客訴電話的結尾有點奇怪。" },
+            "why": "在台灣，誠懇的自責表示負責，但在西方商務場合，過度道歉、貶低自己會顯得不專業，客戶也會懷疑你能否解決問題。道歉一次，再說明行動：I apologize. We'll find the root cause.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_office_manager", "expr": "neutral", "en": "Your technician just walked in. Look, I just want to know this won't be forgotten.", "zh": "你們的技術人員剛到了。聽著，我只想確定這件事不會被忘掉。" }
+      ],
+      "choices": [
+        {
+          "en": "It won't. I'll follow up with you tomorrow morning with a full report on what went wrong.",
+          "zh": "不會的。我明天早上會再跟您聯絡，附上完整的問題報告。",
+          "ok": true,
+          "tip": "I'll follow up with you... 說清楚何時、用什麼方式回報，客戶才會安心。"
+        },
+        {
+          "en": "Of course. I will follow you up tomorrow and tell you what is the reason of this problem.",
+          "zh": "當然。我明天會追蹤您，告訴您這個問題的原因是什麼。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "confused", "en": "Follow me? Please don't follow me. Just call me.", "zh": "跟蹤我？請不要跟蹤我，打電話給我就好。" }
+            ],
+            "title": { "en": "Being Followed", "zh": "被跟蹤了" },
+            "story": { "en": "Mr. Brooks laughs for the first time today. It is a small win, but your English becomes office gossip at Northgate.", "zh": "布魯克斯先生今天第一次笑了。算是小勝利，但你的英文也成了北門辦公室的八卦。" },
+            "why": "「追蹤後續」要說 follow up with you，follow you 是「跟著你走」；間接問句要用 what the cause is。說 I'll follow up with you tomorrow morning. 就好。"
+          }
+        },
+        {
+          "en": "Great! So now that everything's fine, could you give us a five-star review online?",
+          "zh": "太好了！既然一切都沒問題了，可以幫我們在網路上留個五星評價嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_office_manager", "expr": "upset", "en": "A five-star review? Ask me again when the lights work for a month.", "zh": "五星評價？等燈正常運作一個月再來問我吧。" }
+            ],
+            "title": { "en": "Stars in Your Eyes", "zh": "星星太早要" },
+            "story": { "en": "Mr. Brooks does leave a review that week. It has exactly two stars.", "zh": "布魯克斯先生那週真的留了評價，剛好兩顆星。" },
+            "why": "問題才剛處理，就要客戶給好評，會顯得你只在乎形象。先承諾後續追蹤：I'll follow up with you tomorrow morning with a full report.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_office_manager", "expr": "happy", "en": "All right. Thanks, Kai. You turned a terrible morning around.", "zh": "好吧。謝謝你，凱。你把一個糟糕的早上扭轉過來了。" },
+      { "who": "sam", "expr": "happy", "en": "That was textbook. Listen, fix, follow up. You handled it like a pro.", "zh": "教科書等級。傾聽、解決、追蹤。你處理得很專業。" }
+    ],
+    "title": { "en": "Crisis Averted", "zh": "化解危機" },
+    "story": { "en": "The clients arrive at two to a perfectly lit floor. The next morning, your follow-up report lands in Mr. Brooks's inbox before nine.", "zh": "兩點客戶抵達時，整層樓燈光完美。隔天早上九點前，你的追蹤報告就寄到了布魯克斯先生的信箱。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I completely understand your frustration.",
+      "zh": "我完全理解您的不滿。",
+      "explain": "處理客訴的第一句話。frustration 比 angry 委婉得多，也不會讓對方覺得被貼標籤。",
+      "example": { "en": "I completely understand your frustration. Let's get this fixed today.", "zh": "我完全理解您的不滿。我們今天就把它修好。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let me fix this.",
+      "zh": "交給我處理。",
+      "explain": "表示你願意負責。說完要立刻接具體行動和時間，例如 I'm sending a technician within the hour.。",
+      "example": { "en": "Let me fix this. I'll call the warehouse right now.", "zh": "交給我處理。我現在就打給倉庫。" }
+    },
+    {
+      "type": "grammar",
+      "en": "follow up with someone",
+      "zh": "後續聯絡某人",
+      "explain": "follow up with 是「事後再聯絡、回報」；少了 with 的 follow someone 意思是「跟著某人走」。",
+      "example": { "en": "I'll follow up with you on Friday.", "zh": "我週五會再跟您聯絡。" }
+    },
+    {
+      "type": "trap",
+      "en": "Calm down. / Put your heart down.",
+      "zh": "冷靜一點／放心",
+      "explain": "對生氣的人說 Calm down. 會火上加油；「放心」直譯成 put your heart down 則沒人聽得懂。改說 Don't worry, I'm on it.。",
+      "example": { "en": "Don't worry, I'm on it. You'll hear from me within an hour.", "zh": "別擔心，我正在處理。一小時內會回覆您。" }
+    },
+    {
+      "type": "culture",
+      "en": "Apologize once, then act.",
+      "zh": "道歉一次，然後行動。",
+      "explain": "西方客戶期待你真誠道歉後馬上提出解決方案。重複道歉或貶低自己，反而會讓人懷疑你的能力。",
+      "example": { "en": "I apologize for the trouble. Here's what we'll do next.", "zh": "造成困擾，我很抱歉。接下來我們會這樣處理。" }
+    }
+  ]
+}

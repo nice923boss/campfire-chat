@@ -1,0 +1,266 @@
+{
+  "id": "L092",
+  "location": { "en": "A café near the language school", "zh": "語言學校附近的咖啡廳" },
+  "goal": { "en": "Help Mia and Leo talk through their fight without taking sides.", "zh": "保持中立，幫米亞和里歐把爭執好好談開。" },
+  "background": "cozy café interior on a quiet afternoon, wooden tables with mismatched chairs, potted plants on the windowsill, warm pendant lamps, rain-streaked front window",
+  "cast": ["mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Saturday afternoon. You walk into the café and find Mia and Leo at the same table, carefully not looking at each other.", "zh": "星期六下午。你走進咖啡廳，看到米亞和里歐坐在同一桌，卻刻意不看對方。" },
+    { "who": "mia", "expr": "upset", "en": "Oh good, Kai's here. Maybe Kai can explain to Leo why skipping the class picnic was rude.", "zh": "太好了，凱來了。也許凱可以跟里歐解釋，放大家鴿子不來野餐有多沒禮貌。" },
+    { "who": "leo", "expr": "upset", "en": "I told you, I have an exam on Monday! Why is that so hard to understand?", "zh": "我說過了，我星期一要考試！這有那麼難懂嗎？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mia", "expr": "upset", "en": "Kai, you agree with me, right? He totally let me down.", "zh": "凱，你也站我這邊吧？他真的讓我很失望。" }
+      ],
+      "choices": [
+        {
+          "en": "Hold on. I can see both sides here. Can we talk it through?",
+          "zh": "等一下。我覺得兩邊都有道理。我們好好談談？",
+          "ok": true,
+          "tip": "I can see both sides. 表示你不選邊站，是調解的第一步。"
+        },
+        {
+          "en": "Yes, Leo was totally wrong. Leo, just say sorry to her now.",
+          "zh": "對，里歐完全錯了。里歐，你現在就跟她道歉。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Great. Two against one. I'm out of here.", "zh": "很好，二打一。我走了。" }
+            ],
+            "title": { "en": "Judge, Jury and Exit", "zh": "一槌定案，一人離席" },
+            "story": { "en": "Leo grabs his coffee and leaves. Mia feels great for about thirty seconds, then texts you asking how to fix it.", "zh": "里歐拿起咖啡就走。米亞開心了大概三十秒，然後傳訊息問你該怎麼收拾。" },
+            "why": "調解時直接判定誰對誰錯，被判輸的人只會更防衛。先表明中立：I can see both sides here.。"
+          }
+        },
+        {
+          "en": "Hey, don't be noisy, both of you. We are all good friends.",
+          "zh": "欸，你們兩個不要吵了，大家都是好朋友。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Noisy? We're not that loud... are we?", "zh": "Noisy？我們沒那麼大聲吧……有嗎？" }
+            ],
+            "title": { "en": "Volume Control", "zh": "音量調整" },
+            "story": { "en": "Mia and Leo start whispering their argument instead. It is somehow even more intense.", "zh": "米亞和里歐改成壓低聲音吵。不知道為什麼，氣氛反而更緊繃了。" },
+            "why": "中文的「吵」有「吵架」和「很吵」兩個意思，noisy 只表示音量大。叫人別吵架要說 Please don't fight. 或 Let's talk it through.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "upset", "en": "Fine. But she'll just say I don't care about her. Which isn't true.", "zh": "好啦。但她一定會說我不在乎她，根本不是這樣。" },
+        { "who": "mia", "expr": "upset", "en": "Then why didn't you even text me?", "zh": "那你為什麼連一則訊息都不傳？" }
+      ],
+      "choices": [
+        {
+          "en": "Let's hear each other out. Mia, you go first, then Leo.",
+          "zh": "我們先聽彼此把話說完。米亞先說，再換里歐。",
+          "ok": true,
+          "tip": "hear each other out 是「聽對方把話說完」，讓雙方輪流發言能降溫。"
+        },
+        {
+          "en": "Okay, let's listen each other. Mia, you go first, then Leo.",
+          "zh": "好，我們互相聽一下。米亞先說，再換里歐。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Listen each other? You mean listen TO each other? Sorry, I've studied grammar all week.", "zh": "Listen each other？你是說 listen TO each other？抱歉，我這週一直在念文法。" }
+            ],
+            "title": { "en": "Grammar Ceasefire", "zh": "文法停火協議" },
+            "story": { "en": "Mia and Leo team up to correct your grammar. It's the first thing they've agreed on all day, but the real problem is still on the table.", "zh": "米亞和里歐聯手糾正你的文法。這是他們今天第一次意見一致，但真正的問題還擺在桌上。" },
+            "why": "listen 是不及物動詞，後面要加 to 才能接受詞：listen to each other。更道地的說法是 Let's hear each other out.。"
+          }
+        },
+        {
+          "en": "Wait, should we order some cake first? I'm actually starving.",
+          "zh": "等等，我們要不要先點個蛋糕？我其實好餓。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Kai, seriously? The cake can wait.", "zh": "凱，你認真的嗎？蛋糕可以等。" }
+            ],
+            "title": { "en": "Let Them Eat Cake", "zh": "先吃蛋糕再說" },
+            "story": { "en": "You eat a slice of carrot cake in heavy silence. It's a very good cake. Nobody enjoys it.", "zh": "你在沉重的沉默中吃完一塊紅蘿蔔蛋糕。蛋糕很好吃，但沒有人吃得開心。" },
+            "why": "兩人正在氣頭上時轉移話題，會讓人覺得你不在乎。先讓雙方輪流說話：Let's hear each other out.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "upset", "en": "I spent all week planning it. Then one hour before, Leo just... didn't show up. No message.", "zh": "我花了一整個禮拜籌備。結果前一個小時，里歐就……沒出現，連個訊息都沒有。" }
+      ],
+      "choices": [
+        {
+          "en": "That sounds really frustrating. You felt let down, right?",
+          "zh": "聽起來真的很讓人沮喪。你覺得被放鴿子了，對吧？",
+          "ok": true,
+          "tip": "把對方的感受說出來（You felt let down），能讓人覺得被理解，又不用評斷誰對。"
+        },
+        {
+          "en": "Come on, Mia, it's just a picnic. Don't be so dramatic.",
+          "zh": "拜託，米亞，只是個野餐而已，不要這麼誇張。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Dramatic? Wow. Now I'm mad at both of you.", "zh": "誇張？哇喔。現在我兩個都生氣了。" }
+            ],
+            "title": { "en": "Two for the Price of One", "zh": "買一送一的怒氣" },
+            "story": { "en": "You came to solve one fight and accidentally started a second one. Mia changes your contact name to \"Traitor.\"", "zh": "你本來要平息一場吵架，結果意外開啟第二場。米亞把你的聯絡人名稱改成「叛徒」。" },
+            "why": "Don't be so dramatic. 是在貶低對方的感受，調解時大忌。先承認情緒：That sounds really frustrating.。"
+          }
+        },
+        {
+          "en": "Let's just forget it and move on. Keeping the peace matters most.",
+          "zh": "我們就當沒這回事吧，以和為貴最重要。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Forget it? But I actually want to talk about it.", "zh": "當沒這回事？可是我是真的想把話說開。" }
+            ],
+            "title": { "en": "Swept Under the Rug", "zh": "掃到地毯下" },
+            "story": { "en": "Everyone pretends things are fine. Two weeks later, the same fight comes back, now with interest.", "zh": "大家都假裝沒事。兩週後同樣的爭執又爆發，還連本帶利。" },
+            "why": "「以和為貴、當沒發生」在英語文化的朋友之間常被視為逃避，大家比較習慣把話說開。可以說 Let's talk it through.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "I know I messed up the message part. But I was panicking about the exam. I didn't think.", "zh": "我知道沒傳訊息是我不對。可是我那時候在為考試恐慌，腦袋一片空白。" }
+      ],
+      "choices": [
+        {
+          "en": "That's fair. Stress makes anyone forget. Can you tell Mia that?",
+          "zh": "有道理，壓力大誰都會忘東忘西。你可以直接跟米亞說嗎？",
+          "ok": true,
+          "tip": "That's fair. 先肯定對方的理由，再引導他直接對另一方說，是中立調解的技巧。"
+        },
+        {
+          "en": "I understand. When I am stress, I also forget everything, you know.",
+          "zh": "我懂。我壓力大的時候也會什麼都忘記。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "When you ARE stress? Like... you become stress itself?", "zh": "你「是」壓力？像是……你變成壓力本身？" }
+            ],
+            "title": { "en": "Living Stress Ball", "zh": "人體壓力球" },
+            "story": { "en": "Leo laughs so hard he forgets he's in a fight. Mia does not laugh. Mia remembers.", "zh": "里歐笑到忘了自己在吵架。米亞沒有笑。米亞記得很清楚。" },
+            "why": "stress 是名詞或動詞，形容「壓力很大」要用 stressed：When I'm stressed...。"
+          }
+        },
+        {
+          "en": "Mia, Leo has difficulties too. Can you give him some face, okay?",
+          "zh": "米亞，里歐也有他的難處，你就給他點面子吧？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Give him... my face? What does that even mean?", "zh": "給他……我的臉？這到底是什麼意思？" }
+            ],
+            "title": { "en": "Face Value", "zh": "面子問題" },
+            "story": { "en": "Mia pictures handing her face to Leo. The image is so strange that everyone forgets the argument for a moment, but nothing gets solved.", "zh": "米亞想像把自己的臉交給里歐。畫面太詭異，大家一時忘了在吵什麼，但問題完全沒解決。" },
+            "why": "「給面子」直譯成 give face 英文母語者聽不懂，而且叫一方讓步也不中立。可以引導當事人自己說明：Can you tell Mia that?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "Mia, I'm sorry. I should've texted you. That wasn't okay.", "zh": "米亞，對不起。我應該傳訊息給你的，那樣真的不對。" },
+        { "who": "mia", "expr": "neutral", "en": "...Okay. And I'm sorry I called you selfish. So, Kai, what now?", "zh": "……好啦。我也很抱歉罵你自私。那，凱，接下來呢？" }
+      ],
+      "choices": [
+        {
+          "en": "How about we redo the picnic after Leo's exam? My treat.",
+          "zh": "等里歐考完，我們再辦一次野餐如何？我請客。",
+          "ok": true,
+          "tip": "How about we...? 提出雙方都能接受的方案，讓和好有具體的下一步。"
+        },
+        {
+          "en": "How about we have picnic again after Leo finish his exam?",
+          "zh": "等里歐考完試，我們再野餐一次怎麼樣？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"After Leo finish\"? Kai, I need good grammar karma before Monday.", "zh": "「After Leo finish」？凱，我星期一前需要好的文法運勢耶。" }
+            ],
+            "title": { "en": "Bad Grammar Karma", "zh": "文法壞運氣" },
+            "story": { "en": "Leo jokingly blames your grammar for every wrong answer on his practice test. The picnic plan gets forgotten in the teasing.", "zh": "里歐開玩笑地把模擬考的每個錯都怪到你的文法頭上。野餐計畫在打鬧中被忘光了。" },
+            "why": "主詞 Leo 是第三人稱單數，動詞要加 s：after Leo finishes。picnic 是可數名詞，要說 have a picnic。"
+          }
+        },
+        {
+          "en": "Great, problem solved. Next time, please don't drag me into it.",
+          "zh": "很好，問題解決。下次拜託別把我扯進來。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Wow. Sorry for bothering you, Kai.", "zh": "哇。真抱歉打擾你了，凱。" }
+            ],
+            "title": { "en": "The Reluctant Referee", "zh": "不情願的裁判" },
+            "story": { "en": "Mia and Leo make up with each other and then both give you the silent treatment. Peace has been restored, just not for you.", "zh": "米亞和里歐和好了，然後兩個一起不理你。和平恢復了，只是不包括你。" },
+            "why": "朋友和好的時刻抱怨被拖下水，會讓人覺得你很不情願。用一個溫暖的提議收尾：How about we...?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mia", "expr": "happy", "en": "Deal. And Leo brings dessert.", "zh": "成交。而且里歐負責帶甜點。" },
+      { "who": "leo", "expr": "happy", "en": "Fair. Thanks, Kai. You'd make a great referee.", "zh": "公平。謝啦，凱。你很適合當裁判。" }
+    ],
+    "title": { "en": "The Peacemaker", "zh": "和事佬" },
+    "story": { "en": "You didn't pick a side, and that's exactly why it worked. By the time the cake arrives, Mia and Leo are arguing about dessert instead.", "zh": "你沒有選邊站，這正是成功的關鍵。蛋糕送來時，米亞和里歐已經改成在爭論要帶什麼甜點了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I can see both sides.",
+      "zh": "我覺得兩邊都有道理。",
+      "explain": "被朋友拉去選邊站時，這句能清楚表達中立，又不會讓任何一方覺得被否定。",
+      "example": { "en": "I can see both sides, but let's hear the whole story first.", "zh": "我覺得兩邊都有道理，不過先聽完整件事吧。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let's hear each other out.",
+      "zh": "我們先聽彼此把話說完。",
+      "explain": "hear someone out 是「聽某人把話說完、不打斷」。調解時讓雙方輪流說話，是降溫的關鍵。",
+      "example": { "en": "Please hear me out before you say no.", "zh": "在你拒絕之前，請先聽我說完。" }
+    },
+    {
+      "type": "phrase",
+      "en": "That sounds really frustrating.",
+      "zh": "聽起來真的很令人沮喪。",
+      "explain": "說出對方的感受（frustrating、let down），讓對方覺得被理解，但不代表你判定誰對誰錯。",
+      "example": { "en": "You waited two hours? That sounds really frustrating.", "zh": "你等了兩個小時？聽起來真的很讓人沮喪。" }
+    },
+    {
+      "type": "trap",
+      "en": "fight / argue vs. noisy",
+      "zh": "吵架 vs 很吵",
+      "explain": "中文「吵」有兩個意思。noisy 只表示聲音大；「吵架」要用 fight 或 argue。叫人別吵架說 Please don't fight.。",
+      "example": { "en": "They argued about money last night.", "zh": "他們昨晚為了錢吵架。" }
+    },
+    {
+      "type": "culture",
+      "en": "Let's talk it through.",
+      "zh": "我們把話說開吧。",
+      "explain": "在英語文化的朋友之間，把問題攤開來談通常比「當作沒發生」更受重視。talk it through 是「從頭到尾好好談清楚」。",
+      "example": { "en": "I'm still upset, but I want to talk it through.", "zh": "我還是很難過，但我想把話說開。" }
+    }
+  ]
+}

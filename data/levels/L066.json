@@ -1,0 +1,263 @@
+{
+  "id": "L066",
+  "location": { "en": "Brightway office, meeting room", "zh": "Brightway 辦公室，會議室" },
+  "goal": { "en": "Tell a clear work story using the STAR method: situation, task, action, result.", "zh": "用 STAR 法則說一個清楚的工作故事：情境、任務、行動、結果。" },
+  "background": "meeting room with a clean whiteboard, a long wooden table with a notepad and a pen, warm pendant lamps, glass wall facing an open office, golden afternoon light",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "Ms. Wong puts down her pen and leans forward.", "zh": "王經理放下筆，身體微微前傾。" },
+    { "who": "narrator", "en": "This is the part where she stops asking about you and starts asking for stories.", "zh": "接下來，她不再問你是怎樣的人，而是要聽你的故事。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Tell me about a time you solved a difficult problem at work.", "zh": "說說你在工作上解決過一個困難問題的經驗。" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Last year at the design studio, we lost a client's photos.",
+          "zh": "好的。去年在設計工作室，我們弄丟了一位客戶的照片。",
+          "ok": true,
+          "tip": "STAR 的 S（情境）：先用一句話交代時間、地點和發生了什麼。"
+        },
+        {
+          "en": "Hmm, I never had any problems. Everything always went smoothly.",
+          "zh": "嗯，我從來沒遇過問題，一切都很順利。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Never? Lucky you. But I'd still really like to hear an example.", "zh": "從來沒有？你真幸運。不過我還是很想聽一個例子。" }
+            ],
+            "title": { "en": "Perfect Record", "zh": "完美紀錄" },
+            "story": { "en": "Ms. Wong waits. You keep saying everything was fine. She starts to wonder if you have ever worked at all.", "zh": "王經理等著。你一直說一切都很好。她開始懷疑你到底有沒有真的工作過。" },
+            "why": "為了面子說「從來沒遇過問題」，在英語面試裡反而像在迴避問題，或沒有實際經驗。大方挑一個問題來說，重點是你怎麼解決。"
+          }
+        },
+        {
+          "en": "Sure! Once my laptop crashed in the middle of an online game.",
+          "zh": "好啊！有一次我打線上遊戲打到一半，筆電當機了。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "An online game? I meant a problem at work, Kai.", "zh": "線上遊戲？凱，我指的是工作上的問題。" }
+            ],
+            "title": { "en": "Game Over", "zh": "遊戲結束" },
+            "story": { "en": "Ms. Wong learns that you lost a very important battle. She still knows nothing about how you work.", "zh": "王經理知道了你輸掉一場很重要的戰役，卻還是不知道你工作起來是什麼樣子。" },
+            "why": "Tell me about a time... at work 要說工作上的經驗，不是生活瑣事。從工作場合挑一個例子，先交代情境：Last year at the studio, we lost a client's photos.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Lost them? What happened?", "zh": "弄丟了？發生什麼事？" }
+      ],
+      "choices": [
+        {
+          "en": "My coworker broke the hard drive. It was totally his fault, not mine.",
+          "zh": "我同事把硬碟弄壞了。完全是他的錯，不是我的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Hmm. I asked what happened, not whose fault it was.", "zh": "嗯，我問的是發生什麼事，不是誰的錯。" }
+            ],
+            "title": { "en": "The Blame Game", "zh": "甩鍋大賽" },
+            "story": { "en": "Ms. Wong writes 'blames others' in small, neat letters. Your poor coworker isn't even here to defend himself.", "zh": "王經理用小小的工整字寫下「會怪別人」。你可憐的同事根本不在場，沒辦法替自己辯護。" },
+            "why": "說故事時急著撇清責任，會讓面試官擔心你不懂團隊合作。只描述事實就好：Our hard drive died, and the client's launch was in two days.。"
+          }
+        },
+        {
+          "en": "Our hard drive died, and the client's launch was in two days.",
+          "zh": "我們的硬碟壞了，而客戶兩天後就要上市。",
+          "ok": true,
+          "tip": "STAR 的 T（任務）：說出問題有多急、你必須達成什麼。"
+        },
+        {
+          "en": "Our hard drive was die, and the launch was after two days.",
+          "zh": "我們的硬碟掛了，而上市是在兩天之後。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Was die? And after two days... so the launch was already over?", "zh": "Was die？兩天之後……所以上市已經結束了？" }
+            ],
+            "title": { "en": "Lost in Time", "zh": "時間錯亂" },
+            "story": { "en": "Ms. Wong thinks the deadline had already passed. Your exciting race against time suddenly has no race.", "zh": "王經理以為期限早就過了。你緊張刺激的搶時間故事，突然沒了懸念。" },
+            "why": "die 是動詞，過去式是 died，不能說 was die。「兩天後要上市」說 in two days；after two days 是指「過了兩天之後」。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "That sounds stressful. So what did you do?", "zh": "聽起來壓力很大。那你做了什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "I just waited for my boss to decide. I didn't want to cause trouble.",
+          "zh": "我就等老闆決定，我不想惹麻煩。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "So... you didn't really do anything?", "zh": "所以……你其實什麼都沒做？" }
+            ],
+            "title": { "en": "Waiting Game", "zh": "等待指示" },
+            "story": { "en": "Your story has a hero, and it's your old boss. Ms. Wong wonders if she should interview your boss instead.", "zh": "你的故事有個英雄，但那是你的前老闆。王經理考慮是不是乾脆去面試你老闆。" },
+            "why": "在台灣，等主管決定是種謹慎；但 STAR 的 A（行動）要說「你」做了什麼。用 I + 動作動詞：I made a plan with my boss, and we reshot the photos.。"
+          }
+        },
+        {
+          "en": "I made a plan with my boss, and we reshot 20 key photos overnight.",
+          "zh": "我和老闆擬了計畫，我們連夜重拍了 20 張主要照片。",
+          "ok": true,
+          "tip": "STAR 的 A（行動）：用 I + 過去式動詞，說出你採取的具體行動。"
+        },
+        {
+          "en": "I shouted 'add oil!' to myself and worked the whole night with my team.",
+          "zh": "我對自己大喊「加油！」，然後和團隊熬了一整夜。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Add oil? To the hard drive? Did that help?", "zh": "加油？加到硬碟裡？那有用嗎？" }
+            ],
+            "title": { "en": "Oil Change", "zh": "幫硬碟加油" },
+            "story": { "en": "Ms. Wong now pictures you pouring cooking oil into a computer. You spend your best minute explaining a cheer.", "zh": "王經理腦中浮現你把沙拉油倒進電腦的畫面。你最精彩的一分鐘，全拿來解釋一句加油口號。" },
+            "why": "「加油」直譯成 add oil，很多外國人聽不懂。而且熬夜加油不是具體行動，要說清楚你做了什麼：We reshot 20 key photos overnight.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Impressive. And what was the result?", "zh": "很厲害。那結果呢？" }
+      ],
+      "choices": [
+        {
+          "en": "The client got every photo on time and signed a new contract with us.",
+          "zh": "客戶準時拿到所有照片，還和我們簽了新合約。",
+          "ok": true,
+          "tip": "STAR 的 R（結果）：用具體成果收尾，最好有數字或後續好消息。"
+        },
+        {
+          "en": "The client was very satisfy and sign a new contract with us.",
+          "zh": "客戶非常滿意，還和我們簽了新合約。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Satisfy... sign? Sorry, so were they happy in the end?", "zh": "Satisfy……sign？抱歉，所以他們最後滿意嗎？" }
+            ],
+            "title": { "en": "Happy Ending, Almost", "zh": "差一點的完美結局" },
+            "story": { "en": "Your best moment comes out in pieces. Ms. Wong has to put the happy ending together herself.", "zh": "你最精彩的部分說得支離破碎。王經理只好自己拼湊出這個好結局。" },
+            "why": "描述人的感受要用 satisfied（感到滿意），過去發生的事要用過去式 signed：The client was very satisfied and signed a new contract.。"
+          }
+        },
+        {
+          "en": "The result? I slept for fourteen hours the next day, haha.",
+          "zh": "結果？我隔天睡了十四個小時，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Well earned! But what happened with the client?", "zh": "辛苦了！不過客戶那邊後來怎麼樣？" }
+            ],
+            "title": { "en": "Sleeping Beauty", "zh": "睡美人" },
+            "story": { "en": "Ms. Wong laughs, but your story ends with you in bed instead of with a happy client.", "zh": "王經理笑了，但你的故事結尾是你在睡覺，而不是滿意的客戶。" },
+            "why": "STAR 的 R 是工作上的成果，不是你自己累到睡多久。說出客戶或公司得到什麼：The client got every photo on time.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Great story. What did you learn from it?", "zh": "很棒的故事。你從中學到什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "I learned that I should never trust my coworkers with anything again.",
+          "zh": "我學到再也不要把任何事交給同事。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "That's a tough lesson for a job where everyone works as a team, Kai.", "zh": "凱，這份工作大家都是團隊合作，這種心得有點難辦。" }
+            ],
+            "title": { "en": "Lone Wolf", "zh": "獨行俠" },
+            "story": { "en": "Your great story ends on a sour note. Ms. Wong imagines you refusing to share a stapler.", "zh": "精彩的故事卻有個苦澀的結尾。王經理想像你連釘書機都不肯跟人共用。" },
+            "why": "最後的心得要正面、能用在新工作上。說 Always back up your files, and stay calm when plans fall apart.，不要抱怨同事。"
+          }
+        },
+        {
+          "en": "I have learned it that I must to back up files every day.",
+          "zh": "我學到我每天都必須備份檔案。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Learned it that... must to...? I think I got it. Backups, right?", "zh": "Learned it that……must to……？我想我懂了，是備份對吧？" }
+            ],
+            "title": { "en": "Tangled Ending", "zh": "打結的結尾" },
+            "story": { "en": "Ms. Wong nods slowly. The big finish of your story gets stuck in the grammar.", "zh": "王經理慢慢地點頭。你故事最有力的結尾，卡在文法裡出不來。" },
+            "why": "learned 後面直接接 that 子句，不加 it；must 後面接原形動詞，不加 to：I learned that I must back up my files every day.。"
+          }
+        },
+        {
+          "en": "Always back up your files, and stay calm when plans fall apart.",
+          "zh": "一定要備份檔案，計畫出錯時也要保持冷靜。",
+          "ok": true,
+          "tip": "故事最後補一句心得，讓面試官知道你會把經驗帶到新工作。"
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Situation, task, action, result. You told that like a pro.", "zh": "情境、任務、行動、結果。你說得跟專業人士一樣。" },
+      { "who": "narrator", "en": "Ms. Wong closes her notepad. Only one part of the interview is left.", "zh": "王經理闔上筆記本。面試只剩最後一個部分了。" }
+    ],
+    "title": { "en": "A Story Worth Telling", "zh": "值得說的故事" },
+    "story": { "en": "A lost hard drive became your best interview answer. Sometimes the worst days make the best stories.", "zh": "一顆壞掉的硬碟，成了你最好的面試答案。有時候最糟的一天，會變成最好的故事。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "STAR: Situation, Task, Action, Result",
+      "zh": "STAR：情境、任務、行動、結果",
+      "explain": "回答 Tell me about a time... 的標準架構。依序說：發生什麼事、你要達成什麼、你做了什麼、結果如何。全部用過去式。",
+      "example": { "en": "We were short of staff, so I trained two new people in a week.", "zh": "我們人手不足，所以我一週內訓練了兩位新人。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Tell me about a time when...",
+      "zh": "說說你……的一次經驗。",
+      "explain": "行為面試題的固定開頭。聽到它就知道要講一個真實故事，不是講你的個性。",
+      "example": { "en": "Tell me about a time when you worked under pressure.", "zh": "說說你在壓力下工作的一次經驗。" }
+    },
+    {
+      "type": "grammar",
+      "en": "in two days / after two days",
+      "zh": "兩天後（從現在算）／過了兩天之後",
+      "explain": "說「再過兩天就要……」用 in two days；after two days 是指某件事發生之後又過了兩天。",
+      "example": { "en": "The launch is in two days, so we have to hurry.", "zh": "兩天後就要上市了，我們得趕快。" }
+    },
+    {
+      "type": "trap",
+      "en": "add oil",
+      "zh": "加油",
+      "explain": "「加油」直譯成 add oil，很多外國人聽不懂。替別人打氣說 You can do it! 或 Good luck!；說自己努力，就直接說出具體行動。",
+      "example": { "en": "You can do it! Good luck with the launch.", "zh": "你可以的！上市順利。" }
+    },
+    {
+      "type": "culture",
+      "en": "Say \"I\", and don't blame others",
+      "zh": "說「我」做了什麼，不要怪別人",
+      "explain": "英語面試想聽你個人的行動，所以多用 I made、I called。同時不要把問題推給同事或老闆，那會讓人擔心你的團隊合作。",
+      "example": { "en": "I called the client myself and explained the new plan.", "zh": "我親自打給客戶，說明新的計畫。" }
+    }
+  ]
+}

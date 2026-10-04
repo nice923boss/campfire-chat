@@ -1,0 +1,37 @@
+{
+  "c08_nina": {
+    "name": "Nina",
+    "nameZh": "妮娜",
+    "role": { "en": "Office coordinator at Brightway", "zh": "Brightway 行政專員" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, high ponytail with a wide navy headband, mustard yellow cardigan over a striped blouse, a pen tucked behind one ear, organized welcoming office coordinator vibe"
+  },
+  "c08_daniel": {
+    "name": "Daniel",
+    "nameZh": "丹尼爾",
+    "role": { "en": "Senior product designer at Brightway", "zh": "Brightway 資深產品設計師" },
+    "gender": "male",
+    "appearance": "man in his late 30s, neatly side-parted black hair with a few gray strands, rectangular tortoiseshell glasses, black turtleneck under a camel blazer, silver wristwatch, confident experienced designer vibe"
+  },
+  "c08_priya": {
+    "name": "Priya",
+    "nameZh": "普莉雅",
+    "role": { "en": "Marketing specialist at Brightway", "zh": "Brightway 行銷專員" },
+    "gender": "female",
+    "appearance": "woman in her late 20s, long wavy dark hair with caramel highlights, emerald green wrap blouse, thin gold bar necklace, a stack of colorful beaded bracelets, creative energetic marketer vibe"
+  },
+  "c08_hughes": {
+    "name": "Mr. Hughes",
+    "nameZh": "休斯先生",
+    "role": { "en": "Facilities manager at Lakeside Hotel", "zh": "湖畔飯店設施經理" },
+    "gender": "male",
+    "appearance": "man in his mid 50s, short silver hair combed back, trimmed gray beard, dark green suit jacket over a light blue shirt, plain gold lapel pin, phone headset on one ear, calm experienced hotel manager vibe"
+  },
+  "c08_server": {
+    "name": "Toby",
+    "nameZh": "托比",
+    "role": { "en": "Bistro server", "zh": "餐廳服務生" },
+    "gender": "male",
+    "appearance": "young man in his early 20s, curly brown hair, black waist apron over a white shirt with rolled sleeves, small notepad tucked in the apron pocket, cheerful attentive server vibe"
+  }
+}

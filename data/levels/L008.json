@@ -1,0 +1,181 @@
+{
+  "id": "L008",
+  "location": { "en": "Phone shop on Main Street", "zh": "主街上的電信行" },
+  "goal": { "en": "Get a local prepaid SIM card with the right amount of data.", "zh": "辦一張流量剛好的當地預付卡。" },
+  "background": "bright small phone shop interior, white counter with demo phones showing blank screens, wall shelves of colorful phone cases, two tall stools, a potted plant, clean modern lighting, afternoon",
+  "cast": ["c01_phone_clerk"],
+  "intro": [
+    { "who": "narrator", "en": "Day three in Maple Bay. Your Taiwan phone number doesn't work here, so you need a local SIM card.", "zh": "來楓灣的第三天。台灣的手機門號在這裡不能用，你需要一張當地的 SIM 卡。" },
+    { "who": "narrator", "en": "The phone shop is bright, cool and very quiet.", "zh": "電信行裡明亮、涼爽，而且很安靜。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_phone_clerk", "expr": "happy", "en": "Hi, welcome in! What can I do for you today?", "zh": "嗨，歡迎光臨！今天需要什麼服務？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I'd like a SIM card, please.",
+          "zh": "嗨，我想辦一張 SIM 卡。",
+          "ok": true,
+          "tip": "I'd like... 比 I want... 客氣，是在店裡提出需求的好用句型。"
+        },
+        {
+          "en": "Hi. I want to do a phone number.",
+          "zh": "嗨，我要辦門號。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_phone_clerk", "expr": "confused", "en": "Do a phone number? You mean... call someone?", "zh": "做一個電話號碼？你是說……打電話給誰嗎？" }
+            ],
+            "title": { "en": "Wrong Number", "zh": "打錯電話" },
+            "story": { "en": "Lily kindly hands you the shop phone so you can make a call. You don't know anyone's number, so you just stand there holding it.", "zh": "莉莉好心地把店裡的電話遞給你，讓你打電話。可是你誰的號碼都不知道，只能拿著話筒呆站著。" },
+            "why": "「辦門號」的「辦」不能直譯成 do。要說 I'd like a SIM card. 或 I'd like to get a phone number."
+          }
+        },
+        {
+          "en": "Hi. SIM card. The cheapest one.",
+          "zh": "嗨。SIM 卡。最便宜的那種。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_phone_clerk", "expr": "upset", "en": "Okay... the cheapest one has no data at all.", "zh": "好喔……最便宜的那張完全沒有上網流量喔。" }
+            ],
+            "title": { "en": "You Get What You Ask For", "zh": "求仁得仁" },
+            "story": { "en": "Lily sells you exactly what you asked for. Your phone can make calls, but there are no maps, no messages and no internet.", "zh": "莉莉賣給你的正是你要的。你的手機可以打電話，但沒有地圖、沒有訊息，也不能上網。" },
+            "why": "只丟關鍵字聽起來很不耐煩，店員也懶得幫你找適合的方案。先說 I'd like a SIM card, please.，再一起討論需要什麼。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_phone_clerk", "expr": "neutral", "en": "Sure! Do you want prepaid, or a monthly contract?", "zh": "沒問題！你要預付卡，還是月租綁約？" }
+      ],
+      "choices": [
+        {
+          "en": "Prepaid, please. No contract.",
+          "zh": "預付卡，謝謝。不要綁約。",
+          "ok": true,
+          "tip": "prepaid 是先付費再使用，不用綁約，適合短期居留。"
+        },
+        {
+          "en": "Contract. Is the phone free, then?",
+          "zh": "綁約。那手機是免費的嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_phone_clerk", "expr": "confused", "en": "A free phone? Only with a two-year contract.", "zh": "免費手機？要綁兩年約才有喔。" }
+            ],
+            "title": { "en": "The Two-Year Trap", "zh": "兩年之約" },
+            "story": { "en": "You almost sign up for two years. Then you remember your visa is for one year, and Lily has to shred all the paperwork.", "zh": "你差點就簽了兩年約。這時你才想起簽證只有一年，莉莉只好把整疊文件送進碎紙機。" },
+            "why": "台灣辦門號常有「0 元手機」，但通常要綁兩年約，比你待的時間還長。短期居留選預付卡最方便：Prepaid, please."
+          }
+        },
+        {
+          "en": "Yes, that sounds good!",
+          "zh": "好啊，聽起來不錯！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_phone_clerk", "expr": "confused", "en": "Um... which one sounds good?", "zh": "呃……哪一個聽起來不錯？" }
+            ],
+            "title": { "en": "Fine Print", "zh": "密密麻麻的小字" },
+            "story": { "en": "Lily picks for you: a monthly contract with a very long agreement in very small print. You sign it without reading a single line.", "zh": "莉莉幫你選了：一份月租合約，條款又長、字又小。你一行都沒讀就簽了。" },
+            "why": "A or B? 這種選擇問句不能用 Yes 回答，要從選項中挑一個：Prepaid, please."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_phone_clerk", "expr": "happy", "en": "Prepaid it is. And how much data do you need?", "zh": "那就預付卡。你需要多少上網流量？" }
+      ],
+      "choices": [
+        {
+          "en": "About 10 GB a month, please.",
+          "zh": "一個月大約 10 GB，謝謝。",
+          "ok": true,
+          "tip": "回答流量用 About + 數量 + a month。"
+        },
+        {
+          "en": "I need very many data.",
+          "zh": "我需要非常多流量。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_phone_clerk", "expr": "confused", "en": "Very many...? Okay, how about our biggest plan?", "zh": "非常多……？好吧，那我們最大的方案如何？" }
+            ],
+            "title": { "en": "Data Overload", "zh": "流量吃到飽" },
+            "story": { "en": "Lily sells you the 100 GB plan. You'll never use even half of it, but you'll pay for all of it every month.", "zh": "莉莉賣給你 100 GB 的方案。你連一半都用不完，卻每個月都要付全額。" },
+            "why": "data 是不可數名詞，不能用 many，要說 a lot of data。更好的做法是直接說數量：About 10 GB a month."
+          }
+        },
+        {
+          "en": "My birth date? It's December twelfth.",
+          "zh": "我的出生日期？十二月十二號。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_phone_clerk", "expr": "confused", "en": "Happy early birthday? But I said data. Internet!", "zh": "提早祝你生日快樂？不過我說的是流量，上網用的！" }
+            ],
+            "title": { "en": "Birthday Plan", "zh": "生日方案" },
+            "story": { "en": "Lily types your birthday into the system by mistake. Now the shop will send you a \"Happy Birthday!\" text every December.", "zh": "莉莉不小心把你的生日輸入系統。從此每年十二月，電信行都會傳一封「生日快樂！」的簡訊給你。" },
+            "why": "data（流量）和 date（日期）發音很像，要聽清楚。How much data? 是問每月需要多少上網流量，回答 About 10 GB a month. 就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_phone_clerk", "expr": "happy", "en": "Perfect. That's thirty dollars a month, no contract. You're all set!", "zh": "太好了。每月三十塊，不用綁約。都辦好囉！" },
+      { "who": "narrator", "en": "Your phone buzzes. Four bars of signal!", "zh": "你的手機震了一下。訊號滿格！" }
+    ],
+    "title": { "en": "Signal Found", "zh": "收到訊號" },
+    "story": { "en": "You have a brand-new local number. The first thing you send is a photo of your latte to your family in Taiwan.", "zh": "你有了全新的當地門號。你傳的第一則訊息，是一張拿鐵的照片，給在台灣的家人。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like a SIM card.",
+      "zh": "我想辦一張 SIM 卡。",
+      "explain": "I'd like 是 I would like 的縮寫，比 I want 客氣。辦門號不能說 do a phone number。",
+      "example": { "en": "I'd like a phone case, please.", "zh": "我想要一個手機殼。" }
+    },
+    {
+      "type": "vocab",
+      "en": "prepaid / contract",
+      "zh": "預付卡／綁約",
+      "explain": "prepaid 是先付費再使用，不用綁約；monthly contract 是月租綁約，通常要綁一到兩年。",
+      "example": { "en": "Is this plan prepaid?", "zh": "這個方案是預付的嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "How much data do you need?",
+      "zh": "你需要多少上網流量？",
+      "explain": "data 指手機上網流量。回答用 About + 數量 + a month，例如 About 10 GB a month.",
+      "example": { "en": "I use about 5 GB a month.", "zh": "我一個月大約用 5 GB。" }
+    },
+    {
+      "type": "trap",
+      "en": "data vs date",
+      "zh": "流量 vs 日期",
+      "explain": "data 和 date 發音很像，要靠上下文分辨。data 是不可數名詞，不能說 many data，要說 a lot of data。",
+      "example": { "en": "I need a lot of data for videos.", "zh": "我看影片需要很多流量。" }
+    },
+    {
+      "type": "culture",
+      "en": "Free phones come with contracts.",
+      "zh": "免費手機都要綁約",
+      "explain": "「0 元手機」在英語國家也有，但幾乎都要綁一到兩年約。只待一年的人，選預付卡最有彈性。",
+      "example": { "en": "I'm only here for a year, so prepaid is better.", "zh": "我只待一年，所以預付卡比較好。" }
+    }
+  ]
+}

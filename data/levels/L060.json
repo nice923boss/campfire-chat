@@ -1,0 +1,226 @@
+{
+  "id": "L060",
+  "location": { "en": "Your studio, on the phone with Maple Bay Power", "zh": "你的套房，和楓灣電力公司通電話" },
+  "goal": { "en": "Point out a billing mistake and ask the company to fix it.", "zh": "指出帳單上的錯誤，請電力公司處理。" },
+  "background": "small studio apartment kitchen table in the evening, an open envelope, a blank sheet of paper, a calculator and a mug of tea, warm desk lamp light",
+  "cast": ["c06_billing"],
+  "intro": [
+    { "who": "narrator", "en": "Your first electricity bill arrives. The total is almost twice what you expected.", "zh": "你的第一張電費帳單寄來了。金額幾乎是你預期的兩倍。" },
+    { "who": "narrator", "en": "Looking closer, you see the same month listed twice. You call Maple Bay Power.", "zh": "仔細一看，同一個月份被列了兩次。你打電話給楓灣電力公司。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_billing", "expr": "neutral", "en": "Maple Bay Power, billing department. This is Marcus. How can I help?", "zh": "楓灣電力帳務部，我是馬可斯。有什麼可以幫您的？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I think there's a mistake on my bill this month.",
+          "zh": "嗨。我覺得我這個月的帳單有錯。",
+          "ok": true,
+          "tip": "I think there's a mistake on my bill. 用 I think 開頭，客觀說明問題，不是一開始就指責對方。"
+        },
+        {
+          "en": "Your company made a big mistake. You're stealing my money!",
+          "zh": "你們公司搞錯了。你們在偷我的錢！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_billing", "expr": "upset", "en": "Whoa. Let's not jump to conclusions. Let me read you our billing policy first.", "zh": "哇。先別急著下結論。我先為您說明我們的計費規定。" }
+            ],
+            "title": { "en": "Policy Reading", "zh": "條款朗讀會" },
+            "story": { "en": "Marcus reads the company's billing policy to you, word by word. Fifteen minutes pass before he even looks at your bill.", "zh": "馬可斯一字一句地唸計費規定給你聽。過了十五分鐘，他才開始看你的帳單。" },
+            "why": "一開口就指控對方偷錢，客服只會進入防衛模式。先客觀說明：I think there's a mistake on my bill."
+          }
+        },
+        {
+          "en": "My bill is wrong number. The money is too much this time.",
+          "zh": "我的帳單數字錯了。這次的錢太多了。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_billing", "expr": "confused", "en": "Wrong number? Oh, did you mean to call someone else? Let me transfer you.", "zh": "打錯電話？喔，您是要打給別人嗎？我幫您轉接。" }
+            ],
+            "title": { "en": "Wrong Number", "zh": "打錯電話" },
+            "story": { "en": "Marcus politely transfers you to the phone company. You end up explaining your electricity bill to a very confused stranger.", "zh": "馬可斯很有禮貌地把你轉到電信公司。你最後對著一個一頭霧水的陌生人解釋電費帳單。" },
+            "why": "wrong number 在電話裡是「打錯電話」。帳單金額有錯要說 There's a mistake on my bill. 或 The amount is wrong."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_billing", "expr": "neutral", "en": "I'm sorry to hear that. Let me pull up your account.", "zh": "很抱歉。我來調出您的帳戶資料。" },
+        { "who": "narrator", "en": "You hear typing on the other end of the line.", "zh": "你聽到電話那頭傳來打字聲。" },
+        { "who": "c06_billing", "expr": "neutral", "en": "Okay, I have it here. What looks wrong to you?", "zh": "好，我看到了。您覺得哪裡有問題？" }
+      ],
+      "choices": [
+        {
+          "en": "It looks like I was charged twice for the same month.",
+          "zh": "看起來同一個月份被收了兩次錢。",
+          "ok": true,
+          "tip": "I was charged twice. 用被動語態說「被收費」，一聽就知道是重複扣款。"
+        },
+        {
+          "en": "I think I charged two times for the same month of electricity.",
+          "zh": "我覺得同一個月的電費收了我兩次。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_billing", "expr": "confused", "en": "You charged...? Did you make the same payment twice?", "zh": "您收了……？您是重複付款了嗎？" }
+            ],
+            "title": { "en": "Nothing to See", "zh": "查無異常" },
+            "story": { "en": "Marcus searches for a double payment from you. There isn't one, so he decides your account is fine.", "zh": "馬可斯開始找你的重複付款紀錄。結果找不到，他就判定你的帳戶沒問題。" },
+            "why": "「被收費」要用被動語態：I was charged twice. 說 I charged，意思變成是你收了費或你付了兩次。"
+          }
+        },
+        {
+          "en": "The problem is I'm a student and I don't have much money.",
+          "zh": "問題是我是學生，我沒什麼錢。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_billing", "expr": "confused", "en": "Oh, I see. Would you like to set up a payment plan, then?", "zh": "喔，我了解了。那您想辦分期付款嗎？" }
+            ],
+            "title": { "en": "Easy Installments", "zh": "輕鬆分期" },
+            "story": { "en": "Marcus kindly lets you pay the wrong bill in six easy installments. The mistake is still there.", "zh": "馬可斯很貼心地讓你把錯誤的帳單分六期付清。但錯誤還是在那裡。" },
+            "why": "對方問的是帳單哪裡有問題，不是你的經濟狀況。直接指出錯誤：I was charged twice for the same month."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_billing", "expr": "neutral", "en": "Hmm, you're right. I see two charges for last month.", "zh": "嗯，您說得對。我看到上個月有兩筆費用。" },
+        { "who": "c06_billing", "expr": "neutral", "en": "That's strange. It might take a few days to sort out.", "zh": "這很奇怪。可能要幾天時間才能處理好。" }
+      ],
+      "choices": [
+        {
+          "en": "Could you look into it and let me know what you find?",
+          "zh": "可以請你調查一下，再告訴我結果嗎？",
+          "ok": true,
+          "tip": "Could you look into it? 請對方深入調查，再加上 let me know 請對方回報結果。"
+        },
+        {
+          "en": "Can you help me check it? I will wait for your news.",
+          "zh": "可以幫我查一下嗎？我等你的消息。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_billing", "expr": "confused", "en": "Check it? I just did. It's two charges. And... my news?", "zh": "查一下？我剛查過了，是兩筆。還有……我的新聞？" }
+            ],
+            "title": { "en": "Checked, Not Fixed", "zh": "查了，沒修" },
+            "story": { "en": "Marcus checks again, confirms there are two charges, and waits. Nobody opens an investigation, and the bill stays the same.", "zh": "馬可斯又查了一次，確認有兩筆，然後就等你下一步。沒人提出調查，帳單金額照舊。" },
+            "why": "「幫我查一下」直譯成 help me check，對方可能看一眼就結束。要對方調查處理說 Could you look into it?「等你消息」說 Please let me know what you find."
+          }
+        },
+        {
+          "en": "Never mind. It's too troublesome. I'll just pay it all.",
+          "zh": "算了。太麻煩了。我全部付掉就好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_billing", "expr": "confused", "en": "Are you sure? You'd be paying for the same month twice.", "zh": "您確定嗎？這樣同一個月您會付兩次喔。" }
+            ],
+            "title": { "en": "Paid Twice", "zh": "白付兩次" },
+            "story": { "en": "You pay the whole bill to avoid the hassle. That's forty dollars of smoothie money, gone.", "zh": "為了省麻煩，你把整張帳單都付了。四十元的果昔基金就這樣沒了。" },
+            "why": "遇到小麻煩就想「算了，多一事不如少一事」，結果是白白多付錢。在這裡，多收的費用只要提出就能退。請對方處理：Could you look into it?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_billing", "expr": "happy", "en": "Of course. I've opened a review. You should hear back within five business days.", "zh": "當然。我已經提出審查了，您會在五個工作天內收到回覆。" },
+        { "who": "c06_billing", "expr": "neutral", "en": "Is there anything else I can help you with today?", "zh": "今天還有其他需要幫忙的地方嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, that's everything. Thank you for looking into this.",
+          "zh": "沒有了，就這些。謝謝你幫忙處理。",
+          "ok": true,
+          "tip": "Thank you for looking into this. 謝謝對方願意處理，讓通話有個好結尾，之後追蹤也更順利。"
+        },
+        {
+          "en": "No. If I don't hear back, I will calling again next week.",
+          "zh": "沒有。如果沒收到回覆，我下禮拜會再打來。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_billing", "expr": "confused", "en": "You're calling again? But... we're still on the phone. Hello?", "zh": "您又打來了？可是……我們還在通話中啊。喂？" }
+            ],
+            "title": { "en": "Line Check", "zh": "收訊測試" },
+            "story": { "en": "Marcus thinks the line is bad and asks you to repeat everything. The call ends ten minutes later than it should.", "zh": "馬可斯以為收訊不好，請你把剛剛的話全部再說一次。這通電話多講了十分鐘。" },
+            "why": "will 後面接原形動詞：I'll call again next week. will calling 不是正確句型，對方會聽成你「現在又打來」。"
+          }
+        },
+        {
+          "en": "Just make sure it's fixed, or I'm switching companies.",
+          "zh": "你最好把它修好，不然我就換公司。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_billing", "expr": "upset", "en": "Well, we're the only power company in Maple Bay. But... noted.", "zh": "這個嘛，我們是楓灣唯一的電力公司。不過……我記下了。" }
+            ],
+            "title": { "en": "Nowhere to Go", "zh": "無處可換" },
+            "story": { "en": "Your threat has nowhere to go. Marcus ends the call politely, and you feel a little silly.", "zh": "你的威脅無處可去。馬可斯禮貌地結束通話，你覺得自己有點糗。" },
+            "why": "對方已經答應處理，你還補一句威脅，聽起來很不信任人。好好道謝就好：Thank you for looking into this."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_billing", "expr": "happy", "en": "My pleasure. Have a good evening!", "zh": "不客氣。祝您有個愉快的晚上！" },
+      { "who": "narrator", "en": "Three days later, an email arrives. The extra charge has been removed.", "zh": "三天後，你收到一封電子郵件。多收的費用已經取消了。" }
+    ],
+    "title": { "en": "Charge Reversed", "zh": "多收的錢回來了" },
+    "story": { "en": "Your next bill is forty dollars lower. Heater, doctor, wallet, power bill: you're getting pretty good at this living-alone thing.", "zh": "下一期帳單少了四十元。暖氣、看病、錢包、電費，你越來越懂得怎麼獨立生活了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I think there's a mistake on my bill.",
+      "zh": "我覺得我的帳單有錯。",
+      "explain": "用 I think 開頭比較客觀，不會一開始就變成指責。帳單上的錯誤用介系詞 on：a mistake on my bill。",
+      "example": { "en": "I think there's a mistake on my phone bill.", "zh": "我覺得我的電話帳單有錯。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I was charged twice.",
+      "zh": "我被收了兩次錢。",
+      "explain": "「被收費」用被動語態 be charged。twice 比 two times 自然；三次以上才說 three times。",
+      "example": { "en": "I was charged for something I didn't buy.", "zh": "我被收了一筆我沒買的東西的錢。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could you look into it?",
+      "zh": "可以幫我調查一下嗎？",
+      "explain": "look into 是「調查、深入了解」。請客服處理問題時，比 help me check 更清楚表示要對方追查到底。",
+      "example": { "en": "Could you look into why my package is late?", "zh": "可以幫我查一下包裹為什麼延遲嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "wrong number",
+      "zh": "打錯電話",
+      "explain": "在電話裡 You have the wrong number. 是「你打錯了」。金額有誤要說 The amount is wrong. 或 There's a mistake on my bill.",
+      "example": { "en": "Sorry, I think you have the wrong number.", "zh": "抱歉，你好像打錯電話了。" }
+    },
+    {
+      "type": "culture",
+      "en": "Speak up about billing errors.",
+      "zh": "帳單有錯就要提出",
+      "explain": "怕麻煩就算了，等於白白多付錢。在楓灣，打給客服說明清楚，公司通常會調查並退回多收的費用，這是消費者的基本權利。",
+      "example": { "en": "I'd like to dispute this charge.", "zh": "我想對這筆費用提出異議。" }
+    }
+  ]
+}

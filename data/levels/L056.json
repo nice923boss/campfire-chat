@@ -1,0 +1,225 @@
+{
+  "id": "L056",
+  "location": { "en": "Maple Bay Family Clinic, on the phone", "zh": "楓灣家庭診所，電話預約" },
+  "goal": { "en": "Book a doctor's appointment and find the fastest way to be seen.", "zh": "預約看診，並找出最快能看到醫生的方法。" },
+  "background": "small family clinic reception area, light wood front desk, a row of padded waiting chairs, potted plants by the window, pale green walls, bright morning light",
+  "cast": ["c06_receptionist"],
+  "intro": [
+    { "who": "narrator", "en": "Your throat has been sore for three days, and it's not getting better.", "zh": "你的喉嚨已經痛了三天，一直沒有好轉。" },
+    { "who": "narrator", "en": "Time to see a doctor. You call the clinic near your studio.", "zh": "該去看醫生了。你打電話到套房附近的診所。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_receptionist", "expr": "neutral", "en": "Good morning, Maple Bay Family Clinic. This is Linda. How can I help you?", "zh": "早安，楓灣家庭診所，我是琳達。有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I'd like to make an appointment to see a doctor, please.",
+          "zh": "嗨。我想預約看醫生。",
+          "ok": true,
+          "tip": "I'd like to make an appointment. 一句話說清楚來意，國外看診大多要先預約。"
+        },
+        {
+          "en": "Hi. I want to hang a number. Can I see a doctor today, please?",
+          "zh": "嗨。我想掛號。今天可以看醫生嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "confused", "en": "Hang... up? Oh, okay. Sorry to bother you, then!", "zh": "掛……電話？喔，好吧。那不打擾您了！" }
+            ],
+            "title": { "en": "Hung Up", "zh": "電話被掛了" },
+            "story": { "en": "Click. Linda thinks you want to hang up, so she does. You stare at your phone and dial again.", "zh": "喀。琳達以為你要掛電話，就真的掛了。你盯著手機，只好重撥一次。" },
+            "why": "「掛號」不能直譯成 hang a number，hang 會讓人聯想到 hang up（掛電話）。在英語國家看診要說 I'd like to make an appointment."
+          }
+        },
+        {
+          "en": "Oh, I'm fine, thank you. And how are you this morning?",
+          "zh": "喔，我很好，謝謝。那你今天早上過得好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "confused", "en": "I'm... good, thanks? Um, did you need something today?", "zh": "我……很好，謝謝？呃，請問您今天有什麼需要嗎？" }
+            ],
+            "title": { "en": "Small Talk Loop", "zh": "寒暄迴圈" },
+            "story": { "en": "After a round of polite small talk, Linda has to answer another line. You stay on hold for fifteen minutes.", "zh": "客套寒暄一輪之後，琳達得先接另一通電話。你在線上等了十五分鐘。" },
+            "why": "How can I help you? 是問你需要什麼，不是問你好不好。不用回 I'm fine，直接說來意：I'd like to make an appointment."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_receptionist", "expr": "neutral", "en": "Let me check... The first opening with Dr. Patel is next Tuesday at two.", "zh": "我查一下……帕特爾醫師最早的空檔是下星期二兩點。" },
+        { "who": "c06_receptionist", "expr": "neutral", "en": "Does that work for you?", "zh": "這個時間可以嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "That's a bit late for me. Do you have anything earlier?",
+          "zh": "對我來說有點晚。有更早的時段嗎？",
+          "ok": true,
+          "tip": "Do you have anything earlier? 不用重複整句，anything earlier 就能問有沒有更早的時段。"
+        },
+        {
+          "en": "Tuesday is too late. Do you have more early time? Like today?",
+          "zh": "星期二太晚了。有更早的時間嗎？像是今天？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "confused", "en": "More early time? Oh, earlier on Tuesday? Sure, I have eight a.m.", "zh": "更早的時間？喔，星期二早一點？可以，有早上八點。" }
+            ],
+            "title": { "en": "Earlier, Technically", "zh": "確實比較早" },
+            "story": { "en": "Linda moves you to 8 a.m. next Tuesday. Earlier, yes. Still six days away.", "zh": "琳達幫你改到下星期二早上八點。確實比較早，但還是要等六天。" },
+            "why": "「更早」是 earlier，不是 more early。單音節或 -y 結尾的形容詞，比較級直接變化：early → earlier、late → later。"
+          }
+        },
+        {
+          "en": "Next Tuesday? That's ridiculous. I'm sick now!",
+          "zh": "下星期二？太誇張了吧。我現在就在生病耶！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "upset", "en": "I understand. But that is our first opening.", "zh": "我了解。但那就是我們最早的空檔。" }
+            ],
+            "title": { "en": "No Shortcut", "zh": "沒有捷徑" },
+            "story": { "en": "Linda books you for Tuesday without another word. She never mentions the faster option.", "zh": "琳達二話不說幫你排了星期二，完全沒提還有更快的辦法。" },
+            "why": "嫌時間太晚可以理解，但說 ridiculous 很沒禮貌，對方也不會想多幫你。客氣地問：Do you have anything earlier?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_receptionist", "expr": "neutral", "en": "Nothing earlier this week, I'm afraid.", "zh": "恐怕這禮拜沒有更早的了。" },
+        { "who": "c06_receptionist", "expr": "happy", "en": "But we have walk-in hours every morning from eight to ten. No appointment needed.", "zh": "不過我們每天早上八點到十點有現場看診，不用預約。" }
+      ],
+      "choices": [
+        {
+          "en": "So I can just come in without an appointment? That's great.",
+          "zh": "所以我不用預約，直接過去就可以？太好了。",
+          "ok": true,
+          "tip": "So I can just...? 用自己的話重述一次，確認你真的聽懂了 walk-in 的意思。"
+        },
+        {
+          "en": "Walk in? But my place is far. Can I take a bus there instead?",
+          "zh": "走路去？可是我家很遠。可以改搭公車去嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "confused", "en": "A bus is fine! Walk-in just means... never mind. Any way is fine.", "zh": "搭公車可以啊！walk-in 的意思是……算了，怎麼來都可以。" }
+            ],
+            "title": { "en": "Missed the Window", "zh": "錯過時段" },
+            "story": { "en": "You spend the morning planning the perfect bus route. You arrive at eleven, and walk-in hours are over.", "zh": "你花了整個早上研究最佳公車路線。十一點抵達時，現場看診時段已經結束了。" },
+            "why": "walk-in 是「不用預約、直接上門」，跟走路無關。搭公車、開車去都算 walk-in。"
+          }
+        },
+        {
+          "en": "Great. Can I come in the evening instead? Clinics in Taiwan open late.",
+          "zh": "太好了。可以改晚上去嗎？台灣的診所都開到很晚。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "confused", "en": "In the evening? Oh, no. We close at five. Then the earliest is still next Tuesday.", "zh": "晚上？喔，不行，我們五點就關門了。那最早還是只能下星期二。" }
+            ],
+            "title": { "en": "Back to Tuesday", "zh": "又回到星期二" },
+            "story": { "en": "Since evenings are out, you're back to next Tuesday. Your throat would like to file a complaint.", "zh": "既然晚上不行，你又回到下星期二。你的喉嚨很想提出抗議。" },
+            "why": "台灣很多診所有夜診，但楓灣的診所通常傍晚就關門。要把握對方提供的時段：早上八點到十點的 walk-in。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_receptionist", "expr": "happy", "en": "Exactly. Just bring your ID and your insurance card.", "zh": "沒錯。記得帶身分證件和保險卡就好。" },
+        { "who": "c06_receptionist", "expr": "neutral", "en": "Is there anything else I can help you with?", "zh": "還有其他需要幫忙的地方嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, that's all. Thanks so much for your help, Linda.",
+          "zh": "沒有了，就這樣。非常謝謝你的幫忙，琳達。",
+          "ok": true,
+          "tip": "No, that's all. 是結束對話的標準回答，再加一句道謝，喊出對方名字更親切。"
+        },
+        {
+          "en": "No more. Trouble you so much today. Thank you, thank you.",
+          "zh": "沒有了。今天麻煩你了。謝謝、謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "confused", "en": "Trouble? Oh, no, you're no trouble at all! Is everything okay?", "zh": "麻煩？喔，不會，您一點都不麻煩！一切都還好嗎？" }
+            ],
+            "title": { "en": "Apology Spiral", "zh": "客氣迴圈" },
+            "story": { "en": "Linda thinks you feel bad about calling and keeps reassuring you. The call ends ten minutes later, with both of you apologizing.", "zh": "琳達以為你打這通電話很過意不去，一直安慰你。十分鐘後才掛電話，兩個人還在互相道歉。" },
+            "why": "「麻煩你了」直譯成 Trouble you 不是英文說法，聽起來像你給人添了大麻煩。道謝就說 Thanks so much for your help."
+          }
+        },
+        {
+          "en": "No. That's all. I have to go now, okay? Bye-bye.",
+          "zh": "沒有。就這樣。我現在要走了，好嗎？掰掰。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_receptionist", "expr": "upset", "en": "Oh. Okay. Bye, then.", "zh": "喔。好。那再見。" }
+            ],
+            "title": { "en": "Abrupt Ending", "zh": "匆匆掛斷" },
+            "story": { "en": "Linda wonders if she said something wrong. When you walk in the next morning, the greeting feels a little stiff.", "zh": "琳達懷疑自己是不是說錯話了。隔天早上你走進診所，她打招呼的樣子有點僵。" },
+            "why": "一連串短句又急著結束，聽起來很不耐煩。結束通話前先道謝：No, that's all. Thanks so much for your help."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_receptionist", "expr": "happy", "en": "You're welcome! Feel better soon.", "zh": "不客氣！祝您早日康復。" },
+      { "who": "narrator", "en": "The next morning, you arrive at 7:55, first in line.", "zh": "隔天早上，你七點五十五分就到了，排在第一個。" }
+    ],
+    "title": { "en": "Early Bird", "zh": "早起的鳥兒" },
+    "story": { "en": "You see Dr. Patel by 8:15. Sometimes the fastest appointment is no appointment at all.", "zh": "八點十五分你就見到帕特爾醫師了。有時候最快的預約，就是不用預約。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to make an appointment.",
+      "zh": "我想預約。",
+      "explain": "國外看醫生大多要先預約。make an appointment 用在看醫生、看牙醫、找專業人士；和朋友約見面不用 appointment，說 make plans 就好。",
+      "example": { "en": "I'd like to make an appointment with the dentist.", "zh": "我想預約看牙醫。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Do you have anything earlier?",
+      "zh": "有更早的時段嗎？",
+      "explain": "anything earlier / anything later 是問其他時段的省力說法，訂位、預約都通用。",
+      "example": { "en": "Friday doesn't work for me. Do you have anything later in the week?", "zh": "星期五我不行。這禮拜有晚一點的時段嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "walk-in",
+      "zh": "免預約、現場候診",
+      "explain": "walk-in 指不用預約、直接上門，跟走路無關。walk-in hours 是開放現場看診的時段，walk-in clinic 是不用預約的診所。",
+      "example": { "en": "The clinic takes walk-ins from eight to ten.", "zh": "這間診所八點到十點開放現場看診。" }
+    },
+    {
+      "type": "trap",
+      "en": "Thanks so much for your help.",
+      "zh": "麻煩你了。",
+      "explain": "「麻煩你了」不能直譯成 Trouble you，英文會說 Thanks so much for your help. 或 I really appreciate it.",
+      "example": { "en": "Thanks so much for your help. I really appreciate it.", "zh": "非常謝謝你的幫忙，真的很感謝。" }
+    },
+    {
+      "type": "culture",
+      "en": "Clinic hours",
+      "zh": "診所看診時間",
+      "explain": "台灣很多診所有夜診，晚上下班也能看病。楓灣的家庭診所通常白天看診、傍晚就關門，急著看病就利用早上的 walk-in 時段。",
+      "example": { "en": "What are your walk-in hours?", "zh": "你們現場看診的時間是幾點？" }
+    }
+  ]
+}

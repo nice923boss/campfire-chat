@@ -1,0 +1,225 @@
+{
+  "id": "L037",
+  "location": { "en": "Kai and Mia's apartment, living room", "zh": "凱和米亞的公寓，客廳" },
+  "goal": { "en": "Throw Mia a surprise party and give her your gift.", "zh": "幫米亞辦驚喜派對，並把禮物送給她。" },
+  "background": "apartment living room at night decorated with balloons, plain paper garlands, a plain white birthday cake with candles on the table, wrapped gifts, warm string lights",
+  "cast": ["mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Today is Mia's birthday. You and Leo spent all afternoon decorating the living room.", "zh": "今天是米亞的生日。你和里歐花了一整個下午布置客廳。" },
+    { "who": "narrator", "en": "Keys jingle at the door. Leo turns on the lights just as Mia walks in.", "zh": "門口傳來鑰匙聲。米亞一走進來，里歐就打開了燈。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Whoa! You two did all this for me?", "zh": "哇！這些都是你們兩個為我準備的？" }
+      ],
+      "choices": [
+        {
+          "en": "Happy birthday, Mia! Surprise!",
+          "zh": "生日快樂，米亞！驚喜吧！",
+          "ok": true,
+          "tip": "驚喜派對的經典開場：Happy birthday! 加上 Surprise!。"
+        },
+        {
+          "en": "Happy birthday! Today you are the biggest!",
+          "zh": "生日快樂！今天你最大！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "The biggest? Are you saying I'm big?", "zh": "最大？你是說我很大隻嗎？" }
+            ],
+            "title": { "en": "Birthday Giant", "zh": "壽星巨人" },
+            "story": { "en": "Mia hides behind a balloon. Leo spends five minutes explaining what you meant.", "zh": "米亞躲到氣球後面，里歐花了五分鐘解釋你的意思。" },
+            "why": "「壽星最大」直翻成 you are the biggest 會變成「你最大隻」。英文說 It's your day! 或 Today is all about you!。"
+          }
+        },
+        {
+          "en": "Happy birthday, Mia! Are you surprise?",
+          "zh": "生日快樂，米亞！你驚訝嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Am I... a surprise? I'm pretty sure I'm Mia.", "zh": "我是……一個驚喜？我很確定我是米亞耶。" }
+            ],
+            "title": { "en": "Identity Crisis", "zh": "身分危機" },
+            "story": { "en": "Leo laughs so hard that he sits on the birthday hats.", "zh": "里歐笑到一屁股坐扁了生日帽。" },
+            "why": "「感到驚訝」要用形容詞 surprised：Are you surprised?。surprise 是名詞，少了 -d 意思變成「你是一個驚喜嗎？」。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "I really am! This is amazing!", "zh": "真的嚇到我了！太棒了！" },
+        { "who": "leo", "expr": "neutral", "en": "Kai, don't you have something for Mia? You know, behind the sofa?", "zh": "凱，你不是有東西要給米亞嗎？就在沙發後面那個？" }
+      ],
+      "choices": [
+        {
+          "en": "Oh, right! I got you something, Mia.",
+          "zh": "喔，對！米亞，我有東西要送你。",
+          "ok": true,
+          "tip": "I got you something. 是送禮時最自然的一句，簡單又溫暖。"
+        },
+        {
+          "en": "This is a small gift. It's cheap, sorry.",
+          "zh": "這只是個小禮物，很便宜，不好意思。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Oh... um, that's okay? I'm sure it's nice.", "zh": "喔……呃，沒關係啊？我相信一定很好。" }
+            ],
+            "title": { "en": "Bargain Gift", "zh": "特價禮物" },
+            "story": { "en": "Mia opens the gift very carefully, as if it might break. The mood gets a little weird.", "zh": "米亞小心翼翼地拆禮物，好像怕它會壞掉，氣氛變得有點怪。" },
+            "why": "中文說「小東西，不成敬意」是謙虛，但英文強調禮物 cheap 會讓收禮的人尷尬。送禮時說 I got you something. 或 I hope you like it! 就好。"
+          }
+        },
+        {
+          "en": "Yes! I buy a present give you.",
+          "zh": "對！我買禮物給你。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "You buy... give... wait, who's giving what?", "zh": "你買……給……等等，誰要給什麼？" }
+            ],
+            "title": { "en": "Present Puzzle", "zh": "禮物拼圖" },
+            "story": { "en": "Mia thinks she has to give you a present too. She runs to her room to find one.", "zh": "米亞以為她也要送你禮物，跑回房間翻箱倒櫃。" },
+            "why": "「我買禮物給你」照中文順序排成 I buy a present give you 是中式英文。說 I got you something. 或 I bought you a present.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Mia opens the box. Inside is a soft yellow scarf.", "zh": "米亞打開盒子，裡面是一條柔軟的黃色圍巾。" },
+        { "who": "mia", "expr": "happy", "en": "Oh my gosh! It matches my hair clip! I love it!", "zh": "天啊！跟我的髮夾好搭！我好喜歡！" }
+      ],
+      "choices": [
+        {
+          "en": "I'm so glad you like it!",
+          "zh": "你喜歡我就好開心！",
+          "ok": true,
+          "tip": "對方說 I love it! 時，回 I'm so glad you like it! 分享你的開心。"
+        },
+        {
+          "en": "Yes, it's yellow. I know.",
+          "zh": "對，它是黃色的，我知道。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Um... yes. I can see that.", "zh": "呃……對，我看得出來。" }
+            ],
+            "title": { "en": "Captain Obvious", "zh": "顯然隊長" },
+            "story": { "en": "Leo starts naming the color of everything in the room. Mia joins in. Somehow, it becomes a game.", "zh": "里歐開始說出房間裡每樣東西的顏色，米亞也加入，莫名其妙變成一場遊戲。" },
+            "why": "對方說 I love it! 是在分享開心，不是在確認顏色。回應她的心情：I'm so glad you like it!"
+          }
+        },
+        {
+          "en": "Of course. It was very expensive.",
+          "zh": "當然啊，它很貴耶。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Oh... wow. Now I feel kind of bad.", "zh": "喔……哇，我現在覺得有點過意不去。" }
+            ],
+            "title": { "en": "Price Tag", "zh": "價格標籤" },
+            "story": { "en": "Mia is afraid to wear the scarf in case it gets dirty. It stays in the box all winter.", "zh": "米亞怕把圍巾弄髒，整個冬天都不敢戴，一直放在盒子裡。" },
+            "why": "強調禮物很貴，聽起來像在邀功，也會讓對方有壓力。送禮的重點是心意，回 I'm so glad you like it! 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Okay, candle time! Everybody, quiet!", "zh": "好，點蠟燭時間！大家安靜！" },
+        { "who": "mia", "expr": "happy", "en": "You two are the best. I don't even know what to say!", "zh": "你們兩個最好了。我都不知道該說什麼了！" }
+      ],
+      "choices": [
+        {
+          "en": "Don't say anything. Just make a wish!",
+          "zh": "什麼都不用說，快許願吧！",
+          "ok": true,
+          "tip": "Make a wish! 是吹蠟燭前一定會說的一句。"
+        },
+        {
+          "en": "Make three wishes! Say two out loud!",
+          "zh": "許三個願望！前兩個要說出來！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Out loud? But then they won't come true!", "zh": "說出來？那樣就不會實現了啊！" }
+            ],
+            "title": { "en": "Wish Leak", "zh": "願望外洩" },
+            "story": { "en": "Mia and Leo argue about wish rules for ten minutes. The candles melt onto the cake.", "zh": "米亞和里歐為了許願規則爭了十分鐘，蠟燭都融到蛋糕上了。" },
+            "why": "台灣習慣許三個願望、前兩個說出來，但英語文化通常只許一個願望，而且要放在心裡，說出來就不靈了。"
+          }
+        },
+        {
+          "en": "Hurry up! I want to eat cake!",
+          "zh": "快點啦！我要吃蛋糕！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mia", "expr": "upset", "en": "Wow, okay. Happy birthday to me, I guess.", "zh": "哇，好喔。祝我自己生日快樂吧。" }
+            ],
+            "title": { "en": "Cake First", "zh": "蛋糕優先" },
+            "story": { "en": "Mia blows out the candles in one second flat. Leo gives you the smallest slice.", "zh": "米亞一秒就吹熄蠟燭，里歐切給你最小的一塊蛋糕。" },
+            "why": "壽星正感動的時候催她，氣氛會瞬間冷掉。說 Just make a wish! 把焦點放回壽星身上。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Mia closes her eyes, makes a wish, and blows out all the candles.", "zh": "米亞閉上眼睛許了願，一口氣吹熄了所有蠟燭。" },
+      { "who": "leo", "expr": "happy", "en": "Woo-hoo! Happy birthday, Mia!", "zh": "耶！生日快樂，米亞！" }
+    ],
+    "title": { "en": "Best Birthday Ever", "zh": "史上最棒的生日" },
+    "story": { "en": "Mia wears the scarf all night, even while eating cake. Nobody notices Leo's wallet left on the sofa.", "zh": "米亞整晚都圍著圍巾，連吃蛋糕時也不拿下來。沒有人發現里歐的錢包掉在沙發上。" }
+  },
+  "notes": [
+    {
+      "type": "trap",
+      "en": "It's your day!",
+      "zh": "今天你最大！",
+      "explain": "「壽星最大」直翻成 You are the biggest. 會變成「你最大隻」。英文說 It's your day! 或 Today is all about you!。",
+      "example": { "en": "Sit down and relax. It's your day!", "zh": "坐下來休息，今天你最大！" }
+    },
+    {
+      "type": "grammar",
+      "en": "Are you surprised?",
+      "zh": "你驚訝嗎？",
+      "explain": "描述人的感受用 -ed 形容詞：surprised、excited、bored。surprise 是名詞「驚喜」，不能直接放在 be 動詞後面形容人。",
+      "example": { "en": "I was so surprised!", "zh": "我好驚訝！" }
+    },
+    {
+      "type": "phrase",
+      "en": "I got you something.",
+      "zh": "我有東西要送你。",
+      "explain": "送禮時最自然的一句，可以再加 I hope you like it!。不用說禮物很便宜或很貴，重點是心意。",
+      "example": { "en": "I got you something. I hope you like it!", "zh": "我有東西要送你，希望你喜歡！" }
+    },
+    {
+      "type": "phrase",
+      "en": "Make a wish!",
+      "zh": "許個願吧！",
+      "explain": "吹蠟燭前一定會說的一句。吹蠟燭的英文是 blow out the candles。",
+      "example": { "en": "Make a wish and blow out the candles!", "zh": "許個願，然後吹蠟燭！" }
+    },
+    {
+      "type": "culture",
+      "en": "One wish, kept secret.",
+      "zh": "一個願望，放在心裡。",
+      "explain": "台灣習慣許三個願望、說出前兩個，但英語文化通常只許一個願望，而且不說出來，說出來就不會實現。",
+      "example": { "en": "I can't tell you my wish, or it won't come true!", "zh": "我不能告訴你我許了什麼願，不然就不會實現了！" }
+    }
+  ]
+}

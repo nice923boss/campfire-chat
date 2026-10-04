@@ -1,0 +1,263 @@
+{
+  "id": "L067",
+  "location": { "en": "Brightway office, meeting room", "zh": "Brightway 辦公室，會議室" },
+  "goal": { "en": "Ask good questions at the end of the interview and find out the next steps.", "zh": "在面試尾聲提出好問題，並問清楚接下來的流程。" },
+  "background": "meeting room with a long wooden table, two chairs facing each other, a closed notepad, warm pendant lamps glowing, glass wall, soft early evening light",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "Ms. Wong checks the time and puts her pen down.", "zh": "王經理看了看時間，把筆放下。" },
+    { "who": "narrator", "en": "You've answered every question. Now the interview turns around.", "zh": "你已經回答完所有問題。現在，面試要換個方向了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Well, that's all from me. Do you have any questions for us?", "zh": "好，我這邊問完了。你有什麼問題想問我們嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, no questions. You explained everything very clearly.",
+          "zh": "沒有，沒有問題。你都說明得很清楚了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "None at all? Hmm, most candidates have at least one.", "zh": "完全沒有？嗯，大部分應徵者至少都會問一個。" }
+            ],
+            "title": { "en": "No Questions Asked", "zh": "一個問題都沒有" },
+            "story": { "en": "You meant it as a compliment. Ms. Wong hears 'not very interested' and writes it down.", "zh": "你本來是想稱讚她。王經理聽到的卻是「不太有興趣」，還把它記了下來。" },
+            "why": "在台灣，不發問可能是客氣；但在英語面試裡，沒有問題會被當成對工作沒興趣。準備一兩個問題，例如 What does a typical day look like in this role?。"
+          }
+        },
+        {
+          "en": "Yes, a few. What does a typical day look like in this role?",
+          "zh": "有幾個。這個職位一天的工作大概是什麼樣子？",
+          "ok": true,
+          "tip": "What does a typical day look like? 是面試尾聲最經典、最安全的好問題。"
+        },
+        {
+          "en": "Yes. Can I work from home most days? I really hate commuting.",
+          "zh": "有。我可以大部分時間在家工作嗎？我真的很討厭通勤。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "This role meets clients in person, Kai. A lot.", "zh": "凱，這個職位要當面見客戶，而且很常。" }
+            ],
+            "title": { "en": "Pajama Plans", "zh": "睡衣上班計畫" },
+            "story": { "en": "Your first question tells Ms. Wong what you don't want to do. Not the best way to end a great interview.", "zh": "你的第一個問題，讓王經理知道你不想做什麼。這不是結束一場好面試的好方式。" },
+            "why": "一開口就提自己的要求，還說「討厭」，聽起來像在挑工作。先問工作內容：What does a typical day look like in this role?，條件留到錄取後再談。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Good question. You'd help our sales team with client calls, product samples and social media. Some days, you'd visit hotels and cafés with us.", "zh": "好問題。你會協助業務團隊處理客戶電話、產品樣品和社群媒體。有些日子會跟我們一起去拜訪飯店和咖啡店。" }
+      ],
+      "choices": [
+        {
+          "en": "Hotels? Cool! Do I get to stay in the hotel rooms for free sometimes?",
+          "zh": "飯店？酷！我有時候可以免費住飯店房間嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Ha! Sadly, no. We sell them lights. They don't give us rooms.", "zh": "哈！可惜沒有。我們是賣燈給他們，他們不會給我們房間。" }
+            ],
+            "title": { "en": "Room Service", "zh": "客房服務" },
+            "story": { "en": "Ms. Wong laughs, but now she wonders if you're applying for the job or for a vacation.", "zh": "王經理笑了，但她開始懷疑你是來應徵工作，還是來度假的。" },
+            "why": "對方介紹工作內容時，應該順著問工作相關的事，不是問有什麼好康。可以問 Who would I be working with most closely?。"
+          }
+        },
+        {
+          "en": "That sounds great. Who would I be working with most closely?",
+          "zh": "聽起來很棒。我主要會跟哪些人一起工作？",
+          "ok": true,
+          "tip": "Who would I be working with? 用 would 假設已錄取，語氣禮貌又積極。"
+        },
+        {
+          "en": "That sounds great. Who I will work with the most?",
+          "zh": "聽起來很棒。我最常會跟誰一起工作？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Who you will...? Oh, sorry, was that a question?", "zh": "Who you will……？喔，抱歉，那是一個問句嗎？" }
+            ],
+            "title": { "en": "Question Mark Missing", "zh": "消失的問號" },
+            "story": { "en": "Ms. Wong waits for the rest of your sentence. You wait for her answer. It's a very long, very quiet moment.", "zh": "王經理在等你把話說完，你在等她回答。那是一段很長、很安靜的沉默。" },
+            "why": "英文問句要把助動詞放到主詞前面：Who will I work with? 或更禮貌的 Who would I be working with?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Mostly with me and the rest of our small sales team. Anything else?", "zh": "主要是跟我，還有我們小小的業務團隊。還有別的問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "How many days off do I get? I'd like to visit Taiwan often.",
+          "zh": "我一年有幾天假？我想常常回台灣。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Often? Well... we can talk about leave if we make you an offer.", "zh": "常常？嗯……如果我們決定錄取你，再來談休假吧。" }
+            ],
+            "title": { "en": "One Foot Out the Door", "zh": "人還沒進門就想放假" },
+            "story": { "en": "Ms. Wong pictures your desk empty for half the year. She makes a small note with a question mark.", "zh": "王經理想像你的座位有半年都是空的。她記下一筆，後面加了個問號。" },
+            "why": "第一次面試就問休假，還說想常回國，會讓人覺得你心不在這裡。休假和薪資等拿到錄取後再談，現在先問工作和團隊：What do you enjoy most about working here?。"
+          }
+        },
+        {
+          "en": "What do you enjoy most about working at Brightway?",
+          "zh": "你在 Brightway 工作最喜歡的是什麼？",
+          "ok": true,
+          "tip": "問面試官自己的經驗，能了解公司文化，也讓對話更有溫度。"
+        },
+        {
+          "en": "Is the team friendly? Do people here have human taste?",
+          "zh": "團隊友善嗎？這裡的人有人情味嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Human taste? I really hope nobody here has tasted a human!", "zh": "人的味道？我真心希望這裡沒有人吃過人！" }
+            ],
+            "title": { "en": "Horror Movie", "zh": "恐怖片既視感" },
+            "story": { "en": "Ms. Wong bursts out laughing. Your question about warm coworkers just turned into a horror movie.", "zh": "王經理笑到不行。你想問同事溫不溫暖，結果變成了恐怖片。" },
+            "why": "「人情味」直譯成 human taste，聽起來像在問有沒有人吃人。想問團隊氣氛，說 Is the team friendly? 或 What's the team culture like?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Honestly? The people. And seeing our lights in real cafés all over town. What else?", "zh": "老實說？是這裡的人。還有在城裡各家咖啡店看到我們的燈。還有嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "When will you tell me the result? I am very want to know.",
+          "zh": "你們什麼時候會通知我結果？我非常想知道。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "You are very... want? Don't worry, we'll be in touch soon.", "zh": "你非常……want？別擔心，我們很快會聯絡你。" }
+            ],
+            "title": { "en": "Very Want", "zh": "非常想要" },
+            "story": { "en": "Your eager question comes out a little broken. Ms. Wong gives you a kind but very vague answer.", "zh": "你急切的問題說得有點破碎。王經理給了你一個親切卻非常模糊的回答。" },
+            "why": "want 是動詞，前面不能加 am very。要說 I really want to know.，但更專業的問法是 What are the next steps?。"
+          }
+        },
+        {
+          "en": "What are the next steps in the hiring process?",
+          "zh": "接下來的招募流程是什麼？",
+          "ok": true,
+          "tip": "What are the next steps? 讓你知道何時會有消息，也顯示你很認真看待這份工作。"
+        },
+        {
+          "en": "So, did I pass? Just tell me now, yes or no.",
+          "zh": "所以，我有過嗎？現在就告訴我，有還是沒有。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I'm afraid it doesn't work like that, Kai.", "zh": "凱，恐怕不是這樣運作的。" }
+            ],
+            "title": { "en": "Instant Results", "zh": "當場放榜" },
+            "story": { "en": "Ms. Wong's smile becomes very professional. An interview is not a lottery ticket you can scratch on the spot.", "zh": "王經理的笑容變得非常公事公辦。面試不是刮刮樂，不能當場刮開看結果。" },
+            "why": "當場逼問「我有沒有過」會給人很大壓力，顯得沒耐心。禮貌地問流程：What are the next steps in the hiring process?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Next week, there's a second interview. Rachel will email you the details. Anything else before we finish?", "zh": "下週會有第二次面試，瑞秋會寄細節給你。結束前還有其他問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, that's everything. Thank you so much for your time today.",
+          "zh": "沒有了，就這些。非常謝謝你今天撥空。",
+          "ok": true,
+          "tip": "Thank you for your time. 是結束面試時最得體的一句話。"
+        },
+        {
+          "en": "Not really. Oh, I brought you some pineapple cakes from Taiwan!",
+          "zh": "沒什麼了。喔，我帶了一些台灣的鳳梨酥給你！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "That's very kind... but I can't accept gifts from candidates. It wouldn't be fair.", "zh": "你真貼心……不過我不能收應徵者的禮物，這樣不公平。" }
+            ],
+            "title": { "en": "Sweet Mistake", "zh": "甜蜜的失誤" },
+            "story": { "en": "The pineapple cakes go back into your bag. You eat all of them on the bus home, one sad bite at a time.", "zh": "鳳梨酥又回到你的包包裡。回家的公車上，你一口一口、心情複雜地把它們全吃完了。" },
+            "why": "在台灣帶伴手禮是禮貌，但在面試場合送面試官禮物，可能被看成想影響結果。用一句真誠的道謝結束就好：Thank you so much for your time today.。"
+          }
+        },
+        {
+          "en": "Not really. By the way, do you know any good hot pot places near here?",
+          "zh": "沒什麼了。對了，你知道這附近有好吃的火鍋店嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Uh... there's one on Pine Street, I think. Anyway, thanks for coming in.", "zh": "呃……松樹街好像有一家吧。總之，謝謝你今天過來。" }
+            ],
+            "title": { "en": "Hot Pot Hunt", "zh": "火鍋情報站" },
+            "story": { "en": "You end a serious interview with a restaurant question. At least dinner is sorted.", "zh": "你用一個問餐廳的問題結束了正式面試。至少晚餐有著落了。" },
+            "why": "面試結尾問私人生活的事，會讓前面的好表現打折扣。最後一句留給道謝：Thank you so much for your time today.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Thank you, Kai. You asked really good questions. We'll be in touch soon.", "zh": "謝謝你，凱。你問的問題都很好。我們很快會再聯絡你。" },
+      { "who": "narrator", "en": "Outside, the sun is setting over Harbor Street. You let out the longest breath of your life.", "zh": "走出大樓，夕陽正落在港灣街上。你吐出這輩子最長的一口氣。" }
+    ],
+    "title": { "en": "Your Turn to Ask", "zh": "換你發問" },
+    "story": { "en": "Your questions showed you were already imagining yourself on the team. Ms. Wong noticed.", "zh": "你的問題顯示你已經在想像自己成為團隊的一員。王經理也注意到了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "What does a typical day look like?",
+      "zh": "一天的工作大概是什麼樣子？",
+      "explain": "面試尾聲最常用的好問題，能了解實際工作內容，也顯示你在想像自己上班的樣子。",
+      "example": { "en": "What does a typical week look like for the sales team?", "zh": "業務團隊一週的工作大概是什麼樣子？" }
+    },
+    {
+      "type": "phrase",
+      "en": "What are the next steps?",
+      "zh": "接下來的流程是什麼？",
+      "explain": "禮貌地問什麼時候會有結果，比 Did I pass? 或 When will you tell me? 專業得多。",
+      "example": { "en": "What are the next steps, and when should I expect to hear from you?", "zh": "接下來的流程是什麼？我大概什麼時候會收到消息？" }
+    },
+    {
+      "type": "grammar",
+      "en": "Who would I be working with?",
+      "zh": "我會跟誰一起工作？",
+      "explain": "英文問句要把助動詞放到主詞前面，不能說 Who I will work with?。用 would 語氣更禮貌。",
+      "example": { "en": "Where would I be sitting? Who would I report to?", "zh": "我會坐在哪裡？我要向誰報告？" }
+    },
+    {
+      "type": "trap",
+      "en": "human taste / I'm very want",
+      "zh": "人情味／我非常想要",
+      "explain": "「人情味」不能直譯 human taste，說 friendly 或 warm；want 是動詞，不能說 I'm very want，要說 I really want。",
+      "example": { "en": "The people here are really warm. I really want to join them.", "zh": "這裡的人很有人情味，我很想加入他們。" }
+    },
+    {
+      "type": "culture",
+      "en": "Always ask at least one question",
+      "zh": "至少問一個問題",
+      "explain": "說「沒有問題」會被當成沒興趣。問工作內容、團隊、流程；休假和薪水等拿到錄取再談。面試也不要送禮，以免被誤會。",
+      "example": { "en": "Could you tell me more about the team I'd be joining?", "zh": "可以多介紹一下我會加入的團隊嗎？" }
+    }
+  ]
+}

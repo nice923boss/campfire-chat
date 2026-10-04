@@ -1,0 +1,225 @@
+{
+  "id": "L055",
+  "location": { "en": "Your studio, on the phone with Bayline Internet", "zh": "你的套房，和 Bayline 網路公司通電話" },
+  "goal": { "en": "Set up internet at your new place and book a technician.", "zh": "幫新住處開通網路，並預約技術人員到府安裝。" },
+  "background": "small tidy studio apartment, wooden desk by the window with a closed laptop and a small router with blinking lights, a single bed with a gray blanket, soft afternoon light",
+  "cast": ["c06_isp_agent"],
+  "intro": [
+    { "who": "narrator", "en": "The last tenant left an old router in your studio, but the Wi-Fi cuts out every few minutes.", "zh": "前一位房客在套房裡留下一台舊路由器，但 Wi-Fi 每隔幾分鐘就斷一次。" },
+    { "who": "narrator", "en": "Time to get your own internet plan. You call Bayline Internet.", "zh": "該辦自己的網路了。你打電話給 Bayline 網路公司。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_isp_agent", "expr": "happy", "en": "Thank you for calling Bayline Internet. This is Jenna. How can I help you today?", "zh": "感謝您致電 Bayline 網路，我是珍娜。今天有什麼可以為您服務的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I just moved, and I'd like to set up internet at my new place.",
+          "zh": "嗨。我剛搬家，想在新住處開通網路。",
+          "ok": true,
+          "tip": "I'd like to set up internet. 是開通網路的標準說法，先說明剛搬家，對方馬上知道要辦新裝。"
+        },
+        {
+          "en": "Hello. I want to apply the internet for my new apartment, please.",
+          "zh": "你好。我想幫我的新公寓申請網路。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "confused", "en": "Apply? Oh, are you applying for a job with us? Let me transfer you to our hiring team.", "zh": "應徵？喔，您是要應徵我們公司的工作嗎？我幫您轉接人資部門。" }
+            ],
+            "title": { "en": "Wrong Department", "zh": "轉錯部門" },
+            "story": { "en": "You listen to hold music for twenty minutes. Then a recruiter politely asks for your résumé.", "zh": "你聽了二十分鐘的等候音樂。接著一位招募專員客氣地請你提供履歷。" },
+            "why": "「申請網路」不能直譯成 apply the internet。apply 常用在 apply for a job、apply for a visa。開通網路要說 set up internet 或 sign up for internet。"
+          }
+        },
+        {
+          "en": "Hi. I'm just moved to a new place. Can I get internet there, please?",
+          "zh": "嗨。我剛搬到新家，可以在那裡裝網路嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "confused", "en": "Oh, you're moving soon? Then let's book it for after your move. How about next month?", "zh": "喔，您快要搬家了嗎？那我們等您搬完再安排，下個月可以嗎？" }
+            ],
+            "title": { "en": "Café Wi-Fi Life", "zh": "靠咖啡店 Wi-Fi 過活" },
+            "story": { "en": "Your setup gets booked for next month. You spend four weeks doing homework at the café down the street.", "zh": "你的安裝被排到下個月。接下來四個禮拜，你都在街角的咖啡店寫作業。" },
+            "why": "「我剛搬家」是 I just moved 或 I've just moved。I'm just moved 不是正確句子，對方可能以為你「正要搬」。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_isp_agent", "expr": "happy", "en": "Welcome to the neighborhood! I can help with that.", "zh": "歡迎搬來這一區！這個我可以幫您處理。" },
+        { "who": "c06_isp_agent", "expr": "neutral", "en": "Is there already a router at your place?", "zh": "您那邊已經有路由器了嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, the last tenant left one, but the connection keeps dropping.",
+          "zh": "有，前一位房客留了一台，但網路一直斷線。",
+          "ok": true,
+          "tip": "The connection keeps dropping. 精準描述「斷斷續續」，客服立刻知道問題在哪。"
+        },
+        {
+          "en": "Yes, there is one. But the internet is always broken, every few minutes.",
+          "zh": "有一台。但網路每隔幾分鐘就壞掉。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "confused", "en": "Broken? Is the cable damaged? Then we'll need to send a repair crew first.", "zh": "壞掉？是線路受損嗎？那我們得先派維修團隊過去。" }
+            ],
+            "title": { "en": "Street Inspection", "zh": "整條街大檢查" },
+            "story": { "en": "A repair crew spends a whole morning checking every cable on your street. The cables are fine. Your setup waits another week.", "zh": "維修團隊花了整個早上檢查整條街的線路。線路都沒問題，你的安裝又多等了一個禮拜。" },
+            "why": "「網路一直斷」不是 always broken，broken 聽起來像線路或機器壞掉。時好時壞要說 The connection keeps dropping."
+          }
+        },
+        {
+          "en": "Yes, but it's garbage. Honestly, your company's internet is useless.",
+          "zh": "有，但那台爛透了。說真的，你們公司的網路很沒用。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "upset", "en": "I'm sorry you feel that way. That router isn't actually ours, but I'll make a note.", "zh": "很遺憾您這樣覺得。那台路由器其實不是我們的，不過我會記錄下來。" }
+            ],
+            "title": { "en": "Noted", "zh": "已記錄在案" },
+            "story": { "en": "Jenna stays polite, but her voice gets noticeably cooler. You still don't know what's wrong with your Wi-Fi.", "zh": "珍娜還是很有禮貌，但語氣明顯冷了下來。你還是不知道 Wi-Fi 到底哪裡有問題。" },
+            "why": "罵 garbage、useless 很失禮，接電話的客服也不是設備的負責人。描述問題就好：The connection keeps dropping."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_isp_agent", "expr": "neutral", "en": "That old router is probably the problem. We can send a technician to install a new one.", "zh": "問題可能出在那台舊路由器。我們可以派技術人員幫您裝新的。" },
+        { "who": "c06_isp_agent", "expr": "neutral", "en": "When is a good time for you?", "zh": "您什麼時間方便呢？" }
+      ],
+      "choices": [
+        {
+          "en": "Could you schedule a technician for Thursday? I'm free until noon.",
+          "zh": "可以幫我預約星期四嗎？我中午以前都有空。",
+          "ok": true,
+          "tip": "schedule a technician for + 時間，清楚說出日期和方便的時段，一次就能約好。"
+        },
+        {
+          "en": "Can the technician came on Thursday morning? I'm free until noon.",
+          "zh": "技術人員可以星期四早上來嗎？我中午以前有空。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "confused", "en": "Came? Oh, did a technician already visit you? Let me check our records.", "zh": "來過了？喔，已經有技術人員去過您那裡了嗎？我查一下紀錄。" }
+            ],
+            "title": { "en": "Ghost Visit", "zh": "幽靈到府" },
+            "story": { "en": "Jenna spends ten minutes searching for a visit that never happened. By then, Thursday is fully booked.", "zh": "珍娜花了十分鐘尋找一筆根本不存在的到府紀錄。等她查完，星期四已經約滿了。" },
+            "why": "can 後面接原形動詞：Can the technician come...? 用了過去式 came，對方會以為技術人員已經來過。"
+          }
+        },
+        {
+          "en": "A good time? Oh, yes! I had a great time in Port Aurora last month.",
+          "zh": "愉快的時光？喔，有！我上個月在極光港玩得很開心。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "confused", "en": "That's... great! But I meant, when can the technician come to your place?", "zh": "那……很棒！不過我是問，技術人員什麼時候可以去您那裡？" }
+            ],
+            "title": { "en": "Travel Story Hour", "zh": "旅遊分享時間" },
+            "story": { "en": "Jenna politely listens to your whole trip story. By the time you finish, the only slot left is next Friday.", "zh": "珍娜很有禮貌地聽完你整段旅遊故事。等你講完，只剩下禮拜五的時段了。" },
+            "why": "When is a good time for you? 是在問你什麼時間方便，不是問你玩得開不開心。直接回答日期和時段就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_isp_agent", "expr": "happy", "en": "Done! A technician will be there Thursday between nine and twelve.", "zh": "好了！技術人員會在星期四九點到十二點之間過去。" },
+        { "who": "c06_isp_agent", "expr": "neutral", "en": "By the way, would you like to add our TV package? It's only fifteen dollars more a month.", "zh": "順帶一提，要不要加購我們的電視方案呢？每個月只要多付十五元。" }
+      ],
+      "choices": [
+        {
+          "en": "No, thank you. Just the internet for now, please.",
+          "zh": "不用了，謝謝。目前只要網路就好。",
+          "ok": true,
+          "tip": "No, thank you. Just ... for now. 拒絕推銷清楚又客氣，for now 還保留了以後的空間。"
+        },
+        {
+          "en": "No. Stop trying to sell me things. I just want internet.",
+          "zh": "不要。別一直推銷東西給我。我只要網路。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "upset", "en": "Understood. I was only asking.", "zh": "了解。我只是問問而已。" }
+            ],
+            "title": { "en": "Hard No", "zh": "推銷碰釘子" },
+            "story": { "en": "Jenna wraps up the call in record time. Only after you hang up do you realize you never asked how much your plan costs.", "zh": "珍娜用最快的速度結束通話。掛掉電話後你才想到，自己根本沒問方案多少錢。" },
+            "why": "介紹加購方案是客服的例行工作，直接叫對方別推銷太衝。禮貌拒絕就好：No, thank you. Just the internet for now."
+          }
+        },
+        {
+          "en": "Hmm, maybe. Let me think about it and get back to you.",
+          "zh": "嗯，也許吧。我考慮看看再跟你說。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_isp_agent", "expr": "confused", "en": "Oh, sure! So should I call you tomorrow evening to follow up?", "zh": "喔，好的！那我明天晚上打給您確認，可以嗎？" }
+            ],
+            "title": { "en": "Nightly Follow-Up", "zh": "每晚的追蹤電話" },
+            "story": { "en": "You say \"sure\" just to be polite. Jenna calls every evening for a week to ask if you've decided yet.", "zh": "你出於禮貌說了「好」。結果接下來一個禮拜，珍娜每天晚上都打來問你決定了沒。" },
+            "why": "台灣人說「我考慮看看」常是委婉拒絕，但英語客服會當真，還會持續追蹤。不需要就直接說 No, thank you."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_isp_agent", "expr": "happy", "en": "Perfect. You're all set! Have a great day.", "zh": "太好了，都安排好了！祝您有美好的一天。" },
+      { "who": "narrator", "en": "On Thursday, the technician installs a new router in twenty minutes.", "zh": "星期四，技術人員只花二十分鐘就裝好新的路由器。" }
+    ],
+    "title": { "en": "Full Signal", "zh": "訊號滿格" },
+    "story": { "en": "Full bars, no drops. That night, you video call your family in Taiwan without a single freeze.", "zh": "訊號滿格，完全不斷線。那天晚上，你和台灣的家人視訊，畫面一次都沒卡住。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to set up...",
+      "zh": "我想要開通／安裝……",
+      "explain": "set up 用在開通網路、建立帳戶、安裝設備。I'd like to 比 I want to 客氣，打電話給客服很好用。",
+      "example": { "en": "I'd like to set up a new phone plan.", "zh": "我想要辦一個新的手機方案。" }
+    },
+    {
+      "type": "phrase",
+      "en": "The connection keeps dropping.",
+      "zh": "網路一直斷線。",
+      "explain": "keep + V-ing 表示某件事一直重複發生。drop 在這裡是「斷線」，也可以說 The Wi-Fi keeps cutting out.",
+      "example": { "en": "My calls keep dropping in the basement.", "zh": "我在地下室講電話一直斷線。" }
+    },
+    {
+      "type": "vocab",
+      "en": "schedule a technician",
+      "zh": "預約技術人員",
+      "explain": "schedule 當動詞是「安排時間」。到府安裝或維修的人通常叫 technician，不叫 worker。",
+      "example": { "en": "Can we schedule a technician for Monday afternoon?", "zh": "我們可以預約星期一下午的技術人員嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "When is a good time for you?",
+      "zh": "你什麼時間方便？",
+      "explain": "這句是在問方便的時間，不是問你玩得開不開心。have a good time 才是「玩得愉快」。",
+      "example": { "en": "When is a good time to call you back?", "zh": "什麼時候方便回電給你？" }
+    },
+    {
+      "type": "culture",
+      "en": "Let me think about it.",
+      "zh": "我考慮看看。",
+      "explain": "在台灣常是委婉拒絕，但英語客服和業務會當真，之後還會再來追蹤。不需要就直接說 No, thank you.，一點也不失禮。",
+      "example": { "en": "No, thank you. I'm happy with my plan.", "zh": "不用了，謝謝。我目前的方案就很好。" }
+    }
+  ]
+}

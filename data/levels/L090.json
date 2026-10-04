@@ -1,0 +1,266 @@
+{
+  "id": "L090",
+  "location": { "en": "Seafood restaurant, private dining room", "zh": "海鮮餐廳，包廂" },
+  "goal": { "en": "Host a client at a business dinner, from ordering to goodbye.", "zh": "在商務晚宴上招待客戶，從點菜到道別都得體。" },
+  "background": "private dining room of an upscale seafood restaurant, round table with white cloth and a glass lazy susan, warm pendant lights, large window over a night harbor, evening",
+  "cast": ["ms_wong", "c09_buyer"],
+  "intro": [
+    { "who": "narrator", "en": "To celebrate the new contract, Ms. Wong and you take Mr. Becker to dinner before his flight home tomorrow.", "zh": "為了慶祝新合約，王經理和你在貝克先生明天搭機回國前，請他吃晚餐。" },
+    { "who": "ms_wong", "expr": "happy", "en": "Kai, you know this place well. Why don't you help Mr. Becker with the menu?", "zh": "凱，你對這家店很熟。要不要幫貝克先生看看菜單？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_buyer", "expr": "neutral", "en": "Everything looks good, and there's so much to choose from. What would you recommend?", "zh": "每道菜看起來都很好，選擇好多。你會推薦什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "The grilled sea bass is excellent here. Would you like to share a few starters too?",
+          "zh": "這裡的烤鱸魚非常好吃。您想不想也一起分享幾道前菜？",
+          "ok": true,
+          "tip": "先推薦招牌菜，再用 Would you like to... 詢問對方意願，不替客人做主。"
+        },
+        {
+          "en": "Don't worry, I'll just order for everyone. Ten dishes to share, like we do back home.",
+          "zh": "別擔心，我幫大家點就好。點十道菜一起分，就像我們家鄉那樣。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Ten dishes? For three people? I was rather hoping to choose my own meal.", "zh": "十道菜？三個人吃？我其實比較希望自己點自己的餐。" }
+            ],
+            "title": { "en": "Feast for Ten", "zh": "十人份大餐" },
+            "story": { "en": "The lazy susan spins with enough food for a wedding. Mr. Becker politely eats rice and wonders what he would have chosen.", "zh": "轉盤上的菜多到可以辦喜酒。貝克先生客氣地吃著白飯，心裡想著自己原本會點什麼。" },
+            "why": "在台灣常由主人點一桌菜大家分，但許多西方客人習慣自己點主菜。先推薦，再讓對方選：The grilled sea bass is excellent here. Would you like to share a few starters too?。"
+          }
+        },
+        {
+          "en": "I recommend you to try the sea bass. It is very fresh and very delicious.",
+          "zh": "我推薦你試試鱸魚。非常新鮮，非常好吃。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Recommend me to... ah, you mean I should try it. Very, very good, then.", "zh": "推薦我去……啊，你是說我應該試試看。那就是非常、非常好囉。" }
+            ],
+            "title": { "en": "Very Very", "zh": "非常非常" },
+            "story": { "en": "Mr. Becker orders the sea bass. Your recommendation works, but it sounds more like a school essay than a confident host.", "zh": "貝克先生點了鱸魚。你的推薦有效，但聽起來比較像作文，而不是從容的主人。" },
+            "why": "recommend 後面不接「人 + to V」，要說 I recommend you try the sea bass.；一直重複 very 也顯得單調。更自然的說法：The grilled sea bass is excellent here.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "The drinks arrive, and everyone raises a glass.", "zh": "飲料送上來了，大家都舉起了杯子。" },
+        { "who": "ms_wong", "expr": "happy", "en": "Kai, why don't you say a few words for our guest?", "zh": "凱，要不要為我們的貴賓說幾句話？" }
+      ],
+      "choices": [
+        {
+          "en": "I'd like to propose a toast to Mr. Becker, and to a long partnership. Cheers!",
+          "zh": "我想敬貝克先生一杯，也敬我們長久的合作。乾杯！",
+          "ok": true,
+          "tip": "正式敬酒用 I'd like to propose a toast to...，簡短真誠，最後說 Cheers!。"
+        },
+        {
+          "en": "To Mr. Becker! Bottoms up, everyone. If you don't finish your glass, you don't give me face!",
+          "zh": "敬貝克先生！大家乾杯。誰不喝完，就是不給我面子！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "I'd rather not finish it in one go. I have an early flight tomorrow.", "zh": "我不太想一口喝完。我明天一早要搭飛機。" }
+            ],
+            "title": { "en": "Pressure Toast", "zh": "勸酒壓力" },
+            "story": { "en": "Mr. Becker takes a polite sip and sets the glass far away from you. Ms. Wong quickly changes the subject.", "zh": "貝克先生禮貌地啜了一口，就把杯子放得離你遠遠的。王經理趕緊轉移話題。" },
+            "why": "勸酒、要求乾杯在許多文化中會讓人不舒服，在商務場合更是失禮。敬酒只要舉杯說祝福：I'd like to propose a toast to Mr. Becker. Cheers!。"
+          }
+        },
+        {
+          "en": "Everyone, let's dry the cup together! For our friendship and our cooperation!",
+          "zh": "各位，我們一起乾杯！為了我們的友誼和合作！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Dry the cup? Should I ask the waiter for a towel?", "zh": "把杯子擦乾？我該跟服務生要條毛巾嗎？" }
+            ],
+            "title": { "en": "Dry the Cup", "zh": "擦乾杯子" },
+            "story": { "en": "Mr. Becker looks around for a napkin. The toast turns into a short lesson on drinking words.", "zh": "貝克先生四處找餐巾。一場敬酒變成了喝酒用語的小課堂。" },
+            "why": "「乾杯」直譯成 dry the cup，英文母語者聽不懂。英文說 Cheers!，正式敬酒說 I'd like to propose a toast to...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_buyer", "expr": "happy", "en": "Ms. Wong tells me you moved here from abroad. What do you miss most about home?", "zh": "王經理說你是從國外搬來的。你最想念家鄉的什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Honestly, the night markets and the street food. Have you ever been to one?",
+          "zh": "老實說，是夜市和小吃。您去過夜市嗎？",
+          "ok": true,
+          "tip": "回答私人話題時簡短分享，再反問對方，讓對話有來有往。"
+        },
+        {
+          "en": "I miss my mother cooking the most. Her beef noodle is the best of the world.",
+          "zh": "我最想念我媽媽煮的菜。她的牛肉麵是世界上最好吃的。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Your mother... is cooking? Ah, your mother's cooking. Of the world?", "zh": "你媽媽……正在煮飯？啊，是你媽媽煮的菜。世界的？" }
+            ],
+            "title": { "en": "Lost in the Kitchen", "zh": "迷失在廚房" },
+            "story": { "en": "It is a lovely memory, but Mr. Becker spends most of it decoding the sentence. The beef noodles never quite reach him.", "zh": "這是很溫馨的回憶，但貝克先生大半時間都在解讀句子。牛肉麵的美味始終沒傳達到。" },
+            "why": "所有格要加 's：my mother's cooking；「世界上最好的」是 the best in the world，不是 of the world。牛肉麵可以說 beef noodle soup。"
+          }
+        },
+        {
+          "en": "Let's not talk about that. Can we confirm the delivery schedule for next month instead?",
+          "zh": "我們別聊這個了。可以改來確認下個月的出貨時程嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "I was only trying to get to know you. But fine, the schedule.", "zh": "我只是想多認識你一點。不過好吧，談時程。" }
+            ],
+            "title": { "en": "All Work, No Dinner", "zh": "只談公事的晚餐" },
+            "story": { "en": "The rest of the dinner feels like a second meeting. Mr. Becker checks his watch twice before dessert.", "zh": "剩下的晚餐感覺像第二場會議。甜點上桌前，貝克先生看了兩次手錶。" },
+            "why": "商務晚餐的閒聊是建立關係的機會，對方問私人話題時硬拉回公事，會顯得冷淡。簡單分享再反問：Honestly, the night markets. Have you ever been to one?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "After dessert, the waiter brings the bill. Mr. Becker reaches for it first.", "zh": "甜點吃完後，服務生送來帳單。貝克先生先伸手去拿。" },
+        { "who": "c09_buyer", "expr": "happy", "en": "Please, let me get this. You've both been wonderful hosts.", "zh": "請讓我來付吧。你們兩位都是很棒的主人。" }
+      ],
+      "choices": [
+        {
+          "en": "That's very kind, but you're our guest tonight. It's our pleasure.",
+          "zh": "您真客氣，但今晚您是我們的客人。這是我們的榮幸。",
+          "ok": true,
+          "tip": "主人請客時說 You're our guest tonight.，溫和而堅定地婉拒對方買單。"
+        },
+        {
+          "en": "No, no, no! Give it to me! I insist, I insist! You can't pay, absolutely not!",
+          "zh": "不不不！給我！我堅持，我堅持！您不能付，絕對不行！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "All right, all right! There's no need to wrestle me for it.", "zh": "好啦好啦！不需要跟我搶成這樣。" }
+            ],
+            "title": { "en": "Bill Battle", "zh": "搶帳單大戰" },
+            "story": { "en": "You win the bill, and the next table wins a free show. Ms. Wong pretends to check her phone.", "zh": "你搶到了帳單，隔壁桌則免費看了一場表演。王經理假裝在看手機。" },
+            "why": "在台灣搶著買單是禮貌，但激烈拉扯在許多文化中會讓人尷尬。溫和堅定就好：That's very kind, but you're our guest tonight.。"
+          }
+        },
+        {
+          "en": "No, no. This meal I invite you. Next time you can invite me back.",
+          "zh": "不不，這餐我請你。下次你可以再請我。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "You invite me... to this meal? But I'm already here.", "zh": "你邀請我……來吃這頓飯？可是我已經在這裡了。" }
+            ],
+            "title": { "en": "Already Invited", "zh": "早就被邀請了" },
+            "story": { "en": "Mr. Becker thanks you for the invitation, again. Nobody is quite sure who is paying until Ms. Wong signs the bill.", "zh": "貝克先生又一次感謝你的邀請。直到王經理簽了帳單，大家才確定是誰付錢。" },
+            "why": "「這餐我請」不能直譯成 I invite you，invite 是邀請別人參加活動。英文說 This one's on us. 或 It's our treat.，也可以說 You're our guest tonight.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Outside the restaurant, a taxi is waiting to take Mr. Becker back to his hotel.", "zh": "餐廳外，一輛計程車正等著送貝克先生回飯店。" },
+        { "who": "c09_buyer", "expr": "happy", "en": "Thank you both for a wonderful evening. It was a pleasure doing business with you.", "zh": "謝謝兩位今晚的款待。很高興和你們做生意。" }
+      ],
+      "choices": [
+        {
+          "en": "The pleasure was ours. Have a safe flight, and we look forward to working together.",
+          "zh": "這是我們的榮幸。祝您一路平安，期待我們的合作。",
+          "ok": true,
+          "tip": "對方說 It was a pleasure... 時，用 The pleasure was ours. 回應，再加上一句祝福。"
+        },
+        {
+          "en": "Wish you have a nice trip back to home, and hope we can cooperate happily.",
+          "zh": "祝你回家一路順利，希望我們能合作愉快。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_buyer", "expr": "confused", "en": "Back to home... cooperate happily? Thank you, I think.", "zh": "回到家……愉快地合作？謝謝，大概吧。" }
+            ],
+            "title": { "en": "Almost There", "zh": "差一點" },
+            "story": { "en": "Mr. Becker smiles and waves from the taxi. The goodbye is warm, just a little wobbly at the end.", "zh": "貝克先生在計程車裡微笑揮手。道別很溫馨，只是結尾有點搖晃。" },
+            "why": "wish 後面不接完整子句，要說 I hope you have a safe trip.；home 前面不加 to，說 back home。祝合作愉快可以說 We look forward to working together.。"
+          }
+        },
+        {
+          "en": "Finally! I'm so tired. Okay, bye-bye, see you next time. I really need to sleep.",
+          "zh": "終於！我好累。好，掰掰，下次見。我真的需要睡覺了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_buyer", "expr": "upset", "en": "Oh. I'm sorry to have kept you out so late.", "zh": "噢，抱歉讓你待到這麼晚。" }
+            ],
+            "title": { "en": "Too Honest", "zh": "太誠實了" },
+            "story": { "en": "Mr. Becker gets into the taxi feeling like a burden. A perfect evening ends on a yawn.", "zh": "貝克先生坐上計程車，覺得自己像個負擔。完美的夜晚以一個哈欠收場。" },
+            "why": "送客時說自己很累、「終於結束」，會讓對方覺得自己是負擔。把疲憊藏好，好好道別：The pleasure was ours. Have a safe flight.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_buyer", "expr": "happy", "en": "I'll be back in spring for the next order. Save me a seat at this table.", "zh": "春天我會再來談下一筆訂單。這張桌子幫我留個位子。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Well done tonight, Kai. Contracts are signed in meetings, but partnerships begin at dinner.", "zh": "今晚表現得很好，凱。合約是在會議上簽的，但合作關係是從晚餐開始的。" }
+    ],
+    "title": { "en": "A Perfect Host", "zh": "賓主盡歡" },
+    "story": { "en": "Mr. Becker sends a thank-you email from the airport. A week later, Alpenhaus orders lighting for three more hotels.", "zh": "貝克先生在機場寄來感謝信。一週後，阿爾彭豪斯飯店集團又為另外三家飯店下了照明訂單。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to propose a toast to...",
+      "zh": "我想敬……一杯。",
+      "explain": "正式敬酒的開頭，後面接人或事。說完舉杯說 Cheers!，不需要要求對方喝完。",
+      "example": { "en": "I'd like to propose a toast to our new partners. Cheers!", "zh": "我想敬我們的新夥伴一杯。乾杯！" }
+    },
+    {
+      "type": "culture",
+      "en": "Would you like to share a few starters?",
+      "zh": "要不要一起分幾道前菜？",
+      "explain": "許多西方客人習慣自己點主菜，主人可以推薦，但不要替所有人點一整桌。想分享時，前菜是最自然的選擇。",
+      "example": { "en": "The crab cakes are great. Would you like to share a few starters?", "zh": "蟹肉餅很好吃。要不要一起分幾道前菜？" }
+    },
+    {
+      "type": "phrase",
+      "en": "You're our guest tonight.",
+      "zh": "今晚您是我們的客人。",
+      "explain": "主人請客時婉拒對方買單的說法，溫和而堅定。也可以說 This one's on us. 或 It's our treat.。",
+      "example": { "en": "Please, put your wallet away. You're our guest tonight.", "zh": "請把錢包收起來，今晚您是我們的客人。" }
+    },
+    {
+      "type": "trap",
+      "en": "Cheers! / It's our treat.",
+      "zh": "乾杯！／我們請客。",
+      "explain": "「乾杯」不是 dry the cup，「我請你」也不是 I invite you（invite 是邀請別人參加活動）。喝酒說 Cheers!，請客說 It's our treat.。",
+      "example": { "en": "Cheers, everyone! And dinner is our treat tonight.", "zh": "大家乾杯！今晚的晚餐我們請客。" }
+    },
+    {
+      "type": "phrase",
+      "en": "The pleasure was mine.",
+      "zh": "這是我的榮幸。",
+      "explain": "回應 It was a pleasure... 的禮貌說法。代表公司時可以說 The pleasure was ours.，後面再加一句祝福。",
+      "example": { "en": "The pleasure was mine. Have a safe trip home.", "zh": "這是我的榮幸。祝您回程平安。" }
+    }
+  ]
+}

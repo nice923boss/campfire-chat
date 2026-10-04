@@ -1,0 +1,44 @@
+{
+  "ember": {
+    "name": "Ember",
+    "nameZh": "安柏",
+    "role": { "en": "Host of Campfire Chat", "zh": "營火英語社主持人" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, long dark brown hair in a loose side braid, warm amber eyes, orange plaid flannel shirt over a cream knit sweater, small leaf-shaped pendant necklace, gentle confident mentor vibe"
+  },
+  "mia": {
+    "name": "Mia",
+    "nameZh": "米亞",
+    "role": { "en": "Kai's roommate", "zh": "凱的室友" },
+    "gender": "female",
+    "appearance": "young woman in her early 20s, short wavy black bob hair with a small yellow hair clip, bright cheerful eyes, oversized pastel mint hoodie, silver hoop earrings, energetic friendly vibe"
+  },
+  "leo": {
+    "name": "Leo",
+    "nameZh": "里歐",
+    "role": { "en": "Classmate and best friend", "zh": "同學兼好友" },
+    "gender": "male",
+    "appearance": "young man in his early 20s, messy black hair, round black-framed glasses, light blue denim jacket over a white t-shirt, canvas backpack strap on one shoulder, laid-back easygoing vibe"
+  },
+  "mr_lin": {
+    "name": "Mr. Lin",
+    "nameZh": "林先生",
+    "role": { "en": "Landlord", "zh": "房東" },
+    "gender": "male",
+    "appearance": "man in his late 50s, short gray hair, neat gray mustache, beige cardigan over a checked collared shirt, reading glasses hanging on a cord, strict but kind landlord vibe"
+  },
+  "ms_wong": {
+    "name": "Ms. Wong",
+    "nameZh": "王經理",
+    "role": { "en": "Manager at Brightway", "zh": "Brightway 公司經理" },
+    "gender": "female",
+    "appearance": "woman in her mid 40s, sleek black shoulder-length hair tucked behind one ear, thin gold-rimmed glasses, tailored charcoal blazer over a white silk blouse, small pearl earrings, sharp professional manager vibe"
+  },
+  "sam": {
+    "name": "Sam",
+    "nameZh": "山姆",
+    "role": { "en": "Coworker at Brightway", "zh": "Brightway 同事" },
+    "gender": "male",
+    "appearance": "man in his late 20s, short undercut black hair, light stubble, rolled-up sleeves on a navy button-down shirt, lanyard with employee badge, smartwatch, friendly helpful coworker vibe"
+  }
+}

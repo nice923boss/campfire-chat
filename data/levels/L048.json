@@ -1,0 +1,223 @@
+{
+  "id": "L048",
+  "location": { "en": "Harbor Market, Port Aurora", "zh": "極光港的港邊市集" },
+  "goal": { "en": "Ask the price, get a friendly discount and buy two sea-glass keychains as gifts.", "zh": "問價錢、客氣地談個折扣，買兩個海玻璃鑰匙圈當伴手禮。" },
+  "background": "outdoor harbor market stall with a striped canvas roof, wooden table covered with sea-glass jewelry and keychains in small baskets, fishing nets, boats in the water behind, sunny morning",
+  "cast": ["c05_vendor", "mia"],
+  "intro": [
+    { "who": "narrator", "en": "The next morning, the harbor market is full of stalls. You want to bring something home for your family.", "zh": "隔天早上，港邊市集擺滿了攤位。你想帶點東西回家給家人。" },
+    { "who": "mia", "expr": "happy", "en": "Kai, look! Sea-glass keychains. Your family would love these.", "zh": "凱，你看！海玻璃鑰匙圈。你家人一定會喜歡。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_vendor", "expr": "happy", "en": "Morning! Everything here is handmade. Take your time.", "zh": "早安！這裡每樣東西都是手工做的，慢慢看。" }
+      ],
+      "choices": [
+        {
+          "en": "They're so pretty. How much is this one?",
+          "zh": "好漂亮。請問這個多少錢？",
+          "ok": true,
+          "tip": "How much is this one? 是問價錢最自然的說法，指著商品說 this one 就很清楚。"
+        },
+        {
+          "en": "They're so pretty. This one how much money?",
+          "zh": "好漂亮。這個多少錢？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_vendor", "expr": "confused", "en": "How much money is in it? None, friend. It's a keychain, not a wallet.", "zh": "裡面有多少錢？一毛都沒有啦，朋友。這是鑰匙圈，不是錢包。" }
+            ],
+            "title": { "en": "Empty Wallet", "zh": "空空的錢包" },
+            "story": { "en": "Benny spends five minutes showing you that the keychain has no secret pocket. You still don't know the price.", "zh": "班尼花了五分鐘證明鑰匙圈沒有暗袋。你還是不知道它多少錢。" },
+            "why": "「這個多少錢」照中文字序說成 This one how much money? 不是英文句子。要說 How much is this one?"
+          }
+        },
+        {
+          "en": "Okay, how much? And don't give me the tourist price.",
+          "zh": "好，多少錢？不要給我觀光客價喔。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_vendor", "expr": "upset", "en": "Tourist price? Everyone pays the same here. It's written right on the basket.", "zh": "觀光客價？這裡每個人付的都一樣，價錢就寫在籃子上。" }
+            ],
+            "title": { "en": "Price Tag Shame", "zh": "標價就在眼前" },
+            "story": { "en": "You look down and see the price clearly on the basket. Benny serves the next customer first.", "zh": "你低頭一看，價錢清清楚楚寫在籃子上。班尼先去招呼下一位客人了。" },
+            "why": "一開口就暗示老闆會坑觀光客，等於指控對方不老實，很失禮。先客氣地問 How much is this one?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_vendor", "expr": "neutral", "en": "That one's twelve dollars. I collect all the glass myself on the beach.", "zh": "那個十二元。所有的玻璃都是我自己在海邊撿的。" }
+      ],
+      "choices": [
+        {
+          "en": "It's lovely. Could you do a better price?",
+          "zh": "真的很美。價錢可以再好一點嗎？",
+          "ok": true,
+          "tip": "Could you do a better price? 是客氣的殺價說法，先稱讚商品再問，語氣更好。"
+        },
+        {
+          "en": "It's lovely. Can you count it cheaper for me?",
+          "zh": "真的很美。可以算我便宜一點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_vendor", "expr": "confused", "en": "Count it cheaper? Okay... one, two, twelve. Still twelve dollars.", "zh": "算便宜一點？好……一、二、十二。還是十二元。" }
+            ],
+            "title": { "en": "Math Class", "zh": "數學課" },
+            "story": { "en": "Benny counts very carefully, and the number does not change. Mia pretends to look at bracelets.", "zh": "班尼非常認真地數，數字一點也沒變。米亞假裝在看手鍊。" },
+            "why": "「算我便宜一點」的「算」不能翻成 count。要說 Could you do a better price? 或 Can you give me a discount?"
+          }
+        },
+        {
+          "en": "Twelve? No way. Five dollars, final offer.",
+          "zh": "十二？不可能。五元，最後出價。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_vendor", "expr": "upset", "en": "Five? Friend, that glass took me a whole week to find.", "zh": "五元？朋友，那塊玻璃我找了整整一個禮拜。" }
+            ],
+            "title": { "en": "Final Offer Rejected", "zh": "最後出價被打槍" },
+            "story": { "en": "Benny gently takes the keychain back and puts it in the basket. Your final offer was very final.", "zh": "班尼輕輕把鑰匙圈拿回去，放回籃子裡。你的最後出價，真的成了最後。" },
+            "why": "在國外市集可以客氣地問折扣，但直接砍到一半以下，對手工藝品攤主很失禮。說 Could you do a better price? 讓老闆自己開價。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_vendor", "expr": "happy", "en": "Tell you what. If you buy two, I'll make it twenty for both.", "zh": "這樣吧。買兩個的話，兩個算你二十元。" },
+        { "who": "mia", "expr": "happy", "en": "Kai, that's a good deal!", "zh": "凱，很划算耶！" }
+      ],
+      "choices": [
+        {
+          "en": "Deal! I'll take two, then.",
+          "zh": "成交！那我買兩個。",
+          "ok": true,
+          "tip": "I'll take two. 是決定購買的固定說法，take 在這裡就是「買」。"
+        },
+        {
+          "en": "Great! So one is ten? I'll take one.",
+          "zh": "太好了！所以一個十元？那我買一個。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_vendor", "expr": "confused", "en": "No, no. Twenty is for two. One is still twelve.", "zh": "不不不，二十元是兩個的價錢。一個還是十二元。" }
+            ],
+            "title": { "en": "Creative Math", "zh": "創意算術" },
+            "story": { "en": "Benny explains the deal three times with his fingers. Mia buys the second keychain just to end the lesson.", "zh": "班尼用手指把優惠解釋了三遍。米亞為了結束這堂課，自己買了第二個。" },
+            "why": "If you buy two, I'll make it twenty for both. 是「買兩個才有優惠」，不是單價變十元。要接受就說 Deal! I'll take two."
+          }
+        },
+        {
+          "en": "Deal! I will taking two of them.",
+          "zh": "成交！我會買兩個。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_vendor", "expr": "confused", "en": "You will be taking them... later? Should I keep them for you?", "zh": "你之後會……來拿？要我先幫你留著嗎？" }
+            ],
+            "title": { "en": "On Hold Forever", "zh": "永遠的保留品" },
+            "story": { "en": "Benny puts the keychains aside for later. You forget all about them, and they are still waiting for you today.", "zh": "班尼把鑰匙圈留起來等你。你完全忘了這件事，它們到今天都還在等你。" },
+            "why": "will 後面要接原形動詞，不能接 V-ing。當場決定買就說 I'll take two.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_vendor", "expr": "neutral", "en": "Want me to wrap them? Glass can break in a suitcase.", "zh": "要幫你包起來嗎？玻璃放在行李箱裡可能會破。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, please. They're gifts for my family.",
+          "zh": "好，麻煩你。這是要送家人的禮物。",
+          "ok": true,
+          "tip": "被問要不要包裝時，Yes, please. 再補一句用途，老闆會包得更用心。"
+        },
+        {
+          "en": "Yes, please help me package them.",
+          "zh": "好，請幫我包裝。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_vendor", "expr": "confused", "en": "Package them? You want me to mail them somewhere? That's eighteen dollars for shipping.", "zh": "寄包裹？你要我幫你寄到哪裡嗎？運費十八元喔。" }
+            ],
+            "title": { "en": "Expensive Delivery", "zh": "昂貴的宅配" },
+            "story": { "en": "The shipping costs almost as much as the keychains. Your family gets the gifts two weeks after you get home.", "zh": "運費差不多跟鑰匙圈一樣貴。你回家兩週後，家人才收到禮物。" },
+            "why": "中文的「包裝」不要直接說 package，package 當名詞常指「包裹」。要說 Could you wrap them? 或直接回答 Yes, please."
+          }
+        },
+        {
+          "en": "Obviously. Glass breaks really easily, you know.",
+          "zh": "廢話。玻璃很容易破，你知道吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_vendor", "expr": "upset", "en": "I do know. I just told you that.", "zh": "我知道啊。我剛剛才跟你說過。" }
+            ],
+            "title": { "en": "Thanks, Captain Obvious", "zh": "謝謝你喔，明白人" },
+            "story": { "en": "Benny wraps the keychains in silence. Mia buys him a coffee as an apology.", "zh": "班尼默默包好鑰匙圈。米亞買了一杯咖啡請他，當作賠罪。" },
+            "why": "Obviously 加上 you know 聽起來像在嫌對方問了笨問題。對方好意提議時，說 Yes, please. 加上感謝就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_vendor", "expr": "happy", "en": "Here you go. Two keychains, wrapped with love. Twenty dollars, please.", "zh": "給你。兩個鑰匙圈，用心包好了。一共二十元。" },
+      { "who": "mia", "expr": "happy", "en": "Your family is going to love these, Kai.", "zh": "凱，你家人一定會很喜歡。" }
+    ],
+    "title": { "en": "Treasures from the Sea", "zh": "大海的寶物" },
+    "story": { "en": "You walk away with two little pieces of Port Aurora, a fair price and a new friend at the market.", "zh": "你帶著兩小塊極光港、一個公道的價錢，還在市集交到一個新朋友。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "How much is this one?",
+      "zh": "這個多少錢？",
+      "explain": "問價錢用 How much is...? 複數商品用 How much are these?。不要照中文字序說 This one how much money?",
+      "example": { "en": "How much are these earrings?", "zh": "這副耳環多少錢？" }
+    },
+    {
+      "type": "trap",
+      "en": "Could you do a better price?",
+      "zh": "價錢可以再好一點嗎？",
+      "explain": "「算我便宜一點」的「算」不是 count。客氣地殺價可以說 Could you do a better price? 或 Is there a discount if I buy two?",
+      "example": { "en": "Is there a discount if I buy two?", "zh": "買兩個有折扣嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Bargaining abroad",
+      "zh": "在國外殺價的分寸",
+      "explain": "市集和手工攤位通常可以客氣地問一次折扣，但不要一開口就砍半，也不要暗示老闆坑人。百貨公司和連鎖店則是不二價，不要殺價。",
+      "example": { "en": "It's lovely. Could you do a better price if I buy two?", "zh": "真的很美。買兩個的話，價錢可以好一點嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll take two.",
+      "zh": "我買兩個。",
+      "explain": "決定要買時說 I'll take it. 或 I'll take two.，take 在這裡就是「買下」。用 I'll（I will）表示當下的決定。",
+      "example": { "en": "I'll take the blue one, please.", "zh": "我要買藍色那個，麻煩你。" }
+    },
+    {
+      "type": "vocab",
+      "en": "wrap / package",
+      "zh": "包起來／包裹",
+      "explain": "把禮物包起來是 wrap，gift wrap 是禮品包裝。package 當名詞常指要寄送的「包裹」，說 package them 容易被聽成要寄東西。",
+      "example": { "en": "Could you gift wrap this, please?", "zh": "可以幫我包成禮物嗎？" }
+    }
+  ]
+}

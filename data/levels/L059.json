@@ -1,0 +1,226 @@
+{
+  "id": "L059",
+  "location": { "en": "Customer service desk at Harbor Home", "zh": "Harbor Home 賣場的客服櫃檯" },
+  "goal": { "en": "Return a broken blender and get a working one.", "zh": "退回壞掉的果汁機，換一台能用的。" },
+  "background": "bright home goods store customer service counter, white countertop, shelves of kitchen appliances and colorful mixing bowls behind it, polished floor, warm overhead lights",
+  "cast": ["c06_clerk"],
+  "intro": [
+    { "who": "narrator", "en": "Last week you bought a blender to make smoothies in your new kitchen. Now it won't even turn on.", "zh": "上禮拜你買了一台果汁機，想在新廚房打果昔。現在它連開都開不了。" },
+    { "who": "narrator", "en": "You bring it back to Harbor Home with the receipt.", "zh": "你帶著收據，把它拿回 Harbor Home。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_clerk", "expr": "happy", "en": "Hi there! Welcome to Harbor Home customer service. What can I do for you?", "zh": "嗨！歡迎來到 Harbor Home 客服櫃檯。有什麼可以幫您的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I'd like to return this blender. I bought it last week.",
+          "zh": "嗨。我想退這台果汁機。我上禮拜買的。",
+          "ok": true,
+          "tip": "I'd like to return this. 是退貨的標準說法，再補一句什麼時候買的，店員就能開始處理。"
+        },
+        {
+          "en": "Hi. I want to back this blender. It's broken, so I want back.",
+          "zh": "嗨。我要退這台果汁機。它壞了，所以我要退。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_clerk", "expr": "confused", "en": "Back it? Like, you support it? Sorry, I'm not sure what you need.", "zh": "支持它？你是說你很挺它嗎？抱歉，我不太懂你需要什麼。" }
+            ],
+            "title": { "en": "Biggest Fan", "zh": "頭號粉絲" },
+            "story": { "en": "Tyler decides you're a fan of the brand and shows you their newest model. Ten minutes later, you're still holding the broken one.", "zh": "泰勒以為你是這個牌子的粉絲，開始介紹最新款。十分鐘後，你手上還是拿著那台壞掉的。" },
+            "why": "「退貨」不是 back，英文說 return：I'd like to return this. 想拿回錢則說 I'd like a refund."
+          }
+        },
+        {
+          "en": "Hi. This blender is already break. Can I returning it, please?",
+          "zh": "嗨。這台果汁機已經壞了。我可以退嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_clerk", "expr": "confused", "en": "Already break...? Oh, did you break it? Accidents aren't covered, I'm afraid.", "zh": "已經弄壞……？喔，是你弄壞的嗎？恐怕意外損壞不在保固範圍內。" }
+            ],
+            "title": { "en": "Not My Fault", "zh": "不是我弄壞的" },
+            "story": { "en": "It takes ten minutes to convince Tyler you didn't drop it. The line behind you is not amused.", "zh": "你花了十分鐘才讓泰勒相信你沒摔到它。排在後面的客人臉色都不太好看。" },
+            "why": "「已經壞了」是 It's already broken. 或 It stopped working.；is break 不成句，還可能聽成是你弄壞的。can 後面接原形：Can I return it?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_clerk", "expr": "neutral", "en": "Sure, I can help with that. Do you have the receipt?", "zh": "沒問題，我可以幫您處理。有帶收據嗎？" },
+        { "who": "narrator", "en": "You hand Tyler the receipt.", "zh": "你把收據交給泰勒。" },
+        { "who": "c06_clerk", "expr": "neutral", "en": "Perfect. And what seems to be the problem with it?", "zh": "太好了。那它是出了什麼問題呢？" }
+      ],
+      "choices": [
+        {
+          "en": "It stopped working after three uses. It made a loud noise first.",
+          "zh": "用了三次就壞了。壞掉之前發出很大的聲音。",
+          "ok": true,
+          "tip": "It stopped working after... 具體說出用了多久、發生什麼事，店員一聽就知道是產品瑕疵。"
+        },
+        {
+          "en": "Your blender is junk. It broke so fast. Such terrible quality!",
+          "zh": "你們的果汁機是垃圾。這麼快就壞。品質超爛！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_clerk", "expr": "upset", "en": "I'm sorry. I don't make them, but I can help you return it.", "zh": "很抱歉。東西不是我做的，但我可以幫您辦退貨。" }
+            ],
+            "title": { "en": "No Coupon", "zh": "折價券沒了" },
+            "story": { "en": "Tyler processes your return in silence. The ten percent coupon he gives to unhappy customers stays in the drawer.", "zh": "泰勒默默幫你處理。他平常會送不滿意的客人九折券，這次那張券一直留在抽屜裡。" },
+            "why": "抱怨產品可以，但對店員罵 junk、terrible 不會讓事情更快。描述發生了什麼就好：It stopped working after three uses."
+          }
+        },
+        {
+          "en": "Nothing happened! I used it normally, I promise. It's not my fault.",
+          "zh": "我什麼都沒做！我都正常使用，真的。不是我的錯。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_clerk", "expr": "confused", "en": "Oh, I wasn't blaming you. I just need to know what's wrong with it.", "zh": "喔，我不是在怪您。我只是需要知道它哪裡有問題。" }
+            ],
+            "title": { "en": "Defense Mode", "zh": "自動防衛模式" },
+            "story": { "en": "Tyler has to ask three more times before you describe the problem. The line behind you keeps getting longer.", "zh": "泰勒又問了三次，你才終於說出故障狀況。後面排隊的人越來越多。" },
+            "why": "What seems to be the problem? 只是想知道故障狀況，不是在懷疑你。直接描述問題：It stopped working after three uses."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_clerk", "expr": "neutral", "en": "Yeah, that's definitely not normal. Sorry about that.", "zh": "嗯，那絕對不正常。真是抱歉。" },
+        { "who": "c06_clerk", "expr": "neutral", "en": "Would you like a refund or an exchange?", "zh": "您想要退款，還是換貨？" }
+      ],
+      "choices": [
+        {
+          "en": "I'd prefer an exchange for the same model, please.",
+          "zh": "我想換一台同款的。",
+          "ok": true,
+          "tip": "I'd prefer... 從兩個選項中清楚選一個，同時說明你要換什麼。"
+        },
+        {
+          "en": "Yes, please. That would be great. Thank you so much.",
+          "zh": "好，麻煩你。那太好了。非常感謝。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_clerk", "expr": "confused", "en": "Yes... to which one? The refund or the exchange?", "zh": "好……是哪一個？退款還是換貨？" }
+            ],
+            "title": { "en": "Yes to What?", "zh": "是要哪一個？" },
+            "story": { "en": "Tyler guesses \"refund.\" You walk out with your money but no blender, and the smoothie plan is off again.", "zh": "泰勒猜你要「退款」。你拿回了錢，卻沒有果汁機，果昔計畫又泡湯了。" },
+            "why": "A or B 的問題不能只回答 Yes，要選一個：I'd prefer an exchange. 或 A refund, please."
+          }
+        },
+        {
+          "en": "Can I change it to a new one? I still want a blender.",
+          "zh": "可以換一台新的嗎？我還是想要果汁機。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_clerk", "expr": "confused", "en": "Change it? Oh, to a different one? Sure! Our new model comes in pink.", "zh": "換掉？喔，換別款嗎？沒問題！我們的新款有粉紅色。" }
+            ],
+            "title": { "en": "Think Pink", "zh": "粉紅驚喜" },
+            "story": { "en": "Before you can explain, Tyler hands you a hot-pink blender. It costs ten dollars more, and it is very, very pink.", "zh": "你還來不及解釋，泰勒就遞給你一台亮粉紅色的果汁機。它貴了十元，而且真的非常、非常粉紅。" },
+            "why": "「換一台新的」英文說 exchange it for a new one 或 I'd like an exchange.；change 容易被聽成「換成別款」。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_clerk", "expr": "happy", "en": "Here's a brand-new one, same model.", "zh": "這是全新的一台，同款的。" },
+        { "who": "c06_clerk", "expr": "neutral", "en": "Would you like me to test it before you go?", "zh": "要我在您離開前先幫您測試一下嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, that would be great. Better safe than sorry.",
+          "zh": "好啊，那太好了。小心一點總是好的。",
+          "ok": true,
+          "tip": "Yes, that would be great. 大方接受對方的好意。Better safe than sorry. 是「謹慎為上」的常用說法。"
+        },
+        {
+          "en": "Oh, no, don't trouble yourself. It's really okay.",
+          "zh": "喔，不用，別麻煩了。真的沒關係。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_clerk", "expr": "confused", "en": "Oh, okay! If you're sure.", "zh": "喔，好吧！如果您確定的話。" }
+            ],
+            "title": { "en": "Round Two", "zh": "再跑一趟" },
+            "story": { "en": "At home, the new blender turns on, but the lid doesn't fit. Back to Harbor Home tomorrow.", "zh": "回到家，新果汁機能開機，蓋子卻蓋不上。明天又得跑一趟 Harbor Home。" },
+            "why": "台灣人習慣先客氣推辭「不用麻煩了」，但英語裡對方會照字面接受。需要的話就直接答應：Yes, that would be great."
+          }
+        },
+        {
+          "en": "Sure. And this time, give me one that actually works.",
+          "zh": "好啊。這次給我一台真的能用的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_clerk", "expr": "upset", "en": "Of course. That's why I offered.", "zh": "當然。我就是為了這個才提議的。" }
+            ],
+            "title": { "en": "Chilly Goodbye", "zh": "冷冷的道別" },
+            "story": { "en": "Tyler tests it without a word. It works perfectly, but the goodbye is a little chilly.", "zh": "泰勒一句話也沒說就測試完了。果汁機運轉正常，但道別的氣氛有點冷。" },
+            "why": "對方主動幫忙，你卻酸一句 this time... actually works，聽起來很不客氣。直接接受好意：Yes, that would be great."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_clerk", "expr": "happy", "en": "Works perfectly. Enjoy your smoothies!", "zh": "運作正常。好好享受您的果昔吧！" },
+      { "who": "narrator", "en": "The blender hums smoothly, with no strange noises.", "zh": "果汁機運轉得很順，沒有任何怪聲。" }
+    ],
+    "title": { "en": "Smooth Exchange", "zh": "換貨順利" },
+    "story": { "en": "The next morning, you make your first banana smoothie in your own kitchen. It tastes like independence.", "zh": "隔天早上，你在自己的廚房打了第一杯香蕉果昔。喝起來是獨立生活的味道。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to return this.",
+      "zh": "我想退貨。",
+      "explain": "return 是退貨的標準說法。記得帶收據（receipt），很多店沒有收據就不能退。",
+      "example": { "en": "I'd like to return these shoes. They're too small.", "zh": "我想退這雙鞋，尺寸太小了。" }
+    },
+    {
+      "type": "phrase",
+      "en": "It stopped working after...",
+      "zh": "用了……之後就壞了",
+      "explain": "stop + V-ing 是「停止做某事」。說 It stopped working after a week. 比只說 It's broken 更具體。",
+      "example": { "en": "My headphones stopped working after two days.", "zh": "我的耳機用兩天就壞了。" }
+    },
+    {
+      "type": "vocab",
+      "en": "refund / exchange",
+      "zh": "退款／換貨",
+      "explain": "refund 是把錢退給你，exchange 是換一個新的或換別的商品。有些店只給 store credit（店內購物金）。",
+      "example": { "en": "Can I get a refund, or only an exchange?", "zh": "可以退款嗎？還是只能換貨？" }
+    },
+    {
+      "type": "trap",
+      "en": "Would you like A or B?",
+      "zh": "要 A 還是 B？",
+      "explain": "這是二選一的問題，回答 Yes 對方不知道你選哪個。直接說出你的選擇。",
+      "example": { "en": "Would you like a refund or an exchange? / A refund, please.", "zh": "您要退款還是換貨？／退款，謝謝。" }
+    },
+    {
+      "type": "culture",
+      "en": "Accept help when it's offered.",
+      "zh": "對方主動幫忙就接受",
+      "explain": "台灣人習慣先客氣推辭，但在英語文化中，No, it's okay. 會被照字面接受。需要就說 Yes, please. 或 That would be great.",
+      "example": { "en": "Would you like a bag? / Yes, please. Thanks.", "zh": "需要袋子嗎？／好的，謝謝。" }
+    }
+  ]
+}

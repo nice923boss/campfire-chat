@@ -1,0 +1,222 @@
+{
+  "id": "L026",
+  "location": { "en": "Maple Bay Language Institute, cafeteria", "zh": "楓灣語言學院，學生餐廳" },
+  "goal": { "en": "Order a safe lunch. You're allergic to peanuts.", "zh": "點一份安全的午餐。你對花生過敏。" },
+  "background": "busy school cafeteria with a long serving counter, steaming metal food trays behind glass, stacks of plastic lunch trays, round tables with chairs, bright noon light from tall windows",
+  "cast": ["c03_cafeteria", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "It's lunchtime. Leo is already in line with a tray.", "zh": "午餐時間到了。里歐已經端著餐盤在排隊。" },
+    { "who": "leo", "expr": "happy", "en": "I'm getting the noodles. They look amazing!", "zh": "我要點麵，看起來超好吃！" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_cafeteria", "expr": "happy", "en": "Next! What can I get you, hon?", "zh": "下一位！要吃什麼呢，親愛的？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi! What's in the noodles?",
+          "zh": "嗨！麵裡面有什麼？",
+          "ok": true,
+          "tip": "What's in...? 是問食材的最簡單說法。有過敏的人點餐前一定要先問。"
+        },
+        {
+          "en": "This one has put what inside?",
+          "zh": "這個裡面放了什麼？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "confused", "en": "Put what... where? Sorry, hon, the line is long.", "zh": "放什麼……放哪裡？抱歉，親愛的，後面很多人在排。" }
+            ],
+            "title": { "en": "Line Jam", "zh": "隊伍塞車" },
+            "story": { "en": "Martha can't understand you, and the line behind you grows longer. Someone sighs loudly.", "zh": "瑪莎聽不懂你在問什麼，後面的隊伍越排越長，有人大聲嘆了口氣。" },
+            "why": "「這個裡面放了什麼」逐字翻成英文會很混亂。問食材直接說 What's in the noodles? 或 What's in this?。"
+          }
+        },
+        {
+          "en": "Same as my friend. Anything is OK.",
+          "zh": "跟我朋友一樣，什麼都可以。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Wait, Kai! Isn't that peanut sauce on your plate?", "zh": "等等，凱！你盤子上那不是花生醬汁嗎？" }
+            ],
+            "title": { "en": "Vending Machine Lunch", "zh": "販賣機午餐" },
+            "story": { "en": "Leo saves you just in time and takes the extra plate. Your lunch is a bag of chips from the vending machine.", "zh": "里歐及時救了你，把多的那盤接過去。你的午餐變成販賣機的一包洋芋片。" },
+            "why": "「隨便、都可以」在台灣是客氣，但有過敏時很危險。國外點餐要主動說出需求，先問 What's in the noodles?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_cafeteria", "expr": "neutral", "en": "Noodles, chicken, and our famous peanut sauce.", "zh": "麵、雞肉，還有我們招牌的花生醬汁。" }
+      ],
+      "choices": [
+        {
+          "en": "Oh no. I'm allergic to peanuts.",
+          "zh": "糟糕，我對花生過敏。",
+          "ok": true,
+          "tip": "be allergic to + 東西，表示對某物過敏。allergic 是形容詞，前面要有 be 動詞。"
+        },
+        {
+          "en": "Oh no. I'm allergy peanuts.",
+          "zh": "糟糕，我花生過敏。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "confused", "en": "You're... peanuts? Extra peanuts, then?", "zh": "你是……花生？那就多加花生？" }
+            ],
+            "title": { "en": "Extra Crunchy", "zh": "加量加花生" },
+            "story": { "en": "Martha reaches for the peanut jar. Leo jumps in to explain, and you're saved by your friend.", "zh": "瑪莎伸手去拿花生罐。里歐趕緊幫你解釋，朋友救了你一命。" },
+            "why": "allergy 是名詞，不能直接當動詞用。要說 I'm allergic to peanuts. 或 I have a peanut allergy.。"
+          }
+        },
+        {
+          "en": "Peanuts? Sorry, my body can't eat.",
+          "zh": "花生？抱歉，我的身體不能吃。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "confused", "en": "Your body can't eat? Are you feeling sick, hon?", "zh": "你的身體不能吃？親愛的，你人不舒服嗎？" }
+            ],
+            "title": { "en": "Nurse's Office", "zh": "保健室之旅" },
+            "story": { "en": "Martha sends you to the school nurse. You spend lunchtime explaining that you are not sick.", "zh": "瑪莎把你送去保健室。你整個午休都在解釋自己沒有生病。" },
+            "why": "「我的身體不能吃」直譯會讓人以為你生病了。過敏要說清楚：I'm allergic to peanuts.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_cafeteria", "expr": "neutral", "en": "Good thing you told me! How about a beef burger?", "zh": "還好你有說！那來個牛肉漢堡怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "Hmm. Is there a vegetarian option?",
+          "zh": "嗯……有素食的選擇嗎？",
+          "ok": true,
+          "tip": "option 是「選項」。Is there a vegetarian option? 比 Do you have vegetable food? 自然得多。"
+        },
+        {
+          "en": "I eat vegetable. Any vegetable food?",
+          "zh": "我吃菜。有蔬菜的食物嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "confused", "en": "Vegetable food? Um, we have a side salad.", "zh": "蔬菜食物？嗯，我們有小份沙拉。" }
+            ],
+            "title": { "en": "Rabbit Lunch", "zh": "兔子午餐" },
+            "story": { "en": "You get three lettuce leaves and one tomato. You're hungry again by two o'clock.", "zh": "你拿到三片生菜和一顆番茄。不到兩點，肚子又餓了。" },
+            "why": "「吃素、素食」不是 eat vegetable 或 vegetable food。英文說 vegetarian，問餐點時說 Is there a vegetarian option?。"
+          }
+        },
+        {
+          "en": "Ew, a beef burger? No way.",
+          "zh": "噁，牛肉漢堡？才不要。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "upset", "en": "\"Ew\"? I made those burgers myself this morning.", "zh": "「噁」？那些漢堡可是我今天早上親手做的。" }
+            ],
+            "title": { "en": "Chef's Pride", "zh": "廚師的尊嚴" },
+            "story": { "en": "Martha serves you very slowly for the rest of the week. The line behind you does not like you either.", "zh": "這整個星期，瑪莎打菜給你都特別慢。後面排隊的人也不太喜歡你。" },
+            "why": "Ew 和 No way 對做菜的人很傷人。不想吃時客氣地問別的選擇：Hmm. Is there a vegetarian option?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_cafeteria", "expr": "happy", "en": "Sure! We have a veggie curry. No peanuts at all.", "zh": "有啊！我們有蔬菜咖哩，完全沒有花生。" }
+      ],
+      "choices": [
+        {
+          "en": "Perfect! I'll have the curry, please.",
+          "zh": "太好了！我要咖哩，謝謝。",
+          "ok": true,
+          "tip": "I'll have... 是點餐最常用的句型，比 I want... 更禮貌自然。"
+        },
+        {
+          "en": "Yes! I'd like have that, please.",
+          "zh": "好！我想要那個，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "confused", "en": "Like half? Half a curry, then?", "zh": "要一半？那就給你半份咖哩囉？" }
+            ],
+            "title": { "en": "Half Portion", "zh": "半份咖哩" },
+            "story": { "en": "Martha gives you half a bowl of curry. Leo shares some of his noodles, but you can't eat them.", "zh": "瑪莎給你半碗咖哩。里歐想分你一些麵，但你偏偏不能吃。" },
+            "why": "I'd like 後面接動詞要加 to：I'd like to have that.。漏掉 to，have 很容易被聽成 half。最簡單的說法是 I'll have that, please.。"
+          }
+        },
+        {
+          "en": "Whatever. I'll just eat that, then.",
+          "zh": "隨便啦，那我就吃那個吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_cafeteria", "expr": "upset", "en": "\"Whatever\"? Wow. You're welcome, I guess.", "zh": "「隨便」？哇。不客氣喔，我想。" }
+            ],
+            "title": { "en": "Cold Curry", "zh": "冷掉的咖哩" },
+            "story": { "en": "Martha scoops the curry without a word. It feels a little colder than everyone else's.", "zh": "瑪莎一句話也沒說就盛了咖哩。不知道為什麼，你的那份好像比別人的冷一點。" },
+            "why": "Whatever 在英文聽起來很不耐煩，像在說「我無所謂、懶得理你」。對方幫你找到餐點，要說 Perfect. I'll have that, please.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c03_cafeteria", "expr": "happy", "en": "One veggie curry, extra rice. Enjoy, hon!", "zh": "一份蔬菜咖哩，多加飯。好好吃喔，親愛的！" },
+      { "who": "leo", "expr": "happy", "en": "Nice! That looks even better than my noodles.", "zh": "不錯喔！看起來比我的麵還好吃。" }
+    ],
+    "title": { "en": "Safe and Full", "zh": "吃得安心又飽足" },
+    "story": { "en": "You and Leo find a table by the window. The curry is warm, and there's not a single peanut in sight.", "zh": "你和里歐在窗邊找到位子。咖哩熱騰騰的，一顆花生都沒有。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "What's in this?",
+      "zh": "這裡面有什麼？",
+      "explain": "問食材的最簡單說法。有過敏或飲食限制時，點餐前一定要先問。",
+      "example": { "en": "Excuse me, what's in this sandwich?", "zh": "不好意思，這個三明治裡面有什麼？" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm allergic to...",
+      "zh": "我對……過敏",
+      "explain": "allergic 是形容詞，要用 be allergic to + 名詞。allergy 是名詞，可以說 I have a peanut allergy.。",
+      "example": { "en": "I'm allergic to shrimp and cats.", "zh": "我對蝦子和貓過敏。" }
+    },
+    {
+      "type": "vocab",
+      "en": "vegetarian option",
+      "zh": "素食選擇",
+      "explain": "vegetarian 是不吃肉，但可能吃蛋奶；vegan 是全素，連蛋、奶、蜂蜜都不吃。點餐時說清楚比較保險。",
+      "example": { "en": "Do you have any vegan options?", "zh": "你們有全素的餐點嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll have that, please.",
+      "zh": "我要那個，謝謝。",
+      "explain": "I'll have... 是點餐最常用的句型。I'd like... 也可以，但後面接動詞要加 to。",
+      "example": { "en": "I'll have the chicken salad, please.", "zh": "我要雞肉沙拉，謝謝。" }
+    },
+    {
+      "type": "trap",
+      "en": "Whatever",
+      "zh": "隨便",
+      "explain": "中文說「隨便」常是客氣，但英文的 Whatever 聽起來很不耐煩、不在乎。想表示都可以，改說 Either is fine. 或 I'm OK with anything.。",
+      "example": { "en": "Pizza or pasta? Either is fine with me!", "zh": "披薩還是義大利麵？我都可以！" }
+    }
+  ]
+}

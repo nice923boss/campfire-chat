@@ -1,0 +1,224 @@
+{
+  "id": "L058",
+  "location": { "en": "Front desk of a police station", "zh": "警察局服務台" },
+  "goal": { "en": "Report your lost wallet and find out what to do next.", "zh": "通報錢包遺失，並問清楚接下來該怎麼做。" },
+  "background": "quiet small police station lobby, long wooden front counter with a stack of blank forms and a pen holder, plastic chairs along a pale blue wall, bright overhead lights",
+  "cast": ["c06_police"],
+  "intro": [
+    { "who": "narrator", "en": "On your way home, you reach into your bag. Your wallet is gone.", "zh": "回家路上，你把手伸進包包。錢包不見了。" },
+    { "who": "narrator", "en": "You search everywhere twice, then walk to the nearest police station.", "zh": "你上上下下找了兩遍，只好走到最近的警察局。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_police", "expr": "neutral", "en": "Good afternoon. What can I do for you?", "zh": "午安。有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I'd like to report a lost wallet, please.",
+          "zh": "嗨。我想通報錢包遺失。",
+          "ok": true,
+          "tip": "I'd like to report a lost... 冷靜說明來意，對方馬上知道要辦遺失登記。"
+        },
+        {
+          "en": "My wallet dropped. I want to report a case.",
+          "zh": "我的錢包掉了。我要報案。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_police", "expr": "confused", "en": "A case? Was there a crime? Did someone take it from you?", "zh": "案件？發生犯罪了嗎？有人搶走你的錢包嗎？" }
+            ],
+            "title": { "en": "Crime Scene", "zh": "犯罪現場" },
+            "story": { "en": "Officer Santos starts a robbery report. Twenty minutes in, you finally realize what's happening.", "zh": "桑托斯警員開始填搶案報告。二十分鐘後，你才發現事情不太對勁。" },
+            "why": "「報案」直譯成 report a case，聽起來像要報刑案。遺失東西說 I'd like to report a lost wallet. 或 I lost my wallet."
+          }
+        },
+        {
+          "en": "Someone stole my wallet! Go find the thief right now!",
+          "zh": "有人偷了我的錢包！快去把小偷抓到！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_police", "expr": "upset", "en": "Okay, slow down. Did you actually see someone take it?", "zh": "好，先冷靜。你真的有看到人拿走嗎？" }
+            ],
+            "title": { "en": "Phantom Thief", "zh": "怪盜不存在" },
+            "story": { "en": "You didn't. You spend an hour answering questions about a thief who may not even exist.", "zh": "你沒看到。結果你花了一個小時，回答關於一個可能根本不存在的小偷的問題。" },
+            "why": "沒看到人偷就大喊被偷，還命令警察馬上抓人，既不正確也很衝。冷靜說明：I'd like to report a lost wallet."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_police", "expr": "neutral", "en": "Sorry to hear that. Let's fill out a report.", "zh": "很遺憾。我們來填一份報告。" },
+        { "who": "c06_police", "expr": "neutral", "en": "Where and when did you last see it?", "zh": "你最後一次看到它是在哪裡、什麼時候？" }
+      ],
+      "choices": [
+        {
+          "en": "I last saw it at a café on Pine Street, around noon.",
+          "zh": "我最後一次看到是在松樹街的咖啡店，大概中午。",
+          "ok": true,
+          "tip": "I last saw it at... around... 地點加時間，一句話就把警察要的資訊給齊了。"
+        },
+        {
+          "en": "I last see it in café on Pine Street at twelve.",
+          "zh": "我最後看到它在松樹街的咖啡店，十二點。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_police", "expr": "confused", "en": "You see it there? So it's at the café right now?", "zh": "你看到它在那裡？所以錢包現在在咖啡店？" }
+            ],
+            "title": { "en": "Case Closed?", "zh": "結案了？" },
+            "story": { "en": "Officer Santos writes \"wallet located\" and closes the report. It takes a second trip to the station to reopen it.", "zh": "桑托斯警員寫下「錢包已尋獲」就結案了。你得再跑一趟警察局才能重新登記。" },
+            "why": "「最後一次看到」是過去的事，要用過去式 saw：I last saw it at a café. 用 see 聽起來像你現在還看得到它。"
+          }
+        },
+        {
+          "en": "It's a brown leather wallet, kind of old, with a small zipper.",
+          "zh": "是一個咖啡色皮夾，有點舊，有一個小拉鍊。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_police", "expr": "confused", "en": "Good to know. But where did you last have it?", "zh": "了解。不過你最後一次拿著它是在哪裡？" }
+            ],
+            "title": { "en": "Wallet Portrait", "zh": "錢包肖像畫" },
+            "story": { "en": "You describe every scratch on the wallet. By the time you mention the café, it has already closed for the day.", "zh": "你把錢包上每一道刮痕都描述了一遍。等你終於提到咖啡店，店家已經打烊了。" },
+            "why": "對方問的是在哪裡、什麼時候最後看到，不是錢包長什麼樣子。先回答問題：I last saw it at a café, around noon."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_police", "expr": "neutral", "en": "Got it. Was there anything important inside? Cards, ID, cash?", "zh": "了解。裡面有重要的東西嗎？卡片、證件、現金？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, my bank card, student ID and about forty dollars in cash.",
+          "zh": "有，我的金融卡、學生證，還有大約四十元現金。",
+          "ok": true,
+          "tip": "直接列出物品清單，用 and 連接最後一項，簡單又完整。"
+        },
+        {
+          "en": "Yes. Inside has my bank card, my student card and forty dollars.",
+          "zh": "有。裡面有我的金融卡、學生證和四十元。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_police", "expr": "confused", "en": "Inside has...? Sorry, inside what? Is there another bag?", "zh": "裡面有……？抱歉，什麼裡面？還有另一個包包嗎？" }
+            ],
+            "title": { "en": "Double Trouble", "zh": "一案變兩案" },
+            "story": { "en": "Officer Santos adds \"second bag, missing\" to the report. Now the police are looking for two things you didn't lose.", "zh": "桑托斯警員在報告上加了「另一個包包，遺失」。現在警方在找兩樣東西，其中一樣你根本沒掉。" },
+            "why": "「裡面有……」不能直譯成 Inside has...。可以說 There was... in it.，或直接列出物品：my bank card, student ID and some cash."
+          }
+        },
+        {
+          "en": "Of course! Why else would I be here? Everything is in there!",
+          "zh": "當然有啊！不然我來這裡幹嘛？所有東西都在裡面！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_police", "expr": "upset", "en": "I'm just doing my job. I need the details.", "zh": "我只是在做我的工作。我需要細節。" }
+            ],
+            "title": { "en": "One-Word Answers", "zh": "惜字如金" },
+            "story": { "en": "Officer Santos finishes the report in silence. Every answer to your questions is one word long.", "zh": "桑托斯警員默默把報告打完。之後你問什麼，她都只回一個字。" },
+            "why": "警察照流程問細節，不是在懷疑你。照實回答就好：Yes, my bank card, student ID and some cash."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_police", "expr": "neutral", "en": "All right, your report is done. Here's your case number.", "zh": "好，報告完成了。這是你的案件編號。" },
+        { "who": "c06_police", "expr": "neutral", "en": "If someone turns it in, we'll give you a call.", "zh": "如果有人送回來，我們會打電話通知你。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you. What should I do next? Should I cancel my bank card?",
+          "zh": "謝謝。我接下來該做什麼？要先停掉金融卡嗎？",
+          "ok": true,
+          "tip": "What should I do next? 讓對方告訴你完整步驟，再具體問最擔心的事。"
+        },
+        {
+          "en": "Can you check the street cameras? In Taiwan, police do that fast.",
+          "zh": "你們可以調路口監視器嗎？在台灣警察很快就會調。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_police", "expr": "confused", "en": "Cameras? For a lost wallet? Sorry, we don't do that for lost items.", "zh": "監視器？為了一個遺失的錢包？抱歉，遺失物我們不調監視器。" }
+            ],
+            "title": { "en": "No Replay", "zh": "沒有重播" },
+            "story": { "en": "You keep asking about cameras until Officer Santos has to take another call. You leave with no idea what to do next.", "zh": "你一直追問監視器，直到桑托斯警員得去接另一通電話。你離開時，完全不知道下一步該做什麼。" },
+            "why": "在台灣常聽說警察會幫忙調監視器找東西，但在很多英語國家，遺失物通常只做紀錄。問清楚下一步：What should I do next?"
+          }
+        },
+        {
+          "en": "Okay, thank you. I will wait you call me when you find it.",
+          "zh": "好，謝謝。我會等你找到的時候打給我。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_police", "expr": "confused", "en": "Wait, you'll call me? Okay... sure, call anytime.", "zh": "等等，是你要打給我？好……可以，隨時打來。" }
+            ],
+            "title": { "en": "Phone Standoff", "zh": "電話僵局" },
+            "story": { "en": "Officer Santos waits for your call, and you wait for hers. Your wallet sits at the café for a week before anyone tells you.", "zh": "桑托斯警員等你打來，你等她打來。你的錢包在咖啡店放了一個禮拜，才有人通知你。" },
+            "why": "「等你打給我」要說 I'll wait for your call. 或 Please call me if you find it. wait 後面少了 for，句子結構一亂，對方可能以為是你要打給她。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_police", "expr": "happy", "en": "Good thinking. Call your bank right away, and check with the café too.", "zh": "想得很周到。馬上打給銀行，也去咖啡店問問看。" },
+      { "who": "narrator", "en": "That evening, the café calls. Someone found your wallet under a table.", "zh": "那天傍晚，咖啡店打電話來。有人在桌子底下撿到你的錢包。" }
+    ],
+    "title": { "en": "Found and Returned", "zh": "失而復得" },
+    "story": { "en": "Your card is already canceled, but everything else is there, even the forty dollars. You bring the café staff a box of cookies to say thanks.", "zh": "你的卡已經停用了，但其他東西都還在，連四十元也沒少。你帶了一盒餅乾去咖啡店答謝店員。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to report a lost...",
+      "zh": "我想通報……遺失",
+      "explain": "report a lost wallet / phone / passport 用在通報遺失；如果確定是被偷，才說 report a theft。",
+      "example": { "en": "I'd like to report a lost passport.", "zh": "我想通報護照遺失。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I last saw it...",
+      "zh": "我最後一次看到它是……",
+      "explain": "last 放在動詞前面，動詞用過去式，後面接地點和時間。",
+      "example": { "en": "I last saw my keys on the kitchen table.", "zh": "我最後一次看到鑰匙是在廚房桌上。" }
+    },
+    {
+      "type": "phrase",
+      "en": "What should I do next?",
+      "zh": "接下來我該怎麼做？",
+      "explain": "遇到不熟悉的流程時，這句能讓對方把完整步驟告訴你，比自己亂猜可靠。",
+      "example": { "en": "My phone is gone. What should I do next?", "zh": "我的手機不見了。接下來我該怎麼辦？" }
+    },
+    {
+      "type": "trap",
+      "en": "lost vs. dropped",
+      "zh": "弄丟 vs. 掉下",
+      "explain": "My wallet dropped. 只是「錢包掉到地上」。「弄丟了」要說 I lost my wallet. 或 My wallet is missing.",
+      "example": { "en": "I lost my wallet. I think I dropped it on the bus.", "zh": "我的錢包弄丟了，應該是掉在公車上。" }
+    },
+    {
+      "type": "culture",
+      "en": "Lost and found",
+      "zh": "失物招領",
+      "explain": "在楓灣掉東西，記得回頭問店家或車站的 lost and found，很多東西是被好心人交給店家。到警察局報案主要是留下紀錄。",
+      "example": { "en": "Excuse me, do you have a lost and found?", "zh": "不好意思，你們有失物招領處嗎？" }
+    }
+  ]
+}

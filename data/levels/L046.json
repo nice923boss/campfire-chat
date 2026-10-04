@@ -1,0 +1,223 @@
+{
+  "id": "L046",
+  "location": { "en": "Port Aurora Maritime Museum", "zh": "極光港海事博物館" },
+  "goal": { "en": "Get student tickets and an audio guide, and find out the museum's photo rules.", "zh": "買到學生票和語音導覽，並問清楚博物館的拍照規定。" },
+  "background": "maritime museum hall, large wooden ship model in a glass case, brass ship wheel on display, rope barriers, high ceiling with skylight, polished wooden floor, rainy afternoon light",
+  "cast": ["c05_museum", "mia"],
+  "intro": [
+    { "who": "narrator", "en": "After lunch, it starts to rain, so the three of you run into the Port Aurora Maritime Museum.", "zh": "午餐後下起雨來，你們三個跑進了極光港海事博物館。" },
+    { "who": "mia", "expr": "happy", "en": "Perfect timing. I love old ships!", "zh": "時機剛好。我超愛古老的船！" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_museum", "expr": "neutral", "en": "Welcome to the Maritime Museum! Adult tickets are $18 each.", "zh": "歡迎來到海事博物館！全票一張 18 元。" }
+      ],
+      "choices": [
+        {
+          "en": "Hi! Is there a discount for students?",
+          "zh": "你好！請問有學生優惠嗎？",
+          "ok": true,
+          "tip": "Is there a discount for...? 是禮貌詢問優惠的標準句型。"
+        },
+        {
+          "en": "We are student. Can cheaper a little?",
+          "zh": "我們是學生。可以便宜一點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_museum", "expr": "confused", "en": "Cheaper a little...? I'm sorry, dear, I don't quite follow.", "zh": "便宜一點點……？抱歉，親愛的，我不太懂。" }
+            ],
+            "title": { "en": "Full Price Club", "zh": "全票俱樂部" },
+            "story": { "en": "Ruth isn't sure what you mean, so she smiles and sells you three adult tickets.", "zh": "露絲不確定你的意思，就微笑著賣給你們三張全票。" },
+            "why": "「可以便宜一點嗎」直譯成 Can cheaper a little? 缺少主詞和動詞，對方很難懂。問學生優惠要說 Is there a discount for students?"
+          }
+        },
+        {
+          "en": "Eighteen? That's too expensive. Give us the student price.",
+          "zh": "18 元？太貴了吧。給我們學生價。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_museum", "expr": "upset", "en": "Well. The money keeps these old ships alive, you know.", "zh": "這個嘛，這些錢是用來維護這些老船的喔。" }
+            ],
+            "title": { "en": "The Funding Lecture", "zh": "經費講座" },
+            "story": { "en": "You do get the student price, along with a fifteen-minute talk about how much it costs to repair a 200-year-old ship.", "zh": "你拿到了學生價，外加十五分鐘的講解，關於修一艘兩百年老船要花多少錢。" },
+            "why": "直接嫌貴再命令對方給學生價，聽起來很沒禮貌。想問優惠就說 Is there a discount for students?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_museum", "expr": "neutral", "en": "Yes, students pay $10. Would you like an audio guide? It's $4 extra.", "zh": "有，學生票 10 元。要加購語音導覽嗎？多 4 元。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, please. Is it available in Chinese?",
+          "zh": "好，麻煩了。有中文版的嗎？",
+          "ok": true,
+          "tip": "Is it available in + 語言？ 用來問有沒有某種語言的版本。"
+        },
+        {
+          "en": "No, thanks. We can hear very well.",
+          "zh": "不用了，謝謝。我們聽力很好。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_museum", "expr": "confused", "en": "Oh, it's not for hearing, dear. It tells you about the ships!", "zh": "喔，那不是助聽器啦，親愛的。它會介紹這些船！" }
+            ],
+            "title": { "en": "Silent Ships", "zh": "沉默的船" },
+            "story": { "en": "By the time you understand, Ruth is busy with the next visitor. You walk past forty ships with no idea what any of them are.", "zh": "等你搞懂時，露絲已經在招呼下一位客人。你們走過四十艘船，完全不知道它們是什麼。" },
+            "why": "audio guide 是「語音導覽」，用耳機聽展品介紹，不是助聽器。想要就說 Yes, please. Is it available in Chinese?"
+          }
+        },
+        {
+          "en": "Yes, please. Does it has a Chinese version too?",
+          "zh": "好，麻煩了。它也有中文版嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_museum", "expr": "confused", "en": "Does it has...? Sorry, here's the English one, dear.", "zh": "它有……？抱歉，先給你英文版吧，親愛的。" }
+            ],
+            "title": { "en": "Two Hours of Bilge", "zh": "兩小時的船艙術語" },
+            "story": { "en": "The English guide talks about \"the forecastle\" and \"the bilge\" for two hours. You understand three words.", "zh": "英文導覽講了兩個小時的「艏樓」和「艙底」。你只聽懂三個字。" },
+            "why": "does 後面的動詞要用原形，所以是 Does it have...?，不是 Does it has...?。也可以說 Is it available in Chinese?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Kai, look at this ship model! I want a photo, but is it okay?", "zh": "凱，你看這個船模型！我想拍照，可是可以拍嗎？" },
+        { "who": "c05_museum", "expr": "neutral", "en": "Beautiful, isn't it? That model is over two hundred years old.", "zh": "很漂亮吧？那個模型已經超過兩百年了。" }
+      ],
+      "choices": [
+        {
+          "en": "It's amazing. Are we allowed to take photos here?",
+          "zh": "太厲害了。請問這裡可以拍照嗎？",
+          "ok": true,
+          "tip": "Are we allowed to...? 用來問規定允不允許，清楚又有禮貌。"
+        },
+        {
+          "en": "It's amazing. I'll just take a quick flash photo.",
+          "zh": "太厲害了。我拍一張閃光燈照片就好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_museum", "expr": "upset", "en": "No flash, please! It damages the old paint.", "zh": "請不要用閃光燈！會傷到老舊的漆。" }
+            ],
+            "title": { "en": "Flash Mob", "zh": "閃光燈事件" },
+            "story": { "en": "The flash goes off, and every guard in the room turns around. You spend the next hour feeling very watched.", "zh": "閃光燈一閃，整間展廳的警衛都轉過頭來。接下來一小時，你都覺得被緊盯著。" },
+            "why": "很多博物館禁止閃光燈，因為強光會傷害古老的展品。拍照前先問 Are we allowed to take photos here?"
+          }
+        },
+        {
+          "en": "Here can take photo or cannot?",
+          "zh": "這裡可不可以拍照？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_museum", "expr": "confused", "en": "Here can...? Oh, the restroom? It's down the hall, dear.", "zh": "這裡可以……？喔，洗手間嗎？在走廊盡頭，親愛的。" }
+            ],
+            "title": { "en": "Restroom Tour", "zh": "洗手間導覽" },
+            "story": { "en": "Ruth kindly walks you all the way to the restroom. Mia takes no photos.", "zh": "露絲好心地一路帶你到洗手間。米亞一張照片也沒拍到。" },
+            "why": "「可不可以」直譯成 can or cannot，加上缺少主詞，英文聽不懂。要說 Are we allowed to take photos here? 或 Can we take photos here?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_museum", "expr": "happy", "en": "Photos are fine, just no flash. You know, my grandfather sailed on that ship.", "zh": "可以拍照，只是不能用閃光燈。跟你說，我祖父當年就在那艘船上航行。" }
+      ],
+      "choices": [
+        {
+          "en": "Really? What was his job on the ship?",
+          "zh": "真的嗎？他在船上做什麼工作？",
+          "ok": true,
+          "tip": "對方分享個人故事時，用 What was...? 追問，表示你真的有興趣。"
+        },
+        {
+          "en": "Oh. Okay. Anyway, where's the gift shop?",
+          "zh": "喔，好。總之，紀念品店在哪？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_museum", "expr": "upset", "en": "Down the hall, on the left.", "zh": "走廊下去，左手邊。" }
+            ],
+            "title": { "en": "The Untold Story", "zh": "沒說完的故事" },
+            "story": { "en": "You find the gift shop, but you never hear the best story in the whole museum.", "zh": "你找到了紀念品店，卻錯過了整間博物館最精彩的故事。" },
+            "why": "對方分享家族故事時，用 Anyway 直接轉話題會顯得冷淡。先回應再追問：Really? What was his job on the ship?"
+          }
+        },
+        {
+          "en": "Really? Your grandfather was work on this ship?",
+          "zh": "真的嗎？你祖父是在這艘船上工作？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_museum", "expr": "confused", "en": "Was work...? Well, he worked on it, yes. Sorry, what was the question?", "zh": "是工作……？嗯，他是在船上工作沒錯。抱歉，你剛剛問什麼？" }
+            ],
+            "title": { "en": "Lost at Sea", "zh": "話題沉船" },
+            "story": { "en": "The conversation drifts away, and Ruth goes back to her desk. Mia whispers that she really wanted to hear more.", "zh": "話題漂走了，露絲回到她的櫃檯。米亞小聲說她其實很想多聽一點。" },
+            "why": "was 後面不能接原形動詞 work。過去式直接說 He worked on this ship?，或用問句 What was his job on the ship?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_museum", "expr": "happy", "en": "He was the ship's cook! Come, I'll show you his old photo.", "zh": "他是船上的廚師！來，我帶你們看他的老照片。" },
+      { "who": "mia", "expr": "happy", "en": "Best museum ever. And no flash, I promise!", "zh": "史上最棒的博物館。而且我保證不開閃光燈！" }
+    ],
+    "title": { "en": "A Friend in the Museum", "zh": "博物館裡的朋友" },
+    "story": { "en": "Ruth shows you a faded photo of a smiling young cook on the deck. Some stories aren't on the audio guide.", "zh": "露絲讓你們看一張褪色照片，甲板上有位年輕廚師笑得燦爛。有些故事，語音導覽裡聽不到。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Is there a discount for students?",
+      "zh": "有學生優惠嗎？",
+      "explain": "禮貌詢問優惠的標準句型，也可以問 Is there a student discount?。記得準備學生證（student ID）。",
+      "example": { "en": "Is there a discount for groups of three or more?", "zh": "三人以上有團體優惠嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "audio guide",
+      "zh": "語音導覽",
+      "explain": "博物館出借的耳機導覽設備，不是助聽器（hearing aid）。問語言版本用 Is it available in Chinese?",
+      "example": { "en": "Two audio guides, please. Is there one in Chinese?", "zh": "麻煩兩台語音導覽。有中文的嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "Are we allowed to take photos?",
+      "zh": "我們可以拍照嗎？",
+      "explain": "be allowed to + 原形動詞，用來問「規定上允許嗎」。單數說 Am I allowed to...?，比 Can I...? 更像在問規定。",
+      "example": { "en": "Am I allowed to bring my umbrella inside?", "zh": "我可以把雨傘帶進去嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "No flash, no touching",
+      "zh": "不開閃光燈，不碰展品",
+      "explain": "很多博物館允許拍照，但禁止閃光燈和觸摸玻璃或展品。不確定時先問工作人員，比事後被提醒好。",
+      "example": { "en": "Is it okay to take photos without flash?", "zh": "不開閃光燈可以拍照嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Does it have...?",
+      "zh": "它有……嗎？",
+      "explain": "does 後面的動詞一律用原形：Does it have...?，不是 Does it has...?。同理 Did he work...?，不是 Was he work...?",
+      "example": { "en": "Does the museum have a café?", "zh": "博物館裡有咖啡廳嗎？" }
+    }
+  ]
+}

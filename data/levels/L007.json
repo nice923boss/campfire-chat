@@ -1,0 +1,182 @@
+{
+  "id": "L007",
+  "location": { "en": "Corner store near Central Station", "zh": "中央車站旁的便利商店" },
+  "goal": { "en": "Find what you need and pay at the checkout.", "zh": "找到需要的東西，順利結帳。" },
+  "background": "small convenience store interior at night, narrow aisles with snacks and drinks in plain packaging, glass-door fridges, a checkout counter with a card reader, bright fluorescent lights",
+  "cast": ["c01_clerk"],
+  "intro": [
+    { "who": "narrator", "en": "On the way back to the hotel, you stop at a corner store. You need a toothbrush and some water.", "zh": "回飯店的路上，你走進一家便利商店。你需要一支牙刷和一些水。" },
+    { "who": "narrator", "en": "You check every aisle twice, but you can't find any toothbrushes.", "zh": "你把每個走道都找了兩遍，就是找不到牙刷。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_clerk", "expr": "neutral", "en": "Hey. Let me know if you need anything.", "zh": "嘿，需要什麼跟我說。" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. Do you have toothbrushes?",
+          "zh": "嗨，你們有賣牙刷嗎？",
+          "ok": true,
+          "tip": "Do you have...? 是在店裡問有沒有某樣商品最簡單的說法。"
+        },
+        {
+          "en": "Hi. Have toothbrush or not?",
+          "zh": "嗨，有沒有牙刷？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_clerk", "expr": "confused", "en": "Do I have a toothbrush? Uh, yeah. At home?", "zh": "我有沒有牙刷？呃，有啊，在家裡？" }
+            ],
+            "title": { "en": "Too Much Information", "zh": "知道太多了" },
+            "story": { "en": "Tom tells you all about his new electric toothbrush. You learn a lot about his teeth, but you still don't know where the toothbrushes are.", "zh": "湯姆跟你分享他新買的電動牙刷。你對他的牙齒瞭若指掌，卻還是不知道牙刷放在哪裡。" },
+            "why": "「有沒有……？」照中文說成 Have ... or not? 不是英文問句，對方會聽成在問他個人。在店裡問商品要說 Do you have toothbrushes?"
+          }
+        },
+        {
+          "en": "Hey, you! Toothbrushes, where?",
+          "zh": "喂，你！牙刷，在哪？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_clerk", "expr": "upset", "en": "Wow. Aisle three. You're welcome.", "zh": "哇喔。第三排。不客氣喔。" }
+            ],
+            "title": { "en": "Cold Aisle", "zh": "冷冰冰的走道" },
+            "story": { "en": "Tom points with one finger and goes back to his phone. Somehow, the store feels ten degrees colder.", "zh": "湯姆用一根手指指了一下，就繼續滑手機。不知怎麼的，店裡好像冷了十度。" },
+            "why": "Hey, you! 加上只丟關鍵字，聽起來像在使喚人。問店員要用完整句子：Do you have toothbrushes?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_clerk", "expr": "happy", "en": "Sure, aisle three, next to the shampoo.", "zh": "有啊，第三排，洗髮精旁邊。" },
+        { "who": "narrator", "en": "You come back with a toothbrush and a bottle of water.", "zh": "你拿著一支牙刷和一瓶水回到櫃檯。" },
+        { "who": "c01_clerk", "expr": "neutral", "en": "That's six fifty. Do you need a bag?", "zh": "一共六塊五。需要袋子嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, thanks. I'm good.",
+          "zh": "不用了，謝謝。",
+          "ok": true,
+          "tip": "No, thanks. I'm good. 是婉拒店員最自然的說法。"
+        },
+        {
+          "en": "No, I'm not need.",
+          "zh": "不用，我不需要。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_clerk", "expr": "confused", "en": "You're not... need? Is that a yes or a no?", "zh": "你不是……需要？這是要還是不要？" }
+            ],
+            "title": { "en": "The Giant Bag", "zh": "超大袋子" },
+            "story": { "en": "Tom isn't sure, so he puts your two small items in a huge bag. You now own a bag much bigger than your shopping.", "zh": "湯姆不確定，乾脆把你的兩樣小東西裝進一個超大袋子。現在你提著一個比商品大好幾倍的袋子。" },
+            "why": "need 是一般動詞，否定要用 don't：I don't need one.，不能說 I'm not need.。最簡單的婉拒是 No, thanks."
+          }
+        },
+        {
+          "en": "No need. I have two hands.",
+          "zh": "不用，我有兩隻手。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_clerk", "expr": "confused", "en": "You... have hands? Yeah, I can see that.", "zh": "你……有手？對啊，我看得到。" }
+            ],
+            "title": { "en": "Hands-On Answer", "zh": "親手示範" },
+            "story": { "en": "Tom stares at your hands, then at you. You walk out juggling a toothbrush and a water bottle, feeling very strange.", "zh": "湯姆盯著你的手，再看看你。你兩手抓著牙刷和水瓶走出店門，覺得渾身不對勁。" },
+            "why": "「不用，我用手拿就好」直譯出來很奇怪。婉拒店員只要說 No, thanks. I'm good. 就夠了。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_clerk", "expr": "neutral", "en": "Okay. Card or cash?", "zh": "好。刷卡還是現金？" }
+      ],
+      "choices": [
+        {
+          "en": "Card, please. Here you are.",
+          "zh": "刷卡，謝謝。給你。",
+          "ok": true,
+          "tip": "Card or cash? 直接回答 Card, please. 或 Cash, please."
+        },
+        {
+          "en": "Can I brush card, please?",
+          "zh": "我可以刷卡嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_clerk", "expr": "confused", "en": "Brush the card? Like... clean it?", "zh": "刷卡片？是說……把它刷乾淨嗎？" }
+            ],
+            "title": { "en": "Squeaky Clean", "zh": "刷得亮晶晶" },
+            "story": { "en": "Tom hands you a paper towel, thinking your card is dirty. The line behind you grows while you two sort it out.", "zh": "湯姆以為你的卡髒了，遞給你一張紙巾。你們兩個搞清楚之前，後面的隊伍越排越長。" },
+            "why": "「刷卡」的「刷」不是 brush。回答 Card or cash? 只要說 Card, please.；想問能不能刷卡，說 Can I pay by card?"
+          }
+        },
+        {
+          "en": "Card. Can I buy train tickets here?",
+          "zh": "刷卡。這裡可以買火車票嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_clerk", "expr": "confused", "en": "Train tickets? Here? This is a corner store.", "zh": "火車票？在這裡？這是便利商店耶。" }
+            ],
+            "title": { "en": "Not That Kind of Store", "zh": "不是那種便利商店" },
+            "story": { "en": "Tom looks at you like you asked to buy a car. You spend five minutes telling him how amazing Taiwanese convenience stores are.", "zh": "湯姆看你的眼神，好像你要跟他買一台車。你花了五分鐘跟他介紹台灣的便利商店有多神。" },
+            "why": "台灣的便利商店可以買票、繳費、取包裹，但很多英語國家的便利商店只賣日常用品。結帳時先回答付款方式：Card, please."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_clerk", "expr": "happy", "en": "All done. Have a good night!", "zh": "好了。晚安！" }
+    ],
+    "title": { "en": "Night Shopping", "zh": "夜間採買" },
+    "story": { "en": "You walk back to the hotel with a new toothbrush, cold water, and the confidence to shop on your own.", "zh": "你帶著新牙刷、冰涼的水，還有獨自購物的信心，走回飯店。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Do you have...?",
+      "zh": "你們有……嗎？",
+      "explain": "在店裡問有沒有某樣商品。不要照中文說 Have ... or not?",
+      "example": { "en": "Do you have phone chargers?", "zh": "你們有賣手機充電器嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "No, thanks. I'm good.",
+      "zh": "不用了，謝謝。",
+      "explain": "婉拒店員提供的東西，例如袋子、收據，最自然的說法。",
+      "example": { "en": "Do you need a receipt? No, thanks. I'm good.", "zh": "需要收據嗎？不用了，謝謝。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I don't need a bag.",
+      "zh": "我不需要袋子。",
+      "explain": "need 是一般動詞，否定要用 don't，不能說 I'm not need.。同樣的還有 I don't want、I don't like。",
+      "example": { "en": "I don't need a receipt, thanks.", "zh": "我不需要收據，謝謝。" }
+    },
+    {
+      "type": "trap",
+      "en": "Pay by card, not \"brush card\"",
+      "zh": "刷卡不是 brush card",
+      "explain": "刷卡說 pay by card。結帳被問 Card or cash? 時，回答 Card, please. 或 Cash, please. 就好。",
+      "example": { "en": "Can I pay by card?", "zh": "我可以刷卡嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Corner stores are simpler here.",
+      "zh": "這裡的便利商店功能比較單純",
+      "explain": "台灣便利商店可以繳費、買票、取包裹，但很多英語國家的便利商店主要只賣零食、飲料和日用品。",
+      "example": { "en": "Where can I buy train tickets?", "zh": "請問哪裡可以買火車票？" }
+    }
+  ]
+}

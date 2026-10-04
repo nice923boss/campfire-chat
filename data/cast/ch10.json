@@ -1,0 +1,16 @@
+{
+  "c10_hana": {
+    "name": "Hana",
+    "nameZh": "花奈",
+    "role": { "en": "Newcomer at Campfire Chat", "zh": "營火英語社新成員" },
+    "gender": "female",
+    "appearance": "young woman around 20, straight black hair in a low ponytail with blunt bangs, oversized cream cardigan over a navy striped shirt, small spiral notebook held to her chest, maple leaf pin on her collar, shy newcomer vibe"
+  },
+  "c10_owen": {
+    "name": "Owen",
+    "nameZh": "歐文",
+    "role": { "en": "Campfire Chat regular, remote software developer", "zh": "營火英語社常客，遠距軟體工程師" },
+    "gender": "male",
+    "appearance": "man in his early 30s, short neat black hair with a side part, rectangular black glasses, olive green quilted vest over a gray hoodie, laptop bag strap across his chest, quick-witted debater vibe"
+  }
+}

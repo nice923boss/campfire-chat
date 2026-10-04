@@ -1,0 +1,223 @@
+{
+  "id": "L023",
+  "location": { "en": "Maple Bay Language Institute, courtyard", "zh": "楓灣語言學院，中庭" },
+  "goal": { "en": "Chat with a new classmate and find something in common.", "zh": "和新同學聊天，找到共同話題。" },
+  "background": "quiet school courtyard with wooden benches under a large maple tree, a small stone fountain, brick walls covered with ivy, a bike rack, warm afternoon sunlight",
+  "cast": ["leo"],
+  "intro": [
+    { "who": "narrator", "en": "After class, you sit on a bench in the courtyard with a sandwich.", "zh": "下課後，你拿著三明治坐在中庭的長椅上。" },
+    { "who": "narrator", "en": "A classmate with round glasses sits down at the other end of the bench.", "zh": "一位戴圓框眼鏡的同學在長椅另一端坐了下來。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Hey, you're in Ms. Reed's class too, right? I'm Leo.", "zh": "嘿，你也是瑞德老師班上的吧？我是里歐。" }
+      ],
+      "choices": [
+        {
+          "en": "Yeah! I'm Kai. Nice to meet you.",
+          "zh": "對啊！我是凱，很高興認識你。",
+          "ok": true,
+          "tip": "對方先自我介紹時，回一句 I'm... Nice to meet you.，對話就自然開始了。"
+        },
+        {
+          "en": "Yes, I am. Ms. Reed is my teacher.",
+          "zh": "對，我是。瑞德老師是我的老師。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Uh, yeah, same class. So... do you have a name?", "zh": "呃，對，同一班。所以……你叫什麼名字？" }
+            ],
+            "title": { "en": "Nameless Neighbor", "zh": "無名鄰座" },
+            "story": { "en": "Leo waits for your name, but you just nod. He finishes his sandwich in polite silence.", "zh": "里歐等著你說名字，你卻只是點點頭。他在禮貌的沉默中吃完了三明治。" },
+            "why": "英語閒聊的習慣是：對方報上名字，你也要報上自己的名字。只回答 Yes, I am. 會讓對話卡住。要說 Yeah! I'm Kai. Nice to meet you.。"
+          }
+        },
+        {
+          "en": "Yes! My name Kai. Nice meet you.",
+          "zh": "對！我叫凱，很高興認識你。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Mai-name-kai? Is that all one word?", "zh": "麥內姆凱？那是一個字嗎？" }
+            ],
+            "title": { "en": "Name Game", "zh": "名字猜謎" },
+            "story": { "en": "For the next week, Leo calls you \"Mynamekai.\" It takes a while to fix.", "zh": "接下來一整週，里歐都叫你「麥內姆凱」。花了好一段時間才改過來。" },
+            "why": "My name Kai 少了動詞 is，Nice meet you 少了 to。完整說法是 My name is Kai. 和 Nice to meet you.，或簡單說 I'm Kai.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Nice to meet you too! It's my first week here. Kind of crazy, right?", "zh": "我也很高興認識你！這是我來的第一週，有點瘋狂對吧？" }
+      ],
+      "choices": [
+        {
+          "en": "Totally. So, where are you from, Leo?",
+          "zh": "真的。那你是哪裡人呢，里歐？",
+          "ok": true,
+          "tip": "Where are you from? 是認識新朋友最常用的問題。先回應對方，再順勢反問，對話就能延續。"
+        },
+        {
+          "en": "Yes, crazy. You are which country people?",
+          "zh": "對啊，很瘋。你是哪國人？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Which country... people? Sorry, I don't get it.", "zh": "哪個國家……的人們？抱歉，我聽不懂。" }
+            ],
+            "title": { "en": "Word Puzzle", "zh": "單字拼圖" },
+            "story": { "en": "Leo tries to put your words in order like a puzzle. After a while, he gives up and checks his phone.", "zh": "里歐試著把你的字像拼圖一樣重新排列。過了一會兒，他放棄了，開始滑手機。" },
+            "why": "「你是哪國人」照中文語序說成 You are which country people，英文沒有這種說法。問對方從哪裡來，說 Where are you from? 就好。"
+          }
+        },
+        {
+          "en": "Yes. By the way, how old are you?",
+          "zh": "對啊。對了，你幾歲？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Uh... why do you ask? Do I look old?", "zh": "呃……為什麼這樣問？我看起來很老嗎？" }
+            ],
+            "title": { "en": "Age Check", "zh": "年齡檢查站" },
+            "story": { "en": "Leo feels like he is at a job interview. The chat ends quickly after that.", "zh": "里歐覺得自己好像在面試。聊天很快就結束了。" },
+            "why": "在台灣，問年齡常是為了決定稱呼，但英文文化裡，剛認識就問 How old are you? 會讓人覺得太私人。先問 Where are you from? 比較自然。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "I'm from Busan, in Korea. How about you?", "zh": "我來自韓國釜山。你呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm from Taiwan. What brings you here?",
+          "zh": "我來自台灣。你怎麼會來這裡？",
+          "ok": true,
+          "tip": "What brings you here? 是「什麼原因讓你來這裡？」的自然問法，比 Why are you here? 柔和許多。"
+        },
+        {
+          "en": "Taiwan. Why are you here?",
+          "zh": "台灣。你為什麼在這裡？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Why am I here? Um... should I leave?", "zh": "我為什麼在這裡？呃……我是不是該走了？" }
+            ],
+            "title": { "en": "Bench Police", "zh": "長椅警察" },
+            "story": { "en": "Leo picks up his sandwich and moves to another bench. Now you have the whole bench to yourself.", "zh": "里歐拿起三明治，換到另一張長椅。現在整張長椅都是你的了。" },
+            "why": "Why are you here? 語氣很直，聽起來像在質問「你幹嘛在這裡」。想知道對方來的原因，問 What brings you here? 會溫和很多。"
+          }
+        },
+        {
+          "en": "I'm come from Taiwan. Why you come here?",
+          "zh": "我來自台灣。你為什麼來這裡？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Sorry, you lost me there. Can you say that again?", "zh": "抱歉，我沒跟上。可以再說一次嗎？" }
+            ],
+            "title": { "en": "Lost on the Bench", "zh": "長椅上的迷路" },
+            "story": { "en": "You try three more times and get more nervous each time. Leo smiles politely and says he has to go to the library.", "zh": "你又試了三次，一次比一次緊張。里歐禮貌地笑笑，說他得去圖書館了。" },
+            "why": "I'm come 把 be 動詞和一般動詞放在一起，要說 I'm from Taiwan. 或 I come from Taiwan.。問句也要加助動詞：Why did you come here?，更自然的是 What brings you here?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "I want to be a tour guide, so I need better English.", "zh": "我想當導遊，所以英文要變好。" },
+        { "who": "leo", "expr": "happy", "en": "And I hear the hiking here is amazing!", "zh": "而且聽說這裡爬山超棒的！" }
+      ],
+      "choices": [
+        {
+          "en": "No way, me too! I love hiking.",
+          "zh": "真的假的，我也是！我超愛爬山。",
+          "ok": true,
+          "tip": "聽到共同興趣時說 No way, me too!，再補一句自己的喜好，話題就接上了。"
+        },
+        {
+          "en": "Me too! I very like climb mountain.",
+          "zh": "我也是！我很喜歡爬山。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Climb mountains? Like with ropes and stuff? That's hardcore.", "zh": "攀登高山？要用繩索那種嗎？也太硬派了吧。" }
+            ],
+            "title": { "en": "Extreme Climber", "zh": "極限登山家" },
+            "story": { "en": "Leo now thinks you are a serious mountain climber. He asks you to lead a hike up the highest peak in the area.", "zh": "里歐以為你是專業登山家，還請你帶隊攀登附近最高的山峰。" },
+            "why": "「爬山」直譯成 climb mountain，會讓人以為是攀岩或登高峰。一般健行說 go hiking 或 I love hiking.。另外 very 不能直接修飾動詞，要說 I really like...。"
+          }
+        },
+        {
+          "en": "Oh. By the way, is the cafeteria good?",
+          "zh": "喔。對了，學生餐廳好吃嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "The cafeteria? Uh... I guess it's OK?", "zh": "學生餐廳？呃……應該還行吧？" }
+            ],
+            "title": { "en": "Topic Jumper", "zh": "話題跳跳虎" },
+            "story": { "en": "Leo was excited to talk about hiking, but you changed the topic. The chat ends with a long, polite silence.", "zh": "里歐本來很想聊爬山，你卻換了話題。聊天在一陣漫長又客氣的沉默中結束。" },
+            "why": "對方主動分享興趣（hiking）時，就是找共同話題的好機會。突然跳到不相關的話題，會讓人覺得你沒在聽。可以接 No way, me too!，或 Oh, really? Where do you want to go?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Leo's face lights up.", "zh": "里歐的眼睛一亮。" },
+      { "who": "leo", "expr": "happy", "en": "Seriously? We should go hiking together sometime!", "zh": "真的嗎？我們改天一起去爬山吧！" }
+    ],
+    "title": { "en": "A New Friend", "zh": "新朋友" },
+    "story": { "en": "You and Leo swap numbers before the bell rings. Maple Bay suddenly feels a little less lonely.", "zh": "鐘聲響起前，你和里歐交換了電話號碼。楓灣突然感覺沒那麼孤單了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Where are you from?",
+      "zh": "你是哪裡人？",
+      "explain": "認識新朋友最常用的問題，回答用 I'm from + 地方。不要說 You are which country people?。",
+      "example": { "en": "I'm from Taipei. Where are you from?", "zh": "我來自台北。你是哪裡人？" }
+    },
+    {
+      "type": "phrase",
+      "en": "What brings you here?",
+      "zh": "你怎麼會來這裡？",
+      "explain": "詢問對方來這裡的原因，語氣比 Why are you here? 柔和得多。也可以說 What brings you to Maple Bay?。",
+      "example": { "en": "So, what brings you to Maple Bay?", "zh": "那你怎麼會來楓灣呢？" }
+    },
+    {
+      "type": "phrase",
+      "en": "No way, me too!",
+      "zh": "真的假的，我也是！",
+      "explain": "聽到和自己一樣的興趣或經驗時的熱情回應，是找共同話題的好幫手。",
+      "example": { "en": "You like spicy food? No way, me too!", "zh": "你喜歡吃辣？真的假的，我也是！" }
+    },
+    {
+      "type": "trap",
+      "en": "go hiking, not climb mountain",
+      "zh": "去爬山（健行）",
+      "explain": "中文的「爬山」多半是健行，英文說 go hiking。climb a mountain 聽起來像攀登高峰，要用到專業裝備。",
+      "example": { "en": "Let's go hiking this weekend.", "zh": "這週末去爬山吧。" }
+    },
+    {
+      "type": "culture",
+      "en": "Don't ask someone's age right away.",
+      "zh": "別一見面就問年齡",
+      "explain": "在台灣問年齡常是為了決定稱呼，但在英語文化中，剛認識就問年齡、薪水、感情狀況都太私人。先聊來自哪裡、興趣比較安全。",
+      "example": { "en": "Where are you from? What do you do for fun?", "zh": "你是哪裡人？平常喜歡做什麼？" }
+    }
+  ]
+}

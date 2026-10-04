@@ -1,0 +1,181 @@
+{
+  "id": "L019",
+  "location": { "en": "Tony's Barbershop, Old Town", "zh": "老城區的東尼理髮店" },
+  "goal": { "en": "Explain the haircut you want, clearly and politely.", "zh": "清楚又有禮貌地說出你想要的髮型。" },
+  "background": "classic small barbershop with a single leather barber chair, a large wall mirror, a shelf of plain unlabeled bottles, a striped barber pole by the window, black and white tiled floor, late morning",
+  "cast": ["c02_barber"],
+  "intro": [
+    { "who": "narrator", "en": "Your hair has grown a lot since you left Taiwan. This morning, Mia said you look like a mushroom.", "zh": "離開台灣後，你的頭髮長了不少。今天早上，米亞說你看起來像一朵香菇。" },
+    { "who": "narrator", "en": "So here you are, in a barber's chair, hoping for the best.", "zh": "所以你現在坐在理髮椅上，祈禱一切順利。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_barber", "expr": "happy", "en": "Morning! Have a seat. So, what are we doing today?", "zh": "早安！請坐。那麼，今天想怎麼剪？" }
+      ],
+      "choices": [
+        {
+          "en": "Just a trim today, please.",
+          "zh": "今天稍微修一下就好。",
+          "ok": true,
+          "tip": "trim 是「修剪」，Just a trim 表示只要稍微修短，不改變髮型。"
+        },
+        {
+          "en": "Nothing much. Just shopping.",
+          "zh": "沒做什麼，只是逛逛街。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_barber", "expr": "confused", "en": "Ha, nice. But I mean your hair. Pick a photo, then?", "zh": "哈，不錯啊。不過我是說你的頭髮。那你挑張照片吧？" }
+            ],
+            "title": { "en": "Blast from the Past", "zh": "穿越回 1985" },
+            "story": { "en": "In a panic, you point at a random photo on the wall. You walk out with a big, fluffy 1985 hairstyle.", "zh": "你一慌，隨手指了牆上一張照片。走出店門時，你頂著一顆蓬鬆的 1985 年復古髮型。" },
+            "why": "What are we doing today? 在理髮店是問「今天想怎麼剪？」，不是問你今天的行程。直接說出需求：Just a trim, please.。"
+          }
+        },
+        {
+          "en": "Whatever. Just make it cool.",
+          "zh": "隨便啦，剪帥一點就好。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_barber", "expr": "confused", "en": "Whatever? Okay... I've always wanted to try something bold.", "zh": "隨便？好吧……我一直很想試試大膽一點的造型。" }
+            ],
+            "title": { "en": "Bold Move", "zh": "大膽嘗試" },
+            "story": { "en": "Twenty minutes later, the sides of your head are completely shaved. The top stands straight up. It is definitely bold.", "zh": "二十分鐘後，你頭的兩側被剃得精光，頭頂的頭髮直直豎起。確實非常大膽。" },
+            "why": "Whatever 聽起來很敷衍，好像你不在乎；「隨便」交給對方決定，也很容易得到意外的結果。具體說出需求最保險：Just a trim, please.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_barber", "expr": "neutral", "en": "A trim, got it. And what about the sides?", "zh": "修一下，了解。那兩側呢？" }
+      ],
+      "choices": [
+        {
+          "en": "A little shorter on the sides.",
+          "zh": "兩側短一點。",
+          "ok": true,
+          "tip": "a little shorter on the sides，用比較級 shorter 說明想剪短一點。"
+        },
+        {
+          "en": "A little more shorter on the sides.",
+          "zh": "兩側再更短一點。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_barber", "expr": "confused", "en": "More... shorter? Much shorter? You got it!", "zh": "更……短一點？要短很多？沒問題！" }
+            ],
+            "title": { "en": "Breezy Ears", "zh": "耳朵好涼" },
+            "story": { "en": "He takes the sides almost down to the skin. On the way home, the wind keeps reminding you how short they are.", "zh": "他把兩側剪到幾乎貼著頭皮。回家路上，風一直提醒你那裡有多短。" },
+            "why": "shorter 已經是比較級，前面不能再加 more。說 A little shorter on the sides. 就是「兩側短一點」。"
+          }
+        },
+        {
+          "en": "Two sides cut short a little.",
+          "zh": "兩邊剪短一點。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_barber", "expr": "confused", "en": "Two sides? Okay... which two? Left and back?", "zh": "兩邊？好……哪兩邊？左邊和後面？" }
+            ],
+            "title": { "en": "Lopsided", "zh": "一邊長一邊短" },
+            "story": { "en": "You nod without really listening. Now your left side is short and your right side is still a mushroom.", "zh": "你沒仔細聽就點了頭。現在你的左邊很短，右邊還是一朵香菇。" },
+            "why": "中文說「兩邊」，逐字翻成 two sides 不但語序奇怪，也不清楚是哪兩邊。理髮時說 on the sides 就是指左右兩側：A little shorter on the sides.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_barber", "expr": "neutral", "en": "How's the length on top? Want me to take more off?", "zh": "頭頂這個長度可以嗎？要再剪短一點嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "A little more, but not too short.",
+          "zh": "再剪一點，但不要太短。",
+          "ok": true,
+          "tip": "not too + 形容詞，是「不要太……」最簡單的說法。"
+        },
+        {
+          "en": "Yes, a little, but don't too short.",
+          "zh": "要，一點點，但不要太短。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_barber", "expr": "confused", "en": "Don't... too short? Sorry, short or not short?", "zh": "不要……太短？抱歉，是要短還是不要短？" }
+            ],
+            "title": { "en": "Snip Snip Oops", "zh": "喀嚓，糟了" },
+            "story": { "en": "While you search for the right words, the scissors keep moving. Your top is now shorter than your sides.", "zh": "你還在想該怎麼說，剪刀已經繼續動了。現在你頭頂比兩側還短。" },
+            "why": "don't 後面要接動詞，不能直接接 too short。要說 not too short，或 Don't make it too short.。"
+          }
+        },
+        {
+          "en": "Yes, and a head massage, please.",
+          "zh": "要，再幫我按摩一下頭。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_barber", "expr": "confused", "en": "A massage? Ha! Sorry, this is a barbershop, not a spa.", "zh": "按摩？哈！抱歉，這裡是理髮店，不是 SPA 館。" }
+            ],
+            "title": { "en": "No Spa Day", "zh": "沒有按摩服務" },
+            "story": { "en": "He laughs so hard that he takes a little too much off the top.", "zh": "他笑得太開心，一不小心頭頂就多剪掉了一些。" },
+            "why": "台灣的美髮店常附洗頭、按摩，但北美的理髮店多半只剪髮，洗髮按摩不一定有。回答剪髮問題就好：A little more, but not too short.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_barber", "expr": "happy", "en": "There you go. Short and clean. Take a look!", "zh": "好了。清爽俐落，你看看！" },
+      { "who": "narrator", "en": "You look in the mirror. No more mushroom. You look sharp.", "zh": "你看著鏡子，香菇不見了，整個人看起來很有精神。" }
+    ],
+    "title": { "en": "Looking Sharp", "zh": "煥然一新" },
+    "story": { "en": "You leave a tip and walk home feeling great. Mia takes one look at you and says, \"Who are you, and what did you do with the mushroom?\"", "zh": "你留了小費，心情很好地走回家。米亞一看到你就說：「你是誰？那朵香菇去哪了？」" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Just a trim, please.",
+      "zh": "稍微修一下就好。",
+      "explain": "trim 是「修剪」，只修短、不改造型。想大改造型可以帶照片說 Can you make it look like this?。",
+      "example": { "en": "Just a trim, please. About two centimeters.", "zh": "稍微修一下就好，大概兩公分。" }
+    },
+    {
+      "type": "phrase",
+      "en": "A little shorter on the sides.",
+      "zh": "兩側短一點。",
+      "explain": "on the sides 是左右兩側，on top 是頭頂，in the back 是後面。用比較級 shorter 表示「再短一點」。",
+      "example": { "en": "Shorter in the back, but keep the top long.", "zh": "後面剪短，但頭頂留長。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Not too short.",
+      "zh": "不要太短。",
+      "explain": "not too + 形容詞是「不要太……」，簡短又清楚。也可以說 Don't make it too short.。",
+      "example": { "en": "Not too short, please. I want to keep some length.", "zh": "不要太短，我想留一點長度。" }
+    },
+    {
+      "type": "trap",
+      "en": "more shorter / don't too short",
+      "zh": "常見比較級與否定錯誤",
+      "explain": "shorter 已經是比較級，不能再加 more。don't 後面要接動詞，「不要太短」要說 not too short。",
+      "example": { "en": "Make it a little shorter, but not too short.", "zh": "剪短一點，但不要太短。" }
+    },
+    {
+      "type": "culture",
+      "en": "Tip your barber",
+      "zh": "理髮要給小費",
+      "explain": "在北美，理髮通常會給 15% 到 20% 的小費。另外，台灣美髮店常見的洗頭、按摩，在當地理髮店不一定有。",
+      "example": { "en": "Thanks, that looks great. Keep the change!", "zh": "謝謝，剪得很好看。零錢不用找了！" }
+    }
+  ]
+}

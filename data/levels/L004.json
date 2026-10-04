@@ -1,0 +1,180 @@
+{
+  "id": "L004",
+  "location": { "en": "Harbor Inn, front desk", "zh": "港灣旅店，櫃檯" },
+  "goal": { "en": "Check in to your hotel and find out about breakfast.", "zh": "完成飯店入住手續，順便問清楚早餐的事。" },
+  "background": "small cozy hotel lobby with a wooden front desk, a brass service bell, a key rack with old brass keys, a potted fern, warm table lamps, soft red carpet, afternoon light",
+  "cast": ["c01_receptionist"],
+  "intro": [
+    { "who": "narrator", "en": "The Harbor Inn is small but cozy. You will stay here for three nights until your apartment is ready.", "zh": "港灣旅店小小的，但很溫馨。在公寓準備好之前，你會在這裡住三晚。" },
+    { "who": "narrator", "en": "A receptionist looks up from her computer.", "zh": "一位櫃檯人員從電腦前抬起頭來。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_receptionist", "expr": "happy", "en": "Good afternoon! Welcome to the Harbor Inn. Checking in?", "zh": "午安！歡迎光臨港灣旅店。要辦入住嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, I have a reservation under Kai.",
+          "zh": "對，我用凱這個名字訂了房。",
+          "ok": true,
+          "tip": "I have a reservation under + 名字，說明你用誰的名義訂房。"
+        },
+        {
+          "en": "Yes, I ordered a room on the internet.",
+          "zh": "對，我在網路上訂了房間。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_receptionist", "expr": "confused", "en": "You ordered... a room? Like room service?", "zh": "你點了……一個房間？是說客房服務嗎？" }
+            ],
+            "title": { "en": "Room Service", "zh": "客房服務" },
+            "story": { "en": "Hannah hands you the room service menu with a puzzled smile. It takes five minutes before anyone looks for your booking.", "zh": "漢娜一臉疑惑地遞給你客房服務的菜單。過了五分鐘，才有人開始找你的訂房紀錄。" },
+            "why": "中文「訂房」的「訂」不是 order，order 是點餐或訂購商品。訂房要用 book 或 reservation：I have a reservation under Kai."
+          }
+        },
+        {
+          "en": "Yes. Give me my key. I'm tired.",
+          "zh": "對。把鑰匙給我，我很累。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_receptionist", "expr": "upset", "en": "Of course. I just need to find your booking first.", "zh": "當然。我只是得先找到你的訂房紀錄。" }
+            ],
+            "title": { "en": "Room Next to the Ice Machine", "zh": "製冰機旁的房間" },
+            "story": { "en": "She gives you a polite but chilly smile. Somehow, your room ends up right next to the very noisy ice machine.", "zh": "她給了你一個禮貌但冷淡的微笑。不知怎麼的，你的房間剛好就在超吵的製冰機旁邊。" },
+            "why": "Give me... 是命令句，對服務人員用起來很不客氣。說 I have a reservation under Kai. 直接進入正題，又有禮貌。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_receptionist", "expr": "neutral", "en": "Kai... let me check. How do you spell that?", "zh": "凱……我查一下。請問怎麼拼？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. It's K-A-I.",
+          "zh": "好的，拼法是 K-A-I。",
+          "ok": true,
+          "tip": "被問 How do you spell...? 時，一個字母一個字母念出來。"
+        },
+        {
+          "en": "Kai. Kai! KAI!",
+          "zh": "凱。凱！凱！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_receptionist", "expr": "confused", "en": "Yes, I heard you! I mean the letters, please.", "zh": "對，我有聽到！我是說字母怎麼拼。" }
+            ],
+            "title": { "en": "Louder Is Not Clearer", "zh": "大聲不等於清楚" },
+            "story": { "en": "You say your name louder and louder. Now the whole lobby knows your name, but the computer still doesn't.", "zh": "你把名字越喊越大聲。現在整個大廳都知道你叫什麼了，但電腦還是找不到你。" },
+            "why": "spell 是「拼字」，對方要的是字母，不是聽你再說一次。回答 It's K-A-I. 就好。"
+          }
+        },
+        {
+          "en": "Just Kai. It's a very easy name.",
+          "zh": "就是凱啊，很簡單的名字。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_receptionist", "expr": "upset", "en": "Easy for you, maybe. Is it C-A-Y? K-Y-E?", "zh": "對你來說也許很簡單。是 C-A-Y 嗎？還是 K-Y-E？" }
+            ],
+            "title": { "en": "Spelling Bee", "zh": "拼字大賽" },
+            "story": { "en": "Hannah tries five different spellings and finds nothing. You wait twenty minutes while she calls the booking website.", "zh": "漢娜試了五種拼法都找不到。你等了二十分鐘，她才打電話問到訂房網站。" },
+            "why": "英文名字常有好幾種拼法，例如 Kai、Kye、Cai，說「很簡單」反而顯得不耐煩。被問到就直接拼出來：It's K-A-I."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_receptionist", "expr": "happy", "en": "Found you! Three nights in room 205. Here's your key. Any questions?", "zh": "找到了！三晚，205 號房。這是你的鑰匙。還有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. What time is breakfast?",
+          "zh": "有，早餐是幾點？",
+          "ok": true,
+          "tip": "What time is + 活動？ 用來問某件事幾點開始。"
+        },
+        {
+          "en": "Yes. Is breakfast include?",
+          "zh": "有，有含早餐嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_receptionist", "expr": "confused", "en": "Breakfast... include what? Sorry, I'm not sure what you mean.", "zh": "早餐……包含什麼？抱歉，我不太懂你的意思。" }
+            ],
+            "title": { "en": "The Vending Machine Breakfast", "zh": "販賣機早餐" },
+            "story": { "en": "You give up and go to your room. The next morning you buy a sad sandwich from a vending machine, then walk past the free breakfast buffet.", "zh": "你放棄追問，回房間去了。隔天早上你在販賣機買了一個可憐的三明治，接著才經過免費的早餐吧。" },
+            "why": "「有含早餐嗎？」要用被動的 included：Is breakfast included?。想知道時間，就問 What time is breakfast?"
+          }
+        },
+        {
+          "en": "Thank you! Here's ten dollars for you.",
+          "zh": "謝謝！這十塊給你。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_receptionist", "expr": "confused", "en": "Oh! That's kind, but you don't need to tip me.", "zh": "喔！你人真好，不過不用給我小費喔。" }
+            ],
+            "title": { "en": "Too Generous", "zh": "大方過頭" },
+            "story": { "en": "Hannah gently pushes the money back across the desk. The guest behind you raises an eyebrow, and you wish the carpet could swallow you.", "zh": "漢娜輕輕把錢推回來。你後面的房客挑了挑眉，你真希望地毯能把你吞掉。" },
+            "why": "辦入住、問問題不需要給櫃檯小費。被問 Any questions? 時，就趁機問實用資訊，例如 What time is breakfast?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_receptionist", "expr": "happy", "en": "Breakfast is from seven to ten, in the garden room. Enjoy your stay!", "zh": "早餐時間是七點到十點，在花園廳。祝你住得愉快！" }
+    ],
+    "title": { "en": "Home for Three Nights", "zh": "三晚的家" },
+    "story": { "en": "Room 205 is small and quiet, with a view of the harbor. You fall asleep before the sun goes down.", "zh": "205 號房小小的，很安靜，窗外就是港口。太陽還沒下山，你就睡著了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I have a reservation under Kai.",
+      "zh": "我用凱這個名字訂了房。",
+      "explain": "under + 名字，表示「用某人的名義訂的」。訂房、訂位都能用這句。",
+      "example": { "en": "I have a reservation under Chen for two.", "zh": "我用陳的名字訂了兩位。" }
+    },
+    {
+      "type": "trap",
+      "en": "Book a room, not \"order\" a room",
+      "zh": "訂房用 book，不用 order",
+      "explain": "order 是點餐或訂購商品；訂房、訂位要用 book 或 make a reservation。",
+      "example": { "en": "I booked a room for three nights.", "zh": "我訂了三晚的房間。" }
+    },
+    {
+      "type": "phrase",
+      "en": "It's K-A-I.",
+      "zh": "拼法是 K-A-I。",
+      "explain": "英文名字常有不同拼法。被問 How do you spell that? 時，一個字母一個字母念，字母之間稍微停頓。",
+      "example": { "en": "My last name is Lin. It's L-I-N.", "zh": "我姓林，拼法是 L-I-N。" }
+    },
+    {
+      "type": "grammar",
+      "en": "What time is breakfast? / Is breakfast included?",
+      "zh": "早餐幾點？／有含早餐嗎？",
+      "explain": "What time is + 活動？ 問幾點開始。問「有沒有包含」要用被動 included，不能說 include。",
+      "example": { "en": "What time is checkout? Is parking included?", "zh": "幾點退房？有含停車嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "No tip at the front desk",
+      "zh": "櫃檯不用給小費",
+      "explain": "辦入住、問問題不用給小費。幫你提行李上樓的行李員，才是常見的小費對象。",
+      "example": { "en": "Thank you so much for your help!", "zh": "非常感謝你的幫忙！" }
+    }
+  ]
+}

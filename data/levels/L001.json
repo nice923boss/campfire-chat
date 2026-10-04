@@ -1,0 +1,181 @@
+{
+  "id": "L001",
+  "location": { "en": "Maple Bay International Airport, immigration counter", "zh": "楓灣國際機場，入境櫃檯" },
+  "goal": { "en": "Answer the officer's questions and get through immigration.", "zh": "回答移民官的問題，順利通過入境審查。" },
+  "background": "airport immigration hall with a row of passport control booths, glass partitions, queue barrier belts, bright ceiling lights, polished floor, morning",
+  "cast": ["c01_officer"],
+  "intro": [
+    { "who": "narrator", "en": "Maple Bay International Airport. After a twelve-hour flight, you finally reach the front of the line.", "zh": "楓灣國際機場。經過十二小時的飛行，你終於排到隊伍最前面。" },
+    { "who": "narrator", "en": "A serious-looking officer waves you over.", "zh": "一位表情嚴肅的移民官向你招手。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_officer", "expr": "neutral", "en": "Good morning. May I see your passport, please?", "zh": "早安，請出示你的護照。" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Here you are.",
+          "zh": "好的，請看。",
+          "ok": true,
+          "tip": "遞東西給別人時說 Here you are.，自然又有禮貌。"
+        },
+        {
+          "en": "Give you.",
+          "zh": "給你。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_officer", "expr": "confused", "en": "Give me... what? I need your passport.", "zh": "給我……什麼？我需要你的護照。" }
+            ],
+            "title": { "en": "Lost in Translation", "zh": "翻譯迷航" },
+            "story": { "en": "The officer squints at you. The line behind you grows longer, and you are sent to a side room to \"clarify a few things.\"", "zh": "移民官瞇起眼睛看你。後面的隊伍越排越長，你被請到旁邊的小房間「釐清一些事情」。" },
+            "why": "「Give you.」是中文「給你」的直譯。英文的 give 要說清楚給誰、給什麼，只說 Give you. 對方聽不懂。遞東西時說 Here you are. 或 Here it is. 就好。"
+          }
+        },
+        {
+          "en": "No. Why?",
+          "zh": "不要，為什麼？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_officer", "expr": "upset", "en": "Because this is a border. Please step aside.", "zh": "因為這裡是國境。請到旁邊等候。" }
+            ],
+            "title": { "en": "The Little Room", "zh": "小房間的兩小時" },
+            "story": { "en": "Refusing a passport check is never a good idea. You spend the next two hours in a small room, answering the same questions again and again.", "zh": "拒絕出示護照絕對不是好主意。接下來兩個小時，你在小房間裡一遍又一遍回答同樣的問題。" },
+            "why": "入境時出示護照是基本流程，直接拒絕或反問「為什麼」會被當成不配合。先配合，有疑問再禮貌地問 Is there a problem?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_officer", "expr": "neutral", "en": "Thank you. What's the purpose of your visit?", "zh": "謝謝。你這次來的目的是什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm here to study English for a year.",
+          "zh": "我來這裡讀一年英文。",
+          "ok": true,
+          "tip": "I'm here to + 原形動詞，清楚說明來訪目的。"
+        },
+        {
+          "en": "I'm visit.",
+          "zh": "我是拜訪。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_officer", "expr": "confused", "en": "You're... a visit? Sorry, I don't follow.", "zh": "你是……一個拜訪？抱歉，我聽不懂。" }
+            ],
+            "title": { "en": "Grammar at the Gate", "zh": "卡在文法關" },
+            "story": { "en": "The officer asks again, slower this time. You panic and repeat \"I'm visit\" three more times. You are moved to a different line for an interview.", "zh": "移民官放慢速度又問一次。你一慌，又重複了三次「I'm visit」，結果被轉到另一排接受面談。" },
+            "why": "I'm 後面不能直接接原形動詞 visit。要說 I'm visiting a friend. 或用句型 I'm here to study.。"
+          }
+        },
+        {
+          "en": "Yes, I have a purpose.",
+          "zh": "有，我有目的。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_officer", "expr": "upset", "en": "...Okay. And what IS that purpose?", "zh": "……好喔。那目的「是什麼」？" }
+            ],
+            "title": { "en": "Mysterious Traveler", "zh": "神秘旅客" },
+            "story": { "en": "Your answer sounds like you are hiding something. The officer calls a supervisor, and your bags get a very careful search.", "zh": "你的回答聽起來像在隱瞞什麼。移民官叫來主管，你的行李被仔仔細細地翻了一遍。" },
+            "why": "What 開頭的問題是要你說出具體內容，不能用 Yes / No 回答。被問 What's the purpose of your visit? 就直接說目的：I'm here to study.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_officer", "expr": "neutral", "en": "And how long will you stay in Maple Bay?", "zh": "你會在楓灣待多久？" }
+      ],
+      "choices": [
+        {
+          "en": "For one year.",
+          "zh": "一年。",
+          "ok": true,
+          "tip": "How long 問的是一段期間，用 for + 時間長度 回答最簡潔。"
+        },
+        {
+          "en": "Since one year.",
+          "zh": "從一年。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_officer", "expr": "confused", "en": "Since one year? Since when? Have you been here before?", "zh": "從一年？從什麼時候？你以前來過嗎？" }
+            ],
+            "title": { "en": "Time Traveler", "zh": "時空旅人" },
+            "story": { "en": "The officer thinks you have been living here illegally for a year. It takes a long phone call to your school to fix the misunderstanding.", "zh": "移民官以為你已經在這裡非法住了一年。最後打了好長一通電話到你的學校，才解開誤會。" },
+            "why": "since 後面接「起始時間點」，例如 since 2024、since Monday，表示從那時到現在。說「為期多久」要用 for：for one year。"
+          }
+        },
+        {
+          "en": "Very long! Maybe forever, haha!",
+          "zh": "很久！說不定永遠不走，哈哈！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_officer", "expr": "upset", "en": "Forever? Your visa says one year. Please come with me.", "zh": "永遠？你的簽證寫的是一年。請跟我來。" }
+            ],
+            "title": { "en": "Joke's on You", "zh": "玩笑開過頭" },
+            "story": { "en": "Joking about staying forever at a border is a bad idea. The officer takes your words seriously, and you miss the airport bus while you explain.", "zh": "在邊境開「永遠不走」的玩笑是大忌。移民官認真看待你的話，等你解釋完，機場巴士早就開走了。" },
+            "why": "在入境櫃檯開「不走了」的玩笑，會讓移民官懷疑你打算逾期居留。邊境對話要簡短、具體、誠實：For one year.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "The officer stamps your passport with a satisfying thump.", "zh": "移民官「咚」的一聲，在你的護照蓋下入境章。" },
+      { "who": "c01_officer", "expr": "happy", "en": "Everything looks fine. Welcome to Maple Bay!", "zh": "一切沒問題。歡迎來到楓灣！" }
+    ],
+    "title": { "en": "Welcome to Maple Bay", "zh": "歡迎來到楓灣" },
+    "story": { "en": "With a fresh stamp in your passport, you walk through the gate. Your year in Maple Bay has officially begun.", "zh": "護照上多了一枚新印章，你走出閘門。在楓灣的一年，正式開始了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Here you are.",
+      "zh": "給你／請看。",
+      "explain": "遞東西給別人時的標準說法，比直譯的 Give you. 自然得多。也可以說 Here it is.。",
+      "example": { "en": "Here you are. This is my passport and my visa.", "zh": "請看，這是我的護照和簽證。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm here to study.",
+      "zh": "我是來讀書的。",
+      "explain": "說明來訪目的最好用的句型：I'm here to + 原形動詞。也可以用 I'm here for + 名詞，例如 I'm here for work.。",
+      "example": { "en": "I'm here to visit my aunt.", "zh": "我來這裡探望阿姨。" }
+    },
+    {
+      "type": "grammar",
+      "en": "for one year / since 2024",
+      "zh": "為期一年／從 2024 年起",
+      "explain": "for 接一段時間長度，since 接起始時間點。回答 How long 的問題時，用 for。",
+      "example": { "en": "I'll stay here for two weeks.", "zh": "我會在這裡待兩週。" }
+    },
+    {
+      "type": "trap",
+      "en": "What's the purpose of your visit?",
+      "zh": "你來訪的目的是什麼？",
+      "explain": "What、Where、How long 開頭的問題要回答具體內容，不能只說 Yes 或 No。",
+      "example": { "en": "What's the purpose of your trip? Tourism.", "zh": "你旅行的目的是什麼？觀光。" }
+    },
+    {
+      "type": "culture",
+      "en": "Keep it short and honest.",
+      "zh": "簡短、誠實地回答。",
+      "explain": "入境審查不是閒聊的場合。直接回答問題、不開玩笑，是讓流程順利的關鍵。",
+      "example": { "en": "I'm a student. Here's my letter from the school.", "zh": "我是學生，這是學校給我的信。" }
+    }
+  ]
+}

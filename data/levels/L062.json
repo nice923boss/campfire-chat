@@ -1,0 +1,264 @@
+{
+  "id": "L062",
+  "location": { "en": "Maple Bay Language Institute, career advice office", "zh": "楓灣語言學院，職涯諮詢室" },
+  "goal": { "en": "Ask the career advisor to check your resume and learn how to make it stronger.", "zh": "請職涯顧問看你的履歷，學會怎麼把它寫得更有力。" },
+  "background": "small career advice office at a language school, wooden desk with a laptop and loose blank papers, shelf of plain binders, potted plant, window with soft afternoon light",
+  "cast": ["c07_advisor"],
+  "intro": [
+    { "who": "narrator", "en": "An email from Rachel at Brightway: please apply online by Friday and attach an updated resume.", "zh": "Brightway 的瑞秋寄來一封信：請在星期五前上網應徵，並附上更新過的履歷。" },
+    { "who": "narrator", "en": "You open your old resume and sigh. Time to visit the school's career office.", "zh": "你打開舊履歷，嘆了一口氣。該去學校的職涯諮詢室一趟了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c07_advisor", "expr": "neutral", "en": "Come on in, Kai. I'm Mr. Hayes. What can I do for you today?", "zh": "請進，凱。我是海斯先生。今天有什麼需要幫忙的？" }
+      ],
+      "choices": [
+        {
+          "en": "Could you help me look my resume? It's urgent.",
+          "zh": "你可以幫我看履歷嗎？很急。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_advisor", "expr": "confused", "en": "Look your resume? You mean look at it? Or look for it? Did you lose it?", "zh": "看你的履歷？你是說看一下？還是找它？你弄丟了嗎？" }
+            ],
+            "title": { "en": "Missing Resume", "zh": "履歷失蹤記" },
+            "story": { "en": "Mr. Hayes starts searching his desk for your lost resume. It takes a while to explain that it is safely in your bag.", "zh": "海斯先生開始在桌上翻找你「弄丟的」履歷。你解釋了好一陣子，他才知道履歷好好地在你包包裡。" },
+            "why": "look 後面接東西要加 at：look at my resume。請人幫忙看文件，最自然的說法是 Could you take a look at my resume?。"
+          }
+        },
+        {
+          "en": "Could you take a look at my resume before I send it?",
+          "zh": "在我寄出之前，你可以幫我看一下履歷嗎？",
+          "ok": true,
+          "tip": "Could you take a look at...? 是請別人幫忙看東西最常用的客氣說法。"
+        },
+        {
+          "en": "Fix my resume for me. Brightway needs it by Friday.",
+          "zh": "幫我改履歷。Brightway 星期五前要。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_advisor", "expr": "upset", "en": "I'm happy to give advice, Kai, but I'm not your personal typist.", "zh": "凱，我很樂意給建議，但我不是你的私人打字員。" }
+            ],
+            "title": { "en": "Not Your Typist", "zh": "顧問不是打字員" },
+            "story": { "en": "Mr. Hayes hands you a pen and a long checklist. You spend the evening fixing everything alone.", "zh": "海斯先生遞給你一支筆和一張長長的檢查清單。你一個人改到晚上。" },
+            "why": "用命令句要求別人幫你做事，聽起來很沒禮貌，好像對方理所當然要替你做。請人幫忙要用問句：Could you take a look at my resume?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Mr. Hayes flips through the pages. Then he flips back again.", "zh": "海斯先生翻了翻履歷，又翻回前面。" },
+        { "who": "c07_advisor", "expr": "neutral", "en": "Hmm. It's three pages long, and it has your photo, your birthday and your height on it.", "zh": "嗯，它有三頁長，上面還有你的照片、生日和身高。" }
+      ],
+      "choices": [
+        {
+          "en": "Is that a problem? How can I improve it?",
+          "zh": "這樣有問題嗎？我可以怎麼改進？",
+          "ok": true,
+          "tip": "How can I improve...? 主動請教改進方法，顯示你願意學習。"
+        },
+        {
+          "en": "Yes, I'm 175 centimeters. Is that tall in Maple Bay?",
+          "zh": "對，我 175 公分。這在楓灣算高嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c07_advisor", "expr": "confused", "en": "Um... about average, I suppose? But that's not really my point.", "zh": "呃……大概算普通吧？不過我的重點不是這個。" }
+            ],
+            "title": { "en": "Measuring Up", "zh": "量身高時間" },
+            "story": { "en": "The two of you have a surprisingly long chat about average heights around the world. Your resume stays three pages long.", "zh": "你們兩個意外聊了很久世界各國的平均身高。你的履歷還是三頁長。" },
+            "why": "顧問列出照片、生日、身高，是在暗示這些「不該放」，不是在問你的身高。聽到問題點時，接著問 Is that a problem? How can I improve it?。"
+          }
+        },
+        {
+          "en": "Should I add that I'm single too? We do in Taiwan.",
+          "zh": "我要不要也寫我單身？在台灣都會寫。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_advisor", "expr": "confused", "en": "Please don't! Here, employers aren't even allowed to ask about that.", "zh": "千萬不要！在這裡，雇主連問都不能問這個。" }
+            ],
+            "title": { "en": "Too Much Information", "zh": "資訊過量" },
+            "story": { "en": "Mr. Hayes takes off his glasses and gives you a twenty-minute talk on fair hiring laws. You learn a lot, but your resume is still not done.", "zh": "海斯先生摘下眼鏡，給你上了二十分鐘的公平僱用法規課。你學到很多，但履歷還是沒改完。" },
+            "why": "台灣履歷常放照片、生日、婚姻狀況，但在許多英語系國家，這些資訊可能造成歧視疑慮，雇主不希望看到。履歷只放和工作有關的內容，再問 How can I improve it?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_advisor", "expr": "neutral", "en": "First, cut it to one page. Now, your café job. You wrote: 'I was responsible for the cash register.' Can you make that stronger?", "zh": "首先，刪到一頁。再來是你的咖啡店工作。你寫「I was responsible for the cash register.」，可以寫得更有力嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "It's fine. Nobody reads resumes carefully anyway.",
+          "zh": "這樣就好啦，反正沒人會仔細看履歷。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_advisor", "expr": "upset", "en": "Recruiters read hundreds of them, Kai. About six seconds each. Make those seconds count.", "zh": "凱，招募人員要看幾百份履歷，每份大概只看六秒。你得讓那六秒有價值。" }
+            ],
+            "title": { "en": "Six Seconds", "zh": "六秒定生死" },
+            "story": { "en": "Mr. Hayes sets a timer for six seconds and hands you a stranger's resume. You remember nothing. Point taken.", "zh": "海斯先生設了六秒計時，遞給你一份陌生人的履歷。時間到，你什麼都記不得。你懂了。" },
+            "why": "對顧問的建議回「反正沒人看」很失禮，而且招募人員只花幾秒掃履歷，所以更需要有力的動詞。可以改成 Handled payments for 200 customers a day.。"
+          }
+        },
+        {
+          "en": "How about 'Handled payments for 200 customers a day'?",
+          "zh": "改成「每天為 200 位客人處理結帳」如何？",
+          "ok": true,
+          "tip": "履歷用動作動詞開頭，例如 Handled、Managed，再加上數字，成果一目了然。"
+        },
+        {
+          "en": "How about 'I responsibled for the cash register every day'?",
+          "zh": "改成「我每天負責收銀機」如何？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_advisor", "expr": "confused", "en": "Responsibled? I'm afraid that's not a word.", "zh": "Responsibled？恐怕沒有這個字。" }
+            ],
+            "title": { "en": "The Word That Wasn't", "zh": "不存在的單字" },
+            "story": { "en": "Mr. Hayes circles the word in red, then circles it again. Your resume now looks like a homework assignment.", "zh": "海斯先生用紅筆把那個字圈起來，又圈了一次。你的履歷現在看起來像批改過的作業。" },
+            "why": "responsible 是形容詞，不能加 -ed 當動詞用。要寫得有力，就換成動作動詞：Handled payments for 200 customers a day.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_advisor", "expr": "happy", "en": "Much better! Numbers make it real. Now, your design studio job says 'Helped my boss with social media.'", "zh": "好多了！有數字就有說服力。再來，你在設計工作室的經歷寫的是「幫老闆處理社群媒體」。" }
+      ],
+      "choices": [
+        {
+          "en": "Maybe 'Created posts that grew our followers by 30%'?",
+          "zh": "也許改成「製作貼文，讓追蹤人數成長 30%」？",
+          "ok": true,
+          "tip": "Created、Grew、Designed 這類動詞直接說出你的貢獻，比 Helped 有力得多。"
+        },
+        {
+          "en": "Honestly, my boss was lazy, so I did everything myself.",
+          "zh": "老實說，我老闆很懶，所以全部都是我自己做。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_advisor", "expr": "upset", "en": "Careful. Say that in an interview, and they'll wonder what you'll say about them someday.", "zh": "小心。面試時這樣說，他們會想你以後會怎麼說他們。" }
+            ],
+            "title": { "en": "Boss Bashing", "zh": "數落前老闆" },
+            "story": { "en": "Mr. Hayes writes 'NEVER badmouth a boss' at the top of your page in big red letters. It's a good tip, but now you need a new copy.", "zh": "海斯先生在你履歷最上方用紅筆大大寫了「絕對不要說前老闆壞話」。建議很好，但你得重印一份了。" },
+            "why": "抱怨前老闆會讓人擔心你以後也這樣說新公司。把功勞用動作動詞寫出來就好：Created posts that grew our followers by 30%.。"
+          }
+        },
+        {
+          "en": "Maybe 'Helped boss do Facebook and Instagram, very hard'?",
+          "zh": "也許改成「幫老闆做臉書和 IG，很辛苦」？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_advisor", "expr": "confused", "en": "It still sounds like you were just helping out. What did you actually do?", "zh": "聽起來還是只是在幫忙。你實際上做了什麼？" }
+            ],
+            "title": { "en": "Very Hard, Very Vague", "zh": "很辛苦，但很模糊" },
+            "story": { "en": "Mr. Hayes reads it three times and still can't tell what your job was. Neither will Brightway.", "zh": "海斯先生讀了三遍，還是看不出你的工作是什麼。Brightway 也一樣看不出來。" },
+            "why": "「幫老闆做臉書，很辛苦」直譯成英文，只看得出辛苦，看不出成果。用 Created、Designed、Grew 開頭，再加上數字，例如 Created posts that grew our followers by 30%.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_advisor", "expr": "happy", "en": "This is really coming together. Anything else before you send it to Brightway?", "zh": "越來越像樣了。寄給 Brightway 之前，還有別的事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Should I add 'can work overtime anytime, no extra pay'?",
+          "zh": "我要不要加上「隨時可配合加班，不用加班費」？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_advisor", "expr": "upset", "en": "Absolutely not! That tells them you don't value your own time.", "zh": "絕對不要！這等於告訴他們你不重視自己的時間。" }
+            ],
+            "title": { "en": "Free Overtime Special", "zh": "免費加班大放送" },
+            "story": { "en": "Mr. Hayes looks so shocked that he spills his coffee. You help clean it up, and the line never makes it onto your resume.", "zh": "海斯先生嚇得打翻了咖啡。你幫忙擦乾淨，那句話也永遠沒出現在履歷上。" },
+            "why": "台灣履歷常寫「配合度高、可配合加班」，但在這裡，自願無償加班會讓人覺得你不懂保護自己，甚至讓雇主擔心違法。想表達彈性，寫 Flexible with schedules 就夠了。"
+          }
+        },
+        {
+          "en": "Could you also check my cover letter, please?",
+          "zh": "可以也請你看看我的求職信嗎？",
+          "ok": true,
+          "tip": "Could you also check...? 用 also 自然地多提一個請求。"
+        },
+        {
+          "en": "Could you also help me see see my cover letter?",
+          "zh": "可以也幫我看看我的求職信嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_advisor", "expr": "confused", "en": "See see? Ha, you mean have a look? Of course.", "zh": "See see？哈，你是說看一下嗎？當然好。" }
+            ],
+            "title": { "en": "Double Vision", "zh": "看看看看" },
+            "story": { "en": "Mr. Hayes laughs so hard he has to take off his glasses. He adds 'see see' to his list of favorite student moments.", "zh": "海斯先生笑到得摘下眼鏡。他把「see see」加進他的學生經典語錄清單。" },
+            "why": "中文用「看看」讓語氣變輕鬆，但英文動詞不能重複。請人幫忙看東西說 Could you check...? 或 Could you take a look at...?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Mr. Hayes prints your new one-page resume and hands it back with a nod.", "zh": "海斯先生印出你的新版一頁履歷，點點頭遞還給你。" },
+      { "who": "c07_advisor", "expr": "happy", "en": "Now that's a resume I'd want to read. Go send it to Brightway!", "zh": "這才是我會想讀的履歷。快寄給 Brightway 吧！" }
+    ],
+    "title": { "en": "One-Page Wonder", "zh": "一頁精華" },
+    "story": { "en": "Three pages became one, and every line now shows what you can do. You click Submit with a smile.", "zh": "三頁變成一頁，每一行都在說明你能做什麼。你笑著按下送出。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Could you take a look at...?",
+      "zh": "可以請你看一下……嗎？",
+      "explain": "請別人幫忙看文件的客氣說法。注意 look 後面要加 at，不能說 look my resume。",
+      "example": { "en": "Could you take a look at my cover letter?", "zh": "可以請你看一下我的求職信嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "How can I improve...?",
+      "zh": "我可以怎麼改進……？",
+      "explain": "主動請教改進方法，比只問「這樣可以嗎？」更能得到具體建議。",
+      "example": { "en": "How can I improve this part?", "zh": "這個部分我可以怎麼改進？" }
+    },
+    {
+      "type": "vocab",
+      "en": "Action verbs: handled, managed, created, organized",
+      "zh": "動作動詞：處理、管理、製作、籌辦",
+      "explain": "履歷每一條經歷用動作動詞的過去式開頭，再加上數字或成果，例如人數、百分比。少用 I was responsible for 或 Helped。",
+      "example": { "en": "Organized three product photo shoots a month.", "zh": "每月籌辦三場商品攝影。" }
+    },
+    {
+      "type": "trap",
+      "en": "see see / responsibled",
+      "zh": "看看／負責了",
+      "explain": "英文動詞不能像中文「看看」一樣重複；responsible 是形容詞，不能加 -ed。換成 check、handled 這類真正的動詞。",
+      "example": { "en": "Could you check my resume? I handled all the orders.", "zh": "你可以幫我看履歷嗎？所有訂單都是我處理的。" }
+    },
+    {
+      "type": "culture",
+      "en": "No photo, birthday or marital status",
+      "zh": "不放照片、生日、婚姻狀況",
+      "explain": "在許多英語系國家，為了避免歧視，履歷通常不放照片、生日、身高、婚姻狀況，篇幅以一頁為主。也別寫「可無償加班」。",
+      "example": { "en": "Keep it to one page and focus on your skills.", "zh": "控制在一頁，聚焦在你的能力上。" }
+    }
+  ]
+}

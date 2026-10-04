@@ -1,0 +1,182 @@
+{
+  "id": "L003",
+  "location": { "en": "Taxi from the airport to Harbor Street", "zh": "從機場開往港灣街的計程車上" },
+  "goal": { "en": "Tell the driver where to go, ask about the fare and pay.", "zh": "告訴司機目的地、詢問車資，然後付錢下車。" },
+  "background": "interior of a taxi seen from the back seat, beige leather seats, empty driver seat, a small pine air freshener hanging from the mirror, city skyline and harbor through the windshield, late morning",
+  "cast": ["c01_taxi_driver"],
+  "intro": [
+    { "who": "narrator", "en": "With your suitcase finally in hand, you head outside to the taxi line.", "zh": "終於拿到行李箱，你走到外面排計程車。" },
+    { "who": "narrator", "en": "A yellow taxi pulls up. The driver puts your bag in the trunk, and you climb into the back seat.", "zh": "一輛黃色計程車停了下來。司機把你的行李放進後車廂，你坐進後座。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_taxi_driver", "expr": "happy", "en": "Hi there! Where can I take you today?", "zh": "嗨！今天要去哪裡？" }
+      ],
+      "choices": [
+        {
+          "en": "Could you take me to the Harbor Inn?",
+          "zh": "可以載我到港灣旅店嗎？",
+          "ok": true,
+          "tip": "Could you take me to + 地點？ 是告訴司機目的地的禮貌說法。"
+        },
+        {
+          "en": "Driver Big Brother, to the Harbor Inn!",
+          "zh": "司機大哥，到港灣旅店！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_taxi_driver", "expr": "confused", "en": "Big brother? Ha! I only have sisters, but okay...", "zh": "大哥？哈！我只有姊妹耶，不過好吧……" }
+            ],
+            "title": { "en": "Family Reunion", "zh": "認親大會" },
+            "story": { "en": "Frank laughs so hard that he misses the highway exit. The detour adds ten minutes and five dollars to the ride.", "zh": "法蘭克笑到錯過了高速公路的出口。繞了一圈，車程多了十分鐘，車資也多了五塊錢。" },
+            "why": "「司機大哥」是中文的親切稱呼，直譯成 Big Brother 會讓人摸不著頭緒。英文不用稱呼司機，直接說目的地：Could you take me to the Harbor Inn?"
+          }
+        },
+        {
+          "en": "Harbor Inn. Drive fast, I'm tired.",
+          "zh": "港灣旅店。開快點，我很累。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_taxi_driver", "expr": "upset", "en": "I'll drive at the speed limit, thanks.", "zh": "我會照速限開，謝謝。" }
+            ],
+            "title": { "en": "The Silent Ride", "zh": "沉默的車程" },
+            "story": { "en": "Frank doesn't say another word for the whole ride. The silence is so heavy that you almost miss your hotel.", "zh": "整趟車程法蘭克一句話也沒說。車裡安靜到讓人窒息，你差點錯過自己的飯店。" },
+            "why": "一上車就命令司機開快點，聽起來很沒禮貌。用 Could you take me to...? 開頭，口氣就會客氣很多。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_taxi_driver", "expr": "happy", "en": "The Harbor Inn, got it. It's about twenty minutes. Sit back and relax!", "zh": "港灣旅店，沒問題。大約二十分鐘，放輕鬆坐好吧！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks. About how much is it?",
+          "zh": "謝謝。大概多少錢？",
+          "ok": true,
+          "tip": "How much is it? 問價錢，前面加 About 表示問大概的金額。"
+        },
+        {
+          "en": "How much? Expensive not expensive?",
+          "zh": "多少錢？貴不貴？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_taxi_driver", "expr": "confused", "en": "Expensive not... what? Sorry, say that again?", "zh": "貴不……什麼？抱歉，可以再說一次嗎？" }
+            ],
+            "title": { "en": "Price Puzzle", "zh": "價錢謎題" },
+            "story": { "en": "Frank tries three times to understand the question, then gives up and turns on the radio. You find out the price only when you arrive.", "zh": "法蘭克試著理解了三次，最後放棄，打開了收音機。你一直到下車才知道車資多少。" },
+            "why": "「貴不貴」這種正反問句是中文特有的，直譯成 Expensive not expensive? 英文聽不懂。問價錢說 How much is it?，問大概就加 About。"
+          }
+        },
+        {
+          "en": "Can I pay half? I'm a student.",
+          "zh": "可以付一半嗎？我是學生。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_taxi_driver", "expr": "upset", "en": "Half? The meter decides the price, not me.", "zh": "一半？車資是跳表決定的，不是我。" }
+            ],
+            "title": { "en": "No Deal", "zh": "殺價失敗" },
+            "story": { "en": "Frank is not amused. He spends the whole ride explaining how taxi meters work, very slowly.", "zh": "法蘭克一點也不覺得好笑。整趟車程他都在慢慢解釋計程車跳表是怎麼運作的。" },
+            "why": "計程車按跳表收費，跟司機殺價或要學生折扣會讓人覺得被冒犯。想先知道車資，就禮貌地問 About how much is it?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Twenty minutes later, the taxi stops in front of a small blue hotel.", "zh": "二十分鐘後，計程車停在一間藍色的小旅店門口。" },
+        { "who": "c01_taxi_driver", "expr": "neutral", "en": "Here we are! That's thirty-eight dollars.", "zh": "到囉！一共三十八塊。" }
+      ],
+      "choices": [
+        {
+          "en": "Here's forty. Keep the change.",
+          "zh": "這是四十塊，零錢不用找了。",
+          "ok": true,
+          "tip": "Keep the change. 表示零錢不用找，順便當作小費。"
+        },
+        {
+          "en": "Here's forty. No need to find.",
+          "zh": "這是四十塊，不用找了。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_taxi_driver", "expr": "confused", "en": "Find? Did you lose something back there?", "zh": "找？你在後座掉了什麼東西嗎？" }
+            ],
+            "title": { "en": "Lost and Found", "zh": "失物招領" },
+            "story": { "en": "Frank searches the back seat for your \"lost item\" while the meter keeps running. You finally walk away, and he chases you down the street with two dollars.", "zh": "法蘭克在後座找你「掉的東西」，跳表還繼續跑。你最後直接走人，他還拿著兩塊錢追了你半條街。" },
+            "why": "「不用找了」直譯成 No need to find，會讓人以為你掉了東西。英文說 Keep the change.（零錢你留著）。"
+          }
+        },
+        {
+          "en": "Thirty-eight? No, I'm only twenty-two!",
+          "zh": "三十八？不，我才二十二歲！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_taxi_driver", "expr": "confused", "en": "Ha! Not your age, friend. The fare!", "zh": "哈！不是你的年紀啦，朋友。是車資！" }
+            ],
+            "title": { "en": "Age Check", "zh": "年齡大調查" },
+            "story": { "en": "Frank laughs and points at the meter. You pay with a red face, and he tells the story to his next three passengers.", "zh": "法蘭克大笑，指了指跳表。你紅著臉付了錢，而他把這件事講給接下來三位乘客聽。" },
+            "why": "下車前司機報的數字是車資，不是在問你幾歲。付錢時說 Here's forty. Keep the change.，一句話搞定。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_taxi_driver", "expr": "happy", "en": "Thanks a lot! Enjoy Maple Bay!", "zh": "多謝啦！好好享受楓灣吧！" },
+      { "who": "narrator", "en": "He sets your suitcase on the sidewalk with a big smile.", "zh": "他笑容滿面地把你的行李箱放到人行道上。" }
+    ],
+    "title": { "en": "Smooth Ride", "zh": "一路順風" },
+    "story": { "en": "You arrive at the hotel on time, with your bag and a friendly wave from your first Maple Bay driver.", "zh": "你準時抵達飯店，帶著行李，還有楓灣第一位司機熱情的揮手道別。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Could you take me to...?",
+      "zh": "可以載我到……嗎？",
+      "explain": "告訴司機目的地的禮貌說法。趕時間時也可以只說地點加 please，例如 The Harbor Inn, please.。",
+      "example": { "en": "Could you take me to the train station?", "zh": "可以載我到火車站嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "About how much is it?",
+      "zh": "大概多少錢？",
+      "explain": "How much is it? 是問價錢的基本句。計程車是跳表計費，前面加 About 表示問大概的金額。",
+      "example": { "en": "About how much is it to the airport?", "zh": "到機場大概多少錢？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Keep the change.",
+      "zh": "零錢不用找了。",
+      "explain": "付錢時把車資湊成整數，再說 Keep the change.，多出來的零頭就是給司機的小費。",
+      "example": { "en": "Here's twenty. Keep the change.", "zh": "這是二十塊，零錢不用找了。" }
+    },
+    {
+      "type": "trap",
+      "en": "No direct translation for taxi talk",
+      "zh": "搭計程車別直譯",
+      "explain": "「司機大哥」不是 Big Brother，「貴不貴」不是 Expensive not expensive，「不用找了」也不是 No need to find。英文有自己的固定說法。",
+      "example": { "en": "How much is it? Here's forty. Keep the change.", "zh": "多少錢？這是四十塊，不用找了。" }
+    },
+    {
+      "type": "culture",
+      "en": "Taxis use the meter.",
+      "zh": "計程車跳表計費",
+      "explain": "在很多英語國家，計程車按跳表收費，不能殺價。給司機小費很常見，最簡單的方式就是把車資湊成整數。",
+      "example": { "en": "The fare is twelve dollars. I'll give fifteen.", "zh": "車資十二塊，我給十五塊。" }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "title": "Campfire Chat",
+  "subtitle": "營火英語對話",
+  "version": 1,
+  "protagonist": { "name": "Kai", "nameZh": "凱" },
+  "mentor": "ember",
+  "cast": ["core", "ch01", "ch02", "ch03", "ch04", "ch05", "ch06", "ch07", "ch08", "ch09", "ch10"],
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": { "en": "Arrival", "zh": "抵達楓灣" },
+      "cefr": "A1",
+      "summary": { "en": "Your first day in Maple Bay.", "zh": "在楓灣的第一天，從入境到認識室友。" },
+      "cover": "busy international airport arrival hall at morning, large glass windows with runway view, rolling suitcases, soft sunrise light",
+      "levels": [
+        { "id": "L001", "title": { "en": "Passport, Please", "zh": "入境審查" } },
+        { "id": "L002", "title": { "en": "Where's My Bag?", "zh": "行李轉盤" } },
+        { "id": "L003", "title": { "en": "Taxi to Town", "zh": "搭計程車進城" } },
+        { "id": "L004", "title": { "en": "Checking In", "zh": "飯店入住" } },
+        { "id": "L005", "title": { "en": "First Coffee", "zh": "第一杯咖啡" } },
+        { "id": "L006", "title": { "en": "Which Way?", "zh": "問路" } },
+        { "id": "L007", "title": { "en": "Corner Store", "zh": "便利商店" } },
+        { "id": "L008", "title": { "en": "Getting Connected", "zh": "辦手機門號" } },
+        { "id": "L009", "title": { "en": "Meeting Mia", "zh": "室友初見面" } },
+        { "id": "L010", "title": { "en": "Excuse Me, Sorry, Thanks", "zh": "三個魔法詞" } }
+      ]
+    },
+    {
+      "id": "ch02",
+      "title": { "en": "Daily Life", "zh": "生活起步" },
+      "cefr": "A1-A2",
+      "summary": { "en": "Shopping, errands and everyday survival.", "zh": "採買、跑腿，搞定每天的生活大小事。" },
+      "cover": "cozy neighborhood street with small shops, bakery and grocery store fronts with blank awnings, morning light, potted plants, bicycles",
+      "levels": [
+        { "id": "L011", "title": { "en": "Supermarket Run", "zh": "超市採買" } },
+        { "id": "L012", "title": { "en": "Fresh Bread", "zh": "麵包店" } },
+        { "id": "L013", "title": { "en": "Bus Pass", "zh": "公車儲值卡" } },
+        { "id": "L014", "title": { "en": "At the Pharmacy", "zh": "藥局買藥" } },
+        { "id": "L015", "title": { "en": "Laundry Day", "zh": "自助洗衣" } },
+        { "id": "L016", "title": { "en": "Sending a Parcel", "zh": "寄包裹回家" } },
+        { "id": "L017", "title": { "en": "Trying It On", "zh": "試穿衣服" } },
+        { "id": "L018", "title": { "en": "Fast Food Order", "zh": "速食點餐" } },
+        { "id": "L019", "title": { "en": "A New Haircut", "zh": "剪頭髮" } },
+        { "id": "L020", "title": { "en": "Opening a Bank Account", "zh": "開銀行帳戶" } }
+      ]
+    },
+    {
+      "id": "ch03",
+      "title": { "en": "Campus", "zh": "語言學校" },
+      "cefr": "A2",
+      "summary": { "en": "New classes, new classmates.", "zh": "新課程、新同學，在校園裡開口說英文。" },
+      "cover": "bright modern language school campus courtyard with brick buildings, green lawn, benches, autumn trees, clear afternoon sky",
+      "levels": [
+        { "id": "L021", "title": { "en": "Enrollment Office", "zh": "註冊報到" } },
+        { "id": "L022", "title": { "en": "First Class", "zh": "第一堂課" } },
+        { "id": "L023", "title": { "en": "Meeting Leo", "zh": "認識 Leo" } },
+        { "id": "L024", "title": { "en": "Asking the Teacher", "zh": "請教老師" } },
+        { "id": "L025", "title": { "en": "Library Card", "zh": "圖書館借書" } },
+        { "id": "L026", "title": { "en": "Cafeteria Lunch", "zh": "學生餐廳" } },
+        { "id": "L027", "title": { "en": "Group Project", "zh": "分組作業" } },
+        { "id": "L028", "title": { "en": "Running Late", "zh": "遲到了" } },
+        { "id": "L029", "title": { "en": "Club Fair", "zh": "社團博覽會" } },
+        { "id": "L030", "title": { "en": "Exam Week", "zh": "考前讀書會" } }
+      ]
+    },
+    {
+      "id": "ch04",
+      "title": { "en": "Making Friends", "zh": "交朋友" },
+      "cefr": "A2",
+      "summary": { "en": "Invitations, small talk and keeping friends.", "zh": "邀約、閒聊、道歉，學會經營友誼。" },
+      "cover": "warm living room at evening with string lights, sofa with cushions, snacks on coffee table, board games, cozy party atmosphere",
+      "levels": [
+        { "id": "L031", "title": { "en": "Weekend Plans", "zh": "週末邀約" } },
+        { "id": "L032", "title": { "en": "Saying No Nicely", "zh": "婉拒邀約" } },
+        { "id": "L033", "title": { "en": "House Party", "zh": "家庭派對" } },
+        { "id": "L034", "title": { "en": "Weather Talk", "zh": "聊天氣" } },
+        { "id": "L035", "title": { "en": "Giving Compliments", "zh": "稱讚別人" } },
+        { "id": "L036", "title": { "en": "Movie Night", "zh": "看電影" } },
+        { "id": "L037", "title": { "en": "Mia's Birthday", "zh": "Mia 的生日" } },
+        { "id": "L038", "title": { "en": "On the Phone", "zh": "講電話" } },
+        { "id": "L039", "title": { "en": "Plans Change", "zh": "臨時改期" } },
+        { "id": "L040", "title": { "en": "My Bad", "zh": "道歉和好" } }
+      ]
+    },
+    {
+      "id": "ch05",
+      "title": { "en": "On the Road", "zh": "小旅行" },
+      "cefr": "A2-B1",
+      "summary": { "en": "A trip with friends and everything that can go wrong.", "zh": "和朋友出遊，處理旅途中的各種狀況。" },
+      "cover": "scenic train station platform beside mountains and a lake, vintage train, morning mist, travel backpacks on a bench",
+      "levels": [
+        { "id": "L041", "title": { "en": "Train Tickets", "zh": "買火車票" } },
+        { "id": "L042", "title": { "en": "Hostel Check-in", "zh": "青年旅館" } },
+        { "id": "L043", "title": { "en": "City Tour", "zh": "城市導覽" } },
+        { "id": "L044", "title": { "en": "Lost Luggage", "zh": "行李遺失" } },
+        { "id": "L045", "title": { "en": "Table for Three", "zh": "餐廳訂位" } },
+        { "id": "L046", "title": { "en": "Museum Visit", "zh": "參觀博物館" } },
+        { "id": "L047", "title": { "en": "Could You Take a Photo?", "zh": "請人拍照" } },
+        { "id": "L048", "title": { "en": "Souvenir Market", "zh": "市集買紀念品" } },
+        { "id": "L049", "title": { "en": "Missed the Last Bus", "zh": "錯過末班車" } },
+        { "id": "L050", "title": { "en": "Flight Delayed", "zh": "班機延誤" } }
+      ]
+    },
+    {
+      "id": "ch06",
+      "title": { "en": "A Place of My Own", "zh": "獨立生活" },
+      "cefr": "B1",
+      "summary": { "en": "Renting, repairs and real-life problems.", "zh": "租屋、報修、看醫生，自己解決生活難題。" },
+      "cover": "small sunny studio apartment with moving boxes, wooden floor, large window with city view, potted plant, keys on a table",
+      "levels": [
+        { "id": "L051", "title": { "en": "Apartment Viewing", "zh": "看房子" } },
+        { "id": "L052", "title": { "en": "Signing the Lease", "zh": "簽租約" } },
+        { "id": "L053", "title": { "en": "Something's Broken", "zh": "報修" } },
+        { "id": "L054", "title": { "en": "Noisy Neighbor", "zh": "吵鬧的鄰居" } },
+        { "id": "L055", "title": { "en": "Internet Setup", "zh": "網路安裝" } },
+        { "id": "L056", "title": { "en": "Making an Appointment", "zh": "預約看診" } },
+        { "id": "L057", "title": { "en": "Describing Symptoms", "zh": "描述症狀" } },
+        { "id": "L058", "title": { "en": "Lost Wallet", "zh": "掉了錢包" } },
+        { "id": "L059", "title": { "en": "Returning an Item", "zh": "退換貨" } },
+        { "id": "L060", "title": { "en": "Wrong Bill", "zh": "帳單有誤" } }
+      ]
+    },
+    {
+      "id": "ch07",
+      "title": { "en": "Job Hunting", "zh": "求職之路" },
+      "cefr": "B1",
+      "summary": { "en": "From career fair to job offer.", "zh": "從就業博覽會一路走到錄取通知。" },
+      "cover": "modern office building lobby with glass walls, reception desk without lettering, waiting chairs, potted plants, bright daylight",
+      "levels": [
+        { "id": "L061", "title": { "en": "Career Fair", "zh": "就業博覽會" } },
+        { "id": "L062", "title": { "en": "Resume Advice", "zh": "請教履歷" } },
+        { "id": "L063", "title": { "en": "Phone Screening", "zh": "電話初篩" } },
+        { "id": "L064", "title": { "en": "Tell Me About Yourself", "zh": "面試自我介紹" } },
+        { "id": "L065", "title": { "en": "Strengths and Weaknesses", "zh": "談優缺點" } },
+        { "id": "L066", "title": { "en": "Tell Me About a Time", "zh": "情境題" } },
+        { "id": "L067", "title": { "en": "Any Questions for Us?", "zh": "反問面試官" } },
+        { "id": "L068", "title": { "en": "Talking Money", "zh": "談薪水" } },
+        { "id": "L069", "title": { "en": "Following Up", "zh": "面試後追蹤" } },
+        { "id": "L070", "title": { "en": "The Offer", "zh": "錄取通知" } }
+      ]
+    },
+    {
+      "id": "ch08",
+      "title": { "en": "New at Work", "zh": "職場新人" },
+      "cefr": "B1-B2",
+      "summary": { "en": "Meetings, feedback and teamwork.", "zh": "開會、回饋、團隊合作，站穩職場第一步。" },
+      "cover": "open plan office with wooden desks, monitors, whiteboard without writing, plants, large windows, warm morning light",
+      "levels": [
+        { "id": "L071", "title": { "en": "First Day", "zh": "上班第一天" } },
+        { "id": "L072", "title": { "en": "Team Meeting", "zh": "團隊會議" } },
+        { "id": "L073", "title": { "en": "Could You Clarify?", "zh": "確認需求" } },
+        { "id": "L074", "title": { "en": "Asking for Help", "zh": "請同事幫忙" } },
+        { "id": "L075", "title": { "en": "Disagreeing Politely", "zh": "委婉表達異議" } },
+        { "id": "L076", "title": { "en": "Deadline Trouble", "zh": "申請延期" } },
+        { "id": "L077", "title": { "en": "Taking Feedback", "zh": "接受回饋" } },
+        { "id": "L078", "title": { "en": "Taking a Message", "zh": "代接電話" } },
+        { "id": "L079", "title": { "en": "Lunch with the Boss", "zh": "和主管午餐" } },
+        { "id": "L080", "title": { "en": "Project Update", "zh": "進度報告" } }
+      ]
+    },
+    {
+      "id": "ch09",
+      "title": { "en": "Doing Business", "zh": "商務實戰" },
+      "cefr": "B2",
+      "summary": { "en": "Clients, negotiations and tough conversations.", "zh": "面對客戶、談判與棘手對話。" },
+      "cover": "elegant conference room with long table, leather chairs, city skyline through floor to ceiling windows at golden hour",
+      "levels": [
+        { "id": "L081", "title": { "en": "Meeting a Client", "zh": "拜訪客戶" } },
+        { "id": "L082", "title": { "en": "The Pitch", "zh": "產品簡報" } },
+        { "id": "L083", "title": { "en": "Handling Objections", "zh": "處理異議" } },
+        { "id": "L084", "title": { "en": "Negotiating Terms", "zh": "議價談判" } },
+        { "id": "L085", "title": { "en": "Angry Customer", "zh": "客訴處理" } },
+        { "id": "L086", "title": { "en": "Delivering Bad News", "zh": "傳達壞消息" } },
+        { "id": "L087", "title": { "en": "Networking Event", "zh": "商務交流會" } },
+        { "id": "L088", "title": { "en": "Q&A Session", "zh": "簡報問答" } },
+        { "id": "L089", "title": { "en": "Lost in Culture", "zh": "文化誤會" } },
+        { "id": "L090", "title": { "en": "Business Dinner", "zh": "商務晚宴" } }
+      ]
+    },
+    {
+      "id": "ch10",
+      "title": { "en": "Farewell", "zh": "告別與成長" },
+      "cefr": "B2",
+      "summary": { "en": "Saying goodbye and telling your story.", "zh": "道別、感謝，說出屬於你的故事。" },
+      "cover": "campfire on a beach at dusk, glowing embers and sparks, ocean waves, purple and orange sky, logs arranged around the fire",
+      "levels": [
+        { "id": "L091", "title": { "en": "Advice for a Newcomer", "zh": "給新人建議" } },
+        { "id": "L092", "title": { "en": "Friends in Conflict", "zh": "調解朋友爭執" } },
+        { "id": "L093", "title": { "en": "Comforting a Friend", "zh": "安慰朋友" } },
+        { "id": "L094", "title": { "en": "A Serious Apology", "zh": "鄭重道歉" } },
+        { "id": "L095", "title": { "en": "A Letter of Recommendation", "zh": "請求推薦信" } },
+        { "id": "L096", "title": { "en": "Campfire Debate", "zh": "營火辯論" } },
+        { "id": "L097", "title": { "en": "Farewell Speech", "zh": "告別致詞" } },
+        { "id": "L098", "title": { "en": "Moving Out", "zh": "退租交屋" } },
+        { "id": "L099", "title": { "en": "Last Night Out", "zh": "最後的夜晚" } },
+        { "id": "L100", "title": { "en": "The Final Campfire", "zh": "最後的營火" } }
+      ]
+    }
+  ]
+}

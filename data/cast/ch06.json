@@ -1,0 +1,51 @@
+{
+  "c06_neighbor": {
+    "name": "Nico",
+    "nameZh": "尼可",
+    "role": { "en": "Neighbor in 3B", "zh": "住在 3B 的鄰居" },
+    "gender": "male",
+    "appearance": "young man in his mid 20s, shaggy ash-brown dyed hair, plain black t-shirt under an open red flannel shirt, large headphones around his neck, small silver ear stud, relaxed musician vibe"
+  },
+  "c06_isp_agent": {
+    "name": "Jenna",
+    "nameZh": "珍娜",
+    "role": { "en": "Customer service agent at Bayline Internet", "zh": "Bayline 網路公司客服人員" },
+    "gender": "female",
+    "appearance": "woman in her late 20s, high ponytail of dark brown hair, slim wireless headset with a microphone, teal polo shirt, small star-shaped stud earrings, upbeat patient vibe"
+  },
+  "c06_receptionist": {
+    "name": "Linda",
+    "nameZh": "琳達",
+    "role": { "en": "Receptionist at Maple Bay Family Clinic", "zh": "楓灣家庭診所櫃檯人員" },
+    "gender": "female",
+    "appearance": "woman in her early 40s, chin-length black hair with soft bangs, lavender scrub top under a light gray cardigan, pen tucked behind one ear, warm efficient vibe"
+  },
+  "c06_doctor": {
+    "name": "Dr. Patel",
+    "nameZh": "帕特爾醫師",
+    "role": { "en": "Family doctor", "zh": "家庭醫師" },
+    "gender": "male",
+    "appearance": "man in his mid 40s, short neat black hair graying at the temples, white doctor's coat over a light blue shirt, stethoscope around his neck, thin rectangular glasses, calm reassuring vibe"
+  },
+  "c06_police": {
+    "name": "Officer Santos",
+    "nameZh": "桑托斯警員",
+    "role": { "en": "Police officer", "zh": "警員" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, black hair in a low tight bun, dark navy police uniform with a silver badge, small radio clipped to the shoulder, calm steady vibe"
+  },
+  "c06_clerk": {
+    "name": "Tyler",
+    "nameZh": "泰勒",
+    "role": { "en": "Store clerk at Harbor Home", "zh": "Harbor Home 賣場店員" },
+    "gender": "male",
+    "appearance": "young man in his early 20s, neat short black hair with a side part, red polo shirt under a gray store apron, blank name badge, earnest helpful vibe"
+  },
+  "c06_billing": {
+    "name": "Marcus",
+    "nameZh": "馬可斯",
+    "role": { "en": "Billing agent at Maple Bay Power", "zh": "楓灣電力公司帳務客服" },
+    "gender": "male",
+    "appearance": "man in his early 30s, short curly black hair, neatly trimmed short beard, light gray sweater over a white collared shirt, single-ear headset, silver wristwatch, patient professional vibe"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "id": "L022",
+  "location": { "en": "Maple Bay Language Institute, Room 204", "zh": "楓灣語言學院，204 教室" },
+  "goal": { "en": "Introduce yourself to the class and get to know a classmate.", "zh": "向全班自我介紹，並認識一位同學。" },
+  "background": "bright language school classroom with desks arranged in a circle, a clean whiteboard, large windows, potted plants on the windowsill, a bookshelf in the corner, morning sunlight",
+  "cast": ["c03_teacher", "c03_yuki"],
+  "intro": [
+    { "who": "narrator", "en": "Room 204. Twelve students from all over the world sit in a circle, looking a little nervous.", "zh": "204 教室。來自世界各地的十二位學生圍成一圈坐著，看起來都有點緊張。" },
+    { "who": "c03_teacher", "expr": "happy", "en": "Good morning, everyone! I'm Ms. Reed. Let's get to know each other.", "zh": "大家早！我是瑞德老師。我們來互相認識一下吧。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "neutral", "en": "Let's start with you. Could you tell us a little about yourself?", "zh": "就從你開始吧。可以跟我們簡單介紹一下你自己嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. My name is Kai, and I'm from Taiwan.",
+          "zh": "好的。我叫凱，來自台灣。",
+          "ok": true,
+          "tip": "My name is... 加上 I'm from...，就是最清楚的開場自我介紹。"
+        },
+        {
+          "en": "OK. I am call Kai. I come from Taiwan.",
+          "zh": "好。我叫凱，我來自台灣。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "You're calling Kai? Is Kai coming to class too?", "zh": "你在打電話給凱？凱也要來上課嗎？" }
+            ],
+            "title": { "en": "Who's Calling?", "zh": "誰在打電話" },
+            "story": { "en": "The whole class turns to the door, waiting for someone named Kai. It takes a while to sort it out.", "zh": "全班都轉頭看向門口，等一個叫凱的人進來。好一陣子才把誤會解開。" },
+            "why": "「我叫 Kai」不是 I am call Kai，這樣聽起來像「我正在打電話」。直接說 My name is Kai. 或 I'm Kai. 就好。"
+          }
+        },
+        {
+          "en": "Me? Um, nothing special. Next person, please.",
+          "zh": "我？呃，沒什麼特別的。下一位吧。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "Nothing special? Oh, come on. Everyone has a story!", "zh": "沒什麼特別的？別這樣嘛，每個人都有自己的故事！" }
+            ],
+            "title": { "en": "The Invisible Student", "zh": "隱形同學" },
+            "story": { "en": "Ms. Reed moves on to the next student. By Friday, nobody in class remembers your name.", "zh": "瑞德老師只好換下一位。到了星期五，班上還是沒人記得你的名字。" },
+            "why": "台灣人習慣謙虛說「沒什麼特別的」，但在英語課堂上，老師請你自我介紹是真心想認識你。大方說 My name is Kai, and I'm from Taiwan. 就對了。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "happy", "en": "Welcome, Kai! So, what are you into?", "zh": "歡迎你，凱！那你喜歡什麼呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm really into hiking and taking photos.",
+          "zh": "我超喜歡爬山和拍照。",
+          "ok": true,
+          "tip": "I'm into + 名詞／V-ing，是口語的「我很喜歡、很著迷」，比 I like 更生動。"
+        },
+        {
+          "en": "I like playing computer very much.",
+          "zh": "我很喜歡玩電腦。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "Playing the computer? Like a piano?", "zh": "彈奏電腦？像彈鋼琴那樣嗎？" }
+            ],
+            "title": { "en": "Keyboard Concert", "zh": "鍵盤演奏會" },
+            "story": { "en": "A classmate asks if you can play a song on your laptop. The class waits for a concert that never comes.", "zh": "有同學問你能不能用筆電彈一首歌。全班等著一場永遠不會開始的演奏會。" },
+            "why": "「玩電腦」直譯成 play computer，play 加樂器才是「演奏」，聽起來很怪。要說 play computer games，或 I'm into gaming.。"
+          }
+        },
+        {
+          "en": "I'm into to hike and take photo.",
+          "zh": "我喜歡去爬山和拍照。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "Into to...? Sorry, could you try that again?", "zh": "Into to……？抱歉，可以再說一次嗎？" }
+            ],
+            "title": { "en": "Grammar Hike", "zh": "文法登山" },
+            "story": { "en": "You try again, and again. By the third time, even you are not sure what you like.", "zh": "你試了一次又一次。到第三次，連你自己都不確定到底喜歡什麼了。" },
+            "why": "I'm into 後面要接名詞或 V-ing，不能接 to + 動詞。正確說法是 I'm into hiking and taking photos.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "happy", "en": "Great! Now, turn to your partner and keep chatting.", "zh": "很好！現在轉向你的搭檔，繼續聊聊。" },
+        { "who": "c03_yuki", "expr": "happy", "en": "Hi, I'm Yuki! So, what do you do in your free time?", "zh": "嗨，我是由紀！那你空閒時都做些什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "In my free time, I usually watch movies.",
+          "zh": "空閒時我通常看電影。",
+          "ok": true,
+          "tip": "In my free time, I + 頻率副詞 + 動詞，描述平常的習慣。usually、often、sometimes 放在動詞前面。"
+        },
+        {
+          "en": "I usually go to shopping in my free time.",
+          "zh": "我空閒時通常去逛街。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Go to Shopping? Is that a town near here?", "zh": "去 Shopping？那是附近的一個小鎮嗎？" }
+            ],
+            "title": { "en": "Welcome to Shopping", "zh": "購物鎮一日遊" },
+            "story": { "en": "Yuki looks up \"Shopping\" on her phone map. You both spend the break searching for a town that doesn't exist.", "zh": "由紀打開手機地圖搜尋「Shopping」。你們整個下課都在找一個根本不存在的小鎮。" },
+            "why": "shopping、swimming、hiking 這類活動前面直接用 go，不加 to。要說 I usually go shopping.。"
+          }
+        },
+        {
+          "en": "Free time? Yes, it's free. No money.",
+          "zh": "空閒時間？對，免費的，不用錢。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Um, free time, not free stuff. Like your hobbies?", "zh": "呃，是空閒時間，不是免費的東西啦。像是你的嗜好？" }
+            ],
+            "title": { "en": "Nothing Is Free", "zh": "免費的最貴" },
+            "story": { "en": "Yuki gives up and chats with the student on her other side. You spend the rest of the activity alone.", "zh": "由紀放棄了，轉頭和另一邊的同學聊天。剩下的活動時間你都一個人度過。" },
+            "why": "free time 是「空閒時間」，不是「免費的時間」。被問 What do you do in your free time? 要回答平常的休閒活動，例如 I usually watch movies.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "neutral", "en": "Time's up! Kai, can you tell us one thing about Yuki?", "zh": "時間到！凱，可以跟大家說一件關於由紀的事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Yuki is from Osaka. She loves baking.",
+          "zh": "好的。由紀來自大阪，她很喜歡烘焙。",
+          "ok": true,
+          "tip": "介紹別人時，女生用 she，男生用 he。開口前先想一下，就不會說錯。"
+        },
+        {
+          "en": "Sure. Yuki is from Osaka. He loves baking.",
+          "zh": "好的。由紀來自大阪，她很喜歡烘焙。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "He? Kai, I'm pretty sure I'm a she!", "zh": "他？凱，我很確定我是女生耶！" }
+            ],
+            "title": { "en": "He Said, She Said", "zh": "他她不分" },
+            "story": { "en": "The class spends a whole minute figuring out who \"he\" is. Yuki takes it well, but Ms. Reed writes he and she on the board.", "zh": "全班花了整整一分鐘搞清楚「他」是誰。由紀不太在意，但瑞德老師在白板上寫下了 he 和 she。" },
+            "why": "中文口語的「他」和「她」發音一樣，所以台灣人說英文時很容易把 he、she 混用。由紀是女生，要說 She loves baking.。"
+          }
+        },
+        {
+          "en": "Yuki? Sorry, I forgot. I wasn't listening.",
+          "zh": "由紀？抱歉，我忘了，我剛剛沒在聽。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_yuki", "expr": "upset", "en": "You weren't listening? I talked for five minutes!", "zh": "你沒在聽？我講了五分鐘耶！" }
+            ],
+            "title": { "en": "Selective Hearing", "zh": "選擇性聽力" },
+            "story": { "en": "Yuki sits with someone else for the rest of the week. The seat next to you stays empty.", "zh": "這週剩下的時間，由紀都坐到別人旁邊。你旁邊的座位一直空著。" },
+            "why": "直接說「我沒在聽」很傷人。就算真的忘了，也可以說 Sorry, could you remind me?，請對方再說一次。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c03_yuki", "expr": "happy", "en": "Thanks, Kai! You're a good listener.", "zh": "謝謝你，凱！你很會聽人說話。" },
+      { "who": "c03_teacher", "expr": "happy", "en": "Wonderful! I can see this class is going to be fun.", "zh": "太好了！看來這個班會很有趣。" }
+    ],
+    "title": { "en": "Ice Broken", "zh": "破冰成功" },
+    "story": { "en": "By the end of the first class, you know three new names and have one new friend. Not bad for day one.", "zh": "第一堂課結束時，你記住了三個新名字，還交到一個新朋友。第一天表現不錯。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "My name is Kai, and I'm from Taiwan.",
+      "zh": "我叫凱，來自台灣。",
+      "explain": "自我介紹最基本的兩句。也可以簡單說 I'm Kai.，但不要說 I am call Kai.。",
+      "example": { "en": "Hi, everyone. My name is Yuki, and I'm from Japan.", "zh": "大家好，我叫由紀，來自日本。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm into hiking.",
+      "zh": "我很喜歡爬山。",
+      "explain": "I'm into + 名詞／V-ing，表示對某件事很有興趣、很著迷，比 I like 更口語。後面不接 to + 動詞。",
+      "example": { "en": "I'm really into Korean dramas these days.", "zh": "我最近很迷韓劇。" }
+    },
+    {
+      "type": "phrase",
+      "en": "In my free time, I usually...",
+      "zh": "空閒時，我通常……",
+      "explain": "描述休閒活動的句型。頻率副詞 always、usually、often、sometimes、never 放在一般動詞前面。",
+      "example": { "en": "In my free time, I often go hiking with friends.", "zh": "空閒時我常和朋友去爬山。" }
+    },
+    {
+      "type": "trap",
+      "en": "go shopping, not go to shopping",
+      "zh": "去逛街",
+      "explain": "shopping、swimming、hiking 等活動前面直接用 go，不加 to。go to 後面接地點，例如 go to the mall。",
+      "example": { "en": "Let's go shopping after class.", "zh": "下課後我們去逛街吧。" }
+    },
+    {
+      "type": "culture",
+      "en": "Talk about yourself with confidence.",
+      "zh": "大方介紹自己",
+      "explain": "在英語文化裡，被問到自己的事時過度謙虛（例如 Nothing special.）會讓對話中斷。分享一兩個興趣，別人才有話題接下去。",
+      "example": { "en": "I'm from Taiwan, and I love night markets.", "zh": "我來自台灣，我超愛夜市。" }
+    }
+  ]
+}

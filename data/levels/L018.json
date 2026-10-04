@@ -1,0 +1,183 @@
+{
+  "id": "L018",
+  "location": { "en": "Big Bay Burger, by the harbor", "zh": "港邊的大灣漢堡" },
+  "goal": { "en": "Order lunch for you and Mia, just the way you want it.", "zh": "幫自己和米亞點午餐，而且要點得剛剛好。" },
+  "background": "busy fast food restaurant with a long stainless steel order counter, a pickup area with plastic trays, red booth seats, a drink fountain machine, harbor view through big windows, noon",
+  "cast": ["mia", "c02_cashier"],
+  "intro": [
+    { "who": "narrator", "en": "After a long morning of errands, you and Mia are starving.", "zh": "跑了一整個早上的腿，你和米亞都餓扁了。" },
+    { "who": "mia", "expr": "happy", "en": "My treat today! But you have to order. Practice, practice!", "zh": "今天我請客！不過要由你來點餐。多練習、多練習！" },
+    { "who": "narrator", "en": "The line moves fast. Suddenly it's your turn.", "zh": "隊伍前進得很快，一下子就輪到你了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_cashier", "expr": "happy", "en": "Hi, welcome to Big Bay Burger! What can I get for you?", "zh": "嗨，歡迎光臨大灣漢堡！要點什麼呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I'll have the number 2 combo.",
+          "zh": "我要 2 號套餐。",
+          "ok": true,
+          "tip": "點餐用 I'll have...，套餐英文叫 combo 或 meal。"
+        },
+        {
+          "en": "I have the number 2 combo, please.",
+          "zh": "我有 2 號套餐，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_cashier", "expr": "confused", "en": "You have it? Like, a coupon? Can I see it?", "zh": "你有？是說優惠券嗎？可以給我看一下嗎？" }
+            ],
+            "title": { "en": "The Missing Coupon", "zh": "消失的優惠券" },
+            "story": { "en": "You search every pocket for a coupon that doesn't exist. Mia is laughing so hard she has to sit down.", "zh": "你翻遍每個口袋，找一張根本不存在的優惠券。米亞笑到必須坐下來。" },
+            "why": "I have... 是「我有……」，對方會以為你已經有東西。點餐要用未來式 I'll have...，表示「我要點……」。"
+          }
+        },
+        {
+          "en": "Give me one number 2 set.",
+          "zh": "給我一份 2 號套餐。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_cashier", "expr": "confused", "en": "A set? Um, okay. Just the number 2 burger, then?", "zh": "一組？呃，好。那就是 2 號漢堡單點囉？" }
+            ],
+            "title": { "en": "Where Are the Fries?", "zh": "薯條呢？" },
+            "story": { "en": "Your tray arrives with one lonely burger. No fries, no drink. Mia slowly slides half her fries over to you.", "zh": "你的托盤上只有一個孤單的漢堡，沒有薯條也沒有飲料。米亞默默把一半薯條推到你面前。" },
+            "why": "台灣常說「套餐」是 set，但北美速食店多半說 combo 或 meal。點餐也別用 Give me...，說 I'll have the number 2 combo. 最自然。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_cashier", "expr": "neutral", "en": "Number 2 combo. Any changes to your burger?", "zh": "2 號套餐。漢堡有要調整什麼嗎？" },
+        { "who": "mia", "expr": "neutral", "en": "Psst. You hate onions, remember?", "zh": "噓，你不是討厭洋蔥嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. No onions, please.",
+          "zh": "有，請不要加洋蔥。",
+          "ok": true,
+          "tip": "No + 食材 + please 是最簡單的去料說法。"
+        },
+        {
+          "en": "Changes? I'll pay by card.",
+          "zh": "找零？我刷卡。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_cashier", "expr": "confused", "en": "Oh, card's fine. So, no changes to the burger?", "zh": "喔，刷卡可以。所以，漢堡不用調整囉？" }
+            ],
+            "title": { "en": "Onion Overload", "zh": "洋蔥大爆發" },
+            "story": { "en": "You nod. Your burger comes with extra onions, because today the onions are on the house.", "zh": "你點了點頭。結果漢堡加了滿滿的洋蔥，因為今天洋蔥免費加量。" },
+            "why": "這裡的 changes 是「修改、調整」，不是找零的「零錢」（零錢是不可數的 change）。不要的食材直接說 No onions, please.。"
+          }
+        },
+        {
+          "en": "Yes. Don't put onion inside.",
+          "zh": "有，不要把洋蔥放進去。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_cashier", "expr": "confused", "en": "Not inside? Oh, onions on the side? Sure!", "zh": "不要放裡面？喔，洋蔥另外放？好啊！" }
+            ],
+            "title": { "en": "Onions on the Side", "zh": "洋蔥另外裝" },
+            "story": { "en": "Your burger arrives with a small cup of onions next to it. They stare at you through the whole meal.", "zh": "你的漢堡旁邊多了一小杯洋蔥。整頓飯，它們都在旁邊盯著你。" },
+            "why": "「不要放洋蔥」直譯成 Don't put onion inside 很不自然，還可能被聽成 on the side（另外放）。點餐去料直接說 No onions, please.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_cashier", "expr": "neutral", "en": "Got it. And for here or to go?", "zh": "好的。內用還是外帶？" }
+      ],
+      "choices": [
+        {
+          "en": "For here, please. Thanks!",
+          "zh": "內用，謝謝！",
+          "ok": true,
+          "tip": "for here 是內用，to go 是外帶。"
+        },
+        {
+          "en": "Here. Bring it to our table.",
+          "zh": "內用，送到我們桌上。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_cashier", "expr": "confused", "en": "Bring it...? Sorry, we call your number at the counter.", "zh": "送過去……？抱歉，我們是叫號到櫃檯取餐的。" }
+            ],
+            "title": { "en": "Cold Fries", "zh": "冷掉的薯條" },
+            "story": { "en": "You sit and wait for someone to bring your food. They never do. Your number is called five times, and your fries go cold.", "zh": "你坐著等人送餐，結果根本沒人來。你的號碼被叫了五次，薯條也冷掉了。" },
+            "why": "北美速食店大多是叫號後自己到櫃檯取餐，不會送到桌邊。內用只要說 For here, please.，然後留意叫號。"
+          }
+        },
+        {
+          "en": "Here. Hurry, we're starving.",
+          "zh": "內用。快點，我們餓死了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_cashier", "expr": "upset", "en": "Uh... everyone here is hungry. It'll be a few minutes.", "zh": "呃……這裡每個人都很餓。要等幾分鐘喔。" }
+            ],
+            "title": { "en": "Hangry Hurts", "zh": "餓到失禮" },
+            "story": { "en": "Somehow, everyone who ordered after you gets their food first. Mia pretends she doesn't know you.", "zh": "不知道為什麼，比你晚點的人都先拿到餐了。米亞假裝不認識你。" },
+            "why": "對店員說 Hurry 很像在催促命令，就算肚子餓也不太禮貌。說 For here, please. Thanks! 對方會一樣快幫你準備。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_cashier", "expr": "happy", "en": "Awesome. Your number is 47. Enjoy!", "zh": "沒問題。你的號碼是 47 號，請慢用！" },
+      { "who": "mia", "expr": "happy", "en": "Combo, no onions, for here. You order like a local now!", "zh": "套餐、不加洋蔥、內用。你點餐已經跟本地人一樣了！" }
+    ],
+    "title": { "en": "Combo Champion", "zh": "點餐達人" },
+    "story": { "en": "When they call number 47, you pick up a hot tray of food. Not a single onion in sight.", "zh": "叫到 47 號時，你從櫃檯端回熱騰騰的餐點，連一片洋蔥都沒看到。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'll have the number 2 combo.",
+      "zh": "我要 2 號套餐。",
+      "explain": "點餐時 I'll have... 比 I want... 更自然。套餐在北美多半叫 combo 或 meal。",
+      "example": { "en": "I'll have the chicken sandwich meal, please.", "zh": "我要雞肉三明治套餐，謝謝。" }
+    },
+    {
+      "type": "phrase",
+      "en": "No onions, please.",
+      "zh": "請不要加洋蔥。",
+      "explain": "去掉某樣食材就說 No + 食材 + please；要多加說 Extra + 食材；要另外放說 on the side。",
+      "example": { "en": "No pickles and extra cheese, please.", "zh": "不要酸黃瓜，起司加量，謝謝。" }
+    },
+    {
+      "type": "phrase",
+      "en": "For here or to go?",
+      "zh": "內用還是外帶？",
+      "explain": "for here 是內用，to go 是外帶。有些地方會問 Eat in or take out?，意思一樣。",
+      "example": { "en": "To go, please. Can I get a bag?", "zh": "外帶，可以給我一個袋子嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "I have vs. I'll have",
+      "zh": "我有 vs. 我要點",
+      "explain": "I have a burger. 是「我手上有漢堡」，I'll have a burger. 才是「我要點漢堡」。少了 'll，意思差很多。",
+      "example": { "en": "I'll have a small coffee, please.", "zh": "我要一杯小杯咖啡，謝謝。" }
+    },
+    {
+      "type": "culture",
+      "en": "Pick up at the counter",
+      "zh": "自己到櫃檯取餐",
+      "explain": "北美速食店通常會給你號碼或收據，叫號後自己去櫃檯取餐。吃完後也要自己把托盤和垃圾收好。",
+      "example": { "en": "Number 47? That's us!", "zh": "47 號？是我們！" }
+    }
+  ]
+}

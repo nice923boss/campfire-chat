@@ -1,0 +1,262 @@
+{
+  "id": "L077",
+  "location": { "en": "Brightway office, small meeting room", "zh": "Brightway 公司，小會議室" },
+  "goal": { "en": "Listen to feedback, ask for examples, and show how you'll improve.", "zh": "聽取回饋、請對方舉例，並說出你要怎麼改進。" },
+  "background": "small quiet meeting room for one-on-one talks, two armchairs facing each other, a low coffee table with two mugs, a floor lamp with a warm glow, a window with blinds half closed",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "It's your monthly one-on-one with Ms. Wong. She has a notebook open and a friendly smile.", "zh": "今天是你和王經理每個月的一對一面談。她打開筆記本，面帶微笑。" },
+    { "who": "ms_wong", "expr": "neutral", "en": "You're doing well, Kai. I just want to talk about your emails to clients. Some of them are a bit long.", "zh": "你表現得不錯，凱。我只是想聊聊你寫給客戶的信。有些寫得有點長。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Clients are busy, so they sometimes miss the important part.", "zh": "客戶都很忙，所以有時候會漏看重要的部分。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks for the feedback. Could you give me an example?",
+          "zh": "謝謝您的回饋。可以舉個例子嗎？",
+          "ok": true,
+          "tip": "先感謝，再請對方舉例，表示你願意聽，也想知道具體怎麼改。"
+        },
+        {
+          "en": "But long emails show I really care. Short ones look a bit lazy.",
+          "zh": "但寫長一點代表我很用心。寫太短看起來有點偷懶。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I'm not saying you don't care, Kai. I'm saying clients aren't reading them.", "zh": "我不是說你不用心，凱。我是說客戶沒在看。" }
+            ],
+            "title": { "en": "Defense Mode", "zh": "防衛模式啟動" },
+            "story": { "en": "The talk turns into a debate about email length. You win the debate, and the clients keep missing your questions.", "zh": "面談變成一場信件長度辯論賽。你贏了辯論，客戶還是一直漏看你的問題。" },
+            "why": "一聽到回饋就急著辯解，對方會覺得你聽不進去。先說 Thanks for the feedback.，再問 Could you give me an example?。"
+          }
+        },
+        {
+          "en": "I'm so sorry. Maybe I'm just not good enough for this job.",
+          "zh": "真的很抱歉。也許我就是不夠格做這份工作。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Oh, no, no! Kai, it's just about emails. You're doing great.", "zh": "喔，不不不！凱，這只是信件的事。你做得很好。" }
+            ],
+            "title": { "en": "Pep Talk Instead", "zh": "變成心理輔導" },
+            "story": { "en": "Ms. Wong spends the whole meeting cheering you up. She never gets to tell you how to fix the emails.", "zh": "王經理整場面談都在幫你打氣，根本沒機會告訴你信要怎麼改。" },
+            "why": "把一個小建議當成對自己的全盤否定，會讓對方不敢再給回饋。回饋是針對事情，不是針對你：Thanks for the feedback. Could you give me an example?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Sure. In your email to Lakeside Hotel, your question was in the fifth paragraph.", "zh": "好啊。你寫給湖畔飯店的那封信，你的問題放在第五段。" }
+      ],
+      "choices": [
+        {
+          "en": "I see. So I should put the main question at the top?",
+          "zh": "了解。所以我應該把主要的問題放在最前面？",
+          "ok": true,
+          "tip": "用 So I should...? 把對方的建議換句話說，確認自己真的理解了。"
+        },
+        {
+          "en": "I know, I know. I will be careful next time, okay?",
+          "zh": "我知道、我知道。下次我會小心，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "If you knew, why was it in the fifth paragraph?", "zh": "如果你知道，那為什麼還放在第五段？" }
+            ],
+            "title": { "en": "I Know, I Know", "zh": "我知道啦" },
+            "story": { "en": "Ms. Wong hears \"stop talking.\" She closes her notebook early, and you never find out what the second problem was.", "zh": "王經理聽到的是「別再說了」。她提早闔上筆記本，你也沒機會知道第二個問題是什麼。" },
+            "why": "中文「我知道、我知道」表示有在聽，但英文 I know, I know 聽起來像不耐煩。說 I see. So I should...? 確認理解。"
+          }
+        },
+        {
+          "en": "Oh. So the main question should put at the top, is it?",
+          "zh": "喔，所以主要問題應該放在最上面，是嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "The question should put...? Sorry, who's putting what?", "zh": "問題應該放……？抱歉，誰要放什麼？" }
+            ],
+            "title": { "en": "Who's Putting What?", "zh": "誰放了什麼？" },
+            "story": { "en": "It takes three tries to figure out the sentence. Ms. Wong adds \"grammar\" to her notes, just below \"long emails.\"", "zh": "試了三次才搞懂這句話。王經理在筆記本上「信太長」的下面，又加了一行「文法」。" },
+            "why": "問題不會自己「放」，要用被動：should be put，或改成 I should put the main question at the top?；附加問句 is it 也不對，直接用問句語調就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Exactly. Also, last week's email to Harbor Café had the wrong delivery date.", "zh": "沒錯。還有，上週寄給 Harbor Café 的信，交貨日期寫錯了。" }
+      ],
+      "choices": [
+        {
+          "en": "That's my mistake. I'll double-check dates before I hit send.",
+          "zh": "那是我的錯。以後寄出前我會再確認一次日期。",
+          "ok": true,
+          "tip": "That's my mistake. 簡短承認錯誤，再說具體的改進方法，比一直道歉更專業。"
+        },
+        {
+          "en": "Oh, that date was from Sam. He gave me the wrong one.",
+          "zh": "喔，那個日期是山姆給我的。是他給錯的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Maybe. But your name was on the email, Kai.", "zh": "也許吧。但信上署名的是你，凱。" }
+            ],
+            "title": { "en": "Blame Game", "zh": "甩鍋大賽" },
+            "story": { "en": "Ms. Wong checks with Sam. He gave you the right date. Now there are two awkward conversations instead of one.", "zh": "王經理去問了山姆，他給你的日期是對的。現在尷尬的對話從一場變成兩場。" },
+            "why": "被指出錯誤時先推給同事，會讓人覺得你不負責。自己寄出的信就由自己承擔：That's my mistake. I'll double-check...。"
+          }
+        },
+        {
+          "en": "Oh, right. By the way, is the team dinner still on Friday?",
+          "zh": "喔，對。對了，團隊聚餐還是星期五嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Yes, it is. But Kai, I'm talking about the delivery date.", "zh": "對，是星期五。不過凱，我在說的是交貨日期。" }
+            ],
+            "title": { "en": "Dinner Plans", "zh": "心思在聚餐" },
+            "story": { "en": "Ms. Wong writes \"changed the subject\" in her notebook. At least now you know the dinner is on Friday.", "zh": "王經理在筆記本寫下「轉移話題」。至少你現在知道聚餐是星期五了。" },
+            "why": "被指出錯誤時換話題，看起來像在逃避。先承認：That's my mistake.，再說怎麼改進。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Great. Do you have any questions for me?", "zh": "很好。你有什麼問題想問我嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Is there anything else I could do better in meetings?",
+          "zh": "有。開會的時候，我還有什麼可以做得更好的地方嗎？",
+          "ok": true,
+          "tip": "主動請對方多給建議，表示你把回饋當成成長的機會。"
+        },
+        {
+          "en": "Yes. So what is my score this month? Did I pass or not?",
+          "zh": "有。那我這個月幾分？有沒有及格？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Score? It's not an exam, Kai. It's just a chat about how things are going.", "zh": "分數？這又不是考試，凱。只是聊聊最近的狀況。" }
+            ],
+            "title": { "en": "Report Card", "zh": "成績單" },
+            "story": { "en": "Ms. Wong draws a smiley face in her notebook and shows you. You are not sure if that means you passed.", "zh": "王經理在筆記本上畫了一個笑臉給你看。你不確定這樣算不算及格。" },
+            "why": "一對一面談是雙向的交流，不是打分數的考試。可以問 Is there anything else I could do better?，讓對方給你更多建議。"
+          }
+        },
+        {
+          "en": "What else I can do better? Please tell me more my weak points.",
+          "zh": "我還有什麼可以做得更好？請多告訴我我的缺點。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "More weak points? Kai, I just gave you two. Let's not make a list.", "zh": "更多缺點？凱，我剛才已經說了兩個，我們不用列清單吧。" }
+            ],
+            "title": { "en": "Weak Points Wanted", "zh": "徵求缺點" },
+            "story": { "en": "You leave the room with two notes and a strange feeling that you asked to be criticized.", "zh": "你帶著兩條筆記離開，總覺得自己剛剛是在主動討罵。" },
+            "why": "疑問句要倒裝：What else can I do better?；tell me more my weak points 語序也不對，而且 weak points 聽起來很負面。說 Is there anything else I could do better?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Actually, yes. You have good ideas, but you're quiet in meetings. Speak up a bit more.", "zh": "其實有。你的點子很好，但開會時太安靜了。可以多發言一點。" }
+      ],
+      "choices": [
+        {
+          "en": "That's really helpful. I'll work on it, starting with Thursday's meeting.",
+          "zh": "這真的很有幫助。我會努力改進，就從星期四的會議開始。",
+          "ok": true,
+          "tip": "I'll work on it. 表示會努力改進，加上具體的開始時間，讓對方看到你的行動。"
+        },
+        {
+          "en": "Okay! From now on, I will shout out my ideas loudly in every meeting.",
+          "zh": "好！從現在開始，每次開會我都會大聲喊出我的點子。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Shout? No, no. Just speak up. You don't need to shout.", "zh": "喊？不不不，只要多發言就好，不用用喊的。" }
+            ],
+            "title": { "en": "Volume Up", "zh": "音量全開" },
+            "story": { "en": "In Thursday's meeting, you say your first idea so loudly that Daniel spills his coffee.", "zh": "星期四開會時，你第一個點子說得太大聲，丹尼爾嚇得把咖啡灑了出來。" },
+            "why": "speak up 是「多發言、說出想法」，不是「大聲喊」。回答 I'll work on it. 再加上具體行動就好。"
+          }
+        },
+        {
+          "en": "That's because other people talk too much. It's hard to find a chance.",
+          "zh": "那是因為其他人話太多了。我很難找到機會說。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Hmm. Everyone has to find their own chance, Kai.", "zh": "嗯……每個人都要自己找機會的，凱。" }
+            ],
+            "title": { "en": "Excuse Express", "zh": "藉口快遞" },
+            "story": { "en": "The meeting ends on a flat note. Ms. Wong writes one last word in her notebook. It looks like \"excuses.\"", "zh": "面談在冷淡的氣氛中結束。王經理在筆記本上寫下最後一個字，看起來像是「藉口」。" },
+            "why": "把問題推給別人，等於拒絕了這次回饋。先說 That's really helpful.，再說 I'll work on it. 和你的具體做法。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Perfect. I'm looking forward to hearing your ideas on Thursday.", "zh": "很好。我很期待星期四聽到你的想法。" }
+    ],
+    "title": { "en": "Feedback Fuel", "zh": "回饋變成燃料" },
+    "story": { "en": "You listened, asked for examples, and made a plan. Your next email to a client is four lines long, with the question in line one.", "zh": "你認真聽、請對方舉例，還訂了改進計畫。你寄給客戶的下一封信只有四行，問題就寫在第一行。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Thanks for the feedback.",
+      "zh": "謝謝你的回饋。",
+      "explain": "收到建議時的第一句話。先感謝，表示你願意聽，不會急著辯解。也可以說 I appreciate the feedback.。",
+      "example": { "en": "Thanks for the feedback. I'll keep that in mind.", "zh": "謝謝你的回饋，我會記住的。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could you give me an example?",
+      "zh": "可以舉個例子嗎？",
+      "explain": "回饋太籠統時，請對方舉例，才知道具體要怎麼改。語氣是好奇、想學，不是要挑戰對方。",
+      "example": { "en": "You said my slides are busy. Could you give me an example?", "zh": "你說我的投影片太雜，可以舉個例子嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll work on it.",
+      "zh": "我會努力改進。",
+      "explain": "表示接受建議並會持續改進，比 I will be careful 更積極。後面加上具體的時間或做法會更有說服力。",
+      "example": { "en": "Good point about my timing. I'll work on it.", "zh": "時間掌控的部分說得很對，我會努力改進。" }
+    },
+    {
+      "type": "trap",
+      "en": "I know, I know.",
+      "zh": "我知道、我知道。（語氣陷阱）",
+      "explain": "中文重複「我知道」是表示有在聽，但英文 I know, I know 聽起來像「好啦，別再說了」，很不耐煩。改說 I see. 或 That makes sense.。",
+      "example": { "en": "I see. That makes sense.", "zh": "了解，這很合理。" }
+    },
+    {
+      "type": "culture",
+      "en": "Feedback isn't a grade.",
+      "zh": "回饋不是成績單。",
+      "explain": "在很多英語系職場，一對一面談是雙向的交流，不是考試。主管給建議是想幫你成長，不是在否定你，所以不必過度道歉，也可以反過來請主管多給建議。",
+      "example": { "en": "Is there anything I could do differently next month?", "zh": "下個月有什麼我可以換個方式做的嗎？" }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "L063",
+  "location": { "en": "Your studio apartment, phone call with Brightway", "zh": "你的套房，與 Brightway 通電話" },
+  "goal": { "en": "Get through a phone screening and set up an interview time.", "zh": "通過電話初步篩選，並約好面試時間。" },
+  "background": "small studio apartment with a single bed, a desk with a laptop and a coffee mug, a bookshelf with plain spines, a window over a quiet street, morning light",
+  "cast": ["c07_hr"],
+  "intro": [
+    { "who": "narrator", "en": "Two days after you apply online, your phone rings. It's a Maple Bay number you don't know.", "zh": "上網應徵兩天後，你的手機響了。是一個不認識的楓灣號碼。" },
+    { "who": "narrator", "en": "You turn down the music and pick up.", "zh": "你把音樂關小，接起電話。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "Hi, this is Rachel from Brightway. Is this Kai? Do you have a few minutes to talk?", "zh": "嗨，我是 Brightway 的瑞秋。請問是凱嗎？你現在方便講幾分鐘嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, this is Kai. I have empty now.",
+          "zh": "對，我是凱。我現在有空。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "You have... empty? Empty what? Is everything okay?", "zh": "你有……空的？什麼空的？一切都還好嗎？" }
+            ],
+            "title": { "en": "Running on Empty", "zh": "空空如也" },
+            "story": { "en": "Rachel thinks your fridge is empty and asks if you need help. It takes two minutes to explain that you're just free.", "zh": "瑞秋以為你冰箱空了，還問你需不需要幫忙。你花了兩分鐘才解釋清楚，你只是「有空」。" },
+            "why": "「我有空」直譯成 I have empty，英文聽不懂。說 I'm free now. 或 Yes, now is a good time.。"
+          }
+        },
+        {
+          "en": "Yes, this is Kai. Now is a good time. Thanks for calling!",
+          "zh": "是，我是凱。現在方便，謝謝你打來！",
+          "ok": true,
+          "tip": "接到招募電話，先確認身分，再說 Now is a good time.，最後道謝。"
+        },
+        {
+          "en": "Brightway? Finally! I've been waiting for two whole days.",
+          "zh": "Brightway？終於！我整整等了兩天。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "Two days is actually pretty quick for us, but okay.", "zh": "兩天對我們來說其實算很快了，不過好吧。" }
+            ],
+            "title": { "en": "Impatient Applicant", "zh": "沒耐心的應徵者" },
+            "story": { "en": "Rachel's voice cools down a few degrees. She makes a quick note: 'Patience: needs work.'", "zh": "瑞秋的語氣降了好幾度。她快速記下一筆：「耐心：有待加強」。" },
+            "why": "抱怨對方回覆太慢，聽起來像在責怪招募人員。接到電話時表達感謝就好：Thanks for calling!。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "Great. Just a few quick questions. First, are you legally allowed to work in Maple Bay?", "zh": "好的，只是幾個簡單的問題。首先，你可以在楓灣合法工作嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No worries. I can take cash, so no paperwork needed.",
+          "zh": "別擔心，我可以領現金，不用跑什麼文件。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "Cash? No, we only hire people who can work legally. Everything here is on the books.", "zh": "現金？不，我們只錄用可以合法工作的人，這裡一切都照規定來。" }
+            ],
+            "title": { "en": "Cash Only", "zh": "只收現金" },
+            "story": { "en": "The call gets very quiet. Rachel thanks you for your time a little too quickly.", "zh": "電話那頭突然安靜下來。瑞秋謝謝你撥空的語氣，快得有點不尋常。" },
+            "why": "被問能否合法工作時回「可以領現金」，聽起來像要打黑工，正規公司會立刻扣分。直接說明身分：I have a working holiday visa with a work permit.。"
+          }
+        },
+        {
+          "en": "Yes, I am allow to work here until next year.",
+          "zh": "可以，我被允許在這裡工作到明年。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Sorry, you are allow...? So, are you allowed to work or not?", "zh": "抱歉，你是 allow……？所以你可以工作還是不行？" }
+            ],
+            "title": { "en": "Allowed or Not", "zh": "到底可不可以" },
+            "story": { "en": "Rachel asks you to email a copy of your visa, just to be sure. Then she asks again. And again.", "zh": "為了保險起見，瑞秋請你把簽證影本寄給她。然後又問了一次。再一次。" },
+            "why": "「被允許」是被動語態，要用過去分詞：I'm allowed to work here.。更清楚的說法是 I have a working holiday visa with a work permit.。"
+          }
+        },
+        {
+          "en": "Yes, I have a working holiday visa with a work permit.",
+          "zh": "可以，我有打工度假簽證和工作許可。",
+          "ok": true,
+          "tip": "被問工作資格時，直接說出簽證種類：I have a... visa with a work permit.。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "Perfect. And when would you be available to start?", "zh": "太好了。那你什麼時候可以開始上班？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm available from next month, after my course ends.",
+          "zh": "我下個月可以開始，那時課程就結束了。",
+          "ok": true,
+          "tip": "I'm available from + 時間，清楚說出可以開始的日期。"
+        },
+        {
+          "en": "I'm available on next month, any day is okay.",
+          "zh": "我下個月可以，哪一天都行。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "On next month? Do you mean any day next month, or a specific day?", "zh": "On next month？你是說下個月任何一天，還是特定某天？" }
+            ],
+            "title": { "en": "Preposition Puzzle", "zh": "介系詞迷宮" },
+            "story": { "en": "Rachel isn't sure when you can start, so she writes a big question mark next to your name.", "zh": "瑞秋搞不清楚你哪天能上班，只好在你的名字旁畫了一個大問號。" },
+            "why": "next month、next Monday 前面不加 in 或 on。要說 I'm available from next month. 或 I can start next Monday.。"
+          }
+        },
+        {
+          "en": "I'm free every day. I just watch dramas at home, haha.",
+          "zh": "我每天都有空，就在家追劇而已，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Ha... okay. So you could start right away?", "zh": "哈……好喔。所以你馬上就能開始？" }
+            ],
+            "title": { "en": "Binge Watcher", "zh": "追劇達人" },
+            "story": { "en": "Rachel types 'available, loves dramas' into her notes. Not quite the first impression you were going for.", "zh": "瑞秋在筆記裡打上「隨時可上班，熱愛追劇」。這不太是你想留下的第一印象。" },
+            "why": "被問何時能上班，給出具體時間就好，不用說在家追劇這種和工作無關的事：I'm available from next month.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "Great. Our manager, Ms. Wong, would like to meet you in person. When would be a good time for you?", "zh": "好的。我們的王經理想跟你當面談談。你什麼時間比較方便？" }
+      ],
+      "choices": [
+        {
+          "en": "Any weekday afternoon works. What time suits Ms. Wong?",
+          "zh": "平日下午都可以。王經理什麼時間方便？",
+          "ok": true,
+          "tip": "先給一個時間範圍，再反問對方 What time suits you?，雙方都好安排。"
+        },
+        {
+          "en": "Could Ms. Wong come to my place instead? It's easier for me.",
+          "zh": "王經理可以改來我家嗎？這樣對我比較方便。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "To your... apartment? Um, interviews are at our office, Kai.", "zh": "到你的……公寓？呃，凱，面試是在我們公司。" }
+            ],
+            "title": { "en": "House Call", "zh": "到府面試" },
+            "story": { "en": "Rachel laughs, but you can tell she will be telling this story at lunch for weeks.", "zh": "瑞秋笑了出來，但你知道接下來幾個禮拜，她午餐時都會拿這件事當話題。" },
+            "why": "面試是你去對方公司，要求面試官配合你的方便很失禮。給出你方便的時段，再問 What time suits Ms. Wong?。"
+          }
+        },
+        {
+          "en": "Up to you. I can cooperate with any time.",
+          "zh": "看你們，我什麼時間都可以配合。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Cooperate? Ha, it's not a group project. Just tell me a day that works.", "zh": "合作？哈，這又不是分組報告。告訴我哪天可以就好。" }
+            ],
+            "title": { "en": "Team Player", "zh": "過度配合" },
+            "story": { "en": "Rachel picks 8 a.m. on Saturday. It turns out 'any time' really does mean any time.", "zh": "瑞秋選了星期六早上八點。原來「什麼時間都可以」真的就是什麼時間都可以。" },
+            "why": "「配合」直譯成 cooperate 很奇怪，cooperate 是「合作」。說 I'm flexible. 或直接給時間：Any weekday afternoon works.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "Let's do Thursday at 2 p.m. at our office on Harbor Street. Any questions before then?", "zh": "那就約星期四下午兩點，在我們港灣街的辦公室。在那之前有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "What is Ms. Wong like? Is she married?",
+          "zh": "王經理是怎樣的人？她結婚了嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "That's... not something I can share. See you on Thursday.", "zh": "那個……我不方便透露。星期四見。" }
+            ],
+            "title": { "en": "Nosy Neighbor", "zh": "熱心過頭" },
+            "story": { "en": "Rachel ends the call very quickly. You wonder if she will tell Ms. Wong about your question.", "zh": "瑞秋很快就掛了電話。你開始擔心她會不會把你的問題告訴王經理。" },
+            "why": "在台灣問「結婚了沒」很常見，但在這裡打聽別人的婚姻狀況很失禮，何況是面試官。可以問和面試有關的事：Should I bring anything?。"
+          }
+        },
+        {
+          "en": "Thursday 2 p.m. is okay. I will be arrive on time.",
+          "zh": "星期四下午兩點可以，我會準時到。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "You will be... arrive? Okay, I'll take that as a yes!", "zh": "你會是……抵達？好吧，我就當你說好了！" }
+            ],
+            "title": { "en": "Lost on Harbor Street", "zh": "迷失在港灣街" },
+            "story": { "en": "Rachel hangs up before giving you the street number. On Thursday, you walk up and down Harbor Street for twenty minutes.", "zh": "瑞秋還沒給門牌號碼就掛了。星期四那天，你在港灣街來回走了二十分鐘。" },
+            "why": "will 後面直接接原形動詞：I'll arrive on time. 或 I'll be there on time.。也別忘了確認細節：Could you email me the details?。"
+          }
+        },
+        {
+          "en": "Could you email me the details? And should I bring anything?",
+          "zh": "可以把細節寄信給我嗎？我需要帶什麼東西嗎？",
+          "ok": true,
+          "tip": "面試前請對方寄細節、問要帶什麼，顯示你做事仔細。"
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c07_hr", "expr": "happy", "en": "Sure, I'll email you right now. Just bring a copy of your resume. See you Thursday!", "zh": "沒問題，我現在就寄給你。帶一份履歷就好。星期四見！" },
+      { "who": "narrator", "en": "A minute later, the email arrives. You add the interview to your calendar and do a small happy dance.", "zh": "一分鐘後，信就到了。你把面試加進行事曆，開心地跳了一小段舞。" }
+    ],
+    "title": { "en": "You've Got an Interview", "zh": "拿到面試了" },
+    "story": { "en": "One short phone call, and you have a real interview at a real company. Now you just need to prepare.", "zh": "一通簡短的電話，你就在真正的公司拿到了真正的面試。接下來只需要好好準備。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Now is a good time.",
+      "zh": "現在方便。",
+      "explain": "接到電話被問 Do you have a few minutes? 時的回答。不方便就說 Could I call you back in ten minutes?。",
+      "example": { "en": "Sorry, I'm on the bus. Could I call you back in ten minutes?", "zh": "抱歉，我在公車上。我十分鐘後回撥給你可以嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm available from...",
+      "zh": "我從……開始有空／可以上班。",
+      "explain": "說明可以開始上班的時間。next month、next Monday 前面不加 in 或 on。",
+      "example": { "en": "I'm available from next Monday.", "zh": "我從下週一開始可以上班。" }
+    },
+    {
+      "type": "vocab",
+      "en": "work permit / working holiday visa",
+      "zh": "工作許可／打工度假簽證",
+      "explain": "被問 Are you legally allowed to work here? 時，直接說出簽證種類。be allowed to 是被動，要用 allowed。",
+      "example": { "en": "I'm allowed to work here for one year.", "zh": "我可以在這裡合法工作一年。" }
+    },
+    {
+      "type": "trap",
+      "en": "I'm free. / I'm flexible.",
+      "zh": "我有空。／我時間有彈性。",
+      "explain": "「我有空」不能說 I have empty；「我可以配合」不能說 I can cooperate，cooperate 是「合作」。",
+      "example": { "en": "I'm flexible. Any weekday afternoon works for me.", "zh": "我時間有彈性，平日下午都可以。" }
+    },
+    {
+      "type": "culture",
+      "en": "When would be a good time for you?",
+      "zh": "你什麼時候方便？",
+      "explain": "約時間時先給出你方便的時段，再禮貌地問對方。電話面試中只問和工作有關的事，不要打聽面試官的私生活。",
+      "example": { "en": "Tuesday or Wednesday works for me. When would be a good time for you?", "zh": "星期二或星期三我都可以，你什麼時候方便？" }
+    }
+  ]
+}

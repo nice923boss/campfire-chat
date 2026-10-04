@@ -1,0 +1,265 @@
+{
+  "id": "L098",
+  "location": { "en": "Your studio apartment on Cedar Street", "zh": "雪松街的套房" },
+  "goal": { "en": "Go through the move-out inspection with Mr. Lin and get your deposit back.", "zh": "和林先生完成退租點交，順利拿回押金。" },
+  "background": "small empty studio apartment, bare walls with a few tiny nail holes, clean wooden floor, old radiator heater under the window, plain taped cardboard boxes by the door, morning light",
+  "cast": ["mr_lin"],
+  "intro": [
+    { "who": "narrator", "en": "Moving day. Your whole year fits into four boxes and one suitcase. Mia has offered you her couch for your last few nights.", "zh": "搬家日。你一整年的生活，裝進了四個紙箱和一個行李箱。米亞讓你最後幾晚睡她家沙發。" },
+    { "who": "narrator", "en": "Mr. Lin arrives exactly on time, clipboard in hand.", "zh": "林先生準時抵達，手上拿著寫字板。" },
+    { "who": "mr_lin", "expr": "neutral", "en": "Morning, Kai. Shall we do the move-out inspection?", "zh": "早安，凱。我們來做退租點交吧？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Let's start. Is everything the way it was when you moved in?", "zh": "開始吧。一切都跟你搬進來時一樣嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Mostly. There's some normal wear and tear, but it's all clean.",
+          "zh": "大致上是。有一些正常的使用耗損，但都打掃乾淨了。",
+          "ok": true,
+          "tip": "wear and tear 是「正常使用造成的耗損」，退租時主動說明，顯得誠實又專業。"
+        },
+        {
+          "en": "Almost the same. Some parts look a bit old, but I did a big cleaning.",
+          "zh": "差不多一樣。有些地方看起來有點舊，但我大掃除過了。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "A big cleaning? You mean a deep clean? Hmm. We'll see.", "zh": "A big cleaning？你是說徹底清潔吧？嗯，我們看看。" }
+            ],
+            "title": { "en": "The Big Clean", "zh": "大掃除大誤會" },
+            "story": { "en": "Mr. Lin checks every corner extra carefully, just to see how big your cleaning really was.", "zh": "林先生把每個角落都檢查得特別仔細，就為了看看你的「大」掃除到底有多大。" },
+            "why": "「大掃除」英文說 a deep clean 或 a thorough cleaning。「正常耗損」則是 wear and tear。"
+          }
+        },
+        {
+          "en": "Of course. It's perfect, so you really don't need to check anything.",
+          "zh": "當然，完美無缺，所以您根本不需要檢查。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "I'll be the judge of that, thank you.", "zh": "這由我來判斷，謝謝。" }
+            ],
+            "title": { "en": "Suspiciously Perfect", "zh": "完美得可疑" },
+            "story": { "en": "Nothing makes a landlord check harder than \"no need to check.\" Mr. Lin even inspects the inside of the fridge door.", "zh": "對房東來說，沒有什麼比「不用檢查」更讓人想檢查。林先生連冰箱門內側都看了。" },
+            "why": "叫房東不用檢查聽起來像在隱瞞。退租點交是正常流程，坦白說明現況就好：There's some normal wear and tear.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Hmm. What about these small holes in the wall here?", "zh": "嗯，那牆上這幾個小洞呢？" }
+      ],
+      "choices": [
+        {
+          "en": "Those are from hanging photos. I'm happy to fill them before I go.",
+          "zh": "那是掛照片留下的。我很樂意在走之前補好。",
+          "ok": true,
+          "tip": "說明原因後主動提出補救（I'm happy to...），能減少押金被扣的機會。"
+        },
+        {
+          "en": "Those are from hanging photo. I can to fill them up before I leave.",
+          "zh": "那是掛照片的。我走之前可以把它們補起來。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "You \"can to\" fill them? So... can you, or can't you?", "zh": "You can to fill？所以……你到底會不會補？" }
+            ],
+            "title": { "en": "Can or Can't", "zh": "能還是不能" },
+            "story": { "en": "Mr. Lin isn't sure what you promised, so he writes \"repair cost\" on his clipboard, just in case.", "zh": "林先生不確定你承諾了什麼，就先在寫字板上記下「修繕費」，以防萬一。" },
+            "why": "助動詞 can 後面直接接原形動詞，不加 to：I can fill them.。photo 是可數名詞，多張要用複數 photos。"
+          }
+        },
+        {
+          "en": "Those were already there. Maybe the last tenant did it, not me?",
+          "zh": "那些本來就在了。可能是上一個房客弄的，不是我吧？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "I took photos on your move-in day, Kai. They weren't there.", "zh": "你搬進來那天我拍了照，凱。那時候沒有這些洞。" }
+            ],
+            "title": { "en": "Photo Evidence", "zh": "照片為證" },
+            "story": { "en": "Mr. Lin shows you the photos, one by one. The holes cost you nothing. Your honesty costs you a lot more.", "zh": "林先生一張一張給你看照片。那些洞不值什麼錢，但你的誠信損失大多了。" },
+            "why": "推給前房客很容易被拆穿，房東通常有入住時的照片。坦白說明並提出補救：I'm happy to fill them.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Good. And the heater? It broke down on you once, didn't it?", "zh": "好。那暖氣呢？它之前壞過一次，對吧？" }
+      ],
+      "choices": [
+        {
+          "en": "It works fine now. You fixed it fast, and I really appreciated that.",
+          "zh": "現在運作正常。您當時很快就修好了，我真的很感謝。",
+          "ok": true,
+          "tip": "點交時順便感謝房東過去的協助，讓氣氛更好，也是好的告別。"
+        },
+        {
+          "en": "Now no problem. When it broke last time, I almost frozen to die in here.",
+          "zh": "現在沒問題了。上次壞掉的時候，我差點在這裡冷死。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Frozen to die? Well, you seem very alive to me.", "zh": "Frozen to die？嗯，你看起來活得好好的。" }
+            ],
+            "title": { "en": "Survivor's Story", "zh": "倖存者的故事" },
+            "story": { "en": "Mr. Lin feels a little guilty and a little confused. He checks the heater twice, just in case it tries to freeze the next tenant.", "zh": "林先生有點愧疚又有點困惑。他把暖氣檢查了兩次，免得下一個房客也被「冷死」。" },
+            "why": "「冷死了」英文說 I was freezing. 或 I almost froze.，不說 frozen to die。「現在沒問題」是 It works fine now.。"
+          }
+        },
+        {
+          "en": "Speaking of cold weather, do you know any good places to ski near here?",
+          "zh": "說到天冷，您知道這附近有什麼好的滑雪場嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "You're leaving this week, Kai. And the heater?", "zh": "你這週就要走了，凱。暖氣呢？" }
+            ],
+            "title": { "en": "Off-Piste", "zh": "滑出跑道" },
+            "story": { "en": "Mr. Lin recommends two ski resorts, then remembers he never got an answer about the heater. He tests it himself, slowly.", "zh": "林先生推薦了兩個滑雪場，然後想起你還沒回答暖氣的事。他只好自己慢慢測試。" },
+            "why": "點交時房東問設備狀況，要直接回答，不要岔題：It works fine now.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "All right. Everything looks acceptable. Any questions before I sign?", "zh": "好。一切看起來都沒問題。簽名前還有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Just one. When can I expect to get my deposit back?",
+          "zh": "只有一個。押金大概什麼時候可以退還給我？",
+          "ok": true,
+          "tip": "When can I expect...? 是有禮貌地詢問時程的說法；get my deposit back 是「拿回押金」。"
+        },
+        {
+          "en": "Just one. When will my deposit return back to my bank account?",
+          "zh": "只有一個。我的押金什麼時候會退回到我的銀行帳戶？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Your deposit will \"return back\" by itself? I wish money did that.", "zh": "你的押金會自己「回回來」？我也希望錢會這樣。" }
+            ],
+            "title": { "en": "Boomerang Money", "zh": "迴力鏢押金" },
+            "story": { "en": "Mr. Lin explains that he has to send it. He takes his time. It feels like a lesson.", "zh": "林先生解釋押金得由他匯，不會自己飛回去。他不疾不徐，感覺像在上課。" },
+            "why": "return 本身就有「回」的意思，加 back 是重複。而且押金不會自己回去，要說 When can I get my deposit back?"
+          }
+        },
+        {
+          "en": "Yes. You're giving me the full deposit back, right? Every dollar?",
+          "zh": "有。您會把押金全額退給我吧？一塊都不少？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "If you keep asking like that, I'll check the oven too.", "zh": "你再這樣問，我連烤箱都要檢查了。" }
+            ],
+            "title": { "en": "Oven Inspection", "zh": "烤箱大檢查" },
+            "story": { "en": "Mr. Lin checks the oven. You did not clean the oven. Twenty dollars disappear from your deposit.", "zh": "林先生檢查了烤箱。你沒清烤箱。押金少了二十塊。" },
+            "why": "語氣像在逼問，會讓房東覺得你不信任他。有禮貌地詢問時程：When can I expect to get my deposit back?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Within two weeks. The full amount.", "zh": "兩週內，全額退還。" },
+        { "who": "mr_lin", "expr": "happy", "en": "You were a good tenant, Kai. Quiet, clean, polite. I'll miss that.", "zh": "你是個好房客，凱。安靜、愛乾淨、有禮貌。我會懷念的。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks, Mr. Lin. You were strict but always fair. I'll miss this place.",
+          "zh": "謝謝您，林先生。您很嚴格，但一直很公平。我會想念這裡的。",
+          "ok": true,
+          "tip": "strict but fair 是對長輩、上司很好的讚美：肯定對方的原則，也肯定對方的公正。"
+        },
+        {
+          "en": "Thank you! Let me take you to dinner tonight. I insist, you can't say no!",
+          "zh": "謝謝！今晚讓我請您吃飯，我堅持，您不能拒絕！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "I... appreciate it, but I have plans. Really. I do.", "zh": "我……很感謝，但我真的有約了。真的。" }
+            ],
+            "title": { "en": "Dinner Hostage", "zh": "飯局綁架" },
+            "story": { "en": "You insist three more times. Mr. Lin leaves quickly, waving his clipboard like a shield.", "zh": "你又堅持了三次。林先生拿著寫字板像盾牌一樣揮著，快步離開了。" },
+            "why": "中文的「我堅持、不准拒絕」是客套，但在英語文化中對方說 no 通常就是真的 no，一直堅持會讓人有壓力。真誠道謝就好。"
+          }
+        },
+        {
+          "en": "Thank you for taking care of me this year, Mr. Lin. You worked hard!",
+          "zh": "謝謝您這一年的照顧，林先生。您辛苦了！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Worked hard? Kai, I mostly just collected the rent.", "zh": "辛苦？凱，我大部分時間只是收房租而已。" }
+            ],
+            "title": { "en": "Hard Work, Easy Money", "zh": "辛苦的收租人" },
+            "story": { "en": "Mr. Lin laughs for the first time all year. It's a nice moment, even if the compliment completely missed.", "zh": "林先生今年第一次笑出聲。雖然讚美完全沒打中，這一刻還是很美好。" },
+            "why": "「您辛苦了」直譯 You worked hard! 在英文裡很奇怪，英文沒有完全對應的說法。改成具體感謝：Thank you for everything. 或 You were always fair.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mr_lin", "expr": "happy", "en": "If you ever come back to Maple Bay, my door is open. For a visit. Not a rent discount.", "zh": "如果你回楓灣，我家的門隨時為你開著。是來拜訪，不是來討房租折扣。" },
+      { "who": "narrator", "en": "You hand over the keys. The empty studio looks smaller than you remember.", "zh": "你交還鑰匙。空蕩蕩的套房，看起來比你記憶中小。" }
+    ],
+    "title": { "en": "Keys Returned", "zh": "交還鑰匙" },
+    "story": { "en": "Honest answers, small repairs and a sincere thank-you. You leave with your full deposit and a landlord who will actually miss you.", "zh": "誠實的回答、小小的修補，加上真心的道謝。你拿回全額押金，還有一位真的會想念你的房東。" }
+  },
+  "notes": [
+    {
+      "type": "vocab",
+      "en": "move-out inspection",
+      "zh": "退租點交",
+      "explain": "退租時房東和房客一起檢查房屋狀況，決定押金是否扣款。入住時對應的是 move-in inspection。",
+      "example": { "en": "The move-out inspection is on Saturday at ten.", "zh": "退租點交在星期六十點。" }
+    },
+    {
+      "type": "vocab",
+      "en": "wear and tear",
+      "zh": "正常使用耗損",
+      "explain": "指房屋或物品因日常使用自然產生的磨損，通常不會從押金扣款。人為損壞則是 damage。",
+      "example": { "en": "Faded curtains are normal wear and tear.", "zh": "窗簾褪色屬於正常耗損。" }
+    },
+    {
+      "type": "phrase",
+      "en": "When can I expect to get my deposit back?",
+      "zh": "押金大概什麼時候可以退還？",
+      "explain": "When can I expect...? 是禮貌詢問時程的句型，比 When will you give me...? 委婉。",
+      "example": { "en": "When can I expect a reply?", "zh": "我大概什麼時候可以收到回覆？" }
+    },
+    {
+      "type": "trap",
+      "en": "return (not return back)",
+      "zh": "退回",
+      "explain": "return 本身就是「回來、歸還」，加 back 是重複。同類錯誤還有 repeat again、enter into the room。",
+      "example": { "en": "Please return the keys by Friday.", "zh": "請在星期五前歸還鑰匙。" }
+    },
+    {
+      "type": "culture",
+      "en": "Thank you for everything.",
+      "zh": "謝謝您的照顧。",
+      "explain": "「您辛苦了」和「我堅持請客」在英文裡都沒有直接對應。英語文化重視具體的感謝，對方說 no 也要尊重，不必一再堅持。",
+      "example": { "en": "Thank you for everything. You were always fair to me.", "zh": "謝謝您的照顧，您一直對我很公平。" }
+    }
+  ]
+}

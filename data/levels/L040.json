@@ -1,0 +1,222 @@
+{
+  "id": "L040",
+  "location": { "en": "Lantern Park, by the lake", "zh": "燈籠公園，湖邊" },
+  "goal": { "en": "Apologize to Leo and make things right.", "zh": "向里歐道歉，把事情說清楚。" },
+  "background": "lakeside park in the late afternoon, an empty wooden bench, paper lanterns hanging in the trees, calm water, fallen maple leaves on the path, orange sunset sky",
+  "cast": ["leo"],
+  "intro": [
+    { "who": "narrator", "en": "Yesterday in class, you couldn't find your notebook. In front of everyone, you said, \"Leo, you lost it!\"", "zh": "昨天上課時，你找不到筆記本，當著全班的面說：「里歐，是你弄丟的！」" },
+    { "who": "narrator", "en": "Last night, you found it at the bottom of your own bag. Now Leo is sitting alone by the lake.", "zh": "昨晚，你在自己的包包底部找到了它。現在里歐一個人坐在湖邊。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "Oh... hey, Kai. Did you need something?", "zh": "喔……嗨，凱。有什麼事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yeah. Leo, I owe you an apology.",
+          "zh": "嗯。里歐，我欠你一個道歉。",
+          "ok": true,
+          "tip": "I owe you an apology. 是鄭重道歉的開場，讓對方知道你是認真的。"
+        },
+        {
+          "en": "Yeah. Yesterday was nothing. Let's forget it.",
+          "zh": "嗯，昨天沒什麼啦，忘了吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Nothing? It wasn't nothing to me.", "zh": "沒什麼？對我來說可不是沒什麼。" }
+            ],
+            "title": { "en": "Memory Eraser", "zh": "記憶消除器" },
+            "story": { "en": "Leo puts his headphones on and looks at the lake. The ducks look awkward too.", "zh": "里歐戴上耳機看著湖面，連鴨子都覺得很尷尬。" },
+            "why": "自己犯錯時說「沒什麼啦，忘了吧」，等於否定對方的感受。先認真道歉：I owe you an apology.。"
+          }
+        },
+        {
+          "en": "Yeah. I feel very sorry to you.",
+          "zh": "嗯，我對你感到很抱歉。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Sorry TO me? Wait, do you feel sorry FOR me?", "zh": "對我抱歉？等等，你是在同情我嗎？" }
+            ],
+            "title": { "en": "Pity Party", "zh": "同情派對" },
+            "story": { "en": "Leo thinks you came to pity him. Now he feels even worse.", "zh": "里歐以為你是來同情他的，心情更差了。" },
+            "why": "「對你很抱歉」不是 sorry to you；feel sorry for someone 又是「同情某人」。道歉直接說 I'm sorry. 或 I owe you an apology.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "Okay... I'm listening.", "zh": "好……我在聽。" }
+      ],
+      "choices": [
+        {
+          "en": "I found my notebook. It was in my bag.",
+          "zh": "我找到筆記本了，它在我自己的包包裡。",
+          "ok": true,
+          "tip": "道歉時先說清楚事實，用過去式 found、was 交代發生了什麼。"
+        },
+        {
+          "en": "I find my notebook. It is in my bag.",
+          "zh": "我找到筆記本了，它在我的包包裡。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "It's in your bag right now? So you lost it again?", "zh": "它現在在你包包裡？所以你又弄丟了？" }
+            ],
+            "title": { "en": "Lost and Found", "zh": "失物招領" },
+            "story": { "en": "Leo helps you search your bag one more time. The notebook is there. So is a very old banana.", "zh": "里歐又陪你翻了一次包包。筆記本在裡面，還有一根很舊的香蕉。" },
+            "why": "找到筆記本是昨晚的事，要用過去式 found、was。用現在式聽起來像正在發生，對方會聽不懂。"
+          }
+        },
+        {
+          "en": "It's the blue one with a cat on it.",
+          "zh": "就是那本藍色、上面有貓的。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "I know what it looks like, Kai. I helped you look for it.", "zh": "我知道它長什麼樣子，凱，我還幫你找過。" }
+            ],
+            "title": { "en": "Cat Notebook", "zh": "貓咪筆記本" },
+            "story": { "en": "Leo waits for the apology. You describe the cat in great detail instead.", "zh": "里歐在等你道歉，你卻詳細描述了那隻貓。" },
+            "why": "對方說 I'm listening. 是在等你說重點。道歉時先講事實（找到了、在自己包包裡），筆記本長什麼樣子跟道歉無關。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "upset", "en": "So I didn't lose it. But you told the whole class I did.", "zh": "所以我根本沒弄丟。可是你跟全班說是我弄丟的。" }
+      ],
+      "choices": [
+        {
+          "en": "I know. I didn't mean to embarrass you.",
+          "zh": "我知道，我不是故意要讓你難堪的。",
+          "ok": true,
+          "tip": "I didn't mean to... 承認造成傷害，同時說明不是故意的。"
+        },
+        {
+          "en": "I know. I'll buy you bubble tea, OK?",
+          "zh": "我知道啦，我請你喝珍奶，好不好？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Bubble tea? That's it? You can't just buy a sorry.", "zh": "珍奶？就這樣？道歉不是用買的。" }
+            ],
+            "title": { "en": "Bubble Tea Diplomacy", "zh": "珍奶外交" },
+            "story": { "en": "Leo takes the bubble tea, but he drinks it in silence. The pearls are the only thing talking.", "zh": "里歐收下了珍奶，卻默默地喝。只有珍珠在吸管裡發出聲音。" },
+            "why": "在台灣常用請客表達歉意，但英語文化中先用話語承認錯誤更重要。先說 I didn't mean to embarrass you.，請客可以之後再說。"
+          }
+        },
+        {
+          "en": "But you lost your wallet last week!",
+          "zh": "可是你上週也把錢包弄丟了啊！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Wow. So now it's my fault?", "zh": "哇，所以現在變成我的錯了？" }
+            ],
+            "title": { "en": "Blame Game", "zh": "甩鍋大賽" },
+            "story": { "en": "Leo walks home alone. The lanterns turn on, but nobody is there to see them.", "zh": "里歐自己走回家了。燈籠亮了起來，卻沒有人在看。" },
+            "why": "道歉時翻舊帳等於替自己找藉口，對方會覺得你不是真心道歉。先承認錯誤：I didn't mean to embarrass you.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "...Thanks for saying that. It really hurt, you know.", "zh": "……謝謝你這麼說。那時候我真的很難過。" }
+      ],
+      "choices": [
+        {
+          "en": "I'll tell the class tomorrow. No hard feelings?",
+          "zh": "我明天會跟全班說清楚。我們沒事了吧？",
+          "ok": true,
+          "tip": "說出你會怎麼彌補，再用 No hard feelings? 確認對方願意和好。"
+        },
+        {
+          "en": "I'll tell everyone tomorrow. You not angry anymore?",
+          "zh": "我明天會跟大家說。你不生氣了吧？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Me not angry? Are you asking me or telling me?", "zh": "我不生氣？你是在問我還是在命令我？" }
+            ],
+            "title": { "en": "Question Mark", "zh": "問號人生" },
+            "story": { "en": "Leo isn't sure if you asked a question. He answers \"Maybe?\" and you both stay confused.", "zh": "里歐不確定你是不是在問問題，只回了一句「也許吧？」，你們兩個都一頭霧水。" },
+            "why": "英文問句要有 be 動詞並放在主詞前面：Are you still angry?。比較自然的和好說法是 No hard feelings?。"
+          }
+        },
+        {
+          "en": "I'll tell the class. Don't put it on your heart, OK?",
+          "zh": "我會跟全班說。你別放在心上，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Put it on my heart? Like a sticker?", "zh": "放在我的心上？像貼紙那樣嗎？" }
+            ],
+            "title": { "en": "Heart Sticker", "zh": "心形貼紙" },
+            "story": { "en": "Leo draws a heart sticker on his notebook and writes \"Kai's apology\" on it. At least he's smiling a little.", "zh": "里歐在筆記本上畫了一個愛心貼紙，寫著「凱的道歉」。至少他有點笑了。" },
+            "why": "「別放在心上」直翻成 put it on your heart 英文不通。和好時說 No hard feelings?，安慰別人說 Don't worry about it.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "leo", "expr": "happy", "en": "No hard feelings. But you're buying the bubble tea.", "zh": "沒事了。不過珍奶你請。" },
+      { "who": "narrator", "en": "You both laugh. Above you, the lanterns in the trees begin to glow.", "zh": "你們都笑了。頭頂上，樹上的燈籠一盞盞亮了起來。" }
+    ],
+    "title": { "en": "Friends Again", "zh": "和好如初" },
+    "story": { "en": "The next day, you tell the class the truth. Leo gets a round of applause, and you get your best friend back.", "zh": "隔天，你跟全班說出真相。里歐得到全班的掌聲，你也找回了最好的朋友。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I owe you an apology.",
+      "zh": "我欠你一個道歉。",
+      "explain": "比 Sorry 更鄭重的道歉開場，表示你知道自己錯了，而且是認真來道歉的。",
+      "example": { "en": "I owe you an apology for yesterday.", "zh": "昨天的事，我欠你一個道歉。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I didn't mean to embarrass you.",
+      "zh": "我不是故意讓你難堪的。",
+      "explain": "didn't mean to + 原形動詞，表示「不是故意的」。承認造成的傷害，同時說明你的本意。",
+      "example": { "en": "I didn't mean to hurt your feelings.", "zh": "我不是故意要傷你的心。" }
+    },
+    {
+      "type": "phrase",
+      "en": "No hard feelings?",
+      "zh": "我們沒事了吧？",
+      "explain": "道歉或爭執後用來確認對方不再介意，對方也可以回 No hard feelings. 表示和好。",
+      "example": { "en": "Sorry about the game. No hard feelings?", "zh": "比賽的事抱歉了，我們沒事吧？" }
+    },
+    {
+      "type": "culture",
+      "en": "Words first, treats later.",
+      "zh": "先道歉，再請客。",
+      "explain": "台灣人常用請客、送東西表達歉意，但英語文化中先用話語承認錯誤更重要。直接跳到請客，會像想用東西把事情帶過。",
+      "example": { "en": "I'm really sorry. Can I buy you lunch sometime?", "zh": "真的很抱歉。改天請你吃午餐好嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "feel sorry for someone",
+      "zh": "同情某人",
+      "explain": "feel sorry for someone 是「同情、可憐某人」，不是向對方道歉。道歉說 I'm sorry. 或 I apologize.。",
+      "example": { "en": "I feel sorry for the lost puppy.", "zh": "我很同情那隻走失的小狗。" }
+    }
+  ]
+}

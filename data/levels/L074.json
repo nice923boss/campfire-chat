@@ -1,0 +1,264 @@
+{
+  "id": "L074",
+  "location": { "en": "Brightway office, Sam's desk", "zh": "Brightway 公司，山姆的座位" },
+  "goal": { "en": "Ask Sam to show you the order system, and thank him the right way.", "zh": "請山姆教你用訂單系統，並用對的方式道謝。" },
+  "background": "open-plan office with rows of white desks, desktop monitors with blank screens, small desk plants, smart desk lamps, a pair of headphones on a desk, large windows, late morning light",
+  "cast": ["sam"],
+  "intro": [
+    { "who": "narrator", "en": "Ms. Wong wants three café orders in the order system by today. There's just one problem: you've never used it.", "zh": "王經理要你今天把三筆咖啡廳訂單輸入訂單系統。只有一個問題：你從來沒用過這套系統。" },
+    { "who": "narrator", "en": "Sam is at his desk, typing fast with his headphones on. You walk over.", "zh": "山姆戴著耳機坐在位子上，正飛快地打字。你走了過去。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "sam", "expr": "neutral", "en": "Oh, hey Kai. What's up?", "zh": "喔，嘿，凱，怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "Hey, Sam. Do you have a minute? I could use some help with the order system.",
+          "zh": "嘿，山姆，你有空一下嗎？訂單系統的事想請你幫個忙。",
+          "ok": true,
+          "tip": "Do you have a minute? 先確認對方有沒有空，再說明需求，是請人幫忙的禮貌開場。"
+        },
+        {
+          "en": "Sam, you have time or not? I have a big problem, I want to ask you something.",
+          "zh": "山姆，你有沒有空？我有個大問題想問你。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "A big problem? Oh no. Is everything okay? Should I call IT?", "zh": "大問題？糟了。一切都還好嗎？要不要叫 IT？" }
+            ],
+            "title": { "en": "Emergency Mode", "zh": "進入緊急模式" },
+            "story": { "en": "Sam panics and calls IT. Five minutes later, three people are standing around your desk, waiting for the \"big problem.\"", "zh": "山姆一緊張就叫了 IT。五分鐘後，三個人圍在你的座位旁，等著看那個「大問題」。" },
+            "why": "「你有沒有空」直譯成 have time or not 很生硬，「有個問題」說成 have a big problem 又像出了大事。說 Do you have a minute? I could use some help. 就好。"
+          }
+        },
+        {
+          "en": "Sam, stop working for a second. You need to teach me the order system.",
+          "zh": "山姆，先停一下手邊的工作。你要教我用訂單系統。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "sam", "expr": "upset", "en": "I \"need to\"? I'm kind of in the middle of something, Kai.", "zh": "我「要」教你？我現在手邊正在忙耶，凱。" }
+            ],
+            "title": { "en": "Order Up", "zh": "命令句上菜" },
+            "story": { "en": "Sam puts his headphones back on. You spend the morning watching tutorial videos with the volume on low.", "zh": "山姆把耳機戴回去。你整個早上只能把音量調小，自己看教學影片。" },
+            "why": "You need to... 加上命令句，聽起來像在下指令。請人幫忙要先問：Do you have a minute?，再說 I could use some help.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "neutral", "en": "Sure, but I've got a client call in ten minutes. What do you need?", "zh": "好啊，不過我十分鐘後要跟客戶通電話。你需要什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "I need to enter three orders. Could you just show me the first one?",
+          "zh": "我要輸入三筆訂單。可以先示範第一筆給我看嗎？",
+          "ok": true,
+          "tip": "對方時間不多時，把請求縮小成 just the first one，對方更容易答應。"
+        },
+        {
+          "en": "Ten minutes? Oh, who is your call with? Is it a big client? Which company?",
+          "zh": "十分鐘？喔，你要跟誰通電話？是大客戶嗎？哪家公司？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "It's... with a hotel, yeah. Wait, what did you need again?", "zh": "是……一家飯店啦。等等，你剛剛是要什麼？" }
+            ],
+            "title": { "en": "Time's Up", "zh": "時間到" },
+            "story": { "en": "By the time Sam finishes telling you about his call, it's time for his call. Your orders stay empty until tomorrow.", "zh": "等山姆跟你講完他的電話，他的電話也到了。你的訂單一直空白到隔天。" },
+            "why": "對方說只有十分鐘，就要直接說需求：I need to enter three orders. Could you show me the first one?。好奇心留到之後。"
+          }
+        },
+        {
+          "en": "I need enter three orders. Can you teach me how to using it?",
+          "zh": "我要輸入三筆訂單。你可以教我怎麼用嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "How to... using? Sorry, do you need to use it, or are you using it?", "zh": "怎麼……using？抱歉，你是要用，還是正在用？" }
+            ],
+            "title": { "en": "Half the Lesson", "zh": "只學到一半" },
+            "story": { "en": "Sam spends five minutes figuring out what you need and only five minutes showing you. You remember about half of it.", "zh": "山姆花五分鐘搞懂你要什麼，只剩五分鐘示範。你大概只記得一半。" },
+            "why": "need 後面要加 to：I need to enter...；how to 後面接原形動詞：how to use it。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "neutral", "en": "Okay, first you click New Order, then you pick the client from this list. Clear so far?", "zh": "好，先按 New Order，再從這個清單選客戶。到這裡清楚嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry, could you go back one step? I missed where the client list was.",
+          "zh": "不好意思，可以退回上一步嗎？我沒看到客戶清單在哪。",
+          "ok": true,
+          "tip": "沒跟上時直接說 Could you go back one step?，比假裝懂更有效率。"
+        },
+        {
+          "en": "Yes, yes, very clear. You explain so well. I understand everything.",
+          "zh": "清楚、清楚，非常清楚。你解釋得超好，我全部都懂。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Wait, you said it was clear. Why are all three orders under the wrong hotel?", "zh": "等等，你不是說很清楚嗎？為什麼三筆訂單都掛在錯的飯店底下？" }
+            ],
+            "title": { "en": "Forty Lamps, Wrong Address", "zh": "四十盞燈送錯地方" },
+            "story": { "en": "A hotel receives forty café lamps it never ordered. Sam spends his afternoon on the phone fixing it.", "zh": "一家飯店收到四十盞從沒訂過的咖啡廳吊燈。山姆整個下午都在打電話善後。" },
+            "why": "怕麻煩對方而假裝聽懂，最後反而造成更大的麻煩。沒跟上就說 Sorry, could you go back one step?。"
+          }
+        },
+        {
+          "en": "Slowly, slowly! Can you say again one more time? You are too fast for me.",
+          "zh": "慢一點、慢一點！可以再說一次嗎？你太快了。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Again one more time? So... twice? Okay, but I really have to go after this.", "zh": "再一次再一次？所以……講兩次？好吧，但講完我真的得走了。" }
+            ],
+            "title": { "en": "One More Time, Again", "zh": "再一次再一次" },
+            "story": { "en": "Sam explains it twice, very slowly, and runs to his call. He never gets to the Submit button.", "zh": "山姆非常慢地講了兩遍，然後衝去講電話。他根本沒講到送出按鈕。" },
+            "why": "「再說一次」直譯成 say again one more time 重複了。說 Could you say that again? 或 Could you go back one step?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "happy", "en": "And that's it. Then you click Submit. Want to try the next one yourself?", "zh": "就這樣，最後按 Submit。下一筆要不要自己試試看？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure, I'll try. I'd really appreciate it if you could check it after your call.",
+          "zh": "好，我試試看。如果你講完電話能幫我檢查一下，我會很感激。",
+          "ok": true,
+          "tip": "I'd really appreciate it if you could... 是很客氣的請求句型，注意 it 不能省略。"
+        },
+        {
+          "en": "Okay, I try it. I will appreciate if you can help me to check it after your call.",
+          "zh": "好，我試試看。如果你講完電話能幫我檢查，我會很感激。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "You'll appreciate... what? Sorry, check what, after what?", "zh": "你會感激……什麼？抱歉，檢查什麼？在什麼之後？" }
+            ],
+            "title": { "en": "Lost in Grammar", "zh": "迷失在文法裡" },
+            "story": { "en": "Sam runs off to his call still puzzled. Nobody checks your order, and it goes out with 100 lamps instead of 10.", "zh": "山姆一臉困惑地跑去講電話。沒人幫你檢查，訂單送出時，十盞燈變成了一百盞。" },
+            "why": "appreciate 後面一定要有受詞，要說 I'd really appreciate it if you could...；「我試試看」是 I'll try，不是 I try it。"
+          }
+        },
+        {
+          "en": "No, you do it. You're faster than me, and I'll just watch one more time.",
+          "zh": "不要，你來做。你比我快，我再看一次就好。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "sam", "expr": "upset", "en": "Kai, my call starts in two minutes. You've got to try it yourself.", "zh": "凱，我的電話兩分鐘後就開始了。你得自己試試看。" }
+            ],
+            "title": { "en": "Professional Watcher", "zh": "職業觀眾" },
+            "story": { "en": "Sam leaves for his call. You stare at the screen, too nervous to press anything until he gets back an hour later.", "zh": "山姆去講電話了。你盯著螢幕，緊張到什麼都不敢按，直到一個小時後他回來。" },
+            "why": "對方已經教你了，還要他幫你做，會顯得不想學。說 Sure, I'll try.，再請對方之後幫忙檢查。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "After his call, Sam checks your work.", "zh": "講完電話後，山姆檢查了你的成果。" },
+        { "who": "sam", "expr": "happy", "en": "All three look perfect. You're a fast learner, Kai!", "zh": "三筆都很完美。你學得真快，凱！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks so much, Sam. I owe you one. Coffee's on me this afternoon.",
+          "zh": "太感謝了，山姆，我欠你一次。今天下午的咖啡我請。",
+          "ok": true,
+          "tip": "I owe you one. 表示「欠你一份人情」，再加一句請客，感謝更有誠意。"
+        },
+        {
+          "en": "Thank you, Sam. Next time I invite you. You can drink anything you want.",
+          "zh": "謝謝你，山姆。下次我請你，你想喝什麼都可以。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Invite me... to what? A party?", "zh": "邀請我……去哪？派對嗎？" }
+            ],
+            "title": { "en": "Invitation Pending", "zh": "神秘邀請函" },
+            "story": { "en": "Sam waits all week for an invitation that never comes. He finally asks Nina if he missed a party.", "zh": "山姆等了一整個星期都沒收到邀請，最後跑去問妮娜他是不是錯過了什麼派對。" },
+            "why": "「我請你」直譯成 I invite you，對方會以為你要邀他參加活動。說要請客要用 It's on me. 或 Coffee's on me.。"
+          }
+        },
+        {
+          "en": "Thank you, and sorry for troubling you so much. I'm so sorry, really, really sorry.",
+          "zh": "謝謝你，真的很不好意思這麼麻煩你。對不起，真的真的很對不起。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Hey, why are you sorry? Did something go wrong?", "zh": "嘿，你幹嘛道歉？出了什麼問題嗎？" }
+            ],
+            "title": { "en": "Sorry, Sorry, Sorry", "zh": "對不起三連發" },
+            "story": { "en": "Sam checks all three orders again, just in case. Now he thinks you broke something and are afraid to tell him.", "zh": "山姆以防萬一，又把三筆訂單重新檢查一遍。他現在以為你弄壞了什麼，只是不敢說。" },
+            "why": "台灣人被幫忙時常說「不好意思」，但英文一直說 sorry 會讓對方以為出事了。被幫忙時多說 thanks，再加一句 I owe you one.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "sam", "expr": "happy", "en": "Deal! I'll take a large oat latte, please.", "zh": "成交！我要一杯大杯燕麥拿鐵，謝啦。" },
+      { "who": "narrator", "en": "That afternoon, you bring Sam his latte. The order system doesn't scare you anymore.", "zh": "那天下午，你把拿鐵送到山姆桌上。訂單系統再也嚇不倒你了。" }
+    ],
+    "title": { "en": "Help Well Asked", "zh": "求助有道" },
+    "story": { "en": "You asked politely, learned fast, and said thank you the right way. Sam is now officially your work buddy.", "zh": "你禮貌求助、學得快，也用對方式道謝。山姆正式成為你的職場好夥伴。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Do you have a minute?",
+      "zh": "你有空一下嗎？",
+      "explain": "打擾別人前先問這句，讓對方決定現在方不方便。比較口語的說法是 Got a sec?。",
+      "example": { "en": "Do you have a minute? I have a quick question.", "zh": "你有空一下嗎？我有個小問題。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'd really appreciate it if you could...",
+      "zh": "如果你能……我會很感激。",
+      "explain": "很客氣的請求句型。appreciate 後面的 it 不能省略，說成 I will appreciate if... 是常見錯誤；用 could 比 can 更委婉。",
+      "example": { "en": "I'd really appreciate it if you could review my draft.", "zh": "如果你能幫我看一下草稿，我會很感激。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I owe you one.",
+      "zh": "我欠你一次。",
+      "explain": "對方幫了忙之後說，表示會找機會回報，語氣輕鬆友善。想請客可以接 Coffee's on me.。",
+      "example": { "en": "Thanks for covering for me. I owe you one.", "zh": "謝謝你幫我代班，我欠你一次。" }
+    },
+    {
+      "type": "trap",
+      "en": "I invite you.",
+      "zh": "我請你。（直譯陷阱）",
+      "explain": "invite 是「邀請參加活動」，不代表你要付錢。要請客說 It's on me.、My treat. 或 Lunch is on me.。",
+      "example": { "en": "Let's get dinner. My treat!", "zh": "我們去吃晚餐吧，我請客！" }
+    },
+    {
+      "type": "culture",
+      "en": "Say thanks, not sorry.",
+      "zh": "多道謝，少道歉。",
+      "explain": "台灣人請人幫忙常一直說「不好意思」，但英文一直說 sorry 會讓對方以為出了什麼事。被幫忙時，說 Thanks so much. 或 I really appreciate it. 就好。",
+      "example": { "en": "Thanks for your patience. I really appreciate it.", "zh": "謝謝你的耐心，我真的很感激。" }
+    }
+  ]
+}

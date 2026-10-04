@@ -1,0 +1,262 @@
+{
+  "id": "L095",
+  "location": { "en": "Brightway office, Ms. Wong's office", "zh": "Brightway 公司，王經理辦公室" },
+  "goal": { "en": "Politely ask Ms. Wong for a letter of recommendation, with enough notice.", "zh": "提早並有禮貌地請王經理幫你寫推薦信。" },
+  "background": "manager's office in the afternoon, wooden desk with a closed laptop and a coffee mug, bookshelf with binders, potted plant, warm sunlight through blinds",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "A week after the address mix-up, things are back to normal at Brightway.", "zh": "地址事件過了一週，Brightway 的一切恢復正常。" },
+    { "who": "narrator", "en": "You've found a job opening back in Taipei, and it asks for a reference letter. Ms. Wong's door is open.", "zh": "你找到一個台北的職缺，需要附推薦信。王經理的門正開著。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Kai. Come in. What's on your mind?", "zh": "凱，進來吧。有什麼事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Do you have a minute? There's a favor I'd like to ask you.",
+          "zh": "您有空嗎？我想請您幫個忙。",
+          "ok": true,
+          "tip": "請託前先問 Do you have a minute?，再預告 a favor，讓對方有心理準備。"
+        },
+        {
+          "en": "Hi. I need you to write me a recommendation letter by Friday.",
+          "zh": "嗨，我需要您星期五前幫我寫一封推薦信。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "You NEED me to? Interesting way to ask for a favor.", "zh": "你「需要」我？這種請人幫忙的方式還真特別。" }
+            ],
+            "title": { "en": "Order Received", "zh": "收到命令" },
+            "story": { "en": "Ms. Wong agrees, but her eyebrows stay raised for the rest of the conversation. That letter might be a little shorter than you hoped.", "zh": "王經理答應了，但整段對話眉毛都沒放下來。那封信可能會比你期待的短一點。" },
+            "why": "I need you to... 聽起來像下命令，對主管請託要更委婉。先問 Do you have a minute? I have a favor to ask.。"
+          }
+        },
+        {
+          "en": "Sorry to disturb you. Can I ask you a help for one thing?",
+          "zh": "不好意思打擾了，可以請您幫一件事嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Ask me a help? Sure... I think? What do you need?", "zh": "Ask me a help？可以吧……我想？你需要什麼？" }
+            ],
+            "title": { "en": "Help Wanted", "zh": "徵求一個幫" },
+            "story": { "en": "Ms. Wong spends a moment decoding your sentence. Not the polished first impression you wanted for this request.", "zh": "王經理花了點時間解讀你的句子。對這次請託來說，不是你想要的漂亮開場。" },
+            "why": "「請你幫個忙」不能說 ask you a help。可以說 Can I ask you a favor? 或 There's a favor I'd like to ask.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Of course. Have a seat. What is it?", "zh": "當然。坐吧，什麼事？" }
+      ],
+      "choices": [
+        {
+          "en": "I was wondering if you'd be willing to write me a reference letter.",
+          "zh": "我在想，不知道您是否願意幫我寫一封推薦信。",
+          "ok": true,
+          "tip": "I was wondering if you'd be willing to... 是最客氣的請託句型，過去式讓語氣更委婉。"
+        },
+        {
+          "en": "I was wondering if you are willing write a reference letter for me.",
+          "zh": "我在想您願不願意幫我寫一封推薦信。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Willing... write? I think I'm missing a word there.", "zh": "Willing write？我好像漏聽了一個字。" }
+            ],
+            "title": { "en": "The Missing Word", "zh": "消失的一個字" },
+            "story": { "en": "Ms. Wong figures it out, but she starts wondering how carefully you'll proofread your job application.", "zh": "王經理聽懂了，但她開始擔心你的求職文件會不會也沒校對。" },
+            "why": "be willing 後面要接 to + 原形動詞：willing to write。句型 I was wondering if 後面也建議搭配 you'd，語氣更客氣。"
+          }
+        },
+        {
+          "en": "I already wrote a recommendation letter myself. Could you just sign it?",
+          "zh": "我已經自己寫好推薦信了，您簽個名就好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "You wrote my letter for me? That's not really how it works here, Kai.", "zh": "你幫我寫好了我的信？在這裡不是這樣做的，凱。" }
+            ],
+            "title": { "en": "Ghostwriter", "zh": "代筆推薦信" },
+            "story": { "en": "Ms. Wong reads your draft. It says you are \"the best employee in company history.\" She does not sign it.", "zh": "王經理讀了你的草稿，上面寫著你是「公司史上最優秀的員工」。她沒有簽。" },
+            "why": "在英語職場，推薦信通常由推薦人親自撰寫，自己寫好請人簽名會顯得不尊重。可以主動提供資料：I can send you my résumé.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "I'd be happy to. What's it for, and when do you need it?", "zh": "我很樂意。是要申請什麼？什麼時候需要？" }
+      ],
+      "choices": [
+        {
+          "en": "It's for a marketing job in Taipei. The deadline is in three weeks.",
+          "zh": "是台北的行銷職缺，截止日在三週後。",
+          "ok": true,
+          "tip": "清楚說明用途和期限，並給對方足夠時間（give enough notice），是請推薦信的基本禮貌。"
+        },
+        {
+          "en": "It's for a marketing job in Taipei. The deadline is tomorrow, sorry.",
+          "zh": "是台北的行銷職缺，明天截止，抱歉。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Tomorrow? Kai, a good letter takes time. I have three meetings today.", "zh": "明天？凱，一封好的推薦信需要時間。我今天有三個會。" }
+            ],
+            "title": { "en": "Last-Minute Letter", "zh": "火燒屁股的推薦信" },
+            "story": { "en": "Ms. Wong writes it at midnight. It's three sentences long, and one of them is \"Kai works here.\"", "zh": "王經理半夜趕出來了。信只有三句，其中一句是「凱在這裡工作」。" },
+            "why": "請人寫推薦信，習慣上至少提前兩到三週通知（give enough notice）。臨時拜託會讓對方很為難，信的品質也會受影響。"
+          }
+        },
+        {
+          "en": "It's in Taipei! Have you ever been? The night markets are amazing.",
+          "zh": "在台北！您去過嗎？夜市超棒的。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "I have, yes. But... what's the letter for? And when?", "zh": "去過啊。不過……信是要申請什麼？什麼時候要？" }
+            ],
+            "title": { "en": "Night Market Detour", "zh": "夜市大繞路" },
+            "story": { "en": "You talk about stinky tofu for ten minutes. Ms. Wong's next meeting starts before you mention the deadline.", "zh": "你聊了十分鐘臭豆腐。王經理的下一個會議開始了，你還沒講到截止日。" },
+            "why": "主管問 What's it for, and when? 時，要直接回答用途和期限。閒聊可以留到事情談完後。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Three weeks is plenty. Is there anything you'd like me to highlight?", "zh": "三週很充裕。有什麼希望我特別提到的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "If possible, the café chain pitch. I learned a lot from that one.",
+          "zh": "可以的話，提一下連鎖咖啡店的提案。那次我學到很多。",
+          "ok": true,
+          "tip": "If possible, ... 委婉提出希望，再說明理由，讓推薦人有具體素材可寫。"
+        },
+        {
+          "en": "Anything is okay. I trust you, so you see how to do it.",
+          "zh": "什麼都可以，我相信您，您看著辦。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "\"You see how to do it\"? So... you want me to guess?", "zh": "You see how to do it？所以……你要我用猜的？" }
+            ],
+            "title": { "en": "Guess Who", "zh": "猜猜我是誰" },
+            "story": { "en": "Ms. Wong writes a nice but very general letter. It could describe almost anyone who has ever worked in an office.", "zh": "王經理寫了一封客氣但很籠統的信，幾乎可以套用在任何上過班的人身上。" },
+            "why": "「您看著辦」直譯 you see how to do it 英文說不通，也沒提供素材。可以說 If possible, could you mention...?"
+          }
+        },
+        {
+          "en": "Maybe the café pitch? I hope you can mention about my presentation.",
+          "zh": "也許是咖啡店提案？希望您能提到我的簡報。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Mention about? Just \"mention,\" Kai. But yes, I can do that.", "zh": "Mention about？只要說 mention 就好，凱。不過可以，我會寫。" }
+            ],
+            "title": { "en": "About That \"About\"", "zh": "關於那個 about" },
+            "story": { "en": "Ms. Wong agrees, then adds \"still working on prepositions\" to her mental notes. Hopefully not to the letter.", "zh": "王經理答應了，然後在心裡記下「介系詞還要加強」。希望不會寫進信裡。" },
+            "why": "mention 是及物動詞，後面直接接受詞：mention my presentation，不加 about。同類的還有 discuss、describe。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Consider it done. I'll send it to you by next Friday.", "zh": "包在我身上。下週五前寄給你。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you so much. I really appreciate everything you've taught me.",
+          "zh": "非常謝謝您。我真的很感激您教我的一切。",
+          "ok": true,
+          "tip": "I really appreciate... 比 Thank you 更正式、更有份量，適合感謝主管。"
+        },
+        {
+          "en": "Great, thanks. Please don't forget, okay? It's really important.",
+          "zh": "太好了，謝謝。請不要忘記喔，真的很重要。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I've managed this team for twelve years, Kai. I think I'll remember.", "zh": "我管這個團隊十二年了，凱。我想我記得住。" }
+            ],
+            "title": { "en": "Reminder Overload", "zh": "提醒過量" },
+            "story": { "en": "Ms. Wong sends the letter on Wednesday, two days early, with a short note: \"As promised.\"", "zh": "王經理星期三就寄出信，提早兩天，附上一句簡短的話：「如我所說。」" },
+            "why": "對答應幫忙的主管說「不要忘記」，聽起來像不信任對方。用感謝收尾：I really appreciate it.。"
+          }
+        },
+        {
+          "en": "Thank you! I'll bring you a really nice, expensive gift to say thanks.",
+          "zh": "謝謝！我會送您一份很好、很貴的禮物答謝。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Expensive? Please don't, Kai. A thank-you card is more than enough.", "zh": "很貴的？千萬不要，凱。一張感謝卡就很夠了。" }
+            ],
+            "title": { "en": "Gift Overkill", "zh": "謝禮太隆重" },
+            "story": { "en": "You show up with a fancy gift box anyway. Ms. Wong has to explain the company's gift policy to you. Twice.", "zh": "你還是帶了精美禮盒出現。王經理只好跟你解釋公司的收禮規定，講了兩次。" },
+            "why": "在英語職場，送主管貴重禮物可能讓人尷尬，甚至違反公司規定。真誠的感謝或一張卡片就很得體：I really appreciate it.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "You've earned it, Kai. Taipei will be lucky to have you.", "zh": "這是你應得的，凱。台北能有你是他們的運氣。" }
+    ],
+    "title": { "en": "A Strong Reference", "zh": "一封有份量的推薦信" },
+    "story": { "en": "You asked politely, gave plenty of notice, and offered something real to write about. The letter that arrives next Friday makes you read it twice.", "zh": "你有禮貌地請託、給足時間，還提供具體素材。下週五收到的那封信，讓你忍不住讀了兩遍。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I was wondering if you'd be willing to...",
+      "zh": "不知道您是否願意……",
+      "explain": "請託時最客氣的句型。用過去式 was wondering 和 would 讓語氣更委婉，適合對主管、老師使用。",
+      "example": { "en": "I was wondering if you'd be willing to look at my résumé.", "zh": "不知道您是否願意幫我看一下履歷。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Do you have a minute?",
+      "zh": "您有空嗎？",
+      "explain": "打擾別人前先確認對方有空，再預告 I have a favor to ask.，對方會更願意聽。",
+      "example": { "en": "Do you have a minute? I have a quick question.", "zh": "你有空嗎？我有個小問題。" }
+    },
+    {
+      "type": "culture",
+      "en": "give enough notice",
+      "zh": "給足夠的時間",
+      "explain": "請人寫推薦信，習慣上至少提前兩到三週，並主動提供履歷、職缺內容和截止日。推薦信由推薦人自己寫，不要自己代筆請人簽名。",
+      "example": { "en": "The deadline is in three weeks, so there's no rush.", "zh": "截止日在三週後，所以不急。" }
+    },
+    {
+      "type": "trap",
+      "en": "mention something",
+      "zh": "提到某事",
+      "explain": "mention 後面直接接受詞，不加 about。中文「提到關於」容易讓人多加 about。discuss、describe 也一樣。",
+      "example": { "en": "Could you mention my teamwork skills?", "zh": "可以請您提一下我的團隊合作能力嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I really appreciate...",
+      "zh": "我很感激……",
+      "explain": "比 Thank you 更正式。後面接名詞或 everything you've done，常用來感謝主管、導師。",
+      "example": { "en": "I really appreciate your help with the project.", "zh": "很感謝你在這個專案上的幫忙。" }
+    }
+  ]
+}

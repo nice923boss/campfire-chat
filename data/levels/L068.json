@@ -1,0 +1,263 @@
+{
+  "id": "L068",
+  "location": { "en": "Brightway office, conference room", "zh": "Brightway 辦公室，大會議室" },
+  "goal": { "en": "Talk about salary politely: give a researched number and ask if there is room to negotiate.", "zh": "得體地談薪水：說出有根據的數字，並詢問是否有協商空間。" },
+  "background": "bright conference room with a round wooden table, a closed folder, two coffee cups and a water jug, warm pendant lights, glass wall overlooking harbor rooftops, morning",
+  "cast": ["ms_wong", "c07_hr"],
+  "intro": [
+    { "who": "narrator", "en": "One week later: the second interview. This time, Rachel joins Ms. Wong at the table.", "zh": "一週後，第二次面試。這次瑞秋也和王經理一起坐在桌邊。" },
+    { "who": "narrator", "en": "After twenty minutes of questions, Rachel opens a folder. You know what topic comes next.", "zh": "問了二十分鐘之後，瑞秋打開一個資料夾。你知道接下來要談什麼了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "So, Kai, what kind of salary are you expecting for this role?", "zh": "那麼，凱，你對這個職位的期望薪資是多少？" }
+      ],
+      "choices": [
+        {
+          "en": "Whatever you give me is fine. I don't really dare to talk about money.",
+          "zh": "你們給多少都可以，我不太敢談錢。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Hmm. It really helps us to have a number, Kai.", "zh": "嗯，凱，你給我們一個數字會比較好處理。" }
+            ],
+            "title": { "en": "Shy About Money", "zh": "談錢會害羞" },
+            "story": { "en": "Rachel writes down the lowest number in the range. You were polite, and it cost you a few thousand a year.", "zh": "瑞秋寫下薪資範圍裡最低的數字。你很客氣，代價是一年少了好幾千塊。" },
+            "why": "在台灣談錢常被認為傷感情，但在這裡，被問期望薪資時給出有根據的數字是正常的。說 Based on my research, around 50,000 a year seems fair.。"
+          }
+        },
+        {
+          "en": "As much as possible! Rent in Maple Bay is crazy, you know.",
+          "zh": "越多越好！楓灣的房租很誇張，你知道的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "We all know rent is high. But we need a realistic number.", "zh": "大家都知道房租很高，但我們需要一個實際的數字。" }
+            ],
+            "title": { "en": "Rent Rant", "zh": "房租抱怨大會" },
+            "story": { "en": "Ms. Wong and Rachel share a look. Salary is about the value of the job, not about your landlord.", "zh": "王經理和瑞秋交換了一個眼神。薪水看的是這份工作的價值，不是你的房東。" },
+            "why": "用「越多越好」和抱怨房租來談薪水，聽起來既不專業又像在討價還價。用市場行情當根據：Based on my research, around 50,000 a year seems fair.。"
+          }
+        },
+        {
+          "en": "Based on my research, around 50,000 a year seems fair.",
+          "zh": "根據我查的資料，年薪五萬左右應該合理。",
+          "ok": true,
+          "tip": "Based on my research... 讓你的數字有根據，聽起來專業而不貪心。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Thank you. Our range for this position is 45,000 to 48,000 a year.", "zh": "謝謝。這個職位的薪資範圍是年薪四萬五到四萬八。" }
+      ],
+      "choices": [
+        {
+          "en": "That's too low. Other companies pay way more than that.",
+          "zh": "太低了吧。其他公司給得多很多。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Then maybe one of those companies is a better fit for you.", "zh": "那也許那些公司比較適合你。" }
+            ],
+            "title": { "en": "Take It or Leave It", "zh": "不爽不要做" },
+            "story": { "en": "The room goes quiet. Rachel slowly closes her folder, and you realize the negotiation is over.", "zh": "會議室安靜下來。瑞秋慢慢闔上資料夾，你這才發現談判已經結束了。" },
+            "why": "直接說「太低了」又拿別家公司比，聽起來像在威脅。禮貌地探問空間：I understand. Is there any room for flexibility on that?。"
+          }
+        },
+        {
+          "en": "Hmm. Could you add a little more? Please give me some face.",
+          "zh": "嗯，可以再加一點嗎？請給我點面子。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Give you... some face? I'm not sure what you're asking for.", "zh": "給你……一些臉？我不太懂你要什麼。" }
+            ],
+            "title": { "en": "Face Value", "zh": "面子問題" },
+            "story": { "en": "Rachel actually looks at your face, then at Ms. Wong. Nobody is sure what to offer.", "zh": "瑞秋真的看了看你的臉，又看向王經理。沒有人知道該給你什麼。" },
+            "why": "「給我面子」直譯成 give me face，英文聽不懂，而且談薪水靠的是理由，不是人情。說 Is there any room for flexibility on that?。"
+          }
+        },
+        {
+          "en": "I understand. Is there any room for flexibility on that?",
+          "zh": "我了解。這個部分有沒有彈性空間？",
+          "ok": true,
+          "tip": "Is there any room for flexibility? 禮貌地詢問能不能再談，不會讓氣氛變僵。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "There might be a little room. What number did you have in mind?", "zh": "可能有一點空間。你心裡想的數字是多少？" }
+      ],
+      "choices": [
+        {
+          "en": "I hope you can giving me 48,000, if it's possible.",
+          "zh": "如果可能的話，我希望你們能給我四萬八。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Can giving...? So, 48,000? Or are you asking?", "zh": "Can giving……？所以是四萬八？還是你在問我們？" }
+            ],
+            "title": { "en": "Shaky Numbers", "zh": "沒底氣的數字" },
+            "story": { "en": "The sentence sounds so unsure that Ms. Wong offers 46,000 instead. Grammar, it turns out, can cost money.", "zh": "這句話聽起來太沒把握，王經理改開了四萬六。原來文法也會影響薪水。" },
+            "why": "can 後面接原形動詞：I hope you can give me...。談數字時語氣要穩，用問句提出：Would 48,000 work?。"
+          }
+        },
+        {
+          "en": "Would 48,000 work? I'm flexible on the start date.",
+          "zh": "四萬八可以嗎？到職日我可以配合。",
+          "ok": true,
+          "tip": "Would... work? 提出數字，再用 I'm flexible on... 釋出善意，雙方都有台階下。"
+        },
+        {
+          "en": "48,000? Or 46,000 is also okay. Or 45,000, no problem!",
+          "zh": "四萬八？還是四萬六也可以。四萬五也沒問題！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Wait... did you just lower your own number twice?", "zh": "等等……你剛剛自己降價兩次？" }
+            ],
+            "title": { "en": "Self-Discount", "zh": "自己打折" },
+            "story": { "en": "Rachel happily writes down 45,000. You negotiated against yourself, and you won... for them.", "zh": "瑞秋開心地寫下四萬五。你跟自己討價還價，而且贏了……替他們贏的。" },
+            "why": "怕對方不高興而自己先降價，在談判中等於直接讓步。提出一個數字後就停下來，等對方回應：Would 48,000 work?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "We can work with 48,000. The role also includes health insurance and ten vacation days.", "zh": "四萬八我們可以接受。這個職位還有健康保險和十天年假。" }
+      ],
+      "choices": [
+        {
+          "en": "Only ten days? That's it? Well, fine, I guess I can live with that.",
+          "zh": "只有十天？就這樣？好吧，我想我還能忍。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "Ten days is pretty standard here, Kai.", "zh": "凱，十天在這裡算是很標準的。" }
+            ],
+            "title": { "en": "Grumpy Gratitude", "zh": "不情不願" },
+            "story": { "en": "You just got a raise in the same meeting, and you still sound unhappy. Ms. Wong raises one eyebrow.", "zh": "同一場會議裡才剛幫你加了薪，你聽起來還是不滿意。王經理挑起了一邊眉毛。" },
+            "why": "剛談好薪水就抱怨福利，會讓對方覺得怎麼給都不夠。想多爭取，換成正面的問法：Is there room for training, like a sales course?。"
+          }
+        },
+        {
+          "en": "Sounds great. Is there room for training, like a sales course?",
+          "zh": "聽起來很好。有沒有機會參加培訓，例如業務課程？",
+          "ok": true,
+          "tip": "Is there room for + 名詞？可以禮貌地爭取薪水以外的東西，例如培訓。"
+        },
+        {
+          "en": "Sound good. Ten vacation days is including holidays or not?",
+          "zh": "聽起來不錯。十天年假有包含國定假日嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Is including...? Sorry, do you mean, are holidays included?", "zh": "Is including……？抱歉，你是說有沒有包含國定假日嗎？" }
+            ],
+            "title": { "en": "Holiday Puzzle", "zh": "假期解謎" },
+            "story": { "en": "Rachel explains the holiday rules three times. The meeting runs ten minutes over, all because of one tangled question.", "zh": "瑞秋把放假規定解釋了三遍。會議因為一個打結的問題，超時了十分鐘。" },
+            "why": "英文問句要把 be 動詞放前面，「包含」用被動 included：Are holidays included?。另外主詞是 It 時要說 Sounds good，不是 Sound good。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "We can look into a course. We'll make our final decision this week.", "zh": "課程的部分我們可以研究看看。這週內我們會做最後決定。" }
+      ],
+      "choices": [
+        {
+          "en": "Please decide fast. Another company wants me too, you know.",
+          "zh": "請快點決定，你知道的，也有其他公司想要我。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Then I hope you'll make the right choice, whatever it is.", "zh": "那希望你做出正確的選擇，不管是哪一個。" }
+            ],
+            "title": { "en": "Bluff Called", "zh": "虛張聲勢" },
+            "story": { "en": "There is no other company. Ms. Wong doesn't know that, but she doesn't seem worried either.", "zh": "其實根本沒有其他公司。王經理不知道這件事，但她看起來也一點都不擔心。" },
+            "why": "用別家公司施壓，會讓人覺得你在耍手段，也破壞剛建立的好感。用感謝和期待收尾：Thank you both. I'm really excited about this opportunity.。"
+          }
+        },
+        {
+          "en": "Thank you both. You have worked very hard today!",
+          "zh": "謝謝兩位，你們今天辛苦了！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Um... thanks? It was just one meeting, but okay.", "zh": "呃……謝謝？只是開了一場會，不過好吧。" }
+            ],
+            "title": { "en": "Performance Review", "zh": "反過來打考績" },
+            "story": { "en": "Rachel bites her lip to stop laughing. It feels like you just gave your future boss a performance review.", "zh": "瑞秋咬著嘴唇忍住笑。感覺像你剛幫未來的老闆打了考績。" },
+            "why": "「辛苦了」直譯成 You worked very hard，英文聽起來像在評價對方的表現。結束時說 Thank you for your time. 或 I'm really excited about this opportunity. 就好。"
+          }
+        },
+        {
+          "en": "Thank you both. I'm really excited about this opportunity.",
+          "zh": "謝謝兩位，我對這個機會真的很期待。",
+          "ok": true,
+          "tip": "談完條件後用 I'm excited about this opportunity. 收尾，提醒對方你很有誠意。"
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "So are we, Kai. It was a pleasure.", "zh": "我們也是，凱。很高興和你談。" },
+      { "who": "c07_hr", "expr": "happy", "en": "You'll hear from us very soon.", "zh": "你很快就會收到我們的消息。" }
+    ],
+    "title": { "en": "Money Talks", "zh": "談錢不傷感情" },
+    "story": { "en": "You asked for a fair number, stayed polite and even got a course on the table. Not bad for your first negotiation in English.", "zh": "你提出合理的數字、保持禮貌，還爭取到了課程。第一次用英文談判，表現得很不錯。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Based on my research, ... seems fair.",
+      "zh": "根據我查的資料，……應該合理。",
+      "explain": "被問期望薪資時，用市場行情當根據，給出一個數字或範圍，不要說「隨便」。",
+      "example": { "en": "Based on my research, 48,000 to 50,000 seems fair for this role.", "zh": "根據我查的資料，這個職位四萬八到五萬應該合理。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Is there any room for...?",
+      "zh": "……有沒有空間？",
+      "explain": "room 在這裡是「空間、餘地」。Is there any room for flexibility? 問薪水能不能談；Is there room for training? 問有沒有培訓機會。",
+      "example": { "en": "Is there any room for growth in this role?", "zh": "這個職位有成長空間嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm flexible on...",
+      "zh": "……我可以配合。",
+      "explain": "談判時在一件事上讓步，換取另一件事。這比中文直譯的 I can cooperate 自然得多。",
+      "example": { "en": "I'm flexible on the start date, but I'd like a training course.", "zh": "到職日我可以配合，但我希望能上培訓課程。" }
+    },
+    {
+      "type": "trap",
+      "en": "give me face / You worked hard today",
+      "zh": "給我面子／辛苦了",
+      "explain": "這兩句直譯英文都很怪。談條件靠理由，不靠面子；道別時說 Thank you for your time.，不要說 You worked hard.。",
+      "example": { "en": "Thank you for your time. I really appreciate it.", "zh": "謝謝你撥空，真的很感謝。" }
+    },
+    {
+      "type": "culture",
+      "en": "Negotiating is normal",
+      "zh": "談薪水是正常的",
+      "explain": "在許多英語系國家，禮貌地談薪水很常見，不會傷感情。提出數字後就停下來等對方回應，不要自己先降價，也不要用別家公司施壓。",
+      "example": { "en": "Would 48,000 work for you?", "zh": "四萬八你們可以接受嗎？" }
+    }
+  ]
+}

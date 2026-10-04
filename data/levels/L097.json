@@ -1,0 +1,267 @@
+{
+  "id": "L097",
+  "location": { "en": "Brightway office, the meeting room", "zh": "Brightway 辦公室，會議室" },
+  "goal": { "en": "Give a warm, well-structured farewell speech to your Brightway team.", "zh": "在 Brightway 的歡送會上，發表一段溫暖又得體的告別致詞。" },
+  "background": "office meeting room set up for a small party, long table with snacks, paper cups and a cake on a tray, balloons tied to chairs, large windows with an evening city view",
+  "cast": ["ms_wong", "sam"],
+  "intro": [
+    { "who": "narrator", "en": "Your last Friday at Brightway. Someone has tied balloons to your chair.", "zh": "你在 Brightway 的最後一個星期五。有人在你的椅子上綁了氣球。" },
+    { "who": "sam", "expr": "happy", "en": "Speech! Speech! Speech!", "zh": "致詞！致詞！致詞！" },
+    { "who": "ms_wong", "expr": "happy", "en": "Sam's right. Kai, would you like to say a few words?", "zh": "山姆說得對。凱，要不要說幾句話？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "The floor is yours.", "zh": "舞台交給你了。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you, everyone. I'll keep this short, since there's cake waiting.",
+          "zh": "謝謝大家。我會長話短說，因為蛋糕還在等。",
+          "ok": true,
+          "tip": "開場先感謝，再用一句輕鬆的話拉近距離，是英文致詞的常見結構。"
+        },
+        {
+          "en": "Sorry, my English is not good. Please forgive my bad speech in advance.",
+          "zh": "抱歉，我英文不好，先請大家原諒我講得不好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "What? Your English is great! You literally pitch to clients!", "zh": "什麼？你英文超好的！你都在跟客戶做提案耶！" }
+            ],
+            "title": { "en": "Apology Speech", "zh": "道歉式致詞" },
+            "story": { "en": "Your team spends the first two minutes reassuring you. The cake starts to melt.", "zh": "團隊花了前兩分鐘安慰你。蛋糕開始融化了。" },
+            "why": "中文致詞常以「才疏學淺」自謙開場，但英文聽眾會當真，反而尷尬。直接感謝開場：Thank you, everyone.。"
+          }
+        },
+        {
+          "en": "Thank you everyone for come today. I will try to make my speech short.",
+          "zh": "謝謝大家今天來。我會盡量講短一點。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "\"For come\"? Okay, okay, nerves. Take a breath, Kai.", "zh": "For come？好啦好啦，緊張了。深呼吸，凱。" }
+            ],
+            "title": { "en": "Nervous Start", "zh": "緊張的開場" },
+            "story": { "en": "Sam gives you a thumbs-up that says \"you've got this.\" Ms. Wong gives you a look that says \"for coming.\"", "zh": "山姆比了個「你可以的」讚。王經理的眼神則在說「是 for coming」。" },
+            "why": "介系詞 for 後面要接名詞或動名詞：Thank you for coming.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "happy", "en": "Smart move. Go on!", "zh": "聰明。繼續！" }
+      ],
+      "choices": [
+        {
+          "en": "First, I'd like to thank Ms. Wong for taking a chance on me.",
+          "zh": "首先，我要感謝王經理願意給我機會。",
+          "ok": true,
+          "tip": "I'd like to thank... for... 是正式致謝句型；take a chance on someone 是「願意冒險給某人機會」。"
+        },
+        {
+          "en": "First, I want to thank Ms. Wong for giving me a chance to grow up here.",
+          "zh": "首先，我要謝謝王經理給我在這裡成長的機會。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Grow up? You were already an adult when you came, Kai.", "zh": "長大？凱，你來的時候已經是大人了。" }
+            ],
+            "title": { "en": "Baby Steps", "zh": "從嬰兒開始" },
+            "story": { "en": "Sam asks if Brightway should start a daycare. Your heartfelt thanks becomes the office joke of the year.", "zh": "山姆問 Brightway 是不是該開托兒所了。你真心的感謝變成年度辦公室笑話。" },
+            "why": "「成長」翻成 grow up 是指從小孩長成大人。職場上的成長要用 grow、learn 或 develop：Thank you for helping me grow.。"
+          }
+        },
+        {
+          "en": "First, thanks, Ms. Wong. You were too strict sometimes, but it's okay.",
+          "zh": "首先，謝謝王經理。您有時候太嚴格，但沒關係啦。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "...Thank you for that honest feedback, Kai.", "zh": "……謝謝你這麼坦白的回饋，凱。" }
+            ],
+            "title": { "en": "Backhanded Thanks", "zh": "明謝暗酸" },
+            "story": { "en": "The room goes very quiet. Sam suddenly becomes very interested in the cake.", "zh": "會議室突然一片安靜。山姆突然對蛋糕產生濃厚興趣。" },
+            "why": "告別致詞時夾帶批評，會讓感謝變成酸話。只說正面的：I'd like to thank Ms. Wong for taking a chance on me.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "I'm glad I did.", "zh": "我很慶幸我這麼做了。" },
+        { "who": "sam", "expr": "happy", "en": "And what about me?", "zh": "那我呢？" }
+      ],
+      "choices": [
+        {
+          "en": "And Sam, I'll never forget how you showed me around on my first day.",
+          "zh": "還有山姆，我永遠不會忘記第一天你帶我認識環境。",
+          "ok": true,
+          "tip": "I'll never forget how/when... 搭配一個具體回憶，讓感謝更真誠動人。"
+        },
+        {
+          "en": "And Sam, I'll never forget my first day, when you teach me everything.",
+          "zh": "還有山姆，我永遠不會忘記第一天你教我所有事情。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "When I \"teach\" you? I'm still teaching you? Right now?", "zh": "我「教」你？我現在還在教你？此時此刻？" }
+            ],
+            "title": { "en": "Eternal Mentor", "zh": "永遠的導師" },
+            "story": { "en": "Sam takes it as a promise of lifelong mentoring and adds you to his calendar for weekly calls.", "zh": "山姆把這當成終身指導的承諾，把你加進他的每週通話行事曆。" },
+            "why": "回憶過去的事要用過去式：when you taught me everything。"
+          }
+        },
+        {
+          "en": "And Sam... actually, does anyone know who took my blue stapler? Anyone?",
+          "zh": "還有山姆……話說，有人知道誰拿了我的藍色釘書機嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "...That's what you think of when you see me?", "zh": "……你看到我就想到這個？" }
+            ],
+            "title": { "en": "The Stapler Mystery", "zh": "釘書機懸案" },
+            "story": { "en": "The stapler is never found. Neither is the emotional moment you were building.", "zh": "釘書機始終沒找到，你剛醞釀的感人氣氛也是。" },
+            "why": "致詞中點名感謝某人時，要接一段具體的正面回憶，不要突然岔題：I'll never forget how you...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "happy", "en": "Aw. Okay, I might cry.", "zh": "噢。好，我可能要哭了。" },
+        { "who": "ms_wong", "expr": "neutral", "en": "What will you take with you from Brightway, Kai?", "zh": "凱，你會從 Brightway 帶走什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "This job taught me that mistakes are okay, as long as you own them.",
+          "zh": "這份工作讓我學到，犯錯沒關係，只要勇於承擔。",
+          "ok": true,
+          "tip": "用一句「我學到的事」做致詞的核心，讓聽眾記得你的成長。"
+        },
+        {
+          "en": "Here I learned so much, and I also ate a lot of bitter, you know.",
+          "zh": "我在這裡學到很多，也吃了很多苦。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "You ate... bitter? Was it the office coffee?", "zh": "你吃了……苦的東西？是辦公室咖啡嗎？" }
+            ],
+            "title": { "en": "Bitter Brew", "zh": "苦澀的咖啡" },
+            "story": { "en": "Ms. Wong promises to upgrade the coffee machine. Nobody understands that you meant hard work.", "zh": "王經理承諾會換一台更好的咖啡機。沒人聽懂你說的是辛苦。" },
+            "why": "「吃苦」直譯 eat bitter 英文聽不懂。可以說 I worked really hard. 或 I went through some tough times.。"
+          }
+        },
+        {
+          "en": "I learned a lot here. Honestly, though, the pay could've been better.",
+          "zh": "我在這裡學到很多。不過老實說，薪水可以再高一點。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Noted. For your replacement.", "zh": "記下了。給你的接班人參考。" }
+            ],
+            "title": { "en": "Salary Review", "zh": "臨別薪資檢討" },
+            "story": { "en": "Everyone laughs a little too loudly. Your replacement will thank you someday, but tonight it just feels awkward.", "zh": "大家笑得有點太大聲。你的接班人有天會感謝你，但今晚只覺得尷尬。" },
+            "why": "告別致詞要保持正面，抱怨薪水會破壞氣氛。分享學到的事：This job taught me that...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Well said.", "zh": "說得好。" },
+        { "who": "sam", "expr": "happy", "en": "Okay, glasses up! Toast time!", "zh": "好，舉杯！乾杯時間！" }
+      ],
+      "choices": [
+        {
+          "en": "So, to Brightway: thank you for lighting up my year. Cheers!",
+          "zh": "那麼，敬 Brightway：謝謝你們點亮了我的這一年。乾杯！",
+          "ok": true,
+          "tip": "用 To + 對象 舉杯收尾，再加一句呼應公司特色的話，結尾就很漂亮。"
+        },
+        {
+          "en": "So, cheers to Brightway! Thank you for let me join this family.",
+          "zh": "那麼，敬 Brightway！謝謝你們讓我加入這個大家庭。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "\"For let me\"? Ha! Okay, we'll let it go. Just this once.", "zh": "For let me？哈！好啦，這次就放過你。" }
+            ],
+            "title": { "en": "Last-Minute Slip", "zh": "最後一刻的失誤" },
+            "story": { "en": "The toast still happens, but Sam quotes \"for let me\" in every message he sends you for a month.", "zh": "還是有舉杯，但接下來一個月，山姆每則訊息都會引用 for let me。" },
+            "why": "for 後面接動名詞：Thank you for letting me join.。"
+          }
+        },
+        {
+          "en": "Cheers! Bottoms up, everyone. Nobody stops until the glass is empty!",
+          "zh": "乾杯！大家一口乾，杯子沒空不准停！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Uh, Kai, it's sparkling juice. And sipping is totally fine here.", "zh": "呃，凱，這是氣泡果汁。而且在這裡小口喝完全沒問題。" }
+            ],
+            "title": { "en": "Bottoms Up, Spirits Down", "zh": "杯底朝天，氣氛朝下" },
+            "story": { "en": "Three coworkers chug sparkling juice out of politeness and get hiccups. The photos are memorable for the wrong reasons.", "zh": "三位同事出於禮貌一口灌完氣泡果汁，然後開始打嗝。合照很難忘，但不是好的那種。" },
+            "why": "英文 Cheers 只是舉杯致意，不代表要乾杯喝完；勸人一口乾在英語職場會讓人不自在。簡單說 To Brightway! Cheers! 即可。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "To Kai!", "zh": "敬凱！" },
+      { "who": "sam", "expr": "happy", "en": "To Kai! Now, seriously, cake.", "zh": "敬凱！好了，說真的，吃蛋糕。" }
+    ],
+    "title": { "en": "A Bright Goodbye", "zh": "明亮的告別" },
+    "story": { "en": "Thanks, a memory, a lesson and a toast: a short speech that said everything. Ms. Wong quietly saves a slice of cake for you to take home.", "zh": "感謝、回憶、心得、舉杯：一段簡短卻說盡一切的致詞。王經理悄悄留了一塊蛋糕讓你帶回家。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to thank... for...",
+      "zh": "我要感謝……的……",
+      "explain": "正式致謝句型。for 後面接名詞或動名詞，例如 for your support、for taking a chance on me。",
+      "example": { "en": "I'd like to thank my team for all their support.", "zh": "我要感謝團隊的所有支持。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll never forget...",
+      "zh": "我永遠不會忘記……",
+      "explain": "後面接一個具體的回憶，比空泛的感謝更動人。注意回憶的內容要用過去式。",
+      "example": { "en": "I'll never forget the day you helped me move.", "zh": "我永遠不會忘記你幫我搬家的那天。" }
+    },
+    {
+      "type": "vocab",
+      "en": "take a chance on someone",
+      "zh": "願意給某人機會",
+      "explain": "表示對方冒了點風險、相信你，才給你機會。很適合在告別或得獎致詞中感謝主管。",
+      "example": { "en": "Thank you for taking a chance on a new graduate.", "zh": "謝謝您願意給一個社會新鮮人機會。" }
+    },
+    {
+      "type": "trap",
+      "en": "grow vs. grow up",
+      "zh": "成長 vs 長大",
+      "explain": "grow up 是從小孩長大成人；工作上的成長要說 grow、learn 或 develop。「吃苦」也不能直譯 eat bitter。",
+      "example": { "en": "This job helped me grow as a person.", "zh": "這份工作讓我在為人處事上成長了。" }
+    },
+    {
+      "type": "culture",
+      "en": "Thanks, a memory, a lesson, a toast.",
+      "zh": "感謝、回憶、心得、舉杯",
+      "explain": "英文告別致詞常見結構：感謝開場、點名致謝並附上回憶、分享學到的事、舉杯收尾。不用自謙開場，簡短溫暖最好。",
+      "example": { "en": "Thank you all. I'll never forget this team. To Brightway!", "zh": "謝謝大家。我永遠不會忘記這個團隊。敬 Brightway！" }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "L006",
+  "location": { "en": "Corner of Harbor Street and Pine Avenue", "zh": "港灣街與松樹大道路口" },
+  "goal": { "en": "Ask a local how to get to Central Station.", "zh": "向當地人問路，找到去中央車站的路。" },
+  "background": "quiet street corner in a small harbor town, red brick shops with plain awnings, a zebra crosswalk, an old iron lamppost, a wooden bench under a maple tree, blue sky, late morning",
+  "cast": ["c01_local"],
+  "intro": [
+    { "who": "narrator", "en": "After coffee, you want to visit your language school. Central Station is somewhere near here, but your phone battery just died.", "zh": "喝完咖啡，你想去語言學校看看。中央車站就在附近某處，偏偏你的手機剛好沒電。" },
+    { "who": "narrator", "en": "An older woman walks by with a small brown dog. She notices you turning in circles.", "zh": "一位年長的女士牽著一隻棕色小狗經過。她注意到你在原地轉來轉去。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_local", "expr": "neutral", "en": "Slow down, Biscuit! Good girl.", "zh": "慢一點，比斯吉！乖。" },
+        { "who": "c01_local", "expr": "happy", "en": "You look a little lost, dear. Can I help you?", "zh": "你看起來有點迷路喔。需要幫忙嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes! How do I get to Central Station?",
+          "zh": "要！請問中央車站怎麼去？",
+          "ok": true,
+          "tip": "How do I get to + 地點？ 是問路最常用的句型。"
+        },
+        {
+          "en": "Yes! Central Station, how to go there?",
+          "zh": "要！中央車站，怎麼走？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_local", "expr": "confused", "en": "How to go...? Oh, you mean the bus station? It's that way.", "zh": "怎麼走……？喔，你是說公車總站嗎？在那個方向。" }
+            ],
+            "title": { "en": "Wrong Station", "zh": "此站非彼站" },
+            "story": { "en": "Mrs. Lee sends you the other way. Twenty minutes later, you are looking at buses, not trains.", "zh": "李太太把你指向反方向。二十分鐘後，你看著一排公車，而不是火車。" },
+            "why": "「車站怎麼走」照中文語序說成 Station, how to go? 不是完整的英文問句。問路要說 How do I get to Central Station?"
+          }
+        },
+        {
+          "en": "No, no, I'm fine! Thank you!",
+          "zh": "不用不用，我沒事！謝謝！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_local", "expr": "confused", "en": "Oh... okay then. Good luck, dear!", "zh": "喔……那好吧。祝你好運！" }
+            ],
+            "title": { "en": "Too Polite to Ask", "zh": "客氣過頭" },
+            "story": { "en": "She smiles and walks away with her dog. You spend the next hour walking in circles around the same three blocks.", "zh": "她笑了笑，牽著狗走了。接下來一個小時，你在同樣的三個街區裡繞圈圈。" },
+            "why": "中文習慣先客氣推辭，但在英語國家 No, I'm fine 會被當真，對方就真的走了。需要幫忙就直接說 Yes!，再問 How do I get to...?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_local", "expr": "happy", "en": "Central Station? Easy. Go straight two blocks, then turn left at the bank.", "zh": "中央車站？很簡單。直走兩個街區，然後在銀行那裡左轉。" }
+      ],
+      "choices": [
+        {
+          "en": "So, go straight, then turn left?",
+          "zh": "所以是直走，然後左轉？",
+          "ok": true,
+          "tip": "把聽到的方向重複一次，是確認有沒有聽懂的好方法。"
+        },
+        {
+          "en": "Too hard. Can you just take me there?",
+          "zh": "好難喔。你可以直接帶我去嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_local", "expr": "upset", "en": "Take you there? I'm walking my dog, dear.", "zh": "帶你去？我正在遛狗耶。" }
+            ],
+            "title": { "en": "Not a Tour Guide", "zh": "我不是導遊" },
+            "story": { "en": "Biscuit barks at you, and they walk away. Now you're on your own, and you only remember the word \"bank.\"", "zh": "比斯吉對你吠了一聲，她們就走了。現在你只能靠自己，而且只記得「銀行」這個字。" },
+            "why": "對熱心指路的陌生人說「太難了，你帶我去」，要求太多了。把聽到的方向重複一次確認：So, go straight, then turn left?"
+          }
+        },
+        {
+          "en": "The bank? Is the bank open today?",
+          "zh": "銀行？銀行今天有開嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_local", "expr": "confused", "en": "The bank? I think so... but you wanted the station?", "zh": "銀行？應該有吧……可是你不是要去車站嗎？" }
+            ],
+            "title": { "en": "Bank Detour", "zh": "銀行支線" },
+            "story": { "en": "You walk straight to the bank, check that it's open, and forget the rest of the directions. You end up asking for help again.", "zh": "你直直走到銀行，確認它有開，然後就忘了接下來怎麼走。最後只好再找人問一次路。" },
+            "why": "銀行只是轉彎的地標，不是重點。聽完指路後，重複關鍵方向確認：So, go straight, then turn left?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_local", "expr": "happy", "en": "Exactly! You've got it.", "zh": "沒錯！你記住了。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! Is it far from here?",
+          "zh": "謝謝！離這裡很遠嗎？",
+          "ok": true,
+          "tip": "Is it far? 問距離遠不遠，是出發前很實用的一句。"
+        },
+        {
+          "en": "Thanks! How long is the station?",
+          "zh": "謝謝！車站有多長？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_local", "expr": "confused", "en": "How long? The building? Oh, it's quite long, I suppose.", "zh": "多長？那棟建築嗎？喔，我想應該滿長的吧。" }
+            ],
+            "title": { "en": "Architecture Tour", "zh": "建築導覽" },
+            "story": { "en": "Mrs. Lee tells you all about the station's long, beautiful roof. Biscuit falls asleep. You still don't know how far it is.", "zh": "李太太跟你介紹車站又長又美的屋頂。比斯吉都睡著了，你還是不知道車站有多遠。" },
+            "why": "How long is the station? 問的是車站這棟建築有多長。問距離要說 Is it far? 或 How far is it?；問要走多久說 How long does it take?"
+          }
+        },
+        {
+          "en": "Thank you so much, Auntie!",
+          "zh": "阿姨，真的很謝謝你！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_local", "expr": "confused", "en": "Auntie? Oh my. Have we met before?", "zh": "阿姨？天啊。我們以前見過嗎？" }
+            ],
+            "title": { "en": "Long-Lost Relative", "zh": "失散多年的親戚" },
+            "story": { "en": "Mrs. Lee tries hard to remember which nephew or niece you are. It takes a long time to explain that in Taiwan, everyone is an auntie.", "zh": "李太太努力回想你是她哪個姪子或姪女。你花了好久才解釋清楚，在台灣，大家都叫阿姨。" },
+            "why": "台灣習慣稱呼陌生長輩「阿姨」，但英文的 Auntie 通常只用在真正的親戚身上。道謝說 Thank you so much! 就很有禮貌，再接著問 Is it far?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_local", "expr": "happy", "en": "Not far at all. About five minutes on foot. Have a lovely day!", "zh": "一點也不遠，走路大約五分鐘。祝你有美好的一天！" },
+      { "who": "narrator", "en": "Biscuit wags her tail as you head off.", "zh": "你出發時，比斯吉對你搖了搖尾巴。" }
+    ],
+    "title": { "en": "Five-Minute Walk", "zh": "五分鐘的路" },
+    "story": { "en": "You reach Central Station in exactly five minutes. Asking a real person worked better than any map app.", "zh": "你剛好走了五分鐘就到中央車站。問真人，比任何地圖 App 都好用。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "How do I get to...?",
+      "zh": "……要怎麼去？",
+      "explain": "問路最常用的句型。不要照中文語序說 Station, how to go?",
+      "example": { "en": "Excuse me, how do I get to the library?", "zh": "不好意思，請問圖書館怎麼去？" }
+    },
+    {
+      "type": "vocab",
+      "en": "go straight / turn left / turn right",
+      "zh": "直走／左轉／右轉",
+      "explain": "指路三大基本詞。at the bank 表示在銀行那裡轉。聽完可以用 So, ...? 重複一次確認。",
+      "example": { "en": "Go straight, then turn right at the park.", "zh": "直走，然後在公園那裡右轉。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Is it far?",
+      "zh": "很遠嗎？",
+      "explain": "問距離用 Is it far? 或 How far is it?；問花多少時間用 How long does it take?。How long is...? 會變成問東西有多長。",
+      "example": { "en": "How long does it take to walk there?", "zh": "走路過去要多久？" }
+    },
+    {
+      "type": "culture",
+      "en": "Say yes to help.",
+      "zh": "需要幫忙就說好",
+      "explain": "中文習慣先客氣推辭，但英語國家的人會把 No, I'm fine 當真。真的需要幫忙，就說 Yes, please!",
+      "example": { "en": "Do you need help? Yes, please. Thank you!", "zh": "需要幫忙嗎？要，麻煩你了，謝謝！" }
+    },
+    {
+      "type": "trap",
+      "en": "Auntie is for family",
+      "zh": "「阿姨」不是 Auntie",
+      "explain": "台灣常叫陌生長輩阿姨、叔叔，但英文 Auntie、Uncle 通常只用在親戚或很熟的長輩身上。對陌生人不用特別稱呼。",
+      "example": { "en": "Thank you so much! Have a nice day!", "zh": "真的很謝謝你！祝你有美好的一天！" }
+    }
+  ]
+}

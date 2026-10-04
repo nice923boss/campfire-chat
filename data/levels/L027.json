@@ -1,0 +1,222 @@
+{
+  "id": "L027",
+  "location": { "en": "Maple Bay Language Institute, study room", "zh": "楓灣語言學院，討論室" },
+  "goal": { "en": "Plan a group presentation with Leo and Yuki.", "zh": "和里歐、由紀一起規劃小組報告。" },
+  "background": "small study room with a round table, three chairs, a laptop, colorful blank sticky notes scattered on the table, a whiteboard wiped clean, warm afternoon light",
+  "cast": ["leo", "c03_yuki"],
+  "intro": [
+    { "who": "narrator", "en": "Ms. Reed gave a group project: a five-minute presentation about Maple Bay.", "zh": "瑞德老師出了小組作業：做一份五分鐘的楓灣介紹報告。" },
+    { "who": "c03_yuki", "expr": "neutral", "en": "OK, team. What should our topic be?", "zh": "好，各位。我們的主題要做什麼？" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "leo", "expr": "confused", "en": "Hmm. History? Nature? I have no idea.", "zh": "嗯……歷史？大自然？我完全沒頭緒。" }
+      ],
+      "choices": [
+        {
+          "en": "How about the food in Maple Bay?",
+          "zh": "做楓灣的美食怎麼樣？",
+          "ok": true,
+          "tip": "How about + 名詞／V-ing? 是提出建議的好用句型，語氣輕鬆，不會強迫別人。"
+        },
+        {
+          "en": "How about do the food of Maple Bay?",
+          "zh": "做楓灣的美食怎麼樣？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "\"Do the food\"? You mean... cook it? In class?", "zh": "「做食物」？你是說……在課堂上煮菜嗎？" }
+            ],
+            "title": { "en": "Cooking Class", "zh": "烹飪課" },
+            "story": { "en": "Yuki starts planning a cooking demo with a rice cooker. Ms. Reed is not sure the classroom allows open fire.", "zh": "由紀開始規劃用電鍋做料理示範。瑞德老師不確定教室能不能開火。" },
+            "why": "How about 後面接名詞或 V-ing，不接原形動詞。中文「做美食主題」的「做」不用翻。直接說 How about the food in Maple Bay?。"
+          }
+        },
+        {
+          "en": "Food. That's the best. No discussion.",
+          "zh": "美食。那個最好，不用討論了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "No discussion? Isn't this a group project?", "zh": "不用討論？這不是小組作業嗎？" }
+            ],
+            "title": { "en": "Team of One", "zh": "一人團隊" },
+            "story": { "en": "Leo and Yuki quietly start their own plan. You find out at the presentation that you are in a group of one.", "zh": "里歐和由紀默默開始自己的計畫。直到報告當天，你才發現自己變成一人小組。" },
+            "why": "No discussion. 聽起來很霸道，像在下命令。小組討論時用建議的語氣：How about the food in Maple Bay?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_yuki", "expr": "happy", "en": "Food! I love it. But how do we show it?", "zh": "美食！我喜歡。但我們要怎麼呈現？" }
+      ],
+      "choices": [
+        {
+          "en": "Why don't we film a short video about it?",
+          "zh": "我們何不拍一段相關的短片？",
+          "ok": true,
+          "tip": "Why don't we...? 不是在問原因，而是「我們何不……」的建議句。"
+        },
+        {
+          "en": "Show? Yes, I like cooking shows.",
+          "zh": "節目？對啊，我喜歡料理節目。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Um, I said \"show it,\" not \"a show.\"", "zh": "呃，我是說「呈現」，不是「節目」。" }
+            ],
+            "title": { "en": "Channel Surfing", "zh": "轉台中" },
+            "story": { "en": "You spend twenty minutes sharing your favorite cooking shows. The sticky notes are still blank.", "zh": "你花了二十分鐘分享最愛的料理節目。桌上的便利貼還是一片空白。" },
+            "why": "show it 是動詞「呈現」，a show 才是「節目」。沒聽清楚就問 Sorry, show it how?，再提出建議：Why don't we film a short video?。"
+          }
+        },
+        {
+          "en": "Why we don't make a short video?",
+          "zh": "我們為什麼不做一段短片？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Why we don't? Uh... because nobody said it yet?", "zh": "我們為什麼不做？呃……因為還沒人提吧？" }
+            ],
+            "title": { "en": "Reason Hunt", "zh": "尋找理由" },
+            "story": { "en": "Leo thinks you are asking for a reason. The team spends ten minutes explaining why nobody made a video yet.", "zh": "里歐以為你在問原因。整組花了十分鐘解釋為什麼還沒人做影片。" },
+            "why": "疑問句要倒裝：Why don't we...?，不是 Why we don't...?。語序錯了，聽起來就像真的在問原因。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Great idea! I can write the script. What about you, Kai?", "zh": "好主意！我可以寫腳本。凱，你呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I can take care of the filming.",
+          "zh": "拍攝的部分交給我。",
+          "ok": true,
+          "tip": "take care of 除了「照顧」，也表示「負責處理」。主動認領工作，在小組裡很加分。"
+        },
+        {
+          "en": "Me? I'm not good at anything. Sorry.",
+          "zh": "我？我什麼都不會，抱歉。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Nothing at all? But you take great photos!", "zh": "完全不會？可是你照片拍得很好啊！" }
+            ],
+            "title": { "en": "Too Humble", "zh": "謙虛過頭" },
+            "story": { "en": "Leo and Yuki spend ten minutes cheering you up. In the end, Yuki gives you the job of bringing snacks.", "zh": "里歐和由紀花了十分鐘幫你打氣。最後，由紀派給你的工作是帶零食。" },
+            "why": "台灣人習慣謙虛說「我不太會」，但在國外的小組裡，這會讓人以為你不想幫忙。說出自己能做的事：I can take care of the filming.。"
+          }
+        },
+        {
+          "en": "I can taking care of filming.",
+          "zh": "我可以負責拍攝。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Taking care... of a film? Like a pet?", "zh": "照顧……一部電影？像養寵物那樣？" }
+            ],
+            "title": { "en": "Film Babysitter", "zh": "電影保母" },
+            "story": { "en": "Yuki draws a cute camera with a baby bottle on a sticky note. It's very funny, but it's not a plan.", "zh": "由紀在便利貼上畫了一台拿著奶瓶的可愛相機。很好笑，但不是計畫。" },
+            "why": "can 後面要接原形動詞：I can take care of...，不是 can taking。the filming 前面的 the 也不能少。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_yuki", "expr": "happy", "en": "Perfect! So when should we meet again?", "zh": "太好了！那我們什麼時候再碰面？" }
+      ],
+      "choices": [
+        {
+          "en": "How about this Thursday after class?",
+          "zh": "這個星期四下課後怎麼樣？",
+          "ok": true,
+          "tip": "回答「什麼時候」要給具體時間。How about + 時間? 是提議時間的簡單說法。"
+        },
+        {
+          "en": "How about meet on Thursday?",
+          "zh": "星期四見面怎麼樣？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Meat on Thursday? Is that a barbecue party?", "zh": "星期四吃肉？是要辦烤肉派對嗎？" }
+            ],
+            "title": { "en": "BBQ Meeting", "zh": "烤肉會議" },
+            "story": { "en": "Leo gets very excited about a barbecue. You spend the next meeting grilling sausages, not editing videos.", "zh": "里歐對烤肉超興奮。下次聚會，你們都在烤香腸，沒在剪影片。" },
+            "why": "How about 後面接 V-ing：How about meeting on Thursday?。meet 單獨出現又很像 meat（肉）。更簡單的說法是 How about Thursday after class?。"
+          }
+        },
+        {
+          "en": "Yes, we should meet again soon.",
+          "zh": "對，我們應該快點再碰面。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c03_yuki", "expr": "confused", "en": "Yes... but when? That was my question.", "zh": "對……但是什麼時候？我就是在問這個。" }
+            ],
+            "title": { "en": "Someday Soon", "zh": "改天再說" },
+            "story": { "en": "Everyone agrees to meet \"soon,\" and nobody picks a day. The presentation is next Monday.", "zh": "大家都同意「快點」碰面，卻沒人訂日子。而報告就在下週一。" },
+            "why": "對方問 when，就要回答具體時間，不能只說 soon。直接提出時間：How about Thursday after class?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "leo", "expr": "happy", "en": "Thursday works for me!", "zh": "星期四我可以！" },
+      { "who": "c03_yuki", "expr": "happy", "en": "Me too. Team Food is ready!", "zh": "我也是。美食小隊出發！" }
+    ],
+    "title": { "en": "Team Player", "zh": "最佳隊友" },
+    "story": { "en": "In thirty minutes, your team has a topic, a plan and a meeting day. The sticky notes are finally full.", "zh": "三十分鐘內，你們就訂好主題、分工和聚會時間。便利貼終於寫滿了。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "How about...?",
+      "zh": "……怎麼樣？",
+      "explain": "提出建議的句型，後面接名詞或 V-ing，不接原形動詞。例如 How about pizza? / How about going hiking?。",
+      "example": { "en": "How about meeting at the library?", "zh": "約在圖書館碰面怎麼樣？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Why don't we...?",
+      "zh": "我們何不……？",
+      "explain": "看起來像問原因，其實是建議。語序是 Why don't we + 原形動詞，不要寫成 Why we don't...。",
+      "example": { "en": "Why don't we take a break?", "zh": "我們何不休息一下？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I can take care of...",
+      "zh": "……交給我負責",
+      "explain": "take care of 也有「負責處理」的意思。在小組裡主動認領工作，比說「我都可以」更受歡迎。",
+      "example": { "en": "Don't worry. I can take care of the slides.", "zh": "別擔心，簡報交給我。" }
+    },
+    {
+      "type": "trap",
+      "en": "meet vs. meat",
+      "zh": "見面與肉",
+      "explain": "meet（見面）和 meat（肉）發音完全一樣。句子講完整一點，例如 meet up、meeting，就比較不會被聽錯。",
+      "example": { "en": "Let's meet up at six.", "zh": "我們六點碰面吧。" }
+    },
+    {
+      "type": "culture",
+      "en": "Speak up in group work.",
+      "zh": "小組討論要主動發言",
+      "explain": "在國外的小組作業中，安靜和過度謙虛常被當成不參與。主動提出想法、認領工作，才會被當成好隊友。",
+      "example": { "en": "I have an idea. Why don't we add some interviews?", "zh": "我有個想法。我們何不加一些訪談？" }
+    }
+  ]
+}

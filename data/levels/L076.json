@@ -1,0 +1,262 @@
+{
+  "id": "L076",
+  "location": { "en": "Brightway office, Ms. Wong's office", "zh": "Brightway 公司，王經理辦公室" },
+  "goal": { "en": "Ask for more time on a deadline, honestly and with a plan.", "zh": "誠實說明狀況，帶著方案申請延期。" },
+  "background": "office hallway outside a manager's room, a glass door half open, a wooden desk and a desk lamp visible inside, a potted plant in the corner, framed abstract art, late afternoon light",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "The Harbor Café lighting plan is due tomorrow morning. But the supplier still hasn't sent the new lamp sizes.", "zh": "Harbor Café 的燈光企劃明天早上就要交了。可是供應商到現在還沒寄來新燈具的尺寸。" },
+    { "who": "narrator", "en": "Without them, the plan isn't finished. You knock on Ms. Wong's door.", "zh": "沒有尺寸，企劃就做不完。你敲了敲王經理的門。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Come in, Kai. What's up?", "zh": "進來吧，凱。怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "Do you have a moment? It's about the Harbor Café plan.",
+          "zh": "您現在方便嗎？是關於 Harbor Café 企劃的事。",
+          "ok": true,
+          "tip": "先問對方方不方便，再直接點出主題，讓主管有心理準備。"
+        },
+        {
+          "en": "Oh, nothing much. Um, did you have a nice weekend? The weather was great.",
+          "zh": "喔，沒什麼。嗯，您週末過得好嗎？天氣很好呢。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "It was fine, thanks. Was there something else?", "zh": "還不錯，謝謝。還有別的事嗎？" }
+            ],
+            "title": { "en": "Lost Nerve", "zh": "臨陣退縮" },
+            "story": { "en": "You chat about the weather and walk out. The deadline is still tomorrow, and now you have even less time.", "zh": "你聊完天氣就走出來了。期限還是明天，而你的時間又更少了。" },
+            "why": "緊張時繞去聊天，只會讓問題越拖越大。直接說 Do you have a moment? It's about the... plan.。"
+          }
+        },
+        {
+          "en": "We have a huge problem! The supplier messed up everything, and it's not my fault!",
+          "zh": "我們出大事了！供應商把一切都搞砸了，而且這不是我的錯！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Okay, slow down. Who messed up what? Start from the beginning.", "zh": "好，先冷靜。誰搞砸了什麼？從頭說起。" }
+            ],
+            "title": { "en": "Panic Mode", "zh": "恐慌模式" },
+            "story": { "en": "Ms. Wong spends ten minutes calming you down before she even hears the problem. It turns out to be quite small.", "zh": "王經理花了十分鐘先安撫你，才聽到問題是什麼。結果其實只是件小事。" },
+            "why": "一開口就說大事不妙又急著撇清，會讓主管更緊張。冷靜開場：Do you have a moment? It's about the... plan.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Sure. Is it ready for tomorrow morning?", "zh": "好啊。明天早上可以交嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Not quite. I'm afraid I need more time. The supplier hasn't sent the lamp sizes yet.",
+          "zh": "還沒有。恐怕我需要多一點時間。供應商還沒寄燈具尺寸過來。",
+          "ok": true,
+          "tip": "I'm afraid... 是委婉帶出壞消息的開頭，接著馬上說明原因。"
+        },
+        {
+          "en": "No. I can't catch the deadline. The time is not enough, and the supplier is so slow.",
+          "zh": "不行。我趕不上期限。時間不夠，而且供應商超慢的。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Catch the deadline? It's not a bus, Kai. So, how late will it be?", "zh": "抓住期限？它又不是公車，凱。所以會晚多久？" }
+            ],
+            "title": { "en": "Chasing the Deadline", "zh": "追著期限跑" },
+            "story": { "en": "Ms. Wong gets the idea, but you sound like you're giving up. She starts wondering if you can handle the project.", "zh": "王經理聽懂了，但你聽起來像是要放棄。她開始懷疑你能不能負責這個案子。" },
+            "why": "「趕上期限」是 meet the deadline，不是 catch。說 I'm afraid I need more time.，再說明原因。"
+          }
+        },
+        {
+          "en": "Not yet. Until now, the supplier still don't send me the new sizes of the lamps.",
+          "zh": "還沒有。到現在為止，供應商還是沒有把新燈具的尺寸寄給我。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "They don't send them? Ever? Or they haven't sent them yet?", "zh": "他們不寄？永遠不寄？還是只是還沒寄？" }
+            ],
+            "title": { "en": "Forever Waiting", "zh": "永遠等不到" },
+            "story": { "en": "Ms. Wong thinks the supplier has stopped working with you. She calls them herself, which is a little awkward for everyone.", "zh": "王經理以為供應商不跟你們合作了。她親自打電話過去，場面對大家都有點尷尬。" },
+            "why": "「到現在還沒寄」要用現在完成式：They haven't sent the sizes yet.。主詞 the supplier 是單數，否定也要用 doesn't。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "I see. We're meeting the client on Thursday. What do you suggest?", "zh": "了解。我們星期四要跟客戶開會。你有什麼建議？" }
+      ],
+      "choices": [
+        {
+          "en": "I could send you the layout tomorrow, and add the final sizes by Thursday morning.",
+          "zh": "我可以明天先把配置圖給您，最後的尺寸星期四早上前補上。",
+          "ok": true,
+          "tip": "申請延期時，帶著具體方案和時間點，主管只要點頭就好。"
+        },
+        {
+          "en": "Don't worry, I'll stay up all night and finish it. I don't really need sleep.",
+          "zh": "別擔心，我會熬夜把它做完。我其實不太需要睡覺。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Kai, staying up won't make the supplier send the sizes faster.", "zh": "凱，你熬夜也不會讓供應商比較快寄尺寸過來。" }
+            ],
+            "title": { "en": "All-Nighter", "zh": "通宵爆肝" },
+            "story": { "en": "You stay up until 3 a.m. and still have no lamp sizes. At the morning meeting, you can barely keep your eyes open.", "zh": "你熬夜到凌晨三點，還是沒有燈具尺寸。早上開會時，你連眼睛都快睜不開。" },
+            "why": "很多英語系主管不覺得熬夜是負責，反而覺得是計畫出了問題。提出可行的方案：I could send... and add... by Thursday.。"
+          }
+        },
+        {
+          "en": "Can't you just tell the client to wait a few days? It's not my fault, really.",
+          "zh": "您不能直接叫客戶多等幾天嗎？這真的不是我的錯。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I didn't ask whose fault it was. I asked what you suggest.", "zh": "我沒問是誰的錯。我是問你有什麼建議。" }
+            ],
+            "title": { "en": "Passing the Buck", "zh": "推卸責任" },
+            "story": { "en": "Ms. Wong makes the plan herself. Next time there's an important project, she gives it to Sam.", "zh": "王經理自己想了方案。下次有重要的案子，她交給了山姆。" },
+            "why": "把問題丟回給主管又急著撇清，會顯得不負責任。主動提方案：I could send you... by...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "That works. But why didn't you tell me earlier?", "zh": "這樣可以。不過你怎麼沒有早點跟我說？" }
+      ],
+      "choices": [
+        {
+          "en": "You're right. I should have told you on Monday. I'll update you sooner next time.",
+          "zh": "您說得對。我星期一就應該跟您說。下次我會早點回報。",
+          "ok": true,
+          "tip": "I should have + 過去分詞，表示「當時應該做卻沒做」，承認後再說改進方法。"
+        },
+        {
+          "en": "Sorry, I should tell you earlier. I was thinking the supplier will send it soon.",
+          "zh": "抱歉，我應該早點跟您說。我原本以為供應商很快就會寄來。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "You should tell me earlier... than what? Next time?", "zh": "你應該早點告訴我……比什麼早？下一次嗎？" }
+            ],
+            "title": { "en": "Wrong Time Zone", "zh": "時態錯亂" },
+            "story": { "en": "Ms. Wong isn't sure if you're talking about the past or the future. You aren't sure either.", "zh": "王經理搞不清楚你在說過去還是未來。其實你自己也不太確定。" },
+            "why": "對過去的事表示後悔，要用 should have + 過去分詞：I should have told you earlier.；「以為會」也要用 would：I thought they would send it soon.。"
+          }
+        },
+        {
+          "en": "Because I didn't want to give you trouble. You are always so busy every day.",
+          "zh": "因為我不想給您添麻煩。您每天都這麼忙。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Give me trouble? Kai, telling me early saves me trouble.", "zh": "給我麻煩？凱，早點告訴我才是幫我省麻煩。" }
+            ],
+            "title": { "en": "Trouble Delivered", "zh": "麻煩送到府" },
+            "story": { "en": "You meant to be thoughtful, but it sounded like an excuse. Ms. Wong now asks for an update on every task, every Monday.", "zh": "你本來是想體貼主管，但聽起來像在找藉口。現在王經理每週一都要你回報每一項工作的進度。" },
+            "why": "「添麻煩」直譯成 give you trouble，英文聽起來比較像「跟你作對、找你麻煩」，要說 I didn't want to bother you.。但這時更好的回答是直接承認：I should have told you earlier.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Okay. These things happen. Just keep me posted next time.", "zh": "好吧，這種事難免。下次記得隨時跟我說。" }
+      ],
+      "choices": [
+        {
+          "en": "Absolutely. Thank you for understanding. I'll send you the layout by ten tomorrow.",
+          "zh": "一定。謝謝您的體諒。我明天十點前把配置圖寄給您。",
+          "ok": true,
+          "tip": "Thank you for understanding. 感謝對方體諒，再重複一次承諾的時間點，讓主管安心。"
+        },
+        {
+          "en": "Thank you so much. Tomorrow I will bring you a box of pineapple cakes to say sorry.",
+          "zh": "非常謝謝您。明天我帶一盒鳳梨酥來跟您賠罪。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Pineapple cakes? Kai, you don't need to bring me gifts. Just the layout.", "zh": "鳳梨酥？凱，你不用送我禮物，給我配置圖就好。" }
+            ],
+            "title": { "en": "Sorry Cakes", "zh": "賠罪鳳梨酥" },
+            "story": { "en": "You bring the cakes anyway. Ms. Wong shares them with the whole team, and now everyone knows you missed a deadline.", "zh": "你還是帶了鳳梨酥。王經理分給全組吃，現在大家都知道你延誤了期限。" },
+            "why": "在很多英語系職場，延誤後送禮賠罪會讓人尷尬，好像在用禮物抵銷失誤。守住新的期限才是最好的道歉：I'll send it by ten tomorrow.。"
+          }
+        },
+        {
+          "en": "Thank you! Oh, and since the plan is waiting anyway, can I leave early today?",
+          "zh": "謝謝！喔，對了，既然企劃反正也在等，我今天可以早點下班嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Let's see that layout first, Kai.", "zh": "先把配置圖交出來再說吧，凱。" }
+            ],
+            "title": { "en": "Bold Request", "zh": "得寸進尺" },
+            "story": { "en": "Ms. Wong's smile disappears. You stay late that day, and she checks on your layout twice before you leave.", "zh": "王經理的笑容消失了。你那天留到很晚，她在你下班前來看了兩次配置圖。" },
+            "why": "剛申請到延期，馬上提出別的要求，會顯得不在乎這個案子。先確認承諾：Thank you for understanding. I'll send it by...。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Ten works. Thanks for being upfront about it, Kai.", "zh": "十點可以。謝謝你坦白跟我說，凱。" }
+    ],
+    "title": { "en": "Honest and On Track", "zh": "誠實又可靠" },
+    "story": { "en": "You explained the problem, brought a plan, and kept your promise. The layout lands in Ms. Wong's inbox at 9:52.", "zh": "你說明了問題，帶來了方案，也守住了承諾。配置圖在九點五十二分寄到王經理的信箱。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm afraid I need more time.",
+      "zh": "恐怕我需要多一點時間。",
+      "explain": "I'm afraid... 不是「我很害怕」，而是委婉帶出壞消息的開頭，讓語氣聽起來有禮貌又誠懇。",
+      "example": { "en": "I'm afraid the report won't be ready until Friday.", "zh": "恐怕報告要到星期五才能完成。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I could... by...",
+      "zh": "我可以在……之前……",
+      "explain": "申請延期時，用 I could 提出方案，再用 by 加上明確的時間點，主管只要決定好或不好。",
+      "example": { "en": "I could send a draft by Wednesday and the final version by Friday.", "zh": "我可以星期三前給草稿，星期五前給定稿。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I should have told you earlier.",
+      "zh": "我應該早點跟你說的。",
+      "explain": "should have + 過去分詞，表示過去應該做卻沒做，帶有後悔的語氣。should tell 是現在或未來的建議，意思不同。",
+      "example": { "en": "I should have checked the date before I sent it.", "zh": "我寄出之前應該先確認日期的。" }
+    },
+    {
+      "type": "trap",
+      "en": "catch the deadline",
+      "zh": "趕上期限（直譯陷阱）",
+      "explain": "catch 用在公車、火車，期限要用 meet：meet the deadline；趕不上是 miss the deadline。",
+      "example": { "en": "We worked hard to meet the deadline.", "zh": "我們很努力才趕上期限。" }
+    },
+    {
+      "type": "culture",
+      "en": "No all-nighters, no apology gifts.",
+      "zh": "不用熬夜，也不用送禮賠罪。",
+      "explain": "在很多英語系職場，主管最想看到的是早點回報、帶著方案、守住新期限。熬夜趕工或送禮道歉，反而可能讓人覺得計畫不周或尷尬。",
+      "example": { "en": "Thanks for letting me know early. Let's adjust the timeline.", "zh": "謝謝你早點告訴我。我們來調整一下時程。" }
+    }
+  ]
+}

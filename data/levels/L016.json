@@ -1,0 +1,182 @@
+{
+  "id": "L016",
+  "location": { "en": "Maple Bay Post Office, Main Street", "zh": "主街上的楓灣郵局" },
+  "goal": { "en": "Mail a gift box home to your family in Taiwan.", "zh": "把一箱禮物寄回台灣給家人。" },
+  "background": "small town post office with a long wooden service counter, a parcel scale, stacks of plain brown cardboard boxes, rolls of packing tape, a wall of brass mailboxes, soft morning light",
+  "cast": ["c02_postal"],
+  "intro": [
+    { "who": "narrator", "en": "You packed a box with maple syrup and cookies for your family back home.", "zh": "你裝了一箱楓糖漿和餅乾，要寄給台灣的家人。" },
+    { "who": "narrator", "en": "At the post office, a clerk with a gray mustache waves you over.", "zh": "郵局裡，一位留著灰白鬍子的櫃檯人員招手叫你過去。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_postal", "expr": "neutral", "en": "Good morning. What can I do for you today?", "zh": "早安。今天要辦什麼呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I'd like to send this to Taiwan.",
+          "zh": "我想把這個寄到台灣。",
+          "ok": true,
+          "tip": "I'd like to send this to + 地點，是寄東西最基本的句型。"
+        },
+        {
+          "en": "I want to send this back Taiwan.",
+          "zh": "我想把這個寄回台灣。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_postal", "expr": "confused", "en": "Send it back? Oh, a return. Here's the returns form.", "zh": "寄回去？喔，退貨啊。這是退貨單。" }
+            ],
+            "title": { "en": "Return to Sender", "zh": "退貨專區" },
+            "story": { "en": "You fill out three pages of returns paperwork before anyone notices the mistake. The line behind you is now out the door.", "zh": "你填了三頁退貨單，才有人發現弄錯了。後面排隊的人已經排到門外了。" },
+            "why": "中文說「寄回台灣」，英文直譯成 send this back 會被當成「退貨」，而且 back 後面少了 to。寄回家鄉直接說 send this to Taiwan 就好。"
+          }
+        },
+        {
+          "en": "Hey, mail this to Taiwan for me.",
+          "zh": "欸，幫我把這個寄到台灣。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_postal", "expr": "upset", "en": "\"For me\"? Well, aren't you in a hurry.", "zh": "「幫我」？哎呀，你還真趕啊。" }
+            ],
+            "title": { "en": "The Long Way", "zh": "慢慢來" },
+            "story": { "en": "He takes his time. A lot of time. He weighs your box three times and reads every word of the customs form out loud.", "zh": "他不疾不徐，非常不疾不徐。你的箱子被秤了三次，海關單上的每個字都被他大聲唸了一遍。" },
+            "why": "Hey 加上命令句，對櫃檯人員來說太隨便也太沒禮貌。用 I'd like to send this to Taiwan. 表達需求，客氣又清楚。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_postal", "expr": "neutral", "en": "Taiwan, all right. Anything fragile inside?", "zh": "台灣，好的。裡面有易碎物品嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, there's a glass bottle.",
+          "zh": "有，裡面有一個玻璃瓶。",
+          "ok": true,
+          "tip": "fragile 是「易碎的」，直接說出裡面有什麼，對方就知道要怎麼處理。"
+        },
+        {
+          "en": "Yes, it's easy broken. Be careful.",
+          "zh": "有，它很容易破，小心一點。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_postal", "expr": "confused", "en": "Easy... broken? Is it broken already?", "zh": "容易……破了？已經破掉了嗎？" }
+            ],
+            "title": { "en": "Unbox Therapy", "zh": "當場開箱" },
+            "story": { "en": "He asks you to open the box to check. You spend fifteen minutes unpacking and repacking everything with a roll of tape.", "zh": "他請你打開箱子檢查。你花了十五分鐘拆箱、再用一整捲膠帶重新封好。" },
+            "why": "「容易破」不能直譯成 easy broken。英文用 fragile 一個字就夠了，或說 It breaks easily.。"
+          }
+        },
+        {
+          "en": "Fragile? No, it's just a gift.",
+          "zh": "易碎？沒有，只是禮物而已。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_postal", "expr": "confused", "en": "A gift is nice, but... is anything in it made of glass?", "zh": "禮物很好，但是……裡面有玻璃做的東西嗎？" }
+            ],
+            "title": { "en": "Sticky Surprise", "zh": "黏答答的驚喜" },
+            "story": { "en": "You shrug, and the box goes with the regular parcels. Two weeks later, your mom calls. The whole box is sticky with maple syrup.", "zh": "你聳聳肩，箱子就跟一般包裹放在一起。兩週後媽媽打電話來：整箱都被楓糖漿黏得黏答答的。" },
+            "why": "fragile 是「易碎的」，不是問你寄的是什麼。有玻璃瓶就要說 Yes, there's a glass bottle.，郵局才會貼上易碎標籤。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_postal", "expr": "neutral", "en": "I'll mark it fragile. Express takes three days, and standard takes about two weeks.", "zh": "我幫你標上易碎。快捷三天到，一般大約兩週。" },
+        { "who": "c02_postal", "expr": "neutral", "en": "Which would you like?", "zh": "你要寄哪一種？" }
+      ],
+      "choices": [
+        {
+          "en": "Standard, please. I'm not in a hurry.",
+          "zh": "一般就好，我不趕。",
+          "ok": true,
+          "tip": "in a hurry 是「趕時間」，I'm not in a hurry. 表示不急。"
+        },
+        {
+          "en": "Standard, please. I'm not hurry.",
+          "zh": "一般就好，我不趕。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_postal", "expr": "confused", "en": "Not... hurry? Oh, you want it fast? Express, then!", "zh": "不……趕？喔，你要快一點？那就快捷吧！" }
+            ],
+            "title": { "en": "Sixty-Dollar Cookies", "zh": "六十塊的餅乾" },
+            "story": { "en": "Before you can explain, the box is gone. The express fee is sixty dollars. These are now the most expensive cookies in Taiwan.", "zh": "你還來不及解釋，箱子就送走了。快捷運費六十元，這大概是全台灣最貴的餅乾。" },
+            "why": "hurry 是動詞或名詞，不能直接放在 be 動詞後面。要說 I'm not in a hurry. 或 There's no rush.。"
+          }
+        },
+        {
+          "en": "Standard. Can you write the value as zero?",
+          "zh": "一般。價值可以寫零嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_postal", "expr": "upset", "en": "Zero? No, I'm afraid you have to declare the real value.", "zh": "零？不行，恐怕你得申報實際價值。" }
+            ],
+            "title": { "en": "Customs Lecture", "zh": "海關小講堂" },
+            "story": { "en": "You get a long, serious talk about customs rules. Everyone in line now knows exactly what's in your box.", "zh": "你被認真上了一堂海關規定課。排隊的人現在都知道你的箱子裡裝了什麼。" },
+            "why": "國際包裹的海關申報單要誠實填寫內容和價值，請櫃檯人員幫忙寫低一點是違規的。不用額外要求，照實填寫就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_postal", "expr": "happy", "en": "Standard it is. Just fill out this customs form, and you're all set.", "zh": "那就寄一般件。填好這張海關申報單就完成了。" },
+      { "who": "narrator", "en": "Two weeks later, your mom sends a photo: the whole family eating cookies with maple syrup.", "zh": "兩週後，媽媽傳來一張照片：全家人正在吃淋了楓糖漿的餅乾。" }
+    ],
+    "title": { "en": "Special Delivery", "zh": "寄回家的心意" },
+    "story": { "en": "The box arrives safe and sound. Your family is thousands of kilometers away, but tonight they taste a little bit of Maple Bay.", "zh": "包裹平安送達。家人雖然遠在幾千公里外，今晚也嚐到了一點楓灣的味道。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to send this to...",
+      "zh": "我想把這個寄到……",
+      "explain": "寄信、寄包裹都能用。寄回家鄉也只要說 send this to + 地點，不需要加 back。",
+      "example": { "en": "I'd like to send this letter to Japan.", "zh": "我想把這封信寄到日本。" }
+    },
+    {
+      "type": "vocab",
+      "en": "express / standard",
+      "zh": "快捷／一般（寄送方式）",
+      "explain": "express 比較快也比較貴，standard 比較慢但便宜。有些郵局也會說 priority（優先）或 regular（一般）。",
+      "example": { "en": "How much is it by express?", "zh": "寄快捷要多少錢？" }
+    },
+    {
+      "type": "vocab",
+      "en": "fragile",
+      "zh": "易碎的",
+      "explain": "寄送玻璃、陶瓷等易碎物品時要主動告知，郵局會貼上 FRAGILE 標籤並小心處理。",
+      "example": { "en": "Please be careful. It's fragile.", "zh": "請小心，這是易碎物品。" }
+    },
+    {
+      "type": "trap",
+      "en": "easy broken",
+      "zh": "容易破（錯誤直譯）",
+      "explain": "「容易破」要說 fragile 或 It breaks easily.。easy broken 不是正確英文，對方可能以為東西已經破了。",
+      "example": { "en": "These glasses break easily.", "zh": "這些玻璃杯很容易破。" }
+    },
+    {
+      "type": "culture",
+      "en": "Declare it truthfully",
+      "zh": "照實申報",
+      "explain": "寄國際包裹要填海關申報單（customs form），寫清楚內容物和價值。要求櫃檯人員少報價值不只尷尬，還可能違法。",
+      "example": { "en": "Contents: cookies and maple syrup. Value: forty dollars.", "zh": "內容物：餅乾和楓糖漿。價值：四十元。" }
+    }
+  ]
+}

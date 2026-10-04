@@ -1,0 +1,185 @@
+{
+  "id": "L015",
+  "location": { "en": "Bubbles Laundromat, down the street", "zh": "街角的泡泡自助洗衣店" },
+  "goal": { "en": "Figure out the machines, get some coins and buy detergent.", "zh": "搞懂洗衣機怎麼用，換到零錢，再買到洗衣精。" },
+  "background": "bright laundromat with a long row of front-loading washing machines, stacked dryers, a wooden folding table, empty plastic laundry baskets, checkered floor, sunny Sunday afternoon",
+  "cast": ["mia", "c02_attendant"],
+  "intro": [
+    { "who": "narrator", "en": "Your laundry basket is overflowing. Mia takes you to the laundromat down the street.", "zh": "你的髒衣籃已經滿出來了。米亞帶你去街角的自助洗衣店。" },
+    { "who": "mia", "expr": "happy", "en": "Laundry day! I'll grab us two machines. You handle the rest, okay?", "zh": "洗衣日！我去佔兩台洗衣機，其他的交給你囉？" },
+    { "who": "narrator", "en": "The machines look brand new, with buttons you've never seen before.", "zh": "洗衣機看起來是全新的，上面的按鈕你一個都沒看過。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_attendant", "expr": "happy", "en": "Hi there, you two! First time here?", "zh": "嗨，兩位！第一次來嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. How does this machine work?",
+          "zh": "對，這台機器要怎麼用？",
+          "ok": true,
+          "tip": "How does this machine work? 是問操作方式的標準句，任何機器都適用。"
+        },
+        {
+          "en": "Yes. How to use this machine?",
+          "zh": "對，怎麼用這台機器？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_attendant", "expr": "confused", "en": "How to use...? Sorry, what about it?", "zh": "怎麼用……？抱歉，你是說什麼？" }
+            ],
+            "title": { "en": "Dryer Expert", "zh": "烘衣機專家" },
+            "story": { "en": "She starts explaining the dryers instead. Twenty minutes later, you're a dryer expert, and your clothes are still dirty.", "zh": "她開始解釋烘衣機怎麼用。二十分鐘後，你成了烘衣機專家，衣服卻還是髒的。" },
+            "why": "How to use? 是中文「怎麼用？」的直譯，在英文裡不是完整的問句。要說 How does this machine work? 或 How do I use this machine?。"
+          }
+        },
+        {
+          "en": "Yes. Teach me how to use it.",
+          "zh": "對，教我怎麼用。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_attendant", "expr": "upset", "en": "Teach you? My, aren't we bossy today.", "zh": "教你？哎呀，今天口氣真大。" }
+            ],
+            "title": { "en": "Figure It Out", "zh": "自己摸索吧" },
+            "story": { "en": "She points at the instructions on the wall and goes back to her crossword. Mia presses random buttons until something beeps.", "zh": "她指了指牆上的說明，就回去玩她的填字遊戲。米亞隨便亂按，直到機器「嗶」了一聲。" },
+            "why": "Teach me... 是命令句，對陌生人說很沒禮貌。請人說明時用問句：How does this machine work? 或 Could you show me how to use it?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_attendant", "expr": "neutral", "en": "Easy. Pick a program, then put in four dollars in coins.", "zh": "很簡單。選好洗程，再投四塊錢硬幣就行了。" },
+        { "who": "narrator", "en": "You check your wallet. Just one ten-dollar bill.", "zh": "你翻翻錢包，只有一張十元紙鈔。" },
+        { "who": "c02_attendant", "expr": "neutral", "en": "Oh, and the change machine is broken today. Sorry!", "zh": "對了，今天換幣機壞了，抱歉！" }
+      ],
+      "choices": [
+        {
+          "en": "Do you have change for a ten?",
+          "zh": "你可以幫我換開十元嗎？",
+          "ok": true,
+          "tip": "change 當名詞是「零錢」，change for a ten 就是「把十元鈔換開」。"
+        },
+        {
+          "en": "Can you change me small money?",
+          "zh": "你可以換我小錢嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_attendant", "expr": "confused", "en": "Change you? Small money? Sorry, I don't follow.", "zh": "換你？小錢？抱歉，我聽不懂。" }
+            ],
+            "title": { "en": "You Owe Mia", "zh": "欠米亞一次" },
+            "story": { "en": "After three tries, Mia digs through her bag and finds exactly four dollars in coins. Now you owe her, and she will remember.", "zh": "試了三次都說不通，米亞只好在包包裡翻出剛好四塊錢的硬幣。現在你欠她一次，她一定會記得。" },
+            "why": "「換零錢」不能直譯成 change me small money。要說 Do you have change for a ten?，change 本身就是「零錢」的意思。"
+          }
+        },
+        {
+          "en": "Do you have changes for ten?",
+          "zh": "你有十元的零錢嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_attendant", "expr": "confused", "en": "Changes? Oh, lots of changes here since 1985!", "zh": "改變？喔，這裡從 1985 年到現在可改變多了！" }
+            ],
+            "title": { "en": "A Long, Long Story", "zh": "好長的故事" },
+            "story": { "en": "She tells you the whole history of the laundromat. It's a lovely story, but your clothes are still waiting in the basket.", "zh": "她把洗衣店的歷史從頭講了一遍。故事很溫馨，但你的衣服還躺在籃子裡等你。" },
+            "why": "表示「零錢」的 change 不可數，不加 s；加了 s 的 changes 是「改變」。要說 Do you have change for a ten?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "upset", "en": "Oh no! I left the detergent at home!", "zh": "糟了！我把洗衣精忘在家裡了！" },
+        { "who": "c02_attendant", "expr": "happy", "en": "No worries, I sell it here. What do you need?", "zh": "別擔心，我這裡有賣。你們要什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Two packs of detergent, please.",
+          "zh": "兩包洗衣精，謝謝。",
+          "ok": true,
+          "tip": "detergent 是洗衣精、洗衣粉的總稱，a pack of... 是「一包……」。"
+        },
+        {
+          "en": "Two packs of washing clothes powder.",
+          "zh": "兩包洗衣服粉。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_attendant", "expr": "confused", "en": "Washing... clothes powder? Do you mean soap? Bleach?", "zh": "洗衣服……粉？你是說肥皂？還是漂白劑？" }
+            ],
+            "title": { "en": "Polka Dot Hoodie", "zh": "點點帽 T" },
+            "story": { "en": "You nod at the wrong word and get bleach. Your favorite black hoodie comes out with brand-new white spots.", "zh": "你在錯的字上點了頭，拿到的是漂白劑。你最愛的黑色帽 T 洗完多了一堆白色斑點。" },
+            "why": "「洗衣粉」不能逐字翻成 washing clothes powder。洗衣精、洗衣粉英文都叫 detergent：Two packs of detergent, please.。"
+          }
+        },
+        {
+          "en": "Can we just use that bottle there?",
+          "zh": "我們可以直接用那邊那瓶嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_attendant", "expr": "upset", "en": "That belongs to another customer! Hands off, please.", "zh": "那是別的客人的！請不要動。" }
+            ],
+            "title": { "en": "Caught Red-Handed", "zh": "當場被抓包" },
+            "story": { "en": "The bottle's owner walks in at that exact moment. You spend the next hour avoiding eye contact by the dryers.", "zh": "瓶子的主人剛好在這時走進來。接下來一個小時，你在烘衣機旁邊努力避開對方的眼神。" },
+            "why": "自助洗衣店裡別人放著的東西，就算看起來沒人管，也不能擅自使用。需要就直接買：Two packs of detergent, please.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_attendant", "expr": "happy", "en": "Two packs, coming right up. You two make a good team!", "zh": "兩包，馬上來。你們兩個真是好搭檔！" },
+      { "who": "mia", "expr": "happy", "en": "See? Next time, you're the laundry expert!", "zh": "看吧？下次就換你當洗衣專家了！" }
+    ],
+    "title": { "en": "Fresh and Clean", "zh": "乾乾淨淨" },
+    "story": { "en": "An hour later, your clothes come out warm and soft. Even your socks smell like spring.", "zh": "一個小時後，衣服又暖又軟地出爐，連襪子都有春天的味道。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "How does this machine work?",
+      "zh": "這台機器怎麼用？",
+      "explain": "問操作方式的萬用句，洗衣機、售票機、咖啡機都適用。也可以說 How do I use this?。",
+      "example": { "en": "Excuse me, how does this ticket machine work?", "zh": "不好意思，這台售票機怎麼用？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Do you have change for a ten?",
+      "zh": "可以幫我換開十元嗎？",
+      "explain": "change 當名詞是「零錢」，不可數。a ten 是「一張十元鈔」，a twenty 就是二十元鈔。",
+      "example": { "en": "Do you have change for a twenty? I need coins for the bus.", "zh": "可以幫我換開二十元嗎？我搭公車需要硬幣。" }
+    },
+    {
+      "type": "vocab",
+      "en": "detergent",
+      "zh": "洗衣精、洗衣粉",
+      "explain": "洗衣用的清潔劑統稱 detergent，粉狀是 powder，液態是 liquid。fabric softener 是「柔軟精」。",
+      "example": { "en": "Do you sell detergent and fabric softener?", "zh": "你們有賣洗衣精和柔軟精嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "How to use?",
+      "zh": "怎麼用？（不完整的問句）",
+      "explain": "How to...? 在英文裡不是完整問句，要加上助動詞和主詞：How do I use this?、How does it work?。",
+      "example": { "en": "How do I use this dryer?", "zh": "這台烘衣機要怎麼用？" }
+    },
+    {
+      "type": "culture",
+      "en": "Laundromat manners",
+      "zh": "自助洗衣禮儀",
+      "explain": "不要動別人的東西，衣服洗好要盡快取出，別讓下一位等。真的需要移動別人的衣物，先問店員。",
+      "example": { "en": "Is anyone using this dryer?", "zh": "請問有人在用這台烘衣機嗎？" }
+    }
+  ]
+}

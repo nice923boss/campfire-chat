@@ -1,0 +1,225 @@
+{
+  "id": "L047",
+  "location": { "en": "Sunset Point, a viewpoint above Port Aurora harbor", "zh": "夕陽岬，可以俯瞰極光港的觀景台" },
+  "goal": { "en": "Ask a stranger to take a group photo, explain the phone and get one more shot.", "zh": "請陌生人幫你們拍合照，教對方怎麼按，再請他多拍一張。" },
+  "background": "hilltop viewpoint with a wooden railing, wide view of a harbor town and sea at sunset, orange and pink sky, wildflowers, a bench, gentle golden light",
+  "cast": ["c05_tourist", "leo", "mia"],
+  "intro": [
+    { "who": "narrator", "en": "That evening, the rain stops. You climb up to Sunset Point to watch the sun go down over the harbor.", "zh": "那天傍晚雨停了。你們爬上夕陽岬，看太陽在港口上方落下。" },
+    { "who": "leo", "expr": "happy", "en": "We need a photo of all three of us. Kai, ask someone!", "zh": "我們需要一張三個人的合照。凱，去找人幫忙！" },
+    { "who": "narrator", "en": "An older man with a big camera is standing nearby.", "zh": "旁邊站著一位掛著大相機的年長男士。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_tourist", "expr": "happy", "en": "What a sunset, huh? Best view in Port Aurora.", "zh": "夕陽真美，對吧？極光港最棒的景色。" }
+      ],
+      "choices": [
+        {
+          "en": "It's beautiful. Would you mind taking a photo of us?",
+          "zh": "真的很美。可以麻煩你幫我們拍張照嗎？",
+          "ok": true,
+          "tip": "Would you mind + V-ing...? 是請陌生人幫忙時最客氣的句型。"
+        },
+        {
+          "en": "It's beautiful. Would you mind to take a photo for us?",
+          "zh": "真的很美。你介意幫我們拍張照嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_tourist", "expr": "confused", "en": "Would I mind...? Oh, you want to photograph me? Sure!", "zh": "我介不介意……？喔，你想拍我嗎？好啊！" }
+            ],
+            "title": { "en": "Wrong Model", "zh": "拍錯模特兒" },
+            "story": { "en": "Walter strikes a proud pose in front of the sunset. You now have a lovely photo of a stranger and none of your friends.", "zh": "華特在夕陽前擺出驕傲的姿勢。你現在有一張陌生人的美照，卻沒有一張朋友的合照。" },
+            "why": "mind 後面要接 V-ing，不能接 to V：Would you mind taking a photo of us?。「幫我們拍」用 of us，不用 for us。"
+          }
+        },
+        {
+          "en": "Excuse me, could you take us a photo?",
+          "zh": "不好意思，可以幫我們拍一張照嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_tourist", "expr": "confused", "en": "Take you to a photo? You mean a photo shop? There's one down the hill.", "zh": "帶你們去照片？你是說相片行嗎？山下有一家。" }
+            ],
+            "title": { "en": "The Photo Shop", "zh": "相片行之旅" },
+            "story": { "en": "Walter kindly draws you a map to the nearest photo shop. It closes in ten minutes, and the sun is almost gone.", "zh": "華特好心地畫地圖告訴你最近的相片行。它十分鐘後打烊，太陽也快下山了。" },
+            "why": "「幫我們拍照」直譯成 take us a photo，take us 會被聽成「帶我們去」。要說 Could you take a photo of us?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_tourist", "expr": "happy", "en": "Not at all! I'd be glad to.", "zh": "完全不介意！我很樂意。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you so much! Here's my phone.",
+          "zh": "太感謝了！這是我的手機。",
+          "ok": true,
+          "tip": "Would you mind...? 的回答 Not at all 代表「樂意幫忙」，直接道謝交出手機。"
+        },
+        {
+          "en": "Oh, okay. Sorry to bother you, then.",
+          "zh": "喔，好吧。那抱歉打擾了。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_tourist", "expr": "confused", "en": "Wait, I said I'd do it! Hello? Come back!", "zh": "等等，我說我願意啊！喂？回來啊！" }
+            ],
+            "title": { "en": "Not at All, Not a Photo", "zh": "不介意，卻沒拍到" },
+            "story": { "en": "You walk away sadly before Walter can explain. The sun sets without your group photo.", "zh": "華特還來不及解釋，你就失落地走開了。太陽下山了，合照沒拍成。" },
+            "why": "Would you mind...? 問的是「你介意嗎」，所以 Not at all（一點也不介意）其實是答應。聽到這句就說 Thank you so much!"
+          }
+        },
+        {
+          "en": "Great. Make sure you don't cut off our heads.",
+          "zh": "太好了。你可別把我們的頭切掉喔。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_tourist", "expr": "upset", "en": "I've been taking photos for forty years, you know.", "zh": "我拍照已經拍了四十年了，你知道嗎。" }
+            ],
+            "title": { "en": "The Professional", "zh": "專業攝影師" },
+            "story": { "en": "The photo is perfect, with every head included. Walter's mood, however, is not.", "zh": "照片拍得很完美，每個人的頭都在。不過華特的心情就沒那麼完美了。" },
+            "why": "請陌生人幫忙還先叮嚀「別拍壞」，聽起來像不信任對方。先道謝再交手機：Thank you so much! Here's my phone.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_tourist", "expr": "neutral", "en": "Now, how does this thing work?", "zh": "好，這要怎麼用？" }
+      ],
+      "choices": [
+        {
+          "en": "Just press this button here.",
+          "zh": "按這個按鈕就好。",
+          "ok": true,
+          "tip": "Just press this button. 用簡單的祈使句說明，Just 讓語氣更輕鬆。"
+        },
+        {
+          "en": "You just pressing this button, very easy.",
+          "zh": "你就按這個按鈕，很簡單。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_tourist", "expr": "confused", "en": "I'm pressing it? I haven't touched anything yet!", "zh": "我正在按？我什麼都還沒碰啊！" }
+            ],
+            "title": { "en": "The Thumb Video", "zh": "大拇指影片" },
+            "story": { "en": "Walter gets confused and taps the screen everywhere. You end up with a ten-second video of his thumb.", "zh": "華特一頭霧水，在螢幕上到處亂點。你得到一段十秒鐘的大拇指影片。" },
+            "why": "教別人怎麼做要用原形動詞開頭的祈使句：Just press this button.。pressing 前面少了 be 動詞，意思也變成「正在按」。"
+          }
+        },
+        {
+          "en": "It's easy. Even my grandma can use it.",
+          "zh": "很簡單啦，連我阿嬤都會用。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_tourist", "expr": "upset", "en": "Your grandma, huh? I was using cameras before you were born.", "zh": "你阿嬤喔？我玩相機的時候你都還沒出生呢。" }
+            ],
+            "title": { "en": "Generation Gap", "zh": "代溝" },
+            "story": { "en": "Walter takes the photo with a slightly hurt look. You get a great shot of three people looking guilty.", "zh": "華特帶著有點受傷的表情按下快門。你們得到一張三個人一臉心虛的好照片。" },
+            "why": "「連我阿嬤都會」在中文是說很簡單，但對年長的人說，聽起來像在暗示對方老了。直接說 Just press this button. 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_tourist", "expr": "happy", "en": "Here you go! How does that look?", "zh": "拍好了！看看怎麼樣？" },
+        { "who": "leo", "expr": "upset", "en": "Oh no, my eyes are closed!", "zh": "糟糕，我閉眼了！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! Sorry, could you take one more?",
+          "zh": "謝謝！不好意思，可以再拍一張嗎？",
+          "ok": true,
+          "tip": "請人再拍一張說 Could you take one more?，先說 Sorry 更客氣。"
+        },
+        {
+          "en": "Thanks. Okay, now twenty more from different angles.",
+          "zh": "謝謝。好，現在換不同角度再拍二十張。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_tourist", "expr": "upset", "en": "Twenty? I'm on vacation too, you know.", "zh": "二十張？我也是來度假的耶。" }
+            ],
+            "title": { "en": "Photo Shoot Over", "zh": "攝影棚收工" },
+            "story": { "en": "Walter hands back your phone and goes to enjoy the sunset. Leo's closed-eye photo becomes the official trip photo.", "zh": "華特把手機還你，自己去看夕陽了。里歐閉眼的那張，成了這趟旅行的官方合照。" },
+            "why": "請陌生人幫忙拍照，一兩張就好，要求太多會占用對方的時間。有人閉眼時，說 Sorry, could you take one more? 剛剛好。"
+          }
+        },
+        {
+          "en": "Thanks! Again one, please!",
+          "zh": "謝謝！再一張，拜託！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_tourist", "expr": "confused", "en": "Again... one what? The sunset again? Come back tomorrow, same time!", "zh": "再……一個什麼？再看一次夕陽？明天同一時間再來吧！" }
+            ],
+            "title": { "en": "See You Tomorrow", "zh": "明天請早" },
+            "story": { "en": "Walter tells you the best time to see tomorrow's sunset, then waves goodbye. Leo's eyes stay closed forever.", "zh": "華特告訴你明天看夕陽的最佳時間，揮手道別。照片裡的里歐永遠閉著眼。" },
+            "why": "「再一張」直譯成 Again one 不是英文。要說 One more, please. 或 Could you take one more?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_tourist", "expr": "happy", "en": "Got it! Eyes open this time, everyone.", "zh": "拍到了！這次大家都睜著眼睛。" },
+      { "who": "leo", "expr": "happy", "en": "Perfect. This one's going on my wall.", "zh": "完美。這張我要掛在牆上。" },
+      { "who": "mia", "expr": "happy", "en": "Thank you so much! Enjoy the rest of your trip.", "zh": "太感謝你了！祝你接下來旅途愉快。" }
+    ],
+    "title": { "en": "Picture Perfect", "zh": "完美合照" },
+    "story": { "en": "The sun dips into the sea just as Walter takes the shot. Three friends, one harbor, zero closed eyes.", "zh": "華特按下快門的那一刻，太陽剛好沉進海裡。三個朋友、一座港口，沒有人閉眼。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "Would you mind taking a photo of us?",
+      "zh": "可以麻煩你幫我們拍張照嗎？",
+      "explain": "Would you mind 後面接 V-ing。「幫我們拍照」是 take a photo of us，不要說 take us a photo（會變成「帶我們去」）。",
+      "example": { "en": "Would you mind watching my bag for a minute?", "zh": "可以麻煩你幫我看一下包包嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Not at all.",
+      "zh": "一點也不介意（樂意幫忙）。",
+      "explain": "Would you mind...? 問的是「你介意嗎」，所以回答 Not at all 代表願意。聽到這句不要以為被拒絕了。",
+      "example": { "en": "Would you mind closing the window? / Not at all.", "zh": "可以麻煩你關窗嗎？／當然可以。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Just press this button.",
+      "zh": "按這個按鈕就好。",
+      "explain": "教別人用手機或機器時，用原形動詞開頭的祈使句最清楚。加 Just 讓語氣輕鬆，表示很簡單。",
+      "example": { "en": "Just tap the screen to focus, then press here.", "zh": "點一下螢幕對焦，再按這裡就好。" }
+    },
+    {
+      "type": "phrase",
+      "en": "One more, please.",
+      "zh": "麻煩再一張。",
+      "explain": "「再一張」是 one more，不是 again one。更客氣的說法是 Sorry, could you take one more?",
+      "example": { "en": "Sorry, could you take one more? Someone blinked.", "zh": "不好意思，可以再拍一張嗎？有人眨眼了。" }
+    },
+    {
+      "type": "culture",
+      "en": "Asking strangers for a favor",
+      "zh": "請陌生人幫忙的分寸",
+      "explain": "請陌生人拍照，一兩張就好，結束時好好道謝。也避免評論對方的年紀，「連我阿嬤都會」這類話對年長者很失禮。",
+      "example": { "en": "Thank you so much. You really saved our trip photo!", "zh": "太感謝了，你真的拯救了我們的旅行合照！" }
+    }
+  ]
+}

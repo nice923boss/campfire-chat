@@ -1,0 +1,263 @@
+{
+  "id": "L080",
+  "location": { "en": "Brightway office, large meeting room", "zh": "Brightway 公司，大會議室" },
+  "goal": { "en": "Give a clear project update, including the bad news and a plan.", "zh": "清楚報告專案進度，包括壞消息和因應方案。" },
+  "background": "large meeting room with a long white table, a wall screen showing a blank slide, rows of grey chairs, smart pendant lamps overhead, a window wall with a city view, morning light",
+  "cast": ["ms_wong", "c08_daniel", "c08_priya"],
+  "intro": [
+    { "who": "narrator", "en": "It's your first month at Brightway, and it's your turn to update the team on Harbor Café.", "zh": "這是你在 Brightway 的第一個月，輪到你向團隊報告 Harbor Café 的進度。" },
+    { "who": "narrator", "en": "Good news: the client approved the lighting layout. Bad news: the pendant lamps are delayed two weeks. The new shop opens on the fifteenth.", "zh": "好消息：客戶核准了燈光配置圖。壞消息：吊燈要晚兩週才到貨。新分店十五號就要開幕。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Kai, could you give us a quick update on Harbor Café?", "zh": "凱，可以簡單跟大家報告一下 Harbor Café 的進度嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Overall, we're on track. The client approved the lighting layout on Monday.",
+          "zh": "好的。整體來說，進度符合預期。客戶星期一核准了燈光配置圖。",
+          "ok": true,
+          "tip": "先說整體狀態 We're on track.，再給一個具體的事實，讓大家馬上掌握重點。"
+        },
+        {
+          "en": "Sure. So, three weeks ago, I visited their first shop, and then I wrote a comparison...",
+          "zh": "好的。那個，三週前我去了他們的第一家店，然後我寫了一份比較表……",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c08_priya", "expr": "confused", "en": "Sorry, Kai, but is the project okay or not?", "zh": "抱歉，凱，所以這個案子到底順不順利？" }
+            ],
+            "title": { "en": "Once Upon a Time", "zh": "很久很久以前" },
+            "story": { "en": "Five minutes later, you're still in week one. Daniel has quietly started answering emails under the table.", "zh": "五分鐘過去，你還在講第一週的事。丹尼爾已經在桌子底下偷偷回起了信。" },
+            "why": "按時間順序從頭講，聽的人要等很久才知道重點。英語職場習慣先講結論：Overall, we're on track.，再補細節。"
+          }
+        },
+        {
+          "en": "Sure. The project is go well. The client have approved the layout on last Monday.",
+          "zh": "好的。專案進行得很順利。客戶上星期一已經核准了配置圖。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Wait, approved last Monday, or this Monday?", "zh": "等等，是上星期一核准的，還是這星期一？" }
+            ],
+            "title": { "en": "Which Monday?", "zh": "哪個星期一？" },
+            "story": { "en": "The team spends five minutes figuring out which Monday you meant. Your update loses its momentum.", "zh": "大家花了五分鐘搞清楚你說的是哪個星期一。你的報告氣勢全沒了。" },
+            "why": "「進行得很順利」是 is going well；有明確過去時間時用過去式 approved，不用 have approved；last Monday 前面不加 on。最簡單的說法：We're on track.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_priya", "expr": "happy", "en": "Great! So we're still opening on the fifteenth? I've already planned the social media posts.", "zh": "太好了！所以我們還是十五號開幕嗎？我已經排好社群貼文了。" }
+      ],
+      "choices": [
+        {
+          "en": "That's the plan, but we've run into an issue. The pendant lamps are delayed two weeks.",
+          "zh": "原本是這樣規劃，但我們遇到了一個問題：吊燈會晚兩週到貨。",
+          "ok": true,
+          "tip": "We've run into an issue. 冷靜地帶出問題，再馬上說明是什麼問題。"
+        },
+        {
+          "en": "Yes, but the lamps have some situation. Maybe they cannot come on time.",
+          "zh": "對，但是吊燈出了一些狀況。可能沒辦法準時到。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_priya", "expr": "confused", "en": "A situation? What kind of situation? Are the lamps okay?", "zh": "狀況？什麼樣的狀況？吊燈還好嗎？" }
+            ],
+            "title": { "en": "Situation Room", "zh": "狀況室" },
+            "story": { "en": "\"Situation\" sounds serious. Priya imagines a warehouse fire, and Daniel starts calling other suppliers.", "zh": "situation 聽起來很嚴重。普莉雅以為倉庫失火了，丹尼爾已經開始打給其他供應商。" },
+            "why": "「出了狀況」直譯成 have some situation 很模糊，聽起來像出了大事。說清楚：We've run into an issue. The lamps are delayed two weeks.。"
+          }
+        },
+        {
+          "en": "Yes! Don't worry, everything is perfect. You can post whatever you want.",
+          "zh": "對！別擔心，一切都很完美。妳想發什麼貼文都可以。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Kai, the supplier emailed me this morning about a delay. Is everything really perfect?", "zh": "凱，供應商今天早上寫信跟我說會延遲。真的一切都很完美嗎？" }
+            ],
+            "title": { "en": "Too Good to Be True", "zh": "好得不像真的" },
+            "story": { "en": "The room goes quiet. Hiding the bad news did not make it go away. It just made it arrive with your manager.", "zh": "會議室一片安靜。隱瞞壞消息不會讓它消失，只是讓它從主管口中說出來。" },
+            "why": "報喜不報憂會讓團隊來不及應變，也會失去主管的信任。早點說出問題：That's the plan, but we've run into an issue.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_daniel", "expr": "confused", "en": "Two weeks? That's after the opening. So, what's the plan?", "zh": "兩週？那就是開幕之後了。那接下來怎麼辦？" }
+      ],
+      "choices": [
+        {
+          "en": "We have similar lamps in stock. We could use those for the opening, then swap them later.",
+          "zh": "我們有類似的吊燈庫存。開幕時可以先用那些，之後再換掉。",
+          "ok": true,
+          "tip": "報告問題時，一定要同時帶著方案，用 We could... 提出來讓大家討論。"
+        },
+        {
+          "en": "I don't know yet. I'm waiting for Ms. Wong to decide. She's the manager, right?",
+          "zh": "我還不知道。我在等王經理決定。她是主管，對吧？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "I'd like to hear your ideas first, Kai. It's your project.", "zh": "我想先聽聽你的想法，凱。這是你負責的案子。" }
+            ],
+            "title": { "en": "Pass the Ball", "zh": "球傳回主管" },
+            "story": { "en": "Ms. Wong makes the plan herself. Afterward, she asks you to \"come with solutions next time.\"", "zh": "王經理自己想了方案。會後，她提醒你「下次帶著解決辦法來」。" },
+            "why": "在很多英語系職場，負責專案的人要主動提方案，不是等主管決定。用 We could... 提出你的想法，再請大家給意見。"
+          }
+        },
+        {
+          "en": "Well, there was a big storm near the factory last week. It rained for five days.",
+          "zh": "嗯，上週工廠附近有一場大暴風雨，連續下了五天雨。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Okay, but I asked about the plan, not the weather.", "zh": "好，但我問的是方案，不是天氣。" }
+            ],
+            "title": { "en": "Weather Report", "zh": "氣象報告" },
+            "story": { "en": "You give a full weather report for a city none of you have visited. The plan still doesn't exist.", "zh": "你把一個大家都沒去過的城市的天氣報告得一清二楚。方案還是沒有。" },
+            "why": "對方問 What's the plan? 時，要直接回答方案，不是解釋原因。說 We could use... for the opening.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_priya", "expr": "neutral", "en": "Smart. But will the client be okay with that?", "zh": "好主意。但客戶能接受嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Good question. I'll call them today and let everyone know by tomorrow.",
+          "zh": "好問題。我今天會打給客戶確認，明天前讓大家知道結果。",
+          "ok": true,
+          "tip": "不確定答案時，說明你會怎麼確認、什麼時候回覆，比亂猜更可靠。"
+        },
+        {
+          "en": "That's not my problem. The client should be happy we have any lamps at all.",
+          "zh": "那不是我的問題。客戶應該慶幸我們還有燈可以用。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_priya", "expr": "upset", "en": "Well, it'll be our problem if they say no.", "zh": "嗯，如果他們不接受，就會變成我們的問題。" }
+            ],
+            "title": { "en": "Not My Problem", "zh": "事不關己" },
+            "story": { "en": "Ms. Wong writes something down and doesn't say anything. That's somehow worse.", "zh": "王經理默默寫下了一些東西，什麼也沒說。這好像更可怕。" },
+            "why": "That's not my problem. 聽起來很不負責任。不確定時說 Good question. I'll check and let everyone know by...。"
+          }
+        },
+        {
+          "en": "I think they will okay. If they doesn't agree, we can think other way.",
+          "zh": "我想他們會接受。如果他們不同意，我們可以想別的辦法。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_priya", "expr": "confused", "en": "You think? So... has anyone actually asked them?", "zh": "你覺得？所以……到底有沒有人真的問過他們？" }
+            ],
+            "title": { "en": "Best Guess", "zh": "全憑猜測" },
+            "story": { "en": "Nobody is sure if the client knows anything. Priya puts her social media posts on hold, just in case.", "zh": "沒人確定客戶到底知不知道。普莉雅為了保險起見，先把社群貼文暫停了。" },
+            "why": "will 後面要加 be：They will be okay.；they 用 don't，不是 doesn't；「想別的辦法」是 think of another way。與其猜，不如說 I'll call them today.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Good. Anything else before we wrap up?", "zh": "很好。結束前還有其他事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Next steps are calling the client today and updating the timeline by Friday.",
+          "zh": "有。接下來的步驟是今天打給客戶，星期五前更新時程表。",
+          "ok": true,
+          "tip": "報告結尾用 Next steps are... 整理待辦事項和時間，讓大家清楚接下來誰要做什麼。"
+        },
+        {
+          "en": "No, that's all. Thank you for your listening. Thank you for your time.",
+          "zh": "沒有了，就這樣。謝謝大家的聆聽。謝謝大家的時間。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Thank you. So... who's calling the client?", "zh": "謝謝。所以……誰要打給客戶？" }
+            ],
+            "title": { "en": "Triple Call", "zh": "三通重複的電話" },
+            "story": { "en": "No one is sure who's calling the client, so three people do. Harbor Café gets three calls in one hour.", "zh": "沒人確定誰要打給客戶，結果三個人都打了。Harbor Café 一小時內接到三通電話。" },
+            "why": "「謝謝聆聽」直譯成 Thank you for your listening 不自然，要說 Thanks for listening.。但報告結尾最重要的是說清楚：Next steps are...。"
+          }
+        },
+        {
+          "en": "No, I'm done. That's everything. Can I go back to my seat now?",
+          "zh": "沒有，我講完了，就這些。我現在可以回座位了嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Ha, sure. But wait, what happens next?", "zh": "哈，當然可以。不過等等，接下來要做什麼？" }
+            ],
+            "title": { "en": "Escape Plan", "zh": "逃跑計畫" },
+            "story": { "en": "You sound like a student after a class presentation. Ms. Wong spends the last five minutes listing the next steps herself.", "zh": "你聽起來像剛上台報告完的學生。最後五分鐘，王經理只好自己把接下來的步驟列出來。" },
+            "why": "急著結束會讓前面的報告顯得沒有收尾。最後用 Next steps are... 整理待辦事項，再說 That's all from me.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c08_daniel", "expr": "happy", "en": "Clear and honest. Nice update, Kai.", "zh": "清楚又誠實。報告得很好，凱。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Agreed. One month in, and you're already running meetings like a pro.", "zh": "同意。才一個月，你主持會議已經很有架勢了。" }
+    ],
+    "title": { "en": "One Month Strong", "zh": "一個月，穩穩的" },
+    "story": { "en": "The client says yes to the temporary lamps, and Harbor Café opens on the fifteenth. Your first month at Brightway is officially a success.", "zh": "客戶同意先用替代吊燈，Harbor Café 如期在十五號開幕。你在 Brightway 的第一個月，正式圓滿成功。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "We're on track.",
+      "zh": "進度符合預期。",
+      "explain": "報告進度最常用的開場，表示一切照計畫進行。落後可以說 We're a bit behind schedule.，超前說 We're ahead of schedule.。",
+      "example": { "en": "Overall, we're on track to finish by June.", "zh": "整體來說，我們會照計畫在六月前完成。" }
+    },
+    {
+      "type": "phrase",
+      "en": "We've run into an issue.",
+      "zh": "我們遇到了一個問題。",
+      "explain": "冷靜帶出壞消息的說法，比 We have a big problem 更專業。說完馬上說明是什麼問題，以及你的方案。",
+      "example": { "en": "We've run into an issue with the delivery date.", "zh": "我們在交貨日期上遇到了一個問題。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Next steps are...",
+      "zh": "接下來的步驟是……",
+      "explain": "報告或會議結尾時整理待辦事項，最好說清楚誰要做什麼、什麼時候完成。",
+      "example": { "en": "Next steps are finishing the draft and sending it to the client by Friday.", "zh": "接下來的步驟是完成草稿，並在星期五前寄給客戶。" }
+    },
+    {
+      "type": "trap",
+      "en": "Thank you for your listening.",
+      "zh": "謝謝您的聆聽。（直譯陷阱）",
+      "explain": "listening 前面不加 your，自然的說法是 Thanks for listening. 或 Thank you for your time.。在內部會議裡，結尾說 That's all from me. 就很得體。",
+      "example": { "en": "That's all from me. Thanks for listening.", "zh": "我的報告就到這裡，謝謝大家。" }
+    },
+    {
+      "type": "culture",
+      "en": "Bottom line first",
+      "zh": "先講結論",
+      "explain": "英語職場報告習慣先講結論，再補細節，壞消息也要早點說。按時間順序從頭講，或報喜不報憂，都會讓聽的人抓不到重點、來不及應變。",
+      "example": { "en": "Bottom line: we're on schedule, but the budget is tight.", "zh": "結論是：進度正常，但預算很吃緊。" }
+    }
+  ]
+}

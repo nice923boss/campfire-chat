@@ -1,0 +1,72 @@
+{
+  "c02_grocer": {
+    "name": "Ben",
+    "nameZh": "班",
+    "role": { "en": "Supermarket staff", "zh": "超市店員" },
+    "gender": "male",
+    "appearance": "young man in his mid 20s, short curly brown hair, forest green store apron over a gray t-shirt, pencil tucked behind one ear, sturdy helpful vibe"
+  },
+  "c02_baker": {
+    "name": "Rosa",
+    "nameZh": "羅莎",
+    "role": { "en": "Baker", "zh": "麵包師傅" },
+    "gender": "female",
+    "appearance": "woman in her early 50s, curly auburn hair tied up under a red bandana, flour-dusted white apron over a cream blouse, rolled-up sleeves, warm motherly vibe"
+  },
+  "c02_agent": {
+    "name": "Dennis",
+    "nameZh": "丹尼斯",
+    "role": { "en": "Transit ticket agent", "zh": "公車站務員" },
+    "gender": "male",
+    "appearance": "man in his late 30s, short neat black hair, thick black-framed glasses, navy blue transit uniform vest over a light blue shirt, lanyard with a transit card, patient steady vibe"
+  },
+  "c02_pharmacist": {
+    "name": "Ms. Cho",
+    "nameZh": "趙藥師",
+    "role": { "en": "Pharmacist", "zh": "藥師" },
+    "gender": "female",
+    "appearance": "woman in her mid 40s, short layered black hair, white pharmacist coat over a lavender blouse, reading glasses pushed up on her head, calm reassuring vibe"
+  },
+  "c02_attendant": {
+    "name": "Doris",
+    "nameZh": "桃樂絲",
+    "role": { "en": "Laundromat attendant", "zh": "自助洗衣店店員" },
+    "gender": "female",
+    "appearance": "woman in her early 70s, short permed silver hair, pink knit cardigan over a floral apron, reading glasses on a beaded chain, chatty neighborly vibe"
+  },
+  "c02_postal": {
+    "name": "Gary",
+    "nameZh": "蓋瑞",
+    "role": { "en": "Post office clerk", "zh": "郵局職員" },
+    "gender": "male",
+    "appearance": "man in his early 60s, thinning white hair, round wire-rimmed glasses, red post office uniform vest over a white shirt, pen clipped to his chest pocket, patient old-fashioned vibe"
+  },
+  "c02_assistant": {
+    "name": "Chloe",
+    "nameZh": "克蘿伊",
+    "role": { "en": "Shop assistant", "zh": "服飾店店員" },
+    "gender": "female",
+    "appearance": "young woman in her mid 20s, long straight light brown hair with curtain bangs, black turtleneck and high-waisted beige trousers, measuring tape draped around her neck, trendy fashion-savvy vibe"
+  },
+  "c02_cashier": {
+    "name": "Jake",
+    "nameZh": "傑克",
+    "role": { "en": "Fast food cashier", "zh": "速食店店員" },
+    "gender": "male",
+    "appearance": "teenage boy around 18, short spiky black hair, red and yellow fast food uniform with a matching cap, headset microphone, energetic part-timer vibe"
+  },
+  "c02_barber": {
+    "name": "Tony",
+    "nameZh": "東尼",
+    "role": { "en": "Barber", "zh": "理髮師" },
+    "gender": "male",
+    "appearance": "man in his mid 30s, slicked-back black hair with a neat fade, trimmed beard, black barber apron over a white t-shirt, small comb tattoo on his forearm, cool confident vibe"
+  },
+  "c02_banker": {
+    "name": "Ms. Song",
+    "nameZh": "宋專員",
+    "role": { "en": "Bank officer", "zh": "銀行行員" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, sleek low ponytail, navy blue business suit with a light blue scarf tied at the neck, thin silver watch, polished professional vibe"
+  }
+}

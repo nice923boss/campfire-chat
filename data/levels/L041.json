@@ -1,0 +1,225 @@
+{
+  "id": "L041",
+  "location": { "en": "Maple Bay Central Station, ticket counter", "zh": "楓灣中央車站，售票窗口" },
+  "goal": { "en": "Buy round-trip train tickets to Port Aurora for you, Mia and Leo.", "zh": "幫你、米亞和里歐買到去極光港的來回火車票。" },
+  "background": "old train station ticket hall, wooden ticket counter with a glass window, brass railings, tall arched windows, wooden benches, polished stone floor, soft morning light",
+  "cast": ["c05_clerk", "mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "Saturday morning at Maple Bay Central Station. You, Mia and Leo are finally taking a five-day trip.", "zh": "星期六早上，楓灣中央車站。你、米亞和里歐終於要來一趟五天的小旅行。" },
+    { "who": "mia", "expr": "happy", "en": "Port Aurora, here we come! Kai, you're buying the tickets, right?", "zh": "極光港，我們來啦！凱，票是你負責買對吧？" },
+    { "who": "leo", "expr": "happy", "en": "Good practice for you. We'll guard the snacks.", "zh": "對你來說是好練習。我們負責顧零食。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_clerk", "expr": "neutral", "en": "Good morning. Where are you traveling to today?", "zh": "早安。今天要去哪裡呢？" }
+      ],
+      "choices": [
+        {
+          "en": "Three tickets to Port Aurora, please.",
+          "zh": "麻煩三張到極光港的票。",
+          "ok": true,
+          "tip": "買票時用「數量 + tickets to + 地點 + please」，一句就說清楚。"
+        },
+        {
+          "en": "Three people go Port Aurora.",
+          "zh": "三個人去極光港。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_clerk", "expr": "confused", "en": "Three people go... Is that a question? Do you need tickets, or directions?", "zh": "三個人去……這是問句嗎？你是要買票，還是要問路？" }
+            ],
+            "title": { "en": "Directions Instead", "zh": "買票變問路" },
+            "story": { "en": "Mr. Dawson kindly pulls out a map and explains how to walk to Port Aurora. It is 200 kilometers away.", "zh": "道森先生好心拿出地圖，仔細解釋怎麼走路去極光港。那裡在兩百公里外。" },
+            "why": "「三個人去極光港」照中文詞序直譯，英文聽起來像在描述一件事，不像在買票。買票要說 Three tickets to Port Aurora, please.。"
+          }
+        },
+        {
+          "en": "Port Aurora. Three. Quick, our train leaves soon.",
+          "zh": "極光港。三張。快點，我們的車快開了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_clerk", "expr": "upset", "en": "Quick, is it? Well. I'll just finish my tea first.", "zh": "快點是吧？好喔。那我先把茶喝完。" }
+            ],
+            "title": { "en": "Tea Time", "zh": "下午茶時間" },
+            "story": { "en": "Mr. Dawson sips his tea very, very slowly. Mia and Leo watch the clock with you.", "zh": "道森先生非常、非常緩慢地喝著茶。米亞和里歐陪你一起盯著時鐘。" },
+            "why": "只丟幾個字再加一句「快點」，聽起來像在命令對方。就算趕時間，也要先說完整的請求：Three tickets to Port Aurora, please.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_clerk", "expr": "neutral", "en": "Three to Port Aurora. One way or round trip?", "zh": "三張到極光港。單程還是來回？" }
+      ],
+      "choices": [
+        {
+          "en": "Round trip, please. We're coming back Wednesday.",
+          "zh": "來回，謝謝。我們星期三回來。",
+          "ok": true,
+          "tip": "round trip 是來回票，順便說回程日期，售票員更好處理。"
+        },
+        {
+          "en": "Come-and-go tickets, please. Three of them, okay?",
+          "zh": "麻煩給我「來去票」，三張，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_clerk", "expr": "confused", "en": "Come and go? You mean you're coming back here?", "zh": "來來去去？你是說你們還會回來這裡？" }
+            ],
+            "title": { "en": "Charades at the Counter", "zh": "櫃檯比手畫腳" },
+            "story": { "en": "You spend five minutes acting out \"going\" and \"coming back\" with your hands. Leo films the whole thing.", "zh": "你花了五分鐘用手比出「去」和「回來」。里歐全程錄影。" },
+            "why": "「來回票」直譯成 come-and-go tickets，英文沒有這種說法。來回票叫 round trip（英式說 return），單程是 one way。"
+          }
+        },
+        {
+          "en": "Yes, please.",
+          "zh": "好，麻煩了。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_clerk", "expr": "confused", "en": "Yes... to which one? One way, or round trip?", "zh": "好……是哪一個？單程，還是來回？" }
+            ],
+            "title": { "en": "The Yes Loop", "zh": "無限 Yes 迴圈" },
+            "story": { "en": "He asks again. You say yes again. This goes on until Mia steps in and answers for you.", "zh": "他再問一次，你又回答 Yes。就這樣來回好幾輪，最後米亞出手幫你回答。" },
+            "why": "「A or B?」是選擇題，不能用 Yes 回答，要直接選一個：Round trip, please. 或 One way, please.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_clerk", "expr": "neutral", "en": "That's $84 for three. Window or aisle seats?", "zh": "三張總共 84 元。要靠窗還是靠走道？" },
+        { "who": "mia", "expr": "happy", "en": "Window! I want to see the ocean.", "zh": "靠窗！我想看海。" }
+      ],
+      "choices": [
+        {
+          "en": "Could we have three window seats together?",
+          "zh": "可以給我們三個連在一起的靠窗位子嗎？",
+          "ok": true,
+          "tip": "Could we have...? 是禮貌的請求句型，together 表示座位要連在一起。"
+        },
+        {
+          "en": "Can we sitting near the window, all three?",
+          "zh": "我們三個可以坐在窗邊嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_clerk", "expr": "confused", "en": "Can you... sitting? I'll guess. Window seats it is.", "zh": "可以……坐著？我猜猜看。那就靠窗吧。" }
+            ],
+            "title": { "en": "Three Windows, Three Cars", "zh": "三扇窗，三節車廂" },
+            "story": { "en": "You do get three window seats, in three different cars. The three of you text each other the whole ride.", "zh": "你們真的拿到三個靠窗位子，只是分在三節不同車廂。整趟車程你們只能互傳訊息。" },
+            "why": "can 後面要接原形動詞，不能接 sitting。可以說 Can we sit by the window?，或更禮貌的 Could we have window seats together?"
+          }
+        },
+        {
+          "en": "Any seats. Can you give us a cheaper price?",
+          "zh": "隨便都好。可以算我們便宜一點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_clerk", "expr": "upset", "en": "This is a train station, not a flea market. The price is the price.", "zh": "這裡是車站，不是跳蚤市場。價錢就是這樣。" }
+            ],
+            "title": { "en": "No Deal", "zh": "沒得談" },
+            "story": { "en": "The people in line behind you start to whisper. You pay full price, plus a little embarrassment.", "zh": "後面排隊的人開始竊竊私語。你付了全額，外加一點點尷尬。" },
+            "why": "車站、超市這類定價的地方不議價，開口殺價會很尷尬。想省錢可以問有沒有優惠：Is there a student discount?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_clerk", "expr": "neutral", "en": "Here are your tickets. The train leaves at 9:40.", "zh": "這是你們的票。火車 9 點 40 分開。" },
+        { "who": "leo", "expr": "neutral", "en": "Twenty minutes left. Ask him where we go!", "zh": "還剩二十分鐘。問他我們要去哪裡搭！" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you. Which platform does it leave from?",
+          "zh": "謝謝。火車從哪個月台出發？",
+          "ok": true,
+          "tip": "問月台用 Which platform does it leave from?，句尾的 from 別忘了。"
+        },
+        {
+          "en": "Thanks. Which moon platform is the train at?",
+          "zh": "謝謝。火車在哪個「月台」？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_clerk", "expr": "confused", "en": "Moon platform? We only have the regular kind, I'm afraid.", "zh": "月亮平台？我們這裡恐怕只有普通的那種。" }
+            ],
+            "title": { "en": "Fly Me to the Moon", "zh": "帶我飛向月球" },
+            "story": { "en": "By the time you both work out what you meant, your 9:40 train is pulling away. The next one leaves at 11:40.", "zh": "等你們終於搞懂彼此的意思，9 點 40 分的火車已經開走了。下一班是 11 點 40 分。" },
+            "why": "「月台」直譯成 moon platform 會讓人一頭霧水，英文就叫 platform。可以問 Which platform does it leave from?"
+          }
+        },
+        {
+          "en": "Thanks. The train is leave from which platform?",
+          "zh": "謝謝。火車是從哪個月台離開？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_clerk", "expr": "confused", "en": "The train is... leave? Sorry, could you say that again?", "zh": "火車是……離開？抱歉，可以再說一次嗎？" }
+            ],
+            "title": { "en": "Race to Platform 3", "zh": "衝刺第三月台" },
+            "story": { "en": "You repeat the question three times while the clock ticks. The three of you sprint and jump on just as the doors close.", "zh": "你重複問了三次，時間一分一秒過去。你們三個一路狂奔，在車門關上前一秒跳上車。" },
+            "why": "英文疑問句要把疑問詞放句首，而且 is 不能接原形動詞 leave。正確說法是 Which platform does the train leave from?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_clerk", "expr": "happy", "en": "Platform 3, just down those stairs. Enjoy Port Aurora!", "zh": "第三月台，下樓梯就到了。祝你們在極光港玩得愉快！" },
+      { "who": "mia", "expr": "happy", "en": "Window seats, all together! Kai, you're the best.", "zh": "靠窗而且坐在一起！凱，你最棒了。" }
+    ],
+    "title": { "en": "All Aboard", "zh": "全員上車" },
+    "story": { "en": "Ten minutes later, the three of you sit side by side as the coast rolls past the window. Port Aurora, here you come.", "zh": "十分鐘後，你們三個並肩坐著，看海岸線在窗外一路展開。極光港，我們來了。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Three tickets to Port Aurora, please.",
+      "zh": "麻煩三張到極光港的票。",
+      "explain": "買票的萬用句型：數量 + ticket(s) to + 地點 + please。不必說 I want to buy，直接講需求就很自然。",
+      "example": { "en": "Two tickets to Lakeside, please.", "zh": "麻煩兩張到湖畔站的票。" }
+    },
+    {
+      "type": "vocab",
+      "en": "one way / round trip",
+      "zh": "單程／來回",
+      "explain": "美式說 round trip，英式說 return。被問 One way or round trip? 時，直接選一個回答。",
+      "example": { "en": "A round trip to Port Aurora, please. We're back on Wednesday.", "zh": "一張到極光港的來回票，我們星期三回來。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could we have window seats together?",
+      "zh": "可以給我們連在一起的靠窗位子嗎？",
+      "explain": "window seat 是靠窗座位，aisle seat 是靠走道座位。Could we have...? 是禮貌請求，比 I want... 柔和。",
+      "example": { "en": "Could I have an aisle seat, please?", "zh": "可以給我靠走道的位子嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Which platform does it leave from?",
+      "zh": "從哪個月台出發？",
+      "explain": "月台就是 platform，不要直譯成 moon platform。疑問詞放句首，再用 does 幫忙，不能說 The train is leave from which platform?",
+      "example": { "en": "Excuse me, which platform does the 9:40 train leave from?", "zh": "請問 9 點 40 分的火車從哪個月台出發？" }
+    },
+    {
+      "type": "culture",
+      "en": "Fixed prices, no bargaining.",
+      "zh": "定價的地方不殺價。",
+      "explain": "車站、超市、連鎖店都是定價，開口殺價會很失禮。想省錢，可以禮貌地問有沒有學生或團體優惠。",
+      "example": { "en": "Excuse me, is there a student discount?", "zh": "請問有學生優惠嗎？" }
+    }
+  ]
+}

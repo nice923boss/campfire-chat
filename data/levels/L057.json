@@ -1,0 +1,225 @@
+{
+  "id": "L057",
+  "location": { "en": "Exam room at Maple Bay Family Clinic", "zh": "楓灣家庭診所的診間" },
+  "goal": { "en": "Describe your symptoms clearly and ask about your medicine.", "zh": "清楚描述症狀，並詢問用藥的注意事項。" },
+  "background": "small clean doctor's exam room, padded exam table with a white paper cover, a rolling stool, a small sink and wooden cabinets, window with half-open blinds, calm soft daylight",
+  "cast": ["c06_doctor"],
+  "intro": [
+    { "who": "narrator", "en": "You're the first walk-in of the day. A nurse leads you into a small exam room.", "zh": "你是今天第一位現場候診的病人。護理師帶你走進一間小診間。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_doctor", "expr": "happy", "en": "Good morning. I'm Dr. Patel.", "zh": "早安，我是帕特爾醫師。" },
+        { "who": "c06_doctor", "expr": "neutral", "en": "So, what brings you in today?", "zh": "那麼，今天是哪裡不舒服呢？" }
+      ],
+      "choices": [
+        {
+          "en": "I've had a sore throat for three days, and it's getting worse.",
+          "zh": "我喉嚨痛三天了，而且越來越嚴重。",
+          "ok": true,
+          "tip": "I've had... for three days. 用現在完成式說明症狀持續多久，醫生最需要這個資訊。"
+        },
+        {
+          "en": "I think I have too much fire inside. My throat is very hot.",
+          "zh": "我覺得我火氣太大了。喉嚨很燥熱。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "Fire inside? Do you mean a fever? Or maybe heartburn?", "zh": "身體裡有火？你是說發燒嗎？還是胃食道逆流？" }
+            ],
+            "title": { "en": "Fire Alarm", "zh": "火災警報" },
+            "story": { "en": "Dr. Patel checks your stomach for heartburn first. Ten minutes later, your throat finally gets its turn.", "zh": "帕特爾醫師先檢查你的胃是不是胃酸逆流。十分鐘後，終於輪到你的喉嚨。" },
+            "why": "「上火」是中醫的概念，英語國家的醫生聽不懂。直接描述症狀和時間：I've had a sore throat for three days."
+          }
+        },
+        {
+          "en": "I have sore throat since three days. Now it's more and more bad.",
+          "zh": "我喉嚨痛從三天。現在越來越糟。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "Since three days... ago? Sorry, how long has this been going on?", "zh": "從三天……之前？抱歉，這情況持續多久了？" }
+            ],
+            "title": { "en": "Lost in Time", "zh": "時間迷路" },
+            "story": { "en": "Dr. Patel writes \"three weeks?\" in your chart. You spend the next five minutes trying to fix it.", "zh": "帕特爾醫師在病歷上寫了「三週？」。你花了五分鐘才把它更正過來。" },
+            "why": "症狀從過去持續到現在，要用現在完成式：I've had a sore throat for three days. for 接一段時間，since 接時間點；「越來越糟」是 getting worse。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_doctor", "expr": "neutral", "en": "I see. Any other symptoms? A cough, a fever, anything like that?", "zh": "了解。還有其他症狀嗎？咳嗽、發燒之類的？" }
+      ],
+      "choices": [
+        {
+          "en": "A little cough, and it hurts when I swallow. No fever, though.",
+          "zh": "有一點咳嗽，吞東西的時候會痛。不過沒有發燒。",
+          "ok": true,
+          "tip": "It hurts when I... 說出什麼動作會痛，再補一句沒有哪些症狀，醫生判斷更快。"
+        },
+        {
+          "en": "I don't know. You're the doctor. Shouldn't you find out?",
+          "zh": "我不知道。你才是醫生。不是應該你去查出來嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_doctor", "expr": "upset", "en": "I will. But it helps a lot when patients tell me how they feel.", "zh": "我會的。不過病人告訴我感覺如何，對我幫助很大。" }
+            ],
+            "title": { "en": "Twenty Questions", "zh": "是非題大考驗" },
+            "story": { "en": "Dr. Patel goes through a long list of yes-or-no questions. The visit takes twice as long, and the waiting room fills up.", "zh": "帕特爾醫師只好一題一題問是非題。看診時間多了一倍，候診室也坐滿了人。" },
+            "why": "醫生問症狀是要你描述感受，不是要你自己診斷。把感覺說出來就好：It hurts when I swallow."
+          }
+        },
+        {
+          "en": "A little cough, and my nose is running water. No fever, I think.",
+          "zh": "有一點咳嗽，還有流鼻水。應該沒發燒。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "Running water? Like a faucet? Oh, a runny nose. Okay.", "zh": "流水？像水龍頭那樣？喔，是流鼻水。好。" }
+            ],
+            "title": { "en": "Wrong Spray", "zh": "噴錯地方" },
+            "story": { "en": "Dr. Patel focuses on your nose and never asks about swallowing. You leave with nose spray for a throat problem.", "zh": "帕特爾醫師把重點放在鼻子，完全沒問到吞嚥的事。你帶著鼻噴劑回家，喉嚨卻還在痛。" },
+            "why": "「流鼻水」是 a runny nose 或 My nose is running.，不用加 water。也別忘了說最主要的症狀：It hurts when I swallow."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_doctor", "expr": "neutral", "en": "Let me take a look. Open wide and say \"ah.\"", "zh": "我看一下。嘴巴張大，說「啊」。" },
+        { "who": "narrator", "en": "Dr. Patel checks your throat with a small light.", "zh": "帕特爾醫師用小手電筒檢查你的喉嚨。" },
+        { "who": "c06_doctor", "expr": "neutral", "en": "It's a mild throat infection. I'll give you some medicine for five days. Any questions?", "zh": "是輕微的喉嚨發炎。我開五天的藥給你。有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Are there any side effects I should know about?",
+          "zh": "有。有什麼副作用是我需要知道的嗎？",
+          "ok": true,
+          "tip": "Are there any side effects? 拿新藥時一定要問，醫生會告訴你要注意什麼。"
+        },
+        {
+          "en": "Can I just get a shot instead? It works faster in Taiwan.",
+          "zh": "可以直接打一針嗎？在台灣打針好得比較快。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "A shot? We don't usually give shots for a sore throat. The pills will do the job.", "zh": "打針？喉嚨痛我們通常不打針。吃藥就夠了。" }
+            ],
+            "title": { "en": "Shot Down", "zh": "打針被打槍" },
+            "story": { "en": "You spend the rest of the visit trying to get a shot. You leave without asking a single question about your medicine.", "zh": "你把剩下的看診時間都花在爭取打針。離開時，關於藥的事你一個問題都沒問。" },
+            "why": "在台灣有些人覺得打針好得快，但在楓灣，喉嚨痛這種小病醫生很少打針。把握機會問用藥：Are there any side effects?"
+          }
+        },
+        {
+          "en": "Yes. Did this medicine have any side effects?",
+          "zh": "有。這個藥有副作用嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "Did it? Have you taken this before? Did you have a bad reaction?", "zh": "有過？你以前吃過這個藥嗎？當時有不良反應嗎？" }
+            ],
+            "title": { "en": "Allergy on Paper", "zh": "紙上過敏" },
+            "story": { "en": "Dr. Patel spends ten minutes asking about a reaction you never had. Now your chart says \"possible allergy.\"", "zh": "帕特爾醫師花了十分鐘詢問一個根本沒發生過的反應。現在你的病歷上寫著「疑似過敏」。" },
+            "why": "問「會不會有副作用」用現在式：Are there any side effects? 或 Does it have any side effects? 用過去式 Did，醫生會以為你以前吃過而且出過狀況。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_doctor", "expr": "neutral", "en": "Just a little drowsiness. Take one pill three times a day, after meals.", "zh": "只會有一點想睡。一天三次，每次一顆，飯後吃。" },
+        { "who": "c06_doctor", "expr": "happy", "en": "Get plenty of rest. You should feel better in about five days.", "zh": "多休息。大概五天左右就會好轉。" }
+      ],
+      "choices": [
+        {
+          "en": "Okay. Should I come back if I don't feel better by then?",
+          "zh": "好。如果到時候還沒好，我要再回來嗎？",
+          "ok": true,
+          "tip": "Should I come back if...? 先問好沒好轉時該怎麼辦，回家就不用擔心。"
+        },
+        {
+          "en": "Five days? Sorry, I can't stay home. I have a test next week.",
+          "zh": "五天？抱歉，我不能待在家。我下禮拜要考試。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "Oh, you don't need to stay home. I said you'll feel better in five days.", "zh": "喔，你不用待在家啦。我是說你大約五天會好轉。" }
+            ],
+            "title": { "en": "Misheard Orders", "zh": "聽錯醫囑" },
+            "story": { "en": "Dr. Patel explains it again, slowly. You nod, embarrassed, and forget to ask what to do if it doesn't get better.", "zh": "帕特爾醫師放慢速度再解釋一次。你尷尬地點頭，結果忘了問如果沒好轉該怎麼辦。" },
+            "why": "醫生說的是大約五天會好轉，不是要你在家休息五天。聽完先確認，再問後續：Should I come back if I don't feel better?"
+          }
+        },
+        {
+          "en": "After five days, if still not good, I come back see you?",
+          "zh": "五天後如果還是不好，我再回來看你？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_doctor", "expr": "confused", "en": "Come back and see me? Like... for coffee? Oh, you mean a follow-up visit.", "zh": "回來看我？像是……喝咖啡嗎？喔，你是說回診。" }
+            ],
+            "title": { "en": "Coffee with the Doctor", "zh": "跟醫生喝咖啡" },
+            "story": { "en": "Dr. Patel laughs, but the waiting room is full, so he hurries on to the next patient. You still aren't sure when to come back.", "zh": "帕特爾醫師笑了出來，但候診室已經坐滿，他只好趕著看下一位。你還是不確定什麼時候該回診。" },
+            "why": "照中文語序直譯，英文聽起來斷斷續續，see you 還像是要約對方見面。問回診要說 Should I come back if I don't feel better by then?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_doctor", "expr": "happy", "en": "Yes. And if you get a fever, come back right away. Feel better!", "zh": "對。如果開始發燒，就馬上回來。早日康復！" },
+      { "who": "narrator", "en": "You pick up your medicine at the pharmacy next door.", "zh": "你到隔壁的藥局領了藥。" }
+    ],
+    "title": { "en": "Doctor's Orders", "zh": "遵照醫囑" },
+    "story": { "en": "You take your pills, drink lots of water and go to bed early. By the weekend, you're singing in the shower again.", "zh": "你按時吃藥、多喝水、早點睡。到了週末，你又能在洗澡時哼歌了。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "I've had... for...",
+      "zh": "我已經……（一段時間）了",
+      "explain": "症狀從過去持續到現在，用現在完成式 have had。for 接一段時間（for three days），since 接時間點（since Monday）。",
+      "example": { "en": "I've had a headache since Monday.", "zh": "我從星期一就開始頭痛。" }
+    },
+    {
+      "type": "phrase",
+      "en": "It hurts when I...",
+      "zh": "我……的時候會痛",
+      "explain": "說出什麼動作會引起疼痛，醫生比較好判斷問題在哪裡。",
+      "example": { "en": "It hurts when I bend my knee.", "zh": "我彎膝蓋的時候會痛。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Are there any side effects?",
+      "zh": "有副作用嗎？",
+      "explain": "拿新藥時一定要問的一句。也可以接著問 Should I take it with food?（要飯後吃嗎？）",
+      "example": { "en": "Are there any side effects I should know about?", "zh": "有什麼副作用是我該知道的嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "symptoms",
+      "zh": "症狀",
+      "explain": "常見症狀：sore throat 喉嚨痛、cough 咳嗽、fever 發燒、runny nose 流鼻水、headache 頭痛。",
+      "example": { "en": "My symptoms started on Sunday night.", "zh": "我的症狀是星期天晚上開始的。" }
+    },
+    {
+      "type": "culture",
+      "en": "Fewer pills, no shots",
+      "zh": "藥比較少，也很少打針",
+      "explain": "在台灣看感冒常拿一大包藥，有時還會打針。楓灣的醫生通常只開必要的藥，輕微感冒甚至只叫你多休息、多喝水。",
+      "example": { "en": "Just rest and drink plenty of fluids.", "zh": "多休息，多補充水分就好。" }
+    }
+  ]
+}

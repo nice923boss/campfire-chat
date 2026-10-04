@@ -1,0 +1,264 @@
+{
+  "id": "L075",
+  "location": { "en": "Brightway office, glass meeting room", "zh": "Brightway 公司，玻璃會議室" },
+  "goal": { "en": "Share a different idea without making anyone lose face.", "zh": "提出不同意見，又不讓任何人難堪。" },
+  "background": "glass-walled meeting room with a round wooden table, several pendant lamp samples hanging low, a few loose amber bulbs, closed notebooks and pens, a potted fern, soft afternoon light",
+  "cast": ["ms_wong", "c08_daniel", "c08_priya"],
+  "intro": [
+    { "who": "narrator", "en": "The team is planning the lighting for Harbor Café's new shop. Daniel has just shown his idea.", "zh": "團隊正在規劃 Harbor Café 新分店的燈光。丹尼爾剛提出他的構想。" },
+    { "who": "c08_daniel", "expr": "happy", "en": "Dim amber light everywhere. Think candlelit bar. Cozy, warm, very stylish.", "zh": "全場都用昏暗的琥珀色燈光，想像一下燭光酒吧的感覺。溫馨、溫暖，又很有型。" },
+    { "who": "narrator", "en": "But you visited their first shop last week, and half the customers were working on laptops.", "zh": "可是你上週去過他們的第一家店，有一半的客人都在用筆電工作。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Kai, you visited their first shop. What are your thoughts?", "zh": "凱，你去過他們的第一家店。你怎麼看？" }
+      ],
+      "choices": [
+        {
+          "en": "I like the cozy feeling, but I noticed a lot of customers work on laptops there.",
+          "zh": "我喜歡這種溫馨的感覺，但我注意到那裡很多客人會用筆電工作。",
+          "ok": true,
+          "tip": "先肯定對方的優點，再用 but I noticed... 帶出你看到的事實，就不會像在否定對方。"
+        },
+        {
+          "en": "Honestly, I think it's a really bad idea. Nobody can work in a dark café like that.",
+          "zh": "老實說，我覺得這是個很爛的主意。在那麼暗的咖啡廳裡沒人能工作。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_daniel", "expr": "upset", "en": "A bad idea. Okay. Good to know.", "zh": "爛主意。好喔，了解了。" }
+            ],
+            "title": { "en": "Silent Room", "zh": "全場安靜" },
+            "story": { "en": "Nobody speaks for ten long seconds. Daniel stops making eye contact with you for the rest of the week.", "zh": "整整十秒沒人說話。接下來一整週，丹尼爾都不太跟你對上眼。" },
+            "why": "it's a bad idea 太直接，聽起來在否定對方這個人。先肯定再補充：I like..., but I noticed...。"
+          }
+        },
+        {
+          "en": "Daniel is the senior designer, so I think his idea must be right. I agree.",
+          "zh": "丹尼爾是資深設計師，所以我覺得他的想法一定是對的。我同意。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Hmm. But I asked what you saw at the shop, Kai.", "zh": "嗯……可是我問的是你在店裡看到了什麼，凱。" }
+            ],
+            "title": { "en": "The Unsaid Idea", "zh": "沒說出口的點子" },
+            "story": { "en": "The café opens with candlelit lighting. A month later, the client complains that nobody stays to work anymore.", "zh": "咖啡廳用燭光燈光開幕了。一個月後，客戶抱怨再也沒有人留下來工作了。" },
+            "why": "在很多英語系職場，主管問你的看法，是真的想聽，不是要你附和資深同事。有不同意見就說：I like..., but I noticed...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_daniel", "expr": "neutral", "en": "Sure, but people go to cafés for the atmosphere, not just to work.", "zh": "是沒錯，但大家去咖啡廳是為了氣氛，不只是為了工作。" }
+      ],
+      "choices": [
+        {
+          "en": "I see your point, but on my visit, most tables had someone studying or working.",
+          "zh": "我懂你的意思，但我去的那天，大部分的桌子都有人在讀書或工作。",
+          "ok": true,
+          "tip": "I see your point, but... 先承認對方的觀點有道理，再用自己看到的事實補充。"
+        },
+        {
+          "en": "I am agree with you, but most of people there is working, not for the atmosphere.",
+          "zh": "我同意你，但那邊大部分的人是在工作，不是為了氣氛。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Wait, so you agree with me? Great, then we'll go with amber.", "zh": "等等，所以你同意我？太好了，那就用琥珀色燈光。" }
+            ],
+            "title": { "en": "Agreed by Accident", "zh": "意外的同意" },
+            "story": { "en": "Daniel only hears the first three words. Your point gets lost, and the meeting moves on without it.", "zh": "丹尼爾只聽到前三個字。你的重點不見了，會議就這樣繼續往下走。" },
+            "why": "agree 是動詞，不加 am：I agree.；「大部分的人」是 most people 或 most of the people，動詞用 are。想表示不同意，用 I see your point, but...。"
+          }
+        },
+        {
+          "en": "Atmosphere is nice, but the reality is very cruel. People there need to work.",
+          "zh": "氣氛是很好，但現實是很殘酷的。那邊的人需要工作。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_priya", "expr": "confused", "en": "Cruel? Wow. It's... just a café, Kai.", "zh": "殘酷？哇。這只是……一家咖啡廳而已，凱。" }
+            ],
+            "title": { "en": "Cruel Reality", "zh": "殘酷的現實" },
+            "story": { "en": "The room laughs, but not with you. For the rest of the meeting, Priya calls the project \"the cruel café.\"", "zh": "大家都笑了，但不是跟著你笑。接下來的會議，普莉雅一直把這個案子叫做「殘酷咖啡廳」。" },
+            "why": "「現實很殘酷」直譯成 the reality is very cruel，在英文裡太戲劇化。說 I see your point, but on my visit... 用事實說話就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_priya", "expr": "neutral", "en": "Dim lighting does look amazing in photos, though. That's free marketing for them.", "zh": "不過昏暗的燈光拍照真的很好看耶。這對他們來說是免費的行銷。" }
+      ],
+      "choices": [
+        {
+          "en": "That's true. Have we considered warm light on the walls and brighter lamps over the tables?",
+          "zh": "沒錯。我們有沒有考慮過牆面用暖光，桌子上方用亮一點的燈？",
+          "ok": true,
+          "tip": "Have we considered...? 用問句提出替代方案，用 we 讓大家一起想，不會像在糾正別人。"
+        },
+        {
+          "en": "Speaking of photos, we should take a team photo for Instagram today! The lighting in here is great.",
+          "zh": "說到照片，我們今天應該拍張團體照放 Instagram！這裡的光線超好。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Maybe later, Kai. Let's get back to the café plan.", "zh": "晚點再說吧，凱。我們先回到咖啡廳的企劃。" }
+            ],
+            "title": { "en": "Filter Detour", "zh": "濾鏡大繞路" },
+            "story": { "en": "The meeting gets back on track, but without your idea. You did get a nice team photo, though.", "zh": "會議回到正軌，但你的點子沒被提出來。不過你倒是拍到一張很好看的團體照。" },
+            "why": "大家正在討論燈光方案時突然換話題，會讓你的意見錯過時機。先回應對方，再提出方案：That's true. Have we considered...?。"
+          }
+        },
+        {
+          "en": "Photos are not important. It's a café, not a studio. People come to drink coffee.",
+          "zh": "照片不重要。這是咖啡廳，不是攝影棚。大家是來喝咖啡的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_priya", "expr": "upset", "en": "Not important? Photos are half of my job, Kai.", "zh": "不重要？照片可是我一半的工作耶，凱。" }
+            ],
+            "title": { "en": "Lost an Ally", "zh": "失去盟友" },
+            "story": { "en": "Priya was on your side a minute ago. Now she's backing Daniel's amber plan, with great enthusiasm.", "zh": "一分鐘前普莉雅還站在你這邊。現在她熱烈支持丹尼爾的琥珀色方案。" },
+            "why": "說別人在意的事 not important，等於否定對方的工作。先說 That's true.，再用 Have we considered...? 把對方的需求也放進方案裡。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_daniel", "expr": "confused", "en": "Two kinds of lighting? Hmm. Wouldn't that cost a lot more?", "zh": "兩種燈光？嗯……那不是會貴很多嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Possibly, but our Halo lamps are fairly cheap. I could check the numbers if that helps.",
+          "zh": "有可能，但我們的 Halo 燈滿便宜的。如果有幫助的話，我可以算一下數字。",
+          "ok": true,
+          "tip": "possibly、fairly、I could 這類詞讓語氣變軟，再主動提出可以做的事，討論就能往前走。"
+        },
+        {
+          "en": "Maybe will cost more, but is not so expensive, I think. I can to check the price for you.",
+          "zh": "可能會比較貴，但我覺得沒有那麼貴。我可以幫你查一下價格。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "So... it costs more, but it isn't expensive? I'm lost.", "zh": "所以……會比較貴，但又不貴？我聽不懂了。" }
+            ],
+            "title": { "en": "Mixed Signals", "zh": "訊號混亂" },
+            "story": { "en": "Nobody is sure what you meant. Ms. Wong asks you to \"send something in writing,\" which is never a good sign.", "zh": "沒人確定你的意思。王經理請你「寫成書面寄給她」，這通常不是好兆頭。" },
+            "why": "句子要有主詞：It might cost more, but it's not that expensive.；can 後面直接接原形動詞，不加 to：I can check。"
+          }
+        },
+        {
+          "en": "Sorry, you're right. Maybe it's a stupid idea. Just forget I said anything.",
+          "zh": "抱歉，你說得對。也許這是個蠢主意。就當我什麼都沒說。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Wait, I actually liked that idea. Why give up so fast?", "zh": "等等，我其實滿喜歡那個點子的。怎麼這麼快就放棄？" }
+            ],
+            "title": { "en": "Retreat!", "zh": "全面撤退" },
+            "story": { "en": "Your idea was good, but you dropped it at the first question. The team goes with full amber lighting.", "zh": "你的點子很好，但第一個問題就讓你棄守。團隊最後決定全部用琥珀色燈光。" },
+            "why": "被提問不代表被否定，對方只是想多了解。不必馬上道歉撤回，用 Possibly, but... I could check... 繼續把想法說清楚。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "I like where this is going. Kai, could you work on this with Daniel?", "zh": "我喜歡這個方向。凱，你可以跟丹尼爾一起處理這件事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Of course. Daniel, would you be free tomorrow to go over it together?",
+          "zh": "當然。丹尼爾，你明天有空一起討論一下嗎？",
+          "ok": true,
+          "tip": "討論結束後主動約對方，展現你是想合作，不是想贏。"
+        },
+        {
+          "en": "Of course. See, Daniel? I told you my idea was better. Let's do it my way.",
+          "zh": "當然。你看吧，丹尼爾？我就說我的點子比較好。就照我的方式做吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_daniel", "expr": "upset", "en": "\"Your way.\" Sure. Let me know how that goes.", "zh": "「你的方式」。好啊，做得怎麼樣再跟我說。" }
+            ],
+            "title": { "en": "Victory Lap", "zh": "勝利遊行" },
+            "story": { "en": "You win the meeting but lose your partner. Daniel answers your emails with one word for a week.", "zh": "你贏了這場會議，卻失去了合作夥伴。整整一週，丹尼爾回你的信都只有一個字。" },
+            "why": "意見被採納後還強調「我贏了」，會讓對方很沒面子。說 Of course. Daniel, would you be free to go over it together? 把功勞變成合作。"
+          }
+        },
+        {
+          "en": "Of course. I will cooperate with Daniel very happily and do my best.",
+          "zh": "當然。我會很開心地配合丹尼爾，盡我最大的努力。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Cooperate? You make it sound like I'm a police officer.", "zh": "配合？你講得好像我是警察一樣。" }
+            ],
+            "title": { "en": "Under Investigation", "zh": "配合調查" },
+            "story": { "en": "Everyone laughs. Daniel starts calling your meetings \"interviews,\" and the joke lasts all month.", "zh": "大家都笑了。丹尼爾開始把你們的會議叫做「偵訊」，這個梗用了一整個月。" },
+            "why": "「配合」直譯成 cooperate 聽起來很正式，常用在配合調查、配合警方。同事之間說 work with 或 go over it together 就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c08_daniel", "expr": "happy", "en": "Tomorrow at ten works. And Kai, good catch on the laptop crowd.", "zh": "明天十點可以。還有凱，筆電族那點你觀察得很好。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Great teamwork, both of you.", "zh": "你們兩個合作得很好。" }
+    ],
+    "title": { "en": "Agree to Disagree", "zh": "求同存異" },
+    "story": { "en": "You disagreed, kept your facts clear, and nobody lost face. The final plan has warm walls, bright tables and two happy designers.", "zh": "你提出了不同意見，用事實說話，也沒讓任何人難堪。最後的方案有溫暖的牆面、明亮的桌面，還有兩位開心的設計師。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I see your point, but...",
+      "zh": "我懂你的意思，但……",
+      "explain": "先承認對方說得有道理，再提出不同看法。比直接說 I disagree 柔和很多，類似的還有 That's a good point, but...。",
+      "example": { "en": "I see your point, but I'm worried about the budget.", "zh": "我懂你的意思，但我擔心預算。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Have we considered...?",
+      "zh": "我們有沒有考慮過……？",
+      "explain": "用問句提出替代方案，用 we 讓大家一起想，聽起來像在討論，不像在糾正。後面接名詞或動名詞。",
+      "example": { "en": "Have we considered using a different supplier?", "zh": "我們有沒有考慮過換一家供應商？" }
+    },
+    {
+      "type": "vocab",
+      "en": "possibly / fairly / I could",
+      "zh": "緩衝語：可能／還算／我可以",
+      "explain": "possibly 讓肯定變得保留，fairly 讓程度變溫和，I could 讓提議變客氣。這些緩衝語能讓不同意見聽起來不刺耳。",
+      "example": { "en": "It's fairly simple. I could show you after lunch.", "zh": "這還算簡單。午餐後我可以示範給你看。" }
+    },
+    {
+      "type": "trap",
+      "en": "I am agree.",
+      "zh": "我同意。（文法陷阱）",
+      "explain": "agree 本身就是動詞，前面不加 am。正確說法是 I agree. 或 I don't agree.，要表達部分同意可以說 I partly agree.。",
+      "example": { "en": "I agree with you on the colors.", "zh": "顏色的部分我同意你。" }
+    },
+    {
+      "type": "culture",
+      "en": "Disagreement isn't disrespect.",
+      "zh": "不同意不等於不尊重。",
+      "explain": "在很多英語系職場，主管問你的想法，就是真心想聽，即使你是新人。只要語氣委婉、用事實說話，提出不同意見反而會被看作有貢獻。",
+      "example": { "en": "That's a fair point. Can I share a different view?", "zh": "這個觀點很合理。我可以分享一個不同的看法嗎？" }
+    }
+  ]
+}

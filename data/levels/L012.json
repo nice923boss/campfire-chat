@@ -1,0 +1,182 @@
+{
+  "id": "L012",
+  "location": { "en": "Rosa's Bakery, Old Town", "zh": "老城區的羅莎麵包店" },
+  "goal": { "en": "Buy bread for the week and a treat or two.", "zh": "買一週份的麵包，再挑一兩樣點心。" },
+  "background": "cozy neighborhood bakery with wooden shelves of fresh bread loaves, a glass display case of croissants and pies, warm hanging lamps, plain flour sacks in the corner, early morning",
+  "cast": ["c02_baker"],
+  "intro": [
+    { "who": "narrator", "en": "Mia told you about a bakery that smells like heaven. At eight a.m., you follow your nose there.", "zh": "米亞跟你說過，有一家麵包店香得不得了。早上八點，你循著香味找了過去。" },
+    { "who": "narrator", "en": "Warm bread fills the shelves, and a cheerful baker waves from behind the counter.", "zh": "架上擺滿熱騰騰的麵包，一位開朗的麵包師傅在櫃檯後向你揮手。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_baker", "expr": "happy", "en": "Good morning! Everything's fresh out of the oven. What can I get you?", "zh": "早安！全部都是剛出爐的。要買什麼呢？" }
+      ],
+      "choices": [
+        {
+          "en": "A loaf of white bread, please.",
+          "zh": "一條白吐司，謝謝。",
+          "ok": true,
+          "tip": "a loaf of bread 是「一條麵包」，買整條吐司或麵包都這樣說。"
+        },
+        {
+          "en": "One whole white toast, please.",
+          "zh": "一整條白吐司，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_baker", "expr": "confused", "en": "Toast? Sure, I can toast a slice for you. Butter?", "zh": "烤吐司？好啊，我幫你烤一片。要加奶油嗎？" }
+            ],
+            "title": { "en": "One Lonely Slice", "zh": "孤單的一片" },
+            "story": { "en": "Five minutes later, you're holding one warm slice of buttered toast. Delicious, but it won't last the week.", "zh": "五分鐘後，你手裡拿著一片熱騰騰的奶油烤吐司。很好吃，但撐不過一個星期。" },
+            "why": "台灣說的「吐司」，英文是 bread 或 sliced bread，toast 是「烤過的麵包片」。要買一整條就說 A loaf of white bread, please.。"
+          }
+        },
+        {
+          "en": "Give me white bread. Quick.",
+          "zh": "給我白麵包，快點。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_baker", "expr": "upset", "en": "Quick? Well, good bread takes time, you know.", "zh": "快點？好麵包是需要時間的。" }
+            ],
+            "title": { "en": "No Cookie for You", "zh": "沒有小餅乾" },
+            "story": { "en": "She serves you in polite silence. Every other customer gets a free cookie and a smile. You get a receipt.", "zh": "她客氣但沉默地幫你結帳。其他客人都拿到一塊免費小餅乾和一個笑容，你只拿到一張收據。" },
+            "why": "Give me... 再加上 Quick. 聽起來像在命令店員。點餐用「東西 + please」或 I'll have... 就好，例如 A loaf of white bread, please.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_baker", "expr": "happy", "en": "One loaf. Anything else? The croissants just came out.", "zh": "一條吐司。還要別的嗎？可頌剛出爐喔。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, can I get two of those?",
+          "zh": "要，可以給我那個兩個嗎？",
+          "ok": true,
+          "tip": "叫不出名字也沒關係，指著說 two of those（那個兩個）就能點。"
+        },
+        {
+          "en": "Yes, two croissant, please.",
+          "zh": "好，兩個可頌。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_baker", "expr": "confused", "en": "A croissant? Or two? Sorry, it's a bit noisy in here.", "zh": "一個可頌？還是兩個？抱歉，這裡有點吵。" }
+            ],
+            "title": { "en": "Half and Half", "zh": "一人一半" },
+            "story": { "en": "You nod at the wrong moment. You walk home with one croissant, and Mia gets the bigger half.", "zh": "你在錯的時間點了頭，最後只帶了一個可頌回家，米亞還分走了比較大的那一半。" },
+            "why": "two 後面的名詞要加複數 s：two croissants，少了 s 很容易聽錯。更簡單的方法是指著說 Can I get two of those?。"
+          }
+        },
+        {
+          "en": "Sure, let me grab them myself.",
+          "zh": "好，我自己拿就好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_baker", "expr": "upset", "en": "Oh! Please don't reach in there. I'll get them for you.", "zh": "喔！請不要把手伸進去，我來幫你拿。" }
+            ],
+            "title": { "en": "Hands Off the Pastry", "zh": "手別伸進去" },
+            "story": { "en": "Everyone in line watches you pull your hand back from the display case. You get your croissants, plus a short talk about food hygiene.", "zh": "排隊的人都看著你把手從展示櫃裡縮回來。你拿到了可頌，外加一段食品衛生小講座。" },
+            "why": "台灣很多麵包店是自己拿托盤和夾子，但櫃檯式麵包店要由店員幫你拿。指著想要的說 Can I get two of those? 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_baker", "expr": "happy", "en": "Two croissants. Oh, have you tried our apple pie?", "zh": "兩個可頌。對了，你吃過我們的蘋果派嗎？" },
+        { "who": "c02_baker", "expr": "neutral", "en": "It comes in small or large. Which would you like?", "zh": "有小的和大的，你要哪一種？" }
+      ],
+      "choices": [
+        {
+          "en": "I'll take a small one, thanks.",
+          "zh": "我要小的，謝謝。",
+          "ok": true,
+          "tip": "I'll take... 是決定要買時最自然的說法，one 可以代替剛才提到的東西。"
+        },
+        {
+          "en": "Yes, please! I love apple pie.",
+          "zh": "好啊！我超愛蘋果派。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_baker", "expr": "confused", "en": "Great! So... small or large?", "zh": "太好了！所以……小的還是大的？" }
+            ],
+            "title": { "en": "The Giant Pie", "zh": "巨無霸蘋果派" },
+            "story": { "en": "You say yes again. She boxes up the large one, big enough for ten people. Mia is thrilled. Your wallet is not.", "zh": "你又說了一次 yes，她就包了一個十人份的大蘋果派。米亞樂壞了，你的錢包可沒有。" },
+            "why": "Which would you like? 是要你二選一，不能只回答 Yes。直接說出選擇：I'll take a small one.。"
+          }
+        },
+        {
+          "en": "Any size is fine. I don't care.",
+          "zh": "什麼尺寸都行，我無所謂。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_baker", "expr": "upset", "en": "Oh. Well, I care about my pies.", "zh": "喔。可是我很在乎我的派。" }
+            ],
+            "title": { "en": "Pies Have Feelings", "zh": "蘋果派也有心" },
+            "story": { "en": "She hands you a small pie in silence. You're pretty sure she won't save you a croissant tomorrow.", "zh": "她默默遞給你一個小派。你很確定，明天她不會幫你留可頌了。" },
+            "why": "中文想說「都可以」，直譯成 I don't care. 卻像「我才不在乎」。想表達隨意就說 Either one is fine.，或直接選：I'll take a small one.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_baker", "expr": "happy", "en": "Here you go, all still warm. Come back anytime!", "zh": "給你，都還熱熱的。歡迎再來！" },
+      { "who": "narrator", "en": "You carry the warm bag home. Mia is going to be very, very happy.", "zh": "你提著溫熱的紙袋回家。米亞一定會開心得不得了。" }
+    ],
+    "title": { "en": "Fresh from the Oven", "zh": "剛出爐的幸福" },
+    "story": { "en": "Bread for the week, croissants for breakfast and a little apple pie for dessert. Not bad for one trip!", "zh": "一週份的麵包、早餐的可頌，再加一個飯後小蘋果派。這趟出門收穫滿滿！" }
+  },
+  "notes": [
+    {
+      "type": "vocab",
+      "en": "a loaf of bread",
+      "zh": "一條麵包",
+      "explain": "loaf 是一整條、一整個的麵包，複數是 loaves。一整條切片吐司是 a loaf of sliced bread。",
+      "example": { "en": "Can I get a loaf of whole wheat bread?", "zh": "我可以買一條全麥麵包嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "two of those",
+      "zh": "那個，兩個",
+      "explain": "叫不出東西的名字時，用手指著說 one of those / two of those 就能點，店員一看就懂。",
+      "example": { "en": "Can I get one of those and two of these?", "zh": "我要那個一個，這個兩個。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll take...",
+      "zh": "我要（買）……",
+      "explain": "決定購買時最自然的說法。one 可以代替剛提到的東西，例如 I'll take a small one.。",
+      "example": { "en": "I'll take the chocolate one, please.", "zh": "我要巧克力的，謝謝。" }
+    },
+    {
+      "type": "trap",
+      "en": "toast vs. bread",
+      "zh": "toast 是烤過的吐司",
+      "explain": "英文的 toast 是「烤過的麵包片」。整條沒烤過的吐司叫 bread 或 sliced bread。",
+      "example": { "en": "I'll buy a loaf of bread and make toast at home.", "zh": "我買一條吐司，回家自己烤。" }
+    },
+    {
+      "type": "trap",
+      "en": "I don't care.",
+      "zh": "我無所謂。（小心語氣）",
+      "explain": "中文的「都可以」直譯成 I don't care. 會聽起來冷淡又不耐煩。想表達隨和，說 Either one is fine. 比較得體。",
+      "example": { "en": "Small or large? Either one is fine, thanks.", "zh": "小的還是大的？都可以，謝謝。" }
+    }
+  ]
+}

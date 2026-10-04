@@ -1,0 +1,263 @@
+{
+  "id": "L086",
+  "location": { "en": "Harborview Hotel, lobby under renovation", "zh": "港景飯店，整修中的大廳" },
+  "goal": { "en": "Tell a client about a shipping delay and offer a plan.", "zh": "告知客戶出貨延遲，並提出應變方案。" },
+  "background": "grand hotel lobby under renovation, marble floor partly covered with protective sheets, ladders, empty ceiling fixture mounts, tall arched windows, stacked plain cardboard boxes, morning light",
+  "cast": ["ms_wong", "c09_hotel_director"],
+  "intro": [
+    { "who": "narrator", "en": "The Harborview Hotel signed with Brightway. But this morning, the factory called: the new lobby lights will arrive two weeks late.", "zh": "港景飯店和 Brightway 簽約了。但今天早上工廠來電：新的大廳燈具會晚兩週到貨。" },
+    { "who": "ms_wong", "expr": "neutral", "en": "Bad news doesn't get better with age, Kai. Tell her today, in person, and bring a plan.", "zh": "壞消息放越久只會越糟，凱。今天就當面告訴她，而且要帶著方案去。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "happy", "en": "Kai! Come in. I hope you're here to tell me the new lobby lights are right on schedule.", "zh": "凱！請進。希望你是來告訴我，新的大廳燈具一切照進度。" }
+      ],
+      "choices": [
+        {
+          "en": "I'm afraid I have some bad news. The shipment has been delayed by about two weeks.",
+          "zh": "恐怕我有個壞消息。這批貨會延遲大約兩週。",
+          "ok": true,
+          "tip": "I'm afraid I have some bad news. 先給對方心理準備，再直接說重點。"
+        },
+        {
+          "en": "Ha ha, about that... The weather is really nice today, isn't it? And your lobby is looking great.",
+          "zh": "哈哈，關於這個……今天天氣真好，對吧？您的大廳看起來很棒。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "The weather? Kai, what aren't you telling me?", "zh": "天氣？凱，你有什麼沒告訴我的？" }
+            ],
+            "title": { "en": "Weather Report", "zh": "氣象報告" },
+            "story": { "en": "Avoiding the news only makes it sound worse. Ms. Grant starts imagining that the factory has burned down.", "zh": "逃避壞消息只會讓它聽起來更糟。葛蘭特總監開始想像工廠是不是燒掉了。" },
+            "why": "傳達壞消息時拐彎抹角聊天氣，會讓對方更不安，也更不信任你。直接、溫和地說：I'm afraid I have some bad news.。"
+          }
+        },
+        {
+          "en": "Very sorry, there is a small problem happened. The goods cannot arrive on time, maybe.",
+          "zh": "很抱歉，發生了一個小問題。貨可能沒辦法準時到。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "A small problem? Maybe? Can they arrive on time or not?", "zh": "小問題？可能？到底能不能準時到？" }
+            ],
+            "title": { "en": "Maybe, Maybe Not", "zh": "可能，也可能不" },
+            "story": { "en": "Ms. Grant has to ask four questions to get one clear answer. Her patience runs out before your explanation does.", "zh": "葛蘭特總監問了四個問題才得到一個明確答案。你還沒解釋完，她的耐心先用完了。" },
+            "why": "there is 和 happened 不能同時用，要說 A problem has come up.；結尾加 maybe 也讓訊息更模糊。壞消息要清楚：The shipment has been delayed by about two weeks.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "upset", "en": "Two weeks? We reopen the lobby in ten days. How did this happen?", "zh": "兩週？我們十天後大廳就要重新開幕了。怎麼會這樣？" }
+      ],
+      "choices": [
+        {
+          "en": "Our supplier's factory had a power outage, which held up production. We should have warned you sooner.",
+          "zh": "我們供應商的工廠停電，耽誤了生產。我們應該更早通知您的。",
+          "ok": true,
+          "tip": "簡短說明原因，再用 We should have... 承擔沒及早通知的責任。"
+        },
+        {
+          "en": "It's not really our fault. The factory messed up, so you should complain to them, not us.",
+          "zh": "這其實不是我們的錯。是工廠搞砸的，所以您應該去跟他們抱怨，不是找我們。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "I don't have a contract with the factory, Kai. I have one with you.", "zh": "我跟工廠沒有合約，凱。我的合約是跟你們簽的。" }
+            ],
+            "title": { "en": "Not My Problem", "zh": "不關我的事" },
+            "story": { "en": "Ms. Grant reminds you who her contract is with. Ms. Wong reminds you again in the car.", "zh": "葛蘭特總監提醒你她的合約是跟誰簽的。回程車上，王經理又提醒了你一次。" },
+            "why": "對客戶來說，供應商的問題就是你的問題，推給工廠只會顯得不負責任。說明原因後承擔責任：We should have warned you sooner.。"
+          }
+        },
+        {
+          "en": "Sorry, I can't really say the reason. It's our company's internal matter, so it's not convenient to tell you.",
+          "zh": "抱歉，原因我不太方便說。這是我們公司的內部事務，不方便透露。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "Not convenient? It's very inconvenient for my hotel.", "zh": "不方便？對我的飯店來說才是非常不方便。" }
+            ],
+            "title": { "en": "Top Secret", "zh": "最高機密" },
+            "story": { "en": "Your secrecy makes Ms. Grant suspect something much worse. She asks her assistant to call two other lighting companies.", "zh": "你的保密讓葛蘭特總監懷疑事情更嚴重。她請助理打電話給另外兩家照明公司。" },
+            "why": "「不方便透露」在台灣是常見的婉拒，但西方客戶遇到延誤時期待透明的說明，含糊帶過會讓人更不信任。簡單說明原因：Our supplier's factory had a power outage.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "upset", "en": "So what am I supposed to do? I can't open a five-star lobby in the dark.", "zh": "那我該怎麼辦？我不能在一片漆黑中開幕五星級大廳。" }
+      ],
+      "choices": [
+        {
+          "en": "Here's what we can do. We'll install temporary fixtures free of charge, so you can open on time.",
+          "zh": "我們可以這樣做：免費安裝臨時燈具，讓您準時開幕。",
+          "ok": true,
+          "tip": "Here's what we can do. 把話題從問題轉向解決方案，讓客戶看到出路。"
+        },
+        {
+          "en": "Don't worry, we will think of a way. When the boat reaches the bridge, it will go straight naturally.",
+          "zh": "別擔心，我們會想辦法的。船到橋頭自然直。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "The boat... and the bridge? Kai, I need lights, not riddles.", "zh": "船……和橋？凱，我需要的是燈，不是謎語。" }
+            ],
+            "title": { "en": "Lost at Sea", "zh": "船沉了" },
+            "story": { "en": "Ms. Grant stares at you, waiting for a plan. Ms. Wong quietly opens her folder and presents one.", "zh": "葛蘭特總監盯著你，等你提出方案。王經理默默打開資料夾，把方案拿了出來。" },
+            "why": "「船到橋頭自然直」直譯成英文沒人聽得懂，而且客戶要的是具體方案，不是安慰。說 Here's what we can do. 再提出做法。"
+          }
+        },
+        {
+          "en": "Don't worry! I promise the real lights will arrive before then. I'll personally make sure of it.",
+          "zh": "別擔心！我保證正式的燈會在那之前到。我會親自確保。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "But you just told me they're two weeks late. Which is it?", "zh": "可是你剛剛才說會晚兩週。到底是哪個？" }
+            ],
+            "title": { "en": "Promise You Can't Keep", "zh": "做不到的承諾" },
+            "story": { "en": "Ms. Grant holds you to your promise. Ten days later, the lights are still on a ship somewhere at sea.", "zh": "葛蘭特總監把你的承諾記下來了。十天後，燈還在海上的某艘船裡。" },
+            "why": "為了安撫客戶而承諾做不到的事，只會讓下一次失望更大。提出實際可行的方案：Here's what we can do. We'll install temporary fixtures.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "neutral", "en": "Temporary fixtures... Will my guests be able to tell the difference?", "zh": "臨時燈具……我的房客看得出差別嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Honestly, a little, up close. But we'll match the color and brightness, so the overall feel stays the same.",
+          "zh": "老實說，近看會有一點差別。但我們會配合顏色和亮度，讓整體感覺不變。",
+          "ok": true,
+          "tip": "誠實說出限制，再說明你會怎麼降低影響，比一味說「完全沒差」可信。"
+        },
+        {
+          "en": "No, they can't. The temporary lights is almost same as the real one, just a little bit cheap.",
+          "zh": "看不出來。臨時燈跟正式的幾乎一樣，只是比較便宜一點。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "A little bit cheap? That's not a word I want in my lobby.", "zh": "有點廉價？我可不希望大廳跟這個詞扯上關係。" }
+            ],
+            "title": { "en": "Cheap Talk", "zh": "廉價的說法" },
+            "story": { "en": "Ms. Grant now pictures plastic lamps in her marble lobby. You spend ten minutes trying to un-say one word.", "zh": "葛蘭特總監現在腦中浮現大理石大廳裡的塑膠燈。你花了十分鐘想收回那個字。" },
+            "why": "lights 是複數，動詞用 are；「幾乎一樣」是 almost the same as。cheap 當形容詞常有「廉價」的意思，說 less expensive 比較好。"
+          }
+        },
+        {
+          "en": "By the way, those temporary ones are on sale right now. Would you like to just buy them instead?",
+          "zh": "對了，那些臨時燈具現在正在特價。您要不要乾脆直接買下來？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "Instead of the lights I already paid for? No, thank you.", "zh": "取代我已經付錢的那批燈？不用了，謝謝。" }
+            ],
+            "title": { "en": "Sales Instinct", "zh": "業務本能" },
+            "story": { "en": "Ms. Grant wonders whether the delay is real or just a sales trick. Ms. Wong spends the afternoon proving it is real.", "zh": "葛蘭特總監開始懷疑延遲是真的，還是推銷的手段。王經理花了一下午證明它是真的。" },
+            "why": "傳達壞消息時趁機推銷，會讓客戶懷疑你的動機。誠實回答對方的問題：Honestly, a little, up close. But we'll match the color.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_hotel_director", "expr": "neutral", "en": "All right. I'm not happy, but I appreciate you telling me in person.", "zh": "好吧。我並不開心，但很感謝你當面告訴我。" }
+      ],
+      "choices": [
+        {
+          "en": "I understand, and I'm sorry for the trouble. I'll update you every Monday until everything is installed.",
+          "zh": "我理解，造成您的困擾很抱歉。在全部安裝完成前，我每週一都會向您回報進度。",
+          "ok": true,
+          "tip": "道歉之後承諾固定回報的時間，讓客戶覺得一切仍在掌握之中。"
+        },
+        {
+          "en": "To say sorry, please let us invite you to a big dinner. And please accept this small gift too.",
+          "zh": "為了表示歉意，請讓我們請您吃頓大餐。也請收下這份小禮物。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "confused", "en": "That's kind, but I can't accept gifts from suppliers. Company policy.", "zh": "謝謝好意，但我不能收供應商的禮物。這是公司規定。" }
+            ],
+            "title": { "en": "Gift Returned", "zh": "禮物被退回" },
+            "story": { "en": "You carry the gift back to the office. It now sits on Sam's desk, unopened.", "zh": "你把禮物帶回公司。它現在擺在山姆桌上，還沒拆開。" },
+            "why": "在台灣送禮請客賠罪很常見，但許多西方企業規定採購人員不能收供應商的禮物，以免有利益衝突。用行動彌補更好：I'll update you every Monday.。"
+          }
+        },
+        {
+          "en": "Great, so we're good then? I was so worried you would shout at me today.",
+          "zh": "太好了，所以我們沒事了吧？我好擔心您今天會對我大吼。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_hotel_director", "expr": "upset", "en": "We're not \"good\" yet, Kai. We'll be good when my lobby is lit.", "zh": "我們還沒「沒事」，凱。等我的大廳亮起來才算沒事。" }
+            ],
+            "title": { "en": "Too Relieved", "zh": "鬆懈太早" },
+            "story": { "en": "Ms. Grant's polite smile disappears. You realize the problem is not solved just because the hard part of the talk is over.", "zh": "葛蘭特總監禮貌的笑容消失了。你這才發現，難開口的部分講完了，不代表問題已經解決。" },
+            "why": "客戶還在不高興時就急著確認「沒事了吧」，顯得只在乎自己的感受。用具體的後續行動結尾：I'll update you every Monday until everything is installed.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_hotel_director", "expr": "happy", "en": "Every Monday. Good. I'd rather hear bad news from you early than late.", "zh": "每週一，很好。比起太晚知道，我寧願早點從你這裡聽到壞消息。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Thank you for understanding, Ms. Grant. We won't let you down on the reopening.", "zh": "謝謝您的體諒，葛蘭特總監。重新開幕我們絕不會讓您失望。" }
+    ],
+    "title": { "en": "Bad News, Well Delivered", "zh": "壞消息也能說好" },
+    "story": { "en": "Ten days later, the lobby opens on time under the temporary lights. Nobody notices, except Ms. Grant, who sends you a thank-you note.", "zh": "十天後，大廳在臨時燈具下準時開幕。沒有人察覺，只有葛蘭特總監注意到了，還寄了一張感謝卡給你。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm afraid I have some bad news.",
+      "zh": "恐怕我有個壞消息。",
+      "explain": "I'm afraid 讓壞消息聽起來比較委婉，也給對方一點心理準備。說完就直接講重點，不要拐彎抹角。",
+      "example": { "en": "I'm afraid I have some bad news. The meeting room is no longer available.", "zh": "恐怕我有個壞消息，會議室不能用了。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Here's what we can do.",
+      "zh": "我們可以這樣做。",
+      "explain": "說完壞消息後，用這句把焦點轉向解決方案。客戶最在意的通常不是原因，而是接下來怎麼辦。",
+      "example": { "en": "Here's what we can do. We'll ship half the order this week.", "zh": "我們可以這樣做：本週先出一半的貨。" }
+    },
+    {
+      "type": "grammar",
+      "en": "We should have warned you sooner.",
+      "zh": "我們應該更早通知您的。",
+      "explain": "should have + 過去分詞 表示「過去應該做卻沒做」，用來承擔責任很自然，比一再說 sorry 更有誠意。",
+      "example": { "en": "I should have checked the date more carefully.", "zh": "我應該更仔細確認日期的。" }
+    },
+    {
+      "type": "trap",
+      "en": "It's not convenient to tell you.",
+      "zh": "不方便透露。",
+      "explain": "這是中文婉拒的直譯，英文聽起來像在隱瞞。真的不能說時用 I'm not able to share the details, but here's what I can tell you.。",
+      "example": { "en": "I can't share every detail, but here's what happened.", "zh": "細節我沒辦法全部透露，但大致情況是這樣。" }
+    },
+    {
+      "type": "culture",
+      "en": "No gifts to say sorry",
+      "zh": "別用禮物賠罪",
+      "explain": "許多西方企業規定員工不能收供應商的禮物或招待，以免有利益衝突。彌補客戶最好的方式是具體行動與定期回報。",
+      "example": { "en": "I'll send you an update every Monday morning.", "zh": "我每週一早上都會寄進度給您。" }
+    }
+  ]
+}

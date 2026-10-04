@@ -1,0 +1,226 @@
+{
+  "id": "L052",
+  "location": { "en": "Mr. Lin's living room, ground floor", "zh": "林先生家的客廳，公寓一樓" },
+  "goal": { "en": "Check the important terms of the lease before you sign it.", "zh": "簽名之前，確認租約裡的重要條款。" },
+  "background": "cozy old-fashioned living room with a low wooden coffee table, a few blank sheets of paper and a pen, a teapot with two cups, floral sofa, warm lamp light, afternoon",
+  "cast": ["mr_lin"],
+  "intro": [
+    { "who": "narrator", "en": "Saturday afternoon. Mr. Lin pours you a cup of tea and slides a thick lease across the table.", "zh": "星期六下午。林先生幫你倒了杯茶，把一份厚厚的租約推到你面前。" },
+    { "who": "mr_lin", "expr": "neutral", "en": "Take your time, Kai. Read everything carefully before you sign.", "zh": "慢慢來，凱。簽名前每一條都仔細看清楚。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "First, there's a security deposit of one month's rent. You pay it before you move in.", "zh": "首先，押金是一個月房租，搬進來之前要付。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "Is that all right with you?", "zh": "這樣可以嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "That's fine. Will I get the deposit back when I move out?",
+          "zh": "沒問題。搬走的時候押金會退給我嗎？",
+          "ok": true,
+          "tip": "security deposit 是押金，順便問 Will I get it back? 是保護自己的好習慣。"
+        },
+        {
+          "en": "One month? Can cheaper a little? I'm only a poor student.",
+          "zh": "一個月？可以便宜一點嗎？我只是個窮學生。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Can cheaper? You mean a smaller deposit? Sorry, one month is standard.", "zh": "Can cheaper？你是說押金少一點嗎？抱歉，一個月是標準。" }
+            ],
+            "title": { "en": "Cheaper by the Word", "zh": "一字一句殺價記" },
+            "story": { "en": "Mr. Lin spends ten minutes explaining how deposits work in Maple Bay. The deposit stays exactly the same.", "zh": "林先生花了十分鐘解釋楓灣的押金制度。押金一塊錢都沒少。" },
+            "why": "「可以便宜一點嗎」直譯成 Can cheaper? 不是完整的英文句子。想商量可以說 Is there any flexibility on the deposit?，但押金通常是固定的，先問 Will I get it back? 更實用。"
+          }
+        },
+        {
+          "en": "Why do I have to pay so much? Do you think I'll break things?",
+          "zh": "為什麼要付那麼多？你覺得我會弄壞東西嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "It's not personal, Kai. Every tenant pays the same.", "zh": "這不是針對你，凱。每個房客都一樣。" }
+            ],
+            "title": { "en": "Defensive Tenant", "zh": "防衛過度的房客" },
+            "story": { "en": "The room goes quiet. Mr. Lin reads the rest of the lease out loud in a very serious voice, like a judge.", "zh": "客廳突然安靜下來。林先生用非常嚴肅的語氣把剩下的租約唸完，像法官在宣判。" },
+            "why": "押金是租屋的標準流程，反問 Do you think I'll break things? 聽起來像在懷疑對方針對你。平和地說 That's fine. Will I get the deposit back? 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "On page two, you reach a sentence: \"The tenant shall not sublet the premises.\" You have no idea what it means.", "zh": "翻到第二頁，你看到一句：「The tenant shall not sublet the premises.」你完全看不懂。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "You look a little lost. Is everything clear so far?", "zh": "你看起來有點困惑。到目前為止都清楚嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Actually, could you explain this part? What does \"sublet\" mean?",
+          "zh": "其實，可以解釋一下這段嗎？「sublet」是什麼意思？",
+          "ok": true,
+          "tip": "Could you explain this part? 是看不懂條款時最直接又有禮貌的說法，不懂就問，別硬簽。"
+        },
+        {
+          "en": "Yes, yes, it's all very clear. Just tell me where to sign.",
+          "zh": "對對，都很清楚。直接告訴我要簽哪裡就好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Are you sure? You were staring at page two for quite a while.", "zh": "你確定？你盯著第二頁看了好一陣子。" }
+            ],
+            "title": { "en": "Saving Face, Losing Deposit", "zh": "保住面子，丟了押金" },
+            "story": { "en": "Two months later, you let a friend rent your studio while you travel. That is exactly what \"sublet\" means, and Mr. Lin is not happy.", "zh": "兩個月後，你出去旅行時把套房租給朋友住。這正是「sublet」的意思，林先生非常不高興。" },
+            "why": "看不懂卻說 It's all clear，是很多人怕丟臉的習慣，但租約是法律文件，簽了就要負責。不懂就問：Could you explain this part?"
+          }
+        },
+        {
+          "en": "Sorry, this sentence I see but I don't understand. What meaning?",
+          "zh": "抱歉，這句我有看但看不懂。什麼意思？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "You see it, but... which part don't you understand? The whole page?", "zh": "你有看到，但……是哪裡不懂？整頁嗎？" }
+            ],
+            "title": { "en": "The Two-Hour Lease", "zh": "兩小時的租約課" },
+            "story": { "en": "To be safe, Mr. Lin explains the whole lease, line by line. It takes two hours and three pots of tea.", "zh": "為了保險起見，林先生把整份租約一行一行解釋給你聽。花了兩個小時，喝掉三壺茶。" },
+            "why": "「這句我看不懂」照中文語序說成 this sentence I see but I don't understand 很難懂。可以說 I don't quite understand this part. 或 Could you explain this part?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Sublet means renting your place to someone else. That's not allowed here.", "zh": "Sublet 就是把房子轉租給別人，這裡不允許。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "Last part. The lease is for twelve months. Any questions about that?", "zh": "最後一部分。租約是十二個月。這部分有問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "What's the notice period if I need to move out early?",
+          "zh": "如果我需要提前搬走，要多久前通知你？",
+          "ok": true,
+          "tip": "notice period 是「提前通知期」，事先問清楚，萬一要提早搬才不會吃虧。"
+        },
+        {
+          "en": "If I will move out early, how long before I must tell you?",
+          "zh": "如果我提前搬走，要多久前跟你說？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "If you will move out? You haven't even moved in yet!", "zh": "如果你要搬走？你根本還沒搬進來啊！" }
+            ],
+            "title": { "en": "Leaving Before Arriving", "zh": "還沒來就想走" },
+            "story": { "en": "Mr. Lin worries you're already planning to leave. He adds a note to the lease about early-leave fees, \"just to be safe.\"", "zh": "林先生擔心你已經打算要走，「保險起見」在租約上加註了提前解約的費用。" },
+            "why": "if 條件句裡用現在式表示未來，不用 will：If I move out early...。問提前通知期可以直接說 What's the notice period?"
+          }
+        },
+        {
+          "en": "Twelve months is too long. I want to leave whenever I want.",
+          "zh": "十二個月太長了。我想走的時候就要能走。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "Whenever you want? Then you need a hotel, not a lease.", "zh": "想走就走？那你需要的是飯店，不是租約。" }
+            ],
+            "title": { "en": "No Strings Attached", "zh": "來去自如" },
+            "story": { "en": "Mr. Lin closes the folder. \"Maybe come back when you're sure,\" he says, and refills only his own cup.", "zh": "林先生闔上資料夾。「等你確定了再來吧。」他說完，只幫自己的杯子續了茶。" },
+            "why": "直接說 I want to leave whenever I want 聽起來像在挑戰房東的規則。想保留彈性，可以問 What's the notice period if I need to move out early?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "The notice period is two months. Tell me in writing, and you'll get your full deposit back.", "zh": "通知期是兩個月。用書面告訴我，押金就會全額退還。" },
+        { "who": "mr_lin", "expr": "neutral", "en": "If everything looks good, please sign here and write today's date.", "zh": "如果都沒問題，請在這裡簽名，寫上今天的日期。" }
+      ],
+      "choices": [
+        {
+          "en": "Everything looks good. Could I have a copy of the lease, too?",
+          "zh": "都沒問題。我也可以拿一份租約副本嗎？",
+          "ok": true,
+          "tip": "簽完約記得要一份副本，Could I have a copy? 是合理又有禮貌的要求。"
+        },
+        {
+          "en": "OK, I sign. Can you copy one more paper for me to keep at home?",
+          "zh": "好，我簽。可以多印一張給我帶回家放嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "One more paper? Do you need something to write on?", "zh": "再一張紙？你需要寫東西的紙嗎？" }
+            ],
+            "title": { "en": "A Blank Souvenir", "zh": "一張白紙當紀念" },
+            "story": { "en": "Mr. Lin hands you a clean sheet of paper. You go home with a blank page instead of your lease.", "zh": "林先生遞給你一張乾淨的白紙。你帶回家的不是租約，而是一張白紙。" },
+            "why": "「多印一張給我」直譯成 copy one more paper 意思不清楚，paper 會被理解成「紙」。要副本就說 Could I have a copy of the lease?"
+          }
+        },
+        {
+          "en": "Sorry, I didn't bring my personal seal. Can I come back and stamp it?",
+          "zh": "抱歉，我沒帶印章。可以改天再來蓋章嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Your seal? You just need to sign your name, Kai.", "zh": "印章？你只要簽名就好了，凱。" }
+            ],
+            "title": { "en": "Sealed Too Late", "zh": "章來不及蓋" },
+            "story": { "en": "You insist on coming back with your name stamp. By next week, Mr. Lin has rented the studio to someone who brought a pen.", "zh": "你堅持要回家拿印章。等到下週，林先生已經把套房租給一個有帶筆的人了。" },
+            "why": "台灣簽約常用印章，但在楓灣這類英語系國家，合約只要親筆簽名（signature）就有效，不需要印章。直接簽名，再要一份副本：Could I have a copy?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mr_lin", "expr": "happy", "en": "Here's your copy, and here are your keys. Welcome to the building, Kai.", "zh": "這是你的副本，這是你的鑰匙。歡迎入住，凱。" },
+      { "who": "narrator", "en": "Two shiny keys on a little wooden key ring. They're yours.", "zh": "兩把亮晶晶的鑰匙，掛在小小的木頭鑰匙圈上。它們是你的了。" }
+    ],
+    "title": { "en": "Keys in Hand", "zh": "鑰匙到手" },
+    "story": { "en": "You signed your first lease in English, and you understood every line. Moving day is next week.", "zh": "你用英文簽下人生第一份租約，而且每一行都看懂了。下週就是搬家日。" }
+  },
+  "notes": [
+    {
+      "type": "vocab",
+      "en": "security deposit",
+      "zh": "押金",
+      "explain": "租屋前先付的保證金，退租時房子沒有損壞就會退還。記得問 Will I get the deposit back?",
+      "example": { "en": "The security deposit is one month's rent.", "zh": "押金是一個月的房租。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could you explain this part?",
+      "zh": "可以解釋一下這部分嗎？",
+      "explain": "看不懂條款時直接指著問，比自己猜意思安全。也可以說 What does this mean?",
+      "example": { "en": "Could you explain this part about repairs?", "zh": "可以解釋一下維修的這部分嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "notice period",
+      "zh": "提前通知期",
+      "explain": "提前解約或搬走之前，必須提早多久通知房東。常見說法是 give two months' notice。",
+      "example": { "en": "I need to give two months' notice before I move out.", "zh": "我搬走前要提前兩個月通知。" }
+    },
+    {
+      "type": "grammar",
+      "en": "If I move out early...",
+      "zh": "如果我提前搬走……",
+      "explain": "if 條件句表示未來時，if 子句用現在式，不用 will。主要子句才用 will。",
+      "example": { "en": "If I move out early, will I lose my deposit?", "zh": "如果我提前搬走，會拿不回押金嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Sign, don't stamp.",
+      "zh": "簽名，不用蓋章",
+      "explain": "台灣簽約常用印章，在楓灣這類英語系國家，合約一律親筆簽名就有效。另外，看不懂就問，不要為了面子說 It's all clear.。",
+      "example": { "en": "Please sign and date here.", "zh": "請在這裡簽名並寫上日期。" }
+    }
+  ]
+}

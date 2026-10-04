@@ -1,0 +1,268 @@
+{
+  "id": "L096",
+  "location": { "en": "Lantern Park, the campfire circle by the lake", "zh": "燈籠公園，湖畔營火圈" },
+  "goal": { "en": "Debate remote work versus the office with Owen, clearly and politely.", "zh": "和歐文辯論遠距工作與進辦公室，立場清楚又不失禮。" },
+  "background": "lakeside campfire circle at night, a large bonfire in a stone ring, log benches arranged in a circle, string lights in maple trees, dark calm lake with distant shore lights",
+  "cast": ["ember", "c10_owen"],
+  "intro": [
+    { "who": "narrator", "en": "Debate night at Campfire Chat. Ember has drawn two names from a hat: yours and Owen's.", "zh": "營火英語社的辯論之夜。安柏從帽子裡抽出兩個名字：你和歐文。" },
+    { "who": "ember", "expr": "happy", "en": "Tonight's topic: remote work or the office? Owen argues for remote, Kai for the office. Keep it friendly!", "zh": "今晚的題目：遠距工作還是進辦公室？歐文支持遠距，凱支持辦公室。大家友善辯論喔！" },
+    { "who": "c10_owen", "expr": "happy", "en": "Prepare to lose, Kai. Nicely, of course.", "zh": "準備好輸吧，凱。當然是很有禮貌地輸。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ember", "expr": "neutral", "en": "Kai, you're up first. Why should people work in the office?", "zh": "凱，你先開始。為什麼大家應該進辦公室工作？" }
+      ],
+      "choices": [
+        {
+          "en": "In my opinion, the office builds real teamwork. You learn faster in person.",
+          "zh": "我認為辦公室能建立真正的團隊合作，面對面學得更快。",
+          "ok": true,
+          "tip": "In my opinion, ... 開頭表明立場，接著馬上給一個理由，論點就站得住。"
+        },
+        {
+          "en": "In my opinion, office can build the teamwork. People learn more fast together.",
+          "zh": "我認為辦公室可以建立團隊合作，大家在一起學得比較快。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c10_owen", "expr": "confused", "en": "\"More fast\"? I think you mean \"faster.\" One point to remote work!", "zh": "More fast？我想你是說 faster。遠距工作先得一分！" }
+            ],
+            "title": { "en": "Own Goal", "zh": "烏龍球" },
+            "story": { "en": "Owen scores his first point using your grammar. The audience laughs, and you spend the next round recovering.", "zh": "歐文拿你的文法拿下第一分。觀眾笑成一片，你整回合都在找回氣勢。" },
+            "why": "短形容詞比較級加 -er：fast → faster，不說 more fast。the office 也要加冠詞，teamwork 是不可數名詞，不加 the。"
+          }
+        },
+        {
+          "en": "Honestly, people who work from home are just lazy. That's my whole point.",
+          "zh": "老實說，在家工作的人就是懶。這就是我的論點。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c10_owen", "expr": "upset", "en": "Wow. I work from home, Kai. Thanks for that.", "zh": "哇。我就在家工作耶，凱。謝謝喔。" }
+            ],
+            "title": { "en": "Personal Attack", "zh": "人身攻擊" },
+            "story": { "en": "Half the circle works from home. The friendly debate becomes a very quiet campfire.", "zh": "營火圈裡有一半的人在家工作。友善的辯論，變成非常安靜的營火。" },
+            "why": "辯論要攻擊論點，不是攻擊人。說 lazy 這類評價很失禮。用理由支持立場：In my opinion, the office builds teamwork.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_owen", "expr": "neutral", "en": "But commuting wastes hours every day. At home, I'm way more productive.", "zh": "可是通勤每天浪費好幾個小時。在家我的效率高多了。" },
+        { "who": "ember", "expr": "neutral", "en": "Kai, your response?", "zh": "凱，你怎麼回應？" }
+      ],
+      "choices": [
+        {
+          "en": "That's a fair point. On the other hand, it's harder to switch off at home.",
+          "zh": "這點很有道理。但另一方面，在家比較難切換回下班模式。",
+          "ok": true,
+          "tip": "先用 That's a fair point. 承認對方有理，再用 On the other hand 提出反面，有禮又有力。"
+        },
+        {
+          "en": "Your point has a little reason. But at home, work and life mix together.",
+          "zh": "你說的有點道理。但在家的話，工作和生活會混在一起。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c10_owen", "expr": "confused", "en": "My point has... a little reason? Is that a compliment?", "zh": "我的論點有……一點理由？這是在稱讚我嗎？" }
+            ],
+            "title": { "en": "Lost in Debate", "zh": "辯論迷航" },
+            "story": { "en": "Owen can't decide if you agreed with him. Neither can the audience. Your good counterpoint gets lost in the confusion.", "zh": "歐文搞不清楚你是不是同意他，觀眾也是。你很好的反駁就這樣淹沒在困惑裡。" },
+            "why": "「有點道理」直譯 has a little reason 不是英文說法。要說 That's a fair point. 或 You have a point.。"
+          }
+        },
+        {
+          "en": "Speaking of commuting, the number 9 bus is always late, isn't it? Terrible!",
+          "zh": "說到通勤，9 號公車總是誤點，對吧？超爛的！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ember", "expr": "confused", "en": "Ha, true, but... can we get back to the debate?", "zh": "哈，是沒錯，不過……我們可以回到辯論嗎？" }
+            ],
+            "title": { "en": "Bus Rant", "zh": "公車抱怨大會" },
+            "story": { "en": "The whole circle starts complaining about the number 9 bus. It's the most united everyone has been all night, but nobody remembers the topic.", "zh": "整個營火圈開始抱怨 9 號公車。這是今晚大家最團結的時刻，但沒人記得題目是什麼。" },
+            "why": "辯論時要回應對方的論點，不要被關鍵字帶走。可以說 That's a fair point. On the other hand...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_owen", "expr": "happy", "en": "Switch off? I just close my laptop. Easy.", "zh": "切換？我把筆電闔上就好啦，簡單。" },
+        { "who": "ember", "expr": "neutral", "en": "Ooh. Kai, can you give us a real example?", "zh": "喔喔。凱，你能舉個實際例子嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. At Brightway, my best ideas came from chats by the coffee machine.",
+          "zh": "當然。在 Brightway，我最好的點子都是在咖啡機旁聊出來的。",
+          "ok": true,
+          "tip": "用親身經驗當例子，比空泛的說法更有說服力。"
+        },
+        {
+          "en": "Everybody knows the office is better. My parents always say so, too.",
+          "zh": "大家都知道辦公室比較好，我爸媽也一直這樣說。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c10_owen", "expr": "confused", "en": "Your parents? With respect, that's not really an argument.", "zh": "你爸媽？恕我直言，這不太算是論點。" }
+            ],
+            "title": { "en": "Because Mom Said So", "zh": "因為媽媽說的" },
+            "story": { "en": "The audience giggles. Owen wins the round without saying another word.", "zh": "觀眾偷笑。歐文一句話都不用說，就拿下這一回合。" },
+            "why": "在英語辯論中，「大家都知道」或「長輩說的」不算證據。要用具體例子或數據支持：At Brightway, my best ideas came from...。"
+          }
+        },
+        {
+          "en": "For example, in Brightway my best idea come from talking at coffee machine.",
+          "zh": "例如在 Brightway，我最好的點子來自在咖啡機旁聊天。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c10_owen", "expr": "confused", "en": "Your best idea come from... the coffee machine talking? That's a smart machine.", "zh": "你最好的點子來自……會說話的咖啡機？那台機器真聰明。" }
+            ],
+            "title": { "en": "The Talking Coffee Machine", "zh": "會說話的咖啡機" },
+            "story": { "en": "Owen gets a big laugh. You had a good example, but the grammar made it sound like science fiction.", "zh": "歐文贏得滿堂笑聲。你的例子本來很好，但文法讓它聽起來像科幻小說。" },
+            "why": "過去的經驗用過去式 came；公司前面用 at：at Brightway；咖啡機要加冠詞：by the coffee machine。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_owen", "expr": "neutral", "en": "Okay, I'll give you that. But not everyone can afford to live near the city center.", "zh": "好，這點我承認。但不是每個人都住得起市中心附近。" },
+        { "who": "ember", "expr": "happy", "en": "Ooh, good one. Kai?", "zh": "喔，好問題。凱？" }
+      ],
+      "choices": [
+        {
+          "en": "Fair enough. Maybe the best answer is a mix, like three office days a week.",
+          "zh": "有道理。也許最好的答案是混合制，例如一週進辦公室三天。",
+          "ok": true,
+          "tip": "Fair enough. 承認對方說得對，再提出折衷方案，是成熟的辯論方式。"
+        },
+        {
+          "en": "Well, that's really their problem. They should just move closer, then.",
+          "zh": "嗯，那是他們自己的問題，搬近一點就好啦。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c10_owen", "expr": "upset", "en": "Just move? On what salary, Kai?", "zh": "搬近一點？靠什麼薪水，凱？" }
+            ],
+            "title": { "en": "Let Them Move Downtown", "zh": "何不搬到市中心" },
+            "story": { "en": "Someone in the circle mutters about rent prices. You lose the audience, and possibly a few friends.", "zh": "營火圈裡有人小聲抱怨房租。你失去了觀眾，可能還失去了幾個朋友。" },
+            "why": "對別人的困難說「那是他們的問題」，聽起來冷漠又高傲。先承認：Fair enough.，再提出折衷方案。"
+          }
+        },
+        {
+          "en": "I agree you partly. Maybe the best way is mixing, three days in the office.",
+          "zh": "我部分同意你。也許最好的方式是混合，三天進辦公室。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c10_owen", "expr": "confused", "en": "You \"agree me\"? You mean agree WITH me? I'll take it!", "zh": "你 agree me？你是說 agree WITH me 吧？那我收下了！" }
+            ],
+            "title": { "en": "Accidental Surrender", "zh": "意外投降" },
+            "story": { "en": "Owen tells everyone you agreed with him. Technically, you did. Your compromise idea gets buried under his victory dance.", "zh": "歐文跟大家宣布你同意他了。技術上來說，你確實同意了。你的折衷方案被他的勝利舞蓋過。" },
+            "why": "agree 後面接人要加 with：I partly agree with you.。也可以用更簡潔的 Fair enough.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_owen", "expr": "happy", "en": "Honestly? Kai made me rethink a few things. Good debate.", "zh": "說真的？凱讓我重新思考了一些事。很棒的辯論。" },
+        { "who": "ember", "expr": "neutral", "en": "Kai, your closing words?", "zh": "凱，你的結語呢？" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks, Owen. You argued really well. We both made good points.",
+          "zh": "謝謝你，歐文。你辯得很好，我們都提出了好論點。",
+          "ok": true,
+          "tip": "辯論結束時稱讚對手（You argued really well.），是英語文化中的運動家精神。"
+        },
+        {
+          "en": "Thanks! So that means I won, right? Ember, go ahead and announce it.",
+          "zh": "謝啦！所以是我贏了吧？安柏，快宣布吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ember", "expr": "upset", "en": "Hmm. I think the audience just changed their minds.", "zh": "嗯……我覺得觀眾剛剛改變心意了。" }
+            ],
+            "title": { "en": "Victory Lap Too Soon", "zh": "勝利宣言太早" },
+            "story": { "en": "Owen was gracious. You were not. The vote goes to Owen, mostly for his manners.", "zh": "歐文很有風度，你沒有。投票結果歐文獲勝，主要是因為他的風度。" },
+            "why": "對手剛稱讚你，你卻急著宣布自己贏，顯得沒有風度。回敬對方：Thanks, Owen. You argued really well.。"
+          }
+        },
+        {
+          "en": "No, no, my English is so bad. Owen is much, much better than me.",
+          "zh": "沒有啦，我的英文很爛。歐文比我好太多了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ember", "expr": "confused", "en": "Kai, you just debated for ten minutes in English! Own it!", "zh": "凱，你剛剛用英文辯論了十分鐘耶！要有自信！" }
+            ],
+            "title": { "en": "Too Humble to Win", "zh": "謙虛到輸掉" },
+            "story": { "en": "The audience was about to vote for you. Then you told them not to. They listened.", "zh": "觀眾本來要投給你，然後你叫他們不要。他們照做了。" },
+            "why": "在英語文化中，過度自謙常被當真，或讓對方不知如何回應。接受肯定並回敬對方：Thanks, Owen. We both made good points.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ember", "expr": "happy", "en": "What a debate! A year ago, Kai barely said a word at this campfire. Look at you now!", "zh": "多精彩的辯論！一年前，凱在營火旁幾乎不敢開口。看看現在！" },
+      { "who": "c10_owen", "expr": "happy", "en": "Rematch next week. I'm bringing statistics.", "zh": "下週再戰。我會帶數據來。" }
+    ],
+    "title": { "en": "Fair Play", "zh": "君子之爭" },
+    "story": { "en": "You disagreed clearly, gave real examples, and kept it friendly. Nobody really won, and that's exactly why everyone enjoyed it.", "zh": "你清楚表達不同意見、舉出實例，還保持友善。沒有人真的贏，這正是大家都樂在其中的原因。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "In my opinion, ...",
+      "zh": "我認為……",
+      "explain": "表明立場的標準開頭。說完立場後馬上接理由或例子，論點才有力。也可以說 The way I see it, ...。",
+      "example": { "en": "In my opinion, public transport should be free.", "zh": "我認為大眾運輸應該免費。" }
+    },
+    {
+      "type": "phrase",
+      "en": "That's a fair point. On the other hand, ...",
+      "zh": "這點很有道理。但另一方面……",
+      "explain": "先承認對方有理，再用 On the other hand 提出反面觀點。比直接說 You're wrong 有禮貌得多。",
+      "example": { "en": "That's a fair point. On the other hand, it's more expensive.", "zh": "這點有道理。但另一方面，它比較貴。" }
+    },
+    {
+      "type": "trap",
+      "en": "agree with someone",
+      "zh": "同意某人",
+      "explain": "agree 是不及物動詞，接人要加 with：I agree with you.。接事情用 agree with / agree on / agree that...。",
+      "example": { "en": "I partly agree with you, but not completely.", "zh": "我部分同意你，但不是全部。" }
+    },
+    {
+      "type": "vocab",
+      "en": "switch off",
+      "zh": "放下工作、切換到休息模式",
+      "explain": "原意是關掉開關，口語中指「下班後在心理上放下工作」。",
+      "example": { "en": "I find it hard to switch off after work.", "zh": "我下班後很難放下工作。" }
+    },
+    {
+      "type": "culture",
+      "en": "You argued really well.",
+      "zh": "你辯得很好。",
+      "explain": "英語辯論重視證據而非權威，「大家都知道」或「長輩說」不算論點。結束時稱讚對手、接受讚美，比過度自謙更得體。",
+      "example": { "en": "Great debate. You argued really well.", "zh": "很棒的辯論，你辯得很好。" }
+    }
+  ]
+}

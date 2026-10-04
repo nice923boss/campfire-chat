@@ -1,0 +1,225 @@
+{
+  "id": "L054",
+  "location": { "en": "Hallway outside apartment 3B, late at night", "zh": "3B 室門口的走廊，深夜" },
+  "goal": { "en": "Ask your neighbor to keep the noise down and agree on a compromise.", "zh": "請鄰居降低音量，並談出雙方都能接受的折衷方案。" },
+  "background": "narrow apartment building hallway at night, plain wooden doors, warm wall lamps, patterned carpet runner, a potted plant in the corner, soft yellow light, quiet atmosphere",
+  "cast": ["c06_neighbor"],
+  "intro": [
+    { "who": "narrator", "en": "It's 11:30 p.m. You have a test tomorrow, but drums and guitar have been coming through the wall for two hours.", "zh": "晚上十一點半。你明天要考試，但隔壁的鼓聲和吉他聲已經穿牆傳來兩個小時了。" },
+    { "who": "narrator", "en": "You take a deep breath and knock on the door of 3B.", "zh": "你深吸一口氣，敲了 3B 的門。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c06_neighbor", "expr": "neutral", "en": "Hey! Oh, hi. You're the new neighbor, right? What's up?", "zh": "嘿！喔，嗨。你是新搬來的鄰居對吧？怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, I'm Kai from 3A. I hate to bother you, but it's pretty loud.",
+          "zh": "嗨，我是 3A 的凱。很不想打擾你，但聲音有點大。",
+          "ok": true,
+          "tip": "I hate to bother you, but... 先表示歉意再說問題，抱怨也能說得很客氣。"
+        },
+        {
+          "en": "Your music is way too loud. Do you have any idea what time it is?",
+          "zh": "你的音樂太大聲了。你知道現在幾點嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "upset", "en": "Whoa, okay. Nice to meet you too.", "zh": "哇，好喔。我也很高興認識你。" }
+            ],
+            "title": { "en": "Wrong Foot Forward", "zh": "第一步就踩錯" },
+            "story": { "en": "Nico closes the door a little harder than necessary. The music doesn't stop, and now the hallway feels awkward too.", "zh": "尼可關門的力道比平常大了一點。音樂沒停，以後在走廊碰面也變得很尷尬。" },
+            "why": "一開口就質問 Do you have any idea what time it is? 會讓對方立刻防衛。先打招呼、表示歉意：I hate to bother you, but it's pretty loud."
+          }
+        },
+        {
+          "en": "Hello, I live next door. Sorry, but your sound is very big tonight.",
+          "zh": "你好，我住隔壁。不好意思，你今晚聲音很大。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "confused", "en": "My sound is big? Uh, thanks! We've been practicing a lot.", "zh": "我的聲音很宏亮？呃，謝啦！我們最近很認真練習。" }
+            ],
+            "title": { "en": "Accidental Fan", "zh": "意外變成粉絲" },
+            "story": { "en": "Nico thinks you're praising his band and invites you to their next show. The drumming gets even louder.", "zh": "尼可以為你在稱讚他的樂團，還邀你去看下一場表演。鼓聲變得更大了。" },
+            "why": "「聲音很大」不能直譯成 sound is very big，聽起來像在稱讚。抱怨音量要說 It's pretty loud. 或 The music is a bit loud."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_neighbor", "expr": "neutral", "en": "Oh, sorry! We have a show on Friday, so the band is rehearsing.", "zh": "喔，抱歉！我們星期五有表演，所以樂團在排練。" },
+        { "who": "c06_neighbor", "expr": "neutral", "en": "Is it really that loud over there?", "zh": "你那邊真的有那麼吵嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm afraid so. Would you mind keeping it down? I have a test tomorrow.",
+          "zh": "恐怕是的。你介意小聲一點嗎？我明天要考試。",
+          "ok": true,
+          "tip": "Would you mind keeping it down? 是請人降低音量的禮貌說法，加上理由更容易被接受。"
+        },
+        {
+          "en": "Yes, quite loud. Would you mind to keep it down? I have test tomorrow.",
+          "zh": "對，很吵。你介意小聲一點嗎？我明天考試。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "confused", "en": "Would I mind to... what? Sorry, I didn't catch the end of that.", "zh": "我介意去……什麼？抱歉，我沒聽到後半句。" }
+            ],
+            "title": { "en": "Lost in the Drums", "zh": "淹沒在鼓聲裡" },
+            "story": { "en": "Nico can't hear you over the drums, so he just nods politely. He closes the door, and the band starts the next song.", "zh": "鼓聲太大，尼可聽不清楚，只好客氣地點點頭。他關上門，樂團開始下一首歌。" },
+            "why": "Would you mind 後面接動名詞 V-ing：Would you mind keeping it down?，不能接 to + 原形動詞。test 前面也要加 a。"
+          }
+        },
+        {
+          "en": "Oh, no, it's totally fine. You guys play really well, actually.",
+          "zh": "喔，不會啦，完全沒關係。其實你們彈得很好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "confused", "en": "Oh! Thanks! So... was there something else?", "zh": "喔！謝啦！所以……還有其他事嗎？" }
+            ],
+            "title": { "en": "Earplug Night", "zh": "耳塞之夜" },
+            "story": { "en": "Nico thanks you for the compliment and goes back to practice. You study with earplugs until two in the morning.", "zh": "尼可謝謝你的稱讚，回去繼續練習。你戴著耳塞念書到凌晨兩點。" },
+            "why": "台灣人習慣委婉暗示，但說 It's fine 再稱讚對方，鄰居只會以為你是來捧場的。要清楚提出請求：Would you mind keeping it down?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_neighbor", "expr": "neutral", "en": "Oh man, sorry. But we really need to practice. The show is in three days.", "zh": "唉，抱歉。但我們真的需要練習，表演只剩三天了。" },
+        { "who": "c06_neighbor", "expr": "neutral", "en": "What if we play for just one more hour?", "zh": "那我們再練一個小時就好，怎麼樣？" }
+      ],
+      "choices": [
+        {
+          "en": "How about stopping by ten on weeknights? Weekends are fine with me.",
+          "zh": "平日晚上十點前停，好嗎？週末我都沒問題。",
+          "ok": true,
+          "tip": "How about...? 提出折衷方案，讓雙方都有台階下。"
+        },
+        {
+          "en": "One more hour? No way. Stop right now, or I'm calling the police.",
+          "zh": "再一個小時？不可能。現在就停，不然我報警。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "upset", "en": "The police? Seriously? Okay, fine. Wow.", "zh": "報警？你認真的？好啦，算了。真是的。" }
+            ],
+            "title": { "en": "Silent Treatment", "zh": "安靜的冷戰" },
+            "story": { "en": "The music stops, and so do Nico's friendly hellos. Whenever you meet in the hallway, he suddenly finds his phone very interesting.", "zh": "音樂停了，尼可友善的招呼也跟著停了。之後在走廊碰到，他總是突然對手機很感興趣。" },
+            "why": "第一次溝通就威脅報警，鄰居關係會直接破裂。先提出折衷：How about stopping by ten on weeknights?"
+          }
+        },
+        {
+          "en": "How about you stop at ten? And in weekend, you can play more late.",
+          "zh": "你們十點停好不好？週末可以玩晚一點。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "confused", "en": "Play more late? Wait, so later is better? I'm lost.", "zh": "玩更晚？等等，所以越晚越好？我搞不懂了。" }
+            ],
+            "title": { "en": "Saturday Night Live", "zh": "週六深夜音樂會" },
+            "story": { "en": "Nico thinks you want them to play later, so the band rehearses until one in the morning every Saturday.", "zh": "尼可以為你希望他們練晚一點，結果樂團每個星期六都排練到凌晨一點。" },
+            "why": "「晚一點」是 later，不是 more late；「週末」要說 on weekends。可以說 How about stopping by ten on weeknights? You can play later on weekends."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c06_neighbor", "expr": "happy", "en": "Ten on weeknights? Yeah, that's fair. I'll tell the band.", "zh": "平日十點？嗯，很公平。我會跟團員說。" },
+        { "who": "c06_neighbor", "expr": "neutral", "en": "Hey, sorry again. Come to our show on Friday if you want!", "zh": "嘿，再說一次抱歉。想來的話星期五來看我們表演吧！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks for understanding. I'd love to come if I'm free.",
+          "zh": "謝謝你的體諒。有空的話我很樂意去。",
+          "ok": true,
+          "tip": "Thanks for understanding. 為對方的配合道謝，讓這次抱怨有個溫暖的結尾。"
+        },
+        {
+          "en": "Thank you for your cooperation. I will think about it.",
+          "zh": "謝謝你的配合。我會考慮看看。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "confused", "en": "My cooperation? Uh, you sound like the building manager.", "zh": "我的配合？呃，你講話好像管理員喔。" }
+            ],
+            "title": { "en": "Official Notice", "zh": "公告式道謝" },
+            "story": { "en": "Nico tells the band that 3A is \"kind of scary, like a teacher.\" The Friday invitation quietly disappears.", "zh": "尼可跟團員說 3A 的鄰居「有點可怕，像老師一樣」。星期五的邀請就這樣默默取消了。" },
+            "why": "「謝謝你的配合」直譯成 Thank you for your cooperation. 像公告或客服的口吻，對鄰居太生硬。說 Thanks for understanding. 自然又友善。"
+          }
+        },
+        {
+          "en": "No, my test is tomorrow, not Friday. Please remember that.",
+          "zh": "不是，我是明天考試，不是星期五。請記住。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c06_neighbor", "expr": "confused", "en": "Oh, I know. I meant our show... never mind.", "zh": "喔，我知道。我是說我們的表演……算了。" }
+            ],
+            "title": { "en": "Missed Invitation", "zh": "錯過的邀請" },
+            "story": { "en": "Nico decides you're too busy for fun and never asks again. Later you hear the show was amazing.", "zh": "尼可覺得你太忙，沒空玩，之後再也沒邀過你。後來你聽說那場表演超精彩。" },
+            "why": "對方是在邀請你看表演，不是在問考試日期。回應邀請可以說 I'd love to come if I'm free."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c06_neighbor", "expr": "happy", "en": "Deal. Good luck on your test, neighbor!", "zh": "一言為定。考試加油啊，鄰居！" },
+      { "who": "narrator", "en": "Ten minutes later, the building is quiet.", "zh": "十分鐘後，整棟樓安靜了下來。" }
+    ],
+    "title": { "en": "Peace and Quiet", "zh": "終於安靜了" },
+    "story": { "en": "You study until midnight in perfect silence. On Friday, you even go to the show and cheer for Nico's band.", "zh": "你在一片寧靜中念書到半夜。星期五，你還真的去看了表演，替尼可的樂團加油。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I hate to bother you, but...",
+      "zh": "很不想打擾你，但是……",
+      "explain": "開口抱怨或請求前的緩衝語。先表示歉意，對方比較願意聽下去。",
+      "example": { "en": "I hate to bother you, but your car is blocking my door.", "zh": "很不想打擾你，但你的車擋到我家門口了。" }
+    },
+    {
+      "type": "grammar",
+      "en": "Would you mind + V-ing?",
+      "zh": "你介意……嗎？",
+      "explain": "Would you mind 後面接 V-ing。回答「不介意」要說 No, not at all.，因為字面意思是「你介意嗎」。",
+      "example": { "en": "Would you mind turning the TV down a little?", "zh": "你介意把電視轉小聲一點嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "How about...?",
+      "zh": "……怎麼樣？",
+      "explain": "提出折衷方案的好用句型，後面接 V-ing 或名詞。比直接拒絕對方的提議更容易談成。",
+      "example": { "en": "How about practicing in the afternoon instead?", "zh": "改成下午練習怎麼樣？" }
+    },
+    {
+      "type": "trap",
+      "en": "It's loud. / The sound is big.",
+      "zh": "很吵。／聲音很大。",
+      "explain": "聲音大小用 loud / quiet，不用 big / small。請人調小聲說 turn it down 或 keep it down。",
+      "example": { "en": "The music is too loud. Could you turn it down?", "zh": "音樂太大聲了，可以轉小聲一點嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Be clear, but kind.",
+      "zh": "清楚又友善",
+      "explain": "台灣人習慣委婉暗示，但在楓灣，客套話常被照字面理解。抱怨鄰居時語氣要友善、請求要清楚，最好還能提出折衷方案。",
+      "example": { "en": "It's a bit loud for me. Would ten o'clock work for you?", "zh": "對我來說有點吵。十點前停，你可以嗎？" }
+    }
+  ]
+}

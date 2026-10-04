@@ -1,0 +1,180 @@
+{
+  "id": "L005",
+  "location": { "en": "Driftwood Café, Harbor Street", "zh": "港灣街，漂流木咖啡館" },
+  "goal": { "en": "Order your first coffee in Maple Bay.", "zh": "在楓灣點下你的第一杯咖啡。" },
+  "background": "cozy small café interior with a wooden counter, a shiny espresso machine, a glass pastry case with croissants, hanging pendant lights, a blank chalkboard wall, morning sunlight through the window",
+  "cast": ["c01_barista"],
+  "intro": [
+    { "who": "narrator", "en": "Your first morning in Maple Bay. Before you go exploring, you need coffee.", "zh": "在楓灣的第一個早晨。出門探險之前，你需要一杯咖啡。" },
+    { "who": "narrator", "en": "The little café down the street smells amazing.", "zh": "街角的小咖啡館飄來陣陣香氣。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_barista", "expr": "happy", "en": "Morning! What can I get for you?", "zh": "早安！要點什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Can I get a latte, please?",
+          "zh": "可以給我一杯拿鐵嗎？",
+          "ok": true,
+          "tip": "Can I get a...? 是點餐最自然的說法，記得加 please。"
+        },
+        {
+          "en": "Give me one hot latte, quickly.",
+          "zh": "給我一杯熱拿鐵，快點。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_barista", "expr": "upset", "en": "...Sure. \"Please\" is free, by the way.", "zh": "……好喔。順便說一下，說「請」是不用錢的。" }
+            ],
+            "title": { "en": "Bitter Brew", "zh": "苦澀的一杯" },
+            "story": { "en": "Jay makes your latte in total silence. Somehow, it tastes a little more bitter than it should.", "zh": "阿傑一語不發地做好你的拿鐵。不知道為什麼，喝起來好像比平常苦了一點。" },
+            "why": "「給我一杯……」直譯成 Give me...，再加上 quickly，聽起來像在下命令。點餐說 Can I get a latte, please? 既自然又有禮貌。"
+          }
+        },
+        {
+          "en": "I'm fine, thank you. And you?",
+          "zh": "我很好，謝謝。你呢？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_barista", "expr": "confused", "en": "I'm good... but what would you like to drink?", "zh": "我很好……不過你想喝什麼？" }
+            ],
+            "title": { "en": "Textbook Reflex", "zh": "課本反射" },
+            "story": { "en": "You freeze, and the line behind you sighs. In a panic, you point at the first thing you see: a giant green smoothie.", "zh": "你腦袋一片空白，後面排隊的人開始嘆氣。慌亂之中，你指了指第一個看到的東西：一大杯綠色蔬果昔。" },
+            "why": "What can I get for you? 是「要點什麼？」，不是問候。不用回答 I'm fine，直接點餐：Can I get a latte, please?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_barista", "expr": "neutral", "en": "One latte. What size would you like?", "zh": "一杯拿鐵。要什麼尺寸？" }
+      ],
+      "choices": [
+        {
+          "en": "A medium, please.",
+          "zh": "中杯，謝謝。",
+          "ok": true,
+          "tip": "回答尺寸只要說 A small / medium / large, please. 就好。"
+        },
+        {
+          "en": "A middle cup, please.",
+          "zh": "中杯，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_barista", "expr": "confused", "en": "A middle cup? Like... between two cups?", "zh": "中間的杯子？是說……兩個杯子中間那個嗎？" }
+            ],
+            "title": { "en": "Cup in the Middle", "zh": "夾在中間的杯子" },
+            "story": { "en": "Jay holds up two cups and stares at the space between them. In the end he guesses, and you get a latte the size of a soup bowl.", "zh": "阿傑拿起兩個杯子，盯著它們中間的空隙看。最後他用猜的，你拿到一杯跟湯碗一樣大的拿鐵。" },
+            "why": "「中杯」不是 middle cup。飲料尺寸用 small、medium、large：A medium, please."
+          }
+        },
+        {
+          "en": "My size? I'm usually a medium.",
+          "zh": "我的尺寸？我通常穿 M。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_barista", "expr": "confused", "en": "Ha! I meant the cup, not your shirt.", "zh": "哈！我是說杯子，不是你的衣服。" }
+            ],
+            "title": { "en": "Wardrobe Check", "zh": "量身訂做" },
+            "story": { "en": "Jay laughs and tells the whole team. From now on, everyone at the café calls you \"Medium.\"", "zh": "阿傑大笑，還跟所有同事分享了這件事。從此以後，店裡每個人都叫你「中號」。" },
+            "why": "在咖啡館被問 What size? 是問杯子大小，不是衣服尺寸。直接回答 A medium, please. 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_barista", "expr": "happy", "en": "Medium latte. Is that for here or to go?", "zh": "中杯拿鐵。內用還是外帶？" }
+      ],
+      "choices": [
+        {
+          "en": "For here, please.",
+          "zh": "內用，謝謝。",
+          "ok": true,
+          "tip": "For here 是內用，To go 是外帶，二選一回答就好。"
+        },
+        {
+          "en": "Inside use, please.",
+          "zh": "內用，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_barista", "expr": "confused", "en": "Inside use? Oh, the restroom? It's in the back.", "zh": "在裡面使用？喔，你是說洗手間嗎？在後面。" }
+            ],
+            "title": { "en": "Wrong Door", "zh": "走錯門" },
+            "story": { "en": "Jay thinks you're asking for the restroom. You end up standing outside the restroom door, holding your latte.", "zh": "阿傑以為你要借洗手間。結果你捧著拿鐵，站在洗手間門口發呆。" },
+            "why": "「內用」直譯成 inside use 不是英文。被問 For here or to go? 就回答 For here, please. 或 To go, please."
+          }
+        },
+        {
+          "en": "Yes, please. Thank you!",
+          "zh": "好，麻煩了。謝謝！",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c01_barista", "expr": "confused", "en": "Yes... to which one? Here, or to go?", "zh": "好……是哪一個？內用還是外帶？" }
+            ],
+            "title": { "en": "Both, Please", "zh": "兩個都要" },
+            "story": { "en": "Jay gives up and puts your latte in a paper cup with a lid, on a plate. You drink it by the window, looking very confused.", "zh": "阿傑放棄了，把拿鐵裝進有蓋的紙杯，再放在盤子上給你。你坐在窗邊喝著，一臉困惑。" },
+            "why": "A or B? 這種選擇問句不能用 Yes 回答，要從選項中挑一個：For here, please."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_barista", "expr": "happy", "en": "One medium latte, for here. Enjoy, and welcome to the neighborhood!", "zh": "一杯中杯拿鐵，內用。請慢用，歡迎你搬來這一帶！" }
+    ],
+    "title": { "en": "Perfect Pour", "zh": "完美的一杯" },
+    "story": { "en": "You sit by the window with your first Maple Bay latte. Jay even drew a little maple leaf in the foam.", "zh": "你坐在窗邊，享用在楓灣的第一杯拿鐵。阿傑還在奶泡上拉了一片小小的楓葉。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Can I get a..., please?",
+      "zh": "可以給我一份……嗎？",
+      "explain": "點餐最自然的說法，比 Give me... 或 I want... 客氣得多。",
+      "example": { "en": "Can I get a hot chocolate, please?", "zh": "可以給我一杯熱可可嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "small / medium / large",
+      "zh": "小杯／中杯／大杯",
+      "explain": "中杯是 medium，不是 middle cup。回答尺寸時說 A medium, please. 就夠了。",
+      "example": { "en": "A large iced tea, please.", "zh": "一杯大杯冰紅茶，謝謝。" }
+    },
+    {
+      "type": "phrase",
+      "en": "for here / to go",
+      "zh": "內用／外帶",
+      "explain": "For here or to go? 是問內用還是外帶。內用不是 inside use，外帶說 to go。",
+      "example": { "en": "Two coffees to go, please.", "zh": "兩杯咖啡外帶，謝謝。" }
+    },
+    {
+      "type": "trap",
+      "en": "What can I get for you?",
+      "zh": "要點什麼？（不是問候）",
+      "explain": "店員說這句是在問你要點什麼，不是問你好不好。不用回答 I'm fine, thank you.，直接點餐。",
+      "example": { "en": "What can I get for you? A small latte, please.", "zh": "要點什麼？一杯小杯拿鐵，謝謝。" }
+    },
+    {
+      "type": "grammar",
+      "en": "Hot or iced? Iced, please.",
+      "zh": "熱的還是冰的？冰的，謝謝。",
+      "explain": "A or B? 的選擇問句不能用 Yes 或 No 回答，要從選項中挑一個說出來。",
+      "example": { "en": "Here or to go? To go, please.", "zh": "內用還是外帶？外帶，謝謝。" }
+    }
+  ]
+}

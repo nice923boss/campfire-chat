@@ -1,0 +1,264 @@
+{
+  "id": "L083",
+  "location": { "en": "Daybreak Coffee head office, meeting room", "zh": "破曉咖啡總部，會議室" },
+  "goal": { "en": "Respond to a price objection and keep the deal alive.", "zh": "回應客戶對價格的疑慮，讓這筆生意繼續談下去。" },
+  "background": "modern cafe company meeting room with a long reclaimed wood table, two coffee cups, exposed brick wall, hanging edison bulbs, large industrial windows, gray rainy afternoon",
+  "cast": ["c09_cafe_founder", "c09_cafe_finance"],
+  "intro": [
+    { "who": "narrator", "en": "Two weeks later. The trial went well, and Daybreak has your quote. This time, their finance director has joined the meeting.", "zh": "兩週後。試用很順利，破曉咖啡也拿到了你的報價。這次，他們的財務總監也加入了會議。" },
+    { "who": "c09_cafe_founder", "expr": "happy", "en": "Kai, my staff loved the trial lights. But Ms. Novak has some questions.", "zh": "凱，我的員工都很喜歡試用的燈。不過諾瓦克女士有些問題。" },
+    { "who": "c09_cafe_finance", "expr": "neutral", "en": "I'll be direct. I've read your quote very carefully.", "zh": "我就直說了。你的報價我看得很仔細。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "Your price is almost twice what we pay for regular LED bulbs. Frankly, that's too expensive.", "zh": "你們的價格幾乎是我們買一般 LED 燈泡的兩倍。坦白說，太貴了。" }
+      ],
+      "choices": [
+        {
+          "en": "I understand your concern. May I show you what's included in that price?",
+          "zh": "我理解您的顧慮。我可以說明一下這個價格包含了哪些項目嗎？",
+          "ok": true,
+          "tip": "I understand your concern. 先接住對方的情緒，再引導到價值說明。"
+        },
+        {
+          "en": "It's not expensive at all. You just don't understand what our product can really do yet.",
+          "zh": "一點也不貴。您只是還不了解我們的產品真正能做什麼。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "upset", "en": "I understand numbers perfectly well, thank you.", "zh": "我對數字的理解很清楚，謝謝。" }
+            ],
+            "title": { "en": "Argument Lost", "zh": "吵贏也輸了" },
+            "story": { "en": "Ms. Novak closes her folder with a quiet snap. Mr. Reyes suddenly finds his coffee very interesting.", "zh": "諾瓦克女士「啪」的一聲輕輕闔上資料夾。雷耶斯先生突然對他的咖啡很感興趣。" },
+            "why": "直接反駁「一點也不貴」，再暗示對方不懂，會讓客戶覺得被冒犯。先表示理解：I understand your concern.，再說明價值。"
+          }
+        },
+        {
+          "en": "I understand you concern. But the price is include installation and the five years warranty.",
+          "zh": "我理解您的顧慮。但這個價格包含安裝和五年保固。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "The price is include...? Sorry, is installation included or not?", "zh": "價格是包含……？抱歉，到底有沒有包含安裝？" }
+            ],
+            "title": { "en": "Fine Print Fumble", "zh": "細節講不清" },
+            "story": { "en": "Ms. Novak asks you to put everything in writing, twice. A finance director does not like guessing.", "zh": "諾瓦克女士要你把所有內容寫成書面，而且說了兩次。財務總監最不喜歡用猜的。" },
+            "why": "your concern 要用所有格 your；「包含」說 The price includes...，不是 is include；五年保固是 a five-year warranty。財務相關的說明一定要清楚準確。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "Even so, our lighting budget for this year is fixed. I can't just find extra money.", "zh": "就算如此，我們今年的照明預算是固定的。我沒辦法憑空變出錢。" }
+      ],
+      "choices": [
+        {
+          "en": "That makes sense. Let's look at the long-term savings. The system pays for itself in about two years.",
+          "zh": "可以理解。我們來看看長期能省下的費用。這套系統大約兩年就能回本。",
+          "ok": true,
+          "tip": "Let's look at the long-term savings. 把焦點從「現在花多少」轉到「長期省多少」。"
+        },
+        {
+          "en": "I see. By the way, how is your new downtown cafe doing? I heard the opening was really popular.",
+          "zh": "了解。對了，你們市中心的新店經營得如何？聽說開幕時很熱門。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "upset", "en": "It's doing fine. Now, back to the budget, please.", "zh": "還不錯。現在，請回到預算的話題。" }
+            ],
+            "title": { "en": "Nice Try", "zh": "轉移話題失敗" },
+            "story": { "en": "Changing the subject does not make the objection disappear. Ms. Novak simply asks the same question again, more slowly.", "zh": "轉移話題不會讓客戶的疑慮消失。諾瓦克女士只是把同樣的問題再問一次，而且說得更慢。" },
+            "why": "客戶提出預算疑慮時轉移話題，會像在逃避。正面回應，把焦點轉到長期效益：Let's look at the long-term savings.。"
+          }
+        },
+        {
+          "en": "Then just give me some face this time, okay? Next time I'll give you a better price, I promise.",
+          "zh": "那這次就給我個面子，好嗎？下次我一定給你們更好的價格。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Give you... a face? I'm sorry, I don't follow. And why not a better price now?", "zh": "給你……一張臉？抱歉，我聽不懂。而且為什麼不現在就給更好的價格？" }
+            ],
+            "title": { "en": "Saving Face", "zh": "面子問題" },
+            "story": { "en": "Ms. Novak hears only one thing: a better price exists. She now wants it today.", "zh": "諾瓦克女士只聽懂了一件事：原來還有更好的價格。現在她要求今天就拿到。" },
+            "why": "「給我面子」直譯成 give me face，英文母語者聽不懂，「下次給更好的價格」還會讓對方以為你現在有保留。用長期效益說服：Let's look at the long-term savings.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "Two years is a long time. How can I be sure those savings are real?", "zh": "兩年很長。我要怎麼確定那些節省是真的？" }
+      ],
+      "choices": [
+        {
+          "en": "Fair point. I'd be happy to share the meter data from your trial cafe, so you can check it yourself.",
+          "zh": "您說得有道理。我很樂意提供試用分店的電表數據，讓您自己核對。",
+          "ok": true,
+          "tip": "Fair point. 承認對方的質疑合理，再拿出對方能自己驗證的數據。"
+        },
+        {
+          "en": "I promise you one hundred percent. If you don't save money, I will personally pay you the difference.",
+          "zh": "我百分之百保證。如果沒省到錢，我個人補差額給您。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Personally? I'd rather have data than a personal promise.", "zh": "你個人？比起個人承諾，我寧願要數據。" }
+            ],
+            "title": { "en": "Personal Guarantee", "zh": "拿自己擔保" },
+            "story": { "en": "Ms. Novak writes down your offer, just in case. You spend the evening checking your savings account.", "zh": "諾瓦克女士把你的承諾記了下來，以防萬一。你整晚都在查自己的存款餘額。" },
+            "why": "業務用個人名義做無法兌現的保證，會顯得不專業又不可信。財務主管要的是證據：I'd be happy to share the meter data from your trial cafe.。"
+          }
+        },
+        {
+          "en": "You can believe me. Our customer all say the saving is very obvious and they are very satisfy.",
+          "zh": "您可以相信我。我們的客戶都說省很多，而且非常滿意。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Very satisfy? I'll need more than that, I'm afraid.", "zh": "非常滿意？恐怕我需要的不只這些。" }
+            ],
+            "title": { "en": "Trust Me", "zh": "相信我就對了" },
+            "story": { "en": "\"Trust me\" is not a number. Ms. Novak asks for three written references before the next meeting.", "zh": "「相信我」不是數字。諾瓦克女士要求下次開會前提供三份書面推薦。" },
+            "why": "customer 要用複數 customers；「滿意」是形容詞 satisfied，不是 satisfy。更重要的是，要用對方能驗證的數據說服，而不是只說「相信我」。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_founder", "expr": "neutral", "en": "Our old supplier was cheaper, though. Why shouldn't we just stay with them?", "zh": "不過我們原本的供應商比較便宜。為什麼不乾脆繼續用他們？" }
+      ],
+      "choices": [
+        {
+          "en": "That's certainly an option. The difference is that our system also cuts maintenance, so the total cost is lower.",
+          "zh": "那當然也是一個選擇。差別在於我們的系統也能減少維修，所以總成本更低。",
+          "ok": true,
+          "tip": "That's certainly an option. 先尊重對方的選擇，再用「總成本」說明差異。"
+        },
+        {
+          "en": "Because we are friends now, right? Friends should support each other's business, don't you think so?",
+          "zh": "因為我們現在是朋友了，對吧？朋友就應該互相支持生意，您不覺得嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "confused", "en": "Friends? Well... I like you, Kai, but this is a business decision.", "zh": "朋友？嗯……我是很喜歡你，凱，但這是商業決定。" }
+            ],
+            "title": { "en": "Friendship Discount", "zh": "交情牌" },
+            "story": { "en": "Ms. Novak raises an eyebrow and writes \"no business case\" next to your name.", "zh": "諾瓦克女士挑起眉毛，在你的名字旁邊寫下「沒有商業理由」。" },
+            "why": "在台灣打「交情牌」有時有用，但在西方商務場合，決策主要看成本與效益，靠關係拜託反而顯得沒有說服力。用總成本來比較：The total cost is lower.。"
+          }
+        },
+        {
+          "en": "If you want cheap and bad lights, sure, go ahead and stay with them. It's your choice.",
+          "zh": "如果你們想要便宜又爛的燈，當然，就繼續用他們吧。這是你們的選擇。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_founder", "expr": "upset", "en": "Wow. Okay. Maybe we will.", "zh": "哇。好喔。也許我們真的會。" }
+            ],
+            "title": { "en": "Sarcasm Backfires", "zh": "酸過頭" },
+            "story": { "en": "Your sarcasm lands like a cold espresso. Mr. Reyes suddenly remembers another meeting.", "zh": "你的酸言酸語像一杯冷掉的濃縮咖啡。雷耶斯先生突然想起還有另一個會要開。" },
+            "why": "用嘲諷的語氣回應客戶的比較，等於把客戶推向競爭對手。冷靜說明差異：That's certainly an option. The difference is...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_cafe_finance", "expr": "neutral", "en": "All right. Send me a full cost breakdown by Friday, and we'll talk again.", "zh": "好吧。週五前寄一份完整的成本明細給我，我們再談。" }
+      ],
+      "choices": [
+        {
+          "en": "Absolutely. I'll send it by Thursday, so you'll have a day to look it over.",
+          "zh": "沒問題。我週四前就寄給您，讓您有一天時間細看。",
+          "ok": true,
+          "tip": "比對方要求的期限更早交件，是建立信任最簡單的方法。"
+        },
+        {
+          "en": "Sure. I will sending you the breakdown before Friday, and then we can discuss about it again.",
+          "zh": "好的。我會在週五前寄明細給您，然後我們再討論。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "confused", "en": "Fine. Please make sure the breakdown itself is very clear.", "zh": "好。請務必確保明細本身寫得很清楚。" }
+            ],
+            "title": { "en": "Small Slips, Big Doubts", "zh": "小錯大疑慮" },
+            "story": { "en": "Ms. Novak now plans to read your breakdown with a red pen. Every line of it.", "zh": "諾瓦克女士現在打算拿紅筆看你的明細，一行都不放過。" },
+            "why": "will 後面接原形動詞 send，不是 sending；discuss 本身就是及物動詞，不加 about。說成 I'll send it by Thursday. 就簡潔有力。"
+          }
+        },
+        {
+          "en": "Friday? Can't we just decide today? I have to report the result to my manager tonight, you see.",
+          "zh": "週五？我們不能今天就決定嗎？我今晚得向主管報告結果。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_cafe_finance", "expr": "upset", "en": "Your reporting schedule is not my problem. Friday stands.", "zh": "你的報告時程不是我的問題。就是週五。" }
+            ],
+            "title": { "en": "Not My Deadline", "zh": "你的死線不是我的" },
+            "story": { "en": "You go back to the office empty-handed, and Ms. Wong asks why the client should care about your report.", "zh": "你兩手空空回到公司，王經理問你：客戶為什麼要在意你的報告？" },
+            "why": "拿自己的內部壓力催客戶決定，會讓對方覺得你只在乎業績。配合客戶的節奏，甚至提早交件：I'll send it by Thursday.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_cafe_finance", "expr": "happy", "en": "Thursday. I like that. You handled my questions well, Kai.", "zh": "週四，我喜歡。你回答我的問題回答得很好，凱。" },
+      { "who": "c09_cafe_founder", "expr": "happy", "en": "Coming from Ms. Novak, that's practically a standing ovation.", "zh": "能讓諾瓦克女士這樣說，簡直等於起立鼓掌了。" }
+    ],
+    "title": { "en": "Objection Handled", "zh": "化解異議" },
+    "story": { "en": "The price did not change, but the conversation did. You leave with a deadline, a nod from the finance director, and a deal still very much alive.", "zh": "價格沒變，但談話的方向變了。你帶著一個期限、財務總監的認可，以及仍然熱騰騰的生意離開。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I understand your concern.",
+      "zh": "我理解您的顧慮。",
+      "explain": "處理異議的第一步：先承認對方的感受，不急著反駁。接著再說 May I show you...? 引導到價值。",
+      "example": { "en": "I understand your concern. Let me explain how the pricing works.", "zh": "我理解您的顧慮。讓我說明一下價格是怎麼算的。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let's look at the long-term savings.",
+      "zh": "我們來看看長期能省下的費用。",
+      "explain": "客戶嫌貴時，把焦點從一次性的價格轉到長期效益。搭配 pays for itself（回本）更有說服力。",
+      "example": { "en": "Let's look at the long-term savings over five years.", "zh": "我們來看看五年下來的長期節省。" }
+    },
+    {
+      "type": "vocab",
+      "en": "pay for itself",
+      "zh": "回本",
+      "explain": "形容一項投資省下的錢足以抵銷成本。主詞是產品，例如 The system pays for itself in two years.。",
+      "example": { "en": "These lights pay for themselves in about eighteen months.", "zh": "這些燈大約十八個月就能回本。" }
+    },
+    {
+      "type": "trap",
+      "en": "It's not expensive at all.",
+      "zh": "一點也不貴。",
+      "explain": "直接否定客戶的感受，很容易變成爭論。說 Fair point. 或 That makes sense. 先認同，再提出數據。",
+      "example": { "en": "Fair point. Here are the numbers from your trial cafe.", "zh": "您說得對。這是您試用分店的數據。" }
+    },
+    {
+      "type": "culture",
+      "en": "Facts over friendship",
+      "zh": "數據勝過交情",
+      "explain": "西方商務決策重視成本與證據，「給個面子」「我們是朋友」這類說法不但難懂，還會削弱你的說服力。",
+      "example": { "en": "I'd be happy to share the data so you can check it yourself.", "zh": "我很樂意提供數據，讓您自己核對。" }
+    }
+  ]
+}

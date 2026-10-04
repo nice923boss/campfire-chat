@@ -1,0 +1,263 @@
+{
+  "id": "L069",
+  "location": { "en": "Your studio apartment, phone call to Brightway", "zh": "你的套房，打電話到 Brightway" },
+  "goal": { "en": "Call to follow up on your interview, thank the team, and send what they need.", "zh": "打電話追蹤面試結果、向對方道謝，並提供對方需要的資料。" },
+  "background": "small studio apartment with a desk by the window, an open laptop, a phone charger and a closed notebook, a potted plant on the sill, rainy afternoon light",
+  "cast": ["c07_hr"],
+  "intro": [
+    { "who": "narrator", "en": "Eight days have passed since your second interview. Ms. Wong said they would decide that week, but your inbox is still empty.", "zh": "第二次面試已經過了八天。王經理說那週就會決定，但你的信箱還是空空的。" },
+    { "who": "narrator", "en": "You practice your first line twice, then dial Rachel's number.", "zh": "你把第一句話練習了兩遍，然後撥了瑞秋的電話。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "Good morning, Brightway. This is Rachel speaking.", "zh": "早安，這裡是 Brightway，我是瑞秋。" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, it's Kai. So, did I pass or not? Nobody has told me anything.",
+          "zh": "嗨，我是凱。所以我到底有沒有過？都沒人跟我說。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "Um, hello to you too, Kai.", "zh": "呃，凱，你也好啊。" }
+            ],
+            "title": { "en": "Exam Results Hotline", "zh": "放榜專線" },
+            "story": { "en": "You sound like a student calling about test scores. Rachel stays polite, but her voice gets a little cooler.", "zh": "你聽起來像打電話查成績的學生。瑞秋還是很有禮貌，但語氣冷淡了一些。" },
+            "why": "一開口就問「有沒有過」又抱怨沒人通知，聽起來很沒耐心。先表明身分和來意：Hi Rachel, this is Kai. I'm calling to follow up on my interview.。"
+          }
+        },
+        {
+          "en": "Hello, I am Kai. I call to ask about the interview last week.",
+          "zh": "你好，我是凱。我打來問上週面試的事。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Sorry... Kai? Which interview do you mean?", "zh": "抱歉……凱？你是說哪一場面試？" }
+            ],
+            "title": { "en": "Who's Calling?", "zh": "請問哪位？" },
+            "story": { "en": "Rachel needs a few seconds to figure out who you are and why you're calling. A clear first line would have saved you both the trouble.", "zh": "瑞秋花了好幾秒才搞懂你是誰、為什麼打來。第一句說清楚，就能省下這些麻煩。" },
+            "why": "講電話自報姓名說 This is Kai，不說 I am Kai；說明這通電話的目的要用進行式 I'm calling to...，I call 聽起來像平常的習慣。說 I'm calling to follow up on my interview.。"
+          }
+        },
+        {
+          "en": "Hi Rachel, this is Kai. I'm calling to follow up on my interview.",
+          "zh": "嗨，瑞秋，我是凱。我打來追蹤一下面試的結果。",
+          "ok": true,
+          "tip": "This is Kai. 是電話中自報姓名的說法，再用 I'm calling to follow up on... 一句說清楚來意。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "Oh, hi Kai! Thanks for calling. Ms. Wong hasn't made a final decision yet.", "zh": "喔，嗨，凱！謝謝你打來。王經理還沒做最後決定。" },
+        { "who": "c07_hr", "expr": "neutral", "en": "She's been away this week, visiting a hotel client.", "zh": "她這週出差，去拜訪一家飯店客戶。" }
+      ],
+      "choices": [
+        {
+          "en": "What? She said this week! So that means I didn't get it, right?",
+          "zh": "什麼？她說這週的！所以意思是我沒上，對吧？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "No, it means she's busy. Please don't jump to conclusions.", "zh": "不是，意思是她很忙。請不要急著下結論。" }
+            ],
+            "title": { "en": "Jumping to Conclusions", "zh": "自己嚇自己" },
+            "story": { "en": "You turned a simple delay into bad news. Rachel spends the next minute calming you down instead of talking about the job.", "zh": "你把單純的延誤當成了壞消息。瑞秋接下來一分鐘都在安撫你，而不是談工作。" },
+            "why": "對方說還沒決定，就急著質問、往壞處想，聽起來很焦躁。冷靜地問時間：Do you know when she might make a decision?。"
+          }
+        },
+        {
+          "en": "No problem. Do you know when she might make a decision?",
+          "zh": "沒問題。你知道她大概什麼時候會決定嗎？",
+          "ok": true,
+          "tip": "Do you know when...? 用間接問句客氣地探問時間，不會給對方壓力。"
+        },
+        {
+          "en": "Oh, which hotel? I've always wanted to try a fancy hotel buffet.",
+          "zh": "喔，哪間飯店？我一直很想吃高級飯店的自助餐。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "I... can't really share client details. Was there something else?", "zh": "我……不太方便透露客戶資訊。還有其他事嗎？" }
+            ],
+            "title": { "en": "Buffet Detour", "zh": "吃到飽岔題" },
+            "story": { "en": "You called about a job and ended up asking about a buffet. Rachel politely steers you back, but the moment is gone.", "zh": "你打來問工作，結果問起了自助餐。瑞秋禮貌地把話題拉回來，但氣氛已經不對了。" },
+            "why": "追蹤電話要聚焦在面試進度，不要被對方的一句話帶到別的話題。可以問：Do you know when she might make a decision?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "neutral", "en": "She should decide by Friday. Is there anything else I can help with?", "zh": "她應該星期五前會決定。還有什麼我可以幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. Could you help me say some good words to Ms. Wong?",
+          "zh": "有，可以幫我在王經理面前說些好話嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Some... good words? Like what, hello and thank you?", "zh": "一些……好的字？像是你好和謝謝嗎？" }
+            ],
+            "title": { "en": "Good Words Only", "zh": "好話一籮筐" },
+            "story": { "en": "Rachel isn't sure if you want a favor or a vocabulary list. Either way, HR can't really help with that.", "zh": "瑞秋搞不清楚你是要她幫忙，還是要一張單字表。不管是哪個，人資都不方便幫這種忙。" },
+            "why": "「說好話」直譯成 say good words 英文聽不懂，道地說法是 put in a good word for me。不過請人資關說並不恰當，這時應該道謝：I wanted to thank you for setting up both interviews.。"
+          }
+        },
+        {
+          "en": "Yes, I wanted to thank you for setting up both interviews.",
+          "zh": "有，我想謝謝你幫我安排了兩次面試。",
+          "ok": true,
+          "tip": "I wanted to thank you for + V-ing，用過去式 wanted 語氣比 I want 更客氣。"
+        },
+        {
+          "en": "Yes. I want to thank you for arrange both of my interviews.",
+          "zh": "有，我想謝謝你幫我安排兩次面試。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Oh! For arranging them? You're welcome, I think.", "zh": "喔！你是說安排面試嗎？應該……不客氣？" }
+            ],
+            "title": { "en": "Thanks, Half Done", "zh": "謝到一半" },
+            "story": { "en": "Your thank-you comes out a little tangled, and Rachel isn't sure what she's being thanked for. The nice gesture gets lost in grammar.", "zh": "你的道謝說得有點打結，瑞秋不太確定你在謝什麼。一番好意就這樣卡在文法裡。" },
+            "why": "thank you for 後面接名詞或動名詞：thank you for arranging...。改用過去式 I wanted to thank you for... 會更委婉有禮。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "That's very kind of you. Oh, actually, Ms. Wong asked to see some of your product photos.", "zh": "你真貼心。對了，王經理說想看看你拍的商品照。" }
+      ],
+      "choices": [
+        {
+          "en": "Of course! I will send them to you with the fastest speed.",
+          "zh": "當然！我會用最快的速度寄給你。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "The fastest speed? Um, today is fine, Kai.", "zh": "最快的速度？呃，凱，今天寄就可以了。" }
+            ],
+            "title": { "en": "Speed Mode", "zh": "極速模式" },
+            "story": { "en": "Rachel pictures you racing across town with a box of photos. It's just an email, so any speed will do.", "zh": "瑞秋腦中浮現你抱著一箱照片衝過大街小巷的畫面。其實只是寄封電子郵件，什麼速度都行。" },
+            "why": "「用最快的速度」直譯成 with the fastest speed 很不自然，英文說 as soon as possible，或直接給時間：I can email you a link to my portfolio this afternoon.。"
+          }
+        },
+        {
+          "en": "Of course. I will send to you this afternoon by email.",
+          "zh": "當然。我今天下午會用電子郵件寄給你。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "Send... what to me? The photos?", "zh": "寄……什麼給我？照片嗎？" }
+            ],
+            "title": { "en": "Missing Package", "zh": "包裹不見了" },
+            "story": { "en": "Your sentence forgot to say what you're sending. Rachel waits for the rest, but it never comes.", "zh": "你的句子忘了說要寄什麼。瑞秋等著你說完，但後半句一直沒出現。" },
+            "why": "send 後面要接受詞，不能省略：send them to you。中文說「寄給你」可以不提東西，英文不行。可以說 I can email you a link to my portfolio this afternoon.。"
+          }
+        },
+        {
+          "en": "Sure. I can email you a link to my portfolio this afternoon.",
+          "zh": "當然，我今天下午可以寄作品集的連結給你。",
+          "ok": true,
+          "tip": "給出明確時間（this afternoon）比 soon 更讓人安心。portfolio 是作品集。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c07_hr", "expr": "happy", "en": "Perfect. I'll make sure she sees them. Thanks for calling, Kai.", "zh": "太好了，我會確保她看到。凱，謝謝你打來。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you, Rachel. I look forward to hearing from you.",
+          "zh": "謝謝你，瑞秋。期待你們的消息。",
+          "ok": true,
+          "tip": "I look forward to hearing from you. 是追蹤電話和信件最常見的結尾，look forward to 後面接 V-ing。"
+        },
+        {
+          "en": "Sorry for disturbing you! Really, so sorry for calling. Sorry!",
+          "zh": "打擾你了！真的很抱歉打來，對不起！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c07_hr", "expr": "confused", "en": "You don't need to apologize. Following up is completely normal.", "zh": "你不需要道歉，追蹤進度是很正常的事。" }
+            ],
+            "title": { "en": "Sorry, Sorry, Sorry", "zh": "道歉三連發" },
+            "story": { "en": "You apologized three times for a polite, normal phone call. Rachel starts to wonder what you did wrong.", "zh": "一通禮貌又正常的電話，你道歉了三次。瑞秋開始懷疑你是不是做錯了什麼。" },
+            "why": "台灣人習慣說「不好意思打擾了」，但英文道歉太多次，會讓人以為你真的做錯事。追蹤面試很正常，用期待收尾：Thank you, Rachel. I look forward to hearing from you.。"
+          }
+        },
+        {
+          "en": "Okay. If I don't hear anything by Friday, I'll call every day.",
+          "zh": "好。如果星期五前沒消息，我就每天打。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c07_hr", "expr": "upset", "en": "Please don't. We'll call you when there's news.", "zh": "請不要這樣。有消息我們會打給你。" }
+            ],
+            "title": { "en": "Daily Caller", "zh": "每日一通" },
+            "story": { "en": "Rachel quietly writes 'calls a lot' next to your name. That is not the note you were hoping for.", "zh": "瑞秋默默在你的名字旁邊寫下「很常打來」。這可不是你期待的評語。" },
+            "why": "說要每天打電話，聽起來像在施壓。追蹤一次就夠了，最後用期待收尾：I look forward to hearing from you.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c07_hr", "expr": "happy", "en": "Following up like this was a nice touch. Talk soon, Kai!", "zh": "像這樣打來追蹤很加分喔。凱，再聊！" }
+    ],
+    "title": { "en": "Right on Track", "zh": "追蹤到位" },
+    "story": { "en": "You hang up feeling calm. Two days later, your phone rings again. This time, the screen says: Ms. Wong.", "zh": "掛上電話，你覺得安心多了。兩天後，你的手機又響了。這次螢幕上顯示：王經理。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm calling to follow up on...",
+      "zh": "我打來追蹤一下……",
+      "explain": "follow up on 是「追蹤、跟進」某件事的進度。打電話時先自報姓名（This is Kai.），再用這句說明來意。",
+      "example": { "en": "Hi, this is Kai. I'm calling to follow up on my application.", "zh": "嗨，我是凱。我打來追蹤一下我的應徵進度。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I wanted to thank you for...",
+      "zh": "我想謝謝你……",
+      "explain": "用過去式 wanted 比 I want 委婉。for 後面接名詞或 V-ing，例如 thank you for your time、thank you for setting up the interview。",
+      "example": { "en": "I wanted to thank you for your time last week.", "zh": "我想謝謝你上週撥空和我見面。" }
+    },
+    {
+      "type": "grammar",
+      "en": "send + something + to someone",
+      "zh": "寄某物給某人",
+      "explain": "中文「我寄給你」可以不說寄什麼，英文的 send 一定要有受詞：send it to you、send you the link。",
+      "example": { "en": "I'll send you the link this afternoon.", "zh": "我今天下午把連結寄給你。" }
+    },
+    {
+      "type": "trap",
+      "en": "say good words / with the fastest speed",
+      "zh": "說好話／用最快的速度",
+      "explain": "「說好話」是 put in a good word for someone；「用最快的速度」是 as soon as possible。另外，面試後請人資幫忙說好話並不恰當。",
+      "example": { "en": "I'll get it to you as soon as possible.", "zh": "我會盡快交給你。" }
+    },
+    {
+      "type": "culture",
+      "en": "Following up is normal",
+      "zh": "追蹤面試是正常的",
+      "explain": "超過對方說的時間還沒消息，打一次電話或寄一封信追蹤很常見，也顯示你有興趣。不需要一直道歉，也不要天天打。",
+      "example": { "en": "I look forward to hearing from you.", "zh": "期待你們的消息。" }
+    }
+  ]
+}

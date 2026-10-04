@@ -1,0 +1,183 @@
+{
+  "id": "L020",
+  "location": { "en": "Harbor Bank, downtown branch", "zh": "港灣銀行，市中心分行" },
+  "goal": { "en": "Open a local bank account and get a debit card.", "zh": "開一個本地銀行帳戶，並申請金融卡。" },
+  "background": "quiet modern bank branch with a private desk for customer meetings, two chairs, a computer monitor, a small potted plant, glass partitions, light wood floor, calm afternoon",
+  "cast": ["c02_banker"],
+  "intro": [
+    { "who": "narrator", "en": "Mia says splitting the rent is much easier with a local bank account.", "zh": "米亞說，有本地銀行帳戶的話，分攤房租會方便很多。" },
+    { "who": "narrator", "en": "You bring your passport and a folder of papers to the bank. A banker invites you to sit at her desk.", "zh": "你帶著護照和一疊文件來到銀行。一位行員請你到她的辦公桌前坐下。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_banker", "expr": "happy", "en": "Good afternoon. Please, have a seat. How can I help you today?", "zh": "午安，請坐。今天需要辦理什麼呢？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. I'd like to open an account.",
+          "zh": "你好，我想開一個帳戶。",
+          "ok": true,
+          "tip": "open an account 是「開戶」，在銀行說這句對方就懂了。"
+        },
+        {
+          "en": "Hi. I want to open a new bank.",
+          "zh": "你好，我想開一家新銀行。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_banker", "expr": "confused", "en": "Open a new bank? That's... quite a big plan.", "zh": "開一家新銀行？這……計畫還真遠大。" }
+            ],
+            "title": { "en": "Future Bank Owner", "zh": "未來的銀行老闆" },
+            "story": { "en": "She politely explains how hard it is to start a bank. Twenty minutes later, you know a lot about banking laws and still have no account.", "zh": "她客氣地解釋開一家銀行有多難。二十分鐘後，你懂了不少銀行法規，卻還是沒有帳戶。" },
+            "why": "中文說「開銀行戶頭」，省略成 open a bank 會變成「開一家銀行」。開戶要說 open an account 或 open a bank account。"
+          }
+        },
+        {
+          "en": "Hi. Make me an account, quickly.",
+          "zh": "你好，快幫我開個帳戶。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_banker", "expr": "upset", "en": "Quickly? I'm afraid opening an account takes time.", "zh": "快一點？開戶恐怕需要一點時間。" }
+            ],
+            "title": { "en": "Paperwork Mountain", "zh": "文件山" },
+            "story": { "en": "She hands you every form the bank has, one by one, very slowly. By the time you finish, the bank is closing.", "zh": "她把銀行所有的表格一張一張、慢慢地拿給你。等你填完，銀行都要關門了。" },
+            "why": "Make me... 加上 quickly，聽起來像在命令和催促。在銀行辦事用 I'd like to open an account. 客氣地表達需求就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_banker", "expr": "neutral", "en": "Of course. I'll need your passport and proof of address.", "zh": "沒問題。我需要你的護照和地址證明。" }
+      ],
+      "choices": [
+        {
+          "en": "What counts as proof of address?",
+          "zh": "什麼東西可以當作地址證明？",
+          "ok": true,
+          "tip": "What counts as...? 是「什麼算是……？」，不確定需要什麼文件時很好用。"
+        },
+        {
+          "en": "My address? It's 12 Willow Lane.",
+          "zh": "我的地址？是柳樹巷 12 號。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_banker", "expr": "confused", "en": "That's nice, but I need a document that shows it.", "zh": "很好，但我需要一份能證明這個地址的文件。" }
+            ],
+            "title": { "en": "Come Back Tomorrow", "zh": "明天請早" },
+            "story": { "en": "You dig through your folder, but you don't know what you're looking for. You'll have to come back tomorrow. Good thing you have a bus pass.", "zh": "你翻遍那疊文件，卻不知道要找的是什麼，只好明天再跑一趟。還好你有公車月票。" },
+            "why": "proof of address 是「地址證明文件」，不是要你說出地址。不知道要準備什麼，就問 What counts as proof of address?。"
+          }
+        },
+        {
+          "en": "In Taiwan, we don't need that.",
+          "zh": "在台灣，我們不用這個。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c02_banker", "expr": "upset", "en": "I see. Well, here in Maple Bay, we do.", "zh": "了解。不過在楓灣這裡，我們需要。" }
+            ],
+            "title": { "en": "Rules Are Rules", "zh": "規定就是規定" },
+            "story": { "en": "She smiles politely, but the conversation gets very formal. You leave with a list of documents and a small headache.", "zh": "她客氣地笑了笑，但對話變得非常公事公辦。你帶著一張文件清單和一點頭痛離開。" },
+            "why": "拿自己國家的規定來比較，聽起來像在抱怨對方的制度。每個國家的開戶規定不同，直接問清楚需要什麼：What counts as proof of address?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_banker", "expr": "neutral", "en": "A lease or a phone bill is fine.", "zh": "租約或電話帳單都可以。" },
+        { "who": "narrator", "en": "You find your lease in the folder and hand it over with your passport.", "zh": "你從文件夾裡找出租約，連同護照一起交給她。" },
+        { "who": "c02_banker", "expr": "neutral", "en": "Would you like a debit card with the account?", "zh": "帳戶要一起辦金融卡嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, please. Is it free?",
+          "zh": "好，麻煩了。要錢嗎？",
+          "ok": true,
+          "tip": "Is it free? 簡單問清楚有沒有費用，辦任何服務前都值得問一句。"
+        },
+        {
+          "en": "Yes, please. Does it free?",
+          "zh": "好，麻煩了。它免費嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_banker", "expr": "confused", "en": "Does it... free? Oh, you want our premium package?", "zh": "它……免費？喔，你要我們的尊榮方案嗎？" }
+            ],
+            "title": { "en": "Premium Mistake", "zh": "誤入尊榮方案" },
+            "story": { "en": "You nod, a little lost. Your new account now costs twelve dollars a month. At least the card is shiny and gold.", "zh": "你有點搞不清楚就點了頭。你的新帳戶現在每個月要收十二元。至少卡片是金光閃閃的。" },
+            "why": "free 是形容詞，問句要用 be 動詞：Is it free?，不能用 Does it free?。"
+          }
+        },
+        {
+          "en": "Yes. I need a card to take money.",
+          "zh": "要，我需要一張卡來拿錢。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_banker", "expr": "confused", "en": "To... take money? Whose money?", "zh": "拿……錢？誰的錢？" }
+            ],
+            "title": { "en": "Security Check", "zh": "警衛關切" },
+            "story": { "en": "The security guard by the door turns and looks at you for a long time. You laugh nervously and explain very carefully.", "zh": "門口的警衛轉過頭來，盯著你看了很久。你只好乾笑幾聲，非常仔細地解釋清楚。" },
+            "why": "「領錢」直譯成 take money 聽起來有點像「拿走別人的錢」。從帳戶或提款機領錢要說 withdraw cash 或 take out cash。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_banker", "expr": "happy", "en": "Yes, there's no monthly fee. Your debit card will arrive by mail in about a week.", "zh": "是的，沒有月費。你的金融卡大約一週後會寄到。" },
+      { "who": "narrator", "en": "A bank account, a bus pass and a new haircut. Maple Bay is starting to feel like home.", "zh": "銀行帳戶、公車月票，還有新髮型。楓灣漸漸有了家的感覺。" }
+    ],
+    "title": { "en": "Settled In", "zh": "安頓下來" },
+    "story": { "en": "That night, you send Mia your share of the rent for the first time. She replies with ten party emojis.", "zh": "當天晚上，你第一次轉帳把房租分攤給米亞。她回了你十個慶祝的表情符號。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd like to open an account.",
+      "zh": "我想開戶。",
+      "explain": "在銀行開戶最直接的說法。常見帳戶有 checking account（活期帳戶，日常用）和 savings account（儲蓄帳戶）。",
+      "example": { "en": "I'd like to open a checking account, please.", "zh": "我想開一個活期帳戶。" }
+    },
+    {
+      "type": "vocab",
+      "en": "proof of address",
+      "zh": "地址證明",
+      "explain": "能證明你住在哪裡的文件，例如租約（lease）、水電帳單（utility bill）或電話帳單。在國外開戶、辦手續常會用到。",
+      "example": { "en": "Is a phone bill okay as proof of address?", "zh": "電話帳單可以當地址證明嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "debit card / credit card",
+      "zh": "金融卡／信用卡",
+      "explain": "debit card 直接從帳戶扣款，類似台灣的金融卡；credit card 是先刷卡、之後再繳款的信用卡。",
+      "example": { "en": "Can I pay with a debit card?", "zh": "我可以用金融卡付款嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "take money",
+      "zh": "拿錢（小心誤會）",
+      "explain": "「領錢」不要說 take money，聽起來像在拿走別人的錢。從帳戶或提款機領錢要說 withdraw cash 或 take out cash。",
+      "example": { "en": "I need to withdraw some cash from the ATM.", "zh": "我需要去提款機領點現金。" }
+    },
+    {
+      "type": "culture",
+      "en": "Ask about account fees",
+      "zh": "問清楚帳戶費用",
+      "explain": "在北美，有些銀行帳戶會收月費（monthly fee），或要求最低存款餘額才免收。開戶前問一句 Are there any monthly fees? 可以省下不少錢。",
+      "example": { "en": "Are there any monthly fees for this account?", "zh": "這個帳戶有收月費嗎？" }
+    }
+  ]
+}

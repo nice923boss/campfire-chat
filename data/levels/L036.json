@@ -1,0 +1,224 @@
+{
+  "id": "L036",
+  "location": { "en": "Maple Bay Cinema, ticket counter", "zh": "楓灣電影院，售票櫃檯" },
+  "goal": { "en": "Choose a movie with your friends and buy the tickets.", "zh": "跟朋友一起選電影，然後買票。" },
+  "background": "movie theater lobby at night with a red carpet, a popcorn stand, a ticket counter with blank screens, warm golden lights, velvet rope barriers, empty and quiet",
+  "cast": ["mia", "leo", "c04_ticket_clerk"],
+  "intro": [
+    { "who": "narrator", "en": "Friday night at Maple Bay Cinema. You, Mia, and Leo stand in front of the ticket counter.", "zh": "星期五晚上，楓灣電影院。你、米亞和里歐站在售票櫃檯前。" },
+    { "who": "narrator", "en": "Three movies are playing tonight: Star Racer, The Dark Lake, and Lucky Dog.", "zh": "今晚有三部電影：《星際飆客》、《暗湖》和《幸運狗》。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "So, what are you in the mood for, Kai?", "zh": "那，凱，你想看什麼樣的？" }
+      ],
+      "choices": [
+        {
+          "en": "Something fun. Maybe a comedy?",
+          "zh": "輕鬆一點的，也許喜劇？",
+          "ok": true,
+          "tip": "What are you in the mood for? 是問你想看什麼類型，給個方向就好。"
+        },
+        {
+          "en": "I'm in a good mood today, thanks!",
+          "zh": "我今天心情很好，謝謝！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Ha, that's great! But I meant, which movie?", "zh": "哈，那很好啊！但我是問你想看哪部？" }
+            ],
+            "title": { "en": "Good Mood, No Movie", "zh": "心情很好，電影沒選" },
+            "story": { "en": "Everyone is in a good mood, but nobody picks a movie. You end up watching the trailers in the lobby.", "zh": "大家心情都很好，但沒人選電影，最後你們在大廳看了一晚的預告片。" },
+            "why": "What are you in the mood for? 是問「你想要看什麼、吃什麼」，不是問你心情如何。回答想要的類型：Something fun.。"
+          }
+        },
+        {
+          "en": "Casual. Any movie is OK for me.",
+          "zh": "隨便，哪部都可以。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mia", "expr": "confused", "en": "Casual? Like... casual clothes?", "zh": "Casual？像是……休閒服那種？" }
+            ],
+            "title": { "en": "Dress Code", "zh": "服裝規定" },
+            "story": { "en": "Mia checks your outfit and says you look casual enough. Nobody knows which movie to see.", "zh": "米亞看了看你的穿著，說你夠休閒了。但還是沒人知道要看哪部。" },
+            "why": "「隨便」不能翻成 casual，casual 是「休閒的、不正式的」，用來形容穿著或場合。要說 I'm easy. 或 Anything is fine.，最好再給個方向。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "happy", "en": "Comedy? Come on, let's see The Dark Lake! It's super scary!", "zh": "喜劇？拜託，我們看《暗湖》啦！超恐怖的！" }
+      ],
+      "choices": [
+        {
+          "en": "Hmm, I'm not a big fan of horror.",
+          "zh": "嗯，我不太喜歡恐怖片。",
+          "ok": true,
+          "tip": "I'm not a big fan of... 是委婉說「不太喜歡」的好用句型。"
+        },
+        {
+          "en": "No way. Horror movies are so stupid.",
+          "zh": "才不要，恐怖片超蠢的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Stupid? Hey, horror is my favorite!", "zh": "蠢？喂，恐怖片是我的最愛耶！" }
+            ],
+            "title": { "en": "Harsh Critic", "zh": "毒舌影評" },
+            "story": { "en": "Leo spends the whole bus ride explaining why horror movies are art.", "zh": "里歐整趟公車都在解釋為什麼恐怖片是一種藝術。" },
+            "why": "不想看可以說自己的喜好，但說 stupid 等於批評喜歡它的人。說 I'm not a big fan of horror. 比較溫和。"
+          }
+        },
+        {
+          "en": "Hmm, I'm afraid horror movies.",
+          "zh": "嗯，我怕恐怖片。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "You're afraid... horror movies? Afraid OF them?", "zh": "你怕……恐怖片？是怕「它們」嗎？" }
+            ],
+            "title": { "en": "The Missing Of", "zh": "消失的 of" },
+            "story": { "en": "Leo is so busy fixing your grammar that he forgets to argue. Lucky you.", "zh": "里歐忙著幫你改文法，忘了跟你爭。算你運氣好。" },
+            "why": "「怕某樣東西」要說 be afraid of something，少了 of 句子就不完整：I'm afraid of horror movies.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mia", "expr": "happy", "en": "Lucky Dog it is! Kai, can you get the tickets?", "zh": "那就看《幸運狗》吧！凱，你可以去買票嗎？" },
+        { "who": "leo", "expr": "neutral", "en": "I already bought mine online. I'll grab the popcorn!", "zh": "我已經在網路上買好我的票了，我去買爆米花！" },
+        { "who": "c04_ticket_clerk", "expr": "happy", "en": "Hi there! What can I get for you?", "zh": "嗨！請問需要什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "Two tickets for Lucky Dog at 7:30, please.",
+          "zh": "兩張七點半的《幸運狗》，謝謝。",
+          "ok": true,
+          "tip": "買票句型：數量 + tickets for + 片名 + 時間 + please。"
+        },
+        {
+          "en": "Give me two Lucky Dog. The 7:30 one.",
+          "zh": "給我兩張《幸運狗》，七點半那場。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_ticket_clerk", "expr": "confused", "en": "Two lucky dogs? Sorry, we only sell hot dogs.", "zh": "兩隻幸運狗？抱歉，我們只有賣熱狗。" }
+            ],
+            "title": { "en": "Hot Dog Mix-up", "zh": "熱狗烏龍" },
+            "story": { "en": "Danny hands you two hot dogs. They're good, but they're not movie tickets.", "zh": "丹尼遞給你兩份熱狗。很好吃，但不是電影票。" },
+            "why": "「給我兩張……」直翻成 Give me two... 太直接，又少了 tickets，對方聽不懂你要買什麼。說 Two tickets for..., please. 清楚又有禮貌。"
+          }
+        },
+        {
+          "en": "Two for Lucky Dog. Cheaper for two, right?",
+          "zh": "兩張《幸運狗》。兩張比較便宜吧？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_ticket_clerk", "expr": "confused", "en": "Uh, no. It's the same price for everyone.", "zh": "呃，沒有喔。每個人都是一樣的價錢。" }
+            ],
+            "title": { "en": "Night Market Skills", "zh": "夜市殺價魂" },
+            "story": { "en": "Danny calls his manager to ask about a \"two-person deal.\" The line behind you gets very long.", "zh": "丹尼打電話問經理有沒有「兩人優惠」，你後面的隊伍越排越長。" },
+            "why": "電影院、超市這類明碼標價的地方不能殺價。想省錢可以問有沒有學生票：Do you have student discounts?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_ticket_clerk", "expr": "neutral", "en": "Sure thing! Would you like the middle or the back row?", "zh": "沒問題！要中間還是後排的座位？" }
+      ],
+      "choices": [
+        {
+          "en": "The middle, please. Two seats together.",
+          "zh": "中間，謝謝。兩個連在一起的位子。",
+          "ok": true,
+          "tip": "二選一的問題直接說出選擇，再補上 two seats together 就很清楚。"
+        },
+        {
+          "en": "Middle. We would like sit together.",
+          "zh": "中間。我們想坐在一起。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_ticket_clerk", "expr": "confused", "en": "Like sit? Oh, you'd like TO sit together?", "zh": "喜歡坐？喔，你是說想要坐一起？" }
+            ],
+            "title": { "en": "Seat Puzzle", "zh": "座位謎題" },
+            "story": { "en": "Danny gets it in the end, but he gives you the last two seats in the front row. Your neck hurts all night.", "zh": "丹尼最後懂了，但只剩第一排的兩個位子。你的脖子痛了一整晚。" },
+            "why": "would like 後面要接 to + 原形動詞：We would like to sit together.。少了 to，聽起來像「我們喜歡坐」。"
+          }
+        },
+        {
+          "en": "Yes, please. We like it.",
+          "zh": "好，謝謝，我們喜歡。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c04_ticket_clerk", "expr": "confused", "en": "Yes to which one? Middle or back?", "zh": "好是指哪一個？中間還是後排？" }
+            ],
+            "title": { "en": "Yes to Everything", "zh": "都好都好" },
+            "story": { "en": "Danny gives you one seat in the middle and one in the back. Mia sits next to someone who eats popcorn very loudly.", "zh": "丹尼給了你一個中間、一個後排的位子。米亞旁邊坐了一個吃爆米花超大聲的人。" },
+            "why": "Middle or back? 是二選一的問題，不能用 Yes 回答。直接說出選擇：The middle, please.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c04_ticket_clerk", "expr": "happy", "en": "Two in the middle for 7:30. Enjoy the movie!", "zh": "兩張中間的位子，七點半。祝你們觀影愉快！" },
+      { "who": "leo", "expr": "happy", "en": "Look! I got the biggest popcorn they had!", "zh": "你們看！我買了最大桶的爆米花！" }
+    ],
+    "title": { "en": "Lucky Night", "zh": "幸運之夜" },
+    "story": { "en": "Everyone laughs through the whole movie, even Leo. On the way home, he admits Lucky Dog was better than The Dark Lake.", "zh": "整部電影大家都笑個不停，連里歐也是。回家路上，他承認《幸運狗》比《暗湖》好看。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "What are you in the mood for?",
+      "zh": "你想看（吃）什麼？",
+      "explain": "be in the mood for something 是「想要某樣東西」，常用來問想看什麼電影、想吃什麼。回答 I'm in the mood for a comedy.。",
+      "example": { "en": "I'm in the mood for pizza tonight.", "zh": "我今晚想吃披薩。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm not a big fan of...",
+      "zh": "我不太喜歡……",
+      "explain": "委婉表達不喜歡的好用句型，比 I don't like... 或 ...is stupid 溫和許多，不會讓喜歡的人不舒服。",
+      "example": { "en": "I'm not a big fan of spicy food.", "zh": "我不太愛吃辣。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Two tickets for..., please.",
+      "zh": "請給我兩張……的票。",
+      "explain": "買票的標準句型：數量 + tickets for + 片名或目的地 + 時間 + please，比 Give me... 有禮貌。",
+      "example": { "en": "One ticket for the 9 o'clock show, please.", "zh": "請給我一張九點那場的票。" }
+    },
+    {
+      "type": "trap",
+      "en": "I'm easy. / Anything is fine.",
+      "zh": "我都可以（不是 casual）。",
+      "explain": "「隨便」不能翻成 casual，casual 是「休閒的」，形容穿著或場合。說 I'm easy. 或 Anything is fine. 才對，但最好再給個方向。",
+      "example": { "en": "I'm easy. Maybe something funny?", "zh": "我都可以，也許看好笑的？" }
+    },
+    {
+      "type": "culture",
+      "en": "No bargaining at the cinema.",
+      "zh": "電影院不殺價。",
+      "explain": "在英語國家，電影院、超市、連鎖店都是明碼標價，問「便宜一點」會讓店員很為難。可以問有沒有學生優惠。",
+      "example": { "en": "Do you have student discounts?", "zh": "請問有學生優惠嗎？" }
+    }
+  ]
+}

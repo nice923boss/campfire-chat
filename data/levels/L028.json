@@ -1,0 +1,223 @@
+{
+  "id": "L028",
+  "location": { "en": "Maple Bay Language Institute, Room 204", "zh": "楓灣語言學院，204 教室" },
+  "goal": { "en": "Arrive late to class and apologize the right way.", "zh": "上課遲到了，用對的方式道歉。" },
+  "background": "classroom on a rainy morning with rows of desks, a whiteboard wiped clean, wet umbrellas leaning by the door, rain streaking down the tall windows, gray soft light",
+  "cast": ["c03_teacher", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "It's pouring rain, and your bus was twenty minutes late.", "zh": "外面下著大雨，你搭的公車晚了二十分鐘。" },
+    { "who": "narrator", "en": "You open the classroom door. Everyone turns to look at you.", "zh": "你推開教室門，所有人都轉頭看你。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "neutral", "en": "Oh, good morning, Kai.", "zh": "喔，早安，凱。" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry I'm late.",
+          "zh": "抱歉我遲到了。",
+          "ok": true,
+          "tip": "上課中遲到，簡短道歉後安靜入座就好，不要打斷課程。"
+        },
+        {
+          "en": "I'm so sorry! Let me explain everything.",
+          "zh": "真的很抱歉！讓我解釋一下。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_teacher", "expr": "upset", "en": "Maybe after class? We're in the middle of a quiz.", "zh": "要不要下課再說？我們正在小考。" }
+            ],
+            "title": { "en": "Live Broadcast", "zh": "現場直播" },
+            "story": { "en": "The whole class hears the full story of the bus, the rain and your wet socks. Nobody finishes the quiz on time.", "zh": "全班聽完了公車、大雨和你濕襪子的完整故事。結果沒人準時寫完小考。" },
+            "why": "在台灣，遲到常會當場長篇解釋表示誠意，但在英語課堂上，這會打斷上課。先簡短說 Sorry I'm late.，下課再解釋。"
+          }
+        },
+        {
+          "en": "Hi, everyone! What did I miss?",
+          "zh": "嗨，大家好！我錯過了什麼？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_teacher", "expr": "upset", "en": "You missed the start of the quiz. Please sit down.", "zh": "你錯過了小考的開頭。請坐下。" }
+            ],
+            "title": { "en": "Grand Entrance", "zh": "華麗登場" },
+            "story": { "en": "Your cheerful entrance gets a few laughs, but not from Ms. Reed. She adds a note next to your name.", "zh": "你開心的登場引來幾聲笑，但瑞德老師沒笑。她在你名字旁邊做了個記號。" },
+            "why": "遲到時開心地打招呼，聽起來像不在乎遲到。先道歉：Sorry I'm late.，再安靜坐下。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "You sit down next to Leo.", "zh": "你在里歐旁邊坐下。" },
+        { "who": "leo", "expr": "confused", "en": "Hey, you're soaked! What happened?", "zh": "嘿，你全身都濕了！怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "The bus was late, so I ran here.",
+          "zh": "公車誤點，所以我一路跑過來。",
+          "ok": true,
+          "tip": "說過去發生的事要用過去式：was、ran。so 用來連接原因和結果。"
+        },
+        {
+          "en": "The bus is late, so I run here.",
+          "zh": "公車誤點，所以我跑過來。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "You run here? Every day? In the rain?", "zh": "你跑來這裡？每天？下雨也跑？" }
+            ],
+            "title": { "en": "Morning Runner", "zh": "晨跑達人" },
+            "story": { "en": "Leo now thinks you run to school every day. He invites you to join a marathon next month.", "zh": "里歐以為你每天都跑步上學，還邀你下個月一起去跑馬拉松。" },
+            "why": "現在式表示習慣，聽起來像你每天都跑來上課。已經發生的事要用過去式：The bus was late, so I ran here.。"
+          }
+        },
+        {
+          "en": "The bus was too slow. Rain very big.",
+          "zh": "公車太慢了，雨很大。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "The rain is... big? Like, huge raindrops?", "zh": "雨很……大？是說雨滴很大顆嗎？" }
+            ],
+            "title": { "en": "Giant Raindrops", "zh": "巨型雨滴" },
+            "story": { "en": "Leo imagines raindrops the size of golf balls. He spends the rest of class looking out the window.", "zh": "里歐想像著高爾夫球那麼大的雨滴，剩下的課都在看窗外。" },
+            "why": "「雨很大」不是 rain very big。英文說 It's raining hard. 或 It's pouring.。說明遲到原因可以說 The bus was late, so I ran here.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "After class, Ms. Reed waves you over.", "zh": "下課後，瑞德老師招手叫你過去。" },
+        { "who": "c03_teacher", "expr": "neutral", "en": "Kai, do you have a minute? What happened this morning?", "zh": "凱，有空嗎？今天早上怎麼了？" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry. My bus was twenty minutes late.",
+          "zh": "抱歉，我的公車晚了二十分鐘。",
+          "ok": true,
+          "tip": "先道歉，再用一句話說明原因。簡短、具體的解釋最有說服力。"
+        },
+        {
+          "en": "I'm sorry. Should I write a self-reflection?",
+          "zh": "對不起。我需要寫悔過書嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "A self-reflection? For being late once? No, no!", "zh": "悔過書？才遲到一次？不用、不用！" }
+            ],
+            "title": { "en": "Overkill", "zh": "反應過度" },
+            "story": { "en": "Ms. Reed laughs and says it's not a big deal. You still feel like you should bow three times.", "zh": "瑞德老師笑著說沒什麼大不了。你還是覺得應該鞠躬三次才行。" },
+            "why": "台灣學校常有寫悔過書的習慣，但在國外，偶爾遲到只要道歉並說明原因：Sorry. My bus was twenty minutes late.。"
+          }
+        },
+        {
+          "en": "It's not my fault. Blame the bus.",
+          "zh": "不是我的錯，要怪就怪公車。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_teacher", "expr": "upset", "en": "Hmm. The bus isn't in my class, Kai. You are.", "zh": "嗯……公車不是我的學生，凱，你才是。" }
+            ],
+            "title": { "en": "Bus Blamer", "zh": "怪公車的人" },
+            "story": { "en": "Ms. Reed gives you a long talk about taking responsibility. You miss your next bus too.", "zh": "瑞德老師跟你談了很久關於負起責任的事。結果你連下一班公車也錯過了。" },
+            "why": "It's not my fault. 聽起來在推卸責任。就算不是你的錯，也先道歉再說明：Sorry. My bus was twenty minutes late.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_teacher", "expr": "neutral", "en": "I see. Maybe try an earlier bus on rainy days?", "zh": "了解。下雨天也許可以搭早一班的公車？" }
+      ],
+      "choices": [
+        {
+          "en": "I will. It won't happen again.",
+          "zh": "我會的，不會再發生了。",
+          "ok": true,
+          "tip": "It won't happen again. 是道歉時表示會改進的固定說法，用未來式 won't。"
+        },
+        {
+          "en": "OK. It doesn't happen again.",
+          "zh": "好，不會再發生了。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_teacher", "expr": "confused", "en": "It doesn't? But... it just happened today.", "zh": "不會發生？可是……今天就發生了啊。" }
+            ],
+            "title": { "en": "Time Paradox", "zh": "時空悖論" },
+            "story": { "en": "Ms. Reed tries to understand your timeline. You both end up more confused than before.", "zh": "瑞德老師努力理解你的時間線。最後你們兩個都比剛才更混亂。" },
+            "why": "承諾以後不會再犯要用未來式：It won't happen again.。現在式 doesn't 聽起來像在描述事實，跟今天剛發生的事矛盾。"
+          }
+        },
+        {
+          "en": "OK. Can I join online when it rains?",
+          "zh": "好。下雨天我可以線上上課嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c03_teacher", "expr": "upset", "en": "Online? Kai, this isn't a weather problem.", "zh": "線上？凱，這不是天氣的問題。" }
+            ],
+            "title": { "en": "Rainy Day Plan", "zh": "雨天計畫" },
+            "story": { "en": "Ms. Reed says no. Maple Bay gets rain two hundred days a year, so you'd never come to school.", "zh": "瑞德老師說不行。楓灣一年下兩百天雨，照這樣你根本不用來學校了。" },
+            "why": "老師給建議時，先接受並承諾改進，不要轉移話題討價還價。說 I will. It won't happen again.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c03_teacher", "expr": "happy", "en": "Good. And here's the quiz you missed. You can take it now.", "zh": "很好。這是你錯過的小考，現在可以補考。" }
+    ],
+    "title": { "en": "Second Chance", "zh": "補考機會" },
+    "story": { "en": "You finish the quiz and get nine out of ten. The next rainy morning, you're the first one in class.", "zh": "你寫完小考，拿到十題對九題。下一個雨天早上，你是全班第一個到的。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Sorry I'm late.",
+      "zh": "抱歉我遲到了。",
+      "explain": "遲到時的標準道歉。上課中只要簡短說這句，安靜入座，下課再解釋原因。",
+      "example": { "en": "Sorry I'm late. The traffic was terrible.", "zh": "抱歉我遲到了，路上大塞車。" }
+    },
+    {
+      "type": "grammar",
+      "en": "Past tense + so",
+      "zh": "過去式 + so 說明因果",
+      "explain": "解釋已經發生的事要用過去式。so 前面是原因，後面是結果。",
+      "example": { "en": "I missed the bus, so I took a taxi.", "zh": "我錯過公車，所以搭了計程車。" }
+    },
+    {
+      "type": "phrase",
+      "en": "It won't happen again.",
+      "zh": "不會再發生了。",
+      "explain": "道歉時表示會改進的固定說法。won't 是 will not，表示對未來的承諾。",
+      "example": { "en": "I'm really sorry. It won't happen again.", "zh": "真的很抱歉，不會再發生了。" }
+    },
+    {
+      "type": "vocab",
+      "en": "It's pouring.",
+      "zh": "下大雨",
+      "explain": "pour 是「倒、傾瀉」，It's pouring. 就是傾盆大雨。不要說 The rain is very big.。",
+      "example": { "en": "Take an umbrella. It's pouring outside!", "zh": "帶把傘，外面雨下超大！" }
+    },
+    {
+      "type": "culture",
+      "en": "Keep apologies short.",
+      "zh": "道歉要簡短",
+      "explain": "英語文化重視「道歉加原因加改進」，不需要長篇解釋或寫悔過書。過度道歉反而會讓氣氛尷尬。",
+      "example": { "en": "Sorry, I forgot. I'll send it tonight.", "zh": "抱歉我忘了，今晚寄給你。" }
+    }
+  ]
+}

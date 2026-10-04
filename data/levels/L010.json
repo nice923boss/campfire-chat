@@ -1,0 +1,184 @@
+{
+  "id": "L010",
+  "location": { "en": "Number 5 bus to the language school", "zh": "開往語言學校的 5 號公車" },
+  "goal": { "en": "Get off the crowded bus politely, using the right magic words.", "zh": "在擁擠的公車上用對三個魔法詞，有禮貌地下車。" },
+  "background": "inside an empty city bus, rows of blue fabric seats, yellow handrails and hanging straps, large windows showing a sunny harbor street, rubber floor, morning light",
+  "cast": ["c01_passenger"],
+  "intro": [
+    { "who": "narrator", "en": "Today you visit the language school for the first time. You take the number 5 bus, and it's packed.", "zh": "今天你第一次去語言學校看看。你搭上 5 號公車，車上擠滿了人。" },
+    { "who": "narrator", "en": "Your stop is next. But a tall guy with a giant backpack is standing between you and the door, listening to music.", "zh": "下一站就要下車了。可是一個背著超大背包的高個子擋在你和車門之間，正在聽音樂。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c01_passenger", "expr": "neutral", "en": "Mm-hmm... oh yeah, great song...", "zh": "嗯哼……喔耶，好歌……" }
+      ],
+      "choices": [
+        {
+          "en": "Excuse me, can I get by?",
+          "zh": "不好意思，借過一下好嗎？",
+          "ok": true,
+          "tip": "要從別人身邊經過時說 Excuse me，加上 can I get by? 更清楚。"
+        },
+        {
+          "en": "Borrow pass, please! Borrow pass!",
+          "zh": "借過，拜託！借過！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_passenger", "expr": "confused", "en": "Borrow my pass? Sorry, I need my bus pass!", "zh": "借我的票卡？抱歉，我自己要用啦！" }
+            ],
+            "title": { "en": "Pass Denied", "zh": "借票失敗" },
+            "story": { "en": "Max holds his bus pass tight and doesn't move. The doors close, and you ride two extra stops.", "zh": "麥克斯緊緊抓著他的公車票卡，動也不動。車門關上，你多坐了兩站。" },
+            "why": "「借過」的「借」不是 borrow，英文聽起來像要跟他借東西。要從別人身邊過去，說 Excuse me, can I get by?"
+          }
+        },
+        {
+          "en": "Hey! Move! Your bag is too big!",
+          "zh": "喂！讓開！你的包包太大了！",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_passenger", "expr": "upset", "en": "Whoa, okay. You could just say \"excuse me.\"", "zh": "哇，好啦。你說一聲「借過」就好了嘛。" }
+            ],
+            "title": { "en": "Red as a Maple Leaf", "zh": "臉紅得像楓葉" },
+            "story": { "en": "Max moves, but half the bus is now staring at you. You get off with a face as red as a maple leaf.", "zh": "麥克斯讓開了，但半車的人都在盯著你。你下車時，臉紅得像一片楓葉。" },
+            "why": "對陌生人喊 Move! 很不客氣，還批評人家的包包更失禮。借過只要說 Excuse me, can I get by?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_passenger", "expr": "happy", "en": "Oh, sorry! Go ahead.", "zh": "喔，抱歉！你先過。" },
+        { "who": "narrator", "en": "As you squeeze past, the bus brakes hard. You step right on his foot.", "zh": "你正要擠過去時，公車突然急煞。你一腳踩在他的腳上。" },
+        { "who": "c01_passenger", "expr": "upset", "en": "Ow! My foot!", "zh": "噢！我的腳！" }
+      ],
+      "choices": [
+        {
+          "en": "Oh no, I'm so sorry! Are you okay?",
+          "zh": "糟糕，真的很對不起！你還好嗎？",
+          "ok": true,
+          "tip": "自己不小心弄到別人時說 Sorry，再關心一句 Are you okay?"
+        },
+        {
+          "en": "Oh, excuse me. Excuse me.",
+          "zh": "喔，不好意思，不好意思。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c01_passenger", "expr": "upset", "en": "Excuse you? You just stepped on my foot!", "zh": "不好意思？你剛剛踩到我的腳耶！" }
+            ],
+            "title": { "en": "Not Quite an Apology", "zh": "道歉沒到位" },
+            "story": { "en": "To Max, it sounds like you want his foot out of your way. He limps to the back of the bus, grumbling.", "zh": "在麥克斯聽來，你好像是嫌他的腳擋路。他一跛一跛地走到車尾，嘴裡碎碎念。" },
+            "why": "中文「不好意思」可以是 Excuse me，也可以是 Sorry。踩到人是你的錯，要用 Sorry 道歉；Excuse me 是借過或引起注意。"
+          }
+        },
+        {
+          "en": "Not my fault. The driver did it.",
+          "zh": "不是我的錯，是司機害的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c01_passenger", "expr": "upset", "en": "Seriously? Not even a \"sorry\"?", "zh": "真的假的？連一聲「對不起」都沒有？" }
+            ],
+            "title": { "en": "Blame Game", "zh": "甩鍋大師" },
+            "story": { "en": "The bus driver stares at you in the mirror for a long time. Max rubs his foot and turns away.", "zh": "司機從後照鏡盯了你好久。麥克斯揉著腳，轉過身去不理你。" },
+            "why": "就算是急煞造成的，踩到人還是要先道歉。英語國家的人很常說 Sorry，說一句不代表你全錯：I'm so sorry! Are you okay?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c01_passenger", "expr": "happy", "en": "Ha, it's okay. I'm fine.", "zh": "哈，沒事，我沒事。" },
+        { "who": "c01_passenger", "expr": "neutral", "en": "Hey, wait. Is this your phone? It was on the floor.", "zh": "嘿，等一下。這是你的手機嗎？剛剛掉在地上。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes! Thank you so much!",
+          "zh": "是！真的太謝謝你了！",
+          "ok": true,
+          "tip": "別人幫你忙時，說 Thank you so much! 最直接。"
+        },
+        {
+          "en": "Sorry, sorry! Sorry to trouble you!",
+          "zh": "不好意思，不好意思！麻煩你了！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c01_passenger", "expr": "confused", "en": "Why are you sorry? I just picked it up.", "zh": "你為什麼要道歉？我只是撿起來而已。" }
+            ],
+            "title": { "en": "Sorry Loop", "zh": "道歉迴圈" },
+            "story": { "en": "Max looks worried, like he did something wrong. You both keep apologizing until the doors close again.", "zh": "麥克斯一臉擔心，好像自己做錯了什麼。你們互相道歉，直到車門又關上了。" },
+            "why": "別人幫你時，台灣人習慣說「不好意思，麻煩你了」，但英文要說 Thank you，而不是 Sorry。一直道歉，對方會以為出了什麼問題。"
+          }
+        },
+        {
+          "en": "Oh! Yes, you're welcome!",
+          "zh": "喔！對，不客氣！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c01_passenger", "expr": "confused", "en": "You're welcome? Uh... thanks? For what?", "zh": "不客氣？呃……謝謝？謝什麼？" }
+            ],
+            "title": { "en": "Backwards Thanks", "zh": "顛倒的道謝" },
+            "story": { "en": "Max says thanks, so you say you're welcome again. While you two go in circles, you miss your stop.", "zh": "麥克斯說謝謝，你又回了一次不客氣。你們兩個繞來繞去，結果你坐過站了。" },
+            "why": "You're welcome 是回應別人的 Thank you，不是用來道謝的。別人幫你撿東西，要說 Thank you so much!"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c01_passenger", "expr": "happy", "en": "No problem. Have a good day!", "zh": "不客氣。祝你今天順利喔！" },
+      { "who": "narrator", "en": "You hop off at the right stop, phone safe in your pocket.", "zh": "你在對的站下車，手機穩穩地收在口袋裡。" }
+    ],
+    "title": { "en": "Three Magic Words", "zh": "三個魔法詞" },
+    "story": { "en": "Excuse me, sorry, thank you. With three little words, a crowded bus feels much friendlier. Your day is off to a great start.", "zh": "借過、對不起、謝謝。靠著三個小小的詞，擁擠的公車也變得友善多了。這一天，有個好的開始。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Excuse me, can I get by?",
+      "zh": "不好意思，借過一下。",
+      "explain": "要從別人身邊經過，或要引起陌生人注意時，用 Excuse me。「借過」不是 borrow。",
+      "example": { "en": "Excuse me, is this seat taken?", "zh": "不好意思，請問這個位子有人坐嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm so sorry! Are you okay?",
+      "zh": "真的很對不起！你還好嗎？",
+      "explain": "自己做錯事，例如踩到人、撞到人時，用 Sorry 道歉。再加一句 Are you okay? 更有誠意。",
+      "example": { "en": "Sorry! I didn't see you there.", "zh": "對不起！我剛剛沒看到你。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Thank you so much!",
+      "zh": "真的太謝謝你了！",
+      "explain": "別人幫你忙時用 Thank you，不要用 Sorry 代替。對方會回 You're welcome. 或 No problem.",
+      "example": { "en": "Thank you so much for your help!", "zh": "非常謝謝你的幫忙！" }
+    },
+    {
+      "type": "trap",
+      "en": "Excuse me, sorry or thank you?",
+      "zh": "「不好意思」要分三種說",
+      "explain": "中文「不好意思」一詞多用，英文要分清楚：借過、引起注意說 Excuse me；做錯事說 Sorry；別人幫忙說 Thank you。",
+      "example": { "en": "Excuse me. Oh, sorry! Thank you!", "zh": "借過一下。啊，對不起！謝謝你！" }
+    },
+    {
+      "type": "culture",
+      "en": "Use the magic words often.",
+      "zh": "魔法詞要常常說",
+      "explain": "英語國家的人就算是很小的事，也會說 please、sorry、thank you、excuse me。下公車時對司機說 Thank you! 也很常見。",
+      "example": { "en": "Thanks, have a nice day!", "zh": "謝謝，祝你有美好的一天！" }
+    }
+  ]
+}

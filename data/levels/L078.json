@@ -1,0 +1,263 @@
+{
+  "id": "L078",
+  "location": { "en": "Brightway office, Sam's desk", "zh": "Brightway 公司，山姆的座位" },
+  "goal": { "en": "Answer a coworker's phone and take a clear, correct message.", "zh": "幫同事接電話，記下清楚又正確的留言。" },
+  "background": "office desk with a desk phone with a blank display, a blank notepad and a pen, a closed laptop, a coffee mug, an empty office chair pushed back, a window with soft midday light",
+  "cast": ["c08_hughes", "sam"],
+  "intro": [
+    { "who": "narrator", "en": "Sam just went to get a coffee. Then the phone on his desk starts ringing, and it won't stop.", "zh": "山姆剛去倒咖啡。接著他桌上的電話響了起來，一直響個不停。" },
+    { "who": "narrator", "en": "You pick it up.", "zh": "你接起了電話。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c08_hughes", "expr": "neutral", "en": "Hello? Is this Sam's phone?", "zh": "喂？請問這是山姆的電話嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, this is Sam's desk. Kai speaking. How can I help you?",
+          "zh": "是的，這是山姆的座位，我是凱。有什麼可以幫您的嗎？",
+          "ok": true,
+          "tip": "接別人的電話，先確認對方沒打錯，再報上自己的名字：Kai speaking.。"
+        },
+        {
+          "en": "Hello? Yes, it is Sam's phone. But I'm not Sam. Who are you?",
+          "zh": "喂？對，這是山姆的電話。但我不是山姆。你是誰？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_hughes", "expr": "upset", "en": "Who am I? I'm a client. Who are YOU?", "zh": "我是誰？我是客戶。那你又是誰？" }
+            ],
+            "title": { "en": "Identity Check", "zh": "身分大考驗" },
+            "story": { "en": "The call starts with two people asking who the other one is. Neither of you is having a good morning.", "zh": "這通電話的開頭，是兩個人互問對方是誰。你們兩個的早上都不太順。" },
+            "why": "「請問您是哪位？」直譯成 Who are you? 在電話裡很不禮貌。要說 May I ask who's calling?，或先報上自己的名字。"
+          }
+        },
+        {
+          "en": "Yeah, what's up? Sam's not here. What do you want?",
+          "zh": "對啊，怎樣？山姆不在。你要幹嘛？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_hughes", "expr": "upset", "en": "\"What do I want\"? I want to talk to someone at Brightway, please.", "zh": "「我要幹嘛」？我想找 Brightway 的人說話，麻煩了。" }
+            ],
+            "title": { "en": "Wrong Tone, Wrong Line", "zh": "語氣接錯線" },
+            "story": { "en": "The caller asks for your manager. Ms. Wong takes the call, and then takes you aside for a little chat.", "zh": "對方要求找你的主管。王經理接了電話，接著把你叫到一旁小聊一下。" },
+            "why": "What do you want? 很衝，像在趕人。接公司電話要說 How can I help you?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_hughes", "expr": "neutral", "en": "This is Robert Hughes from Lakeside Hotel. Is Sam there?", "zh": "我是湖畔飯店的休斯先生。山姆在嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm sorry, he's not available right now. May I take a message?",
+          "zh": "不好意思，他現在不方便接電話。需要幫您留言嗎？",
+          "ok": true,
+          "tip": "not available 是代接電話時最得體的說法，不必解釋對方去哪裡。"
+        },
+        {
+          "en": "Sorry, he's in the restroom. He drank too much coffee today.",
+          "zh": "抱歉，他去廁所了。他今天喝了太多咖啡。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c08_hughes", "expr": "confused", "en": "Oh. Okay. That's... more than I needed to know.", "zh": "喔，好。這……超出我需要知道的範圍了。" }
+            ],
+            "title": { "en": "Too Much Information", "zh": "資訊太多了" },
+            "story": { "en": "Mr. Hughes tells the story at his next hotel meeting. Sam hears about it two weeks later and is not amused.", "zh": "休斯先生在他飯店下次開會時講了這件事。山姆兩週後聽說了，一點都笑不出來。" },
+            "why": "代接電話時，不需要說同事去哪裡、在做什麼，那是同事的隱私。說 He's not available right now. May I take a message? 就好。"
+          }
+        },
+        {
+          "en": "Sorry, he is not at here now. You can leave message to me?",
+          "zh": "抱歉，他現在不在這裡。你可以留言給我嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_hughes", "expr": "confused", "en": "Sorry, can I what? Should I call back later?", "zh": "抱歉，我可以什麼？我要晚點再打嗎？" }
+            ],
+            "title": { "en": "Call Back Later", "zh": "晚點再打" },
+            "story": { "en": "Mr. Hughes decides it's easier to call back. He calls three more times, and Sam is out every time.", "zh": "休斯先生覺得乾脆晚點再打比較快。他又打了三次，山姆每次都剛好不在。" },
+            "why": "here 前面不加 at：He's not here.；請對方留言要說 May I take a message? 或 Would you like to leave a message?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_hughes", "expr": "neutral", "en": "Yes, please. Tell him it's Robert Hughes, and our lobby lights are flickering again.", "zh": "好，麻煩了。跟他說我是休斯先生，我們大廳的燈又在閃了。" }
+      ],
+      "choices": [
+        {
+          "en": "Of course. Could you spell your last name for me, please?",
+          "zh": "好的。可以請您拼一下您的姓氏嗎？",
+          "ok": true,
+          "tip": "聽到不熟悉的名字，一定要請對方拼出來：Could you spell that, please?。"
+        },
+        {
+          "en": "Of course. Sorry, your last name, how do you write it?",
+          "zh": "好的。抱歉，您的姓氏要怎麼寫？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_hughes", "expr": "confused", "en": "How do I write it? Well... with a pen, usually.", "zh": "怎麼寫？嗯……通常是用筆寫。" }
+            ],
+            "title": { "en": "With a Pen", "zh": "用筆寫啊" },
+            "story": { "en": "You both laugh, but you never get the spelling. Sam later finds a note that says \"Mr. Use called.\"", "zh": "你們都笑了，但你還是沒問到拼法。山姆後來看到一張紙條寫著「Use 先生來電」。" },
+            "why": "「怎麼寫」直譯成 how do you write it 會讓人以為在問用什麼寫。英文要問拼法：Could you spell that, please?。"
+          }
+        },
+        {
+          "en": "Flickering? Have you tried turning the lights off and on again?",
+          "zh": "在閃？您有試過把燈關掉再打開嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c08_hughes", "expr": "upset", "en": "Yes, many times. That's why I'm calling Sam.", "zh": "試過了，很多次。所以我才打給山姆。" }
+            ],
+            "title": { "en": "Tech Support Kai", "zh": "凱客服上線" },
+            "story": { "en": "You spend ten minutes troubleshooting a lobby you've never seen. You forget to write down his name.", "zh": "你花了十分鐘幫一個從沒看過的大廳排除故障，結果忘了記下他的名字。" },
+            "why": "代接電話的任務是把留言記清楚，不是自己處理問題。先問清楚名字：Could you spell your last name, please?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_hughes", "expr": "neutral", "en": "Sure. H-U-G-H-E-S. And my number is 555-0142.", "zh": "好。H-U-G-H-E-S。我的電話是 555-0142。" }
+      ],
+      "choices": [
+        {
+          "en": "Let me read that back: Hughes, H-U-G-H-E-S, 555-0142. Is that correct?",
+          "zh": "我跟您複述一次：Hughes，H-U-G-H-E-S，555-0142。這樣對嗎？",
+          "ok": true,
+          "tip": "Let me read that back. 把名字和號碼複述一次，是避免記錯最簡單的方法。"
+        },
+        {
+          "en": "Okay, I have wrote it down already. I will let him to call you back soon.",
+          "zh": "好，我已經寫下來了。我會讓他很快回電給您。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_hughes", "expr": "confused", "en": "Hmm, okay. You did get the number right, didn't you?", "zh": "嗯，好吧。你號碼有記對吧？" }
+            ],
+            "title": { "en": "Pizza Hotline", "zh": "打到披薩店" },
+            "story": { "en": "You wrote 555-0124. When Sam calls back, a pizza shop answers. At least he gets lunch.", "zh": "你寫成了 555-0124。山姆回電時，接電話的是一家披薩店。至少他順便訂到了午餐。" },
+            "why": "have 後面接過去分詞：I've written it down.；let 後面直接接原形動詞：I'll have him call you.。最重要的是複述確認：Let me read that back.。"
+          }
+        },
+        {
+          "en": "Got it, got it. No problem. Okay, bye bye.",
+          "zh": "知道了、知道了。沒問題。好，掰掰。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_hughes", "expr": "upset", "en": "Wait, I wasn't fin...", "zh": "等等，我還沒說完……" }
+            ],
+            "title": { "en": "Click", "zh": "喀嚓，掛斷" },
+            "story": { "en": "You hang up before he can finish. You never learn what the urgent part was.", "zh": "對方還沒說完你就掛了。你永遠不知道緊急的部分是什麼。" },
+            "why": "沒確認細節、也沒問還有沒有別的事就掛電話，很失禮。先複述：Let me read that back.，再問 Is that correct?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_hughes", "expr": "neutral", "en": "That's right. Please ask him to call me before three. It's urgent.", "zh": "對。請他三點前回電給我，這件事很急。" }
+      ],
+      "choices": [
+        {
+          "en": "I'll make sure he gets the message as soon as he's back. Thanks for calling.",
+          "zh": "他一回來，我一定會把留言轉給他。謝謝您來電。",
+          "ok": true,
+          "tip": "I'll make sure he gets the message. 讓對方安心，最後用 Thanks for calling. 結束通話。"
+        },
+        {
+          "en": "Okay. When he will come back, I will tell him call you before three.",
+          "zh": "好。等他回來，我會跟他說三點前打給您。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_hughes", "expr": "confused", "en": "When will he come back? I don't know, you tell me.", "zh": "他什麼時候回來？我不知道啊，你告訴我。" }
+            ],
+            "title": { "en": "Question or Answer?", "zh": "這是問句嗎？" },
+            "story": { "en": "Mr. Hughes thinks you asked him a question. The call ends in polite confusion on both sides.", "zh": "休斯先生以為你在問他問題。這通電話在雙方禮貌的困惑中結束。" },
+            "why": "when 引導的時間子句用現在式表示未來：When he comes back, I'll tell him to call you.。tell 後面要加 to：tell him to call。"
+          }
+        },
+        {
+          "en": "Sure. And while you're here, would you like to hear about our new lamps?",
+          "zh": "好的。對了，既然您打來了，要不要聽聽我們的新款燈具？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c08_hughes", "expr": "upset", "en": "My lobby is flickering, and you're selling me more lamps?", "zh": "我們大廳的燈在閃，你還要賣我更多燈？" }
+            ],
+            "title": { "en": "Wrong Time to Sell", "zh": "推銷時機不對" },
+            "story": { "en": "Mr. Hughes hangs up and calls Ms. Wong directly. The words \"your new hire\" come up more than once.", "zh": "休斯先生掛斷後直接打給王經理。「你們那位新人」這幾個字出現了不只一次。" },
+            "why": "客戶打來反映問題時推銷新產品，時機非常不對。先讓對方安心：I'll make sure he gets the message.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "Sam comes back with his coffee. You hand him a clear note: name, spelling, number, and \"urgent, before 3.\"", "zh": "山姆端著咖啡回來了。你遞給他一張清楚的紙條：名字、拼法、電話，還有「急件，三點前」。" },
+      { "who": "sam", "expr": "happy", "en": "Wow, the spelling and everything! Thanks, Kai. I'll call him right now.", "zh": "哇，連拼法都有！謝啦，凱。我現在馬上打給他。" }
+    ],
+    "title": { "en": "Message Delivered", "zh": "使命必達" },
+    "story": { "en": "Sam calls back at 1:15, and the lobby lights are fixed by four. Mr. Hughes even mentions \"the helpful person who took my message.\"", "zh": "山姆一點十五分回電，大廳的燈四點前就修好了。休斯先生還特別提到「那位幫我留言、很幫忙的人」。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "He's not available right now. May I take a message?",
+      "zh": "他現在不方便接電話。需要幫您留言嗎？",
+      "explain": "代接電話的標準說法。not available 不透露同事在做什麼，最得體；May I take a message? 主動提出幫忙留言。",
+      "example": { "en": "I'm sorry, she's not available right now. May I take a message?", "zh": "不好意思，她現在不方便接電話。需要幫您留言嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could you spell that, please?",
+      "zh": "可以請您拼一下嗎？",
+      "explain": "英文名字常常聽起來一樣、拼法不同，例如 Hughes 和 Hughs。聽到不確定的名字一定要請對方拼出來。",
+      "example": { "en": "Sorry, could you spell your last name, please?", "zh": "抱歉，可以請您拼一下您的姓氏嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Let me read that back.",
+      "zh": "我跟您複述一次。",
+      "explain": "把聽到的名字、電話、時間念一次給對方確認，是避免記錯最可靠的方法。最後加上 Is that correct?。",
+      "example": { "en": "Let me read that back: Tuesday at 2 p.m., Room 305. Is that correct?", "zh": "我複述一次：星期二下午兩點，305 室。這樣對嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Who are you?",
+      "zh": "請問您是哪位？（直譯陷阱）",
+      "explain": "中文「請問您是哪位」很有禮貌，但直譯成 Who are you? 在英文電話裡聽起來很衝。要說 May I ask who's calling? 或 Who's calling, please?。",
+      "example": { "en": "May I ask who's calling, please?", "zh": "請問是哪位來電？" }
+    },
+    {
+      "type": "culture",
+      "en": "Don't give too many details.",
+      "zh": "代接電話，細節不用多說。",
+      "explain": "在很多英語系職場，代接電話時不會說同事去廁所、在吃飯或還沒上班，只說 not available 或 away from the desk。說太多會讓同事尷尬，也不夠專業。",
+      "example": { "en": "He's away from his desk at the moment.", "zh": "他目前不在座位上。" }
+    }
+  ]
+}

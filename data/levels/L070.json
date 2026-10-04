@@ -1,0 +1,262 @@
+{
+  "id": "L070",
+  "location": { "en": "Harbor park, phone call from Ms. Wong", "zh": "海港公園，王經理來電" },
+  "goal": { "en": "Accept the job offer warmly, then confirm the start date and other details.", "zh": "熱情地接受錄取，再確認到職日和其他細節。" },
+  "background": "seaside park path with a wooden bench, a takeaway coffee cup on the bench, calm harbor water, tall trees with swaying leaves, late afternoon golden light",
+  "cast": ["ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "Friday afternoon. You are walking by the harbor when your phone buzzes. The screen says: Ms. Wong.", "zh": "星期五下午，你正在海港邊散步，手機突然震動。螢幕上顯示：王經理。" },
+    { "who": "narrator", "en": "Your heart skips a beat. You sit down on a bench and answer.", "zh": "你心跳漏了一拍，在長椅上坐下，接起電話。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Hi Kai, it's Ms. Wong from Brightway. Is now a good time to talk?", "zh": "嗨，凱，我是 Brightway 的王經理。現在方便講電話嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Oh, finally! I almost gave up on you guys, to be honest.",
+          "zh": "喔，終於！老實說，我差點就放棄你們了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Well. I'm glad you didn't give up quite yet.", "zh": "嗯，很高興你還沒完全放棄。" }
+            ],
+            "title": { "en": "Almost Gave Up", "zh": "差點放棄你們" },
+            "story": { "en": "Ms. Wong called with good news, and you answered with a complaint. She pauses before she goes on, a little less cheerful.", "zh": "王經理帶著好消息打來，你卻先抱怨了一句。她停頓了一下才繼續說，語氣沒那麼開心了。" },
+            "why": "就算等了很久，接到電話時先抱怨會讓對方不舒服。先回答問題並道謝：Yes, now is perfect. Thanks for calling.。"
+          }
+        },
+        {
+          "en": "Hi Ms. Wong! Yes, now is perfect. Thanks for calling.",
+          "zh": "嗨，王經理！現在很方便，謝謝您打來。",
+          "ok": true,
+          "tip": "回答「現在方便嗎」說 Now is perfect. 或 Now is a good time.，不要說 I'm convenient。"
+        },
+        {
+          "en": "Yes, yes! I'm very convenient now. Please say it.",
+          "zh": "方便方便！我現在很方便，請說。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "You're... convenient? Um, okay. I'll go ahead, then.", "zh": "你很……便利？呃，好，那我就說了。" }
+            ],
+            "title": { "en": "Convenience Store", "zh": "便利商店" },
+            "story": { "en": "For a second, Ms. Wong feels like she has called a convenience store. Then she remembers why she called.", "zh": "有那麼一秒，王經理覺得自己好像打給了便利商店。然後她才想起自己打來的目的。" },
+            "why": "convenient 是形容時間或東西「方便的」，不能用來說人，所以「我現在方便」不說 I'm convenient。要說 Now is a good time. 或 Yes, now is perfect.，「請說」也不用翻成 Please say it.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "I have good news. We'd like to offer you the position of sales and marketing assistant.", "zh": "我有好消息。我們想錄取你擔任業務行銷助理。" }
+      ],
+      "choices": [
+        {
+          "en": "Really? Me? I'm not good enough. Maybe you should ask someone else.",
+          "zh": "真的嗎？我？我不夠好啦，也許你們該問問別人。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Oh. Are you... turning down the offer?", "zh": "喔。你是……要拒絕這份工作嗎？" }
+            ],
+            "title": { "en": "Too Humble to Hire", "zh": "謙虛過頭" },
+            "story": { "en": "In Taiwan, this might sound like polite modesty. Ms. Wong takes it at face value and starts thinking about her second choice.", "zh": "在台灣，這也許只是客氣的謙虛。但王經理照字面理解，開始想起第二人選了。" },
+            "why": "中文習慣先推辭表示謙虛，但英文會照字面理解成你要拒絕。想接受就直接表達開心：That's wonderful news! I'm thrilled to accept.。"
+          }
+        },
+        {
+          "en": "Really? I'm so exciting! Yes, I accept, I accept!",
+          "zh": "真的嗎？我好興奮！好，我接受，我接受！",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "You're exciting? Well, I suppose you are. So that's a yes?", "zh": "你很刺激？嗯，大概吧。所以這是答應了？" }
+            ],
+            "title": { "en": "So Exciting", "zh": "很刺激的人" },
+            "story": { "en": "Ms. Wong laughs. Your joy comes through loud and clear, even if your adjective took a wrong turn.", "zh": "王經理笑了出來。你的開心完全傳達到了，只是形容詞走錯了路。" },
+            "why": "exciting 是「令人興奮的」，形容事物；人感到興奮要用 excited。說 I'm so excited! 或更正式的 I'm thrilled to accept.。"
+          }
+        },
+        {
+          "en": "That's wonderful news! I'm thrilled to accept.",
+          "zh": "真是太好的消息了！我非常樂意接受。",
+          "ok": true,
+          "tip": "I'm thrilled to accept. 表示非常開心地接受，thrilled 比 happy 更強烈。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "We're very happy to have you. The salary is 48,000 a year, and the sales course is included.", "zh": "很高興你加入我們。年薪四萬八，業務課程也包含在內。" }
+      ],
+      "choices": [
+        {
+          "en": "That sounds perfect. Could I confirm the start date?",
+          "zh": "聽起來太好了。可以確認一下到職日嗎？",
+          "ok": true,
+          "tip": "Could I confirm...? 是確認細節的客氣說法，到職日、時間、地點都可以用。"
+        },
+        {
+          "en": "Great! And the year-end bonus is two months' salary, right?",
+          "zh": "太好了！那年終獎金是兩個月對吧？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Two months? I'm afraid we don't have that kind of bonus here.", "zh": "兩個月？恐怕我們這裡沒有那種獎金。" }
+            ],
+            "title": { "en": "Bonus Dreams", "zh": "年終夢碎" },
+            "story": { "en": "You assumed a Taiwan-style year-end bonus. Ms. Wong gently explains that not every country has one.", "zh": "你以為會有台灣式的年終獎金。王經理溫和地解釋，不是每個國家都有這種制度。" },
+            "why": "台灣常見的年終獎金，在很多英語系國家並不普遍，不能預設一定有。條件確認完，接著問到職日：Could I confirm the start date?。"
+          }
+        },
+        {
+          "en": "Great! Do you know a good gym near the office? I need exercise.",
+          "zh": "太好了！你知道公司附近有不錯的健身房嗎？我需要運動。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "A gym? I really don't know. Shall we talk about the start date?", "zh": "健身房？我真的不知道。我們要不要先談到職日？" }
+            ],
+            "title": { "en": "Wrong Kind of Workout", "zh": "運動錯時機" },
+            "story": { "en": "Ms. Wong called to discuss your contract, not your fitness plan. She has to bring the topic back herself.", "zh": "王經理打來是要談你的合約，不是你的健身計畫。她只好自己把話題拉回來。" },
+            "why": "對方在說明錄取條件時，要回應條件並確認細節，不要突然聊私事。可以說 That sounds perfect. Could I confirm the start date?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "We were hoping you could start next Monday. Does that work for you?", "zh": "我們希望你下週一就能開始上班。這樣可以嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Next Monday? That's so soon. Can I start next month instead?",
+          "zh": "下週一？太快了吧。我可以改成下個月再開始嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Next month? We really need someone sooner than that.", "zh": "下個月？我們真的需要人早點到。" }
+            ],
+            "title": { "en": "Not So Flexible", "zh": "說好的配合呢" },
+            "story": { "en": "In your last interview, you said you were flexible on the start date. Ms. Wong remembers, even if you don't.", "zh": "上次面試你才說到職日可以配合。你可能忘了，但王經理記得很清楚。" },
+            "why": "剛說過到職日可以配合，現在又要拖到下個月，會讓人覺得你說話不算話。可以的話就爽快答應並問細節：Yes, Monday works. What time should I be there?。"
+          }
+        },
+        {
+          "en": "Yes, no problem. What time I should arrive to the office?",
+          "zh": "好，沒問題。我應該幾點到公司？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "What time you should...? Oh, you mean what time to come in?", "zh": "幾點你應該……？喔，你是問幾點進公司？" }
+            ],
+            "title": { "en": "Question Scramble", "zh": "問句大亂" },
+            "story": { "en": "Ms. Wong figures it out, but it takes a moment. English questions need their words in a special order.", "zh": "王經理還是聽懂了，只是多花了點時間。英文問句的字序跟中文不一樣。" },
+            "why": "英文問句要把助動詞 should 放到主詞前面，而且是 arrive at，不是 arrive to：What time should I arrive at the office?。"
+          }
+        },
+        {
+          "en": "Yes, Monday works. What time should I be there?",
+          "zh": "可以，週一沒問題。我應該幾點到？",
+          "ok": true,
+          "tip": "What time should I be there? 問清楚時間，是接受工作後最實用的問題之一。"
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Please come at nine. Rachel will email you the contract today.", "zh": "請九點到。瑞秋今天會把合約寄給你。" }
+      ],
+      "choices": [
+        {
+          "en": "Nine? That's a bit early. Could I come at ten on my first day?",
+          "zh": "九點？有點早耶。第一天可以十點到嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Our day starts at nine, Kai. Including your first one.", "zh": "凱，我們九點上班，第一天也一樣。" }
+            ],
+            "title": { "en": "Sleeping In", "zh": "想睡晚一點" },
+            "story": { "en": "The contract hasn't even been sent, and you're already asking to come in late. Ms. Wong makes a mental note.", "zh": "合約都還沒寄出，你就已經在要求晚到了。王經理默默記在心裡。" },
+            "why": "上班時間是基本規定，第一天就要求晚到，會給人不認真的印象。可以問要準備什麼：Is there anything I should bring on my first day?。"
+          }
+        },
+        {
+          "en": "Got it. Is there anything I should bring on my first day?",
+          "zh": "了解。第一天有什麼需要帶的嗎？",
+          "ok": true,
+          "tip": "Is there anything I should...? 主動問準備事項，展現你很認真看待這份工作。"
+        },
+        {
+          "en": "Okay! Please teach me a lot and take care of me in the future!",
+          "zh": "好的！以後請多多指教，多多照顧！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Take care of you? Well, we have a good team. You'll be fine.", "zh": "照顧你？嗯，我們團隊很好，你會沒事的。" }
+            ],
+            "title": { "en": "Babysitter Wanted", "zh": "徵保母" },
+            "story": { "en": "Ms. Wong now pictures a lot of babysitting. In English, this sounds like you can't look after yourself.", "zh": "王經理腦中浮現了當保母的畫面。在英文裡，這句聽起來像你沒辦法照顧自己。" },
+            "why": "「請多多指教」直譯成 Please teach me a lot 或 take care of me 會很奇怪。英文說 I look forward to working with you.，或問 Is there anything I should bring on my first day?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Just yourself, and maybe a notebook. Welcome to Brightway, Kai!", "zh": "人來就好，也可以帶本筆記本。凱，歡迎加入 Brightway！" }
+    ],
+    "title": { "en": "You're Hired!", "zh": "正式錄取！" },
+    "story": { "en": "You hang up and stare at the harbor for a full minute. Then you call your family in Taiwan. Monday can't come soon enough.", "zh": "掛上電話後，你盯著海港看了整整一分鐘，然後打給台灣的家人。好想快點到星期一。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm thrilled to accept.",
+      "zh": "我非常樂意接受。",
+      "explain": "接受錄取時直接表達開心。thrilled 是「非常興奮、開心」，比 happy 更強烈。",
+      "example": { "en": "Thank you so much. I'm thrilled to accept the offer.", "zh": "非常謝謝您，我很樂意接受這份工作。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could I confirm...?",
+      "zh": "可以確認一下……嗎？",
+      "explain": "確認細節的客氣說法，常用在到職日、時間、地點、合約內容。",
+      "example": { "en": "Could I confirm the start date and time?", "zh": "可以確認一下到職的日期和時間嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "excited vs. exciting",
+      "zh": "excited 與 exciting",
+      "explain": "-ed 形容人的感受（I'm excited.），-ing 形容讓人有這種感受的事物（This job is exciting.）。同類還有 bored／boring、interested／interesting。",
+      "example": { "en": "I'm excited about this job. It's an exciting chance.", "zh": "我對這份工作很興奮，這是個令人興奮的機會。" }
+    },
+    {
+      "type": "trap",
+      "en": "I'm convenient / Please teach me a lot",
+      "zh": "我很方便／請多多指教",
+      "explain": "「我現在方便」要說 Now is a good time.；「請多多指教」英文沒有直接對應的說法，說 I look forward to working with you. 就好。",
+      "example": { "en": "I look forward to working with you and the team.", "zh": "期待和您還有團隊一起工作。" }
+    },
+    {
+      "type": "culture",
+      "en": "Accepting an offer",
+      "zh": "接受錄取",
+      "explain": "英文裡的推辭會被當真，想要這份工作就直接接受。另外，台灣常見的年終獎金在許多國家並不普遍，不要預設一定會有。",
+      "example": { "en": "Yes, I'd love to join the team!", "zh": "好，我很樂意加入團隊！" }
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "id": "L094",
+  "location": { "en": "Brightway office, Ms. Wong's office", "zh": "Brightway 公司，王經理辦公室" },
+  "goal": { "en": "Apologize to Ms. Wong for a serious mistake and explain how you will fix it.", "zh": "為嚴重的工作失誤向王經理道歉，並說明補救方式。" },
+  "background": "manager's office with a tidy wooden desk, two chairs facing it, a desk lamp, potted plant in the corner, glass wall facing an open-plan office, morning",
+  "cast": ["sam", "ms_wong"],
+  "intro": [
+    { "who": "narrator", "en": "Tuesday morning. The lobby lights for Alpenhaus's newest hotel were supposed to arrive today. They didn't.", "zh": "星期二早上。阿爾彭豪斯飯店集團新飯店的大廳燈具今天應該送到，但沒有。" },
+    { "who": "sam", "expr": "neutral", "en": "Kai... Ms. Wong wants to see you. It's about the hotel order. Good luck.", "zh": "凱……王經理找你，是飯店訂單的事。祝你好運。" },
+    { "who": "narrator", "en": "Your stomach drops. You knock on her door.", "zh": "你的心一沉，敲了敲她的門。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Sit down, Kai. The installation team went to the wrong address this morning. Do you know what happened?", "zh": "坐吧，凱。安裝團隊今天早上跑錯地址了。你知道是怎麼回事嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. I typed in the wrong address. I take full responsibility.",
+          "zh": "知道。是我輸入錯地址，我負全部責任。",
+          "ok": true,
+          "tip": "I take full responsibility. 是正式場合承擔責任的標準說法，不推託、不找藉口。"
+        },
+        {
+          "en": "The system auto-filled it, so honestly, it's not really my fault.",
+          "zh": "是系統自動帶入的，所以老實說不太算是我的錯。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "The system didn't press \"send,\" Kai. You did.", "zh": "按下「送出」的不是系統，凱，是你。" }
+            ],
+            "title": { "en": "Blame the Robot", "zh": "都是機器的錯" },
+            "story": { "en": "Ms. Wong asks IT to check the system. The system is fine. Your credibility is not.", "zh": "王經理請 IT 檢查系統。系統沒問題，你的信用卻出了問題。" },
+            "why": "出錯時先推給系統，會讓人覺得你在逃避。先認錯：It was my mistake. I take full responsibility.。"
+          }
+        },
+        {
+          "en": "Yes, it was my mistake. I am fully responsible to this problem.",
+          "zh": "是的，是我的錯。這個問題我要負全責。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Responsible TO the problem? You mean FOR it, I hope.", "zh": "對問題負責「to」？我希望你的意思是「for」。" }
+            ],
+            "title": { "en": "Preposition Panic", "zh": "介系詞慌張症" },
+            "story": { "en": "Your apology starts with a grammar correction. Not the strong opening you needed this morning.", "zh": "你的道歉從一次文法糾正開始。這可不是今天早上需要的開場。" },
+            "why": "「為某事負責」是 be responsible for something，to 後面接的是「對誰負責」。最穩的說法：I take full responsibility.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "I appreciate the honesty. But the hotel opens on Friday, and they're very worried.", "zh": "謝謝你這麼坦白。但飯店星期五開幕，他們非常擔心。" }
+      ],
+      "choices": [
+        {
+          "en": "Here's how I'll fix it: the driver can redeliver by three today.",
+          "zh": "我打算這樣補救：司機今天三點前可以重新送貨。",
+          "ok": true,
+          "tip": "道歉後馬上說 Here's how I'll fix it.，接上具體補救方案，主管最想聽的就是這個。"
+        },
+        {
+          "en": "I'm so sorry. I will think a method to make it up to the hotel.",
+          "zh": "真的很抱歉，我會想辦法彌補飯店的。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "\"Think a method\"? I need an actual plan, Kai. Today.", "zh": "Think a method？我需要的是實際的計畫，凱，今天就要。" }
+            ],
+            "title": { "en": "Method Acting", "zh": "方法演技" },
+            "story": { "en": "You promise a method but have no method. The hotel manager calls Ms. Wong three times before lunch.", "zh": "你承諾了辦法，卻沒有辦法。午餐前，飯店經理打了三通電話給王經理。" },
+            "why": "「想辦法」直譯 think a method 不自然，而且太模糊。要說出具體方案：Here's how I'll fix it: ...。"
+          }
+        },
+        {
+          "en": "I'm so sorry. If you want, I can hand in my resignation today.",
+          "zh": "非常抱歉。如果您希望，我今天就可以遞辭呈。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "Resign? I need you to fix this, Kai, not disappear.", "zh": "辭職？凱，我需要你把事情處理好，不是消失。" }
+            ],
+            "title": { "en": "Dramatic Exit", "zh": "以辭謝罪" },
+            "story": { "en": "Ms. Wong now has a lighting problem and an HR problem. Sam quietly hides your resignation letter in a drawer.", "zh": "王經理現在除了燈具問題，又多了人事問題。山姆默默把你的辭呈藏進抽屜。" },
+            "why": "用辭職表達歉意，在英語職場常被看成逃避責任。主管要的是解決方案：Here's how I'll fix it.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Three o'clock. Good. And the hotel manager? Someone has to talk to them.", "zh": "三點，很好。那飯店經理呢？總得有人跟他們說明。" }
+      ],
+      "choices": [
+        {
+          "en": "I'd like to call the hotel myself and apologize directly.",
+          "zh": "我想親自打給飯店，直接向他們道歉。",
+          "ok": true,
+          "tip": "I'd like to... myself 表示主動承擔，親自向客戶道歉更有誠意。"
+        },
+        {
+          "en": "Could you call them instead? They'll listen to a manager more.",
+          "zh": "可以請您打嗎？他們比較會聽經理的話。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "So I clean up, and you watch? That's not how this works.", "zh": "所以我收拾善後，你在旁邊看？不是這樣的。" }
+            ],
+            "title": { "en": "Pass the Phone", "zh": "電話踢皮球" },
+            "story": { "en": "Ms. Wong makes the call. You sit next to her, feeling very small, while she apologizes for your mistake.", "zh": "王經理打了電話。你坐在旁邊，看著她為你的錯道歉，覺得自己好渺小。" },
+            "why": "把道歉推給主管，等於把責任再丟回去。主動說 I'd like to call them myself.，讓客戶知道負責的人在處理。"
+          }
+        },
+        {
+          "en": "I will call them myself right now and apologize them directly.",
+          "zh": "我現在就親自打給他們，直接跟他們道歉。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "\"Apologize them\"? Please say it correctly on the phone, at least.", "zh": "Apologize them？至少在電話裡要說對喔。" }
+            ],
+            "title": { "en": "Rehearsal Required", "zh": "需要先排練" },
+            "story": { "en": "Ms. Wong makes you practice the call three times before letting you dial. The hotel waits a little longer.", "zh": "王經理要你練習三次才准你撥號。飯店又多等了一會兒。" },
+            "why": "apologize 是不及物動詞，要說 apologize to someone：apologize to them directly。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Good. Now, how do we make sure this doesn't happen again?", "zh": "很好。那我們要怎麼確保這種事不再發生？" }
+      ],
+      "choices": [
+        {
+          "en": "From now on, I'll confirm every address with the client by email.",
+          "zh": "從現在起，每個地址我都會用 email 跟客戶確認。",
+          "ok": true,
+          "tip": "From now on, I'll... 說出具體的新做法，比空泛的「我會小心」更有說服力。"
+        },
+        {
+          "en": "I'll add one more checking step and be small heart every time.",
+          "zh": "我會多加一道檢查，每次都會小心。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Be... small heart? Kai, are you feeling okay?", "zh": "Be small heart？凱，你還好嗎？" }
+            ],
+            "title": { "en": "Heart Check", "zh": "心臟檢查" },
+            "story": { "en": "Ms. Wong suggests you take the afternoon off. You spend it googling \"small heart English meaning.\"", "zh": "王經理建議你下午休息。你花了一整個下午搜尋 small heart 的英文意思。" },
+            "why": "「小心」不是 small heart，要說 be careful。不過主管更想聽具體做法：From now on, I'll confirm every address by email.。"
+          }
+        },
+        {
+          "en": "From now on, I will double-checking every address with the clients.",
+          "zh": "從現在起，我會跟客戶再三確認每個地址。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "\"Will double-checking\"? Let's double-check that sentence first.", "zh": "Will double-checking？我們先再檢查一次這個句子吧。" }
+            ],
+            "title": { "en": "Double-Check the Double-Check", "zh": "先檢查你的檢查" },
+            "story": { "en": "Ms. Wong writes your sentence on a sticky note and corrects it. You keep the note on your monitor for a month.", "zh": "王經理把你的句子寫在便利貼上訂正。你把它貼在螢幕上整整一個月。" },
+            "why": "will 後面接原形動詞：I will double-check。will + V-ing 只用在 will be + V-ing 的進行式。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "All right. Is there anything else you want to say?", "zh": "好。還有什麼想說的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Only that I'm truly sorry for the trouble. It won't happen again.",
+          "zh": "只想說，造成麻煩真的很抱歉。不會再發生了。",
+          "ok": true,
+          "tip": "It won't happen again. 搭配前面的具體方案，承諾才有份量。"
+        },
+        {
+          "en": "Could you please not tell the team about this? I'd lose so much face.",
+          "zh": "可以請您別跟團隊說這件事嗎？我會很沒面子。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "This isn't about your face, Kai. It's about the client.", "zh": "凱，這跟你的面子無關，重點是客戶。" }
+            ],
+            "title": { "en": "Saving Face, Losing Points", "zh": "保住面子，丟了分數" },
+            "story": { "en": "Ms. Wong doesn't tell the team. She doesn't have to. Your request already told her everything about your priorities.", "zh": "王經理沒跟團隊說，也不需要說。你的請求已經讓她看清你在乎什麼。" },
+            "why": "道歉時擔心自己的面子，會讓人覺得你把形象放在客戶之前。把焦點放在對方：I'm truly sorry for the trouble.。"
+          }
+        },
+        {
+          "en": "No. I already said sorry twice, so I think we're done here, right?",
+          "zh": "沒有。我已經道歉兩次了，所以應該可以了吧？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "ms_wong", "expr": "upset", "en": "We're done when I say we're done, Kai.", "zh": "什麼時候結束，由我決定，凱。" }
+            ],
+            "title": { "en": "Apology Expired", "zh": "道歉過期了" },
+            "story": { "en": "Two good apologies, ruined by one sentence. The meeting goes on for another thirty very long minutes.", "zh": "兩次漂亮的道歉，被一句話毀了。會議又延長了漫長的三十分鐘。" },
+            "why": "道歉的最後一句決定對方的印象，不耐煩會抵銷前面的誠意。用承諾收尾：It won't happen again.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "At 2:40, the truck pulls up at the hotel. The lobby lights go up with time to spare.", "zh": "兩點四十分，貨車開到飯店門口。大廳燈具在時限前裝好了。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Good recovery, Kai. Everyone makes mistakes. People remember how you handle them.", "zh": "補救得很好，凱。每個人都會犯錯，大家記得的是你怎麼處理。" }
+    ],
+    "title": { "en": "Owning It", "zh": "勇於扛責" },
+    "story": { "en": "You admitted the mistake, fixed it, and made a plan so it won't happen again. Ms. Wong will remember that much longer than the wrong address.", "zh": "你承認錯誤、補救問題，還訂出防止再犯的方法。比起寫錯的地址，王經理會記得更久的是這些。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I take full responsibility.",
+      "zh": "我負全部責任。",
+      "explain": "正式道歉時承擔責任的說法。比 It's my fault. 更正式，適合對主管或客戶使用。",
+      "example": { "en": "The delay was my mistake, and I take full responsibility.", "zh": "延誤是我的錯，我負全部責任。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Here's how I'll fix it.",
+      "zh": "我打算這樣補救。",
+      "explain": "道歉之後立刻提出具體方案。英語職場重視「認錯＋解決」，只道歉不提方案會顯得被動。",
+      "example": { "en": "I'm sorry about the error. Here's how I'll fix it: I'll resend the files tonight.", "zh": "抱歉出了錯。我打算這樣補救：今晚重新寄檔案。" }
+    },
+    {
+      "type": "phrase",
+      "en": "It won't happen again.",
+      "zh": "不會再發生了。",
+      "explain": "搭配 From now on, I'll... 的具體做法一起說，承諾才可信。只說這句沒有做法，會顯得空洞。",
+      "example": { "en": "From now on, I'll check twice. It won't happen again.", "zh": "從現在起我會檢查兩次，不會再發生了。" }
+    },
+    {
+      "type": "trap",
+      "en": "apologize to someone / responsible for something",
+      "zh": "向某人道歉／為某事負責",
+      "explain": "apologize 不能直接接人，要說 apologize to them。「為某事負責」用 responsible for，不是 responsible to。",
+      "example": { "en": "I apologized to the client for the delay.", "zh": "我為延誤向客戶道歉。" }
+    },
+    {
+      "type": "culture",
+      "en": "Own it, fix it, move on.",
+      "zh": "認錯、補救、往前走。",
+      "explain": "英語職場不期待你用辭職或過度自責謝罪，也不欣賞推卸。坦白認錯、提出方案、說明預防方法，就是最專業的道歉。",
+      "example": { "en": "I made a mistake, I fixed it, and I learned from it.", "zh": "我犯了錯，補救了，也從中學到教訓。" }
+    }
+  ]
+}

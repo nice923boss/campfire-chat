@@ -1,0 +1,23 @@
+{
+  "c07_recruiter": {
+    "name": "Derek",
+    "nameZh": "德瑞克",
+    "role": { "en": "Hotel chain recruiter", "zh": "連鎖飯店招募專員" },
+    "gender": "male",
+    "appearance": "man in his late 30s, short neat black hair with a slight wave, navy suit jacket over an open-collar light blue shirt, lanyard with a blank name card, holding a clipboard, energetic recruiter vibe"
+  },
+  "c07_hr": {
+    "name": "Rachel",
+    "nameZh": "瑞秋",
+    "role": { "en": "HR coordinator at Brightway", "zh": "Brightway 人資專員" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, long straight black hair in a neat low ponytail, light gray cardigan over a pale blue blouse, lanyard with a blank staff badge, holding a slim tablet, warm approachable recruiter vibe"
+  },
+  "c07_advisor": {
+    "name": "Mr. Hayes",
+    "nameZh": "海斯先生",
+    "role": { "en": "Career advisor at the language school", "zh": "語言學校職涯顧問" },
+    "gender": "male",
+    "appearance": "man in his early 50s, short salt-and-pepper hair, neatly trimmed gray beard, brown tweed blazer with elbow patches over a light green sweater vest, red pen clipped to his breast pocket, patient experienced advisor vibe"
+  }
+}

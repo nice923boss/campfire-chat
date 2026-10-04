@@ -1,0 +1,222 @@
+{
+  "id": "L034",
+  "location": { "en": "Birch Street bus stop", "zh": "樺木街公車站" },
+  "goal": { "en": "Make friendly small talk with your neighbor while waiting for the bus.", "zh": "等公車時，跟鄰居愉快地閒聊幾句。" },
+  "background": "quiet neighborhood bus stop on a sunny morning, glass shelter with a wooden bench, maple trees with red leaves, wet sidewalk after rain, clear blue sky",
+  "cast": ["c04_mrs_ellis"],
+  "intro": [
+    { "who": "narrator", "en": "Monday morning. After a rainy weekend, the sun is finally out.", "zh": "星期一早上。下了一整個週末的雨，太陽終於出來了。" },
+    { "who": "narrator", "en": "Mrs. Ellis, your neighbor from downstairs, is already at the bus stop with her green umbrella.", "zh": "樓下的鄰居艾利斯太太已經帶著她的綠色雨傘在公車站等車了。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c04_mrs_ellis", "expr": "happy", "en": "Good morning, Kai! Look at all this sunshine!", "zh": "早安，凱！你看這陽光！" }
+      ],
+      "choices": [
+        {
+          "en": "Good morning! Lovely day, isn't it?",
+          "zh": "早安！天氣真好，對吧？",
+          "ok": true,
+          "tip": "Lovely day, isn't it? 是跟鄰居打招呼最安全的開場白。"
+        },
+        {
+          "en": "Morning! Have you eaten yet?",
+          "zh": "早！你吃飽了沒？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "confused", "en": "Eaten yet? Oh my. Are you inviting me to breakfast?", "zh": "吃了沒？哎呀，你是要約我去吃早餐嗎？" }
+            ],
+            "title": { "en": "Breakfast Date", "zh": "早餐約會" },
+            "story": { "en": "Mrs. Ellis lets her bus go by. She waits for you to name a restaurant.", "zh": "艾利斯太太讓公車開走了，她在等你說要去哪家餐廳。" },
+            "why": "「吃飽沒」是台灣人的打招呼，但英文問 Have you eaten? 會被當成真的在問，甚至以為你要約吃飯。英文打招呼常聊天氣：Lovely day, isn't it?"
+          }
+        },
+        {
+          "en": "Good morning! It's very sun today.",
+          "zh": "早安！今天很太陽。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "confused", "en": "Very sun? Oh, you mean very sunny, dear!", "zh": "很太陽？喔，你是說很晴朗吧！" }
+            ],
+            "title": { "en": "Sun Day", "zh": "太陽日" },
+            "story": { "en": "Mrs. Ellis teaches you sunny, rainy, windy, and cloudy until the bus arrives. You get a gold star.", "zh": "艾利斯太太一路教你 sunny、rainy、windy、cloudy，直到公車來。你還得到一顆金星星。" },
+            "why": "sun 是名詞「太陽」，描述天氣要用形容詞 sunny：It's sunny today.。同理 rain 變 rainy，cloud 變 cloudy。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_mrs_ellis", "expr": "happy", "en": "It certainly is! I was getting so tired of the rain.", "zh": "真的是！我都快被雨煩死了。" }
+      ],
+      "choices": [
+        {
+          "en": "Me too. It rained all weekend, didn't it?",
+          "zh": "我也是。整個週末都在下雨，對吧？",
+          "ok": true,
+          "tip": "句尾加 didn't it? 這種附加問句，可以邀請對方繼續聊。"
+        },
+        {
+          "en": "Me too. It rain all weekend, right?",
+          "zh": "我也是。整個週末都在下雨，對吧？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "confused", "en": "It rains all weekend? Oh no, is more rain coming?", "zh": "整個週末都會下雨？天啊，又要下雨了嗎？" }
+            ],
+            "title": { "en": "Forecast Panic", "zh": "氣象恐慌" },
+            "story": { "en": "Mrs. Ellis hurries home to get her raincoat. She misses her bus.", "zh": "艾利斯太太急忙回家拿雨衣，結果錯過了公車。" },
+            "why": "下雨是上個週末的事，要用過去式 It rained。少了 -ed，聽起來像在預報接下來的天氣。"
+          }
+        },
+        {
+          "en": "Yeah. I hate rain. Maple Bay weather is terrible.",
+          "zh": "對啊，我討厭下雨。楓灣的天氣很爛。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "upset", "en": "Terrible? Well, I've lived here forty years. I rather like it.", "zh": "很爛？這個嘛，我在這裡住了四十年，我還挺喜歡的。" }
+            ],
+            "title": { "en": "Cloudy with a Chance of Awkward", "zh": "局部尷尬" },
+            "story": { "en": "Mrs. Ellis reads her newspaper until the bus comes. The sun is out, but the air feels chilly.", "zh": "艾利斯太太一直看報紙到公車來。太陽明明出來了，空氣卻有點冷。" },
+            "why": "跟在地人聊天氣可以小抱怨，但說 terrible 等於批評對方住了一輩子的地方。輕鬆附和就好：It rained all weekend, didn't it?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_mrs_ellis", "expr": "neutral", "en": "It really did. So, how's school going?", "zh": "真的。那，學校的生活還好嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Pretty good, thanks. My classes are fun.",
+          "zh": "還不錯，謝謝。我的課都很有趣。",
+          "ok": true,
+          "tip": "回答 How's...going? 用 Pretty good. 再補一句細節，對話就不會冷掉。"
+        },
+        {
+          "en": "It's that way. Twenty minutes by bus.",
+          "zh": "在那邊，坐公車二十分鐘。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "confused", "en": "I know where it is, dear. I meant, how are your classes?", "zh": "我知道學校在哪啦。我是問你上課還好嗎？" }
+            ],
+            "title": { "en": "Human GPS", "zh": "人體導航" },
+            "story": { "en": "Mrs. Ellis thanks you for the directions and tells you how to get to the post office, too.", "zh": "艾利斯太太謝謝你指路，還順便告訴你郵局怎麼走。" },
+            "why": "How's school going? 問的是你的學校生活過得如何，不是問學校在哪裡。回答感受就好：Pretty good, thanks.。"
+          }
+        },
+        {
+          "en": "Not bad. How much rent do you pay?",
+          "zh": "還好。你房租付多少？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "upset", "en": "My rent? My, that's rather a personal question.", "zh": "我的房租？哎呀，這問題有點私人呢。" }
+            ],
+            "title": { "en": "Landlord Mode", "zh": "房東上身" },
+            "story": { "en": "Mrs. Ellis suddenly gets very interested in the bus schedule. She checks it five times.", "zh": "艾利斯太太突然對公車時刻表非常有興趣，看了五遍。" },
+            "why": "在台灣聊房租很平常，但英語文化裡錢的話題（房租、薪水、價格）都很私人。跟鄰居閒聊停在天氣、學校、週末計畫就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_mrs_ellis", "expr": "happy", "en": "Oh, here's my bus. It was nice chatting with you, Kai!", "zh": "喔，我的公車來了。跟你聊天很開心，凱！" }
+      ],
+      "choices": [
+        {
+          "en": "You too! Have a lovely day.",
+          "zh": "我也是！祝你有美好的一天。",
+          "ok": true,
+          "tip": "對方說 nice chatting with you，回 You too! 再加一句祝福，道別就很溫暖。"
+        },
+        {
+          "en": "Bye-bye! Walk slowly, OK?",
+          "zh": "掰掰！慢走喔！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "confused", "en": "Walk slowly? Oh dear, do I look that old?", "zh": "慢慢走？哎呀，我看起來有那麼老嗎？" }
+            ],
+            "title": { "en": "Slow Motion", "zh": "慢動作" },
+            "story": { "en": "Mrs. Ellis climbs onto the bus very, very slowly, just for you. The driver is not amused.", "zh": "為了你，艾利斯太太非常、非常慢地走上公車。司機一點也不覺得好笑。" },
+            "why": "「慢走」是中文送客的客套話，直翻成 Walk slowly 像在提醒對方走路小心，甚至暗示對方老了。道別說 Have a lovely day! 或 Take care!。"
+          }
+        },
+        {
+          "en": "OK, bye. I'm waiting for another bus.",
+          "zh": "好，掰。我在等另一班車。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_mrs_ellis", "expr": "upset", "en": "Oh. Well... goodbye, then.", "zh": "喔。那……再見了。" }
+            ],
+            "title": { "en": "Bus Stop Freeze", "zh": "站牌急凍" },
+            "story": { "en": "Mrs. Ellis waves from the bus window, but only a tiny wave.", "zh": "艾利斯太太從車窗跟你揮手，但只揮了一下下。" },
+            "why": "對方說 It was nice chatting with you. 是在釋出善意，只回 OK, bye. 很冷淡。先回 You too!，再加一句祝福。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c04_mrs_ellis", "expr": "happy", "en": "What a sweet neighbor! Come by for tea this weekend, Kai. I'll bake a lemon cake.", "zh": "真是個貼心的鄰居！這週末來喝茶吧，凱，我來烤檸檬蛋糕。" },
+      { "who": "narrator", "en": "The bus pulls away. Mrs. Ellis waves at you from the window.", "zh": "公車開走了，艾利斯太太在窗邊對你揮手。" }
+    ],
+    "title": { "en": "Sunshine Neighbors", "zh": "晴天好鄰居" },
+    "story": { "en": "A few words about the weather turned into an invitation for tea and homemade cake.", "zh": "幾句關於天氣的閒聊，換來一場下午茶和手作蛋糕的邀約。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Lovely day, isn't it?",
+      "zh": "天氣真好，對吧？",
+      "explain": "英語圈最安全的開場白就是聊天氣，不會冒犯人，也很容易接話。",
+      "example": { "en": "Chilly this morning, isn't it?", "zh": "今天早上有點冷，對吧？" }
+    },
+    {
+      "type": "grammar",
+      "en": "Tag questions: ..., didn't it?",
+      "zh": "附加問句：……，對吧？",
+      "explain": "前面是肯定句，後面就用否定的附加問句，時態跟著前面走。It rained 是過去式，所以接 didn't it?。",
+      "example": { "en": "It's cold today, isn't it?", "zh": "今天很冷，對吧？" }
+    },
+    {
+      "type": "vocab",
+      "en": "sunny / rainy / windy / cloudy",
+      "zh": "晴朗的／下雨的／颳風的／多雲的",
+      "explain": "天氣名詞加 -y 就變形容詞，用來描述天氣：It's sunny.。注意 sun 要多一個 n 變 sunny。",
+      "example": { "en": "It was windy and cloudy yesterday.", "zh": "昨天風很大，而且多雲。" }
+    },
+    {
+      "type": "culture",
+      "en": "Keep small talk light.",
+      "zh": "閒聊要輕鬆。",
+      "explain": "跟鄰居或不熟的人閒聊，聊天氣、週末、學校最安全。房租、薪水、年齡這些話題在英語文化裡太私人。",
+      "example": { "en": "Any plans for the weekend?", "zh": "週末有什麼計畫嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "Have a lovely day!",
+      "zh": "祝你有美好的一天（不是「慢走」）。",
+      "explain": "「慢走」直翻成 Walk slowly 會讓人誤會。道別時說 Have a lovely day!、Take care! 或 See you later! 就很自然。",
+      "example": { "en": "Thanks for coming! Take care!", "zh": "謝謝你來！慢走喔！" }
+    }
+  ]
+}

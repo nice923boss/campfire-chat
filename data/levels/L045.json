@@ -1,0 +1,224 @@
+{
+  "id": "L045",
+  "location": { "en": "The Salty Anchor, a busy seafood restaurant by the pier", "zh": "碼頭邊的熱門海鮮餐廳「鹹錨」" },
+  "goal": { "en": "Get a table for three at a busy restaurant without a reservation.", "zh": "在沒訂位的情況下，幫三個人在熱門餐廳排到位子。" },
+  "background": "busy seafood restaurant entrance by a pier, host stand with a closed reservation book, ship lanterns, rope decorations, wooden tables inside, outdoor terrace with sea view, midday",
+  "cast": ["c05_host", "mia", "leo"],
+  "intro": [
+    { "who": "narrator", "en": "The next day at lunchtime, you find the Salty Anchor, the place Felix told you about. A crowd is waiting by the door.", "zh": "隔天中午，你們找到菲力克斯推薦的鹹錨餐廳。門口已經擠滿等候的人。" },
+    { "who": "mia", "expr": "happy", "en": "It smells amazing. Kai, go get us a table!", "zh": "聞起來好香。凱，快去幫我們弄個位子！" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_host", "expr": "neutral", "en": "Hi there, welcome to the Salty Anchor! Do you have a reservation?", "zh": "嗨，歡迎光臨鹹錨！請問有訂位嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, we don't. Do you have a table for three?",
+          "zh": "沒有。請問有三個人的位子嗎？",
+          "ok": true,
+          "tip": "Do you have a table for + 人數？是沒訂位時最標準的問法。"
+        },
+        {
+          "en": "No. We three people, have seat or not?",
+          "zh": "沒有。我們三個人，有沒有位子？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_host", "expr": "confused", "en": "You three... have a seat? Are you meeting someone inside?", "zh": "你們三個……有位子？你們是要跟裡面的人會合嗎？" }
+            ],
+            "title": { "en": "Phantom Friends", "zh": "不存在的朋友" },
+            "story": { "en": "Ivy waves you in to find your \"friends.\" You wander between the tables until a waiter kindly walks you back to the door.", "zh": "艾薇讓你們進去找「朋友」。你們在餐桌間繞了一圈，最後被服務生客氣地送回門口。" },
+            "why": "「有沒有位子」直譯成 have seat or not 不是英文問法。在餐廳要問 Do you have a table for three?，table 比 seat 更自然。"
+          }
+        },
+        {
+          "en": "No, but that table's empty. We'll just sit there.",
+          "zh": "沒有，但那桌是空的。我們直接坐那邊。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_host", "expr": "upset", "en": "Sorry, that table is reserved. Please wait to be seated.", "zh": "抱歉，那桌有人訂了。請在這裡等候帶位。" }
+            ],
+            "title": { "en": "Musical Chairs", "zh": "大風吹" },
+            "story": { "en": "You have to stand up again in front of the whole restaurant. Leo pretends he doesn't know you.", "zh": "你們只好在全餐廳面前站起來。里歐假裝不認識你。" },
+            "why": "有帶位人員的餐廳要等候帶位（wait to be seated），不能自己找空桌坐。先問 Do you have a table for three?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_host", "expr": "neutral", "en": "We're quite full at the moment, I'm afraid.", "zh": "不好意思，我們現在幾乎客滿。" },
+        { "who": "leo", "expr": "upset", "en": "Kai, ask how long. I'm starving.", "zh": "凱，問一下要多久。我快餓死了。" }
+      ],
+      "choices": [
+        {
+          "en": "I see. How long is the wait, roughly?",
+          "zh": "了解。大概要等多久呢？",
+          "ok": true,
+          "tip": "How long is the wait? 問要等多久，加 roughly 表示「大概就好」。"
+        },
+        {
+          "en": "I see. How long time we need to wait?",
+          "zh": "了解。我們需要等多久時間？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_host", "expr": "confused", "en": "What time? Oh, we close at ten tonight.", "zh": "幾點？喔，我們今晚十點打烊。" }
+            ],
+            "title": { "en": "Closing Time", "zh": "打烊時間" },
+            "story": { "en": "Now you know when they close, but not how long to wait. Three other groups get seated while you figure it out.", "zh": "你知道了打烊時間，卻不知道要等多久。你還在搞清楚的時候，已經有三組客人入座了。" },
+            "why": "How long 本身就是「多久」，後面不用再加 time，疑問句也要有 do。可以說 How long is the wait? 或 How long do we need to wait?"
+          }
+        },
+        {
+          "en": "Full? We came all this way. Find us something.",
+          "zh": "客滿？我們大老遠跑來耶。幫我們想辦法。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_host", "expr": "upset", "en": "I'll do what I can. Please wait over there.", "zh": "我盡量。請到那邊等。" }
+            ],
+            "title": { "en": "Bottom of the List", "zh": "名單最後一名" },
+            "story": { "en": "Ivy stays polite, but somehow your name ends up at the very bottom of the list.", "zh": "艾薇依然很有禮貌，但不知怎麼的，你的名字落到了名單最後面。" },
+            "why": "大老遠來不是對方的責任，用命令句要求只會讓人反感。客滿時先禮貌地問 How long is the wait?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_host", "expr": "neutral", "en": "About forty-five minutes. Would you like me to put you on the list?", "zh": "大約四十五分鐘。要幫你們登記候位嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure, put us on the list, please. It's Kai.",
+          "zh": "好，麻煩幫我們登記。名字是凱。",
+          "ok": true,
+          "tip": "put us on the list 是請對方把你加入候位名單，接著報名字就好。"
+        },
+        {
+          "en": "Yes, please help us line up. My name is Kai.",
+          "zh": "好，麻煩幫我們排隊。我叫凱。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_host", "expr": "confused", "en": "Help you line up? Uh... sure. Just stand behind that couple.", "zh": "幫你們排隊？呃……好吧。站在那對情侶後面就好。" }
+            ],
+            "title": { "en": "The Wrong Line", "zh": "排錯隊" },
+            "story": { "en": "You stand in the takeout line for forty-five minutes. At the front, you receive one paper bag of fries.", "zh": "你們在外帶隊伍排了四十五分鐘。輪到時，拿到一袋薯條。" },
+            "why": "「幫我們排隊」直譯成 help us line up，對方會以為你要找排隊的地方。候位要說 Please put us on the list. 或 Please put our name down.。"
+          }
+        },
+        {
+          "en": "Forty-five minutes? Okay. So, what's good here?",
+          "zh": "四十五分鐘？好吧。那這裡什麼好吃？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_host", "expr": "confused", "en": "Uh, everything! But... should I put your name down or not?", "zh": "呃，全部都好吃！但……到底要不要幫你登記？" }
+            ],
+            "title": { "en": "Menu Talk", "zh": "聊菜單聊過頭" },
+            "story": { "en": "While you chat about the fish of the day, two more groups get added before you. The wait becomes an hour.", "zh": "你們聊今日鮮魚聊得正開心，又有兩組客人排到你們前面。等候時間變成一小時。" },
+            "why": "對方問 Would you like me to put you on the list? 是在等 Yes 或 No。先回答 Sure, put us on the list.，再問菜色也不遲。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Fifteen minutes later, Ivy waves you over.", "zh": "十五分鐘後，艾薇向你們招手。" },
+        { "who": "c05_host", "expr": "happy", "en": "Good news. A terrace table just opened up, but it's a bit windy. Would you like it?", "zh": "好消息，露台剛空出一桌，不過風有點大。要坐嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "That works for us. We'll take it, thanks!",
+          "zh": "我們可以，就坐那裡，謝謝！",
+          "ok": true,
+          "tip": "That works for us. 表示安排沒問題，We'll take it. 就是「就這個了」。"
+        },
+        {
+          "en": "Yes, the wind is very strong today.",
+          "zh": "對啊，今天風好大。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_host", "expr": "confused", "en": "It is... So, is that a yes to the table?", "zh": "是啊……所以，這桌你們要嗎？" }
+            ],
+            "title": { "en": "Weather Report", "zh": "氣象報告" },
+            "story": { "en": "While you talk about the weather, another group takes the terrace table. Back to the list you go.", "zh": "你在聊天氣的時候，露台那桌被別組坐走了。只好回去繼續候位。" },
+            "why": "Would you like it? 問的是要不要這張桌子，不是在聊天氣。要就說 That works for us. We'll take it.。"
+          }
+        },
+        {
+          "en": "Windy? No way. Give us a better table inside.",
+          "zh": "有風？才不要。給我們裡面好一點的桌子。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_host", "expr": "upset", "en": "Then you'll have to keep waiting, sorry.", "zh": "那你們就得繼續等了，抱歉。" }
+            ],
+            "title": { "en": "Chips for Lunch", "zh": "午餐吃洋芋片" },
+            "story": { "en": "You wait another forty minutes. Mia and Leo share a bag of chips and don't say much.", "zh": "你們又多等了四十分鐘。米亞和里歐默默分食一包洋芋片。" },
+            "why": "No way 加上命令句，對好心幫忙的人很失禮。不想要可以說 Thanks, but could we wait for a table inside?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_host", "expr": "happy", "en": "Right this way. Enjoy your meal!", "zh": "這邊請。祝用餐愉快！" },
+      { "who": "leo", "expr": "happy", "en": "Fish and chips with an ocean view. Totally worth the wait.", "zh": "炸魚薯條配海景。等這一下完全值得。" }
+    ],
+    "title": { "en": "Worth the Wait", "zh": "等待是值得的" },
+    "story": { "en": "The wind messes up your hair, but the fish is perfect and the sea is sparkling. Felix was right about this place.", "zh": "海風把頭髮吹得亂七八糟，但魚好吃得沒話說，海面閃閃發光。菲力克斯推薦得沒錯。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Do you have a table for three?",
+      "zh": "請問有三個人的位子嗎？",
+      "explain": "沒訂位時的標準問法。餐廳的「位子」用 table，不說 seat。有訂位就說 I have a reservation for three under Kai.。",
+      "example": { "en": "Hi, do you have a table for two by the window?", "zh": "你好，有靠窗的兩人桌嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "How long is the wait?",
+      "zh": "要等多久？",
+      "explain": "How long 已經是「多久」，不要說 How long time。也可以說 How long do we need to wait?",
+      "example": { "en": "How long is the wait for a table for four?", "zh": "四人桌要等多久？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Could you put us on the list?",
+      "zh": "可以幫我們登記候位嗎？",
+      "explain": "候位名單叫 the list 或 the waitlist。「幫我們排隊」不要直譯成 help us line up，也可以說 Could you put our name down?",
+      "example": { "en": "Could you put us on the list? The name is Kai.", "zh": "可以幫我們登記候位嗎？名字是凱。" }
+    },
+    {
+      "type": "culture",
+      "en": "Please wait to be seated.",
+      "zh": "請等候帶位。",
+      "explain": "有帶位人員（host）的餐廳，要在門口等人帶位，不能自己找空桌坐。看到 Please wait to be seated 就在入口等。",
+      "example": { "en": "Hi, should we wait here to be seated?", "zh": "你好，我們在這裡等帶位嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "That works for us. We'll take it.",
+      "zh": "我們可以，就這個吧。",
+      "explain": "對方提出安排時，That works for us. 表示可以接受，We'll take it. 是「就決定這個」，訂位、買東西都能用。",
+      "example": { "en": "A table at 7:30? That works for us.", "zh": "七點半的位子？我們可以。" }
+    }
+  ]
+}

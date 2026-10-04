@@ -1,0 +1,37 @@
+{
+  "c04_zoe": {
+    "name": "Zoe",
+    "nameZh": "柔伊",
+    "role": { "en": "Classmate who loves parties", "zh": "愛辦派對的同學" },
+    "gender": "female",
+    "appearance": "young woman in her early 20s, long straight black hair with blunt bangs, denim overalls over a red striped long-sleeve shirt, small star-shaped earrings, phone in a glittery case, outgoing sociable vibe"
+  },
+  "c04_finn": {
+    "name": "Finn",
+    "nameZh": "芬恩",
+    "role": { "en": "Zoe's coworker at a café", "zh": "柔伊的咖啡店同事" },
+    "gender": "male",
+    "appearance": "young man in his mid 20s, short curly dark hair, olive green bomber jacket over a gray hoodie, small silver ring on one finger, film camera on a strap around his neck, relaxed curious vibe"
+  },
+  "c04_mrs_ellis": {
+    "name": "Mrs. Ellis",
+    "nameZh": "艾利斯太太",
+    "role": { "en": "Neighbor from downstairs", "zh": "樓下鄰居" },
+    "gender": "female",
+    "appearance": "woman in her late 60s, short silver curly hair, lavender knitted cardigan over a white blouse, pearl stud earrings, a small green umbrella hooked over one arm, chatty grandmotherly vibe"
+  },
+  "c04_ticket_clerk": {
+    "name": "Danny",
+    "nameZh": "丹尼",
+    "role": { "en": "Cinema ticket clerk", "zh": "電影院售票員" },
+    "gender": "male",
+    "appearance": "young man around 19, short spiky black hair, red cinema staff polo shirt, black baseball cap, small popcorn-shaped pin on the collar, cheerful energetic vibe"
+  },
+  "c04_mrs_moore": {
+    "name": "Mrs. Moore",
+    "nameZh": "摩爾太太",
+    "role": { "en": "Leo's host mother", "zh": "里歐的寄宿家庭媽媽" },
+    "gender": "female",
+    "appearance": "woman in her early 50s, shoulder-length dark hair with gray streaks tied in a low ponytail, cozy oatmeal-colored knit sweater, reading glasses pushed up on her head, cordless phone in one hand, kind motherly vibe"
+  }
+}

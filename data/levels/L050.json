@@ -1,0 +1,226 @@
+{
+  "id": "L050",
+  "location": { "en": "Airline counter, Port Aurora Airport", "zh": "極光港機場的航空公司櫃檯" },
+  "goal": { "en": "Explain the delay, move to an earlier flight and ask for meal vouchers.", "zh": "說明班機延誤，改搭早一點的班機，再問有沒有餐券。" },
+  "background": "small airport check-in hall, airline counter with a baggage scale, rows of gray seats, large windows showing a runway and a parked plane, rainy gray sky, quiet afternoon",
+  "cast": ["c05_agent", "leo", "mia"],
+  "intro": [
+    { "who": "narrator", "en": "Wednesday. A storm has damaged the railway, so every train to Maple Bay is canceled. You get a refund and book a short flight home instead.", "zh": "星期三。暴風雨弄壞了鐵路，往楓灣的火車全部停駛。你們拿到退票款，改訂一班短程班機回家。" },
+    { "who": "narrator", "en": "At the airport, the screen next to your flight says DELAYED.", "zh": "到了機場，螢幕上你們那班飛機旁邊寫著「延誤」。" },
+    { "who": "leo", "expr": "upset", "en": "I have class tomorrow morning! Kai, can you talk to them?", "zh": "我明天一早有課！凱，你可以去問問嗎？" },
+    { "who": "mia", "expr": "neutral", "en": "Stay calm and be nice. That always works better.", "zh": "保持冷靜、客氣一點，這樣一定比較有用。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c05_agent", "expr": "neutral", "en": "Good afternoon. How can I help you?", "zh": "午安。有什麼可以為您服務的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi. Our flight to Maple Bay was delayed.",
+          "zh": "你好。我們飛楓灣的班機延誤了。",
+          "ok": true,
+          "tip": "班機延誤用被動：Our flight was delayed.，先說出是哪一班，對方好查。"
+        },
+        {
+          "en": "Hi. We are delay. The flight to Maple Bay.",
+          "zh": "你好。我們延誤了。飛楓灣的班機。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_agent", "expr": "confused", "en": "You were delayed? So you missed your flight? I'm afraid there's a change fee for that.", "zh": "你們遲到了？所以錯過班機了？這樣恐怕要收改票費喔。" }
+            ],
+            "title": { "en": "Fee for Being Early", "zh": "早到也要罰錢" },
+            "story": { "en": "Ms. Carter starts charging you for missing a flight that hasn't left yet. It takes twenty minutes to sort out.", "zh": "卡特小姐開始為你們「錯過」一班根本還沒起飛的飛機收費。花了二十分鐘才解釋清楚。" },
+            "why": "We are delayed 會被聽成「我們自己遲到了」。延誤的是飛機，要說 Our flight was delayed.。"
+          }
+        },
+        {
+          "en": "Hi. Your airline ruined our whole day, you know.",
+          "zh": "你好。你們航空公司毀了我們一整天，你知道嗎。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_agent", "expr": "upset", "en": "I understand you're upset. Please take a seat, and I'll call you when I'm ready.", "zh": "我理解您不高興。請先坐一下，我準備好會叫您。" }
+            ],
+            "title": { "en": "Please Take a Seat", "zh": "請先坐一下" },
+            "story": { "en": "Ms. Carter helps five other passengers before she calls your name. Mia gives you a look that says, \"I told you.\"", "zh": "卡特小姐先幫了另外五位旅客，才叫到你的名字。米亞看你的眼神寫著：「我早就說了。」" },
+            "why": "延誤不是櫃檯人員的錯，一開口就抱怨只會讓對方不想幫你。先冷靜說明狀況：Our flight to Maple Bay was delayed."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_agent", "expr": "neutral", "en": "I'm so sorry. Flight 208 now leaves at nine p.m. That's a six-hour delay.", "zh": "非常抱歉。208 班機現在改為晚上九點起飛，延誤了六個小時。" }
+      ],
+      "choices": [
+        {
+          "en": "Oh no. Can we get on the next flight instead?",
+          "zh": "糟糕。我們可以改搭下一班嗎？",
+          "ok": true,
+          "tip": "想改搭別班就說 Can we get on the next flight?，get on 是「搭上」交通工具。"
+        },
+        {
+          "en": "Oh no. Can we change to the next class?",
+          "zh": "糟糕。我們可以換到下一班嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_agent", "expr": "confused", "en": "The next class? You'd like to upgrade to business class? That's three hundred dollars each.", "zh": "下一個艙等？您想升等商務艙嗎？每人三百元喔。" }
+            ],
+            "title": { "en": "Business Class Dreams", "zh": "商務艙之夢" },
+            "story": { "en": "You now know exactly how much business class costs. You still leave at nine p.m., in economy.", "zh": "你現在很清楚商務艙要多少錢了。你們還是晚上九點起飛，坐經濟艙。" },
+            "why": "「下一班」的「班」不是 class，class 在機場指艙等（economy、business）。要說 the next flight。"
+          }
+        },
+        {
+          "en": "Oh no. Is possible we changing to next flight?",
+          "zh": "糟糕。有可能我們改到下一班嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c05_agent", "expr": "confused", "en": "Sorry, you're changing... what, exactly? Your seats? Your names?", "zh": "抱歉，您要改……什麼？座位？名字？" }
+            ],
+            "title": { "en": "Change Everything", "zh": "什麼都改" },
+            "story": { "en": "Ms. Carter carefully changes your seats to the window. You are still on the nine p.m. flight.", "zh": "卡特小姐很仔細地把你們的座位換到窗邊。你們還是搭晚上九點那班。" },
+            "why": "Is possible 少了主詞 it，we changing 也少了動詞。可以說 Is it possible to change to the next flight? 或 Can we get on the next flight?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_agent", "expr": "happy", "en": "Let me check... Yes! The five o'clock flight has three seats left. You're on it.", "zh": "我查一下……有了！五點那班還剩三個位子，已經幫你們換好了。" },
+        { "who": "c05_agent", "expr": "neutral", "en": "That's still a three-hour wait, I'm afraid.", "zh": "不過恐怕還是要等三個小時。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you! Do we get meal vouchers for the wait?",
+          "zh": "謝謝！等待期間有提供餐券嗎？",
+          "ok": true,
+          "tip": "班機延誤很久時，航空公司常提供 meal voucher（餐券），客氣地問就好。"
+        },
+        {
+          "en": "Three more hours? Then you owe us dinner, at least.",
+          "zh": "還要三小時？那你們至少要請我們吃晚餐吧。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c05_agent", "expr": "upset", "en": "We don't owe anyone dinner, but there are restaurants upstairs.", "zh": "我們沒有欠誰晚餐，不過樓上有餐廳。" }
+            ],
+            "title": { "en": "Dinner Is on You", "zh": "晚餐自己付" },
+            "story": { "en": "You pay for an airport burger that costs as much as your train ticket. Leo eats it very slowly to make it worth it.", "zh": "你們自己掏錢買了機場漢堡，價錢跟火車票差不多。里歐吃得超慢，想把錢吃回本。" },
+            "why": "owe 是「欠」，用在這裡像在討債，對方就不想主動給了。客氣地問：Do we get meal vouchers for the wait?"
+          }
+        },
+        {
+          "en": "Thank you! Have any meal voucher can give us?",
+          "zh": "謝謝！有沒有餐券可以給我們？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c05_agent", "expr": "confused", "en": "Have any... do you mean, have I given you a voucher? Not yet, no.", "zh": "有沒有……您是說，我有沒有給過您餐券嗎？還沒有喔。" }
+            ],
+            "title": { "en": "Not Yet, No", "zh": "還沒有喔" },
+            "story": { "en": "Ms. Carter answers your question perfectly and moves on to the next passenger. The vouchers stay in her drawer.", "zh": "卡特小姐完美地回答了你的問題，接著去招呼下一位旅客。餐券還留在她的抽屜裡。" },
+            "why": "「有沒有……可以給我們」照中文字序直譯，英文聽不懂。要說 Do we get meal vouchers? 或 Are there any meal vouchers for the delay?"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c05_agent", "expr": "happy", "en": "Of course. Here are three vouchers, fifteen dollars each. Anything else I can help with?", "zh": "當然。這是三張餐券，每張十五元。還有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "No, that's everything. You've been a big help!",
+          "zh": "沒有了，就這些。你幫了大忙！",
+          "ok": true,
+          "tip": "Anything else? 沒有其他事時說 No, that's everything.，再補一句感謝。"
+        },
+        {
+          "en": "Thanks so much! Here's ten dollars for your coffee.",
+          "zh": "太感謝了！這十元給你買咖啡。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c05_agent", "expr": "upset", "en": "Oh, I'm sorry, I can't accept that. We're not allowed to take money.", "zh": "喔，抱歉，我不能收。我們規定不能收錢。" }
+            ],
+            "title": { "en": "The Awkward Tip", "zh": "尷尬的小費" },
+            "story": { "en": "Your ten dollars sits on the counter while everyone in line watches. You take it back very, very slowly.", "zh": "你的十元就擺在櫃檯上，排隊的人全都看著。你非常非常緩慢地把錢收回來。" },
+            "why": "國外很多服務要給小費，但航空公司、機場櫃檯人員通常規定不能收錢。想表達謝意，說 You've been a big help! 就夠了。"
+          }
+        },
+        {
+          "en": "Yes, a chicken sandwich and a coffee, please.",
+          "zh": "有，一份雞肉三明治和一杯咖啡，謝謝。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c05_agent", "expr": "confused", "en": "I'm afraid I can't make sandwiches. The café is upstairs, though.", "zh": "恐怕我沒辦法做三明治耶。不過咖啡廳在樓上。" }
+            ],
+            "title": { "en": "Wrong Counter", "zh": "走錯櫃檯" },
+            "story": { "en": "The people in line behind you start laughing. Leo pretends he doesn't know you all the way to the café.", "zh": "後面排隊的人都笑了。去咖啡廳的一路上，里歐都假裝不認識你。" },
+            "why": "Anything else I can help with? 是問「還有其他事要辦嗎」，不是在幫你點餐。沒事了就說 No, that's everything. Thank you!"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c05_agent", "expr": "happy", "en": "My pleasure. Enjoy your meal, and have a safe flight home.", "zh": "不客氣。祝用餐愉快，回程一路平安。" },
+      { "who": "leo", "expr": "happy", "en": "Kai, you're a legend. I'll make it to class after all!", "zh": "凱，你太神了。我明天還是趕得上上課！" },
+      { "who": "mia", "expr": "happy", "en": "See? Being nice works. Now, who wants dinner?", "zh": "看吧？客氣就有用。好，誰要吃晚餐？" }
+    ],
+    "title": { "en": "Home Sweet Home", "zh": "平安回家" },
+    "story": { "en": "Three hours, three free meals and one short flight later, you land in Maple Bay. Lost luggage, missed buses and a storm, and it was still the best trip ever.", "zh": "三個小時、三份免費餐點和一趟短短的飛行之後，你們降落在楓灣。行李走失、錯過末班車又遇上暴風雨，這仍然是最棒的一趟旅行。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "My flight was delayed.",
+      "zh": "我的班機延誤了。",
+      "explain": "延誤的是飛機，用被動語態 was delayed。說 I am delayed 會被聽成「我自己遲到了」。取消則是 was canceled。",
+      "example": { "en": "Our flight was canceled because of the storm.", "zh": "我們的班機因為暴風雨取消了。" }
+    },
+    {
+      "type": "trap",
+      "en": "flight / class",
+      "zh": "班機／艙等",
+      "explain": "中文的「下一班」是 the next flight。class 在機場指艙等，例如 economy class（經濟艙）、business class（商務艙），說錯會被當成要升等。",
+      "example": { "en": "Is there a seat on the next flight to Maple Bay?", "zh": "下一班飛楓灣的班機還有位子嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Can we get on the next flight?",
+      "zh": "我們可以改搭下一班嗎？",
+      "explain": "get on 是搭上公車、火車、飛機等交通工具。也可以說 Could you rebook us on an earlier flight?",
+      "example": { "en": "Could you rebook me on an earlier flight?", "zh": "可以幫我改到早一點的班機嗎？" }
+    },
+    {
+      "type": "vocab",
+      "en": "meal voucher",
+      "zh": "餐券",
+      "explain": "班機延誤較久時，航空公司常會發 meal voucher 讓旅客在機場用餐。客氣地問 Do we get meal vouchers? 就可以。",
+      "example": { "en": "Excuse me, do we get meal vouchers for the delay?", "zh": "不好意思，延誤有提供餐券嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Who gets a tip?",
+      "zh": "誰要給小費？",
+      "explain": "餐廳服務生、計程車司機、導遊通常收小費，但航空公司、機場和政府櫃檯人員多半規定不能收錢。想道謝，真誠說一句 You've been a big help! 就夠了。",
+      "example": { "en": "Thank you so much. You've been a big help!", "zh": "非常謝謝你，你幫了大忙！" }
+    }
+  ]
+}

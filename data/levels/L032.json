@@ -1,0 +1,222 @@
+{
+  "id": "L032",
+  "location": { "en": "Maple Bay Language Institute, classroom after class", "zh": "楓灣語言學院，下課後的教室" },
+  "goal": { "en": "Turn down Zoe's party invitation without hurting her feelings.", "zh": "婉拒柔伊的派對邀請，又不讓她難過。" },
+  "background": "empty language school classroom after class with rows of wooden desks, a blank whiteboard, chairs pushed in, a potted plant on the windowsill, warm evening light",
+  "cast": ["c04_zoe"],
+  "intro": [
+    { "who": "narrator", "en": "Thursday afternoon. Your big writing test is tomorrow morning, and you still have two chapters to review.", "zh": "星期四下午。明天早上就是重要的寫作考試，你還有兩個章節沒複習。" },
+    { "who": "narrator", "en": "Zoe, the most social person in your class, runs over with her phone in her hand.", "zh": "班上最愛交朋友的柔伊拿著手機跑了過來。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c04_zoe", "expr": "happy", "en": "Kai! I'm having a party at my place tonight. Want to come?", "zh": "凱！我今晚在我家辦派對，要不要來？" }
+      ],
+      "choices": [
+        {
+          "en": "I'd love to, but I have a test tomorrow.",
+          "zh": "我很想去，可是我明天有考試。",
+          "ok": true,
+          "tip": "I'd love to, but... 先表達想去，再說理由，拒絕聽起來就很溫和。"
+        },
+        {
+          "en": "No. I must study for my test tonight.",
+          "zh": "不要，我今晚一定要讀書準備考試。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_zoe", "expr": "upset", "en": "Oh... okay. Sorry I asked.", "zh": "喔……好吧。抱歉問了你。" }
+            ],
+            "title": { "en": "Ice Cold", "zh": "冷場急凍" },
+            "story": { "en": "Zoe smiles politely, but she doesn't invite you to anything for the next three weeks.", "zh": "柔伊客氣地笑了笑，但接下來三個禮拜，她再也沒約過你。" },
+            "why": "一開口就說 No. 太生硬，聽起來像對邀約本身沒興趣。先說 I'd love to, but...，再說理由，對方比較不會受傷。"
+          }
+        },
+        {
+          "en": "Sorry, I'm not convenient. I have a test tomorrow.",
+          "zh": "抱歉，我不方便，我明天有考試。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "You're not convenient? Like a store that closes early?", "zh": "你不方便？像提早關門的便利商店那樣嗎？" }
+            ],
+            "title": { "en": "Closed for the Night", "zh": "本日公休" },
+            "story": { "en": "Zoe laughs and tells the whole class that Kai is \"closed tonight.\" It becomes your nickname for a week.", "zh": "柔伊笑著跟全班說凱「今晚公休」，這個綽號跟了你一整個禮拜。" },
+            "why": "「我不方便」直翻成 I'm not convenient. 是中式英文，convenient 用來形容時間或事物，不形容人。要說 It's not a good time for me. 或 I'd love to, but I can't.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_zoe", "expr": "neutral", "en": "Aw, come on! Just come for one hour?", "zh": "唉唷，來嘛！來一個小時就好？" }
+      ],
+      "choices": [
+        {
+          "en": "Sorry, I really can't. I need to study.",
+          "zh": "抱歉，我真的沒辦法，我得讀書。",
+          "ok": true,
+          "tip": "對方再邀一次時，用 Sorry, I really can't. 溫和但清楚地再拒絕一次。"
+        },
+        {
+          "en": "Hmm, maybe. I'll see how I feel later.",
+          "zh": "嗯，再看看吧。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "Maybe? So should I count you in or not?", "zh": "再看看？所以我到底要不要把你算進去？" }
+            ],
+            "title": { "en": "The Maybe Guest", "zh": "薛丁格的客人" },
+            "story": { "en": "Zoe counts you in and saves you a slice of pizza. She texts you all night, asking where you are.", "zh": "柔伊把你算進人數，還幫你留了一片披薩。她整晚一直傳簡訊問你到哪了。" },
+            "why": "中文的「再看看」常是委婉拒絕，但英文的 maybe 真的代表「有可能」，對方會一直等你。不能去就說清楚：Sorry, I really can't.。"
+          }
+        },
+        {
+          "en": "Sorry, I can't. I must to study.",
+          "zh": "抱歉，我不行，我必須讀書。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "\"Must to\"? Wow, Kai, you really DO need to study!", "zh": "Must to？哇，凱，你真的很需要讀書耶！" }
+            ],
+            "title": { "en": "Proof You Need to Study", "zh": "讀書的必要" },
+            "story": { "en": "Zoe laughs and agrees you should stay home. Then she sends you a grammar meme every hour all night.", "zh": "柔伊笑著同意你該留在家讀書，接著整晚每小時傳一張文法梗圖給你。" },
+            "why": "must 是助動詞，後面直接接原形動詞，不加 to：I must study.。口語更常說 I need to study. 或 I have to study.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_zoe", "expr": "neutral", "en": "Okay, okay. Good luck on your test, then!", "zh": "好啦好啦，那祝你考試順利！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks for asking, though. Maybe next time?",
+          "zh": "不過還是謝謝你約我。下次吧？",
+          "ok": true,
+          "tip": "Thanks for asking. 感謝對方的心意，加上 Maybe next time? 表示你還想被約。"
+        },
+        {
+          "en": "I deeply appreciate your kind invitation.",
+          "zh": "我深深感謝您親切的邀請。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "Um... you're welcome? Are you writing me a letter?", "zh": "呃……不客氣？你是在寫信給我嗎？" }
+            ],
+            "title": { "en": "Business Reply", "zh": "公文式回覆" },
+            "story": { "en": "At the party, Zoe tells everyone that Kai talks like a business email. Now they all want to hear it.", "zh": "柔伊在派對上跟大家說凱講話像商業書信，現在大家都想親耳聽一次。" },
+            "why": "I deeply appreciate your kind invitation. 文法沒錯，但對同學說太正式，像在寫公文。朋友之間說 Thanks for asking! 就很自然。"
+          }
+        },
+        {
+          "en": "Thank you invite me. Next time again!",
+          "zh": "謝謝你邀請我，下次再約！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "Next time... again? So is that a yes or a no?", "zh": "下次……再？所以你是要來還是不來？" }
+            ],
+            "title": { "en": "Again and Again", "zh": "再來一次" },
+            "story": { "en": "Zoe nods slowly, not sure what you said. She sends you the address anyway, just in case.", "zh": "柔伊慢慢點頭，搞不清楚你的意思，還是把地址傳給你以防萬一。" },
+            "why": "「謝謝你邀請我」要說 Thank you for inviting me.，thank you 後面接 for + V-ing。「下次再約」英文說 Maybe next time.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_zoe", "expr": "happy", "en": "Next time for sure! Oh, which test is it tomorrow?", "zh": "下次一定喔！對了，明天考哪一科？" }
+      ],
+      "choices": [
+        {
+          "en": "Writing. Wish me luck!",
+          "zh": "寫作，祝我好運吧！",
+          "ok": true,
+          "tip": "Wish me luck! 是考試、面試前很常說的一句，輕鬆又自然。"
+        },
+        {
+          "en": "Yes, it's tomorrow morning.",
+          "zh": "對，是明天早上。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "I know it's tomorrow. I mean, which subject?", "zh": "我知道是明天啦。我是問哪一科？" }
+            ],
+            "title": { "en": "Right Answer, Wrong Question", "zh": "答得很對，但不是這題" },
+            "story": { "en": "You both talk about the time for two more minutes. Zoe leaves still not knowing the subject, so she wishes you luck with \"everything.\"", "zh": "你們又繞著時間聊了兩分鐘。柔伊離開時還是不知道是哪一科，只好祝你「什麼都順利」。" },
+            "why": "Which test? 問的是哪一科，不是什麼時候，也不能用 Yes 回答。直接說科目：Writing.，再加一句 Wish me luck!。"
+          }
+        },
+        {
+          "en": "Writing. Please add oil for me!",
+          "zh": "寫作，幫我加油！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "Add oil? To what? Your car?", "zh": "加油？加到哪裡？你的車嗎？" }
+            ],
+            "title": { "en": "Full Tank", "zh": "油箱加滿" },
+            "story": { "en": "Zoe spends five minutes asking about your car. You don't have a car.", "zh": "柔伊花了五分鐘問你的車的事，但你根本沒有車。" },
+            "why": "「加油」直翻成 add oil，對方會以為你在講汽車。要別人幫你打氣說 Wish me luck!，替別人打氣說 Good luck! 或 You can do it!。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c04_zoe", "expr": "happy", "en": "Good luck, Kai! I'll send you a photo of the cake.", "zh": "祝你好運，凱！我會傳蛋糕的照片給你。" },
+      { "who": "narrator", "en": "The next morning, you walk into the test rested and ready.", "zh": "隔天早上，你睡飽了，信心滿滿地走進考場。" }
+    ],
+    "title": { "en": "A Friendly No", "zh": "溫柔的拒絕" },
+    "story": { "en": "You studied, you slept well, and you still have a friend who wants to invite you again.", "zh": "你讀了書、睡飽了，還保住一個想再約你的朋友。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'd love to, but...",
+      "zh": "我很想，可是……",
+      "explain": "婉拒邀約的萬用開頭：先表示想去，再說理由，對方比較不會覺得被拒絕。",
+      "example": { "en": "I'd love to, but I have to work on Saturday.", "zh": "我很想去，可是星期六要上班。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Thanks for asking. Maybe next time?",
+      "zh": "謝謝你約我，下次吧？",
+      "explain": "拒絕後補一句感謝和 Maybe next time?，表示你珍惜對方的心意，也歡迎對方再約。",
+      "example": { "en": "Thanks for asking! Maybe next weekend?", "zh": "謝謝你約我！下週末好嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "It's not a good time for me.",
+      "zh": "我不方便。",
+      "explain": "「我不方便」不能說 I'm not convenient.，convenient 不用來形容人。可以說 It's not a good time for me. 或 I can't make it.。",
+      "example": { "en": "Sorry, tonight is not a good time for me.", "zh": "抱歉，我今晚不方便。" }
+    },
+    {
+      "type": "culture",
+      "en": "Maybe means maybe.",
+      "zh": "Maybe 就是真的「有可能」。",
+      "explain": "中文的「再看看」常是委婉拒絕，但英文的 maybe 會讓對方真的等你。不能去就說清楚，再溫和地補上理由。",
+      "example": { "en": "Sorry, I really can't make it tonight.", "zh": "抱歉，我今晚真的沒辦法去。" }
+    },
+    {
+      "type": "trap",
+      "en": "Wish me luck!",
+      "zh": "祝我好運！",
+      "explain": "「加油」不能說 add oil。替自己打氣說 Wish me luck!，替別人打氣說 Good luck! 或 You can do it!。",
+      "example": { "en": "I have a job interview today. Wish me luck!", "zh": "我今天有面試，祝我好運！" }
+    }
+  ]
+}

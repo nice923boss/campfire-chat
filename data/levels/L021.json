@@ -1,0 +1,223 @@
+{
+  "id": "L021",
+  "location": { "en": "Maple Bay Language Institute, enrollment office", "zh": "楓灣語言學院，註冊處" },
+  "goal": { "en": "Register for classes and get your student ID.", "zh": "完成課程註冊，拿到學生證。" },
+  "background": "small school enrollment office with a long wooden counter, a computer monitor, neat stacks of blank forms, a potted plant, a row of waiting chairs, sunny morning light",
+  "cast": ["c03_registrar"],
+  "intro": [
+    { "who": "narrator", "en": "Your first morning at the Maple Bay Language Institute. The hallway is full of new students holding coffee and papers.", "zh": "在楓灣語言學院的第一個早上。走廊上擠滿了拿著咖啡和文件的新生。" },
+    { "who": "narrator", "en": "You find the enrollment office. A woman with a pencil behind her ear looks up from her computer.", "zh": "你找到了註冊處。一位耳朵上夾著鉛筆的女士從電腦前抬起頭。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c03_registrar", "expr": "neutral", "en": "Good morning! How can I help you today?", "zh": "早安！今天有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, I'm here to register.",
+          "zh": "你好，我來辦註冊。",
+          "ok": true,
+          "tip": "I'm here to + 原形動詞，一句話說清楚來意。到學校報到就說 I'm here to register.。"
+        },
+        {
+          "en": "Hello, I come here to report today.",
+          "zh": "你好，我今天來這裡報到。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_registrar", "expr": "confused", "en": "Report? Did something happen? Should I call campus security?", "zh": "通報？發生什麼事了嗎？需要我叫校警嗎？" }
+            ],
+            "title": { "en": "Breaking News", "zh": "緊急通報" },
+            "story": { "en": "Diane picks up the phone to call security. It takes ten minutes to explain that nothing is wrong.", "zh": "黛安拿起電話準備叫校警。你花了十分鐘才解釋清楚，其實什麼事都沒發生。" },
+            "why": "「報到」直譯成 report，聽起來像要「通報事件」。到學校報到要說 I'm here to register.，或 I'm here to check in for my classes.。"
+          }
+        },
+        {
+          "en": "Register me now. I'm in a hurry.",
+          "zh": "幫我註冊，快點，我趕時間。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_registrar", "expr": "upset", "en": "Everyone's in a hurry on the first day. Please take a number.", "zh": "開學第一天大家都很趕。請先抽號碼牌。" }
+            ],
+            "title": { "en": "Take a Number", "zh": "請抽號碼牌" },
+            "story": { "en": "Your number is 47. Diane is still helping number 12.", "zh": "你抽到 47 號，黛安現在才叫到 12 號。" },
+            "why": "Register me now. 是命令句，對櫃檯人員說會顯得很沒禮貌。就算趕時間，也先打招呼，再說 Hi, I'm here to register.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_registrar", "expr": "happy", "en": "Welcome! First, please fill out this form.", "zh": "歡迎！首先，請填寫這份表格。" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Could I borrow a pen?",
+          "zh": "好的。可以借我一支筆嗎？",
+          "ok": true,
+          "tip": "Could I borrow...? 是禮貌地向人借東西。borrow 是「向別人借」，lend 是「借給別人」。"
+        },
+        {
+          "en": "Sure. Can you borrow me a pen?",
+          "zh": "好的。你可以借我一支筆嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_registrar", "expr": "confused", "en": "You want me to borrow a pen... from someone else, for you?", "zh": "你要我……去跟別人借一支筆給你？" }
+            ],
+            "title": { "en": "The Pen Mission", "zh": "借筆大作戰" },
+            "story": { "en": "Diane walks around the office asking people for a pen. By the time she comes back, your time slot is over.", "zh": "黛安在辦公室裡到處跟人借筆。等她回來，你的報到時段已經結束了。" },
+            "why": "borrow 是「向別人借」，主詞是借入的人。想請對方借你東西，要說 Could I borrow a pen? 或 Could you lend me a pen?。"
+          }
+        },
+        {
+          "en": "OK. I will write this form now.",
+          "zh": "好，我現在來寫這張表。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_registrar", "expr": "confused", "en": "Write a new form? Oh no, the form is ready. Just fill it out.", "zh": "寫一張新表格？不用不用，表格已經做好了，填寫就好。" }
+            ],
+            "title": { "en": "Form Designer", "zh": "表格設計師" },
+            "story": { "en": "You start drawing boxes on the back of the paper. Diane gently hands you a fresh copy and a long sigh.", "zh": "你開始在紙的背面畫格子。黛安輕輕遞給你一張新表格，還附上一聲長嘆。" },
+            "why": "「寫表格」直譯成 write the form，聽起來像要自己「設計」一張表。填表要說 fill out the form 或 fill in the form。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "You hand back the finished form.", "zh": "你把填好的表格交回去。" },
+        { "who": "c03_registrar", "expr": "neutral", "en": "Thanks. Now I need a photo for your student ID. Ready?", "zh": "謝謝。現在要幫你的學生證拍照，準備好了嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Almost. Can I fix my hair first?",
+          "zh": "快好了。可以先整理一下頭髮嗎？",
+          "ok": true,
+          "tip": "Can I ... first? 禮貌地請對方稍等一下。Almost. 表示「快好了」。"
+        },
+        {
+          "en": "Wait, wait. I'm not prepare yet.",
+          "zh": "等等，我還沒準備好。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c03_registrar", "expr": "confused", "en": "Not prepare... what? Oops, I already took it.", "zh": "沒準備……什麼？哎呀，我已經拍了。" }
+            ],
+            "title": { "en": "Surprise Shot", "zh": "突襲快門" },
+            "story": { "en": "Your student ID photo shows you mid-sentence with your mouth wide open. You will carry it for a whole year.", "zh": "學生證上的你話說到一半，嘴巴張得大大的。這張照片你得帶在身上整整一年。" },
+            "why": "I'm 後面要接形容詞，prepare 是動詞，不能直接放。要說 I'm not ready yet.，或 Wait, I'm not ready!。"
+          }
+        },
+        {
+          "en": "No photo, please. I look so ugly today.",
+          "zh": "不要拍啦，我今天很醜。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c03_registrar", "expr": "confused", "en": "Sorry, no photo means no ID card. And you look fine!", "zh": "抱歉，沒照片就沒有學生證喔。而且你看起來很好啊！" }
+            ],
+            "title": { "en": "Ghost Student", "zh": "幽靈學生" },
+            "story": { "en": "Your student ID is printed with a gray shadow instead of a face. The library refuses to believe it's you.", "zh": "你的學生證上印著一個灰色人影，沒有臉。圖書館怎麼樣都不相信那是你。" },
+            "why": "台灣人常用「我今天很醜」自嘲來化解尷尬，但英文直接這樣說，對方只會覺得你在拒絕拍照。想先準備一下，就說 Can I fix my hair first?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c03_registrar", "expr": "happy", "en": "All done! Here's your student ID. Class starts at nine in Room 204.", "zh": "完成了！這是你的學生證。九點在 204 教室上課。" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks! Which floor is Room 204 on?",
+          "zh": "謝謝！204 教室在幾樓？",
+          "ok": true,
+          "tip": "Which floor is ... on? 用來問樓層，句尾的 on 不要漏掉。"
+        },
+        {
+          "en": "Thank you. You are very hard work.",
+          "zh": "謝謝，你辛苦了。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c03_registrar", "expr": "confused", "en": "I'm... hard work? Am I difficult to deal with?", "zh": "我很……難搞？我很難應付嗎？" }
+            ],
+            "title": { "en": "Hard Work", "zh": "辛苦誰了" },
+            "story": { "en": "Diane spends the next few minutes wondering what she did wrong. Meanwhile, your first class starts without you.", "zh": "黛安接下來幾分鐘都在想自己做錯了什麼。同一時間，你的第一堂課已經開始了。" },
+            "why": "「你辛苦了」直譯成 You are hard work，英文意思是「你很難搞」。想感謝對方幫忙，說 Thanks for your help! 就很到位。"
+          }
+        },
+        {
+          "en": "Nine? So early! Can I come at ten?",
+          "zh": "九點？好早！我可以十點再來嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c03_registrar", "expr": "upset", "en": "Class starts at nine for everyone, Kai.", "zh": "大家都是九點上課喔，凱。" }
+            ],
+            "title": { "en": "Night Owl", "zh": "夜貓子" },
+            "story": { "en": "Diane adds a note to your file: \"Not a morning person.\" Your teacher reads it before your first class.", "zh": "黛安在你的資料上加註：「早上爬不起來」。你的老師在第一堂課前就看到了。" },
+            "why": "報到第一天就抱怨上課太早，會給人很差的第一印象。上課時間是固定的，這時該問的是實用資訊，例如 Which floor is Room 204 on?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "narrator", "en": "You look at your new student ID. The photo is not bad at all.", "zh": "你看著新的學生證，照片拍得還不錯。" },
+      { "who": "c03_registrar", "expr": "happy", "en": "It's on the second floor. Welcome to the Institute, Kai!", "zh": "在二樓。歡迎來到語言學院，凱！" }
+    ],
+    "title": { "en": "Officially a Student", "zh": "正式成為學生" },
+    "story": { "en": "With your student ID in your pocket, you head upstairs to Room 204. Your school life in Maple Bay starts now.", "zh": "學生證收進口袋，你走上樓前往 204 教室。你在楓灣的校園生活，現在開始。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "I'm here to register.",
+      "zh": "我來辦註冊。",
+      "explain": "到櫃檯說明來意的萬用句型：I'm here to + 原形動詞。也可以說 I'm here to pick up my student ID.。",
+      "example": { "en": "Hi, I'm here to register for the morning class.", "zh": "你好，我來註冊早上的課。" }
+    },
+    {
+      "type": "vocab",
+      "en": "fill out a form",
+      "zh": "填寫表格",
+      "explain": "填表格用 fill out 或 fill in，不說 write the form。form 是表格，application form 是申請表。",
+      "example": { "en": "Please fill out this form and sign at the bottom.", "zh": "請填寫這份表格，並在最下面簽名。" }
+    },
+    {
+      "type": "grammar",
+      "en": "borrow vs. lend",
+      "zh": "借入／借出",
+      "explain": "borrow 是「向別人借」，lend 是「借給別人」。Could I borrow your pen? 等於 Could you lend me your pen?。",
+      "example": { "en": "Could you lend me a pen? I left mine at home.", "zh": "可以借我一支筆嗎？我的忘在家裡了。" }
+    },
+    {
+      "type": "vocab",
+      "en": "student ID",
+      "zh": "學生證",
+      "explain": "student ID (card) 就是學生證，借書、買餐、進出大樓都會用到。ID 唸成 I-D 兩個字母。",
+      "example": { "en": "Please show your student ID at the library.", "zh": "在圖書館請出示學生證。" }
+    },
+    {
+      "type": "trap",
+      "en": "You are hard work.",
+      "zh": "你很難搞。",
+      "explain": "「你辛苦了」不能直譯成 You are hard work，這句英文是「你很難搞」的意思。感謝別人幫忙說 Thanks for your help.。",
+      "example": { "en": "Thanks for your help! Have a nice day.", "zh": "謝謝你的幫忙！祝你有美好的一天。" }
+    }
+  ]
+}

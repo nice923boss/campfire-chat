@@ -1,0 +1,51 @@
+{
+  "c09_hotel_director": {
+    "name": "Ms. Grant",
+    "nameZh": "葛蘭特總監",
+    "role": { "en": "Operations Director, Harborview Hotel", "zh": "港景飯店營運總監" },
+    "gender": "female",
+    "appearance": "woman in her early 50s, silver-streaked dark hair in a neat low bun, tailored navy skirt suit with a small gold pin on the lapel, slim silver wristwatch, poised and gracious hospitality executive vibe"
+  },
+  "c09_cafe_founder": {
+    "name": "Mr. Reyes",
+    "nameZh": "雷耶斯先生",
+    "role": { "en": "Co-founder, Daybreak Coffee", "zh": "破曉咖啡共同創辦人" },
+    "gender": "male",
+    "appearance": "man in his late 30s, short curly black hair, neatly trimmed beard, brown corduroy blazer over an olive green henley shirt, small coffee bean pin on the lapel, relaxed creative entrepreneur vibe"
+  },
+  "c09_cafe_finance": {
+    "name": "Ms. Novak",
+    "nameZh": "諾瓦克女士",
+    "role": { "en": "Finance Director, Daybreak Coffee", "zh": "破曉咖啡財務總監" },
+    "gender": "female",
+    "appearance": "woman in her mid 40s, straight chin-length black hair with blunt bangs, black rectangular glasses, burgundy blazer over a gray turtleneck, slim leather folder held against her chest, sharp no-nonsense negotiator vibe"
+  },
+  "c09_office_manager": {
+    "name": "Mr. Brooks",
+    "nameZh": "布魯克斯先生",
+    "role": { "en": "Facilities Manager, Northgate Business Center", "zh": "北門商務中心設施經理" },
+    "gender": "male",
+    "appearance": "man in his early 40s, short spiky black hair, light blue shirt with rolled-up sleeves and a loosened striped tie, wireless earpiece in one ear, ring of keys clipped to his belt, busy hands-on manager vibe"
+  },
+  "c09_designer": {
+    "name": "Nora",
+    "nameZh": "諾拉",
+    "role": { "en": "Interior designer", "zh": "室內設計師" },
+    "gender": "female",
+    "appearance": "woman in her early 30s, long wavy dark hair with a few teal streaks, mustard yellow wrap dress, chunky geometric earrings, small sketchbook tucked under one arm, creative outgoing designer vibe"
+  },
+  "c09_consultant": {
+    "name": "Mr. Doyle",
+    "nameZh": "多伊爾先生",
+    "role": { "en": "Energy consultant", "zh": "能源顧問" },
+    "gender": "male",
+    "appearance": "man in his early 60s, short white hair, neatly trimmed white beard, tweed jacket with elbow patches over a pale blue shirt, half-moon reading glasses, sharp analytical expert vibe"
+  },
+  "c09_buyer": {
+    "name": "Mr. Becker",
+    "nameZh": "貝克先生",
+    "role": { "en": "Procurement Manager, Alpenhaus Hotels", "zh": "阿爾彭豪斯飯店集團採購經理" },
+    "gender": "male",
+    "appearance": "tall man in his late 40s, short neatly parted hair, clean-shaven, slim charcoal gray suit with a dark green knit tie, silver cufflinks, precise straightforward businessman vibe"
+  }
+}

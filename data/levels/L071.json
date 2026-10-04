@@ -1,0 +1,264 @@
+{
+  "id": "L071",
+  "location": { "en": "Brightway office, reception area", "zh": "Brightway 公司，接待區" },
+  "goal": { "en": "Check in on your first day, meet your coworker Sam, and find out who to ask about what.", "zh": "第一天上班報到，認識同事山姆，搞清楚什麼事該問誰。" },
+  "background": "bright modern office reception area with a wooden front desk, pendant lights in different shapes, potted plants, glass entrance doors, soft morning sunlight, polished concrete floor",
+  "cast": ["c08_nina", "sam"],
+  "intro": [
+    { "who": "narrator", "en": "Monday, 8:50 a.m. Your first day at Brightway. You take a deep breath and push open the glass door.", "zh": "星期一早上八點五十分，Brightway 上班第一天。你深吸一口氣，推開玻璃門。" },
+    { "who": "narrator", "en": "A woman with a pen behind her ear looks up from the front desk.", "zh": "一位耳朵上夾著筆的女士從櫃檯後抬起頭。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c08_nina", "expr": "happy", "en": "Good morning! Welcome to Brightway. How can I help you?", "zh": "早安！歡迎來到 Brightway，有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, I'm Kai. It's my first day, and Ms. Wong asked me to come at nine.",
+          "zh": "嗨，我是凱，今天第一天上班。王經理請我九點來報到。",
+          "ok": true,
+          "tip": "報到時先說名字，再說明是第一天上班、要找誰，對方馬上知道怎麼幫你。"
+        },
+        {
+          "en": "Hello! I come to report. Today I am a new person here.",
+          "zh": "你好！我來報到，今天我是這裡的新人。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_nina", "expr": "confused", "en": "Report? Report what? Did something happen in the parking lot?", "zh": "報告？報告什麼？停車場出了什麼事嗎？" }
+            ],
+            "title": { "en": "Incident Report", "zh": "事故通報" },
+            "story": { "en": "Nina calls building security to take your \"report.\" It takes twenty minutes to explain that you just work here now.", "zh": "妮娜打電話請大樓警衛來聽你的「報告」。你花了二十分鐘才解釋清楚，你只是今天開始在這裡上班。" },
+            "why": "report 是「報告、檢舉」，不是「報到」。第一天上班直接說 Hi, I'm Kai. It's my first day. 就好。"
+          }
+        },
+        {
+          "en": "Hi. Where's the toilet? I drank way too much coffee on the bus this morning.",
+          "zh": "嗨，廁所在哪？我早上在公車上喝了太多咖啡。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c08_nina", "expr": "confused", "en": "Oh, um, down the hall on the left. And you are...?", "zh": "喔，呃，走廊左手邊。請問你是……？" }
+            ],
+            "title": { "en": "Mystery Visitor", "zh": "神秘訪客" },
+            "story": { "en": "You rush off before answering. Nina thinks you're a delivery driver, and you wait in the lobby until ten before anyone finds you.", "zh": "你沒回答就衝走了。妮娜以為你是送貨司機，你在大廳等到十點才有人來找你。" },
+            "why": "對方問 How can I help you? 是在等你說明身分和來意。先說 I'm Kai. It's my first day.，有其他需要再問。另外，北美多說 restroom，比 toilet 委婉。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "Nina makes a quick call. A minute later, a young man with a lanyard walks over.", "zh": "妮娜撥了一通電話。一分鐘後，一位掛著識別證的年輕男子走了過來。" },
+        { "who": "sam", "expr": "happy", "en": "Hey, you must be Kai! I'm Sam. I'll be sitting right next to you.", "zh": "嘿，你一定是凱吧！我是山姆，我就坐你隔壁。" }
+      ],
+      "choices": [
+        {
+          "en": "It's nice to finally meet you, Sam. Ms. Wong said you'd show me around.",
+          "zh": "終於見到你了，山姆，很高興認識你。王經理說你會帶我認識環境。",
+          "ok": true,
+          "tip": "It's nice to finally meet you. 的 finally 表示「久聞其名，終於見面」，第一次見同事很好用。"
+        },
+        {
+          "en": "Nice to meet you! I very happy to work with you starting from today.",
+          "zh": "很高興認識你！我很開心從今天開始和你一起工作。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Ha, okay... you very happy? Cool, cool.", "zh": "哈，好喔……你很開心？讚，讚。" }
+            ],
+            "title": { "en": "The Missing Am", "zh": "消失的 am" },
+            "story": { "en": "Sam smiles politely and starts the tour. All morning, you replay the sentence in your head, wishing you had added one tiny word.", "zh": "山姆禮貌地笑笑，開始帶你參觀。整個早上，你在腦中一直重播那句話，後悔少說了一個小小的字。" },
+            "why": "中文的「我很開心」不需要動詞，但英文形容詞前面一定要有 be 動詞：I'm very happy to work with you.。"
+          }
+        },
+        {
+          "en": "Nice to meet you, Sam! So how old are you this year? Are you married yet?",
+          "zh": "很高興認識你，山姆！你今年幾歲？結婚了沒？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Uh... that's a little personal. How about we start with the office tour?", "zh": "呃……這有點私人耶。我們先從參觀辦公室開始好嗎？" }
+            ],
+            "title": { "en": "Too Much, Too Soon", "zh": "交淺言深" },
+            "story": { "en": "Sam laughs it off, but for the rest of the week, he answers all your questions very, very briefly.", "zh": "山姆笑笑帶過，但接下來一整個星期，他回答你的問題都非常、非常簡短。" },
+            "why": "台灣長輩常問年齡和婚姻表示關心，但在北美職場，第一次見面就問這些會讓人不自在。先說 It's nice to finally meet you.，聊工作或興趣就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "neutral", "en": "Okay, this is your desk, and the kitchen is over there. Any questions so far?", "zh": "好，這是你的座位，茶水間在那邊。目前為止有什麼問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Just one. Where can I find printer paper and other office supplies?",
+          "zh": "只有一個。請問影印紙和其他文具在哪裡拿？",
+          "ok": true,
+          "tip": "問東西放在哪、去哪裡拿，用 Where can I find...? 最自然。"
+        },
+        {
+          "en": "Yes. Where can I take some paper and pens? I need many of them.",
+          "zh": "有。我可以去哪裡拿一些紙跟筆？我需要很多。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Take them... where? Like, home? They're for the office, Kai.", "zh": "拿去……哪裡？帶回家嗎？那些是辦公室用的耶，凱。" }
+            ],
+            "title": { "en": "The Great Paper Heist", "zh": "影印紙大盜" },
+            "story": { "en": "Sam is joking, mostly. But every time you walk past the supply cabinet this week, he whispers, \"Don't take too much!\"", "zh": "山姆應該只是開玩笑。但這個星期你每次經過文具櫃，他都會小聲說：「別拿太多喔！」" },
+            "why": "中文「去哪裡拿」直譯成 take，聽起來像要把東西帶走。問東西放哪裡，說 Where can I find...? 或 Where can I get...?。"
+          }
+        },
+        {
+          "en": "No questions. I'm a fast learner, so I can figure everything out by myself.",
+          "zh": "沒問題。我學很快，所有事情我都可以自己搞定。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Oh... okay then. Good luck!", "zh": "喔……那好吧。祝你好運！" }
+            ],
+            "title": { "en": "Lone Wolf", "zh": "孤狼上工" },
+            "story": { "en": "Sam leaves you alone, as requested. You spend the next hour opening every cabinet in the office, looking for a stapler.", "zh": "山姆如你所願讓你自己來。接下來一個小時，你把辦公室每個櫃子都打開了一遍，只為了找一台釘書機。" },
+            "why": "新人說「我自己搞定」聽起來有點自大，也會讓同事不好意思再幫你。第一天就大方問：Where can I find...?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "neutral", "en": "I've got a meeting at ten. Anything else before I go?", "zh": "我十點有個會。我走之前還有其他問題嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, who should I ask about my computer login? It isn't working yet.",
+          "zh": "有，電腦登入的問題應該問誰？我還沒辦法登入。",
+          "ok": true,
+          "tip": "Who should I ask about...? 問「這件事該找誰」，是新人最實用的一句。"
+        },
+        {
+          "en": "Yes, who I should ask about the computer? I can't log in to it yet.",
+          "zh": "有，電腦的事我應該問誰？我還沒辦法登入。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Who you should...? Sorry, I really have to run. Ask me later!", "zh": "你應該……誰？抱歉，我真的得走了，晚點再問我！" }
+            ],
+            "title": { "en": "Locked Out", "zh": "被擋在門外" },
+            "story": { "en": "Sam hurries to his meeting before he figures out what you meant. You stare at the login screen until lunch.", "zh": "山姆還沒搞懂你的意思就趕去開會了。你盯著登入畫面一直到中午。" },
+            "why": "疑問句要把助動詞放在主詞前面：Who should I ask?，不是 Who I should ask?。"
+          }
+        },
+        {
+          "en": "No, it's fine. I don't want to bother you. I'll just wait for someone to come.",
+          "zh": "沒有，沒關係。我不想打擾你，我等別人來就好。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Wait for who? Nobody will know you need help unless you ask.", "zh": "等誰？你不問的話，沒人會知道你需要幫忙啊。" }
+            ],
+            "title": { "en": "The Long Wait", "zh": "漫長的等待" },
+            "story": { "en": "Nobody comes. At noon, Ms. Wong stops by and asks why you haven't started your training videos.", "zh": "結果沒有人來。中午王經理經過，問你為什麼還沒開始看培訓影片。" },
+            "why": "台灣新人常等別人主動來教，但在北美職場，有問題要自己開口問。說 Who should I ask about...? 一點都不算打擾。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "sam", "expr": "happy", "en": "Oh, and lunch! A few of us go to the noodle place downstairs at noon. Want to join?", "zh": "對了，午餐！我們幾個中午會去樓下的麵店，要一起來嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "I'd love to, thanks for asking! Should I meet you here at twelve?",
+          "zh": "好啊，謝謝你約我！十二點在這裡集合嗎？",
+          "ok": true,
+          "tip": "接受邀約用 I'd love to.，再確認時間地點，熱情又周到。"
+        },
+        {
+          "en": "Sure, I'll go with you guys. I can eat everything, no problem!",
+          "zh": "好啊，我跟你們去。我什麼都能吃，沒問題！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Everything? The whole menu? Wow, okay, big eater!", "zh": "全部？整份菜單？哇，好喔，大胃王！" }
+            ],
+            "title": { "en": "Bottomless Stomach", "zh": "無底洞胃袋" },
+            "story": { "en": "Sam tells the team the new hire \"can eat everything.\" At lunch, they order you the giant bowl as a welcome challenge.", "zh": "山姆跟大家說新人「什麼都吃得完」。午餐時，大家幫你點了超大碗當作歡迎挑戰。" },
+            "why": "I can eat everything. 聽起來像「我能把全部吃光」。想說不挑食，要說 I can eat anything. 或 I'm not picky.。"
+          }
+        },
+        {
+          "en": "Sure! Does the company pay for lunch? Or does the senior person treat the new one?",
+          "zh": "好啊！午餐是公司出錢嗎？還是前輩請新人？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "sam", "expr": "confused", "en": "Ha... no, we each pay for our own. Is that a thing in Taiwan?", "zh": "哈……沒有耶，我們都各付各的。台灣是這樣嗎？" }
+            ],
+            "title": { "en": "Free Lunch Kai", "zh": "白吃午餐的凱" },
+            "story": { "en": "Sam laughs, but the nickname \"Free Lunch Kai\" follows you around the office for a whole week.", "zh": "山姆笑了出來，但「白吃午餐的凱」這個綽號跟了你整整一個星期。" },
+            "why": "台灣常有前輩請新人吃飯的習慣，但北美同事一起吃午餐通常各付各的。直接說 I'd love to.，到時候自己付就好。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "sam", "expr": "happy", "en": "Welcome to the team, Kai. You're going to do great here.", "zh": "歡迎加入團隊，凱。你在這裡一定會表現得很好。" },
+      { "who": "narrator", "en": "By the end of the day, you know where everything is, and who to ask about everything else.", "zh": "到了下班時間，你已經知道東西都放在哪裡，其他的事也知道該問誰。" }
+    ],
+    "title": { "en": "Day One, Done", "zh": "第一天，過關" },
+    "story": { "en": "You head home with a building pass, a working laptop, and a lunch buddy. Not bad for day one.", "zh": "你帶著門禁卡、能用的筆電，還多了一個午餐夥伴回家。第一天，表現不錯。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "It's nice to finally meet you.",
+      "zh": "終於見到你了，很高興認識你。",
+      "explain": "之前透過 email 或別人聽說過對方，第一次見面時加 finally，表示期待已久。",
+      "example": { "en": "It's nice to finally meet you. Ms. Wong told me a lot about you.", "zh": "終於見到你了，王經理常提到你。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Where can I find...?",
+      "zh": "……在哪裡可以找到？",
+      "explain": "問東西放在哪、去哪裡拿，比直譯的 Where can I take...? 自然，也適合問會議室、茶水間等地點。",
+      "example": { "en": "Where can I find the meeting rooms?", "zh": "會議室在哪裡？" }
+    },
+    {
+      "type": "grammar",
+      "en": "Who should I ask about...?",
+      "zh": "……的事該問誰？",
+      "explain": "疑問句裡助動詞 should 要放在主詞 I 前面。說成 Who I should ask? 是常見錯誤。",
+      "example": { "en": "Who should I ask about my building pass?", "zh": "門禁卡的事該問誰？" }
+    },
+    {
+      "type": "trap",
+      "en": "I come to report.",
+      "zh": "我來報到。（直譯陷阱）",
+      "explain": "report 是「報告、檢舉」，不是「報到」。第一天上班說 It's my first day. 或 I'm starting work here today.。",
+      "example": { "en": "Hi, I'm Kai. It's my first day here.", "zh": "嗨，我是凱，今天第一天上班。" }
+    },
+    {
+      "type": "culture",
+      "en": "Everyone pays for their own lunch.",
+      "zh": "午餐各付各的。",
+      "explain": "台灣常有前輩請新人吃飯的習慣，但在北美職場，同事一起吃午餐通常各付各的，除非對方主動說 It's on me.。",
+      "example": { "en": "Lunch is on me today, to welcome you to the team.", "zh": "今天午餐我請，歡迎你加入團隊。" }
+    }
+  ]
+}

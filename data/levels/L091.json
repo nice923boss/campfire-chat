@@ -1,0 +1,264 @@
+{
+  "id": "L091",
+  "location": { "en": "Lantern Park, the campfire circle by the lake", "zh": "燈籠公園，湖畔營火圈" },
+  "goal": { "en": "Welcome a nervous newcomer and share what you learned this year.", "zh": "歡迎緊張的新成員，分享你這一年學到的經驗。" },
+  "background": "lakeside park clearing at early evening, a crackling campfire in a stone ring, wooden log benches around it, string lights between maple trees, calm lake beyond",
+  "cast": ["c10_hana"],
+  "intro": [
+    { "who": "narrator", "en": "Evening at Lantern Park. The Campfire Chat circle is bigger than ever tonight.", "zh": "傍晚的燈籠公園。今晚的營火英語社，人比以往都多。" },
+    { "who": "narrator", "en": "A young woman sits alone at the edge of the circle, holding a notebook like a shield. She looks exactly like you did a year ago.", "zh": "一個年輕女生獨自坐在圈子邊緣，把筆記本抱在胸前像盾牌一樣。她看起來，就跟一年前的你一模一樣。" },
+    { "who": "c10_hana", "expr": "neutral", "en": "Hi... um, is this the English conversation group? I just arrived in Maple Bay last week.", "zh": "嗨……呃，這裡是英語會話社嗎？我上週才剛到楓灣。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c10_hana", "expr": "confused", "en": "I'm Hana. Everyone here sounds so fluent. I'm a little scared to say anything.", "zh": "我叫花奈。這裡每個人講話都好流利，我有點不敢開口。" }
+      ],
+      "choices": [
+        {
+          "en": "I know the feeling. I was terrified at my first campfire too.",
+          "zh": "我懂那種感覺。我第一次來營火社也超緊張。",
+          "ok": true,
+          "tip": "先用 I know the feeling. 表達同理，比急著給建議更能讓對方放鬆。"
+        },
+        {
+          "en": "Then don't be scared. Just talk. It's really not that hard.",
+          "zh": "那就不要怕啊，開口講就好，真的沒那麼難。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c10_hana", "expr": "upset", "en": "Oh. Okay. Easy for you to say, I guess.", "zh": "喔，好吧。你說得倒輕鬆。" }
+            ],
+            "title": { "en": "Pep Talk Fail", "zh": "打氣打到洩氣" },
+            "story": { "en": "Hana nods politely and goes quiet for the rest of the night. Your \"encouragement\" works more like a cold shower.", "zh": "花奈禮貌地點點頭，整晚再也沒說話。你的「鼓勵」效果比較像一桶冷水。" },
+            "why": "對緊張的人說「不要怕、沒那麼難」，聽起來像在否定對方的感受。先同理再鼓勵：I know the feeling. I was nervous too."
+          }
+        },
+        {
+          "en": "Don't worry. Slowly slowly you will get used to it, I promise.",
+          "zh": "別擔心，慢慢你就會習慣了，我保證。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "Slowly... slowly? Sorry, is that an expression here?", "zh": "慢慢……慢慢？抱歉，這是這邊的說法嗎？" }
+            ],
+            "title": { "en": "Double Trouble", "zh": "雙倍的慢" },
+            "story": { "en": "Hana carefully writes \"slowly slowly\" in her notebook as a new local phrase. You decide not to tell her the truth tonight.", "zh": "花奈認真地把 slowly slowly 抄進筆記本，當成當地新說法。你決定今晚先不告訴她真相。" },
+            "why": "「慢慢」直譯成 slowly slowly 不是自然英文。可以說 You'll get used to it in time. 或 It gets easier, little by little.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_hana", "expr": "neutral", "en": "Really? So... do you have any advice? What should I do first?", "zh": "真的嗎？那……你有什麼建議嗎？我應該先做什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "If I were you, I'd come here every week. Regulars become friends.",
+          "zh": "如果我是你，我會每週都來。常來的人都會變成朋友。",
+          "ok": true,
+          "tip": "If I were you, I'd... 是給建議最自然的句型，語氣溫和不命令。"
+        },
+        {
+          "en": "If I am you, I will come here every single week. It helps a lot.",
+          "zh": "如果我是你，我會每個禮拜都來，很有幫助。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "If you are me? But... you're you. I'm confused.", "zh": "如果你是我？可是……你就是你啊。我搞糊塗了。" }
+            ],
+            "title": { "en": "Identity Crisis", "zh": "身分大亂" },
+            "story": { "en": "You spend ten minutes explaining that you are not, in fact, Hana. The advice gets lost somewhere along the way.", "zh": "你花了十分鐘解釋自己真的不是花奈。建議本身，在過程中不見了。" },
+            "why": "「如果我是你」是與事實相反的假設，要用假設語氣：If I were you, I'd...。If I am you 文法上不成立。"
+          }
+        },
+        {
+          "en": "Honestly, my first week here was a mess. I lost my umbrella twice!",
+          "zh": "老實說，我來的第一週一團亂，雨傘還弄丟兩次！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "Oh no. So... should I buy a strong umbrella first?", "zh": "喔不。所以……我應該先買把耐用的雨傘？" }
+            ],
+            "title": { "en": "Umbrella Wisdom", "zh": "雨傘智慧" },
+            "story": { "en": "Hana's first piece of advice in Maple Bay is about umbrellas. She buys three the next day, just in case.", "zh": "花奈在楓灣得到的第一個建議跟雨傘有關。隔天她一口氣買了三把，以防萬一。" },
+            "why": "對方問「我該先做什麼」，要給具體建議，不是只分享自己的糗事。分享經驗後要帶出重點：If I were you, I'd...。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_hana", "expr": "neutral", "en": "Every week. Got it. What about making friends outside class? People seem so busy.", "zh": "每週來，記下了。那課堂外要怎麼交朋友？大家看起來都好忙。" }
+      ],
+      "choices": [
+        {
+          "en": "It helps to say yes to invitations, even small ones like coffee.",
+          "zh": "有人約就答應，很有幫助，就算只是喝杯咖啡也好。",
+          "ok": true,
+          "tip": "It helps to + 原形動詞，用來分享「這樣做有幫助」的經驗，不會像在下指令。"
+        },
+        {
+          "en": "Ask them their age and salary first. Then you know where you stand.",
+          "zh": "先問他們幾歲、薪水多少，這樣就知道彼此的關係了。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "Wouldn't that be... kind of rude here?", "zh": "在這裡這樣問……不會有點沒禮貌嗎？" }
+            ],
+            "title": { "en": "Awkward Icebreaker", "zh": "破冰變結冰" },
+            "story": { "en": "Hana tries your tip at a party. Three people suddenly need to refill their drinks at the same time.", "zh": "花奈在派對上試了你的建議。三個人突然同時想起要去加飲料。" },
+            "why": "在楓灣這類英語文化中，年齡和薪水屬於私人話題，剛認識就問會讓人尷尬。破冰可以聊興趣：What do you do for fun?"
+          }
+        },
+        {
+          "en": "It helps to saying yes to invitations, even small ones like lunch.",
+          "zh": "有人約就答應會很有幫助，就算只是吃個午餐。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "It helps to saying? Is that... right? My teacher said something different.", "zh": "It helps to saying？這樣對嗎？我老師講的好像不一樣。" }
+            ],
+            "title": { "en": "Grammar Showdown", "zh": "文法對決" },
+            "story": { "en": "Hana pulls out her grammar book, and you lose. Badly. In front of the whole circle.", "zh": "花奈拿出文法書，你輸了，輸得很慘，還是在整個營火圈面前。" },
+            "why": "It helps to 的 to 是不定詞，後面接原形動詞：It helps to say yes.。不能接 V-ing。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_hana", "expr": "neutral", "en": "That's really good advice. Honestly, I miss home already. Is that normal?", "zh": "這建議真的很好。老實說，我已經開始想家了。這樣正常嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Totally normal. What helped me was a weekly video call home.",
+          "zh": "完全正常。對我有幫助的是每週跟家裡視訊一次。",
+          "ok": true,
+          "tip": "What helped me was... 用自己的經驗給建議，比「你應該」更溫暖。"
+        },
+        {
+          "en": "You're an adult now, though. You really shouldn't feel homesick.",
+          "zh": "可是你已經是大人了，真的不該想家啦。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c10_hana", "expr": "upset", "en": "Oh. Right. Sorry for being childish, I guess.", "zh": "喔，好。抱歉我這麼幼稚。" }
+            ],
+            "title": { "en": "Tough Love, Minus the Love", "zh": "只有嚴厲，沒有愛" },
+            "story": { "en": "Hana hides her homesickness from everyone for the next month. You were trying to help. It did not help.", "zh": "接下來一個月，花奈把想家的心情藏得緊緊的。你本來想幫忙，結果幫倒忙。" },
+            "why": "說「你不應該有這種感覺」是在否定對方的情緒。先肯定再分享：Totally normal. What helped me was...。"
+          }
+        },
+        {
+          "en": "Very normal. Everyone will think home, especially late at night.",
+          "zh": "很正常，每個人都會想家，尤其是晚上。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "Think home? Do you mean... think about home?", "zh": "Think home？你是說……想到家裡？" }
+            ],
+            "title": { "en": "Home, Sweet Typo", "zh": "想家想錯字" },
+            "story": { "en": "Hana corrects your English on her first week in Maple Bay. You both laugh, but you feel your teacher's eyes on you from across town.", "zh": "花奈來楓灣第一週就糾正了你的英文。你們都笑了，但你彷彿感覺到遠方老師的視線。" },
+            "why": "「想家」不是 think home，要說 miss home 或 be homesick：It's normal to feel homesick.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c10_hana", "expr": "happy", "en": "Thank you so much, Kai. I feel a lot better. Can I sit next to you next week too?", "zh": "真的很謝謝你，凱。我好多了。下週我也可以坐你旁邊嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Of course. Save me a seat, and I'll introduce you around.",
+          "zh": "當然。幫我留個位子，我帶你認識大家。",
+          "ok": true,
+          "tip": "introduce you around 是「帶你認識大家」，對新人來說是最實際的歡迎。"
+        },
+        {
+          "en": "Of course! I'll introduce you to everyone who come every week.",
+          "zh": "當然！我會介紹每週來的人給你認識。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c10_hana", "expr": "confused", "en": "Everyone who come? I thought it was \"everyone who comes.\" Sorry!", "zh": "Everyone who come？我以為是 everyone who comes，抱歉！" }
+            ],
+            "title": { "en": "The Student Becomes the Teacher", "zh": "青出於藍" },
+            "story": { "en": "Hana catches your mistake in five seconds. Clearly, she's going to be just fine here.", "zh": "花奈五秒內就抓到你的錯。看來她在這裡一定會過得很好。" },
+            "why": "everyone 視為單數，關係子句的動詞要加 s：everyone who comes。也可以簡單說 I'll introduce you around.。"
+          }
+        },
+        {
+          "en": "I guess so. Just don't follow me around all night, okay?",
+          "zh": "應該可以吧。只是別整晚跟著我喔。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c10_hana", "expr": "upset", "en": "Oh! No, of course not. I'll... sit somewhere else.", "zh": "喔！不會，當然不會。我……坐別的地方好了。" }
+            ],
+            "title": { "en": "Cold Welcome", "zh": "冷淡的歡迎" },
+            "story": { "en": "Hana sits on the far side of the fire next week. You remember how much one kind word meant to you a year ago.", "zh": "下週花奈坐到營火的另一頭。你想起一年前，一句溫暖的話對你有多重要。" },
+            "why": "對方鼓起勇氣提出請求，冷淡回應會讓人退縮。熱情答應並提供幫助：Of course. Save me a seat.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c10_hana", "expr": "happy", "en": "Deal! I'll save you the best seat by the fire.", "zh": "說定了！我會幫你留營火旁最好的位子。" },
+      { "who": "narrator", "en": "Hana writes \"If I were you, I'd...\" in her notebook. You realize you have become the person you needed a year ago.", "zh": "花奈在筆記本寫下 If I were you, I'd...。你忽然發現，自己成了一年前最需要的那個人。" }
+    ],
+    "title": { "en": "Paying It Forward", "zh": "把溫暖傳下去" },
+    "story": { "en": "A year ago, someone made room for you by this fire. Tonight, you did the same for Hana.", "zh": "一年前，有人在這堆營火旁為你挪出位子。今晚，你為花奈做了同樣的事。" }
+  },
+  "notes": [
+    {
+      "type": "grammar",
+      "en": "If I were you, I'd...",
+      "zh": "如果我是你，我會……",
+      "explain": "與事實相反的假設要用 were（不分人稱），後面接 I'd + 原形動詞。這是英文給建議最常見、最溫和的句型。",
+      "example": { "en": "If I were you, I'd take the bus. It's faster.", "zh": "如果我是你，我會搭公車，比較快。" }
+    },
+    {
+      "type": "phrase",
+      "en": "It helps to...",
+      "zh": "……會很有幫助",
+      "explain": "分享經驗時用 It helps to + 原形動詞，語氣像過來人的提醒，不像命令。也可以說 What helped me was...。",
+      "example": { "en": "It helps to carry a small notebook for new words.", "zh": "隨身帶一本小筆記本記新單字很有幫助。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I know the feeling.",
+      "zh": "我懂那種感覺。",
+      "explain": "對方說出擔心或不安時，先用這句表達同理，再給建議，對方會更願意聽。",
+      "example": { "en": "Your first week is overwhelming? I know the feeling.", "zh": "第一週壓力很大？我懂那種感覺。" }
+    },
+    {
+      "type": "trap",
+      "en": "miss home / feel homesick",
+      "zh": "想家",
+      "explain": "「想家」不能直譯成 think home。要說 I miss home. 或 I feel homesick.。同理，「想你」是 I miss you.，不是 I think you.。",
+      "example": { "en": "I felt homesick for the first two months.", "zh": "前兩個月我一直很想家。" }
+    },
+    {
+      "type": "culture",
+      "en": "What do you do for fun?",
+      "zh": "你平常喜歡做什麼？",
+      "explain": "在英語文化中，年齡、薪水、感情狀態都屬於私人話題，剛認識時不要問。聊興趣、週末計畫比較安全。",
+      "example": { "en": "So, what do you do for fun on weekends?", "zh": "那你週末都喜歡做什麼？" }
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "id": "L088",
+  "location": { "en": "Maple Bay Business Forum, seminar room", "zh": "楓灣商業論壇，研討室" },
+  "goal": { "en": "Handle tough questions after your talk, honestly and calmly.", "zh": "演講結束後，誠實又冷靜地回答尖銳的提問。" },
+  "background": "conference seminar room with rows of padded chairs, small podium with a microphone, blank projection screen, water bottles on a side table, soft ceiling spotlights",
+  "cast": ["ms_wong", "c09_consultant"],
+  "intro": [
+    { "who": "narrator", "en": "You have just finished your first conference talk: \"Smart Lighting for Hotels and Cafes.\" The audience applauds politely.", "zh": "你剛結束第一場研討會演講：「飯店與咖啡店的智慧照明」。台下禮貌地鼓掌。" },
+    { "who": "ms_wong", "expr": "happy", "en": "Nice work, Kai. Now for the hard part. We have ten minutes for questions.", "zh": "講得好，凱。現在是最難的部分了，我們有十分鐘問答時間。" },
+    { "who": "narrator", "en": "A hand goes up in the front row. It belongs to a white-haired man in a tweed jacket.", "zh": "前排有人舉手，是一位穿著粗呢外套的白髮男士。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c09_consultant", "expr": "neutral", "en": "Thank you. You claim forty percent savings. Isn't that simply because the old bulbs were so inefficient?", "zh": "謝謝。你說能省四成，那不就只是因為舊燈泡太耗電了嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "That's a great question. Partly, yes, but the rest comes from sensors and scheduling.",
+          "zh": "這是個好問題。部分確實是，但其餘來自感應器和排程控制。",
+          "ok": true,
+          "tip": "That's a great question. 爭取思考時間，再坦然承認對方說對的部分。"
+        },
+        {
+          "en": "No, you are wrong. Our data is correct. If you had listened carefully, you would understand it.",
+          "zh": "不，您錯了。我們的數據是正確的。如果您剛才有仔細聽，就會懂了。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_consultant", "expr": "upset", "en": "I listened very carefully. That's why I asked.", "zh": "我聽得非常仔細，所以才會問。" }
+            ],
+            "title": { "en": "Defensive Mode", "zh": "防衛模式" },
+            "story": { "en": "The room goes quiet. Several people who were about to ask questions decide not to.", "zh": "全場安靜下來。好幾位原本想發問的人決定作罷。" },
+            "why": "被質疑時直接說對方錯、還暗示對方沒在聽，會讓你顯得防衛又沒自信。先肯定問題：That's a great question.，再承認合理的部分。"
+          }
+        },
+        {
+          "en": "Good question. Actually, the saving is come from two part: the LED and the sensor control system.",
+          "zh": "好問題。其實節省來自兩個部分：LED 和感應控制系統。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_consultant", "expr": "confused", "en": "Two parts, I see. And how much comes from each?", "zh": "兩個部分，了解。那各占多少？" }
+            ],
+            "title": { "en": "Half an Answer", "zh": "答一半" },
+            "story": { "en": "Your idea is right, but the grammar slips make it sound unsure. Mr. Doyle leans forward, ready for more.", "zh": "你的觀點沒錯，但文法失誤讓你聽起來沒把握。多伊爾先生身體前傾，準備追問。" },
+            "why": "come 是一般動詞，不和 is 連用，要說 The savings come from...；two 後面的名詞要用複數 two parts。上台回答前先用 That's a great question. 爭取一點時間組織句子。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_consultant", "expr": "neutral", "en": "Interesting. But how do you know the sensors save energy? Do you have independent data?", "zh": "有意思。但你們怎麼知道感應器有省電？有獨立的數據嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Our figures come from client meters, not lab tests. I'm happy to share the full data afterward.",
+          "zh": "我們的數字來自客戶的電表，不是實驗室測試。會後我很樂意提供完整數據。",
+          "ok": true,
+          "tip": "說明數據來源，再主動提出會後提供完整資料，既透明又不會占用全場時間。"
+        },
+        {
+          "en": "About this, you can put one hundred hearts. Our boss says it is absolutely effective, no problem at all.",
+          "zh": "這點您可以放一百個心。我們老闆說絕對有效，完全沒問題。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_consultant", "expr": "confused", "en": "One hundred hearts? And your boss's opinion isn't exactly independent data.", "zh": "一百個心？而且你老闆的意見可稱不上是獨立數據。" }
+            ],
+            "title": { "en": "A Hundred Hearts", "zh": "一百顆心" },
+            "story": { "en": "A few people in the audience chuckle. Ms. Wong, who is the boss in question, smiles very tightly.", "zh": "台下有幾個人笑了出來。被點名的老闆王經理，笑得非常僵硬。" },
+            "why": "「放一百個心」直譯成 put one hundred hearts，英文沒人聽得懂；搬出老闆的說法也不是證據。說明數據來源：Our figures come from client meters.。"
+          }
+        },
+        {
+          "en": "Yes, our sensors were designed by engineers from top universities, so the quality is very high.",
+          "zh": "有的，我們的感應器是頂尖大學畢業的工程師設計的，所以品質很高。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c09_consultant", "expr": "confused", "en": "I'm sure they're very clever. But that wasn't my question.", "zh": "我相信他們很聰明。但我問的不是這個。" }
+            ],
+            "title": { "en": "Diplomas Are Not Data", "zh": "學歷不是數據" },
+            "story": { "en": "Mr. Doyle writes something in his notebook. You have a feeling it says \"avoided the question.\"", "zh": "多伊爾先生在筆記本上寫了些什麼。你有預感上面寫著「迴避問題」。" },
+            "why": "對方問的是數據，回答工程師的學歷是答非所問。直接說明數據來源：Our figures come from client meters, not lab tests.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_consultant", "expr": "neutral", "en": "And older buildings? How does your system handle wiring from, say, the 1970s?", "zh": "那老舊建築呢？例如 1970 年代的線路，你們的系統要怎麼處理？" }
+      ],
+      "choices": [
+        {
+          "en": "To be honest, I'm not sure about wiring that old. Let me check with our engineers and get back to you on that.",
+          "zh": "老實說，那麼舊的線路我不確定。讓我跟工程師確認後再回覆您。",
+          "ok": true,
+          "tip": "不知道時坦白說 I'll get back to you on that.，比硬掰更能贏得專業人士的尊重。"
+        },
+        {
+          "en": "No problem at all. Our system works perfectly in any building of any age, with any kind of wiring.",
+          "zh": "完全沒問題。我們的系統在任何年代、任何線路的建築都能完美運作。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_consultant", "expr": "upset", "en": "Any wiring at all? I've been in this business for thirty years. Nothing works with any wiring.", "zh": "任何線路都行？我在這行做了三十年，沒有東西能配合任何線路。" }
+            ],
+            "title": { "en": "Too Good to Be True", "zh": "好到不像真的" },
+            "story": { "en": "The expert in the front row now doubts everything else you said. So do the people sitting next to him.", "zh": "前排的專家現在懷疑你說過的每一句話。坐在他旁邊的人也是。" },
+            "why": "面對專業提問時誇下「任何建築都完美」的海口，只會讓人懷疑你所有的說法。不確定就說 I'm not sure. I'll get back to you on that.。"
+          }
+        },
+        {
+          "en": "Ah, yes, yes. It's basically the same as new buildings, no big difference. Okay, next question, please.",
+          "zh": "啊，對對。基本上跟新建築一樣，沒什麼差別。好，下一個問題。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c09_consultant", "expr": "upset", "en": "That wasn't really an answer, was it?", "zh": "這不算是回答吧？" }
+            ],
+            "title": { "en": "Saving Face, Losing Trust", "zh": "保住面子，丟了信任" },
+            "story": { "en": "You avoid admitting you don't know, but everyone in the room can tell. Your credibility quietly drops a few points.", "zh": "你避免承認自己不知道，但全場都看得出來。你的可信度悄悄掉了好幾分。" },
+            "why": "怕丟臉而含糊帶過、急著換下一題，在西方專業場合反而更傷信任。坦白承認並承諾回覆，才是專業的表現：I'll check and get back to you on that.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c09_consultant", "expr": "neutral", "en": "Fair enough. Last question: what's the biggest weakness of your system?", "zh": "很合理。最後一個問題：你們系統最大的弱點是什麼？" }
+      ],
+      "choices": [
+        {
+          "en": "The upfront cost is higher than regular bulbs, so it suits clients who plan to stay long-term.",
+          "zh": "初期成本比一般燈泡高，所以比較適合打算長期經營的客戶。",
+          "ok": true,
+          "tip": "坦白說出弱點，再說明適合的對象，反而讓聽眾更相信你的其他說法。"
+        },
+        {
+          "en": "Our system has no weakness. Every single client is very satisfied, one hundred percent, without exception.",
+          "zh": "我們的系統沒有弱點。每一位客戶都非常滿意，百分之百，沒有例外。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_consultant", "expr": "upset", "en": "Everything has a weakness. If you can't name one, you don't know your product.", "zh": "任何東西都有弱點。說不出來，就代表你不了解自己的產品。" }
+            ],
+            "title": { "en": "Flawless", "zh": "完美無缺" },
+            "story": { "en": "Your perfect answer sounds like a sales brochure. Mr. Doyle smiles and stops asking questions, which is not a good sign.", "zh": "你的完美回答聽起來像宣傳手冊。多伊爾先生笑了笑，不再發問，這可不是好兆頭。" },
+            "why": "聲稱產品「沒有任何弱點」會讓專業聽眾覺得你不誠實。坦白說出限制，再說明適合誰：The upfront cost is higher, so it suits long-term clients.。"
+          }
+        },
+        {
+          "en": "The weakness is maybe the price. It's a little bit expensive than normal light, but it's worth.",
+          "zh": "弱點可能是價格。比一般的燈貴一點，但很值得。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c09_consultant", "expr": "confused", "en": "It's worth... what? And how much more expensive, exactly?", "zh": "值得……什麼？而且到底貴多少？" }
+            ],
+            "title": { "en": "Worth What?", "zh": "值得什麼？" },
+            "story": { "en": "Your honest answer gets lost in the grammar. Mr. Doyle has to ask two more questions to understand it.", "zh": "你誠實的回答被文法拖累了。多伊爾先生得再問兩個問題才聽懂。" },
+            "why": "比較級要說 a little more expensive than，不是 a little bit expensive than；worth 後面要接名詞，說 it's worth it 或 it's worth the cost。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "We're almost out of time. Mr. Doyle, any final comments?", "zh": "時間差不多了。多伊爾先生，最後還有什麼意見嗎？" },
+        { "who": "c09_consultant", "expr": "happy", "en": "Just one. Thank you for being honest about what you don't know. That's rare at these events.", "zh": "只有一點。謝謝你誠實面對自己不知道的部分，這在這種場合很少見。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you, Mr. Doyle. I'll email you about the older wiring by the end of the week.",
+          "zh": "謝謝您，多伊爾先生。這週結束前，我會寄信回覆您老舊線路的問題。",
+          "ok": true,
+          "tip": "收到稱讚簡單道謝，再兌現你說過的 get back to you，給出明確期限。"
+        },
+        {
+          "en": "No, no, I'm not good at all. My English is very poor. Thank you for your teaching and guidance.",
+          "zh": "沒有沒有，我一點都不好。我的英文很差。謝謝您的指導與指教。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c09_consultant", "expr": "confused", "en": "Teaching? I'm not your teacher. And your English is just fine.", "zh": "指導？我不是你的老師。而且你的英文很好啊。" }
+            ],
+            "title": { "en": "Not My Student", "zh": "我不是你老師" },
+            "story": { "en": "Your modesty ends the session on an oddly low note. Ms. Wong quickly thanks everyone for coming.", "zh": "你的謙虛讓問答在奇怪的低調中結束。王經理趕緊感謝大家的參與。" },
+            "why": "「哪裡哪裡」「謝謝指教」是中文客套話，直譯成英文會讓人困惑，也削弱你剛建立的專業形象。被稱讚時說 Thank you. 就好，再兌現承諾。"
+          }
+        },
+        {
+          "en": "Thanks! Honestly, your questions were really tough. You almost killed me up here, haha.",
+          "zh": "謝謝！老實說，您的問題真的很難。您差點把我在台上整死了，哈哈。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c09_consultant", "expr": "confused", "en": "Well... that was not my intention. Good questions should be tough.", "zh": "嗯……那不是我的本意。好問題本來就該難一點。" }
+            ],
+            "title": { "en": "Too Casual", "zh": "太隨便" },
+            "story": { "en": "The audience laughs, but the professional mood of your talk slips away. You forget to mention the follow-up email.", "zh": "台下笑了，但你演講的專業氛圍也跟著溜走。你還忘了提會寄信回覆的事。" },
+            "why": "在正式場合對提問者開「差點整死我」的玩笑，語氣太隨便。專業地道謝並兌現承諾：Thank you. I'll email you about the older wiring by the end of the week.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c09_consultant", "expr": "happy", "en": "I'll look forward to it. Here's my card. I may have some clients for you.", "zh": "我很期待。這是我的名片，我可能有些客戶可以介紹給你。" },
+      { "who": "ms_wong", "expr": "happy", "en": "Kai, that was the best Q&A I've seen from a first-time speaker.", "zh": "凱，這是我看過新手講者最好的問答表現。" }
+    ],
+    "title": { "en": "Honest Answers Win", "zh": "誠實贏得信任" },
+    "story": { "en": "The toughest person in the room becomes your newest contact. On Friday, your email about older wiring lands in his inbox, right on time.", "zh": "全場最難搞的人成了你最新的人脈。週五，你關於老舊線路的回覆準時寄到了他的信箱。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "That's a great question.",
+      "zh": "這是個好問題。",
+      "explain": "問答時的萬用開頭，能幫你爭取幾秒思考時間，也讓提問者感到被尊重。不要每題都用，以免顯得敷衍。",
+      "example": { "en": "That's a great question. Let me break it into two parts.", "zh": "這是個好問題。讓我分成兩部分回答。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'll get back to you on that.",
+      "zh": "這點我確認後再回覆您。",
+      "explain": "不知道答案時的專業說法。說了就一定要做到，最好加上期限，例如 by the end of the week。",
+      "example": { "en": "I don't have that number with me, but I'll get back to you on that by Friday.", "zh": "我手邊沒有那個數字，但週五前會回覆您。" }
+    },
+    {
+      "type": "phrase",
+      "en": "To be honest, I'm not sure.",
+      "zh": "老實說，我不確定。",
+      "explain": "承認不知道並不丟臉。在西方專業場合，坦白比硬掰更能建立可信度，記得接著說你會怎麼查證。",
+      "example": { "en": "To be honest, I'm not sure. Let me check with our engineers.", "zh": "老實說我不確定，讓我跟工程師確認一下。" }
+    },
+    {
+      "type": "trap",
+      "en": "Our system has no weakness.",
+      "zh": "我們的系統沒有弱點。",
+      "explain": "被問到弱點時說「沒有」，會讓人覺得你不誠實或不了解產品。坦白說出一個限制，再說明適合什麼情況，反而更可信。",
+      "example": { "en": "It costs more upfront, but it pays off for long-term clients.", "zh": "初期成本較高，但對長期客戶來說很划算。" }
+    },
+    {
+      "type": "culture",
+      "en": "Admitting you don't know",
+      "zh": "承認自己不知道",
+      "explain": "在台灣有時會為了面子含糊帶過，但西方聽眾看重誠實。說 I don't know, but I'll find out. 會被視為專業，而不是丟臉。",
+      "example": { "en": "I don't know, but I'll find out and email you this week.", "zh": "我不知道，但我會查清楚，這週寄信給您。" }
+    }
+  ]
+}

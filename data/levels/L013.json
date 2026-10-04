@@ -1,0 +1,181 @@
+{
+  "id": "L013",
+  "location": { "en": "Maple Bay Central Bus Station, ticket office", "zh": "楓灣公車總站，售票處" },
+  "goal": { "en": "Top up your bus card and find the right bus to school.", "zh": "幫公車卡儲值，並問清楚哪班公車到學校。" },
+  "background": "bus station ticket office with a glass service window, a card reader on the counter, rows of metal benches, tiled floor, large windows showing parked blue city buses, morning light",
+  "cast": ["c02_agent"],
+  "intro": [
+    { "who": "narrator", "en": "School starts next week. Mia gave you her old bus card, but it's almost empty.", "zh": "下週就要開學了。米亞把她的舊公車卡送給你，但裡面幾乎沒錢了。" },
+    { "who": "narrator", "en": "At the ticket office, an agent in thick glasses looks up from his screen.", "zh": "售票處裡，一位戴著粗框眼鏡的站務員從螢幕前抬起頭。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c02_agent", "expr": "neutral", "en": "Morning. Next, please. How can I help you?", "zh": "早安，下一位。有什麼需要幫忙的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "I'd like to top up this card.",
+          "zh": "我想幫這張卡儲值。",
+          "ok": true,
+          "tip": "top up 就是「儲值、加值」，I'd like to... 是禮貌說出需求的句型。"
+        },
+        {
+          "en": "Hi. I want to save money in it.",
+          "zh": "你好，我想在裡面存錢。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_agent", "expr": "confused", "en": "Save money? This is a bus station, not a bank.", "zh": "存錢？這裡是公車站，不是銀行。" }
+            ],
+            "title": { "en": "Wrong Kind of Saving", "zh": "存錯地方" },
+            "story": { "en": "The agent kindly gives you directions to the nearest bank. You walk there and back, and your card is still empty.", "zh": "站務員好心告訴你最近的銀行怎麼走。你走過去又走回來，卡片還是空的。" },
+            "why": "「儲值」不能直譯成 save money，save money 是「存錢、省錢」。幫交通卡加值要說 top up：I'd like to top up this card.。"
+          }
+        },
+        {
+          "en": "I'm fine, thank you. And you?",
+          "zh": "我很好，謝謝。你呢？",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c02_agent", "expr": "confused", "en": "...I'm good. So, what do you need today?", "zh": "……我很好。所以，你今天要辦什麼？" }
+            ],
+            "title": { "en": "Textbook Reflex", "zh": "課本反射" },
+            "story": { "en": "The people behind you start sighing. You panic, forget why you came and leave with a free bus map.", "zh": "後面排隊的人開始嘆氣。你一緊張，忘了自己來做什麼，最後只拿了一張免費的公車路線圖離開。" },
+            "why": "How can I help you? 是「需要什麼幫忙？」，不是 How are you?。直接說出需求：I'd like to top up this card.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_agent", "expr": "neutral", "en": "Sure. Do you ride the bus every day? A monthly pass might be cheaper.", "zh": "好的。你每天都搭公車嗎？辦月票可能比較划算。" }
+      ],
+      "choices": [
+        {
+          "en": "Yes. How much is a monthly pass?",
+          "zh": "對。月票多少錢？",
+          "ok": true,
+          "tip": "How much is...? 是問價錢最簡單的句型；monthly pass 就是「月票」。"
+        },
+        {
+          "en": "Yes, I am. How much is it?",
+          "zh": "是，我是。多少錢？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_agent", "expr": "confused", "en": "You are...? Oh, a student? Then I'll need your student ID.", "zh": "你是……？喔，學生嗎？那我需要看你的學生證。" }
+            ],
+            "title": { "en": "Come Back Next Week", "zh": "下週請早" },
+            "story": { "en": "You don't have a student ID yet. You'll have to come back next week, and you pay cash for every ride until then.", "zh": "你還沒拿到學生證，只好下週再來。在那之前，每趟車都得付現金。" },
+            "why": "用 Do you...? 問的問題，要用 do 回答：Yes, I do.。回答 Yes, I am.，對方會以為你在回答「你是不是……」的問題。"
+          }
+        },
+        {
+          "en": "Then why didn't you tell me first?",
+          "zh": "那你怎麼不早說？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c02_agent", "expr": "upset", "en": "Well... I'm telling you now.", "zh": "呃……我現在不就在跟你說了。" }
+            ],
+            "title": { "en": "By the Book", "zh": "照規矩來" },
+            "story": { "en": "After that, the agent does everything by the book. Slowly. Very slowly. Your bus leaves without you.", "zh": "接下來站務員一切照規矩來，慢慢地，非常慢地。你要搭的公車就這樣開走了。" },
+            "why": "Why didn't you tell me...? 聽起來像在責怪對方。對方好心給建議時，先道謝再問細節：Oh, thanks! How much is a monthly pass?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c02_agent", "expr": "happy", "en": "There you go. Sixty dollars, unlimited rides for a month. Anything else?", "zh": "好了。六十元，一個月無限搭乘。還有其他需要嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Does bus 12 go to the language school?",
+          "zh": "12 號公車有到語言學校嗎？",
+          "ok": true,
+          "tip": "Does this bus go to...? 是確認路線的必備句，上車前問一句最安心。"
+        },
+        {
+          "en": "Bus 12 is go to the language school?",
+          "zh": "12 號公車是去語言學校？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c02_agent", "expr": "confused", "en": "Bus 12 is...? Sorry, I didn't catch the question.", "zh": "12 號公車是……？抱歉，我沒聽懂你的問題。" }
+            ],
+            "title": { "en": "Scenic Detour", "zh": "繞路觀光團" },
+            "story": { "en": "You give up and guess. Bus 21 looks close enough, right? You get a free, very long tour of the industrial district.", "zh": "你放棄追問，憑感覺上車。21 號看起來差不多吧？結果你免費參觀了一趟好長的工業區之旅。" },
+            "why": "is 和 go 不能直接放在一起。問公車路線要用 Does + 主詞 + go to...?：Does bus 12 go to the language school?。"
+          }
+        },
+        {
+          "en": "Can bus 12 arrive the language school?",
+          "zh": "12 號公車可以到達語言學校嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c02_agent", "expr": "confused", "en": "Arrive...? Do you want the full timetable?", "zh": "到達……？你要完整的時刻表嗎？" }
+            ],
+            "title": { "en": "Forty Routes Later", "zh": "四十條路線" },
+            "story": { "en": "The agent prints the timetable for all forty routes. You study it on a bench for an hour and still don't know which bus to take.", "zh": "站務員印給你四十條路線的完整時刻表。你坐在長椅上研究了一個小時，還是不知道該搭哪一班。" },
+            "why": "arrive 後面要接 at 或 in，而且問公車有沒有到某地，英文習慣用 go to：Does bus 12 go to the language school?。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c02_agent", "expr": "happy", "en": "Yes, it stops right in front of it. Have a great first day!", "zh": "有，就停在學校正門口。開學第一天加油！" },
+      { "who": "narrator", "en": "Later, on bus 12, you tap your new pass. Beep! Maple Bay suddenly feels a lot smaller.", "zh": "後來搭上 12 號公車，你把月票往感應器一靠，「嗶」！楓灣好像一下子變小了。" }
+    ],
+    "title": { "en": "Ready to Roll", "zh": "一卡在手" },
+    "story": { "en": "With a monthly pass in your pocket, the whole city is now just a bus ride away.", "zh": "口袋裡有了月票，整座城市都只是一趟公車的距離。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "top up",
+      "zh": "儲值、加值",
+      "explain": "幫交通卡、預付卡加值都用 top up，可以再加上金額，例如 top up twenty dollars。",
+      "example": { "en": "I'd like to top up my card with twenty dollars.", "zh": "我想幫卡片儲值二十元。" }
+    },
+    {
+      "type": "vocab",
+      "en": "monthly pass",
+      "zh": "月票",
+      "explain": "一個月內不限次數搭乘的票，也有 weekly pass（週票）。每天通勤的話，通常比儲值划算。",
+      "example": { "en": "A monthly pass is cheaper if you ride every day.", "zh": "如果每天搭車，月票比較划算。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Does this bus go to...?",
+      "zh": "這班公車有到……嗎？",
+      "explain": "上車前確認路線最好用的句型，也可以直接問司機。注意是 Does... go，不是 Is... go。",
+      "example": { "en": "Excuse me, does this bus go to the train station?", "zh": "請問這班公車有到火車站嗎？" }
+    },
+    {
+      "type": "trap",
+      "en": "save money",
+      "zh": "省錢、存錢（不是儲值）",
+      "explain": "save money 是「省錢」或「存錢」。幫卡片儲值要說 top up，說 save money 會讓人以為你要去銀行。",
+      "example": { "en": "A monthly pass will save you money.", "zh": "辦月票可以幫你省錢。" }
+    },
+    {
+      "type": "grammar",
+      "en": "Yes, I do. / Yes, I am.",
+      "zh": "用 do 問，就用 do 答",
+      "explain": "Do you...? 要用 Yes, I do. 回答；Are you...? 才用 Yes, I am.。回答的助動詞要和問句對應。",
+      "example": { "en": "Do you take the bus? Yes, I do.", "zh": "你搭公車嗎？是的，我有搭。" }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "L072",
+  "location": { "en": "Brightway office, meeting room", "zh": "Brightway 公司，會議室" },
+  "goal": { "en": "Introduce yourself at your first team meeting and make a good impression.", "zh": "在第一次團隊會議上自我介紹，留下好印象。" },
+  "background": "small modern meeting room with a long wooden table, rolling chairs, a blank whiteboard, warm pendant lamps, coffee cups on the table, large window with a city view, morning light",
+  "cast": ["ms_wong", "c08_daniel", "c08_priya"],
+  "intro": [
+    { "who": "narrator", "en": "Tuesday morning. The whole team squeezes into the small meeting room, coffee in hand.", "zh": "星期二早上，整個團隊端著咖啡擠進小會議室。" },
+    { "who": "narrator", "en": "Ms. Wong stands at the end of the table and smiles at you.", "zh": "王經理站在長桌的一端，對你笑了笑。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Everyone, this is Kai, our newest team member. Kai, would you like to say a few words?", "zh": "各位，這是我們的新成員凱。凱，要不要跟大家說幾句話？" }
+      ],
+      "choices": [
+        {
+          "en": "Sure. Let me briefly introduce myself. I'm Kai, and I'm from Taiwan.",
+          "zh": "好的，我簡單自我介紹一下。我是凱，來自台灣。",
+          "ok": true,
+          "tip": "Let me briefly introduce myself. 開場簡潔有禮，接著說名字和背景就好。"
+        },
+        {
+          "en": "Hello everyone, I am Kai, a newcomer. Please take care of me a lot.",
+          "zh": "大家好，我是新人凱，請多多指教。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Take care of you? Are you... feeling okay?", "zh": "照顧你？你……身體還好嗎？" }
+            ],
+            "title": { "en": "Patient Kai", "zh": "需要照顧的凱" },
+            "story": { "en": "Daniel offers you a cough drop. Priya asks if you need a day off. You spend the meeting explaining that you're perfectly healthy.", "zh": "丹尼爾遞給你一顆喉糖，普莉雅問你要不要請假。整場會議你都在解釋自己身體很健康。" },
+            "why": "「請多多指教」直譯成 Please take care of me. 聽起來像生病需要照顧。新人可以說 I'm looking forward to working with you all.。"
+          }
+        },
+        {
+          "en": "Um, sorry, my English is very poor and I know nothing, so please forgive all my mistakes.",
+          "zh": "呃，不好意思，我英文很爛，什麼都不懂，請原諒我的各種錯誤。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Kai, your English is fine. We hired you for a reason!", "zh": "凱，你的英文沒問題。我們錄取你是有原因的！" }
+            ],
+            "title": { "en": "Too Humble to Hire", "zh": "謙虛過頭" },
+            "story": { "en": "For the rest of the week, everyone speaks to you very slowly and very loudly, just in case.", "zh": "接下來一整個星期，大家跟你說話都放得很慢、很大聲，以防萬一。" },
+            "why": "台灣習慣自謙，但在北美職場，一開口就說「我很爛、什麼都不懂」會讓人真的這樣相信。簡單介紹自己：Let me briefly introduce myself.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_daniel", "expr": "happy", "en": "Welcome, Kai! I'm Daniel, I lead product design. So what brought you to Maple Bay?", "zh": "歡迎，凱！我是丹尼爾，負責產品設計。你怎麼會來楓灣？" }
+      ],
+      "choices": [
+        {
+          "en": "I came for a one-year language program, and I've always wanted to work abroad.",
+          "zh": "我來參加一年的語言課程，而且我一直很想在國外工作。",
+          "ok": true,
+          "tip": "I've always wanted to... 用現在完成式表示「一直以來都想」，說動機很自然。"
+        },
+        {
+          "en": "I have came here last month for study English and also for working holiday.",
+          "zh": "我上個月來這裡讀英文，也是來打工度假。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "You have came... last month... Sorry, when did you arrive?", "zh": "你已經來……上個月……抱歉，你是什麼時候到的？" }
+            ],
+            "title": { "en": "Tense Situation", "zh": "時態大塞車" },
+            "story": { "en": "Daniel gets lost somewhere between \"have came\" and \"last month.\" He decides to ask Ms. Wong about you later instead.", "zh": "丹尼爾在「have came」和「last month」之間迷路了，決定之後再去問王經理你的事。" },
+            "why": "現在完成式是 have + 過去分詞（have come），而且不能和 last month 這種明確過去時間一起用。說 I came here last month to study English.。"
+          }
+        },
+        {
+          "en": "Your company's lights are so beautiful. I really like your designs very much.",
+          "zh": "你們公司的燈好漂亮，我非常喜歡你們的設計。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Oh, thanks! But... I meant, why Maple Bay?", "zh": "喔，謝謝！不過……我是問你為什麼來楓灣？" }
+            ],
+            "title": { "en": "Missed the Question", "zh": "答非所問" },
+            "story": { "en": "Daniel is flattered, but nobody learns anything about you. Two weeks later, someone still thinks you're from Japan.", "zh": "丹尼爾聽了很開心，但大家對你一無所知。兩週後，還有人以為你是從日本來的。" },
+            "why": "What brought you to...? 是問「你為什麼來」。稱讚可以留到後面，先回答問題：I came for a language program.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c08_priya", "expr": "happy", "en": "Hi, I'm Priya from marketing. What kind of work did you do back in Taiwan?", "zh": "嗨，我是行銷部的普莉雅。你在台灣做過什麼工作？" }
+      ],
+      "choices": [
+        {
+          "en": "I worked part-time at a design studio, mostly helping with product photos.",
+          "zh": "我在一間設計工作室打工，主要幫忙拍產品照。",
+          "ok": true,
+          "tip": "說過去的經歷用過去式，再加一句具體內容，讓人更容易記住你。"
+        },
+        {
+          "en": "I was the best designer in my studio. Everyone said my photos were perfect.",
+          "zh": "我是工作室裡最強的設計師，大家都說我的照片很完美。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c08_priya", "expr": "upset", "en": "Wow... perfect, huh? Can't wait to see them.", "zh": "哇……完美喔？真期待看到呢。" }
+            ],
+            "title": { "en": "Big Talk, Big Task", "zh": "話說太滿" },
+            "story": { "en": "The team now expects perfect photos. Your first assignment: shoot the entire new catalog by Friday.", "zh": "大家現在都期待你拍出完美照片。你的第一個任務：星期五前拍完整本新型錄。" },
+            "why": "第一次見面就說自己「最強、最完美」聽起來很自大。具體描述做過什麼就好：I worked part-time at a design studio.。"
+          }
+        },
+        {
+          "en": "I am work at a design studio before, and I help them took the product photos.",
+          "zh": "我之前在一間設計工作室工作，幫他們拍產品照。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_priya", "expr": "confused", "en": "Sorry, do you work there now, or did you before?", "zh": "抱歉，你是現在在那裡工作，還是以前？" }
+            ],
+            "title": { "en": "Time Jumper", "zh": "時空跳躍" },
+            "story": { "en": "Priya thinks you still have another job. She quietly asks Ms. Wong if you're only working here part-time.", "zh": "普莉雅以為你還有另一份工作，偷偷問王經理你是不是只在這裡兼職。" },
+            "why": "說過去的事要用過去式：I worked at a design studio.。I am work 是兩個動詞撞在一起，help them took 也要改成 help them take。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "neutral", "en": "Kai will be helping Priya with the new café campaign. Any questions for the team, Kai?", "zh": "凱會協助普莉雅做新的咖啡廳企劃。凱，有什麼想問大家的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Just one. What's the best way to reach everyone, email or the team chat?",
+          "zh": "只有一個。聯絡大家最好用什麼方式，email 還是團隊聊天群組？",
+          "ok": true,
+          "tip": "會議上問實用的問題，例如溝通管道，顯示你想快速融入團隊。"
+        },
+        {
+          "en": "No questions. I will just do whatever the boss tells me to do.",
+          "zh": "沒有問題。老闆叫我做什麼，我就做什麼。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Oh... Kai, we like ideas here, not just following orders.", "zh": "喔……凱，我們這裡重視想法，不只是聽命令。" }
+            ],
+            "title": { "en": "Yes-Person", "zh": "唯命是從" },
+            "story": { "en": "The team decides you're very quiet. For the next month, nobody thinks to ask for your opinion.", "zh": "大家認定你很安靜。接下來一個月，沒有人想到要問你的意見。" },
+            "why": "在台灣表示服從是禮貌，但北美職場期待新人也有想法。會議上問一個實際的問題，例如 What's the best way to reach everyone?。"
+          }
+        },
+        {
+          "en": "Yes! Does anyone know a good place near here to buy cheap furniture for my room?",
+          "zh": "有！有人知道這附近哪裡可以買便宜家具嗎？我房間要用。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "ms_wong", "expr": "confused", "en": "Uh... maybe ask Sam after the meeting?", "zh": "呃……也許會後再問山姆？" }
+            ],
+            "title": { "en": "Meeting Hijacked", "zh": "會議歪樓" },
+            "story": { "en": "Ten minutes of sofa talk later, the meeting runs over. Ms. Wong gives you a long, patient look.", "zh": "大家聊沙發聊了十分鐘，會議超時了。王經理用耐心又意味深長的眼神看了你一眼。" },
+            "why": "團隊會議上的提問要和工作相關。私人問題留到會後問同事，會議上可以問 What's the best way to reach everyone?。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "ms_wong", "expr": "happy", "en": "Great question. Team chat for quick things, email for clients. Anything else you'd like to add?", "zh": "好問題。小事用團隊聊天群組，客戶的事用 email。還有什麼想補充的嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Just that I'm looking forward to working with you all. Thanks for having me.",
+          "zh": "只想說，我很期待和大家一起工作。謝謝大家。",
+          "ok": true,
+          "tip": "I'm looking forward to + V-ing，to 是介系詞，後面接動名詞。"
+        },
+        {
+          "en": "Only that I'm looking forward to work with you all. Thank you all so much.",
+          "zh": "只想說，我很期待和大家一起工作。非常謝謝大家。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c08_daniel", "expr": "confused", "en": "Looking forward to... work? Ha, sorry, my grammar alarm just went off.", "zh": "期待……work？哈，抱歉，我的文法警報響了。" }
+            ],
+            "title": { "en": "The Sticky Note", "zh": "一張便利貼" },
+            "story": { "en": "Nobody really minds. But the next morning, you find a sticky note on your desk from Daniel that just says \"working :)\"", "zh": "其實沒人介意。但隔天早上，你在桌上發現丹尼爾留的便利貼，上面只寫著「working :)」。" },
+            "why": "look forward to 的 to 是介系詞，後面要接名詞或 V-ing：I'm looking forward to working with you.。"
+          }
+        },
+        {
+          "en": "I hope everyone can teach me more. I will work very hard. Add oil!",
+          "zh": "希望大家多多教我，我會很努力。加油！",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c08_priya", "expr": "confused", "en": "Add oil? To what, the coffee machine?", "zh": "加油？加到哪裡，咖啡機嗎？" }
+            ],
+            "title": { "en": "Add Oil!", "zh": "加油？加什麼油？" },
+            "story": { "en": "\"Add oil\" becomes the team's new catchphrase. Unfortunately, nobody remembers anything else you said.", "zh": "「Add oil」成了團隊的新口頭禪。可惜，沒人記得你說的其他內容。" },
+            "why": "「加油」直譯成 Add oil 很多人聽不懂。想為自己打氣，可以說 I'll do my best.；結尾說 I'm looking forward to working with you all. 最得體。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "ms_wong", "expr": "happy", "en": "Thanks, Kai. Welcome aboard. Okay, everyone, let's get started.", "zh": "謝謝你，凱，歡迎加入。好，各位，我們開始吧。" },
+      { "who": "c08_priya", "expr": "happy", "en": "Let's grab coffee later and talk about the café campaign!", "zh": "晚點一起喝杯咖啡，聊聊咖啡廳企劃吧！" }
+    ],
+    "title": { "en": "Warm Welcome", "zh": "熱烈歡迎" },
+    "story": { "en": "Your introduction is short, clear, and friendly. By lunch, three people have stopped by your desk to say hi.", "zh": "你的自我介紹簡短、清楚又親切。到中午，已經有三個人到你座位打招呼。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Let me briefly introduce myself.",
+      "zh": "我簡單自我介紹一下。",
+      "explain": "正式場合自我介紹的開場句，briefly 讓大家知道你不會講太久。之後說名字、背景、一句期待就夠了。",
+      "example": { "en": "Let me briefly introduce myself. I'm Kai, and I'm new to the design team.", "zh": "我簡單自我介紹一下，我是凱，設計團隊的新成員。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm looking forward to working with you.",
+      "zh": "我很期待和你們一起工作。",
+      "explain": "look forward to 的 to 是介系詞，後面要接名詞或動名詞 V-ing，不是原形動詞。",
+      "example": { "en": "I'm looking forward to meeting our clients.", "zh": "我很期待和客戶見面。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I've always wanted to...",
+      "zh": "我一直都很想……",
+      "explain": "現在完成式表示從過去持續到現在的心願。注意現在完成式不能和 last month、yesterday 這類明確過去時間連用。",
+      "example": { "en": "I've always wanted to live by the sea.", "zh": "我一直很想住在海邊。" }
+    },
+    {
+      "type": "trap",
+      "en": "Please take care of me.",
+      "zh": "請多多指教。（直譯陷阱）",
+      "explain": "英文的 take care of me 是「照顧我」，聽起來像生病了。新人可以說 I'm happy to be here. 或 I'm looking forward to working with you.。",
+      "example": { "en": "I'm new here, so I'm happy to learn from all of you.", "zh": "我是新人，很樂意向大家學習。" }
+    },
+    {
+      "type": "culture",
+      "en": "Be confident, not too humble.",
+      "zh": "有自信，別過度謙虛。",
+      "explain": "台灣習慣自謙說「我英文很爛、什麼都不懂」，但在北美職場，過度謙虛會讓人以為你真的不行。簡單說出背景和期待就好。",
+      "example": { "en": "I'm still learning, but I'm excited to contribute.", "zh": "我還在學習，但很期待能有所貢獻。" }
+    }
+  ]
+}

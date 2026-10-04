@@ -1,0 +1,222 @@
+{
+  "id": "L053",
+  "location": { "en": "Kai's studio, on the phone with Mr. Lin", "zh": "凱的套房，打電話給林先生" },
+  "goal": { "en": "Report the broken heater and arrange a repair.", "zh": "向房東報修壞掉的暖氣，約好維修時間。" },
+  "background": "small studio apartment on a cold winter night, frosty window, old white radiator heater under the window, bed with a thick wool blanket, mug on a wooden desk, dim cool blue light",
+  "cast": ["mr_lin"],
+  "intro": [
+    { "who": "narrator", "en": "Two weeks after moving in, the first cold night arrives. The heater makes a loud clunk, then goes silent.", "zh": "搬進來兩週後，第一個寒夜來了。暖氣「喀」的一聲，然後就沒聲音了。" },
+    { "who": "narrator", "en": "Wrapped in a blanket, you call Mr. Lin.", "zh": "你裹著毯子，打電話給林先生。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Hello, Lin speaking. Kai? Is everything okay?", "zh": "喂，我是林先生。凱嗎？一切都還好嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Hi, Mr. Lin. Sorry to call so late. The heater isn't working.",
+          "zh": "林先生您好，抱歉這麼晚打來。暖氣壞了。",
+          "ok": true,
+          "tip": "The heater isn't working. 是描述東西故障最自然的說法，先為打擾道歉再說問題更有禮貌。"
+        },
+        {
+          "en": "Hi, Mr. Lin. The heater is bad. It doesn't come out hot air.",
+          "zh": "林先生您好，暖氣壞了，沒有出熱風。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "The heater is bad? Does it smell bad? Try opening a window.", "zh": "暖氣不好？是有怪味嗎？開個窗戶試試。" }
+            ],
+            "title": { "en": "Fresh Air, Frozen Toes", "zh": "空氣清新，腳趾結冰" },
+            "story": { "en": "Mr. Lin thinks the heater just smells funny. On the coldest night of the year, you sit next to an open window.", "zh": "林先生以為暖氣只是有怪味。在今年最冷的一晚，你坐在打開的窗戶旁邊發抖。" },
+            "why": "「壞掉」不能直譯成 bad，bad 容易被理解成「味道不好、品質差」。東西故障要說 isn't working 或 is broken：The heater isn't working."
+          }
+        },
+        {
+          "en": "Your heater is broken. I'm freezing here. Come and fix it right now.",
+          "zh": "你的暖氣壞了，我快冷死了。現在馬上來修。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "Right now? It's ten o'clock at night, Kai.", "zh": "現在？現在是晚上十點耶，凱。" }
+            ],
+            "title": { "en": "Cold Call", "zh": "冷冰冰的來電" },
+            "story": { "en": "Mr. Lin says he'll send someone \"when he has time.\" Apparently, that means next Thursday.", "zh": "林先生說「有空的時候」會找人過去。看來那是指下週四。" },
+            "why": "用命令句 Come and fix it right now. 對房東太衝，對方只會不想幫你。先道歉再說明：Sorry to call so late. The heater isn't working."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Oh no, on a night like this! When did it stop working?", "zh": "糟糕，偏偏在這種晚上！什麼時候壞的？" }
+      ],
+      "choices": [
+        {
+          "en": "It's been broken since about eight o'clock this evening.",
+          "zh": "從今晚八點左右就壞了。",
+          "ok": true,
+          "tip": "It's been broken since + 時間點，用現在完成式說明「從那時到現在一直壞著」。"
+        },
+        {
+          "en": "It is broken since eight o'clock. Now it still broken.",
+          "zh": "從八點就壞了，現在還是壞的。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Sorry, so is it working now or not? I'm a little confused.", "zh": "抱歉，所以現在到底能不能用？我有點搞混了。" }
+            ],
+            "title": { "en": "Sock Season", "zh": "雙層襪子之夜" },
+            "story": { "en": "Mr. Lin thinks the heater fixed itself and goes back to his TV show. You sleep in two pairs of socks.", "zh": "林先生以為暖氣自己好了，回去繼續看電視。你穿了兩雙襪子睡覺。" },
+            "why": "從過去持續到現在的狀態要用現在完成式：It's been broken since eight o'clock.，不能說 It is broken since...。"
+          }
+        },
+        {
+          "en": "It stopped because it's so cold tonight, minus two degrees!",
+          "zh": "因為今晚太冷了才壞的，零下兩度！",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Yes, I know it's cold. But when did it stop?", "zh": "對，我知道很冷。但它是什麼時候壞的？" }
+            ],
+            "title": { "en": "Weather Report", "zh": "氣象播報員" },
+            "story": { "en": "You and Mr. Lin talk about the weather for ten minutes. The heater remains a mystery.", "zh": "你和林先生聊了十分鐘天氣。暖氣的問題依然成謎。" },
+            "why": "When 問的是時間，不是原因或天氣。直接回答時間點：It's been broken since about eight."
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Hmm. There's a small switch on the side. Have you tried turning it off and on?", "zh": "嗯，旁邊有個小開關。你試過關掉再打開嗎？" }
+      ],
+      "choices": [
+        {
+          "en": "Yes, I've already tried that twice, but nothing happened.",
+          "zh": "有，我已經試過兩次了，但沒有反應。",
+          "ok": true,
+          "tip": "I've already tried that. 用現在完成式表示「已經做過了」，讓對方知道基本檢查都做完了。"
+        },
+        {
+          "en": "Yes, I opened it and closed it, but it's still no reaction.",
+          "zh": "有，我打開又關掉了，但還是沒反應。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "You opened the heater? Please don't take it apart!", "zh": "你把暖氣拆開了？拜託別拆它！" }
+            ],
+            "title": { "en": "Screwdriver Panic", "zh": "螺絲起子驚魂" },
+            "story": { "en": "Mr. Lin spends the rest of the call warning you not to touch anything with a screwdriver. Nobody mentions the switch again.", "zh": "林先生接下來整通電話都在叮嚀你千萬別拿螺絲起子亂動。再也沒人提到開關的事。" },
+            "why": "中文說「打開、關掉」電器，英文要用 turn on / turn off，不是 open / close。可以說 I've already turned it off and on again."
+          }
+        },
+        {
+          "en": "Of course I tried that already. I'm not a little kid, you know.",
+          "zh": "我當然試過了。我又不是小孩子。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "mr_lin", "expr": "upset", "en": "All right, all right. I was only trying to help.", "zh": "好啦好啦，我只是想幫忙。" }
+            ],
+            "title": { "en": "Frosty Reply", "zh": "冷冰冰的回答" },
+            "story": { "en": "Mr. Lin's voice goes cold, just like your studio. He says he'll call a repair company \"sometime this week.\"", "zh": "林先生的語氣跟你的套房一樣冷了下來。他說「這週找時間」再叫維修公司。" },
+            "why": "語氣太衝會讓好意幫忙的房東覺得不被尊重。平和地說 Yes, I've already tried that, but nothing happened. 就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "mr_lin", "expr": "neutral", "en": "Then it needs a repair. I'll call the repair company first thing tomorrow morning.", "zh": "那就需要維修了。我明天一早就打給維修公司。" }
+      ],
+      "choices": [
+        {
+          "en": "Thank you. When could someone come? I'll be home after three.",
+          "zh": "謝謝。大概什麼時候會有人來？我三點以後在家。",
+          "ok": true,
+          "tip": "When could someone come? 用 could 讓詢問更委婉，再補上自己方便的時間，對方好安排。"
+        },
+        {
+          "en": "Thanks. When someone can come? I'm at home after three o'clock.",
+          "zh": "謝謝。什麼時候有人可以來？我三點以後在家。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "When someone can come... Are you asking me, or telling me?", "zh": "有人可以來的時候……你是在問我，還是在告訴我？" }
+            ],
+            "title": { "en": "Knock, Knock, Nobody", "zh": "敲門沒人應" },
+            "story": { "en": "Mr. Lin thinks you said anyone can come anytime. The technician knocks at nine in the morning while you're in class.", "zh": "林先生以為你說隨時都可以來。結果維修人員早上九點來敲門時，你正在上課。" },
+            "why": "疑問句要把助動詞放在主詞前面：When could someone come?，不能說 When someone can come?"
+          }
+        },
+        {
+          "en": "Oh, no hurry at all. I can wait until spring, don't worry.",
+          "zh": "喔，完全不急。我可以等到春天，別擔心。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "mr_lin", "expr": "confused", "en": "Until spring? Well... if you're sure. I'll put it on my list.", "zh": "等到春天？嗯……既然你這麼說，我就先記下來。" }
+            ],
+            "title": { "en": "Polite and Frozen", "zh": "客氣到結冰" },
+            "story": { "en": "Mr. Lin takes you at your word. The repair person arrives in March, and you spend the whole winter in a wool hat.", "zh": "林先生把你的話當真了。維修人員三月才來，你戴著毛帽度過了整個冬天。" },
+            "why": "台灣人常客氣地說「不急、沒關係」，但在楓灣大家會照字面理解。需要修就清楚說：When could someone come? I'll be home after three."
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "mr_lin", "expr": "happy", "en": "I'll send someone at three thirty. And Kai, there's an extra blanket in the closet.", "zh": "我三點半找人過去。還有，凱，衣櫃裡有一條備用毯子。" },
+      { "who": "narrator", "en": "The next afternoon, the heater hums back to life.", "zh": "隔天下午，暖氣又嗡嗡地運轉起來了。" }
+    ],
+    "title": { "en": "Warm Again", "zh": "又暖起來了" },
+    "story": { "en": "The repair person replaces a small part in ten minutes. Your studio is warm again, and Mr. Lin even calls to check on you.", "zh": "維修人員十分鐘就換好一個小零件。套房又暖了，林先生還特地打電話來關心。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "The heater isn't working.",
+      "zh": "暖氣壞了。",
+      "explain": "東西故障最常用 isn't working，也可以說 is broken。別說 is bad，聽起來像品質差或有怪味。",
+      "example": { "en": "The shower isn't working. There's no hot water.", "zh": "蓮蓬頭壞了，沒有熱水。" }
+    },
+    {
+      "type": "grammar",
+      "en": "It's been broken since...",
+      "zh": "從……就一直壞著",
+      "explain": "現在完成式 has / have been + 狀態 + since + 時間點，表示從過去持續到現在。",
+      "example": { "en": "The light has been flickering since Monday.", "zh": "燈從星期一就一直在閃。" }
+    },
+    {
+      "type": "phrase",
+      "en": "When could someone come?",
+      "zh": "大概什麼時候能有人來？",
+      "explain": "could 比 can 委婉。用 someone 是因為你不知道會派誰來。問完記得補上自己方便的時間。",
+      "example": { "en": "When could someone come to take a look? I'm free after three.", "zh": "大概什麼時候能有人來看看？我三點以後有空。" }
+    },
+    {
+      "type": "trap",
+      "en": "turn on / turn off",
+      "zh": "打開／關掉（電器）",
+      "explain": "電器的開關用 turn on / turn off，不是 open / close。open 是打開門、窗、蓋子這類東西。",
+      "example": { "en": "I turned the heater off and on again.", "zh": "我把暖氣關掉再打開。" }
+    },
+    {
+      "type": "culture",
+      "en": "Say what you need.",
+      "zh": "需要就直說",
+      "explain": "楓灣人通常照字面理解。客套地說 No hurry.，對方真的會慢慢來。需要盡快處理，就禮貌但清楚地說出時間。",
+      "example": { "en": "It's quite cold, so I'd appreciate it if someone could come tomorrow.", "zh": "這裡滿冷的，如果明天能有人來，我會很感謝。" }
+    }
+  ]
+}

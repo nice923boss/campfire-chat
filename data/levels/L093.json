@@ -1,0 +1,265 @@
+{
+  "id": "L093",
+  "location": { "en": "A bench outside the language school", "zh": "語言學校外的長椅" },
+  "goal": { "en": "Comfort Leo after a failed exam, without lecturing.", "zh": "在里歐考試失利後安慰他，不說教。" },
+  "background": "quiet bench under a large tree outside a brick school building, fallen leaves on the path, empty bike rack nearby, soft late afternoon light",
+  "cast": ["leo"],
+  "intro": [
+    { "who": "narrator", "en": "Monday afternoon. Leo's exam results came out an hour ago, and he hasn't answered anyone's messages.", "zh": "星期一下午。里歐的考試成績一小時前公布了，他誰的訊息都沒回。" },
+    { "who": "narrator", "en": "You find him alone on the bench outside school, staring at his phone.", "zh": "你在學校外的長椅上找到他，他一個人盯著手機發呆。" },
+    { "who": "leo", "expr": "upset", "en": "Oh. Hey, Kai.", "zh": "喔，嘿，凱。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "leo", "expr": "upset", "en": "I failed. The certification exam. I needed a 70, and I got a 62.", "zh": "我沒過。檢定考。我需要 70 分，結果只拿到 62。" }
+      ],
+      "choices": [
+        {
+          "en": "Oh, Leo. That must be tough, especially after all that studying.",
+          "zh": "喔，里歐。一定很難受，尤其你念了那麼久。",
+          "ok": true,
+          "tip": "That must be tough. 先承認對方的難受，是安慰的第一句。"
+        },
+        {
+          "en": "Well, 62 isn't bad. You should've studied more grammar, though.",
+          "zh": "嗯，62 分不算差啦。不過你應該多念點文法的。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Thanks, coach. I'll put that on my list of regrets.", "zh": "謝謝教練。我會把它加進我的後悔清單。" }
+            ],
+            "title": { "en": "Post-Game Analysis", "zh": "賽後檢討會" },
+            "story": { "en": "Leo puts his headphones on. You've turned a hug moment into a grammar review session.", "zh": "里歐戴上耳機。你把一個該擁抱的時刻，變成了文法檢討會。" },
+            "why": "對方剛失敗時馬上檢討原因，聽起來像在說教。先同理：That must be tough.，建議等對方準備好再說。"
+          }
+        },
+        {
+          "en": "Aiya, so pity! Never mind, next time you just add oil more, okay?",
+          "zh": "哎呀，好可惜！沒關係，下次再多加油就好，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Add oil? Like... to a car? And \"so pity\"?", "zh": "加油？像是……幫車子加油？還有 so pity 是什麼？" }
+            ],
+            "title": { "en": "Full Tank, Empty Words", "zh": "油加滿了，話卻空了" },
+            "story": { "en": "Leo is too confused to stay sad, which is almost a success. Almost.", "zh": "里歐困惑到忘記難過，這幾乎算是成功了。幾乎。" },
+            "why": "「好可惜」是 That's a shame. 或 That's too bad.，不是 so pity。「加油」直譯 add oil 多數人聽不懂，安慰時可以說 That must be tough.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "upset", "en": "I studied every night for two months. And I still wasn't good enough.", "zh": "我每天晚上都在念，念了兩個月。結果還是不夠好。" }
+      ],
+      "choices": [
+        {
+          "en": "You worked so hard. One score doesn't change that, Leo.",
+          "zh": "你真的很努力。一個分數改變不了這件事，里歐。",
+          "ok": true,
+          "tip": "肯定對方的努力，把「分數」和「這個人」分開，是不說教的安慰。"
+        },
+        {
+          "en": "You worked so hard. One score doesn't mean you're not enough good.",
+          "zh": "你很努力了。一個分數不代表你不夠好。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"Not enough good\"? Great, now I'm worried about YOUR grammar too.", "zh": "Not enough good？很好，現在我連你的文法都要擔心了。" }
+            ],
+            "title": { "en": "Enough Is Enough", "zh": "夠了沒" },
+            "story": { "en": "Leo spends the next five minutes explaining word order to you. It distracts him, but it doesn't exactly comfort him.", "zh": "里歐花了五分鐘跟你解釋字序。他是分心了，但不算被安慰到。" },
+            "why": "enough 修飾形容詞時要放在形容詞後面：good enough，不是 enough good。"
+          }
+        },
+        {
+          "en": "At least it wasn't as bad as my cousin. My cousin got a 50!",
+          "zh": "至少沒有我表哥慘啦。我表哥考 50 分耶！",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "...Is that supposed to make me feel better?", "zh": "……這樣講是要讓我好過一點嗎？" }
+            ],
+            "title": { "en": "Cousin Comparison", "zh": "表哥比較法" },
+            "story": { "en": "Now Leo feels bad, and your cousin is somehow involved. Nobody wins this one.", "zh": "現在里歐心情很差，你表哥還莫名被拖下水。這局沒有贏家。" },
+            "why": "用「別人更慘」來安慰，在英語文化中常讓人覺得自己的感受被比下去了。專注在對方身上：You worked so hard.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "upset", "en": "My parents are going to be so disappointed. I don't even know how to tell them.", "zh": "我爸媽一定會很失望。我連要怎麼跟他們說都不知道。" }
+      ],
+      "choices": [
+        {
+          "en": "You don't have to figure that out tonight. I'm here for you.",
+          "zh": "你不用今晚就想好。我會陪著你。",
+          "ok": true,
+          "tip": "I'm here for you. 是「我會陪你」最自然的說法，不給建議也很有力量。"
+        },
+        {
+          "en": "Parents, right? My mom asks me every single day when I'm coming home.",
+          "zh": "爸媽就是這樣嘛。我媽每天都問我什麼時候回家。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "...Right. Sorry, I guess this is about your mom now.", "zh": "……是喔。抱歉，看來現在要聊你媽了。" }
+            ],
+            "title": { "en": "Plot Twist: It's About You", "zh": "劇情急轉：主角換人" },
+            "story": { "en": "You talk about your mom for ten minutes. Leo nods. Leo is still sad, now with extra information about your family.", "zh": "你講了十分鐘你媽的事。里歐點頭聽著，依然很難過，只是多知道了你家的事。" },
+            "why": "對方在傾訴時把話題拉回自己身上，會讓人覺得沒被聽見。把焦點留在對方：I'm here for you.。"
+          }
+        },
+        {
+          "en": "Just tell them directly. Being scared won't solve anything, you know.",
+          "zh": "就直接跟他們說啊。害怕也解決不了問題。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Wow. Thanks for the life lesson.", "zh": "哇，謝謝你的人生課。" }
+            ],
+            "title": { "en": "Life Coach Mode", "zh": "人生導師上身" },
+            "story": { "en": "You're technically right. That's the problem. Leo goes home early and doesn't call his parents either.", "zh": "你說的技術上沒錯，這正是問題所在。里歐提早回家，也沒打給爸媽。" },
+            "why": "「害怕沒用」是對的道理，但在對方脆弱時說，聽起來像責備。先陪伴，不急著解決：You don't have to figure that out tonight.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "leo", "expr": "neutral", "en": "Thanks. I just... I don't want advice right now, you know? I just feel stupid.", "zh": "謝啦。我只是……現在不想聽建議，你懂嗎？我只覺得自己很笨。" }
+      ],
+      "choices": [
+        {
+          "en": "Got it. No advice. Want to just sit here together for a while?",
+          "zh": "了解，不給建議。要不要就在這裡一起坐一下？",
+          "ok": true,
+          "tip": "對方說不要建議，就尊重他。安靜陪伴（sit here together）有時比任何話都有用。"
+        },
+        {
+          "en": "Okay, but here's a plan: retake it in March and use flashcards.",
+          "zh": "好，但我有個計畫：三月重考，然後用單字卡。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Kai. I literally just said no advice.", "zh": "凱。我才剛說不要建議。" }
+            ],
+            "title": { "en": "Selective Hearing", "zh": "選擇性聽力" },
+            "story": { "en": "Your plan is actually good. Leo will appreciate it in about three weeks. Tonight, he just walks away.", "zh": "你的計畫其實不錯，里歐大概三週後會感激你。但今晚，他直接走掉了。" },
+            "why": "對方明說 I don't want advice.，還硬要給建議會讓人覺得不被尊重。回應對方需要的：Got it. No advice.。"
+          }
+        },
+        {
+          "en": "Got it, no advice. Do you want to just sitting here for a while?",
+          "zh": "了解，不給建議。你想在這裡坐一下嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "\"Want to sitting\"? Okay, now I feel a little less stupid.", "zh": "Want to sitting？好吧，我現在覺得自己沒那麼笨了。" }
+            ],
+            "title": { "en": "Accidental Confidence Boost", "zh": "意外的自信加持" },
+            "story": { "en": "Your grammar mistake makes Leo feel smarter. It's not the comfort you planned, but he does crack a small grin.", "zh": "你的文法錯誤讓里歐覺得自己比較聰明。不是你計畫中的安慰，但他確實嘴角上揚了一下。" },
+            "why": "want to 後面接原形動詞：Do you want to just sit here?。不定詞 to 後面不加 -ing。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "narrator", "en": "You sit together in silence. The sky slowly turns orange.", "zh": "你們安靜地坐在一起。天空慢慢染成橘色。" },
+        { "who": "leo", "expr": "happy", "en": "Thanks for not making it weird, Kai. Can we get dumplings? I'm suddenly starving.", "zh": "謝謝你沒把氣氛搞尷尬，凱。我們去吃水餃好不好？我突然好餓。" }
+      ],
+      "choices": [
+        {
+          "en": "Absolutely. Dumplings are on me. That's what friends are for.",
+          "zh": "當然。水餃我請，朋友就是這樣。",
+          "ok": true,
+          "tip": "That's what friends are for. 是「朋友就是要互相幫忙」，溫暖又不肉麻。"
+        },
+        {
+          "en": "Dumplings? You just failed, and you're already thinking about food?",
+          "zh": "水餃？你才剛考砸，就已經在想吃的了？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "leo", "expr": "upset", "en": "Wow. Okay. Forget it. I'll eat alone.", "zh": "哇。好喔。算了，我自己去吃。" }
+            ],
+            "title": { "en": "Appetite Police", "zh": "食慾糾察隊" },
+            "story": { "en": "You meant it as a joke. Leo did not hear it as a joke. You eat dumplings alone, too, at a different shop.", "zh": "你本來只是開玩笑，但里歐聽起來一點都不好笑。你也一個人去吃水餃，在另一家店。" },
+            "why": "對方情緒剛好轉時拿失敗開玩笑，很容易被誤解成嘲諷。順著對方的提議走：Absolutely. Dumplings are on me.。"
+          }
+        },
+        {
+          "en": "Okay! Eat full, sleep full, and everything will pass, you'll see.",
+          "zh": "好！吃飽睡飽，一切都會過去的，你看著吧。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "leo", "expr": "confused", "en": "Eat full? Sleep full? Is that a fortune cookie?", "zh": "吃滿？睡滿？這是籤餅上的句子嗎？" }
+            ],
+            "title": { "en": "Fortune Cookie Wisdom", "zh": "籤餅人生哲學" },
+            "story": { "en": "Leo laughs and says it should be printed on a T-shirt. He still has no idea what you meant.", "zh": "里歐笑說這句應該印在 T 恤上。不過他還是不懂你的意思。" },
+            "why": "「吃飽睡飽」直譯成 eat full, sleep full 不是英文說法。可以說 Get some food and some rest. Things will get better.。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "leo", "expr": "happy", "en": "Deal. And next time, I'm passing that thing.", "zh": "成交。還有，下次我一定要考過。" },
+      { "who": "narrator", "en": "Over a plate of dumplings, Leo laughs for the first time that day.", "zh": "一盤水餃下肚，里歐今天第一次笑了。" }
+    ],
+    "title": { "en": "A Shoulder to Lean On", "zh": "可以依靠的肩膀" },
+    "story": { "en": "You didn't fix anything, and you didn't need to. Sometimes being there is the whole job.", "zh": "你什麼都沒解決，也不需要解決。有時候，陪在身邊就是全部。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "That must be tough.",
+      "zh": "那一定很難受。",
+      "explain": "must 表示合理推測。用來承認對方的難處，是英文安慰的第一句。也可以說 That must be hard.。",
+      "example": { "en": "You lost your job? That must be tough.", "zh": "你丟了工作？那一定很難受。" }
+    },
+    {
+      "type": "phrase",
+      "en": "I'm here for you.",
+      "zh": "我會陪著你。",
+      "explain": "表示「我在你身邊，需要時找我」。不給建議，只表達支持，對難過的人往往最有用。",
+      "example": { "en": "Call me anytime. I'm here for you.", "zh": "隨時打給我，我都在。" }
+    },
+    {
+      "type": "grammar",
+      "en": "good enough",
+      "zh": "夠好",
+      "explain": "enough 修飾形容詞時放在後面（good enough、old enough）；修飾名詞時放在前面（enough time、enough money）。",
+      "example": { "en": "Your English is good enough for the job.", "zh": "你的英文程度足以勝任這份工作。" }
+    },
+    {
+      "type": "trap",
+      "en": "That's a shame. / That's too bad.",
+      "zh": "好可惜",
+      "explain": "「好可惜」不能說 so pity。pity 通常用在 What a pity. 或 It's a pity that...。加油直譯 add oil 也容易讓人聽不懂。",
+      "example": { "en": "You missed the concert? That's a shame.", "zh": "你錯過演唱會了？好可惜。" }
+    },
+    {
+      "type": "culture",
+      "en": "Do you want advice, or should I just listen?",
+      "zh": "你想聽建議，還是我聽你說就好？",
+      "explain": "英語文化中，安慰時常先問對方需要什麼。不比較、不說教、不急著解決問題，尊重對方的節奏。",
+      "example": { "en": "That sounds hard. Do you want advice, or should I just listen?", "zh": "聽起來很辛苦。你想聽建議，還是我聽你說就好？" }
+    }
+  ]
+}

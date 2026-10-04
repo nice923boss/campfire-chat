@@ -1,0 +1,223 @@
+{
+  "id": "L033",
+  "location": { "en": "Zoe's apartment", "zh": "柔伊的公寓" },
+  "goal": { "en": "Go to Zoe's party and make a new friend.", "zh": "參加柔伊的派對，交一個新朋友。" },
+  "background": "cozy apartment living room at night with warm string lights, a sofa with colorful cushions, a low table with bowls of chips and paper cups, a record player, potted plants",
+  "cast": ["c04_zoe", "c04_finn"],
+  "intro": [
+    { "who": "narrator", "en": "Saturday night. Last time you said \"Maybe next time.\" Zoe invited you again, and this time you said yes.", "zh": "星期六晚上。上次你說「下次吧」，這次柔伊又約你，你答應了。" },
+    { "who": "narrator", "en": "You knock on her door with a box of cookies. Music and laughter come from inside.", "zh": "你帶著一盒餅乾敲門，屋裡傳來音樂和笑聲。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c04_zoe", "expr": "happy", "en": "Kai, you made it! Come on in!", "zh": "凱，你來了！快進來！" }
+      ],
+      "choices": [
+        {
+          "en": "Thanks for having me! I brought some cookies.",
+          "zh": "謝謝你邀請我！我帶了一些餅乾。",
+          "ok": true,
+          "tip": "Thanks for having me! 是到別人家作客時最自然的開場白。"
+        },
+        {
+          "en": "Hi! How much is the party? I can pay now.",
+          "zh": "嗨！派對多少錢？我現在付。",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "Pay? Kai, this is my home, not a restaurant!", "zh": "付錢？凱，這是我家，不是餐廳啦！" }
+            ],
+            "title": { "en": "Check, Please!", "zh": "老闆，買單！" },
+            "story": { "en": "For the rest of the night, Zoe calls you \"the customer\" and asks if you want a receipt.", "zh": "整個晚上柔伊都叫你「這位客人」，還問你要不要打統編。" },
+            "why": "朋友在家辦的 house party 通常不收錢，帶點零食或飲料就是禮貌。一進門就問價錢，主人會覺得你把她家當成餐廳。"
+          }
+        },
+        {
+          "en": "Thanks for have me! I bring some cookies.",
+          "zh": "謝謝你邀請我！我帶了一些餅乾。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_zoe", "expr": "confused", "en": "You bring cookies... every day? Or just today?", "zh": "你帶餅乾……是每天都帶嗎？還是只有今天？" }
+            ],
+            "title": { "en": "Cookie Tense", "zh": "時態餅乾" },
+            "story": { "en": "Zoe thinks you deliver cookies every Saturday. She tells all her friends about her new cookie service.", "zh": "柔伊以為你每週六都會送餅乾來，還跟朋友宣傳她的新外送服務。" },
+            "why": "for 後面要接動名詞：Thanks for having me.。餅乾已經帶來了，要用過去式 I brought，不是 I bring。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_zoe", "expr": "happy", "en": "Aw, thank you! Make yourself at home. Oh, here comes Finn!", "zh": "哇，謝謝！把這裡當自己家喔。啊，芬恩過來了！" },
+        { "who": "c04_finn", "expr": "happy", "en": "Hey there! I don't think we've met. I'm Finn.", "zh": "嗨！我們應該沒見過吧，我是芬恩。" }
+      ],
+      "choices": [
+        {
+          "en": "Hi Finn! I'm Kai. It's nice to meet you.",
+          "zh": "嗨，芬恩！我是凱，很高興認識你。",
+          "ok": true,
+          "tip": "說出對方的名字再介紹自己，對方會覺得你有認真在聽。"
+        },
+        {
+          "en": "I'm Kai. Please give me more advice.",
+          "zh": "我是凱，請多指教。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Advice? About what? We just met!", "zh": "建議？關於什麼？我們才剛認識耶！" }
+            ],
+            "title": { "en": "Free Advice", "zh": "免費諮詢" },
+            "story": { "en": "Finn gives you twenty minutes of advice about coffee beans. You now know a lot about coffee beans.", "zh": "芬恩給了你二十分鐘的咖啡豆建議，你現在對咖啡豆非常了解。" },
+            "why": "「請多指教」是中文的客套話，直翻成 please give me more advice，對方會以為你真的要請教他問題。英文說 Nice to meet you! 就夠了。"
+          }
+        },
+        {
+          "en": "Hi, I'm Kai. How old are you?",
+          "zh": "嗨，我是凱。你幾歲？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Uh... old enough to be at this party?", "zh": "呃……夠大可以參加這個派對了吧？" }
+            ],
+            "title": { "en": "ID Check", "zh": "查身分證" },
+            "story": { "en": "Finn jokes that you work as a security guard. Everyone holds up their phones to show you their \"ID.\"", "zh": "芬恩開玩笑說你是派對保全，大家紛紛拿出手機假裝給你看「證件」。" },
+            "why": "在台灣問年紀是為了知道怎麼稱呼對方，但在英語文化裡，初次見面就問年齡很突兀。先聊名字、工作、興趣就好。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_finn", "expr": "neutral", "en": "Nice to meet you too, Kai. So, how do you know Zoe?", "zh": "我也很高興認識你，凱。所以，你怎麼認識柔伊的？" }
+      ],
+      "choices": [
+        {
+          "en": "We're classmates at the language school.",
+          "zh": "我們是語言學校的同學。",
+          "ok": true,
+          "tip": "How do you know...? 問的是你們的關係，回答 We're classmates. 或 We work together. 就好。"
+        },
+        {
+          "en": "I know her a little. She's very nice and funny.",
+          "zh": "我跟她有點熟，她人很好又很好笑。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Ha, she is! But where did you two meet?", "zh": "哈，她真的是！不過你們是在哪裡認識的？" }
+            ],
+            "title": { "en": "Fan Club", "zh": "柔伊後援會" },
+            "story": { "en": "Finn thinks you're Zoe's biggest fan. He asks if you want her autograph.", "zh": "芬恩以為你是柔伊的頭號粉絲，問你要不要她的簽名。" },
+            "why": "How do you know Zoe? 不是問你多了解她，而是問你們怎麼認識的。回答關係就好：We're classmates.。"
+          }
+        },
+        {
+          "en": "Why? Why do you want to know?",
+          "zh": "幹嘛？你為什麼想知道？",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_finn", "expr": "upset", "en": "Whoa, sorry. I was just making conversation.", "zh": "哇，抱歉。我只是想找話聊而已。" }
+            ],
+            "title": { "en": "Top Secret", "zh": "最高機密" },
+            "story": { "en": "Finn slowly walks back to the chip bowl. Now the whole party thinks you're a spy.", "zh": "芬恩慢慢退回洋芋片旁邊，現在整個派對都以為你是間諜。" },
+            "why": "在派對上，How do you know...? 只是開話題的標準問句，沒有要打聽隱私。反問 Why? 聽起來很防備，像在審問對方。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_finn", "expr": "happy", "en": "Cool! I work with Zoe at a café downtown. Where are you from, Kai?", "zh": "酷！我跟柔伊在市區的咖啡店一起上班。凱，你是哪裡人？" }
+      ],
+      "choices": [
+        {
+          "en": "I'm from Taiwan. How about you?",
+          "zh": "我來自台灣。你呢？",
+          "ok": true,
+          "tip": "回答完再問一句 How about you?，對話就能自然地接下去。"
+        },
+        {
+          "en": "I'm come from Taiwan. It's a small island.",
+          "zh": "我來自台灣，那是一個小島。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Oh, did you just come from Taiwan? Like, today?", "zh": "喔，你剛從台灣過來嗎？今天才到？" }
+            ],
+            "title": { "en": "Just Landed?", "zh": "剛下飛機？" },
+            "story": { "en": "Finn asks if you have jet lag and brings you a glass of water. You've lived here for months.", "zh": "芬恩問你有沒有時差，還幫你倒了杯水。你明明已經住在這裡好幾個月了。" },
+            "why": "I'm from 和 I come from 選一個說就好，不能疊成 I'm come from。最自然的說法是 I'm from Taiwan.。"
+          }
+        },
+        {
+          "en": "I'm Taiwan people. Do you know Taiwan?",
+          "zh": "我是台灣人。你知道台灣嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Taiwan people? You're... a whole group of people?", "zh": "台灣人們？你一個人是……一整群人？" }
+            ],
+            "title": { "en": "The Ambassador", "zh": "台灣大使" },
+            "story": { "en": "Finn laughs and introduces you as \"the Ambassador of Taiwan.\" Everyone at the party bows when you walk by.", "zh": "芬恩笑著介紹你是「台灣大使」，之後你經過時大家都向你鞠躬。" },
+            "why": "「台灣人」直翻成 Taiwan people 是中式英文，people 是複數。說 I'm Taiwanese. 或 I'm from Taiwan. 才對。"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c04_finn", "expr": "happy", "en": "I'm from right here in Maple Bay. Taiwan, huh? I love bubble tea!", "zh": "我就是楓灣本地人。台灣啊？我超愛珍珠奶茶！" },
+      { "who": "c04_zoe", "expr": "happy", "en": "See? I knew you two would get along!", "zh": "看吧？我就知道你們會合得來！" }
+    ],
+    "title": { "en": "Next Time Is Now", "zh": "下次就是這次" },
+    "story": { "en": "Finn introduces you to everyone at the party. Before you leave, he invites you on his next photo walk around the city.", "zh": "芬恩帶你認識派對上的每個人。你離開前，他還邀你參加他下次的城市攝影散步。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Thanks for having me!",
+      "zh": "謝謝你邀請我（來作客）！",
+      "explain": "到別人家、參加派對或活動時的固定說法，進門或離開時都可以說。",
+      "example": { "en": "Thanks for having me! Your place is so cozy.", "zh": "謝謝你邀請我！你家好溫馨。" }
+    },
+    {
+      "type": "phrase",
+      "en": "How do you know Zoe?",
+      "zh": "你怎麼認識柔伊的？",
+      "explain": "派對上跟陌生人開話題最常用的問題，問的是你們的關係。回答 We're classmates. 或 We work together. 就好。",
+      "example": { "en": "How do you know Finn? / We work together.", "zh": "你怎麼認識芬恩的？／我們是同事。" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm from... / I come from...",
+      "zh": "我來自……",
+      "explain": "兩種說法擇一，不能疊成 I'm come from。口語最常用 I'm from...。說國籍可以用 I'm Taiwanese.。",
+      "example": { "en": "I'm from Taiwan. I'm Taiwanese.", "zh": "我來自台灣，我是台灣人。" }
+    },
+    {
+      "type": "culture",
+      "en": "Don't ask someone's age.",
+      "zh": "初次見面別問年紀。",
+      "explain": "中文問年紀常是為了決定稱呼，但英語文化裡初次見面問年齡、薪水、感情狀況都太私人。先聊工作、興趣、怎麼認識主人。",
+      "example": { "en": "So, what do you do for fun?", "zh": "那你平常喜歡做什麼？" }
+    },
+    {
+      "type": "trap",
+      "en": "Nice to meet you.",
+      "zh": "很高興認識你（不是「請多指教」）。",
+      "explain": "「請多指教」是客套話，直翻成 Please give me more advice. 會讓對方以為你要請教問題。英文自我介紹說 Nice to meet you! 就夠了。",
+      "example": { "en": "Hi, I'm Kai. Nice to meet you!", "zh": "嗨，我是凱，很高興認識你！" }
+    }
+  ]
+}

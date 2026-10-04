@@ -1,0 +1,222 @@
+{
+  "id": "L039",
+  "location": { "en": "Corner café downtown", "zh": "市區轉角咖啡店" },
+  "goal": { "en": "Tell Finn you can't make Saturday, and set a new time.", "zh": "告訴芬恩你星期六不能去，並另約時間。" },
+  "background": "small corner café downtown in the afternoon, wooden tables and chairs, a long counter with an espresso machine, hanging plants, large windows, golden sunlight on the floor",
+  "cast": ["c04_finn"],
+  "intro": [
+    { "who": "narrator", "en": "Wednesday afternoon. You and Finn planned a photo walk for Saturday.", "zh": "星期三下午。你和芬恩約好星期六去攝影散步。" },
+    { "who": "narrator", "en": "But this morning, your teacher moved your speaking test to Saturday. You stop by Finn's café to tell him.", "zh": "但今天早上，老師把你的口說考試改到星期六。你到芬恩上班的咖啡店找他。" }
+  ],
+  "steps": [
+    {
+      "lines": [
+        { "who": "c04_finn", "expr": "happy", "en": "Kai! Ready for Saturday? I charged all my camera batteries!", "zh": "凱！星期六準備好了嗎？我把相機電池都充飽了！" }
+      ],
+      "choices": [
+        {
+          "en": "About that... sorry, something came up.",
+          "zh": "說到這個……抱歉，我臨時有事。",
+          "ok": true,
+          "tip": "Something came up. 是「臨時有事」最自然的說法，先道歉再說。"
+        },
+        {
+          "en": "Sorry, I have something temporary on Saturday.",
+          "zh": "抱歉，我星期六臨時有事。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Something temporary? Like a temporary tattoo?", "zh": "暫時的東西？像紋身貼紙那種？" }
+            ],
+            "title": { "en": "Temporary Tattoo", "zh": "紋身貼紙" },
+            "story": { "en": "Finn asks to see your temporary tattoo. You don't have one. The conversation goes nowhere.", "zh": "芬恩想看你的紋身貼紙，但你根本沒有，對話卡住了。" },
+            "why": "「臨時有事」直翻成 something temporary，意思變成「暫時性的東西」。英文說 Something came up.，簡單又自然。"
+          }
+        },
+        {
+          "en": "I can't go on Saturday anymore. Too bad.",
+          "zh": "我星期六不能去了。真可惜。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_finn", "expr": "upset", "en": "Oh. Okay. Too bad, I guess.", "zh": "喔，好吧。真可惜，大概吧。" }
+            ],
+            "title": { "en": "Sad Latte", "zh": "哭臉拿鐵" },
+            "story": { "en": "Finn makes you a latte. There's a sad face drawn in the foam.", "zh": "芬恩幫你做了一杯拿鐵，奶泡上畫了一張哭臉。" },
+            "why": "取消約定時只說 Too bad，聽起來好像這件事跟你無關。先道歉：Sorry, something came up.。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_finn", "expr": "confused", "en": "Oh no. What happened?", "zh": "喔不，發生什麼事了？" }
+      ],
+      "choices": [
+        {
+          "en": "My teacher moved my test to Saturday.",
+          "zh": "老師把我的考試改到星期六了。",
+          "ok": true,
+          "tip": "說明原因時給一句簡短的理由，用過去式 moved 表示已經改了。"
+        },
+        {
+          "en": "My teacher change my speaking test to Saturday.",
+          "zh": "老師把我的口說考試改到星期六。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Your teacher changes tests every week? That sounds stressful.", "zh": "你們老師每週都改考試時間？聽起來壓力好大。" }
+            ],
+            "title": { "en": "Weekly Chaos", "zh": "每週大亂" },
+            "story": { "en": "Finn feels so sorry for you that he gives you a free cookie every time you visit.", "zh": "芬恩太同情你了，之後你每次來他都送你一片餅乾。" },
+            "why": "老師改時間是已經發生的事，要用過去式 moved 或 changed。少了 -ed，聽起來像老師每次都這樣。"
+          }
+        },
+        {
+          "en": "It's nothing special. Don't ask, OK?",
+          "zh": "沒什麼啦，別問了，好嗎？",
+          "ok": false,
+          "fail": {
+            "kind": "culture",
+            "lines": [
+              { "who": "c04_finn", "expr": "upset", "en": "Uh... okay. Sorry I asked.", "zh": "呃……好吧，抱歉問了。" }
+            ],
+            "title": { "en": "Secret Agent Kai", "zh": "特務凱" },
+            "story": { "en": "Finn decides you're on a secret mission. He never asks you anything personal again.", "zh": "芬恩認定你在執行祕密任務，從此再也不問你私事。" },
+            "why": "中文常用「有點事」「沒什麼」帶過，但英文取消約定時，對方會期待一句簡短的理由。說明原因，對方才知道你不是不想去。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_finn", "expr": "neutral", "en": "Ah, a test. That's important. So, what now?", "zh": "啊，考試，那很重要。那現在怎麼辦？" }
+      ],
+      "choices": [
+        {
+          "en": "Can we reschedule? I still really want to go.",
+          "zh": "我們可以改時間嗎？我還是很想去。",
+          "ok": true,
+          "tip": "Can we reschedule? 是改期的標準說法，加一句「還是很想去」讓對方安心。"
+        },
+        {
+          "en": "Can we change another day? I still want to go.",
+          "zh": "我們可以改天嗎？我還是想去。",
+          "ok": false,
+          "fail": {
+            "kind": "literal",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Change another day? Like, turn Tuesday into Friday?", "zh": "改變另一天？像是把星期二變成星期五？" }
+            ],
+            "title": { "en": "Calendar Hacker", "zh": "日曆駭客" },
+            "story": { "en": "Finn jokes that you have the power to change the days of the week. He asks you to make every day Saturday.", "zh": "芬恩開玩笑說你有改變星期幾的超能力，拜託你把每天都變成星期六。" },
+            "why": "「改天」直翻成 change another day 不通。改時間的動詞是 reschedule：Can we reschedule?，也可以說 Can we do it another day?。"
+          }
+        },
+        {
+          "en": "Now? I'm going back to school after this.",
+          "zh": "現在？我等一下要回學校。",
+          "ok": false,
+          "fail": {
+            "kind": "offtopic",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "Ha, no, I meant our photo walk! Not right now.", "zh": "哈，不是啦，我是問攝影散步怎麼辦！不是問你現在。" }
+            ],
+            "title": { "en": "Right Now", "zh": "就是現在" },
+            "story": { "en": "Finn waves goodbye as you leave. You realize on the bus that you never set a new date.", "zh": "芬恩跟你揮手道別。坐上公車你才發現，根本沒約新的時間。" },
+            "why": "So, what now? 在這裡是「那接下來怎麼辦」，問的是計畫，不是你等一下要去哪。"
+          }
+        }
+      ]
+    },
+    {
+      "lines": [
+        { "who": "c04_finn", "expr": "happy", "en": "Of course we can. When are you free this week?", "zh": "當然可以。你這週什麼時候有空？" }
+      ],
+      "choices": [
+        {
+          "en": "Would Friday work? I'm free after three.",
+          "zh": "星期五可以嗎？我三點以後有空。",
+          "ok": true,
+          "tip": "Would ... work? 是提出時間的禮貌問法，讓對方有選擇的空間。"
+        },
+        {
+          "en": "Is Friday OK? I free after three.",
+          "zh": "星期五可以嗎？我三點以後有空。",
+          "ok": false,
+          "fail": {
+            "kind": "grammar",
+            "lines": [
+              { "who": "c04_finn", "expr": "confused", "en": "You... free after three? Free what?", "zh": "你……三點以後免費？什麼免費？" }
+            ],
+            "title": { "en": "Free After Three", "zh": "三點後免費" },
+            "story": { "en": "Finn thinks you're giving something away after three. He shows up on Friday with a big empty bag.", "zh": "芬恩以為你三點後要送東西，星期五帶著一個大空袋子出現。" },
+            "why": "free 是形容詞，前面要有 be 動詞：I'm free after three.。少了 am，free 聽起來像「免費」。"
+          }
+        },
+        {
+          "en": "Friday. You must be free on Friday.",
+          "zh": "星期五。你星期五一定要有空。",
+          "ok": false,
+          "fail": {
+            "kind": "tone",
+            "lines": [
+              { "who": "c04_finn", "expr": "upset", "en": "Must? Wow, okay, boss.", "zh": "一定要？哇，好喔，老闆。" }
+            ],
+            "title": { "en": "Boss Mode", "zh": "老闆上身" },
+            "story": { "en": "Finn salutes you every time you walk into the café now.", "zh": "現在你每次走進咖啡店，芬恩都會向你敬禮。" },
+            "why": "You must... 聽起來像命令。改期是你提出的，要用問句讓對方決定：Would Friday work?"
+          }
+        }
+      ]
+    }
+  ],
+  "good": {
+    "lines": [
+      { "who": "c04_finn", "expr": "happy", "en": "Friday works! The sunset light will be perfect for photos.", "zh": "星期五可以！那時候的夕陽光線最適合拍照。" },
+      { "who": "narrator", "en": "Finn writes \"Friday, 3:30\" on a coffee cup and hands it to you.", "zh": "芬恩在咖啡杯上寫下「星期五 3:30」，遞給了你。" }
+    ],
+    "title": { "en": "Golden Hour", "zh": "黃金時刻" },
+    "story": { "en": "On Friday, you take your best photos ever in the golden light. On Saturday, you do great on your speaking test.", "zh": "星期五，你在金色的光線下拍出最滿意的照片；星期六，你的口說考試也考得很好。" }
+  },
+  "notes": [
+    {
+      "type": "phrase",
+      "en": "Something came up.",
+      "zh": "臨時有事。",
+      "explain": "臨時無法赴約時最自然的說法。不要直翻成 something temporary。說完最好再補一句簡短理由。",
+      "example": { "en": "Sorry, something came up at work.", "zh": "抱歉，公司臨時有事。" }
+    },
+    {
+      "type": "phrase",
+      "en": "Can we reschedule?",
+      "zh": "我們可以改時間嗎？",
+      "explain": "reschedule 是「重新安排時間」，改約、改會議都能用。「改天」不能說 change another day。",
+      "example": { "en": "Can we reschedule our meeting to Monday?", "zh": "我們的會議可以改到星期一嗎？" }
+    },
+    {
+      "type": "phrase",
+      "en": "Would Friday work?",
+      "zh": "星期五可以嗎？",
+      "explain": "提出時間時用問句，讓對方有選擇的空間，比 You must... 有禮貌。也可以說 Does Friday work for you?。",
+      "example": { "en": "Would 2 p.m. work for you?", "zh": "下午兩點你可以嗎？" }
+    },
+    {
+      "type": "grammar",
+      "en": "I'm free after three.",
+      "zh": "我三點以後有空。",
+      "explain": "free 是形容詞，前面一定要有 be 動詞：I'm free.。少了 am，聽起來像「免費」。",
+      "example": { "en": "Are you free this weekend?", "zh": "你這週末有空嗎？" }
+    },
+    {
+      "type": "culture",
+      "en": "Give a short reason.",
+      "zh": "給一句簡短的理由。",
+      "explain": "中文常用「有點事」帶過，但英文取消約定時，給一句簡短理由能讓對方知道你不是不想去。不用講太細，一句就夠。",
+      "example": { "en": "Sorry, I have to work late that day.", "zh": "抱歉，那天我要加班。" }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "c03_registrar": {
+    "name": "Diane",
+    "nameZh": "黛安",
+    "role": { "en": "Enrollment office staff", "zh": "註冊處職員" },
+    "gender": "female",
+    "appearance": "woman in her mid 50s, short curly brown hair with gray streaks, purple cat-eye glasses, lavender cardigan over a white blouse, pencil tucked behind one ear, staff lanyard, warm and efficient office worker vibe"
+  },
+  "c03_teacher": {
+    "name": "Ms. Reed",
+    "nameZh": "瑞德老師",
+    "role": { "en": "English teacher", "zh": "英文老師" },
+    "gender": "female",
+    "appearance": "woman in her late 30s, shoulder-length chestnut brown hair with a side part, tortoiseshell glasses, mustard yellow cardigan over a navy striped shirt, whiteboard marker clipped to her pocket, kind and lively teacher vibe"
+  },
+  "c03_yuki": {
+    "name": "Yuki",
+    "nameZh": "由紀",
+    "role": { "en": "Classmate from Japan", "zh": "來自日本的同學" },
+    "gender": "female",
+    "appearance": "young woman in her early 20s, long straight black hair with blunt bangs, small star-shaped earrings, cream cable-knit sweater with a red plaid scarf, pastel pink notebook held to her chest, sweet cheerful vibe"
+  },
+  "c03_librarian": {
+    "name": "Mr. Bell",
+    "nameZh": "貝爾先生",
+    "role": { "en": "School librarian", "zh": "學校圖書館員" },
+    "gender": "male",
+    "appearance": "man in his early 60s, neat white hair and a short white beard, half-moon glasses, forest green sweater vest over a light blue shirt, brown bow tie, calm gentle librarian vibe"
+  },
+  "c03_cafeteria": {
+    "name": "Martha",
+    "nameZh": "瑪莎",
+    "role": { "en": "Cafeteria server", "zh": "學生餐廳打菜員" },
+    "gender": "female",
+    "appearance": "woman in her late 40s, dark hair tied back under a white hairnet, rosy cheeks, white apron over a red polo shirt, large serving ladle in one hand, warm motherly vibe"
+  },
+  "c03_clubhost": {
+    "name": "Noah",
+    "nameZh": "諾亞",
+    "role": { "en": "Outdoor Club leader", "zh": "戶外社社長" },
+    "gender": "male",
+    "appearance": "young man in his mid 20s, short tousled dark brown hair, tanned skin, forest green fleece jacket over a gray t-shirt, small compass pendant on a cord, sporty outgoing vibe"
+  }
+}
